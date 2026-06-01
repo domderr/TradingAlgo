@@ -1,292 +1,130 @@
-<!-- 2026-05-30 Europe/Rome — PROMPT: "vai con HTml" -->
+<!-- 2026-06-01 Europe/Rome — PROMPT: homepage minimal TradingAlgo -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TradingAlgo | Quantitative Research for Traders and Asset Managers</title>
+  <title>TradingAlgo</title>
 
   <style>
-    * { box-sizing: border-box; }
-
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #06111f;
-      color: white;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
     }
 
-    header {
-      min-height: 85vh;
-      padding: 40px 8%;
-      background:
-        linear-gradient(90deg, rgba(3,12,25,0.95), rgba(3,12,25,0.72), rgba(3,12,25,0.25)),
-        url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1800&q=80");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 18px 8%;
-      background: rgba(3,12,25,0.90);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 10;
-      backdrop-filter: blur(8px);
-    }
-
-    nav .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 24px;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .hero h1 {
-      font-size: 72px;
-      margin: 0;
-      font-family: Georgia, serif;
-    }
-
-    .hero h2 {
-      color: #39a7ff;
-      letter-spacing: 4px;
-      font-size: 24px;
-      margin-top: 15px;
-    }
-
-    .hero .tagline {
-      font-family: Georgia, serif;
-      font-size: 34px;
-      margin-top: 30px;
-    }
-
-    .hero p {
-      max-width: 620px;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #e5e7eb;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 15px 28px;
-      background: #168eea;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 1px;
-      border-radius: 4px;
-    }
-
-    section {
-      padding: 75px 8%;
-    }
-
-    .dark {
-      background: #071a33;
-    }
-
-    .light {
-      background: #f4f7fb;
-      color: #071a33;
-    }
-
-    .section-title {
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 80px 24px;
       text-align: center;
-      font-size: 38px;
-      margin-bottom: 45px;
-      font-family: Georgia, serif;
+    }
+
+    h1 {
+      font-size: 56px;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .subtitle {
+      font-size: 22px;
+      color: #cbd5e1;
+      margin-bottom: 48px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-bottom: 48px;
     }
 
     .card {
-      padding: 32px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
+      background: #1e293b;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid #334155;
     }
 
-    .light .card {
-      background: white;
-      border: 1px solid #dbe3ef;
-    }
-
-    .card h3 {
-      color: #39a7ff;
-      margin-top: 0;
-      font-size: 22px;
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #38bdf8;
     }
 
     .card p {
-      line-height: 1.6;
-      color: inherit;
+      font-size: 14px;
+      color: #cbd5e1;
+      line-height: 1.5;
     }
 
-    .quote {
-      text-align: center;
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 24px;
-      color: #dbeafe;
+    .contact {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+
+    .contact a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     footer {
-      padding: 40px 8%;
-      background: #020817;
-      text-align: center;
-      color: #9ca3af;
-    }
-
-    @media (max-width: 800px) {
-      nav {
-        position: static;
-        display: block;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 10px 12px 0 0;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero .tagline {
-        font-size: 26px;
-      }
+      margin-top: 60px;
+      font-size: 13px;
+      color: #94a3b8;
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <h1>TradingAlgo</h1>
 
-  <nav>
-    <div class="logo">TA | TradingAlgo</div>
-    <div>
-      <a href="#framework">Framework</a>
-      <a href="#marketview">Market View</a>
-      <a href="#publishing">Publishing</a>
-      <a href="#partnerships">Partnerships</a>
-      <a href="#about">About</a>
-    </div>
-  </nav>
-
-  <header>
-    <div class="hero">
-      <h1>TradingAlgo</h1>
-      <h2>MOSAIC TRADING FRAMEWORK</h2>
-      <div class="tagline">Research. Develop. Monitor. Coach. Publish.</div>
-      <p>
-        A quantitative framework designed to transform market data into actionable research,
-        trading tools, market intelligence and educational content.
-      </p>
-      <a class="button" href="#framework">Explore the Framework</a>
-    </div>
-  </header>
-
-  <section id="framework" class="dark">
-    <h2 class="section-title">Mosaic Trading Framework</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>1. Research & Development</h3>
-        <p>Quantitative research, market regime analysis, asset allocation, ETF research, options analytics, relative strength, volatility studies and AI applications.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Trading Tools Development</h3>
-        <p>Development of scanners, dashboards, reports and trading models using Python, Google Colab, TradeStation, EasyLanguage, TradingView and AI-assisted workflows.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Coaching</h3>
-        <p>Training and mentoring for traders, developers and professionals interested in systematic trading, portfolio construction, EasyLanguage and AI for trading.</p>
-      </div>
-
-      <div class="card" id="publishing">
-        <h3>4. Publishing</h3>
-        <p>Books, articles, research notes, white papers, market reports and educational content focused on algorithmic trading and quantitative market analysis.</p>
-      </div>
-
-      <div class="card" id="marketview">
-        <h3>5. Algorithmic Market View</h3>
-        <p>A systematic view of financial markets based on market regimes, relative strength, volatility, breadth, portfolio signals and quantitative indicators.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <p class="quote">
-      Like a mosaic, every market signal is only meaningful when viewed as part of the whole.
+    <p class="subtitle">
+      Quantitative research, trading tools and algorithmic market analysis.
     </p>
-  </section>
-
-  <section id="partnerships" class="light">
-    <h2 class="section-title">Partnerships</h2>
 
     <div class="grid">
       <div class="card">
-        <h3>Building Together</h3>
-        <p>
-          TradingAlgo is open to partnerships with quant researchers, asset managers,
-          hedge funds, educators, technology providers, software platforms and financial data companies.
-        </p>
+        <h2>Research & Development</h2>
+        <p>Quantitative research applied to trading, portfolio models and market behavior.</p>
       </div>
 
       <div class="card">
-        <h3>Collaborative Projects</h3>
-        <p>
-          The objective is to build practical tools, research frameworks and market intelligence
-          solutions for systematic trading and portfolio management.
-        </p>
+        <h2>Trading Tools Development</h2>
+        <p>Custom tools for traders, asset managers and systematic trading workflows.</p>
+      </div>
+
+      <div class="card">
+        <h2>Coaching</h2>
+        <p>One-to-one support on EasyLanguage, algorithmic trading and strategy development.</p>
+      </div>
+
+      <div class="card">
+        <h2>Publishing</h2>
+        <p>Articles, books and educational content on quantitative and algorithmic trading.</p>
+      </div>
+
+      <div class="card">
+        <h2>Algorithmic Market View</h2>
+        <p>Systematic market analysis based on data, volatility, trends and portfolio signals.</p>
+      </div>
+
+      <div class="card">
+        <h2>Mosaic Trading Framework</h2>
+        <p>A modular framework for building and combining trading models and research blocks.</p>
       </div>
     </div>
-  </section>
 
-  <section id="about" class="light">
-    <h2 class="section-title">About</h2>
-
-    <div class="card">
-      <h3>Domenico D'Errico</h3>
-      <p>
-        Quant developer, author and trading technology researcher.
-        Author of <em>TradeStation EasyLanguage for Algorithmic Trading</em>,
-        contributor to <em>Stocks & Commodities</em> magazine and member of the
-        Gandalf Project R&D Team.
-        
-        email to: dderrico@TradingAlgo.it
-      </p>
+    <div class="contact">
+      Contact: <a href="mailto:dderrico@tradingalgo.it">dderrico@tradingalgo.it</a>
     </div>
-  </section>
 
-  <footer>
-    <p><strong>TradingAlgo — Mosaic Trading Framework</strong></p>
-    <p>Quantitative Research • Trading Tools Development • Coaching • Publishing • Market View</p>
-    <p>© 2026 Domenico D'Errico. All rights reserved.</p>
-  </footer>
-
+    <footer>
+      © 2026 TradingAlgo — Quantitative Research for Traders and Asset Managers
+    </footer>
+  </div>
 </body>
 </html>
