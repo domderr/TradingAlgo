@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TradingAlgo | Mosaic Trading Framework</title>
+  <title>TradingAlgo | TradingAlgo Framework</title>
 
   <style>
     * { box-sizing: border-box; }
@@ -302,6 +302,21 @@
       margin: -30px -30px 24px;
     }
 
+    .bio-card {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .bio-card img {
+      width: 190px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 16px 35px rgba(7,26,51,0.20);
+    }
+
     .quote {
       text-align: center;
       font-family: Georgia, serif;
@@ -344,13 +359,15 @@
 
       .book-feature,
       .event-feature,
-      .book-library {
+      .book-library,
+      .bio-card {
         grid-template-columns: 1fr;
       }
 
       .book-feature img,
       .event-feature img,
-      .book-library img {
+      .book-library img,
+      .bio-card img {
         width: 140px;
       }
     }
@@ -432,6 +449,7 @@
         <h3>5. TradingAlgo Mosaic - Algorithmic Market View</h3>
         <p>A systematic view of financial markets based on market regimes, relative strength, volatility, breadth, portfolio signals and quantitative indicators.</p>
         <a class="button" href="tradingalgo-mosaic.html">What is TradingAlgo Mosaic?</a>
+        <a class="button" href="how-to-read-mosaic-report.html">How to Read the Weekly Report</a>
         <a class="button" href="https://drive.google.com/file/d/1vvf_6Lmb-OggnqIonkMG4C3aeRfzjRpq/view?usp=drive_link" target="_blank" rel="noopener">View Latest Market Report</a>
       </div>
     </div>
@@ -657,14 +675,17 @@
   <section id="about" class="light">
     <h2 class="section-title">About</h2>
 
-    <div class="card">
-      <h3>Domenico D'Errico</h3>
-      <p>
-        Quant developer, author and trading technology researcher.
-        Author of <em>TradeStation EasyLanguage for Algorithmic Trading</em>,
-        contributor to <em>Stocks & Commodities</em> magazine and member of the
-        Gandalf Project R&D Team.
-      </p>
+    <div class="card bio-card">
+      <img src="assets/bio/domenico-derrico.jpg" alt="Domenico D'Errico portrait">
+      <div>
+        <h3>Domenico D'Errico</h3>
+        <p>
+          Quant developer, author and trading technology researcher.
+          Author of <em>TradeStation EasyLanguage for Algorithmic Trading</em>,
+          contributor to <em>Stocks & Commodities</em> magazine and member of the
+          Gandalf Project R&D Team.
+        </p>
+      </div>
     </div>
   </section>
 

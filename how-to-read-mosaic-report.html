@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Read the TradingAlgo Mosaic Weekly Report | TradingAlgo</title>
+  <meta name="description" content="A practical guide to reading the TradingAlgo Mosaic Weekly Report: performance metrics, selected stocks, weekly changes, charts, capital invested and research disclaimer." />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #071a33;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 90px 8% 70px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.95), rgba(3,12,25,0.70)),
+        url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    header h1 {
+      max-width: 940px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 54px;
+      line-height: 1.08;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 65px 8%;
+    }
+
+    .content {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      padding: 34px;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: 30px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #071a33;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.7;
+      color: #26364a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+      color: #26364a;
+      line-height: 1.7;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .note {
+      border-left: 4px solid #168eea;
+      padding-left: 18px;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: block;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 12px 0 0;
+      }
+
+      header h1 {
+        font-size: 38px;
+      }
+
+      section {
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">TA | TradingAlgo</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="index.html#marketview">Market View</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="index.html#publications">Publishing</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>How to Read the TradingAlgo Mosaic Weekly Report</h1>
+    <p>Think of each page as a dashboard: first assess performance, then review the five selected stocks, and finally examine what changed during the week.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>Report Overview</h2>
+        <p>The TradingAlgo Mosaic Weekly Report is designed to provide a concise and systematic view of multiple global markets. Each market is represented by a portfolio of five stocks selected through a quantitative process based on trend strength and diversification criteria.</p>
+      </section>
+
+      <section>
+        <h2>Step 1: Assess Performance</h2>
+        <p>Start by reviewing the performance metrics:</p>
+        <ul>
+          <li><strong>CAGR</strong> - Compound Annual Growth Rate</li>
+          <li><strong>MaxDD</strong> - Maximum Drawdown</li>
+          <li><strong>Sharpe Ratio</strong></li>
+          <li><strong>Information Ratio</strong></li>
+        </ul>
+        <p>These metrics compare the TradingAlgo Mosaic portfolio (P) with its benchmark (B) and help evaluate both return and risk-adjusted performance.</p>
+        <p>A portfolio with a higher CAGR, higher Sharpe Ratio, and positive Information Ratio has historically delivered stronger results relative to its benchmark.</p>
+      </section>
+
+      <section>
+        <h2>Step 2: Review the Five Selected Stocks</h2>
+        <p>The <strong>Current Positions</strong> section displays the five stocks currently selected by the model for that market.</p>
+        <p>The selection process begins with a much larger universe of securities. TradingAlgo Mosaic evaluates trend strength, filters highly correlated candidates, and then constructs a concentrated portfolio of five stocks designed to provide both performance potential and diversification benefits.</p>
+        <p>These positions represent the model's current view of the most attractive opportunities within that market.</p>
+      </section>
+
+      <section>
+        <h2>Step 3: Examine Weekly Changes</h2>
+        <p>The <strong>Weekly Changes</strong> section shows how the portfolio has evolved since the previous report.</p>
+        <ul>
+          <li><strong>IN</strong> identifies new positions entering the portfolio.</li>
+          <li><strong>OUT</strong> identifies positions that have been removed.</li>
+        </ul>
+        <p>This section provides insight into how the model adapts to changing market conditions and shifting leadership trends.</p>
+      </section>
+
+      <section>
+        <h2>Step 4: Analyze the Charts</h2>
+        <h3>Equity Curve</h3>
+        <ul>
+          <li>Compares portfolio growth against the benchmark.</li>
+          <li>Helps assess long-term value creation.</li>
+        </ul>
+
+        <h3>Drawdown Curve</h3>
+        <ul>
+          <li>Shows historical declines from previous portfolio highs.</li>
+          <li>Helps evaluate downside risk and capital preservation.</li>
+        </ul>
+        <p>Together, these charts provide a quick visual assessment of both return and risk.</p>
+      </section>
+
+      <section>
+        <h2>Capital Invested</h2>
+        <p>The report also displays the percentage of capital currently allocated.</p>
+        <p>Examples include:</p>
+        <ul>
+          <li>100% Capital Invested</li>
+          <li>80% Capital Invested</li>
+          <li>40% Capital Invested</li>
+        </ul>
+        <p>Lower exposure may occur when fewer securities satisfy the framework's selection criteria.</p>
+      </section>
+
+      <section>
+        <h2>Important Note</h2>
+        <p class="note">TradingAlgo Mosaic is a quantitative research and portfolio analysis framework.</p>
+        <p>The report documents the output of a systematic investment process and is intended exclusively for research, educational, and informational purposes.</p>
+        <p>It does not constitute investment advice, portfolio management, trading signals, or a recommendation to buy or sell any security.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>TradingAlgo - Mosaic Weekly Report Guide</strong></p>
+    <p>Quantitative Research - Portfolio Construction - Market Analysis</p>
+  </footer>
+</body>
+</html>
