@@ -132,6 +132,45 @@
       margin-top: 18px;
     }
 
+    .event-feature {
+      margin-top: 24px;
+      max-width: 760px;
+      padding: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .event-feature img {
+      width: 260px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.28);
+    }
+
+    .event-feature h3 {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: 24px;
+      font-family: Georgia, serif;
+    }
+
+    .event-feature p {
+      margin: 0;
+      color: #e5e7eb;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .event-feature .button {
+      margin-top: 18px;
+    }
+
     section {
       padding: 75px 8%;
     }
@@ -304,11 +343,13 @@
       }
 
       .book-feature,
+      .event-feature,
       .book-library {
         grid-template-columns: 1fr;
       }
 
       .book-feature img,
+      .event-feature img,
       .book-library img {
         width: 140px;
       }
@@ -349,6 +390,15 @@
           <p>Learn to build, test and validate systematic trading tools with TradeStation EasyLanguage.</p>
           <p>Connect classic technical trading with risk management, portfolio thinking and machine learning.</p>
           <a class="button" href="https://www.amazon.it/s?k=9781835881200" target="_blank" rel="noopener">View on Amazon</a>
+        </div>
+      </div>
+
+      <div class="event-feature">
+        <img src="assets/events/gandalf-symposium-2026.jpg" alt="Gandalf Symposium 2026 event preview">
+        <div>
+          <h3>Gandalf Symposium 2026</h3>
+          <p>A professional event by Gandalf Project dedicated to trading, financial engineering, market research and systematic investing.</p>
+          <a class="button" href="https://gandalfproject.com/gandalf-symposium-2026-html/" target="_blank" rel="noopener">View Symposium</a>
         </div>
       </div>
     </div>
