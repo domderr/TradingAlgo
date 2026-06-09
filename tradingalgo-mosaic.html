@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is TradingAlgo Mosaic? | TradingAlgo</title>
+  <meta name="description" content="TradingAlgo Mosaic is a quantitative portfolio construction framework for systematic market selection, trend evaluation, diversification and weekly portfolio reporting." />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #071a33;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 90px 8% 70px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.95), rgba(3,12,25,0.70)),
+        url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    header h1 {
+      max-width: 920px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 56px;
+      line-height: 1.08;
+    }
+
+    header p {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 65px 8%;
+    }
+
+    .content {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      padding: 34px;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: 30px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #071a33;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.7;
+      color: #26364a;
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 22px;
+      color: #26364a;
+      line-height: 1.7;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 14px 24px;
+      background: #168eea;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-radius: 4px;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: block;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 12px 0 0;
+      }
+
+      header h1 {
+        font-size: 40px;
+      }
+
+      section {
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">TA | TradingAlgo</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="index.html#marketview">Market View</a>
+      <a href="index.html#publications">Publishing</a>
+      <a href="index.html#coaching">Coaching</a>
+    </div>
+  </nav>
+
+  <header>
+    <h1>What is TradingAlgo Mosaic?</h1>
+    <p>TradingAlgo Mosaic is a quantitative portfolio construction framework designed to identify and manage portfolios of stocks, ETFs, and international markets using objective, rules-based criteria.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>TradingAlgo Mosaic</h2>
+        <p>Unlike traditional stock picking approaches, Mosaic starts from a broad investment universe and systematically selects a concentrated portfolio based on two key principles:</p>
+
+        <h3>Trend Strength</h3>
+        <p>Capital is allocated to assets demonstrating persistent and stable trends.</p>
+
+        <h3>Diversification Through Correlation</h3>
+        <p>Assets are selected not only for their individual quality but also for their contribution to overall portfolio diversification.</p>
+
+        <p>The objective is to build portfolios capable of delivering attractive risk-adjusted returns while avoiding excessive concentration in highly correlated positions. This approach is consistent with the framework's stated objective of identifying and monitoring diversified portfolios through systematic analysis and disciplined execution.</p>
+      </section>
+
+      <section>
+        <h2>How Does It Work?</h2>
+        <p>The process is fully systematic:</p>
+        <ol>
+          <li><strong>Market Selection:</strong> Mosaic analyzes hundreds of securities across different markets and sectors.</li>
+          <li><strong>Trend Evaluation:</strong> Each asset is ranked according to the quality and persistence of its trend.</li>
+          <li><strong>Correlation Analysis:</strong> Highly correlated securities are filtered to improve diversification.</li>
+          <li><strong>Portfolio Construction:</strong> The highest-ranked assets are combined into a concentrated portfolio.</li>
+          <li><strong>Weekly Review:</strong> Positions are reviewed periodically and updated only when the underlying conditions change.</li>
+        </ol>
+        <p>The result is a dynamic portfolio that adapts to changing market conditions while maintaining a disciplined investment process.</p>
+      </section>
+
+      <section>
+        <h2>Why Use TradingAlgo Mosaic?</h2>
+        <ul>
+          <li>Removes emotional decision making</li>
+          <li>Uses objective and repeatable rules</li>
+          <li>Focuses on risk-adjusted returns</li>
+          <li>Promotes diversification</li>
+          <li>Works across multiple global markets</li>
+          <li>Produces transparent and auditable portfolio decisions</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Who Is It For?</h2>
+        <p>TradingAlgo Mosaic is designed for:</p>
+        <ul>
+          <li>Private investors</li>
+          <li>Professional traders</li>
+          <li>Financial advisors</li>
+          <li>Asset managers</li>
+          <li>Family offices</li>
+          <li>Quantitative research teams</li>
+        </ul>
+        <p>Anyone looking for a systematic approach to portfolio construction can benefit from the framework.</p>
+      </section>
+
+      <section>
+        <h2>Weekly Portfolio Reports</h2>
+        <p>TradingAlgo Mosaic produces weekly portfolio reports including:</p>
+        <ul>
+          <li>Current positions</li>
+          <li>Portfolio changes</li>
+          <li>Performance statistics</li>
+          <li>Equity curves</li>
+          <li>Drawdown analysis</li>
+          <li>Benchmark comparison</li>
+          <li>Market commentary</li>
+        </ul>
+        <p>This allows investors to monitor both portfolio composition and performance through a structured and transparent process.</p>
+      </section>
+
+      <section>
+        <h2>What TradingAlgo Mosaic Is Not</h2>
+        <p>TradingAlgo Mosaic is a quantitative research and portfolio analysis framework.</p>
+        <p>It is not:</p>
+        <ul>
+          <li>Investment advice</li>
+          <li>A solicitation to buy or sell securities</li>
+          <li>A discretionary portfolio management service</li>
+          <li>A personalized recommendation engine</li>
+          <li>A signal service providing trading instructions</li>
+          <li>A guarantee of future performance</li>
+        </ul>
+        <p>The framework generates systematic rankings and model portfolios based on predefined quantitative criteria such as trend strength, relative performance, and diversification. Any portfolio, ranking, or market view produced by the model is intended exclusively for research, educational, and informational purposes.</p>
+        <p>Users remain solely responsible for their own investment decisions and should independently evaluate the suitability and risks of any investment before taking action.</p>
+        <p>Past performance, backtests, simulations, and model results do not guarantee future outcomes and should not be interpreted as forecasts or promises of future return.</p>
+      </section>
+
+      <section>
+        <h2>Get Started</h2>
+        <p>Interested in receiving the weekly TradingAlgo Mosaic reports or learning how the framework can be applied to your market universe?</p>
+        <p>Contact Domenico D'Errico at <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a>.</p>
+        <a class="button" href="mailto:domderrico@gmail.com">Contact</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>TradingAlgo - Mosaic Trading Framework</strong></p>
+    <p>Quantitative Research - Portfolio Construction - Market Analysis</p>
+  </footer>
+</body>
+</html>
