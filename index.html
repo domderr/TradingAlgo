@@ -171,6 +171,69 @@
       margin-top: 18px;
     }
 
+    .mosaic-research {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 30px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.4fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .mosaic-research h3 {
+      margin: 0 0 14px;
+      color: #ffffff;
+      font-size: 28px;
+      font-family: Georgia, serif;
+    }
+
+    .mosaic-research p {
+      margin: 0 0 14px;
+      color: #e5e7eb;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .mosaic-preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mosaic-preview {
+      margin: 0;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .mosaic-preview img {
+      width: 100%;
+      height: 250px;
+      object-fit: contain;
+      object-position: top center;
+      display: block;
+      background: #ffffff;
+    }
+
+    .mosaic-preview figcaption {
+      padding: 12px 14px;
+      color: #dbeafe;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .secondary-research {
+      max-width: 760px;
+      margin: 34px auto 0;
+      opacity: 0.86;
+    }
+
     section {
       padding: 75px 8%;
     }
@@ -359,8 +422,13 @@
 
       .book-feature,
       .event-feature,
+      .mosaic-research,
       .book-library,
       .bio-card {
+        grid-template-columns: 1fr;
+      }
+
+      .mosaic-preview-grid {
         grid-template-columns: 1fr;
       }
 
@@ -423,12 +491,50 @@
 <section class="dark">
   <h2 class="section-title">Latest Research</h2>
 
-  <div class="event-feature">
+  <div class="mosaic-research">
+    <div>
+      <h3>TradingAlgo Mosaic Weekly Market View</h3>
+
+      <p>
+        A weekly algorithmic market review that turns hundreds of stocks into a focused
+        leadership map, highlighting the securities that best represent the current market phase.
+      </p>
+
+      <p>
+        Mosaic combines trend quality, stability and portfolio contribution to help investors
+        move from single-stock screening to coordinated portfolio construction.
+      </p>
+
+      <a class="button"
+         href="https://drive.google.com/file/d/1krZJUWeQlGR1KTKKg1g0qBDA7mtKmNEQ/view?usp=drive_link"
+         target="_blank"
+         rel="noopener">
+         View USA Report
+      </a>
+      <a class="button" href="how-to-read-mosaic-report.html">How to Read the Report</a>
+    </div>
+
+    <div class="mosaic-preview-grid">
+      <figure class="mosaic-preview">
+        <img src="assets/reports/tradingalgo-mosaic-usa-report-cover.png"
+             alt="First page of the TradingAlgo Mosaic USA weekly report">
+        <figcaption>First page of the USA weekly report: allocation, portfolio metrics and current positions.</figcaption>
+      </figure>
+
+      <figure class="mosaic-preview">
+        <img src="assets/reports/tradingalgo-mosaic-nvda-dashboard.png"
+             alt="TradingAlgo Mosaic NVDA dashboard example">
+        <figcaption>Example dashboard: trend, stability and status signals on an individual stock.</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="event-feature secondary-research">
     <img src="assets/medium/china-india.jpg"
          alt="What's Going On with China and India">
 
     <div>
-      <h3>What's Going On with China and India?</h3>
+      <h3>Also from Latest Research: What's Going On with China and India?</h3>
 
       <p>
         A comparative analysis of two of the world's most important
