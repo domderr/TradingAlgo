@@ -1,0 +1,20 @@
+[
+  {
+    "Market": "Europe",
+    "Report_File": "Report_Europe.pdf",
+    "Report_URL": "https://drive.google.com/file/d/1PyQVkBjpdQJ-u3A8CTPtZTxUgw7G07N0/view?usp=drive_link",
+    "Updated_At": "2026-06-19T06:11:04+02:00"
+  },
+  {
+    "Market": "Italy",
+    "Report_File": "Report_Italy.pdf",
+    "Report_URL": "https://drive.google.com/file/d/1vuY1MQdQc6OKyEcm1I7Vfm60XvZobnRi/view?usp=drive_link",
+    "Updated_At": "2026-06-19T06:11:04+02:00"
+  },
+  {
+    "Market": "USA",
+    "Report_File": "Report_USA.pdf",
+    "Report_URL": "https://drive.google.com/file/d/1krZJUWeQlGR1KTKKg1g0qBDA7mtKmNEQ/view?usp=drive_link",
+    "Updated_At": "2026-06-19T06:11:05+02:00"
+  }
+]

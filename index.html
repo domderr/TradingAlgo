@@ -585,9 +585,11 @@
         <p>The framework combines Trend, Stability, and Portfolio Contribution analysis to build focused portfolios whose components are selected to work together, not just to look good individually.</p>
         <a class="button" href="tradingalgo-mosaic.html">What is TradingAlgo Mosaic?</a>
         <a class="button" href="how-to-read-mosaic-report.html">How to Read the Weekly Report</a>
-        <a class="button" href="https://drive.google.com/file/d/1krZJUWeQlGR1KTKKg1g0qBDA7mtKmNEQ/view?usp=drive_link" target="_blank" rel="noopener">View USA Report</a>
-        <a class="button" href="https://drive.google.com/file/d/1PyQVkBjpdQJ-u3A8CTPtZTxUgw7G07N0/view?usp=drive_link" target="_blank" rel="noopener">View Europe Report</a>
-        <a class="button" href="https://drive.google.com/file/d/1niqbx93IV-aytJJGqL4gSaNtXH7nwceB/view?usp=drive_link" target="_blank" rel="noopener">View Italy Report</a>
+        <span id="mosaic-report-links">
+          <a class="button" href="https://drive.google.com/file/d/1krZJUWeQlGR1KTKKg1g0qBDA7mtKmNEQ/view?usp=drive_link" target="_blank" rel="noopener">View USA Report</a>
+          <a class="button" href="https://drive.google.com/file/d/1PyQVkBjpdQJ-u3A8CTPtZTxUgw7G07N0/view?usp=drive_link" target="_blank" rel="noopener">View Europe Report</a>
+          <a class="button" href="https://drive.google.com/file/d/1vuY1MQdQc6OKyEcm1I7Vfm60XvZobnRi/view?usp=drive_link" target="_blank" rel="noopener">View Italy Report</a>
+        </span>
       </div>
     </div>
   </section>
@@ -846,6 +848,39 @@
     <p>Quantitative Research • Trading Tools Development • Coaching • Publishing • Market View</p>
     <p>© 2026 Domenico D'Errico. All rights reserved.</p>
   </footer>
+
+  <script>
+    fetch('reports/reports_index.json', { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Reports index unavailable');
+        }
+        return response.json();
+      })
+      .then(function (reports) {
+        var container = document.getElementById('mosaic-report-links');
+        if (!container || !Array.isArray(reports) || !reports.length) {
+          return;
+        }
+
+        container.innerHTML = '';
+        reports
+          .filter(function (report) { return report.Market && report.Report_URL; })
+          .sort(function (a, b) { return String(a.Market).localeCompare(String(b.Market)); })
+          .forEach(function (report) {
+            var link = document.createElement('a');
+            link.className = 'button';
+            link.href = report.Report_URL;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.textContent = 'View ' + report.Market + ' Report';
+            container.appendChild(link);
+          });
+      })
+      .catch(function () {
+        // Keep the static report links visible if the dynamic index is missing.
+      });
+  </script>
 
 </body>
 </html>
