@@ -1,13 +1,13 @@
-Market,Display_Name,Country_Code,Region,Benchmark,Ticker_Count,Status,Available,Report_File,Report_URL,Updated_At,Trend,Stability
-USA100,USA100,US,North America,SPY,100,Available,True,Report_USA100.pdf,reports/Report_USA100.pdf,2026-06-19T11:08:26+02:00,,
-Europe50,Europe50,EU,Europe,^STOXX50E,49,Available,True,Report_Europe50.pdf,reports/Report_Europe50.pdf,2026-06-19T11:08:26+02:00,,
-Italy30,Italy30,IT,Europe,FTSEMIB.MI,28,Available,True,Report_Italy30.pdf,reports/Report_Italy30.pdf,2026-06-19T11:08:26+02:00,,
-UK30,UK30,GB,Europe,^FTSE,30,Available,True,Report_UK30.pdf,reports/Report_UK30.pdf,2026-06-19T11:08:26+02:00,,
-France40,France40,FR,Europe,^FCHI,40,Available,True,Report_France40.pdf,reports/Report_France40.pdf,2026-06-19T11:08:26+02:00,,
-Germany30,Germany30,DE,Europe,^GDAXI,40,Available,True,Report_Germany30.pdf,reports/Report_Germany30.pdf,2026-06-19T11:08:26+02:00,,
-Australia50,Australia50,AU,Pacific,^AXJO,50,Available,True,Report_Australia50.pdf,reports/Report_Australia50.pdf,2026-06-19T11:08:26+02:00,,
-Japan50,Japan50,JP,Asia,^N225,50,Available,True,Report_Japan50.pdf,reports/Report_Japan50.pdf,2026-06-19T11:08:26+02:00,,
-Canada50,Canada50,CA,North America,^GSPTSE,50,Available,True,Report_Canada50.pdf,reports/Report_Canada50.pdf,2026-06-19T11:08:26+02:00,,
-Mexico30,Mexico30,MX,Latin America,^MXX,35,Available,True,Report_Mexico30.pdf,reports/Report_Mexico30.pdf,2026-06-19T11:08:26+02:00,,
-South Korea30,South Korea30,KR,Asia,^KS11,29,Available,True,Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,2026-06-19T11:08:26+02:00,,
-South Africa30,South Africa30,ZA,Africa,^J203.JO,26,Available,True,Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,2026-06-19T11:08:26+02:00,,
+Market,Display_Name,Country_Code,Region,Benchmark,Ticker_Count,Status,Available,Report_File,Report_URL,Updated_At,Trend,Stability,Benchmark_Slope,Benchmark_R2,Scores_Updated_At
+USA100,USA100,US,North America,SPY,100,Available,True,Report_USA100.pdf,reports/Report_USA100.pdf,2026-06-19T11:50:17+02:00,42,73,0.0030587288237143703,0.7274368739181329,2026-06-19T11:50:17+02:00
+Europe50,Europe50,EU,Europe,^STOXX50E,49,Available,True,Report_Europe50.pdf,reports/Report_Europe50.pdf,2026-06-19T11:50:17+02:00,33,71,0.002662665567995306,0.7129485268696079,2026-06-19T11:50:17+02:00
+Italy30,Italy30,IT,Europe,FTSEMIB.MI,28,Available,True,Report_Italy30.pdf,reports/Report_Italy30.pdf,2026-06-19T11:50:17+02:00,75,84,0.004247183029511212,0.8421037085904017,2026-06-19T11:50:17+02:00
+UK30,UK30,GB,Europe,^FTSE,30,Available,True,Report_UK30.pdf,reports/Report_UK30.pdf,2026-06-19T11:50:17+02:00,50,86,0.0035283299716994117,0.8570729898285621,2026-06-19T11:50:17+02:00
+France40,France40,FR,Europe,^FCHI,40,Available,True,Report_France40.pdf,reports/Report_France40.pdf,2026-06-19T11:50:17+02:00,25,36,0.0011741722191518785,0.3599355514171372,2026-06-19T11:50:17+02:00
+Germany30,Germany30,DE,Europe,^GDAXI,40,Available,True,Report_Germany30.pdf,reports/Report_Germany30.pdf,2026-06-19T11:50:17+02:00,17,5,0.0003928680378635085,0.04653939411329955,2026-06-19T11:50:17+02:00
+Australia50,Australia50,AU,Pacific,^AXJO,50,Available,True,Report_Australia50.pdf,reports/Report_Australia50.pdf,2026-06-19T11:50:17+02:00,8,0,-5.100742703804704e-05,0.0016469793618711925,2026-06-19T11:50:17+02:00
+Japan50,Japan50,JP,Asia,^N225,50,Available,True,Report_Japan50.pdf,reports/Report_Japan50.pdf,2026-06-19T11:50:17+02:00,92,94,0.009649471633315315,0.9385690546994724,2026-06-19T11:50:17+02:00
+Canada50,Canada50,CA,North America,^GSPTSE,50,Available,True,Report_Canada50.pdf,reports/Report_Canada50.pdf,2026-06-19T11:50:17+02:00,83,92,0.005081346473846968,0.921861225407204,2026-06-19T11:50:17+02:00
+Mexico30,Mexico30,MX,Latin America,^MXX,35,Available,True,Report_Mexico30.pdf,reports/Report_Mexico30.pdf,2026-06-19T11:50:17+02:00,67,81,0.004161912439033154,0.8057753133525306,2026-06-19T11:50:17+02:00
+South Korea30,South Korea30,KR,Asia,^KS11,29,Available,True,Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,2026-06-19T11:50:17+02:00,100,95,0.02053317230538622,0.9481606630914281,2026-06-19T11:50:17+02:00
+South Africa30,South Africa30,ZA,Africa,^J203.JO,26,Available,True,Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,2026-06-19T11:50:17+02:00,58,61,0.003615200197555329,0.6063708134643087,2026-06-19T11:50:17+02:00
