@@ -228,6 +228,163 @@
       line-height: 1.4;
     }
 
+    .countries-matrix {
+      max-width: 1320px;
+      margin: 34px auto 0;
+      padding: 4px 0 0;
+    }
+
+    .matrix-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 14px;
+    }
+
+    .matrix-heading h3 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .matrix-heading p {
+      margin: 0;
+      color: #bfdbfe;
+      font-size: 13px;
+    }
+
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .country-card {
+      min-height: 188px;
+      padding: 20px 18px 18px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 34%),
+        linear-gradient(135deg, #14532d, #365314);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 35px rgba(0,0,0,0.20);
+    }
+
+    .country-card.is-hot {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 34%),
+        linear-gradient(135deg, #7c2d12, #9a3412);
+    }
+
+    .country-card.is-risk {
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 34%),
+        linear-gradient(135deg, #7f1d1d, #991b1b);
+    }
+
+    .country-card.is-pending {
+      opacity: 0.78;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.10), transparent 34%),
+        linear-gradient(135deg, #1f2937, #334155);
+    }
+
+    .country-code {
+      margin: 0 0 10px;
+      color: #f8fafc;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .country-name {
+      margin: 0 0 18px;
+      color: #ffffff;
+      font-size: 23px;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .country-meta {
+      margin: -10px 0 16px;
+      color: #dbeafe;
+      font-size: 12px;
+    }
+
+    .report-pill {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .report-pill.is-disabled {
+      pointer-events: none;
+      opacity: 0.72;
+    }
+
+    .score-row {
+      margin-top: 10px;
+    }
+
+    .score-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+      color: #ffffff;
+      font-size: 11px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .score-label strong {
+      font-size: 11px;
+    }
+
+    .score-track {
+      height: 7px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.24);
+    }
+
+    .score-fill {
+      display: block;
+      height: 100%;
+      width: 0;
+      border-radius: inherit;
+      background: #65a30d;
+    }
+
+    .country-card.is-hot .score-fill {
+      background: #f59e0b;
+    }
+
+    .country-card.is-risk .score-fill {
+      background: #ef4444;
+    }
+
+    .country-card.is-pending .score-fill {
+      background: #94a3b8;
+    }
+
     .secondary-research {
       max-width: 760px;
       margin: 34px auto 0;
@@ -432,6 +589,18 @@
         grid-template-columns: 1fr;
       }
 
+      .matrix-heading {
+        display: block;
+      }
+
+      .matrix-heading p {
+        margin-top: 8px;
+      }
+
+      .country-grid {
+        grid-template-columns: 1fr;
+      }
+
       .book-feature img,
       .event-feature img,
       .book-library img,
@@ -527,6 +696,14 @@
         <figcaption>Example dashboard: trend, stability and status signals on an individual stock.</figcaption>
       </figure>
     </div>
+  </div>
+
+  <div class="countries-matrix" id="countries-matrix">
+    <div class="matrix-heading">
+      <h3>Countries Matrix</h3>
+      <p>Trend and stability by market</p>
+    </div>
+    <div class="country-grid" id="country-grid" aria-live="polite"></div>
   </div>
 
   <div class="event-feature secondary-research">
@@ -850,6 +1027,132 @@
   </footer>
 
   <script>
+    var marketFallback = [
+      { Market: 'USA100', Display_Name: 'USA100', Country_Code: 'US', Region: 'North America', Ticker_Count: 100 },
+      { Market: 'Europe50', Display_Name: 'Europe50', Country_Code: 'EU', Region: 'Europe', Ticker_Count: 49 },
+      { Market: 'Italy30', Display_Name: 'Italy30', Country_Code: 'IT', Region: 'Europe', Ticker_Count: 28 },
+      { Market: 'UK30', Display_Name: 'UK30', Country_Code: 'GB', Region: 'Europe', Ticker_Count: 30 },
+      { Market: 'France40', Display_Name: 'France40', Country_Code: 'FR', Region: 'Europe', Ticker_Count: 40 },
+      { Market: 'Germany30', Display_Name: 'Germany30', Country_Code: 'DE', Region: 'Europe', Ticker_Count: 40 },
+      { Market: 'Australia50', Display_Name: 'Australia50', Country_Code: 'AU', Region: 'Pacific', Ticker_Count: 50 },
+      { Market: 'Japan50', Display_Name: 'Japan50', Country_Code: 'JP', Region: 'Asia', Ticker_Count: 50 },
+      { Market: 'Canada50', Display_Name: 'Canada50', Country_Code: 'CA', Region: 'North America', Ticker_Count: 50 },
+      { Market: 'Mexico30', Display_Name: 'Mexico30', Country_Code: 'MX', Region: 'Latin America', Ticker_Count: 35 },
+      { Market: 'South Korea30', Display_Name: 'South Korea30', Country_Code: 'KR', Region: 'Asia', Ticker_Count: 29 },
+      { Market: 'South Africa30', Display_Name: 'South Africa30', Country_Code: 'ZA', Region: 'Africa', Ticker_Count: 26 }
+    ];
+
+    var marketOrder = marketFallback.reduce(function (acc, item, index) {
+      acc[item.Market] = index;
+      return acc;
+    }, {});
+
+    function scoreValue(report, key) {
+      if (report[key] === null || report[key] === undefined || report[key] === '') {
+        return null;
+      }
+      var value = Number(report[key]);
+      return Number.isFinite(value) ? Math.max(0, Math.min(100, Math.round(value))) : null;
+    }
+
+    function cardTone(trend, available) {
+      if (!available) {
+        return 'is-pending';
+      }
+      if (trend !== null && trend < 50) {
+        return 'is-risk';
+      }
+      if (trend !== null && trend < 65) {
+        return 'is-hot';
+      }
+      return '';
+    }
+
+    function scoreRow(label, value) {
+      var width = value === null ? 0 : value;
+      var text = value === null ? '-' : String(value);
+      return '' +
+        '<div class="score-row">' +
+          '<div class="score-label"><span>' + label + '</span><strong>' + text + '</strong></div>' +
+          '<div class="score-track"><span class="score-fill" style="width:' + width + '%"></span></div>' +
+        '</div>';
+    }
+
+    function renderReportLinks(reports) {
+      var container = document.getElementById('mosaic-report-links');
+      if (!container) {
+        return;
+      }
+
+      var availableReports = reports.filter(function (report) {
+        return report.Market && report.Report_URL;
+      });
+      if (!availableReports.length) {
+        return;
+      }
+
+      container.innerHTML = '';
+      availableReports.slice(0, 6).forEach(function (report) {
+        var link = document.createElement('a');
+        link.className = 'button';
+        link.href = report.Report_URL;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = 'View ' + (report.Display_Name || report.Market) + ' Report';
+        container.appendChild(link);
+      });
+    }
+
+    function renderCountriesMatrix(reports) {
+      var grid = document.getElementById('country-grid');
+      if (!grid) {
+        return;
+      }
+
+      var mergedByMarket = marketFallback.reduce(function (acc, item) {
+        acc[item.Market] = Object.assign({}, item, { Available: false, Status: 'Coming soon' });
+        return acc;
+      }, {});
+
+      reports.forEach(function (report) {
+        if (report.Market) {
+          mergedByMarket[report.Market] = Object.assign({}, mergedByMarket[report.Market] || {}, report);
+        }
+      });
+
+      var cards = Object.keys(mergedByMarket)
+        .map(function (market) { return mergedByMarket[market]; })
+        .sort(function (a, b) {
+          return (marketOrder[a.Market] ?? 999) - (marketOrder[b.Market] ?? 999);
+        });
+
+      grid.innerHTML = cards.map(function (report) {
+        var trend = scoreValue(report, 'Trend');
+        var stability = scoreValue(report, 'Stability');
+        var available = Boolean(report.Report_URL || report.Available);
+        var tone = cardTone(trend, available);
+        var href = available ? report.Report_URL : '#';
+        var pillClass = available ? 'report-pill' : 'report-pill is-disabled';
+        var pillText = available ? 'Open Report' : 'Coming Soon';
+        var name = report.Display_Name || report.Market;
+        var code = report.Country_Code || String(name || '').slice(0, 2).toUpperCase();
+        var tickerCount = Number(report.Ticker_Count);
+        var meta = Number.isFinite(tickerCount) ? tickerCount + ' tickers' : (report.Region || '');
+
+        return '' +
+          '<article class="country-card ' + tone + '">' +
+            '<a class="' + pillClass + '" href="' + href + '" target="_blank" rel="noopener">' + pillText + '</a>' +
+            '<p class="country-code">' + code + '</p>' +
+            '<h4 class="country-name">' + name + '</h4>' +
+            '<p class="country-meta">' + meta + '</p>' +
+            scoreRow('Trend', trend) +
+            scoreRow('Stability', stability) +
+          '</article>';
+      }).join('');
+    }
+
+    renderCountriesMatrix([]);
+
     fetch('reports/reports_index.json', { cache: 'no-store' })
       .then(function (response) {
         if (!response.ok) {
@@ -858,27 +1161,14 @@
         return response.json();
       })
       .then(function (reports) {
-        var container = document.getElementById('mosaic-report-links');
-        if (!container || !Array.isArray(reports) || !reports.length) {
+        if (!Array.isArray(reports)) {
           return;
         }
-
-        container.innerHTML = '';
-        reports
-          .filter(function (report) { return report.Market && report.Report_URL; })
-          .sort(function (a, b) { return String(a.Market).localeCompare(String(b.Market)); })
-          .forEach(function (report) {
-            var link = document.createElement('a');
-            link.className = 'button';
-            link.href = report.Report_URL;
-            link.target = '_blank';
-            link.rel = 'noopener';
-            link.textContent = 'View ' + report.Market + ' Report';
-            container.appendChild(link);
-          });
+        renderReportLinks(reports);
+        renderCountriesMatrix(reports);
       })
       .catch(function () {
-        // Keep the static report links visible if the dynamic index is missing.
+        // Keep the fallback market matrix and the static report links visible.
       });
   </script>
 

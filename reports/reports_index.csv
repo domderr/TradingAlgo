@@ -1,4 +1,13 @@
-Market,Report_File,Report_URL,Updated_At
-Europe,Report_Europe.pdf,reports/Report_Europe.pdf,2026-06-19T06:32:57+02:00
-Italy,Report_Italy.pdf,reports/Report_Italy.pdf,2026-06-19T06:32:57+02:00
-USA,Report_USA.pdf,reports/Report_USA.pdf,2026-06-19T06:32:58+02:00
+Market,Display_Name,Country_Code,Region,Benchmark,Ticker_Count,Status,Available,Report_File,Report_URL,Updated_At,Trend,Stability
+USA100,USA100,US,North America,SPY,100,Available,True,Report_USA100.pdf,reports/Report_USA100.pdf,2026-06-19T11:08:26+02:00,,
+Europe50,Europe50,EU,Europe,^STOXX50E,49,Available,True,Report_Europe50.pdf,reports/Report_Europe50.pdf,2026-06-19T11:08:26+02:00,,
+Italy30,Italy30,IT,Europe,FTSEMIB.MI,28,Available,True,Report_Italy30.pdf,reports/Report_Italy30.pdf,2026-06-19T11:08:26+02:00,,
+UK30,UK30,GB,Europe,^FTSE,30,Available,True,Report_UK30.pdf,reports/Report_UK30.pdf,2026-06-19T11:08:26+02:00,,
+France40,France40,FR,Europe,^FCHI,40,Available,True,Report_France40.pdf,reports/Report_France40.pdf,2026-06-19T11:08:26+02:00,,
+Germany30,Germany30,DE,Europe,^GDAXI,40,Available,True,Report_Germany30.pdf,reports/Report_Germany30.pdf,2026-06-19T11:08:26+02:00,,
+Australia50,Australia50,AU,Pacific,^AXJO,50,Available,True,Report_Australia50.pdf,reports/Report_Australia50.pdf,2026-06-19T11:08:26+02:00,,
+Japan50,Japan50,JP,Asia,^N225,50,Available,True,Report_Japan50.pdf,reports/Report_Japan50.pdf,2026-06-19T11:08:26+02:00,,
+Canada50,Canada50,CA,North America,^GSPTSE,50,Available,True,Report_Canada50.pdf,reports/Report_Canada50.pdf,2026-06-19T11:08:26+02:00,,
+Mexico30,Mexico30,MX,Latin America,^MXX,35,Available,True,Report_Mexico30.pdf,reports/Report_Mexico30.pdf,2026-06-19T11:08:26+02:00,,
+South Korea30,South Korea30,KR,Asia,^KS11,29,Available,True,Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,2026-06-19T11:08:26+02:00,,
+South Africa30,South Africa30,ZA,Africa,^J203.JO,26,Available,True,Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,2026-06-19T11:08:26+02:00,,
