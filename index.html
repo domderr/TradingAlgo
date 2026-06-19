@@ -33,7 +33,8 @@
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 18px 8%;
+      min-height: 72px;
+      padding: calc(22px + env(safe-area-inset-top)) 8% 18px;
       background: rgba(3,12,25,0.90);
       display: flex;
       justify-content: space-between;
@@ -244,11 +245,26 @@
       margin-bottom: 14px;
     }
 
+    .matrix-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .matrix-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 8px;
+      flex: 0 0 auto;
+    }
+
     .matrix-heading h3 {
       margin: 0;
       color: #ffffff;
       font-size: 28px;
-      line-height: 1;
+      line-height: 1.1;
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
@@ -266,16 +282,29 @@
     }
 
     .country-card {
+      display: block;
       min-height: 188px;
       padding: 20px 18px 18px;
       position: relative;
       overflow: hidden;
       border-radius: 8px;
       border: 1px solid rgba(255,255,255,0.16);
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
       background:
         radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 34%),
         linear-gradient(135deg, #14532d, #365314);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 35px rgba(0,0,0,0.20);
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .country-card:hover,
+    .country-card:focus-visible {
+      border-color: rgba(255,255,255,0.38);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.24), 0 20px 42px rgba(0,0,0,0.28);
+      transform: translateY(-2px);
+      outline: none;
     }
 
     .country-card.is-hot {
@@ -561,7 +590,8 @@
         flex-wrap: wrap;
         gap: 12px 18px;
         align-items: flex-start;
-        padding: 16px 8%;
+        min-height: auto;
+        padding: calc(20px + env(safe-area-inset-top)) 8% 16px;
       }
 
       nav .logo {
@@ -616,6 +646,19 @@
         margin-top: 8px;
       }
 
+      .matrix-title {
+        align-items: flex-start;
+      }
+
+      .matrix-logo {
+        width: 38px;
+        height: 38px;
+      }
+
+      .matrix-heading h3 {
+        font-size: 23px;
+      }
+
       .country-grid {
         grid-template-columns: 1fr;
       }
@@ -630,7 +673,7 @@
 
     @media (max-width: 380px) {
       nav {
-        padding: 14px 7%;
+        padding: calc(18px + env(safe-area-inset-top)) 7% 14px;
       }
 
       nav .logo {
@@ -733,7 +776,10 @@
 
   <div class="countries-matrix" id="countries-matrix">
     <div class="matrix-heading">
-      <h3>Countries Matrix</h3>
+      <div class="matrix-title">
+        <img class="matrix-logo" src="assets/logo.png" alt="TradingAlgo Mosaic logo">
+        <h3>TradingAlgo Mosaic - Countries Matrix</h3>
+      </div>
       <p>Trend and stability by market</p>
     </div>
     <div class="country-grid" id="country-grid" aria-live="polite"></div>
@@ -1171,16 +1217,17 @@
         var code = report.Country_Code || String(name || '').slice(0, 2).toUpperCase();
         var tickerCount = Number(report.Ticker_Count);
         var meta = Number.isFinite(tickerCount) ? tickerCount + ' tickers' : (report.Region || '');
+        var targetAttrs = available ? ' target="_blank" rel="noopener"' : ' aria-disabled="true"';
 
         return '' +
-          '<article class="country-card ' + tone + '">' +
-            '<a class="' + pillClass + '" href="' + href + '" target="_blank" rel="noopener">' + pillText + '</a>' +
+          '<a class="country-card ' + tone + '" href="' + href + '"' + targetAttrs + ' aria-label="Open ' + name + ' report">' +
+            '<span class="' + pillClass + '">' + pillText + '</span>' +
             '<p class="country-code">' + code + '</p>' +
             '<h4 class="country-name">' + name + '</h4>' +
             '<p class="country-meta">' + meta + '</p>' +
             scoreRow('Trend', trend) +
             scoreRow('Stability', stability) +
-          '</article>';
+          '</a>';
       }).join('');
     }
 
