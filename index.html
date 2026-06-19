@@ -31,7 +31,7 @@
 
     nav {
       position: fixed;
-      top: 0;
+      top: 12px;
       width: 100%;
       min-height: 72px;
       padding: calc(22px + env(safe-area-inset-top)) 8% 18px;
@@ -599,6 +599,7 @@
     @media (max-width: 800px) {
       nav {
         position: static;
+        top: auto;
         display: flex;
         flex-wrap: wrap;
         gap: 12px 18px;
