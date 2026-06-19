@@ -255,8 +255,8 @@
     }
 
     .matrix-logo {
-      width: 44px;
-      height: 44px;
+      width: 88px;
+      height: 88px;
       object-fit: contain;
       border-radius: 8px;
       flex: 0 0 auto;
@@ -275,6 +275,17 @@
       margin: 0;
       color: #bfdbfe;
       font-size: 13px;
+    }
+
+    .matrix-kicker {
+      text-align: right;
+    }
+
+    .matrix-date {
+      display: block;
+      margin-top: 6px;
+      color: #dbeafe;
+      font-size: 12px;
     }
 
     .country-grid {
@@ -654,8 +665,8 @@
       }
 
       .matrix-logo {
-        width: 38px;
-        height: 38px;
+        width: 76px;
+        height: 76px;
       }
 
       .matrix-heading h3 {
@@ -739,79 +750,18 @@
 <section class="dark">
   <h2 class="section-title">Latest Research</h2>
 
-  <div class="mosaic-research">
-    <div>
-      <h3>TradingAlgo Mosaic Weekly Market View</h3>
-
-      <p>
-        A weekly algorithmic market review that turns hundreds of stocks into a focused
-        leadership map, highlighting the securities that best represent the current market phase.
-      </p>
-
-      <p>
-        Mosaic combines trend quality, stability and portfolio contribution to help investors
-        move from single-stock screening to coordinated portfolio construction.
-      </p>
-
-      <a class="button"
-         href="https://drive.google.com/file/d/1krZJUWeQlGR1KTKKg1g0qBDA7mtKmNEQ/view?usp=drive_link"
-         target="_blank"
-         rel="noopener">
-         View USA Report
-      </a>
-      <a class="button" href="how-to-read-mosaic-report.html">How to Read the Report</a>
-    </div>
-
-    <div class="mosaic-preview-grid">
-      <figure class="mosaic-preview">
-        <img src="assets/reports/tradingalgo-mosaic-usa-report-cover.png"
-             alt="First page of the TradingAlgo Mosaic USA weekly report">
-        <figcaption>First page of the USA weekly report: allocation, portfolio metrics and current positions.</figcaption>
-      </figure>
-
-      <figure class="mosaic-preview">
-        <img src="assets/reports/tradingalgo-mosaic-nvda-dashboard.png"
-             alt="TradingAlgo Mosaic NVDA dashboard example">
-        <figcaption>Example dashboard: trend, stability and status signals on an individual stock.</figcaption>
-      </figure>
-    </div>
-  </div>
-
   <div class="countries-matrix" id="countries-matrix">
     <div class="matrix-heading">
       <div class="matrix-title">
         <img class="matrix-logo" src="assets/logo.png" alt="TradingAlgo Mosaic logo">
         <h3>TradingAlgo Mosaic - Countries Matrix</h3>
       </div>
-      <p>Trend and stability by market</p>
+      <p class="matrix-kicker">
+        Trend and stability by market
+        <span class="matrix-date" id="matrix-last-update">Last update: loading</span>
+      </p>
     </div>
     <div class="country-grid" id="country-grid" aria-live="polite"></div>
-  </div>
-
-  <div class="event-feature secondary-research">
-    <img src="assets/medium/china-india.jpg"
-         alt="What's Going On with China and India">
-
-    <div>
-      <h3>Also from Latest Research: What's Going On with China and India?</h3>
-
-      <p>
-        A comparative analysis of two of the world's most important
-        emerging markets through Trend Score and Sharpe Ratio.
-      </p>
-
-      <p>
-        Why China is struggling while India is losing momentum,
-        and what investors should watch next.
-      </p>
-
-      <a class="button"
-         href="https://medium.com/@domderrico/whats-going-on-with-china-and-india-6cef54f00d32"
-         target="_blank"
-         rel="noopener">
-         Read on Medium
-      </a>
-    </div>
   </div>
 </section>
   <section id="framework" class="dark">
@@ -1185,6 +1135,39 @@
       });
     }
 
+    function renderLastUpdate(reports) {
+      var container = document.getElementById('matrix-last-update');
+      if (!container || !Array.isArray(reports) || !reports.length) {
+        return;
+      }
+
+      var latestTimestamp = reports
+        .map(function (report) { return report.Scores_Updated_At || report.Updated_At || ''; })
+        .filter(Boolean)
+        .sort()
+        .pop();
+
+      if (!latestTimestamp) {
+        container.textContent = 'Last update: unavailable';
+        return;
+      }
+
+      var date = new Date(latestTimestamp);
+      if (Number.isNaN(date.getTime())) {
+        container.textContent = 'Last update: ' + latestTimestamp;
+        return;
+      }
+
+      container.textContent = 'Last update: ' + date.toLocaleString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZoneName: 'short'
+      });
+    }
+
     function renderCountriesMatrix(reports) {
       var grid = document.getElementById('country-grid');
       if (!grid) {
@@ -1248,6 +1231,7 @@
           return;
         }
         renderReportLinks(reports);
+        renderLastUpdate(reports);
         renderCountriesMatrix(reports);
       })
       .catch(function () {
