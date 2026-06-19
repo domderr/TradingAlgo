@@ -10,9 +10,12 @@
     "Available": true,
     "Report_File": "Report_USA100.pdf",
     "Report_URL": "reports/Report_USA100.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 42,
+    "Stability": 73,
+    "Benchmark_Slope": 0.0030587288237143703,
+    "Benchmark_R2": 0.7274368739181329,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "Europe50",
@@ -25,9 +28,12 @@
     "Available": true,
     "Report_File": "Report_Europe50.pdf",
     "Report_URL": "reports/Report_Europe50.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 33,
+    "Stability": 71,
+    "Benchmark_Slope": 0.002662665567995306,
+    "Benchmark_R2": 0.7129485268696079,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "Italy30",
@@ -40,9 +46,12 @@
     "Available": true,
     "Report_File": "Report_Italy30.pdf",
     "Report_URL": "reports/Report_Italy30.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 75,
+    "Stability": 84,
+    "Benchmark_Slope": 0.004247183029511212,
+    "Benchmark_R2": 0.8421037085904017,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "UK30",
@@ -55,9 +64,12 @@
     "Available": true,
     "Report_File": "Report_UK30.pdf",
     "Report_URL": "reports/Report_UK30.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 50,
+    "Stability": 86,
+    "Benchmark_Slope": 0.0035283299716994117,
+    "Benchmark_R2": 0.8570729898285621,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "France40",
@@ -70,9 +82,12 @@
     "Available": true,
     "Report_File": "Report_France40.pdf",
     "Report_URL": "reports/Report_France40.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 25,
+    "Stability": 36,
+    "Benchmark_Slope": 0.0011741722191518785,
+    "Benchmark_R2": 0.3599355514171372,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "Germany30",
@@ -85,9 +100,12 @@
     "Available": true,
     "Report_File": "Report_Germany30.pdf",
     "Report_URL": "reports/Report_Germany30.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 17,
+    "Stability": 5,
+    "Benchmark_Slope": 0.0003928680378635085,
+    "Benchmark_R2": 0.04653939411329955,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "Australia50",
@@ -100,9 +118,12 @@
     "Available": true,
     "Report_File": "Report_Australia50.pdf",
     "Report_URL": "reports/Report_Australia50.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 8,
+    "Stability": 0,
+    "Benchmark_Slope": -5.100742703804704e-05,
+    "Benchmark_R2": 0.0016469793618711925,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "Japan50",
@@ -115,9 +136,12 @@
     "Available": true,
     "Report_File": "Report_Japan50.pdf",
     "Report_URL": "reports/Report_Japan50.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 92,
+    "Stability": 94,
+    "Benchmark_Slope": 0.009649471633315315,
+    "Benchmark_R2": 0.9385690546994724,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "Canada50",
@@ -130,9 +154,12 @@
     "Available": true,
     "Report_File": "Report_Canada50.pdf",
     "Report_URL": "reports/Report_Canada50.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 83,
+    "Stability": 92,
+    "Benchmark_Slope": 0.005081346473846968,
+    "Benchmark_R2": 0.921861225407204,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "Mexico30",
@@ -145,9 +172,12 @@
     "Available": true,
     "Report_File": "Report_Mexico30.pdf",
     "Report_URL": "reports/Report_Mexico30.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 67,
+    "Stability": 81,
+    "Benchmark_Slope": 0.004161912439033154,
+    "Benchmark_R2": 0.8057753133525306,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "South Korea30",
@@ -160,9 +190,12 @@
     "Available": true,
     "Report_File": "Report_South_Korea30.pdf",
     "Report_URL": "reports/Report_South_Korea30.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 100,
+    "Stability": 95,
+    "Benchmark_Slope": 0.02053317230538622,
+    "Benchmark_R2": 0.9481606630914281,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   },
   {
     "Market": "South Africa30",
@@ -175,8 +208,11 @@
     "Available": true,
     "Report_File": "Report_South_Africa30.pdf",
     "Report_URL": "reports/Report_South_Africa30.pdf",
-    "Updated_At": "2026-06-19T11:08:26+02:00",
-    "Trend": null,
-    "Stability": null
+    "Updated_At": "2026-06-19T11:50:17+02:00",
+    "Trend": 58,
+    "Stability": 61,
+    "Benchmark_Slope": 0.003615200197555329,
+    "Benchmark_R2": 0.6063708134643087,
+    "Scores_Updated_At": "2026-06-19T11:50:17+02:00"
   }
 ]
