@@ -30,11 +30,11 @@
     }
 
     nav {
-      position: fixed;
-      top: 12px;
+      position: static;
+      top: auto;
       width: 100%;
       min-height: 72px;
-      padding: calc(22px + env(safe-area-inset-top)) 8% 18px;
+      padding: calc(28px + env(safe-area-inset-top)) 8% 22px;
       background: rgba(3,12,25,0.90);
       display: flex;
       justify-content: space-between;
@@ -50,7 +50,7 @@
       letter-spacing: 1px;
       line-height: 1.1;
       white-space: nowrap;
-      transform: translateY(8px);
+      transform: none;
     }
 
     nav a {
@@ -611,7 +611,7 @@
       nav .logo {
         width: 100%;
         font-size: 22px;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
       }
 
       nav > div:last-child {
