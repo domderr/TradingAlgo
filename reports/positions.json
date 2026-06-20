@@ -1,0 +1,394 @@
+{
+  "USA100": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "MU",
+        "name": "Micron Technology, Inc."
+      },
+      {
+        "ticker": "CAT",
+        "name": "Caterpillar, Inc."
+      },
+      {
+        "ticker": "FDX",
+        "name": "FedEx Corporation"
+      },
+      {
+        "ticker": "GOOGL",
+        "name": "Alphabet Inc."
+      },
+      {
+        "ticker": "SLB",
+        "name": "SLB Limited"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "SLB",
+          "name": "SLB Limited"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "GEV",
+          "name": "GE Vernova Inc."
+        }
+      ]
+    }
+  },
+  "Canada50": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "CVE.TO",
+        "name": "CENOVUS ENERGY INC."
+      },
+      {
+        "ticker": "TECK-B.TO",
+        "name": "TECK RESOURCES LIMITED CL B"
+      },
+      {
+        "ticker": "CM.TO",
+        "name": "CANADIAN IMPERIAL BANK OF COMME"
+      },
+      {
+        "ticker": "GWO.TO",
+        "name": "GREAT-WEST LIFECO INC"
+      },
+      {
+        "ticker": "SAP.TO",
+        "name": "SAPUTO INC."
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "Mexico30": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "GMEXICOB.MX",
+        "name": "GRUPO MEXICO SAB DE CV"
+      },
+      {
+        "ticker": "AMXB.MX",
+        "name": "AMERICA MOVIL SAB DE CV"
+      },
+      {
+        "ticker": "PINFRA.MX",
+        "name": "PROMOTORA Y OPERADORA DE"
+      },
+      {
+        "ticker": "FEMSAUBD.MX",
+        "name": "FOMENTO ECONOMICO"
+      },
+      {
+        "ticker": "LIVEPOLC-1.MX",
+        "name": "EL PUERTO DE LIVERPOOL"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "Europe50": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "NOKIA.HE",
+        "name": "Nokia Corporation"
+      },
+      {
+        "ticker": "ASML.AS",
+        "name": "ASML HOLDING"
+      },
+      {
+        "ticker": "ENI.MI",
+        "name": "ENI"
+      },
+      {
+        "ticker": "ENGI.PA",
+        "name": "ENGIE"
+      },
+      {
+        "ticker": "IFX.DE",
+        "name": "INFINEON TECHNOLOGIES AG N"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "UK30": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "GLEN.L",
+        "name": "GLENCORE PLC ORD USD0.01"
+      },
+      {
+        "ticker": "RIO.L",
+        "name": "RIO TINTO PLC ORD 10P"
+      },
+      {
+        "ticker": "GSK.L",
+        "name": "GSK PLC ORD 31 1/4P"
+      },
+      {
+        "ticker": "STAN.L",
+        "name": "STANDARD CHARTERED PLC ORD"
+      },
+      {
+        "ticker": "BP.L",
+        "name": "BP PLC $0.25"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "France40": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "STMPA.PA",
+        "name": "STMICROELECTRONICS"
+      },
+      {
+        "ticker": "ENGI.PA",
+        "name": "ENGIE"
+      },
+      {
+        "ticker": "TTE.PA",
+        "name": "TOTALENERGIES"
+      },
+      {
+        "ticker": "GLE.PA",
+        "name": "SOCIETE GENERALE"
+      },
+      {
+        "ticker": "LR.PA",
+        "name": "LEGRAND"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "Germany30": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "ENR.DE",
+        "name": "Siemens Energy AG N"
+      },
+      {
+        "ticker": "RWE.DE",
+        "name": "RWE AG I"
+      },
+      {
+        "ticker": "IFX.DE",
+        "name": "INFINEON TECHNOLOGIES AG N"
+      },
+      {
+        "ticker": "BAYN.DE",
+        "name": "Bayer AG N"
+      },
+      {
+        "ticker": "DHL.DE",
+        "name": "DEUTSCHE POST AG N"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "Italy30": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "PRY.MI",
+        "name": "PRYSMIAN"
+      },
+      {
+        "ticker": "TEN.MI",
+        "name": "TENARIS"
+      },
+      {
+        "ticker": "TIT.MI",
+        "name": "TELECOM ITALIA"
+      },
+      {
+        "ticker": "STMMI.MI",
+        "name": "STMICROELECTRONICS"
+      },
+      {
+        "ticker": "SRG.MI",
+        "name": "SNAM"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "Japan50": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "6981.T",
+        "name": "MURATA MANUFACTURING CO"
+      },
+      {
+        "ticker": "6857.T",
+        "name": "ADVANTEST CORP"
+      },
+      {
+        "ticker": "8031.T",
+        "name": "MITSUI & CO"
+      },
+      {
+        "ticker": "6954.T",
+        "name": "FANUC CORPORATION"
+      },
+      {
+        "ticker": "9983.T",
+        "name": "FAST RETAILING CO LTD"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "6954.T",
+          "name": "FANUC CORPORATION"
+        },
+        {
+          "ticker": "9983.T",
+          "name": "FAST RETAILING CO LTD"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "6503.T",
+          "name": "MITSUBISHI ELECTRIC CORP"
+        },
+        {
+          "ticker": "8316.T",
+          "name": "SUMITOMO MITSUI FINANCIAL"
+        }
+      ]
+    }
+  },
+  "SouthKorea30": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "000660.KS",
+        "name": "SK hynix"
+      },
+      {
+        "ticker": "005380.KS",
+        "name": "HyundaiMtr"
+      },
+      {
+        "ticker": "006400.KS",
+        "name": "SAMSUNG SDI CO.,LTD."
+      },
+      {
+        "ticker": "034020.KS",
+        "name": "Doosan Enerbility"
+      },
+      {
+        "ticker": "017670.KS",
+        "name": "SKTelecom"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "017670.KS",
+          "name": "SKTelecom"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "010130.KS",
+          "name": "KOREA ZINC"
+        }
+      ]
+    }
+  },
+  "Australia50": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "RIO.AX",
+        "name": "RIO TINTO FPO [RIO]"
+      },
+      {
+        "ticker": "S32.AX",
+        "name": "SOUTH32 FPO [S32]"
+      },
+      {
+        "ticker": "EVN.AX",
+        "name": "EVOLUTION FPO [EVN]"
+      },
+      {
+        "ticker": "LYC.AX",
+        "name": "LYNAS FPO [LYC]"
+      },
+      {
+        "ticker": "WDS.AX",
+        "name": "WOODSIDE FPO [WDS]"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "EVN.AX",
+          "name": "EVOLUTION FPO [EVN]"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "WOW.AX",
+          "name": "WOOLWORTHS FPO [WOW]"
+        }
+      ]
+    }
+  },
+  "SouthAfrica30": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "SOL.JO",
+        "name": "Sasol Limited"
+      },
+      {
+        "ticker": "ANG.JO",
+        "name": "AngloGold Ashanti plc"
+      },
+      {
+        "ticker": "MTN.JO",
+        "name": "MTN Group Ltd"
+      },
+      {
+        "ticker": "REM.JO",
+        "name": "Remgro Ltd"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  }
+}
