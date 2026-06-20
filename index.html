@@ -291,6 +291,132 @@
       line-height: 1.45;
     }
 
+    .country-matrix-visual {
+      position: relative;
+      max-width: 920px;
+      margin: 32px auto;
+      border-radius: 14px;
+    }
+
+    .country-matrix-visual > a {
+      display: block;
+      border-radius: 14px;
+    }
+
+    .country-matrix-visual img {
+      width: 100%;
+      max-width: 720px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .country-matrix-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      padding: 16px;
+      border: 1px solid #24415f;
+      border-radius: 14px;
+      background: rgba(5, 11, 20, 0.94);
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 180ms ease, transform 180ms ease;
+      overflow: auto;
+    }
+
+    .country-matrix-visual:hover img,
+    .country-matrix-visual:focus-within img {
+      opacity: 0.18;
+      transform: scale(0.99);
+    }
+
+    .country-matrix-visual:hover .country-matrix-overlay,
+    .country-matrix-visual:focus-within .country-matrix-overlay {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .matrix-market {
+      min-height: 104px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      color: #ffffff;
+      text-decoration: none;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)),
+        var(--market-color, #334155);
+    }
+
+    .matrix-market strong,
+    .matrix-market span {
+      display: block;
+    }
+
+    .matrix-market-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .matrix-code {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .matrix-status {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .matrix-name {
+      margin-bottom: 10px;
+      color: #d8e4f2;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .matrix-metric {
+      display: grid;
+      gap: 5px;
+      margin-top: 7px;
+      color: #d8e4f2;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .matrix-metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .matrix-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      overflow: hidden;
+    }
+
+    .matrix-bar span {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ff6b6b, #f5c542, #22c55e);
+    }
+
     footer {
       padding: 46px 8%;
       border-top: 1px solid #1d2b3f;
@@ -328,6 +454,21 @@
       .btn {
         width: 100%;
       }
+
+      .country-matrix-overlay {
+        position: static;
+        grid-template-columns: 1fr;
+        margin-top: 14px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: none;
+      }
+
+      .country-matrix-visual:hover img,
+      .country-matrix-visual:focus-within img {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
@@ -358,9 +499,14 @@
       that best represent each market.
     </p>
 
-    <a href="reports/Report_USA100.pdf" target="_blank">
-      <img src="assets/Countries.png" alt="Countries coverage" style="width:100%;max-width:720px;display:block;margin:32px auto;border-radius:12px;box-shadow:var(--shadow);">
-    </a>
+    <div class="country-matrix-visual">
+      <a href="reports/Report_USA100.pdf" target="_blank" aria-label="Download USA100 sample report">
+        <img src="assets/Countries.png" alt="Countries coverage">
+      </a>
+      <div class="country-matrix-overlay" id="country-matrix" aria-label="Country Matrix calculated from Trend and Stability">
+        <div class="matrix-market"><strong>Loading Country Matrix...</strong></div>
+      </div>
+    </div>
 
     <div style="max-width:920px;margin:0 auto 32px;">
       <p style="margin:0 0 16px;color:var(--green);font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;">Covered Markets</p>
@@ -573,5 +719,73 @@
     <p>&copy; 2026 TradingAlgo. Quantitative trading research and portfolio analytics.</p>
     <p>Research material only. Not personalized financial advice.</p>
   </footer>
+
+  <script>
+    function clampScore(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? Math.max(0, Math.min(100, Math.round(number))) : 0;
+    }
+
+    function marketScore(report) {
+      var trend = clampScore(report.Trend);
+      var stability = clampScore(report.Stability);
+      if (!trend && !stability) return 0;
+      return Math.round((trend + stability) / 2);
+    }
+
+    function marketStatus(score) {
+      if (score >= 80) return "Strong";
+      if (score >= 60) return "Positive";
+      if (score >= 40) return "Neutral";
+      return "Weak";
+    }
+
+    function marketColor(score) {
+      if (score >= 80) return "#14532d";
+      if (score >= 60) return "#365314";
+      if (score >= 40) return "#854d0e";
+      return "#7f1d1d";
+    }
+
+    function reportTitle(report) {
+      return report.Display_Name || report.Market || "Market";
+    }
+
+    function renderCountryMatrix(reports) {
+      var container = document.getElementById("country-matrix");
+      if (!container) return;
+
+      var available = reports.filter(function (report) {
+        return report.Available !== false;
+      });
+
+      container.innerHTML = available.map(function (report) {
+        var trend = clampScore(report.Trend);
+        var stability = clampScore(report.Stability);
+        var score = marketScore(report);
+        var href = report.Report_URL || "#access";
+        return '<a class="matrix-market" href="' + href + '" style="--market-color:' + marketColor(score) + '">' +
+          '<span class="matrix-market-head"><strong class="matrix-code">' + (report.Country_Code || "TA") + '</strong><span class="matrix-status">' + marketStatus(score) + '</span></span>' +
+          '<span class="matrix-name">' + reportTitle(report) + '</span>' +
+          '<span class="matrix-metric"><span class="matrix-metric-row"><span>Trend</span><strong>' + trend + '</strong></span><span class="matrix-bar"><span style="width:' + trend + '%"></span></span></span>' +
+          '<span class="matrix-metric"><span class="matrix-metric-row"><span>Stability</span><strong>' + stability + '</strong></span><span class="matrix-bar"><span style="width:' + stability + '%"></span></span></span>' +
+        '</a>';
+      }).join("");
+    }
+
+    fetch("reports/reports_index.json")
+      .then(function (response) {
+        if (!response.ok) throw new Error("Report index unavailable");
+        return response.json();
+      })
+      .then(renderCountryMatrix)
+      .catch(function () {
+        renderCountryMatrix([
+          { Display_Name: "USA100", Country_Code: "US", Trend: 42, Stability: 73, Report_URL: "reports/Report_USA100.pdf", Available: true },
+          { Display_Name: "Europe50", Country_Code: "EU", Trend: 33, Stability: 71, Report_URL: "reports/Report_Europe50.pdf", Available: true },
+          { Display_Name: "Italy30", Country_Code: "IT", Trend: 75, Stability: 84, Report_URL: "reports/Report_Italy30.pdf", Available: true }
+        ]);
+      });
+  </script>
 </body>
 </html>
