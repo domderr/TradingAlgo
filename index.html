@@ -183,6 +183,30 @@
       box-shadow: var(--shadow);
     }
 
+    .bio-card {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .bio-card img {
+      width: 190px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 16px 35px rgba(7,26,51,0.20);
+    }
+
+    @media (max-width: 640px) {
+      .bio-card {
+        grid-template-columns: 1fr;
+      }
+      .bio-card img {
+        width: 140px;
+      }
+    }
+
     .card h3 {
       margin: 0 0 14px;
       color: #ffffff;
@@ -499,6 +523,22 @@
     </div>
 
     <p class="disclaimer">Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About</h2>
+    <div class="card bio-card">
+      <img src="assets/bio/domenico-derrico.jpg" alt="Domenico D'Errico portrait">
+      <div>
+        <h3>Domenico D'Errico</h3>
+        <p>
+          Quant developer, author and trading technology researcher.
+          Author of <em>TradeStation EasyLanguage for Algorithmic Trading</em>,
+          contributor to <em>Stocks &amp; Commodities</em> magazine and member of the
+          Gandalf Project R&amp;D Team.
+        </p>
+      </div>
+    </div>
   </section>
 
   <footer>
