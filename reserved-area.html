@@ -127,6 +127,52 @@
       line-height: 1.55;
     }
 
+    .access-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 24px;
+      max-width: 620px;
+    }
+
+    .access-form label {
+      width: 100%;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .access-form input {
+      flex: 1 1 260px;
+      min-height: 44px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    .access-form input:focus {
+      border-color: rgba(74,163,255,0.72);
+      box-shadow: 0 0 0 3px rgba(74,163,255,0.14);
+    }
+
+    .access-error {
+      width: 100%;
+      min-height: 20px;
+      margin: 0;
+      color: #ffc8c8;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .restricted-content[hidden] {
+      display: none;
+    }
+
     .eyebrow {
       color: var(--green);
       font-size: 12px;
@@ -335,6 +381,8 @@
       .footer-inner { display: block; }
       .footer-inner p { display: block; margin-top: 8px; }
       .matrix-shell { min-height: auto; }
+      .access-form input,
+      .access-form button { width: 100%; }
     }
   </style>
 </head>
@@ -360,53 +408,61 @@
       <div class="eyebrow">Reserved Area</div>
       <h1>Reserved Area</h1>
       <p>This is a reserved area, please contact <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a> for more information.</p>
+      <form class="access-form" id="access-form">
+        <label for="access-password">Password</label>
+        <input id="access-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="btn primary" type="submit">Access Markets</button>
+        <p class="access-error" id="access-error" aria-live="polite"></p>
+      </form>
     </section>
 
-    <section id="mosaic">
-      <div class="mosaic-panel">
+    <div class="restricted-content" id="restricted-content" hidden>
+      <section id="mosaic">
+        <div class="mosaic-panel">
+          <div>
+            <div class="eyebrow">TradingAlgo Mosaic</div>
+            <h2>Professional weekly market reports for subscribers.</h2>
+            <p>TradingAlgo Mosaic is a paid weekly research service. Subscribers receive market reports, selected stock lists and portfolio monitoring updates based on Trend, Stability and Portfolio Contribution.</p>
+            <div class="button-row">
+              <a class="btn primary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Subscription">Subscribe to Mosaic</a>
+              <a class="btn" href="how-to-read-mosaic-report.html">How to Read Reports</a>
+            </div>
+          </div>
+          <div>
+            <div class="matrix-shell" id="matrix">
+              <div class="matrix-title"><span>Available Markets</span><span>Trend | Stability | Market Status</span></div>
+              <div class="market-matrix" id="country-matrix"></div>
+            </div>
+            <div class="quick-reports">
+              <a class="quick-report" href="reports/Report_USA100.pdf">US100 Sample Report</a>
+              <a class="quick-report" href="reports/Report_Europe50.pdf">Europe 50 Sample Report</a>
+              <a class="quick-report" href="reports/Report_Italy30.pdf">Italy 30 Sample Report</a>
+              <a class="quick-report" href="#matrix">Global Market Overview</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="subscription" class="subscription-panel">
         <div>
-          <div class="eyebrow">TradingAlgo Mosaic</div>
-          <h2>Professional weekly market reports for subscribers.</h2>
-          <p>TradingAlgo Mosaic is a paid weekly research service. Subscribers receive market reports, selected stock lists and portfolio monitoring updates based on Trend, Stability and Portfolio Contribution.</p>
+          <div class="eyebrow">Weekly Market Intelligence</div>
+          <h2>TradingAlgo Mosaic Subscription</h2>
+          <p>Professional weekly market reports for investors, advisors and asset managers who want systematic market selection and portfolio evidence.</p>
           <div class="button-row">
-            <a class="btn primary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Subscription">Subscribe to Mosaic</a>
-            <a class="btn" href="how-to-read-mosaic-report.html">How to Read Reports</a>
+            <a class="btn primary" href="reports/Report_USA100.pdf">View Sample Report</a>
+            <a class="btn green" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Subscription">Request Information</a>
           </div>
         </div>
-        <div>
-          <div class="matrix-shell" id="matrix">
-            <div class="matrix-title"><span>Country Matrix</span><span>Trend | Stability | Market Status</span></div>
-            <div class="market-matrix" id="country-matrix"></div>
-          </div>
-          <div class="quick-reports">
-            <a class="quick-report" href="reports/Report_USA100.pdf">US100 Sample Report</a>
-            <a class="quick-report" href="reports/Report_Europe50.pdf">Europe 50 Sample Report</a>
-            <a class="quick-report" href="reports/Report_Italy30.pdf">Italy 30 Sample Report</a>
-            <a class="quick-report" href="#matrix">Global Market Overview</a>
-          </div>
+        <div class="benefit-grid">
+          <div class="benefit"><strong>Country Matrix</strong><span>Global market ranking and status.</span></div>
+          <div class="benefit"><strong>Sector Matrix</strong><span>Market leadership and rotation view.</span></div>
+          <div class="benefit"><strong>5 Selected Stocks</strong><span>Five stocks per covered market.</span></div>
+          <div class="benefit"><strong>Portfolio Changes</strong><span>Weekly updates and monitoring.</span></div>
+          <div class="benefit"><strong>Research Report</strong><span>Trend, Stability and contribution logic.</span></div>
+          <div class="benefit"><strong>Track Record</strong><span>Historical evidence and performance context.</span></div>
         </div>
-      </div>
-    </section>
-
-    <section id="subscription" class="subscription-panel">
-      <div>
-        <div class="eyebrow">Weekly Market Intelligence</div>
-        <h2>TradingAlgo Mosaic Subscription</h2>
-        <p>Professional weekly market reports for investors, advisors and asset managers who want systematic market selection and portfolio evidence.</p>
-        <div class="button-row">
-          <a class="btn primary" href="reports/Report_USA100.pdf">View Sample Report</a>
-          <a class="btn green" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Subscription">Request Information</a>
-        </div>
-      </div>
-      <div class="benefit-grid">
-        <div class="benefit"><strong>Country Matrix</strong><span>Global market ranking and status.</span></div>
-        <div class="benefit"><strong>Sector Matrix</strong><span>Market leadership and rotation view.</span></div>
-        <div class="benefit"><strong>5 Selected Stocks</strong><span>Five stocks per covered market.</span></div>
-        <div class="benefit"><strong>Portfolio Changes</strong><span>Weekly updates and monitoring.</span></div>
-        <div class="benefit"><strong>Research Report</strong><span>Trend, Stability and contribution logic.</span></div>
-        <div class="benefit"><strong>Track Record</strong><span>Historical evidence and performance context.</span></div>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 
   <footer>
@@ -470,15 +526,41 @@
       container.innerHTML = available.map(marketCard).join("");
     }
 
-    fetch("reports/reports_index.json")
-      .then(function (response) {
-        if (!response.ok) throw new Error("Report index unavailable");
-        return response.json();
-      })
-      .then(renderCountryMatrix)
-      .catch(function () {
-        renderCountryMatrix(fallbackReports);
-      });
+    function loadMarkets() {
+      fetch("reports/reports_index.json")
+        .then(function (response) {
+          if (!response.ok) throw new Error("Report index unavailable");
+          return response.json();
+        })
+        .then(renderCountryMatrix)
+        .catch(function () {
+          renderCountryMatrix(fallbackReports);
+        });
+    }
+
+    var accessForm = document.getElementById("access-form");
+    var passwordInput = document.getElementById("access-password");
+    var accessError = document.getElementById("access-error");
+    var restrictedContent = document.getElementById("restricted-content");
+    var marketsLoaded = false;
+
+    accessForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (passwordInput.value === "Mosaic") {
+        accessError.textContent = "";
+        restrictedContent.hidden = false;
+        accessForm.hidden = true;
+        if (!marketsLoaded) {
+          loadMarkets();
+          marketsLoaded = true;
+        }
+        document.getElementById("mosaic").scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+      accessError.textContent = "Incorrect password. Please try again.";
+      passwordInput.value = "";
+      passwordInput.focus();
+    });
   </script>
 </body>
 </html>
