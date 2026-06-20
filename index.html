@@ -298,9 +298,14 @@
       border-radius: 14px;
     }
 
-    .country-matrix-visual > a {
+    .country-matrix-toggle {
       display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
       border-radius: 14px;
+      background: transparent;
+      cursor: pointer;
     }
 
     .country-matrix-visual img {
@@ -331,14 +336,12 @@
       overflow: auto;
     }
 
-    .country-matrix-visual:hover img,
-    .country-matrix-visual:focus-within img {
+    .country-matrix-visual.is-matrix-open img {
       opacity: 0.18;
       transform: scale(0.99);
     }
 
-    .country-matrix-visual:hover .country-matrix-overlay,
-    .country-matrix-visual:focus-within .country-matrix-overlay {
+    .country-matrix-visual.is-matrix-open .country-matrix-overlay {
       opacity: 1;
       transform: translateY(0);
       pointer-events: auto;
@@ -459,13 +462,22 @@
         position: static;
         grid-template-columns: 1fr;
         margin-top: 14px;
-        opacity: 1;
-        pointer-events: auto;
+        max-height: 0;
+        padding: 0 16px;
+        opacity: 0;
+        pointer-events: none;
         transform: none;
+        overflow: hidden;
       }
 
-      .country-matrix-visual:hover img,
-      .country-matrix-visual:focus-within img {
+      .country-matrix-visual.is-matrix-open .country-matrix-overlay {
+        max-height: none;
+        padding: 16px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .country-matrix-visual.is-matrix-open img {
         opacity: 1;
         transform: none;
       }
@@ -499,10 +511,10 @@
       that best represent each market.
     </p>
 
-    <div class="country-matrix-visual">
-      <a href="reports/Report_USA100.pdf" target="_blank" aria-label="Download USA100 sample report">
+    <div class="country-matrix-visual" id="country-matrix-visual">
+      <button class="country-matrix-toggle" type="button" id="country-matrix-toggle" aria-controls="country-matrix" aria-expanded="false">
         <img src="assets/Countries.png" alt="Countries coverage">
-      </a>
+      </button>
       <div class="country-matrix-overlay" id="country-matrix" aria-label="Country Matrix calculated from Trend and Stability">
         <div class="matrix-market"><strong>Loading Country Matrix...</strong></div>
       </div>
@@ -763,15 +775,33 @@
         var trend = clampScore(report.Trend);
         var stability = clampScore(report.Stability);
         var score = marketScore(report);
-        var href = report.Report_URL || "#access";
-        return '<a class="matrix-market" href="' + href + '" style="--market-color:' + marketColor(score) + '">' +
+        return '<div class="matrix-market" style="--market-color:' + marketColor(score) + '">' +
           '<span class="matrix-market-head"><strong class="matrix-code">' + (report.Country_Code || "TA") + '</strong><span class="matrix-status">' + marketStatus(score) + '</span></span>' +
           '<span class="matrix-name">' + reportTitle(report) + '</span>' +
           '<span class="matrix-metric"><span class="matrix-metric-row"><span>Trend</span><strong>' + trend + '</strong></span><span class="matrix-bar"><span style="width:' + trend + '%"></span></span></span>' +
           '<span class="matrix-metric"><span class="matrix-metric-row"><span>Stability</span><strong>' + stability + '</strong></span><span class="matrix-bar"><span style="width:' + stability + '%"></span></span></span>' +
-        '</a>';
+        '</div>';
       }).join("");
     }
+
+    function setupCountryMatrixToggle() {
+      var visual = document.getElementById("country-matrix-visual");
+      var toggle = document.getElementById("country-matrix-toggle");
+      var matrix = document.getElementById("country-matrix");
+      if (!visual || !toggle || !matrix) return;
+
+      toggle.addEventListener("click", function () {
+        visual.classList.add("is-matrix-open");
+        toggle.setAttribute("aria-expanded", "true");
+      });
+
+      matrix.addEventListener("click", function () {
+        visual.classList.remove("is-matrix-open");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    }
+
+    setupCountryMatrixToggle();
 
     fetch("reports/reports_index.json")
       .then(function (response) {
