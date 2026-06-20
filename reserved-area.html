@@ -345,53 +345,221 @@
       background: linear-gradient(90deg, var(--red), var(--yellow), var(--green));
     }
 
-    .reports-grid {
+    /* ── semaforo ── */
+    .semaforo {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 32px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 6px;
+      margin-top: 24px;
+      margin-bottom: 36px;
     }
 
-    .report-link {
-      display: flex;
-      flex-direction: column;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.13);
-      overflow: hidden;
-      text-decoration: none;
-      transition: border-color 0.15s, box-shadow 0.15s;
+    .sem-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 12px;
+      padding: 8px 10px;
     }
 
-    .report-link:hover {
-      border-color: rgba(74,163,255,0.5);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    }
-
-    .report-link img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: top;
-      aspect-ratio: 4 / 3;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .report-link-footer {
+    .sem-top {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      font-weight: 750;
-      font-size: 15px;
+      gap: 5px;
+      margin-bottom: 4px;
     }
 
-    .report-flag {
-      font-size: 20px;
+    .sem-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
       flex-shrink: 0;
     }
 
+    .sem-dot.green { background: #22c55e; }
+    .sem-dot.amber { background: #f5c542; }
+    .sem-dot.red   { background: #ff6b6b; }
+
+    .sem-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sem-score {
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .sem-bar {
+      height: 3px;
+      border-radius: 2px;
+    }
+
+    /* ── reports grid ── */
+    .reports-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .report-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color 0.15s;
+    }
+
+    .report-card:hover { border-color: rgba(74,163,255,0.5); }
+
+    .report-card-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .report-card-name {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .report-scores {
+      display: flex;
+      gap: 10px;
+    }
+
+    .report-score-box {
+      text-align: center;
+    }
+
+    .report-score-val {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .report-score-val.green { color: #22c55e; }
+    .report-score-val.amber { color: #f5c542; }
+    .report-score-val.red   { color: #ff6b6b; }
+
+    .report-score-lbl {
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .report-chevron {
+      font-size: 14px;
+      color: var(--muted);
+      transition: transform 0.2s;
+    }
+
+    .report-card.open .report-chevron { transform: rotate(180deg); }
+
+    .report-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .report-body {
+      display: none;
+      padding: 10px 14px;
+    }
+
+    .report-card.open .report-body { display: block; }
+
+    .report-body-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 6px;
+    }
+
+    .positions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: 10px;
+    }
+
+    .pos-row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .pos-ticker {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      min-width: 52px;
+      flex-shrink: 0;
+    }
+
+    .pos-name {
+      font-size: 11px;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .changes-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .change-block {
+      flex: 1;
+      background: rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 6px 8px;
+    }
+
+    .change-label-in  { font-size: 10px; font-weight: 700; color: #22c55e; margin-bottom: 3px; }
+    .change-label-out { font-size: 10px; font-weight: 700; color: #ff6b6b; margin-bottom: 3px; }
+
+    .change-tickers {
+      font-size: 11px;
+      color: var(--text);
+    }
+
+    .report-footer {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 7px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .report-week {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .report-pdf-link {
+      font-size: 11px;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .report-pdf-link:hover { text-decoration: underline; }
+
+    @media (max-width: 900px) {
+      .semaforo { grid-template-columns: repeat(4, 1fr); }
+    }
+
     @media (max-width: 640px) {
+      .semaforo { grid-template-columns: repeat(3, 1fr); }
       .reports-grid { grid-template-columns: 1fr; }
     }
 
@@ -469,56 +637,8 @@
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
         <h2>Weekly Reports</h2>
-        <div class="reports-grid">
-          <a class="report-link" href="reports/Report_USA100.pdf" target="_blank">
-            <img src="assets/previews/USA100.jpg" alt="USA100 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/us.svg" width="22" height="16" alt="US"> USA100</div>
-          </a>
-          <a class="report-link" href="reports/Report_Canada50.pdf" target="_blank">
-            <img src="assets/previews/Canada50.jpg" alt="Canada50 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/ca.svg" width="22" height="16" alt="CA"> Canada50</div>
-          </a>
-          <a class="report-link" href="reports/Report_Mexico30.pdf" target="_blank">
-            <img src="assets/previews/Mexico30.jpg" alt="Mexico30 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/mx.svg" width="22" height="16" alt="MX"> Mexico30</div>
-          </a>
-          <a class="report-link" href="reports/Report_Europe50.pdf" target="_blank">
-            <img src="assets/previews/Europe50.jpg" alt="Europe50 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/eu.svg" width="22" height="16" alt="EU"> Europe50</div>
-          </a>
-          <a class="report-link" href="reports/Report_UK30.pdf" target="_blank">
-            <img src="assets/previews/UK30.jpg" alt="UK30 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/gb.svg" width="22" height="16" alt="GB"> UK30</div>
-          </a>
-          <a class="report-link" href="reports/Report_France40.pdf" target="_blank">
-            <img src="assets/previews/France40.jpg" alt="France40 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/fr.svg" width="22" height="16" alt="FR"> France40</div>
-          </a>
-          <a class="report-link" href="reports/Report_Germany30.pdf" target="_blank">
-            <img src="assets/previews/Germany30.jpg" alt="Germany30 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/de.svg" width="22" height="16" alt="DE"> Germany30</div>
-          </a>
-          <a class="report-link" href="reports/Report_Italy30.pdf" target="_blank">
-            <img src="assets/previews/Italy30.jpg" alt="Italy30 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/it.svg" width="22" height="16" alt="IT"> Italy30</div>
-          </a>
-          <a class="report-link" href="reports/Report_Japan50.pdf" target="_blank">
-            <img src="assets/previews/Japan50.jpg" alt="Japan50 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/jp.svg" width="22" height="16" alt="JP"> Japan50</div>
-          </a>
-          <a class="report-link" href="reports/Report_South_Korea30.pdf" target="_blank">
-            <img src="assets/previews/SouthKorea30.jpg" alt="South Korea30 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/kr.svg" width="22" height="16" alt="KR"> South Korea30</div>
-          </a>
-          <a class="report-link" href="reports/Report_Australia50.pdf" target="_blank">
-            <img src="assets/previews/Australia50.jpg" alt="Australia50 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/au.svg" width="22" height="16" alt="AU"> Australia50</div>
-          </a>
-          <a class="report-link" href="reports/Report_South_Africa30.pdf" target="_blank">
-            <img src="assets/previews/SouthAfrica30.jpg" alt="South Africa30 report preview">
-            <div class="report-link-footer"><img src="https://flagcdn.com/za.svg" width="22" height="16" alt="ZA"> South Africa30</div>
-          </a>
-        </div>
+        <div class="semaforo" id="semaforo"></div>
+        <div class="reports-grid" id="reports-grid"></div>
       </section>
     </div>
   </main>
@@ -531,88 +651,133 @@
   </footer>
 
   <script>
-    var fallbackReports = [
-      { Display_Name: "USA100", Country_Code: "US", Region: "North America", Ticker_Count: 100, Trend: 42, Stability: 73, Report_URL: "reports/Report_USA100.pdf", Available: true },
-      { Display_Name: "Europe50", Country_Code: "EU", Region: "Europe", Ticker_Count: 49, Trend: 33, Stability: 71, Report_URL: "reports/Report_Europe50.pdf", Available: true },
-      { Display_Name: "Italy30", Country_Code: "IT", Region: "Europe", Ticker_Count: 28, Trend: 75, Stability: 84, Report_URL: "reports/Report_Italy30.pdf", Available: true },
-      { Display_Name: "Japan50", Country_Code: "JP", Region: "Asia", Ticker_Count: 50, Trend: 92, Stability: 94, Report_URL: "reports/Report_Japan50.pdf", Available: true },
-      { Display_Name: "Canada50", Country_Code: "CA", Region: "North America", Ticker_Count: 50, Trend: 83, Stability: 92, Report_URL: "reports/Report_Canada50.pdf", Available: true },
-      { Display_Name: "South Korea30", Country_Code: "KR", Region: "Asia", Ticker_Count: 29, Trend: 100, Stability: 95, Report_URL: "reports/Report_South_Korea30.pdf", Available: true }
+    var MARKET_META = [
+      { key: "USA100",       flag: "us", name: "USA100",       pdf: "reports/Report_USA100.pdf" },
+      { key: "Canada50",     flag: "ca", name: "Canada50",     pdf: "reports/Report_Canada50.pdf" },
+      { key: "Mexico30",     flag: "mx", name: "Mexico30",     pdf: "reports/Report_Mexico30.pdf" },
+      { key: "Europe50",     flag: "eu", name: "Europe50",     pdf: "reports/Report_Europe50.pdf" },
+      { key: "UK30",         flag: "gb", name: "UK30",         pdf: "reports/Report_UK30.pdf" },
+      { key: "France40",     flag: "fr", name: "France40",     pdf: "reports/Report_France40.pdf" },
+      { key: "Germany30",    flag: "de", name: "Germany30",    pdf: "reports/Report_Germany30.pdf" },
+      { key: "Italy30",      flag: "it", name: "Italy30",      pdf: "reports/Report_Italy30.pdf" },
+      { key: "Japan50",      flag: "jp", name: "Japan50",      pdf: "reports/Report_Japan50.pdf" },
+      { key: "South Korea30", flag: "kr", name: "S.Korea30",    pdf: "reports/Report_South_Korea30.pdf" },
+      { key: "Australia50",  flag: "au", name: "Australia50",  pdf: "reports/Report_Australia50.pdf" },
+      { key: "South Africa30",flag: "za", name: "S.Africa30",  pdf: "reports/Report_South_Africa30.pdf" }
     ];
 
-    function clampScore(value) {
-      var number = Number(value);
-      return Number.isFinite(number) ? Math.max(0, Math.min(100, Math.round(number))) : 0;
+    function scoreClass(v) {
+      return v >= 65 ? "green" : v >= 35 ? "amber" : "red";
     }
 
-    function marketScore(report) {
-      var trend = clampScore(report.Trend);
-      var stability = clampScore(report.Stability);
-      if (!trend && !stability) return 0;
-      return Math.round((trend + stability) / 2);
+    function avgScore(t, s) {
+      return Math.round((t + s) / 2);
     }
 
-    function reportTitle(report) {
-      return report.Display_Name || report.Market || "Market";
+    function renderSemaforo(index, positions) {
+      var sorted = MARKET_META.slice().sort(function(a, b) {
+        var ia = index[a.key] || {}, ib = index[b.key] || {};
+        return avgScore(ib.Trend||0, ib.Stability||0) - avgScore(ia.Trend||0, ia.Stability||0);
+      });
+      return sorted.map(function(m) {
+        var d = index[m.key] || {};
+        var t = d.Trend || 0, s = d.Stability || 0;
+        var sc = scoreClass(avgScore(t, s));
+        var barW = avgScore(t, s);
+        var barColor = sc === "green" ? "#22c55e" : sc === "amber" ? "#f5c542" : "#ff6b6b";
+        return '<div class="sem-card">'
+          + '<div class="sem-top"><div class="sem-dot ' + sc + '"></div><div class="sem-name">' + m.name + '</div></div>'
+          + '<div class="sem-score">T' + t + ' S' + s + '</div>'
+          + '<div class="sem-bar" style="background:' + barColor + ';width:' + barW + '%"></div>'
+          + '</div>';
+      }).join("");
     }
 
-    function marketStatus(score) {
-      if (score >= 80) return "Strong";
-      if (score >= 60) return "Positive";
-      if (score >= 40) return "Neutral";
-      return "Weak";
+    function renderCard(m, d, pos) {
+      var t = d ? (d.Trend || 0) : 0;
+      var s = d ? (d.Stability || 0) : 0;
+      var sc = scoreClass(avgScore(t, s));
+      var week = pos ? pos.week : "";
+      var positions = pos ? (pos.positions || []) : [];
+      var cin = pos ? (pos.changes && pos.changes.in || []) : [];
+      var cout = pos ? (pos.changes && pos.changes.out || []) : [];
+
+      var posList = positions.map(function(p) {
+        return '<div class="pos-row"><span class="pos-ticker">' + p.ticker + '</span><span class="pos-name">' + p.name + '</span></div>';
+      }).join("") || '<div class="pos-row"><span class="pos-name">—</span></div>';
+
+      var cinText = cin.length ? cin.map(function(p){return p.ticker;}).join(", ") : "—";
+      var coutText = cout.length ? cout.map(function(p){return p.ticker;}).join(", ") : "—";
+
+      return '<div class="report-card" id="rc-' + m.key + '">'
+        + '<div class="report-card-head" onclick="toggleCard(\'' + m.key + '\')">'
+        + '<img src="https://flagcdn.com/' + m.flag + '.svg" width="22" height="14" alt="' + m.flag + '" style="border-radius:2px;flex-shrink:0">'
+        + '<span class="report-card-name">' + m.name + '</span>'
+        + '<div class="report-scores">'
+        + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + t + '</div><div class="report-score-lbl">Trend</div></div>'
+        + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + s + '</div><div class="report-score-lbl">Stab</div></div>'
+        + '</div>'
+        + '<span class="report-chevron">&#8964;</span>'
+        + '</div>'
+        + '<div class="report-divider"></div>'
+        + '<div class="report-body">'
+        + '<div class="report-body-label">Current positions</div>'
+        + '<div class="positions-list">' + posList + '</div>'
+        + '<div class="changes-row">'
+        + '<div class="change-block"><div class="change-label-in">&#8593; IN</div><div class="change-tickers">' + cinText + '</div></div>'
+        + '<div class="change-block"><div class="change-label-out">&#8595; OUT</div><div class="change-tickers">' + coutText + '</div></div>'
+        + '</div>'
+        + '</div>'
+        + '<div class="report-footer">'
+        + '<span class="report-week">' + (week || "") + '</span>'
+        + '<a class="report-pdf-link" href="' + m.pdf + '" target="_blank">Open PDF &#8599;</a>'
+        + '</div>'
+        + '</div>';
     }
 
-    function marketCard(report) {
-      var trend = clampScore(report.Trend);
-      var stability = clampScore(report.Stability);
-      var score = marketScore(report);
-      var href = report.Report_URL || "#";
-      var body = ''
-        + '<div class="market-meta"><span class="market-name">' + (report.Country_Code || report.Region || "Market") + '</span><span class="status-pill">' + marketStatus(score) + '</span></div>'
-        + '<strong>' + reportTitle(report) + '</strong>'
-        + '<div class="metric"><span class="metric-label">Trend ' + trend + '</span><span class="score"><span style="width:' + trend + '%"></span></span></div>'
-        + '<div class="metric"><span class="metric-label">Stability ' + stability + '</span><span class="score"><span style="width:' + stability + '%"></span></span></div>';
-      return '<a class="market-card" href="' + href + '">' + body + '</a>';
+    function toggleCard(key) {
+      var el = document.getElementById("rc-" + key);
+      if (el) el.classList.toggle("open");
     }
 
-    function renderCountryMatrix(reports) {
-      var container = document.getElementById("country-matrix");
-      if (!container) return;
-      var available = reports.filter(function (report) { return report.Available !== false; });
-      if (!available.length) available = fallbackReports;
-      container.innerHTML = available.map(marketCard).join("");
+    var POS_KEY = {
+      "South Korea30": "SouthKorea30",
+      "South Africa30": "SouthAfrica30"
+    };
+
+    function renderAll(indexArr, positions) {
+      var indexMap = {};
+      indexArr.forEach(function(r) { indexMap[r.Market || r.Display_Name] = r; });
+
+      document.getElementById("semaforo").innerHTML = renderSemaforo(indexMap, positions);
+
+      document.getElementById("reports-grid").innerHTML = MARKET_META.map(function(m) {
+        var posKey = POS_KEY[m.key] || m.key;
+        return renderCard(m, indexMap[m.key], positions[posKey]);
+      }).join("");
     }
 
-    function loadMarkets() {
-      fetch("reports/reports_index.json")
-        .then(function (response) {
-          if (!response.ok) throw new Error("Report index unavailable");
-          return response.json();
-        })
-        .then(renderCountryMatrix)
-        .catch(function () {
-          renderCountryMatrix(fallbackReports);
-        });
+    function loadData() {
+      var indexPromise = fetch("reports/reports_index.json").then(function(r) { return r.json(); }).catch(function() { return []; });
+      var posPromise   = fetch("reports/positions.json").then(function(r) { return r.json(); }).catch(function() { return {}; });
+      Promise.all([indexPromise, posPromise]).then(function(results) {
+        renderAll(results[0], results[1]);
+      });
     }
 
     var accessForm = document.getElementById("access-form");
     var passwordInput = document.getElementById("access-password");
     var accessError = document.getElementById("access-error");
     var restrictedContent = document.getElementById("restricted-content");
-    var marketsLoaded = false;
+    var dataLoaded = false;
 
-    accessForm.addEventListener("submit", function (event) {
+    accessForm.addEventListener("submit", function(event) {
       event.preventDefault();
       if (passwordInput.value === "Mosaic") {
         accessError.textContent = "";
         restrictedContent.hidden = false;
         accessForm.hidden = true;
-        if (!marketsLoaded) {
-          loadMarkets();
-          marketsLoaded = true;
-        }
-        document.getElementById("mosaic").scrollIntoView({ behavior: "smooth", block: "start" });
+        if (!dataLoaded) { loadData(); dataLoaded = true; }
         return;
       }
       accessError.textContent = "Incorrect password. Please try again.";
