@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradingAlgo | Reserved Area</title>
+  <style>
+    :root {
+      --bg: #071423;
+      --panel: rgba(255,255,255,0.075);
+      --text: #f4f7fb;
+      --muted: #aebbd0;
+      --blue: #4aa3ff;
+      --green: #42d392;
+      --red: #ff6b6b;
+      --yellow: #f5c542;
+      --border: rgba(255,255,255,0.16);
+      --shadow: 0 24px 70px rgba(0,0,0,0.42);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(74,163,255,0.22), transparent 28%),
+        radial-gradient(circle at 82% 8%, rgba(66,211,146,0.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), #050b14 74%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav,
+    main,
+    footer {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .logo-grid {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      background: var(--blue);
+    }
+
+    .logo-grid span:nth-child(2),
+    .logo-grid span:nth-child(6),
+    .logo-grid span:nth-child(8) {
+      background: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .nav-links a,
+    .btn {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #edf5ff;
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    .btn.primary { background: var(--blue); border-color: transparent; color: #04101c; }
+    .btn.green { background: var(--green); border-color: transparent; color: #041810; }
+
+    main { padding: 34px 0 68px; }
+    section { margin-bottom: 56px; }
+
+    .reserved-message,
+    .mosaic-panel,
+    .subscription-panel,
+    .matrix-shell {
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .reserved-message {
+      padding: 30px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+    }
+
+    .reserved-message h1 {
+      margin: 0 0 14px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 0.96;
+    }
+
+    .reserved-message p,
+    .mosaic-panel p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 10px 0 0;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .mosaic-panel {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
+      gap: 28px;
+      align-items: center;
+      padding: 28px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(74,163,255,0.14), rgba(66,211,146,0.09));
+    }
+
+    .subscription-panel {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 28px;
+      align-items: center;
+      padding: 30px;
+      border: 1px solid rgba(66,211,146,0.34);
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(66,211,146,0.16), rgba(74,163,255,0.10));
+      box-shadow: var(--shadow);
+    }
+
+    .subscription-panel p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+      margin: 16px 0 0;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .benefit {
+      min-height: 94px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.13);
+    }
+
+    .benefit strong,
+    .benefit span {
+      display: block;
+    }
+
+    .benefit span {
+      color: var(--muted);
+      margin-top: 8px;
+      line-height: 1.45;
+    }
+
+    .matrix-shell {
+      min-height: 360px;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      border-radius: 32px;
+      overflow: hidden;
+    }
+
+    .matrix-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .market-matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .market-card {
+      min-height: 124px;
+      border-radius: 20px;
+      padding: 14px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .market-card strong,
+    .metric-label,
+    .market-name,
+    .status-pill {
+      display: block;
+    }
+
+    .market-card strong {
+      margin: 8px 0 14px;
+      font-size: 19px;
+    }
+
+    .market-name,
+    .status-pill,
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .market-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .status-pill {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+    }
+
+    .metric {
+      display: grid;
+      gap: 6px;
+    }
+
+    .score {
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      overflow: hidden;
+    }
+
+    .score span {
+      display: block;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--red), var(--yellow), var(--green));
+    }
+
+    .quick-reports {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .quick-report {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 0 0 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 980px) {
+      .mosaic-panel,
+      .subscription-panel { grid-template-columns: 1fr; }
+      .quick-reports { grid-template-columns: repeat(2, 1fr); }
+      .nav { align-items: flex-start; }
+    }
+
+    @media (max-width: 640px) {
+      .nav { display: block; padding-top: 18px; }
+      .nav-links { display: none; }
+      .button-row { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+      .market-matrix,
+      .benefit-grid,
+      .quick-reports { grid-template-columns: 1fr; }
+      .matrix-title,
+      .footer-inner { display: block; }
+      .footer-inner p { display: block; margin-top: 8px; }
+      .matrix-shell { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <div class="nav-links">
+      <a href="index.html#research">Research</a>
+      <a href="index.html#services">Services</a>
+      <a href="publications.html">Publications</a>
+      <a href="index.html#about">About</a>
+      <a class="btn" href="mailto:domderrico@gmail.com">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="reserved-message">
+      <div class="eyebrow">Reserved Area</div>
+      <h1>Reserved Area</h1>
+      <p>This is a reserved area, please contact <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a> for more information.</p>
+    </section>
+
+    <section id="mosaic">
+      <div class="mosaic-panel">
+        <div>
+          <div class="eyebrow">TradingAlgo Mosaic</div>
+          <h2>Professional weekly market reports for subscribers.</h2>
+          <p>TradingAlgo Mosaic is a paid weekly research service. Subscribers receive market reports, selected stock lists and portfolio monitoring updates based on Trend, Stability and Portfolio Contribution.</p>
+          <div class="button-row">
+            <a class="btn primary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Subscription">Subscribe to Mosaic</a>
+            <a class="btn" href="how-to-read-mosaic-report.html">How to Read Reports</a>
+          </div>
+        </div>
+        <div>
+          <div class="matrix-shell" id="matrix">
+            <div class="matrix-title"><span>Country Matrix</span><span>Trend | Stability | Market Status</span></div>
+            <div class="market-matrix" id="country-matrix"></div>
+          </div>
+          <div class="quick-reports">
+            <a class="quick-report" href="reports/Report_USA100.pdf">US100 Sample Report</a>
+            <a class="quick-report" href="reports/Report_Europe50.pdf">Europe 50 Sample Report</a>
+            <a class="quick-report" href="reports/Report_Italy30.pdf">Italy 30 Sample Report</a>
+            <a class="quick-report" href="#matrix">Global Market Overview</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscription" class="subscription-panel">
+      <div>
+        <div class="eyebrow">Weekly Market Intelligence</div>
+        <h2>TradingAlgo Mosaic Subscription</h2>
+        <p>Professional weekly market reports for investors, advisors and asset managers who want systematic market selection and portfolio evidence.</p>
+        <div class="button-row">
+          <a class="btn primary" href="reports/Report_USA100.pdf">View Sample Report</a>
+          <a class="btn green" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Subscription">Request Information</a>
+        </div>
+      </div>
+      <div class="benefit-grid">
+        <div class="benefit"><strong>Country Matrix</strong><span>Global market ranking and status.</span></div>
+        <div class="benefit"><strong>Sector Matrix</strong><span>Market leadership and rotation view.</span></div>
+        <div class="benefit"><strong>5 Selected Stocks</strong><span>Five stocks per covered market.</span></div>
+        <div class="benefit"><strong>Portfolio Changes</strong><span>Weekly updates and monitoring.</span></div>
+        <div class="benefit"><strong>Research Report</strong><span>Trend, Stability and contribution logic.</span></div>
+        <div class="benefit"><strong>Track Record</strong><span>Historical evidence and performance context.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <strong>TradingAlgo - Mosaic Trading Framework</strong>
+      <p>Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
+    </div>
+  </footer>
+
+  <script>
+    var fallbackReports = [
+      { Display_Name: "USA100", Country_Code: "US", Region: "North America", Ticker_Count: 100, Trend: 42, Stability: 73, Report_URL: "reports/Report_USA100.pdf", Available: true },
+      { Display_Name: "Europe50", Country_Code: "EU", Region: "Europe", Ticker_Count: 49, Trend: 33, Stability: 71, Report_URL: "reports/Report_Europe50.pdf", Available: true },
+      { Display_Name: "Italy30", Country_Code: "IT", Region: "Europe", Ticker_Count: 28, Trend: 75, Stability: 84, Report_URL: "reports/Report_Italy30.pdf", Available: true },
+      { Display_Name: "Japan50", Country_Code: "JP", Region: "Asia", Ticker_Count: 50, Trend: 92, Stability: 94, Report_URL: "reports/Report_Japan50.pdf", Available: true },
+      { Display_Name: "Canada50", Country_Code: "CA", Region: "North America", Ticker_Count: 50, Trend: 83, Stability: 92, Report_URL: "reports/Report_Canada50.pdf", Available: true },
+      { Display_Name: "South Korea30", Country_Code: "KR", Region: "Asia", Ticker_Count: 29, Trend: 100, Stability: 95, Report_URL: "reports/Report_South_Korea30.pdf", Available: true }
+    ];
+
+    function clampScore(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? Math.max(0, Math.min(100, Math.round(number))) : 0;
+    }
+
+    function marketScore(report) {
+      var trend = clampScore(report.Trend);
+      var stability = clampScore(report.Stability);
+      if (!trend && !stability) return 0;
+      return Math.round((trend + stability) / 2);
+    }
+
+    function reportTitle(report) {
+      return report.Display_Name || report.Market || "Market";
+    }
+
+    function marketStatus(score) {
+      if (score >= 80) return "Strong";
+      if (score >= 60) return "Positive";
+      if (score >= 40) return "Neutral";
+      return "Weak";
+    }
+
+    function marketCard(report) {
+      var trend = clampScore(report.Trend);
+      var stability = clampScore(report.Stability);
+      var score = marketScore(report);
+      var href = report.Report_URL || "#";
+      var body = ''
+        + '<div class="market-meta"><span class="market-name">' + (report.Country_Code || report.Region || "Market") + '</span><span class="status-pill">' + marketStatus(score) + '</span></div>'
+        + '<strong>' + reportTitle(report) + '</strong>'
+        + '<div class="metric"><span class="metric-label">Trend ' + trend + '</span><span class="score"><span style="width:' + trend + '%"></span></span></div>'
+        + '<div class="metric"><span class="metric-label">Stability ' + stability + '</span><span class="score"><span style="width:' + stability + '%"></span></span></div>';
+      return '<a class="market-card" href="' + href + '">' + body + '</a>';
+    }
+
+    function renderCountryMatrix(reports) {
+      var container = document.getElementById("country-matrix");
+      if (!container) return;
+      var available = reports.filter(function (report) { return report.Available !== false; });
+      if (!available.length) available = fallbackReports;
+      container.innerHTML = available.map(marketCard).join("");
+    }
+
+    fetch("reports/reports_index.json")
+      .then(function (response) {
+        if (!response.ok) throw new Error("Report index unavailable");
+        return response.json();
+      })
+      .then(renderCountryMatrix)
+      .catch(function () {
+        renderCountryMatrix(fallbackReports);
+      });
+  </script>
+</body>
+</html>
