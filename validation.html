@@ -160,6 +160,40 @@
       text-align: center;
     }
 
+    .equity-card img { cursor: zoom-in; }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox.open { display: flex; }
+
+    .lightbox img {
+      max-width: 95vw;
+      max-height: 92vh;
+      border-radius: 10px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    }
+
+    .lightbox-close {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      font-size: 36px;
+      color: #fff;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.8;
+    }
+
+    .lightbox-close:hover { opacity: 1; }
+
     @media (max-width: 900px) {
       .equity-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -247,6 +281,36 @@
       </div>
     </div>
   </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    var lightbox = document.getElementById("lightbox");
+    var lightboxImg = document.getElementById("lightbox-img");
+
+    document.querySelectorAll(".equity-card img").forEach(function(img) {
+      img.addEventListener("click", function() {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add("open");
+      });
+    });
+
+    document.getElementById("lightbox-close").addEventListener("click", function() {
+      lightbox.classList.remove("open");
+    });
+
+    lightbox.addEventListener("click", function(e) {
+      if (e.target === lightbox) lightbox.classList.remove("open");
+    });
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") lightbox.classList.remove("open");
+    });
+  </script>
 
   <footer>
     <p>Research material only. Not personalized financial advice. &copy; 2026 TradingAlgo.</p>
