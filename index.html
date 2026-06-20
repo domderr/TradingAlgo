@@ -459,6 +459,14 @@
       cursor: default;
     }
 
+    .scatter-point img {
+      width: 24px;
+      height: 18px;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+
     .scatter-point span {
       position: absolute;
       left: 50%;
@@ -973,7 +981,7 @@
           '<div class="scatter-top">' +
             '<div><h3>Country Matrix Scatter</h3><div class="scatter-date" id="scatter-date">' + formatScatterDate(latest.date) + '</div></div>' +
             '<div class="scatter-actions">' +
-              '<button class="scatter-button primary" type="button" id="scatter-play">Animate Last 4 Weeks</button>' +
+              '<button class="scatter-button primary" type="button" id="scatter-play">Animate 52 Weeks</button>' +
               '<button class="scatter-button" type="button" id="scatter-close">Back to Countries</button>' +
             '</div>' +
           '</div>' +
@@ -983,8 +991,10 @@
             '<div class="scatter-quadrant leaders">High Trend / High Stability</div>' +
             '<div class="scatter-quadrant watch">Lower Trend / Lower Stability</div>' +
             latest.points.map(function (point) {
+              var flagCode = point.code.toLowerCase();
               return '<div class="scatter-point" data-market="' + point.market + '" title="' + point.market + ' | ' + point.etf + '">' +
-                point.flag + '<span>' + point.code + '</span></div>';
+                '<img src="https://flagcdn.com/' + flagCode + '.svg" alt="' + point.code + '">' +
+                '<span>' + point.code + '</span></div>';
             }).join("") +
           '</div>' +
           '<p class="scatter-note">Source: yfinance ETF weekly prices. Each point uses the latest 52 weekly closes: vertical axis is Trend ranking, horizontal axis is regression Stability.</p>' +

@@ -1,8 +1,5432 @@
 {
   "source": "yfinance",
   "lookback_weeks": 52,
-  "generated_at": "2026-06-20T16:24:42",
+  "generated_at": "2026-06-20T16:42:35",
   "snapshots": [
+    {
+      "date": "2025-06-27",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 33,
+          "stability": 13,
+          "price": 546.06
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 83,
+          "stability": 54,
+          "price": 58.87
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 70,
+          "price": 46.33
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 44,
+          "price": 38.42
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 50,
+          "stability": 31,
+          "price": 41.41
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 100,
+          "stability": 81,
+          "price": 41.47
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 17,
+          "stability": 0,
+          "price": 25.3
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 19,
+          "price": 72.17
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 60,
+          "price": 44.97
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 42,
+          "stability": 10,
+          "price": 58.33
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 8,
+          "stability": 7,
+          "price": 69.19
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 46,
+          "price": 48.84
+        }
+      ]
+    },
+    {
+      "date": "2025-07-04",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 33,
+          "stability": 17,
+          "price": 554.16
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 83,
+          "stability": 58,
+          "price": 59.29
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 72,
+          "price": 46.67
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 46,
+          "price": 38.51
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 50,
+          "stability": 36,
+          "price": 41.86
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 100,
+          "stability": 82,
+          "price": 41.38
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 17,
+          "stability": 0,
+          "price": 25.67
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 24,
+          "price": 71.52
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 60,
+          "price": 46.04
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 42,
+          "stability": 16,
+          "price": 59.66
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 8,
+          "stability": 1,
+          "price": 71.1
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 47,
+          "price": 50.83
+        }
+      ]
+    },
+    {
+      "date": "2025-07-11",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 33,
+          "stability": 21,
+          "price": 552.15
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 83,
+          "stability": 63,
+          "price": 59.45
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 74,
+          "price": 46.45
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 50,
+          "price": 38.61
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 41,
+          "price": 42.06
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 100,
+          "stability": 84,
+          "price": 41.62
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 17,
+          "stability": 0,
+          "price": 25.56
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 28,
+          "price": 69.37
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 60,
+          "price": 45.51
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 58,
+          "stability": 25,
+          "price": 58.14
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 8,
+          "stability": 0,
+          "price": 70.97
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 49,
+          "price": 49.15
+        }
+      ]
+    },
+    {
+      "date": "2025-07-18",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 33,
+          "stability": 23,
+          "price": 559.18
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 83,
+          "stability": 65,
+          "price": 58.62
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 76,
+          "price": 46.26
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 52,
+          "price": 38.49
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 50,
+          "stability": 45,
+          "price": 41.71
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 100,
+          "stability": 84,
+          "price": 41.3
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 1,
+          "price": 25.65
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 31,
+          "price": 68.85
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 58,
+          "stability": 61,
+          "price": 45.96
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 67,
+          "stability": 33,
+          "price": 57.49
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 17,
+          "stability": 2,
+          "price": 70.8
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 50,
+          "price": 50.85
+        }
+      ]
+    },
+    {
+      "date": "2025-07-25",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 33,
+          "stability": 25,
+          "price": 564.27
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 83,
+          "stability": 67,
+          "price": 59.68
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 78,
+          "price": 47.97
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 55,
+          "price": 39.31
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 50,
+          "stability": 49,
+          "price": 42.49
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 100,
+          "stability": 85,
+          "price": 41.97
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 2,
+          "price": 25.67
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 35,
+          "price": 72.56
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 58,
+          "stability": 61,
+          "price": 46.38
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 67,
+          "stability": 40,
+          "price": 59.03
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 17,
+          "stability": 5,
+          "price": 71.6
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 50,
+          "price": 50.79
+        }
+      ]
+    },
+    {
+      "date": "2025-08-01",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 33,
+          "stability": 24,
+          "price": 551.83
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 83,
+          "stability": 66,
+          "price": 56.55
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 79,
+          "price": 46.3
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 56,
+          "price": 38.63
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 58,
+          "stability": 49,
+          "price": 40.26
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 100,
+          "stability": 85,
+          "price": 39.95
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 1,
+          "price": 25.12
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 17,
+          "stability": 34,
+          "price": 71.01
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 42,
+          "stability": 61,
+          "price": 45.24
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 67,
+          "stability": 44,
+          "price": 57.63
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 25,
+          "stability": 9,
+          "price": 69.1
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 51,
+          "price": 49.57
+        }
+      ]
+    },
+    {
+      "date": "2025-08-08",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 25,
+          "stability": 25,
+          "price": 572.42
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 83,
+          "stability": 67,
+          "price": 58.93
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 79,
+          "price": 48.55
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 58,
+          "price": 39.2
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 50,
+          "stability": 50,
+          "price": 41.47
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 100,
+          "stability": 85,
+          "price": 41.51
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 2,
+          "price": 25.82
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 17,
+          "stability": 35,
+          "price": 74.71
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 42,
+          "stability": 61,
+          "price": 46.7
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 49,
+          "price": 59.6
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 33,
+          "stability": 13,
+          "price": 71.89
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 67,
+          "stability": 51,
+          "price": 52.37
+        }
+      ]
+    },
+    {
+      "date": "2025-08-15",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 25,
+          "stability": 27,
+          "price": 575.2
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 75,
+          "stability": 69,
+          "price": 60.32
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 80,
+          "price": 50.13
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 61,
+          "price": 39.92
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 50,
+          "stability": 54,
+          "price": 42.65
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 92,
+          "stability": 85,
+          "price": 41.74
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 3,
+          "price": 26.01
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 17,
+          "stability": 39,
+          "price": 76.84
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 61,
+          "price": 46.63
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 57,
+          "price": 59.31
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 42,
+          "stability": 19,
+          "price": 71.78
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 67,
+          "stability": 54,
+          "price": 53.46
+        }
+      ]
+    },
+    {
+      "date": "2025-08-22",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 25,
+          "stability": 28,
+          "price": 569.85
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 75,
+          "stability": 72,
+          "price": 60.73
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 83,
+          "price": 50.66
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 66,
+          "price": 40.7
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 59,
+          "price": 42.93
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 92,
+          "stability": 86,
+          "price": 41.82
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 6,
+          "price": 26.43
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 17,
+          "stability": 45,
+          "price": 76.72
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 63,
+          "price": 47.38
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 62,
+          "price": 60.72
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 58,
+          "stability": 27,
+          "price": 71.9
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 67,
+          "stability": 57,
+          "price": 54.55
+        }
+      ]
+    },
+    {
+      "date": "2025-08-29",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 30,
+          "price": 568.29
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 67,
+          "stability": 75,
+          "price": 59.17
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 85,
+          "price": 49.42
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 71,
+          "price": 40.1
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 63,
+          "price": 41.39
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 92,
+          "stability": 87,
+          "price": 41.06
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 8,
+          "price": 26.26
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 51,
+          "price": 75.05
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 65,
+          "price": 48.13
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 65,
+          "price": 59.89
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 58,
+          "stability": 34,
+          "price": 70.65
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 59,
+          "price": 53.51
+        }
+      ]
+    },
+    {
+      "date": "2025-09-05",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 29,
+          "price": 573.93
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 67,
+          "stability": 76,
+          "price": 58.97
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 86,
+          "price": 48.84
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 73,
+          "price": 40.19
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 65,
+          "price": 41.36
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 92,
+          "stability": 87,
+          "price": 40.53
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 10,
+          "price": 26.11
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 54,
+          "price": 75.91
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 65,
+          "price": 48.51
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 67,
+          "price": 61.72
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 58,
+          "stability": 38,
+          "price": 72.01
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 61,
+          "price": 53.74
+        }
+      ]
+    },
+    {
+      "date": "2025-09-12",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 31,
+          "price": 584.49
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 77,
+          "price": 59.8
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 87,
+          "price": 50.06
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 77,
+          "price": 40.56
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 68,
+          "price": 42.26
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 92,
+          "stability": 87,
+          "price": 40.5
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 14,
+          "price": 26.41
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 57,
+          "price": 77.43
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 67,
+          "price": 48.93
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 71,
+          "price": 63.93
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 67,
+          "stability": 44,
+          "price": 76.93
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 75,
+          "stability": 62,
+          "price": 56.2
+        }
+      ]
+    },
+    {
+      "date": "2025-09-19",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 33,
+          "price": 597.13
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 80,
+          "price": 60.65
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 89,
+          "price": 49.73
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 80,
+          "price": 40.0
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 71,
+          "price": 42.45
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 92,
+          "stability": 86,
+          "price": 40.41
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 18,
+          "price": 26.07
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 62,
+          "price": 77.46
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 68,
+          "price": 50.05
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 75,
+          "price": 63.91
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 75,
+          "stability": 51,
+          "price": 78.29
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 67,
+          "stability": 65,
+          "price": 58.02
+        }
+      ]
+    },
+    {
+      "date": "2025-09-26",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 35,
+          "price": 594.45
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 83,
+          "price": 60.93
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 91,
+          "price": 49.89
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 84,
+          "price": 40.22
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 77,
+          "price": 42.36
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 92,
+          "stability": 87,
+          "price": 40.39
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 24,
+          "price": 25.86
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 66,
+          "price": 77.12
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 71,
+          "price": 49.35
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 78,
+          "price": 64.92
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 83,
+          "stability": 59,
+          "price": 77.14
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 67,
+          "stability": 70,
+          "price": 58.73
+        }
+      ]
+    },
+    {
+      "date": "2025-10-03",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 37,
+          "price": 601.65
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 86,
+          "price": 62.86
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 92,
+          "price": 50.93
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 87,
+          "price": 41.24
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 81,
+          "price": 43.64
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 83,
+          "stability": 87,
+          "price": 41.6
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 30,
+          "price": 26.6
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 71,
+          "price": 78.4
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 73,
+          "price": 50.55
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 83,
+          "price": 64.6
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 92,
+          "stability": 65,
+          "price": 82.01
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 67,
+          "stability": 74,
+          "price": 60.36
+        }
+      ]
+    },
+    {
+      "date": "2025-10-10",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 39,
+          "price": 588.0
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 87,
+          "price": 60.51
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 92,
+          "price": 48.7
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 88,
+          "price": 40.36
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 83,
+          "price": 42.07
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 67,
+          "stability": 87,
+          "price": 40.7
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 35,
+          "price": 25.64
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 75,
+          "price": 75.13
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 75,
+          "price": 49.19
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 86,
+          "price": 62.26
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 92,
+          "stability": 71,
+          "price": 78.95
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 83,
+          "stability": 78,
+          "price": 58.75
+        }
+      ]
+    },
+    {
+      "date": "2025-10-17",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 41,
+          "price": 602.39
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 89,
+          "price": 62.32
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 93,
+          "price": 49.14
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 91,
+          "price": 40.69
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 86,
+          "price": 43.95
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 67,
+          "stability": 86,
+          "price": 40.57
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 41,
+          "price": 26.1
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 78,
+          "price": 78.62
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 78,
+          "price": 49.6
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 89,
+          "price": 63.94
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 92,
+          "stability": 75,
+          "price": 86.58
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 83,
+          "stability": 81,
+          "price": 60.69
+        }
+      ]
+    },
+    {
+      "date": "2025-10-24",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 44,
+          "price": 615.53
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 90,
+          "price": 62.4
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 94,
+          "price": 49.63
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 92,
+          "price": 41.38
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 88,
+          "price": 43.84
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 67,
+          "stability": 85,
+          "price": 40.77
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 45,
+          "price": 26.35
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 79,
+          "price": 79.09
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 79,
+          "price": 50.16
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 90,
+          "price": 63.21
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 79,
+          "price": 90.03
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 83,
+          "stability": 84,
+          "price": 60.47
+        }
+      ]
+    },
+    {
+      "date": "2025-10-31",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 46,
+          "price": 627.47
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 90,
+          "price": 61.89
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 92,
+          "stability": 94,
+          "price": 50.15
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 93,
+          "price": 41.27
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 42,
+          "stability": 88,
+          "price": 43.03
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 67,
+          "stability": 83,
+          "price": 39.93
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 47,
+          "price": 25.96
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 80,
+          "price": 80.01
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 33,
+          "stability": 80,
+          "price": 50.06
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 91,
+          "price": 64.33
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 82,
+          "price": 94.87
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 83,
+          "stability": 87,
+          "price": 59.17
+        }
+      ]
+    },
+    {
+      "date": "2025-11-07",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 49,
+          "price": 608.19
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 90,
+          "price": 61.58
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 83,
+          "stability": 94,
+          "price": 50.52
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 93,
+          "price": 41.46
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 33,
+          "stability": 88,
+          "price": 42.54
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 67,
+          "stability": 81,
+          "price": 39.68
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 51,
+          "price": 25.64
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 82,
+          "price": 79.85
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 42,
+          "stability": 82,
+          "price": 49.43
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 92,
+          "price": 65.58
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 85,
+          "price": 89.78
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 89,
+          "price": 59.6
+        }
+      ]
+    },
+    {
+      "date": "2025-11-14",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 51,
+          "price": 607.31
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 89,
+          "price": 62.61
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 83,
+          "stability": 94,
+          "price": 51.5
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 93,
+          "price": 41.37
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 33,
+          "stability": 87,
+          "price": 43.57
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 67,
+          "stability": 78,
+          "price": 40.06
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 52,
+          "price": 25.16
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 25,
+          "stability": 83,
+          "price": 80.51
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 42,
+          "stability": 83,
+          "price": 50.2
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 93,
+          "price": 65.0
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 86,
+          "price": 92.06
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 90,
+          "price": 62.15
+        }
+      ]
+    },
+    {
+      "date": "2025-11-21",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 52,
+          "price": 588.57
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 88,
+          "price": 60.48
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 83,
+          "stability": 93,
+          "price": 49.82
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 40.68
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 25,
+          "stability": 86,
+          "price": 42.46
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 67,
+          "stability": 74,
+          "price": 38.63
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 53,
+          "price": 24.56
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 33,
+          "stability": 83,
+          "price": 77.84
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 50,
+          "stability": 86,
+          "price": 49.75
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 93,
+          "price": 63.86
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 89,
+          "price": 87.26
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 92,
+          "price": 60.18
+        }
+      ]
+    },
+    {
+      "date": "2025-11-28",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 17,
+          "stability": 55,
+          "price": 617.67
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 88,
+          "price": 62.48
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 83,
+          "stability": 92,
+          "price": 51.24
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 41.73
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 25,
+          "stability": 85,
+          "price": 43.31
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 50,
+          "stability": 72,
+          "price": 40.12
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 57,
+          "price": 25.06
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 33,
+          "stability": 85,
+          "price": 79.58
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 88,
+          "price": 51.99
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 93,
+          "price": 66.16
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 90,
+          "price": 88.87
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 93,
+          "price": 61.92
+        }
+      ]
+    },
+    {
+      "date": "2025-12-05",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 25,
+          "stability": 59,
+          "price": 623.89
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 87,
+          "price": 63.24
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 83,
+          "stability": 92,
+          "price": 51.28
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 93,
+          "price": 41.8
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 84,
+          "price": 43.36
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 42,
+          "stability": 69,
+          "price": 40.6
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 59,
+          "price": 25.54
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 33,
+          "stability": 87,
+          "price": 80.25
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 91,
+          "price": 52.57
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 93,
+          "price": 66.41
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 91,
+          "price": 92.23
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 94,
+          "price": 62.98
+        }
+      ]
+    },
+    {
+      "date": "2025-12-12",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 25,
+          "stability": 62,
+          "price": 612.06
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 58,
+          "stability": 87,
+          "price": 63.83
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 83,
+          "stability": 91,
+          "price": 51.94
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 93,
+          "price": 41.86
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 83,
+          "price": 43.61
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 33,
+          "stability": 68,
+          "price": 41.35
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 59,
+          "price": 25.71
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 42,
+          "stability": 88,
+          "price": 80.53
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 92,
+          "price": 53.16
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 75,
+          "stability": 94,
+          "price": 68.35
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 92,
+          "price": 90.63
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 63.67
+        }
+      ]
+    },
+    {
+      "date": "2025-12-19",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 33,
+          "stability": 65,
+          "price": 615.48
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 50,
+          "stability": 87,
+          "price": 64.01
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 75,
+          "stability": 91,
+          "price": 53.16
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 93,
+          "price": 42.93
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 83,
+          "price": 43.86
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 25,
+          "stability": 66,
+          "price": 41.27
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 58,
+          "price": 25.52
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 42,
+          "stability": 88,
+          "price": 80.14
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 92,
+          "price": 53.43
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 67.85
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 93,
+          "price": 91.34
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 66.15
+        }
+      ]
+    },
+    {
+      "date": "2025-12-26",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 68,
+          "price": 623.1
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 87,
+          "price": 64.62
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 75,
+          "stability": 91,
+          "price": 53.56
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 43.62
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 83,
+          "price": 44.13
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 25,
+          "stability": 64,
+          "price": 41.81
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 58,
+          "price": 26.31
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 89,
+          "price": 80.53
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 93,
+          "price": 54.54
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 70.12
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 93,
+          "price": 95.84
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 68.8
+        }
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 70,
+          "price": 612.35
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 88,
+          "price": 65.27
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 75,
+          "stability": 91,
+          "price": 54.09
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 43.83
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 84,
+          "price": 44.25
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 25,
+          "stability": 63,
+          "price": 41.72
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 58,
+          "price": 26.1
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 89,
+          "price": 80.89
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 93,
+          "price": 53.94
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 68.65
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 93,
+          "price": 102.22
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 67.91
+        }
+      ]
+    },
+    {
+      "date": "2026-01-09",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 72,
+          "price": 625.86
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 88,
+          "price": 66.31
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 75,
+          "stability": 91,
+          "price": 53.97
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 44.16
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 85,
+          "price": 44.81
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 25,
+          "stability": 62,
+          "price": 42.56
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 56,
+          "price": 25.9
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 89,
+          "price": 84.15
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 94,
+          "price": 54.37
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 70.03
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 108.89
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 69.17
+        }
+      ]
+    },
+    {
+      "date": "2026-01-16",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 74,
+          "price": 620.48
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 89,
+          "price": 66.49
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 75,
+          "stability": 91,
+          "price": 53.86
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 94,
+          "price": 44.54
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 84,
+          "price": 44.23
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 25,
+          "stability": 61,
+          "price": 42.49
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 56,
+          "price": 26.37
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 89,
+          "price": 85.02
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 94,
+          "price": 54.87
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 72.93
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 112.22
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 71.22
+        }
+      ]
+    },
+    {
+      "date": "2026-01-23",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 77,
+          "price": 621.94
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 89,
+          "price": 66.59
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 75,
+          "stability": 91,
+          "price": 53.85
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 94,
+          "price": 44.93
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 25,
+          "stability": 84,
+          "price": 44.45
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 17,
+          "stability": 60,
+          "price": 42.62
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 58,
+          "price": 27.0
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 90,
+          "price": 84.1
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 95,
+          "price": 55.51
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 74.98
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 117.97
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 74.7
+        }
+      ]
+    },
+    {
+      "date": "2026-01-30",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 79,
+          "price": 621.09
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 89,
+          "price": 66.7
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 75,
+          "stability": 91,
+          "price": 54.8
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 94,
+          "price": 45.51
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 25,
+          "stability": 83,
+          "price": 44.29
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 17,
+          "stability": 58,
+          "price": 42.26
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 8,
+          "stability": 59,
+          "price": 27.37
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 90,
+          "price": 85.26
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 67,
+          "stability": 95,
+          "price": 54.01
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 74.03
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 122.41
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 71.63
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 80,
+          "price": 608.88
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 89,
+          "price": 67.4
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 67,
+          "stability": 91,
+          "price": 55.19
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 46.24
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 25,
+          "stability": 83,
+          "price": 45.32
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 57,
+          "price": 42.67
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 17,
+          "stability": 62,
+          "price": 27.84
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 90,
+          "price": 88.92
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 95,
+          "price": 54.75
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 78.71
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 124.71
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 73.17
+        }
+      ]
+    },
+    {
+      "date": "2026-02-13",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 82,
+          "price": 601.16
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 89,
+          "price": 67.44
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 67,
+          "stability": 91,
+          "price": 54.47
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 46.58
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 84,
+          "price": 45.61
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 56,
+          "price": 43.11
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 65,
+          "price": 28.76
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 90,
+          "price": 93.34
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 96,
+          "price": 55.91
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 94,
+          "price": 79.85
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 133.97
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 97,
+          "price": 73.7
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 83,
+          "price": 608.04
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 89,
+          "price": 68.59
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 67,
+          "stability": 90,
+          "price": 55.71
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 47.36
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 84,
+          "price": 46.57
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 55,
+          "price": 43.45
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 67,
+          "price": 29.29
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 91,
+          "price": 90.98
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 96,
+          "price": 56.89
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 93,
+          "price": 80.05
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 141.88
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 97,
+          "price": 75.59
+        }
+      ]
+    },
+    {
+      "date": "2026-02-27",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 58,
+          "stability": 82,
+          "price": 606.53
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 89,
+          "price": 68.44
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 67,
+          "stability": 90,
+          "price": 56.22
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 47.99
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 84,
+          "price": 46.75
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 54,
+          "price": 43.47
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 67,
+          "price": 29.67
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 50,
+          "stability": 91,
+          "price": 91.87
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 97,
+          "price": 57.71
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 93,
+          "price": 79.77
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 151.37
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 97,
+          "price": 79.85
+        }
+      ]
+    },
+    {
+      "date": "2026-03-06",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 50,
+          "stability": 80,
+          "price": 598.99
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 88,
+          "price": 62.98
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 58,
+          "stability": 88,
+          "price": 51.94
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 45.37
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 82,
+          "price": 43.11
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 49,
+          "price": 40.02
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 67,
+          "price": 27.94
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 91,
+          "price": 84.31
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 97,
+          "price": 56.09
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 93,
+          "price": 72.65
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 126.73
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 96,
+          "price": 69.01
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 50,
+          "stability": 77,
+          "price": 592.97
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 84,
+          "price": 61.81
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 58,
+          "stability": 86,
+          "price": 51.07
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 93,
+          "price": 44.69
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 76,
+          "price": 41.8
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 41,
+          "price": 39.06
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 66,
+          "price": 27.59
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 90,
+          "price": 82.91
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 96,
+          "price": 54.77
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 92,
+          "price": 70.49
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 124.15
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 95,
+          "price": 65.17
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 50,
+          "stability": 73,
+          "price": 581.33
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 78,
+          "price": 59.91
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 58,
+          "stability": 81,
+          "price": 49.72
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 42,
+          "stability": 91,
+          "price": 43.23
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 68,
+          "price": 40.71
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 30,
+          "price": 37.45
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 64,
+          "price": 26.92
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 88,
+          "price": 80.76
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 52.96
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 90,
+          "price": 68.86
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 125.78
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 92,
+          "price": 61.24
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 67,
+          "price": 562.58
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 72,
+          "price": 59.8
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 58,
+          "stability": 77,
+          "price": 50.11
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 50,
+          "stability": 90,
+          "price": 43.5
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 59,
+          "price": 40.89
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 19,
+          "price": 37.33
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 61,
+          "price": 26.83
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 86,
+          "price": 80.99
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 93,
+          "price": 53.38
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 88,
+          "price": 71.06
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 120.98
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 89,
+          "price": 62.85
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 65,
+          "price": 584.98
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 70,
+          "price": 62.45
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 78,
+          "price": 53.26
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 91,
+          "price": 45.58
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 56,
+          "price": 42.73
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 11,
+          "price": 39.12
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 64,
+          "price": 27.71
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 86,
+          "price": 84.83
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 93,
+          "price": 55.06
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 89,
+          "price": 75.01
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 122.87
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 89,
+          "price": 66.55
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 63,
+          "price": 611.07
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 70,
+          "price": 65.94
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 80,
+          "price": 56.17
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 92,
+          "price": 47.0
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 55,
+          "price": 44.78
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 7,
+          "price": 40.78
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 65,
+          "price": 29.43
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 87,
+          "price": 87.65
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 56.49
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 90,
+          "price": 78.36
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 138.73
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 88,
+          "price": 70.59
+        }
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 64,
+          "price": 648.85
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 70,
+          "price": 67.61
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 81,
+          "price": 57.58
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 92,
+          "price": 47.57
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 55,
+          "price": 45.67
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 4,
+          "price": 42.34
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 65,
+          "price": 29.79
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 87,
+          "price": 89.7
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 58.25
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 90,
+          "price": 78.31
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 152.33
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 88,
+          "price": 73.02
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 65,
+          "price": 663.88
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 69,
+          "price": 66.03
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 81,
+          "price": 56.1
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 92,
+          "price": 46.33
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 53,
+          "price": 44.32
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 3,
+          "price": 41.52
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 65,
+          "price": 28.77
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 86,
+          "price": 86.85
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 57.67
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 90,
+          "price": 77.33
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 154.57
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 86,
+          "price": 68.61
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 65,
+          "price": 674.15
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 68,
+          "price": 65.99
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 81,
+          "price": 56.58
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 91,
+          "price": 46.36
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 51,
+          "price": 44.31
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 2,
+          "price": 41.5
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 65,
+          "price": 28.86
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 86,
+          "price": 87.82
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 58.13
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 89,
+          "price": 75.55
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 95,
+          "price": 162.0
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 84,
+          "price": 66.74
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 65,
+          "price": 711.23
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 68,
+          "price": 67.08
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 81,
+          "price": 57.99
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 91,
+          "price": 46.04
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 49,
+          "price": 44.69
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 1,
+          "price": 41.81
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 65,
+          "price": 29.13
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 86,
+          "price": 91.72
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 57.82
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 89,
+          "price": 78.71
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 190.2
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 83,
+          "price": 70.16
+        }
+      ]
+    },
+    {
+      "date": "2026-05-15",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 65,
+          "price": 708.93
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 66,
+          "price": 64.95
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 81,
+          "price": 56.54
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 89,
+          "price": 44.93
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 44,
+          "price": 43.13
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 0,
+          "price": 40.56
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 65,
+          "price": 28.32
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 86,
+          "price": 90.58
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 57.17
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 89,
+          "price": 76.09
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 178.86
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 81,
+          "price": 65.92
+        }
+      ]
+    },
+    {
+      "date": "2026-05-22",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "🇺🇸",
+          "etf": "QQQ",
+          "trend": 42,
+          "stability": 65,
+          "price": 717.54
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "🇪🇺",
+          "etf": "FEZ",
+          "trend": 33,
+          "stability": 66,
+          "price": 67.19
+        },
+        {
+          "market": "Italy30",
+          "code": "IT",
+          "flag": "🇮🇹",
+          "etf": "EWI",
+          "trend": 50,
+          "stability": 81,
+          "price": 57.46
+        },
+        {
+          "market": "UK30",
+          "code": "GB",
+          "flag": "🇬🇧",
+          "etf": "EWU",
+          "trend": 58,
+          "stability": 89,
+          "price": 46.42
+        },
+        {
+          "market": "France40",
+          "code": "FR",
+          "flag": "🇫🇷",
+          "etf": "EWQ",
+          "trend": 17,
+          "stability": 42,
+          "price": 44.12
+        },
+        {
+          "market": "Germany30",
+          "code": "DE",
+          "flag": "🇩🇪",
+          "etf": "EWG",
+          "trend": 8,
+          "stability": 0,
+          "price": 42.07
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "🇦🇺",
+          "etf": "EWA",
+          "trend": 25,
+          "stability": 64,
+          "price": 28.38
+        },
+        {
+          "market": "Japan50",
+          "code": "JP",
+          "flag": "🇯🇵",
+          "etf": "EWJ",
+          "trend": 67,
+          "stability": 86,
+          "price": 91.11
+        },
+        {
+          "market": "Canada50",
+          "code": "CA",
+          "flag": "🇨🇦",
+          "etf": "EWC",
+          "trend": 75,
+          "stability": 94,
+          "price": 58.24
+        },
+        {
+          "market": "Mexico30",
+          "code": "MX",
+          "flag": "🇲🇽",
+          "etf": "EWW",
+          "trend": 83,
+          "stability": 88,
+          "price": 76.63
+        },
+        {
+          "market": "South Korea30",
+          "code": "KR",
+          "flag": "🇰🇷",
+          "etf": "EWY",
+          "trend": 100,
+          "stability": 94,
+          "price": 182.03
+        },
+        {
+          "market": "South Africa30",
+          "code": "ZA",
+          "flag": "🇿🇦",
+          "etf": "EZA",
+          "trend": 92,
+          "stability": 78,
+          "price": 65.87
+        }
+      ]
+    },
     {
       "date": "2026-05-29",
       "points": [
@@ -361,25 +5785,25 @@
           "etf": "FEZ",
           "trend": 33,
           "stability": 65,
-          "price": 70.06
+          "price": 69.24
         },
         {
           "market": "Italy30",
           "code": "IT",
           "flag": "🇮🇹",
           "etf": "EWI",
-          "trend": 58,
+          "trend": 50,
           "stability": 81,
-          "price": 60.6
+          "price": 60.16
         },
         {
           "market": "UK30",
           "code": "GB",
           "flag": "🇬🇧",
           "etf": "EWU",
-          "trend": 50,
+          "trend": 58,
           "stability": 86,
-          "price": 45.46
+          "price": 45.92
         },
         {
           "market": "France40",
@@ -387,8 +5811,8 @@
           "flag": "🇫🇷",
           "etf": "EWQ",
           "trend": 17,
-          "stability": 38,
-          "price": 45.81
+          "stability": 37,
+          "price": 45.35
         },
         {
           "market": "Germany30",
@@ -397,7 +5821,7 @@
           "etf": "EWG",
           "trend": 8,
           "stability": 0,
-          "price": 41.52
+          "price": 41.36
         },
         {
           "market": "Australia50",
@@ -406,7 +5830,7 @@
           "etf": "EWA",
           "trend": 25,
           "stability": 63,
-          "price": 28.56
+          "price": 28.65
         },
         {
           "market": "Japan50",
@@ -423,8 +5847,8 @@
           "flag": "🇨🇦",
           "etf": "EWC",
           "trend": 75,
-          "stability": 92,
-          "price": 57.87
+          "stability": 93,
+          "price": 58.19
         },
         {
           "market": "Mexico30",
@@ -433,7 +5857,7 @@
           "etf": "EWW",
           "trend": 83,
           "stability": 86,
-          "price": 77.33
+          "price": 77.31
         },
         {
           "market": "South Korea30",
@@ -451,7 +5875,7 @@
           "etf": "EZA",
           "trend": 92,
           "stability": 64,
-          "price": 66.74
+          "price": 66.51
         }
       ]
     }
