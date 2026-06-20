@@ -391,6 +391,27 @@
       margin: 0 0 20px;
     }
 
+    .published-strip {
+      display: grid;
+      grid-template-columns: 0.9fr 1.2fr auto;
+      gap: 22px;
+      align-items: center;
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.20);
+    }
+
+    .published-strip h2 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .published-strip p {
+      margin: 0;
+    }
+
     footer {
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
@@ -411,7 +432,8 @@
     @media (max-width: 980px) {
       .hero,
       .mosaic-panel,
-      .about {
+      .about,
+      .published-strip {
         grid-template-columns: 1fr;
       }
 
@@ -463,6 +485,7 @@
       <a href="#matrix">Market Matrix</a>
       <a href="#research">Research</a>
       <a href="#services">Services</a>
+      <a href="publications.html">Publications</a>
       <a href="#about">About</a>
       <a class="btn" href="mailto:domderrico@gmail.com">Contact</a>
     </div>
@@ -595,6 +618,15 @@
           <a class="btn green" href="mailto:domderrico@gmail.com">Contact</a>
         </div>
       </div>
+    </section>
+
+    <section class="published-strip">
+      <div>
+        <div class="eyebrow">Published Work</div>
+        <h2>Book and Stocks &amp; Commodities archive</h2>
+      </div>
+      <p>Author of <em>TradeStation EasyLanguage for Algorithmic Trading</em> and contributor to <em>Technical Analysis of Stocks &amp; Commodities</em>.</p>
+      <a class="btn" href="publications.html">View Publications</a>
     </section>
   </main>
 
