@@ -9,7 +9,7 @@
       --bg: #071423;
       --bg2: #0d2035;
       --panel: rgba(255,255,255,0.075);
-      --panel2: rgba(255,255,255,0.105);
+      --panel2: rgba(255,255,255,0.115);
       --text: #f4f7fb;
       --muted: #aebbd0;
       --blue: #4aa3ff;
@@ -29,17 +29,23 @@
       margin: 0;
       font-family: Inter, "Segoe UI", Arial, sans-serif;
       background:
-        radial-gradient(circle at 20% 0%, rgba(74,163,255,0.22), transparent 28%),
-        radial-gradient(circle at 80% 10%, rgba(66,211,146,0.16), transparent 30%),
-        linear-gradient(180deg, var(--bg), #050b14 72%);
+        radial-gradient(circle at 18% 0%, rgba(74,163,255,0.22), transparent 28%),
+        radial-gradient(circle at 82% 8%, rgba(66,211,146,0.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), #050b14 74%);
       color: var(--text);
     }
 
     a { color: inherit; text-decoration: none; }
 
-    .nav {
+    .nav,
+    .hero,
+    section {
       width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .nav {
       padding: 24px 0;
       display: flex;
       align-items: center;
@@ -102,17 +108,25 @@
       border: 1px solid var(--border);
       background: var(--panel);
       box-shadow: 0 10px 32px rgba(0,0,0,0.22);
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.32);
+      outline: none;
     }
 
     .btn.primary { background: linear-gradient(135deg, var(--blue), #2e7be8); border: none; }
     .btn.green { background: linear-gradient(135deg, var(--green), #18a86b); border: none; }
 
     .hero {
-      width: min(1180px, calc(100% - 40px));
-      margin: 40px auto 70px;
+      margin-top: 42px;
+      margin-bottom: 78px;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 36px;
+      grid-template-columns: minmax(0, 0.95fr) minmax(460px, 1.05fr);
+      gap: 42px;
       align-items: center;
     }
 
@@ -127,13 +141,19 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(44px, 6vw, 78px);
-      line-height: 0.95;
+      font-size: clamp(44px, 5.7vw, 76px);
+      line-height: 0.96;
       letter-spacing: -3px;
     }
 
-    .hero p,
-    .section-head p {
+    h2 {
+      margin: 0 0 10px;
+      font-size: 38px;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    p {
       color: var(--muted);
       line-height: 1.55;
     }
@@ -141,26 +161,48 @@
     .hero p {
       font-size: 21px;
       margin: 24px 0 32px;
-      max-width: 650px;
+      max-width: 660px;
     }
 
-    .hero-actions {
+    .hero-actions,
+    .button-row {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
     }
 
-    .visual-card {
-      position: relative;
+    section { margin-bottom: 76px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 24px;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 680px;
+      font-size: 18px;
+    }
+
+    .matrix-shell,
+    .mosaic-panel,
+    .card,
+    .about {
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .matrix-shell {
       padding: 24px;
       background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
-      border: 1px solid var(--border);
       border-radius: 32px;
-      box-shadow: var(--shadow);
       overflow: hidden;
     }
 
-    .visual-title {
+    .matrix-title {
       display: flex;
       justify-content: space-between;
       gap: 16px;
@@ -170,14 +212,14 @@
       font-weight: 700;
     }
 
-    .matrix {
+    .market-matrix {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
     }
 
-    .market {
-      min-height: 92px;
+    .market-card {
+      min-height: 124px;
       border-radius: 20px;
       padding: 14px;
       background: rgba(255,255,255,0.09);
@@ -188,13 +230,21 @@
       transition: transform 160ms ease, border-color 160ms ease;
     }
 
-    .market:hover,
-    .market:focus-visible,
+    .market-card:hover,
+    .market-card:focus-visible,
     .card:hover,
     .card:focus-within {
-      border-color: rgba(255,255,255,0.30);
+      border-color: rgba(255,255,255,0.32);
       transform: translateY(-2px);
       outline: none;
+    }
+
+    .market-top,
+    .metric-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
     }
 
     .market-code {
@@ -204,8 +254,27 @@
       letter-spacing: 0.4px;
     }
 
+    .market-name,
+    .status-pill,
+    .metric-label {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .status-pill {
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+    }
+
+    .metric {
+      display: grid;
+      gap: 6px;
+    }
+
     .score {
-      height: 8px;
+      height: 7px;
       border-radius: 999px;
       background: rgba(255,255,255,0.12);
       overflow: hidden;
@@ -218,44 +287,56 @@
       background: linear-gradient(90deg, var(--red), var(--yellow), var(--green));
     }
 
-    .market small {
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    section {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto 72px;
-    }
-
-    .section-head { margin-bottom: 24px; }
-    .section-head h2 { font-size: 38px; letter-spacing: -1px; margin: 0 0 10px; }
-    .section-head p { font-size: 18px; margin: 0; max-width: 760px; }
-
-    .two-cards,
-    .reports,
-    .services,
-    .process {
+    .mosaic-panel {
       display: grid;
+      grid-template-columns: minmax(300px, 0.78fr) minmax(0, 1.22fr);
+      gap: 28px;
+      align-items: center;
+      padding: 28px;
+      border-radius: 32px;
+      background: linear-gradient(135deg, rgba(74,163,255,0.14), rgba(66,211,146,0.09));
+    }
+
+    .mosaic-panel p {
+      margin: 16px 0 22px;
+      font-size: 18px;
+    }
+
+    .mosaic-map {
+      min-height: 360px;
+    }
+
+    .quick-reports {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .quick-report {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.13);
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
-    .two-cards { grid-template-columns: repeat(2, 1fr); }
-    .reports { grid-template-columns: repeat(3, 1fr); }
-    .services { grid-template-columns: repeat(4, 1fr); }
-    .process { grid-template-columns: repeat(4, 1fr); counter-reset: step; }
-
-    .card,
-    .step {
+    .card {
       background: var(--panel);
-      border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+      overflow: hidden;
+      transition: transform 160ms ease, border-color 160ms ease;
     }
 
-    .card {
+    .card-body {
       padding: 26px;
-      transition: transform 160ms ease, border-color 160ms ease;
     }
 
     .card h3 {
@@ -265,177 +346,107 @@
     }
 
     .card p {
-      color: var(--muted);
-      line-height: 1.5;
       margin: 0 0 20px;
     }
 
-    .icon {
+    .research-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-icon {
       display: inline-grid;
       place-items: center;
       width: 44px;
       height: 44px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       border-radius: 14px;
       color: #071423;
       background: linear-gradient(135deg, var(--yellow), var(--green));
       font-weight: 900;
     }
 
-    .report-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 16px 0 18px;
-    }
-
-    .chip {
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.09);
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 750;
-    }
-
-    .step {
-      padding: 22px;
-      position: relative;
-    }
-
-    .step:before {
-      counter-increment: step;
-      content: counter(step);
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: rgba(74,163,255,0.22);
-      color: #dceeff;
-      font-weight: 900;
-      margin-bottom: 18px;
-    }
-
-    .step h3 { margin: 0 0 8px; font-size: 18px; }
-    .step p { margin: 0; color: var(--muted); line-height: 1.45; font-size: 14px; }
-
     .about {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 24px;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 28px;
       align-items: center;
       background: linear-gradient(135deg, rgba(74,163,255,0.13), rgba(66,211,146,0.10));
-      border: 1px solid var(--border);
       border-radius: 32px;
       padding: 34px;
     }
 
     .about img {
       width: 100%;
-      max-height: 310px;
+      max-height: 330px;
       object-fit: cover;
       border-radius: 28px;
       box-shadow: 0 18px 48px rgba(0,0,0,0.24);
     }
 
-    .about h2 { margin: 0 0 14px; font-size: 34px; }
-    .about p { color: var(--muted); line-height: 1.55; font-size: 17px; }
-
-    .footer-cta {
-      text-align: center;
-      padding: 54px 26px;
-      border-radius: 34px;
-      background: linear-gradient(135deg, rgba(74,163,255,0.24), rgba(66,211,146,0.18));
-      border: 1px solid var(--border);
-    }
-
-    .footer-cta h2 { font-size: 42px; margin: 0 0 12px; }
-    .footer-cta p {
-      color: var(--muted);
-      margin: 0 auto 24px;
-      max-width: 680px;
-      font-size: 18px;
-      line-height: 1.5;
+    .about p {
+      font-size: 17px;
+      margin: 0 0 20px;
     }
 
     footer {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 0 0 34px;
       color: var(--muted);
-      text-align: center;
-      padding: 30px;
       font-size: 13px;
     }
 
-    @media (max-width: 900px) {
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 980px) {
       .hero,
-      .two-cards,
+      .mosaic-panel,
       .about {
         grid-template-columns: 1fr;
       }
 
-      .reports,
-      .services,
-      .process {
+      .grid-3,
+      .quick-reports {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .nav {
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        max-width: 520px;
-      }
+      .nav { align-items: flex-start; }
+      .nav-links { max-width: 520px; }
     }
 
     @media (max-width: 640px) {
-      .nav {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-      }
+      .nav { display: block; }
+      .nav-links { display: none; }
 
       h1 {
-        font-size: 44px;
-        letter-spacing: -1.6px;
+        font-size: 43px;
+        letter-spacing: -1.5px;
       }
 
-      .hero p {
-        font-size: 18px;
-      }
-
-      .matrix,
-      .reports,
-      .services,
-      .process {
-        grid-template-columns: 1fr;
-      }
-
-      .two-cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .visual-title {
-        display: block;
-      }
-
-      .visual-title span {
-        display: block;
-      }
-
-      .visual-title span + span {
-        margin-top: 6px;
-      }
+      h2 { font-size: 32px; }
+      .hero p { font-size: 18px; }
+      .hero-actions,
+      .button-row { flex-direction: column; }
+      .btn { width: 100%; }
+      .market-matrix,
+      .grid-3,
+      .quick-reports { grid-template-columns: 1fr; }
+      .matrix-title,
+      .section-head,
+      .footer-inner { display: block; }
+      .matrix-title span,
+      .footer-inner p { display: block; margin-top: 8px; }
+      .mosaic-map { min-height: auto; }
     }
   </style>
 </head>
@@ -449,10 +460,11 @@
     </a>
     <div class="nav-links">
       <a href="#mosaic">Mosaic</a>
-      <a href="#reports">Reports</a>
-      <a href="#consulting">Consulting</a>
+      <a href="#matrix">Market Matrix</a>
+      <a href="#research">Research</a>
+      <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a class="btn" href="#contact">Contact</a>
+      <a class="btn" href="mailto:domderrico@gmail.com">Contact</a>
     </div>
   </nav>
 
@@ -460,111 +472,150 @@
     <section class="hero">
       <div>
         <div class="eyebrow">Quantitative Research Lab</div>
-        <h1>Market intelligence for better portfolio decisions.</h1>
-        <p>TradingAlgo helps traders, advisors and professional investors analyze markets, select stronger portfolios and validate systematic ideas.</p>
+        <h1>Quantitative Research for Traders, Advisors and Asset Managers</h1>
+        <p>We transform market data into actionable portfolio decisions through systematic analysis and quantitative research.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#reports">Explore TradingAlgo Mosaic</a>
-          <a class="btn green" href="#consulting">Request a Consultation</a>
+          <a class="btn primary" href="#mosaic">Explore TradingAlgo Mosaic</a>
+          <a class="btn green" href="mailto:domderrico@gmail.com">Request a Consultation</a>
         </div>
       </div>
 
-      <div class="visual-card">
-        <div class="visual-title"><span>Global Market Matrix</span><span>Trend x Stability</span></div>
-        <div class="matrix" id="hero-matrix">
-          <a class="market" href="#reports"><span class="market-code">US</span><small>USA100</small><div class="score"><span style="width:73%"></span></div></a>
-          <a class="market" href="#reports"><span class="market-code">EU</span><small>Europe50</small><div class="score"><span style="width:71%"></span></div></a>
-          <a class="market" href="#reports"><span class="market-code">IT</span><small>Italy30</small><div class="score"><span style="width:84%"></span></div></a>
-          <a class="market" href="#reports"><span class="market-code">JP</span><small>Japan50</small><div class="score"><span style="width:94%"></span></div></a>
-          <a class="market" href="#reports"><span class="market-code">CA</span><small>Canada50</small><div class="score"><span style="width:92%"></span></div></a>
-          <a class="market" href="#reports"><span class="market-code">KR</span><small>South Korea30</small><div class="score"><span style="width:95%"></span></div></a>
+      <div class="matrix-shell">
+        <div class="matrix-title"><span>Global Market Matrix</span><span>Market Report -> 5 Selected Stocks</span></div>
+        <div class="market-matrix" id="hero-matrix"></div>
+      </div>
+    </section>
+
+    <section id="mosaic">
+      <div class="mosaic-panel">
+        <div>
+          <div class="eyebrow">TradingAlgo Mosaic</div>
+          <h2>Country Matrix, weekly market reports and five selected stocks.</h2>
+          <p>Every week TradingAlgo Mosaic analyzes hundreds of stocks across global markets and identifies the five securities that best represent each market based on Trend, Stability and Portfolio Contribution.</p>
+          <div class="button-row">
+            <a class="btn primary" href="tradingalgo-mosaic.html">How Mosaic Works</a>
+            <a class="btn" href="how-to-read-mosaic-report.html">How to Read Reports</a>
+          </div>
+        </div>
+        <div>
+          <div class="matrix-shell mosaic-map" id="matrix">
+            <div class="matrix-title"><span>Country Matrix</span><span>Trend | Stability | Market Status</span></div>
+            <div class="market-matrix" id="country-matrix"></div>
+          </div>
+          <div class="quick-reports">
+            <a class="quick-report" href="reports/Report_USA100.pdf">US100 Report</a>
+            <a class="quick-report" href="reports/Report_Europe50.pdf">Europe 50 Report</a>
+            <a class="quick-report" href="reports/Report_Italy30.pdf">Italy 30 Report</a>
+            <a class="quick-report" href="#matrix">Global Market Overview</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="two-cards">
-        <div class="card" id="mosaic">
-          <div class="icon">TA</div>
-          <h3>TradingAlgo Mosaic</h3>
-          <p>Weekly quantitative reports that analyze each market and identify five selected stocks using Trend, Stability and Portfolio Contribution.</p>
-          <a class="btn primary" href="tradingalgo-mosaic.html">What is Mosaic?</a>
-        </div>
-        <div class="card" id="consulting">
-          <div class="icon">AI</div>
-          <h3>Quantitative Consulting</h3>
-          <p>Custom research, strategy validation, portfolio construction, EasyLanguage, Python notebooks and TradingView indicators.</p>
-          <a class="btn green" href="#contact">Request a Proposal</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="reports">
+    <section id="research">
       <div class="section-head">
-        <h2>Available Mosaic Reports</h2>
-        <p>Each report summarizes the market, shows the selected portfolio and monitors positions over time. Data is loaded from the live site report index.</p>
+        <div>
+          <div class="eyebrow">Latest Research</div>
+          <h2>Recent market notes</h2>
+        </div>
+        <p>Three current research pieces connected to trend, stability and systematic portfolio thinking.</p>
       </div>
-      <div class="reports" id="reports-grid">
-        <div class="card"><h3>Loading reports...</h3><p>Reading reports_index.json.</p></div>
+      <div class="grid-3">
+        <article class="card research-card">
+          <img src="assets/medium/dow-jones-technical-analysis.jpg" alt="Dow Jones technical analysis article image">
+          <div class="card-body">
+            <h3>What Technical Analysis Is Telling Us About The Dow Jones Today</h3>
+            <p>A current-market reading of the Dow Jones through trend structure, technical evidence and risk context.</p>
+            <a class="btn" href="https://medium.com/@domderrico/what-technical-analysis-is-telling-us-about-the-dow-jones-today-0c14de321544" target="_blank" rel="noopener">Read on Medium</a>
+          </div>
+        </article>
+        <article class="card research-card">
+          <img src="assets/medium/tradingalgo-mosaic-india.jpg" alt="TradingAlgo Mosaic India article image">
+          <div class="card-body">
+            <h3>TradingAlgo Mosaic Applied To India</h3>
+            <p>A regional application of the Mosaic framework to the Nifty, combining trend, momentum and relative-strength evidence.</p>
+            <a class="btn" href="https://wire.insiderfinance.io/tradingalgo-mosaic-applied-to-india-reading-the-nifty-through-trend-momentum-and-relative-0e2eeb9367fd" target="_blank" rel="noopener">Read Article</a>
+          </div>
+        </article>
+        <article class="card research-card">
+          <img src="assets/medium/ftse-mib-trend-stability.jpg" alt="FTSE MIB trend stability article image">
+          <div class="card-body">
+            <h3>FTSE MIB Under The Microscope</h3>
+            <p>An Italian-market study focused on trend quality, stability and relative strength within a systematic analysis process.</p>
+            <a class="btn" href="https://wire.insiderfinance.io/ftse-mib-under-the-microscope-trend-stability-and-relative-strength-268d70c0bd80" target="_blank" rel="noopener">Read Article</a>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section>
+    <section id="services">
       <div class="section-head">
-        <h2>How Mosaic Works</h2>
-        <p>A clear weekly process: market analysis, ranking, portfolio construction and monitoring.</p>
+        <div>
+          <div class="eyebrow">Services</div>
+          <h2>Research, systems and training</h2>
+        </div>
+        <p>Focused services for investors and professionals who want systematic market intelligence.</p>
       </div>
-      <div class="process">
-        <div class="step"><h3>Market Analysis</h3><p>Trend and stability are measured across the entire market universe.</p></div>
-        <div class="step"><h3>Stock Ranking</h3><p>Each stock receives quantitative scores based on market behavior.</p></div>
-        <div class="step"><h3>Portfolio Selection</h3><p>The framework selects five stocks that best represent the market.</p></div>
-        <div class="step"><h3>Weekly Monitoring</h3><p>Positions, changes and performance are tracked in the weekly report.</p></div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-head">
-        <h2>Consulting Services</h2>
-        <p>For traders, advisors, asset managers and firms that need custom quantitative research.</p>
-      </div>
-      <div class="services">
-        <div class="card"><h3>Portfolio Construction</h3><p>Rules, rankings, allocation and monitoring.</p></div>
-        <div class="card"><h3>Strategy Validation</h3><p>Robustness, out-of-sample checks and risk analysis.</p></div>
-        <div class="card"><h3>Trading Tools</h3><p>EasyLanguage, Python and TradingView development.</p></div>
-        <div class="card"><h3>AI Research</h3><p>Machine learning applied to systematic trading.</p></div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-body">
+            <div class="service-icon">QR</div>
+            <h3>Quantitative Research</h3>
+            <p>Market regime analysis, portfolio ranking, risk studies and evidence-based investment research.</p>
+            <a class="btn" href="mailto:domderrico@gmail.com">Discuss Research</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="service-icon">AD</div>
+            <h3>Algorithm Development</h3>
+            <p>Design and validation of systematic trading logic, portfolio tools and repeatable decision frameworks.</p>
+            <a class="btn" href="mailto:domderrico@gmail.com">Discuss Development</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-body">
+            <div class="service-icon">TC</div>
+            <h3>Trading Coaching</h3>
+            <p>Training for traders and professionals who want to move from discretionary ideas to systematic process.</p>
+            <a class="btn" href="mailto:domderrico@gmail.com">Discuss Coaching</a>
+          </div>
+        </article>
       </div>
     </section>
 
     <section id="about" class="about">
       <img src="assets/bio/domenico-derrico.jpg" alt="Domenico D'Errico portrait">
       <div>
-        <h2>Created by Domenico D'Errico</h2>
-        <p>Domenico D'Errico is a quantitative trading developer, CSTA certified technical analyst, author of <em>TradeStation EasyLanguage for Algorithmic Trading</em>, contributor to <em>Technical Analysis of Stocks &amp; Commodities</em>, and member of the Gandalf Project R&amp;D Team.</p>
-        <a class="btn" href="#contact">Contact Domenico</a>
-      </div>
-    </section>
-
-    <section id="contact" class="footer-cta">
-      <h2>Ready to explore global markets?</h2>
-      <p>Use TradingAlgo Mosaic for weekly market reports or request a custom quantitative research project.</p>
-      <div class="hero-actions" style="justify-content:center">
-        <a class="btn primary" href="how-to-read-mosaic-report.html">How to Read Mosaic</a>
-        <a class="btn green" href="mailto:domderrico@gmail.com">Request a Consultation</a>
+        <div class="eyebrow">About Domenico</div>
+        <h2>Domenico D'Errico</h2>
+        <p>Quantitative trading developer, CSTA certified technical analyst, author of <em>TradeStation EasyLanguage for Algorithmic Trading</em>, contributor to <em>Technical Analysis of Stocks &amp; Commodities</em>, and member of the Gandalf Project R&amp;D Team.</p>
+        <div class="button-row">
+          <a class="btn primary" href="https://it.linkedin.com/in/domenico-d-errico-csta-3605b933/en" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn green" href="mailto:domderrico@gmail.com">Contact</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p><strong>TradingAlgo - Mosaic Trading Framework</strong></p>
-    <p>Research material only. Not personalized financial advice.</p>
-    <p>Copyright 2026 Domenico D'Errico. All rights reserved.</p>
+    <div class="footer-inner">
+      <strong>TradingAlgo - Mosaic Trading Framework</strong>
+      <p>Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
+    </div>
   </footer>
 
   <script>
     var fallbackReports = [
       { Display_Name: "USA100", Country_Code: "US", Region: "North America", Ticker_Count: 100, Trend: 42, Stability: 73, Report_URL: "reports/Report_USA100.pdf", Available: true },
       { Display_Name: "Europe50", Country_Code: "EU", Region: "Europe", Ticker_Count: 49, Trend: 33, Stability: 71, Report_URL: "reports/Report_Europe50.pdf", Available: true },
-      { Display_Name: "Italy30", Country_Code: "IT", Region: "Europe", Ticker_Count: 28, Trend: 75, Stability: 84, Report_URL: "reports/Report_Italy30.pdf", Available: true }
+      { Display_Name: "Italy30", Country_Code: "IT", Region: "Europe", Ticker_Count: 28, Trend: 75, Stability: 84, Report_URL: "reports/Report_Italy30.pdf", Available: true },
+      { Display_Name: "Japan50", Country_Code: "JP", Region: "Asia", Ticker_Count: 50, Trend: 92, Stability: 94, Report_URL: "reports/Report_Japan50.pdf", Available: true },
+      { Display_Name: "Canada50", Country_Code: "CA", Region: "North America", Ticker_Count: 50, Trend: 83, Stability: 92, Report_URL: "reports/Report_Canada50.pdf", Available: true },
+      { Display_Name: "South Korea30", Country_Code: "KR", Region: "Asia", Ticker_Count: 29, Trend: 100, Stability: 95, Report_URL: "reports/Report_South_Korea30.pdf", Available: true }
     ];
+
+    var preferredHeroMarkets = ["South Korea30", "Japan50", "Canada50", "Italy30", "Mexico30", "UK30"];
 
     function clampScore(value) {
       var number = Number(value);
@@ -582,49 +633,59 @@
       return report.Display_Name || report.Market || "Market";
     }
 
+    function marketStatus(score) {
+      if (score >= 80) return "Strong";
+      if (score >= 60) return "Positive";
+      if (score >= 40) return "Neutral";
+      return "Weak";
+    }
+
+    function marketCard(report, compact) {
+      var trend = clampScore(report.Trend);
+      var stability = clampScore(report.Stability);
+      var score = marketScore(report);
+      var href = report.Report_URL || "#matrix";
+      var title = reportTitle(report);
+      var code = report.Country_Code || "TA";
+      var status = marketStatus(score);
+      var body = '<div class="market-top"><span class="market-code">' + code + '</span><span class="status-pill">' + status + '</span></div>' +
+        '<span class="market-name">' + title + '</span>' +
+        '<div class="metric"><div class="metric-label"><span>Trend</span><strong>' + trend + '</strong></div><div class="score"><span style="width:' + trend + '%"></span></div></div>' +
+        '<div class="metric"><div class="metric-label"><span>Stability</span><strong>' + stability + '</strong></div><div class="score"><span style="width:' + stability + '%"></span></div></div>';
+
+      if (compact) {
+        body = '<div class="market-top"><span class="market-code">' + code + '</span><span class="status-pill">' + status + '</span></div>' +
+          '<span class="market-name">' + title + '</span>' +
+          '<div class="metric"><div class="metric-label"><span>Market Status</span><strong>' + score + '</strong></div><div class="score"><span style="width:' + score + '%"></span></div></div>';
+      }
+
+      return '<a class="market-card" href="' + href + '">' + body + '</a>';
+    }
+
     function renderHeroMatrix(reports) {
       var container = document.getElementById("hero-matrix");
       if (!container) return;
-      var topReports = reports
-        .filter(function (report) { return report.Available !== false; })
-        .sort(function (a, b) { return marketScore(b) - marketScore(a); })
-        .slice(0, 6);
-
-      container.innerHTML = topReports.map(function (report) {
-        var score = marketScore(report);
-        var href = report.Report_URL || "#reports";
-        return '<a class="market" href="' + href + '">' +
-          '<span class="market-code">' + (report.Country_Code || "TA") + '</span>' +
-          '<small>' + reportTitle(report) + '</small>' +
-          '<div class="score"><span style="width:' + score + '%"></span></div>' +
-        '</a>';
-      }).join("");
+      var lookup = reports.reduce(function (acc, report) {
+        acc[reportTitle(report)] = report;
+        acc[report.Market] = report;
+        return acc;
+      }, {});
+      var selected = preferredHeroMarkets.map(function (name) { return lookup[name]; }).filter(Boolean);
+      if (selected.length < 6) {
+        selected = reports
+          .filter(function (report) { return report.Available !== false; })
+          .sort(function (a, b) { return marketScore(b) - marketScore(a); })
+          .slice(0, 6);
+      }
+      container.innerHTML = selected.map(function (report) { return marketCard(report, true); }).join("");
     }
 
-    function renderReports(reports) {
-      var container = document.getElementById("reports-grid");
+    function renderCountryMatrix(reports) {
+      var container = document.getElementById("country-matrix");
       if (!container) return;
       var available = reports.filter(function (report) { return report.Available !== false; });
       if (!available.length) available = fallbackReports;
-
-      container.innerHTML = available.map(function (report) {
-        var score = marketScore(report);
-        var trend = clampScore(report.Trend);
-        var stability = clampScore(report.Stability);
-        var href = report.Report_URL || "#contact";
-        var cta = report.Report_URL ? "Open Report" : "Coming Soon";
-        return '<article class="card">' +
-          '<div class="icon">' + (report.Country_Code || "TA") + '</div>' +
-          '<h3>' + reportTitle(report) + '</h3>' +
-          '<p>' + (report.Ticker_Count || "Selected") + ' stocks monitored in the ' + (report.Region || "global") + ' universe.</p>' +
-          '<div class="report-meta">' +
-            '<span class="chip">Trend ' + trend + '</span>' +
-            '<span class="chip">Stability ' + stability + '</span>' +
-            '<span class="chip">Score ' + score + '</span>' +
-          '</div>' +
-          '<a class="btn" href="' + href + '">' + cta + '</a>' +
-        '</article>';
-      }).join("");
+      container.innerHTML = available.map(function (report) { return marketCard(report, false); }).join("");
     }
 
     fetch("reports/reports_index.json")
@@ -634,11 +695,11 @@
       })
       .then(function (reports) {
         renderHeroMatrix(reports);
-        renderReports(reports);
+        renderCountryMatrix(reports);
       })
       .catch(function () {
         renderHeroMatrix(fallbackReports);
-        renderReports(fallbackReports);
+        renderCountryMatrix(fallbackReports);
       });
   </script>
 </body>
