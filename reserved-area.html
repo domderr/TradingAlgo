@@ -354,24 +354,40 @@
 
     .report-link {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      padding: 20px 22px;
+      flex-direction: column;
       border-radius: 18px;
-      background: rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.13);
-      font-weight: 750;
-      font-size: 16px;
-      transition: background 0.15s, border-color 0.15s;
+      overflow: hidden;
+      text-decoration: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
 
     .report-link:hover {
-      background: rgba(74,163,255,0.15);
-      border-color: rgba(74,163,255,0.4);
+      border-color: rgba(74,163,255,0.5);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    .report-link img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top;
+      aspect-ratio: 4 / 3;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .report-link-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      font-weight: 750;
+      font-size: 15px;
     }
 
     .report-flag {
-      font-size: 22px;
+      font-size: 20px;
       flex-shrink: 0;
     }
 
@@ -454,18 +470,54 @@
         <div class="eyebrow">TradingAlgo Mosaic</div>
         <h2>Weekly Reports</h2>
         <div class="reports-grid">
-          <a class="report-link" href="reports/Report_USA100.pdf" target="_blank"><span class="report-flag">🇺🇸</span> USA100</a>
-          <a class="report-link" href="reports/Report_Canada50.pdf" target="_blank"><span class="report-flag">🇨🇦</span> Canada50</a>
-          <a class="report-link" href="reports/Report_Mexico30.pdf" target="_blank"><span class="report-flag">🇲🇽</span> Mexico30</a>
-          <a class="report-link" href="reports/Report_Europe50.pdf" target="_blank"><span class="report-flag">🇪🇺</span> Europe50</a>
-          <a class="report-link" href="reports/Report_UK30.pdf" target="_blank"><span class="report-flag">🇬🇧</span> UK30</a>
-          <a class="report-link" href="reports/Report_France40.pdf" target="_blank"><span class="report-flag">🇫🇷</span> France40</a>
-          <a class="report-link" href="reports/Report_Germany30.pdf" target="_blank"><span class="report-flag">🇩🇪</span> Germany30</a>
-          <a class="report-link" href="reports/Report_Italy30.pdf" target="_blank"><span class="report-flag">🇮🇹</span> Italy30</a>
-          <a class="report-link" href="reports/Report_Japan50.pdf" target="_blank"><span class="report-flag">🇯🇵</span> Japan50</a>
-          <a class="report-link" href="reports/Report_South_Korea30.pdf" target="_blank"><span class="report-flag">🇰🇷</span> South Korea30</a>
-          <a class="report-link" href="reports/Report_Australia50.pdf" target="_blank"><span class="report-flag">🇦🇺</span> Australia50</a>
-          <a class="report-link" href="reports/Report_South_Africa30.pdf" target="_blank"><span class="report-flag">🇿🇦</span> South Africa30</a>
+          <a class="report-link" href="reports/Report_USA100.pdf" target="_blank">
+            <img src="assets/previews/USA100.jpg" alt="USA100 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/us.svg" width="22" height="16" alt="US"> USA100</div>
+          </a>
+          <a class="report-link" href="reports/Report_Canada50.pdf" target="_blank">
+            <img src="assets/previews/Canada50.jpg" alt="Canada50 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/ca.svg" width="22" height="16" alt="CA"> Canada50</div>
+          </a>
+          <a class="report-link" href="reports/Report_Mexico30.pdf" target="_blank">
+            <img src="assets/previews/Mexico30.jpg" alt="Mexico30 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/mx.svg" width="22" height="16" alt="MX"> Mexico30</div>
+          </a>
+          <a class="report-link" href="reports/Report_Europe50.pdf" target="_blank">
+            <img src="assets/previews/Europe50.jpg" alt="Europe50 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/eu.svg" width="22" height="16" alt="EU"> Europe50</div>
+          </a>
+          <a class="report-link" href="reports/Report_UK30.pdf" target="_blank">
+            <img src="assets/previews/UK30.jpg" alt="UK30 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/gb.svg" width="22" height="16" alt="GB"> UK30</div>
+          </a>
+          <a class="report-link" href="reports/Report_France40.pdf" target="_blank">
+            <img src="assets/previews/France40.jpg" alt="France40 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/fr.svg" width="22" height="16" alt="FR"> France40</div>
+          </a>
+          <a class="report-link" href="reports/Report_Germany30.pdf" target="_blank">
+            <img src="assets/previews/Germany30.jpg" alt="Germany30 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/de.svg" width="22" height="16" alt="DE"> Germany30</div>
+          </a>
+          <a class="report-link" href="reports/Report_Italy30.pdf" target="_blank">
+            <img src="assets/previews/Italy30.jpg" alt="Italy30 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/it.svg" width="22" height="16" alt="IT"> Italy30</div>
+          </a>
+          <a class="report-link" href="reports/Report_Japan50.pdf" target="_blank">
+            <img src="assets/previews/Japan50.jpg" alt="Japan50 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/jp.svg" width="22" height="16" alt="JP"> Japan50</div>
+          </a>
+          <a class="report-link" href="reports/Report_South_Korea30.pdf" target="_blank">
+            <img src="assets/previews/SouthKorea30.jpg" alt="South Korea30 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/kr.svg" width="22" height="16" alt="KR"> South Korea30</div>
+          </a>
+          <a class="report-link" href="reports/Report_Australia50.pdf" target="_blank">
+            <img src="assets/previews/Australia50.jpg" alt="Australia50 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/au.svg" width="22" height="16" alt="AU"> Australia50</div>
+          </a>
+          <a class="report-link" href="reports/Report_South_Africa30.pdf" target="_blank">
+            <img src="assets/previews/SouthAfrica30.jpg" alt="South Africa30 report preview">
+            <div class="report-link-footer"><img src="https://flagcdn.com/za.svg" width="22" height="16" alt="ZA"> South Africa30</div>
+          </a>
         </div>
       </section>
     </div>
