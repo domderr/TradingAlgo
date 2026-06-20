@@ -585,14 +585,52 @@
       margin: 8px 0;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--muted);
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .hamburger:hover span { background: var(--text); }
+
     @media (max-width: 768px) {
       header {
-        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
       }
+
+      .hamburger { display: flex; }
 
       nav {
         display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--bg-dark);
+        border-bottom: 1px solid #1d2b3f;
+        padding: 16px 8%;
+        flex-direction: column;
+        gap: 16px;
+        z-index: 100;
       }
+
+      nav.open { display: flex; }
 
       .hero {
         padding-top: 72px;
@@ -660,7 +698,10 @@
       </span>
       TradingAlgo
     </a>
-    <nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav">
       <a href="#mosaic">Mosaic</a>
       <a href="#reports">Reports</a>
       <a href="#consulting">Consulting</a>
@@ -1067,6 +1108,17 @@
     }
 
     setupCountryMatrixToggle();
+
+    var hamburger = document.getElementById('hamburger');
+    var mainNav = document.getElementById('main-nav');
+    if (hamburger && mainNav) {
+      hamburger.addEventListener('click', function() {
+        mainNav.classList.toggle('open');
+      });
+      mainNav.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() { mainNav.classList.remove('open'); });
+      });
+    }
 
     fetch("reports/market_scatter_history.json")
       .then(function (response) {
