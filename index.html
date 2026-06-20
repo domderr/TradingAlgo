@@ -291,6 +291,287 @@
       line-height: 1.45;
     }
 
+    .country-matrix-visual {
+      position: relative;
+      max-width: 920px;
+      margin: 32px auto;
+      border-radius: 14px;
+    }
+
+    .country-matrix-toggle {
+      display: block;
+      width: 100%;
+      padding: 0;
+      border: 0;
+      border-radius: 14px;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .country-matrix-visual img {
+      width: 100%;
+      max-width: 720px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+
+    .country-matrix-overlay {
+      position: absolute;
+      inset: 0;
+      padding: 16px;
+      border: 1px solid #24415f;
+      border-radius: 14px;
+      background: rgba(5, 11, 20, 0.94);
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 180ms ease, transform 180ms ease;
+      overflow: auto;
+    }
+
+    .scatter-panel {
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 12px;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    .scatter-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .scatter-top h3 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .scatter-date {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .scatter-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .scatter-button {
+      min-height: 36px;
+      padding: 9px 13px;
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .scatter-button.primary {
+      border-color: transparent;
+      background: var(--green);
+      color: #04110a;
+    }
+
+    .scatter-chart {
+      position: relative;
+      min-height: 360px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      background:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px),
+        radial-gradient(circle at 80% 20%, rgba(34,197,94,0.18), transparent 28%),
+        rgba(255,255,255,0.04);
+      background-size: 25% 25%, 25% 25%, auto, auto;
+      overflow: hidden;
+    }
+
+    .scatter-axis-x,
+    .scatter-axis-y {
+      position: absolute;
+      color: #c9d6e8;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .scatter-axis-x {
+      right: 16px;
+      bottom: 10px;
+    }
+
+    .scatter-axis-y {
+      left: 10px;
+      top: 16px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    .scatter-quadrant {
+      position: absolute;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(5,11,20,0.58);
+      color: rgba(255,255,255,0.64);
+      font-size: 11px;
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    .scatter-quadrant.leaders {
+      top: 12px;
+      right: 14px;
+      color: #86efac;
+    }
+
+    .scatter-quadrant.watch {
+      left: 36px;
+      bottom: 12px;
+    }
+
+    .scatter-point {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04)),
+        var(--market-color, #334155);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.32);
+      font-size: 23px;
+      transform: translate(-50%, 50%);
+      transition: left 560ms ease, bottom 560ms ease, background 560ms ease;
+      cursor: default;
+    }
+
+    .scatter-point img {
+      width: 24px;
+      height: 18px;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .scatter-point span {
+      position: absolute;
+      left: 50%;
+      top: calc(100% + 4px);
+      transform: translateX(-50%);
+      padding: 3px 6px;
+      border-radius: 999px;
+      background: rgba(5,11,20,0.82);
+      color: #ffffff;
+      font-size: 10px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .scatter-note {
+      margin: 0;
+      color: #b7c7da;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .country-matrix-visual.is-matrix-open img {
+      opacity: 0.18;
+      transform: scale(0.99);
+    }
+
+    .country-matrix-visual.is-matrix-open .country-matrix-overlay {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .matrix-market {
+      min-height: 104px;
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      color: #ffffff;
+      text-decoration: none;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.03)),
+        var(--market-color, #334155);
+    }
+
+    .matrix-market strong,
+    .matrix-market span {
+      display: block;
+    }
+
+    .matrix-market-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .matrix-code {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .matrix-status {
+      padding: 5px 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .matrix-name {
+      margin-bottom: 10px;
+      color: #d8e4f2;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .matrix-metric {
+      display: grid;
+      gap: 5px;
+      margin-top: 7px;
+      color: #d8e4f2;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .matrix-metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .matrix-bar {
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      overflow: hidden;
+    }
+
+    .matrix-bar span {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #ff6b6b, #f5c542, #22c55e);
+    }
+
     footer {
       padding: 46px 8%;
       border-top: 1px solid #1d2b3f;
@@ -328,6 +609,45 @@
       .btn {
         width: 100%;
       }
+
+      .country-matrix-overlay {
+        position: static;
+        margin-top: 14px;
+        max-height: 0;
+        padding: 0 16px;
+        opacity: 0;
+        pointer-events: none;
+        transform: none;
+        overflow: hidden;
+      }
+
+      .country-matrix-visual.is-matrix-open .country-matrix-overlay {
+        max-height: none;
+        padding: 16px;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .country-matrix-visual.is-matrix-open img {
+        opacity: 1;
+        transform: none;
+      }
+
+      .scatter-top {
+        display: grid;
+      }
+
+      .scatter-actions {
+        justify-content: stretch;
+      }
+
+      .scatter-button {
+        width: 100%;
+      }
+
+      .scatter-chart {
+        min-height: 420px;
+      }
     }
   </style>
 </head>
@@ -358,9 +678,14 @@
       that best represent each market.
     </p>
 
-    <a href="reports/Report_USA100.pdf" target="_blank">
-      <img src="assets/Countries.png" alt="Countries coverage" style="width:100%;max-width:720px;display:block;margin:32px auto;border-radius:12px;box-shadow:var(--shadow);">
-    </a>
+    <div class="country-matrix-visual" id="country-matrix-visual">
+      <button class="country-matrix-toggle" type="button" id="country-matrix-toggle" aria-controls="country-matrix" aria-expanded="false">
+        <img src="assets/Countries.png" alt="Countries coverage">
+      </button>
+      <div class="country-matrix-overlay" id="country-matrix" aria-label="Country Matrix calculated from Trend and Stability">
+        <div class="matrix-market"><strong>Loading Country Matrix...</strong></div>
+      </div>
+    </div>
 
     <div style="max-width:920px;margin:0 auto 32px;">
       <p style="margin:0 0 16px;color:var(--green);font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;">Covered Markets</p>
@@ -573,5 +898,197 @@
     <p>&copy; 2026 TradingAlgo. Quantitative trading research and portfolio analytics.</p>
     <p>Research material only. Not personalized financial advice.</p>
   </footer>
+
+  <script>
+    function clampScore(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? Math.max(0, Math.min(100, Math.round(number))) : 0;
+    }
+
+    function marketScore(report) {
+      var trend = clampScore(report.Trend);
+      var stability = clampScore(report.Stability);
+      if (!trend && !stability) return 0;
+      return Math.round((trend + stability) / 2);
+    }
+
+    function marketStatus(score) {
+      if (score >= 80) return "Strong";
+      if (score >= 60) return "Positive";
+      if (score >= 40) return "Neutral";
+      return "Weak";
+    }
+
+    function marketColor(score) {
+      if (score >= 80) return "#14532d";
+      if (score >= 60) return "#365314";
+      if (score >= 40) return "#854d0e";
+      return "#7f1d1d";
+    }
+
+    function reportTitle(report) {
+      return report.Display_Name || report.Market || "Market";
+    }
+
+    var scatterHistory = null;
+    var scatterFrame = 0;
+    var scatterTimer = null;
+
+    function renderCountryMatrix(reports) {
+      var container = document.getElementById("country-matrix");
+      if (!container) return;
+
+      var available = reports.filter(function (report) {
+        return report.Available !== false;
+      });
+
+      container.innerHTML = available.map(function (report) {
+        var trend = clampScore(report.Trend);
+        var stability = clampScore(report.Stability);
+        var score = marketScore(report);
+        return '<div class="matrix-market" style="--market-color:' + marketColor(score) + '">' +
+          '<span class="matrix-market-head"><strong class="matrix-code">' + (report.Country_Code || "TA") + '</strong><span class="matrix-status">' + marketStatus(score) + '</span></span>' +
+          '<span class="matrix-name">' + reportTitle(report) + '</span>' +
+          '<span class="matrix-metric"><span class="matrix-metric-row"><span>Trend</span><strong>' + trend + '</strong></span><span class="matrix-bar"><span style="width:' + trend + '%"></span></span></span>' +
+          '<span class="matrix-metric"><span class="matrix-metric-row"><span>Stability</span><strong>' + stability + '</strong></span><span class="matrix-bar"><span style="width:' + stability + '%"></span></span></span>' +
+        '</div>';
+      }).join("");
+    }
+
+    function pointColor(point) {
+      return marketColor(Math.round((clampScore(point.trend) + clampScore(point.stability)) / 2));
+    }
+
+    function plotPosition(value) {
+      return 5 + clampScore(value) * 0.9;
+    }
+
+    function formatScatterDate(value) {
+      var date = new Date(value + "T00:00:00");
+      return date.toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" });
+    }
+
+    function renderScatterPanel(data) {
+      var container = document.getElementById("country-matrix");
+      if (!container || !data || !Array.isArray(data.snapshots) || !data.snapshots.length) return;
+
+      scatterHistory = data.snapshots;
+      scatterFrame = scatterHistory.length - 1;
+      var latest = scatterHistory[scatterFrame];
+
+      container.innerHTML =
+        '<div class="scatter-panel">' +
+          '<div class="scatter-top">' +
+            '<div><h3>Country Matrix Scatter</h3><div class="scatter-date" id="scatter-date">' + formatScatterDate(latest.date) + '</div></div>' +
+            '<div class="scatter-actions">' +
+              '<button class="scatter-button primary" type="button" id="scatter-play">Animate 52 Weeks</button>' +
+              '<button class="scatter-button" type="button" id="scatter-close">Back to Countries</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="scatter-chart" id="scatter-chart" aria-label="Trend versus Stability scatter chart">' +
+            '<div class="scatter-axis-y">Trend</div>' +
+            '<div class="scatter-axis-x">Stability</div>' +
+            '<div class="scatter-quadrant leaders">High Trend / High Stability</div>' +
+            '<div class="scatter-quadrant watch">Lower Trend / Lower Stability</div>' +
+            latest.points.map(function (point) {
+              var flagCode = point.code.toLowerCase();
+              return '<div class="scatter-point" data-market="' + point.market + '" title="' + point.market + ' | ' + point.etf + '">' +
+                '<img src="https://flagcdn.com/' + flagCode + '.svg" alt="' + point.code + '">' +
+                '<span>' + point.code + '</span></div>';
+            }).join("") +
+          '</div>' +
+          '<p class="scatter-note">Source: yfinance ETF weekly prices. Each point uses the latest 52 weekly closes: vertical axis is Trend ranking, horizontal axis is regression Stability.</p>' +
+        '</div>';
+
+      updateScatterFrame(scatterFrame);
+
+      var play = document.getElementById("scatter-play");
+      var close = document.getElementById("scatter-close");
+      if (play) play.addEventListener("click", playScatterAnimation);
+      if (close) close.addEventListener("click", closeCountryMatrix);
+    }
+
+    function updateScatterFrame(index) {
+      if (!scatterHistory || !scatterHistory[index]) return;
+
+      scatterFrame = index;
+      var snapshot = scatterHistory[index];
+      var date = document.getElementById("scatter-date");
+      if (date) date.textContent = formatScatterDate(snapshot.date);
+
+      snapshot.points.forEach(function (point) {
+        var node = document.querySelector('.scatter-point[data-market="' + point.market + '"]');
+        if (!node) return;
+        node.style.left = plotPosition(point.stability) + "%";
+        node.style.bottom = plotPosition(point.trend) + "%";
+        node.style.setProperty("--market-color", pointColor(point));
+        node.title = point.market + " | " + point.etf + " | Trend " + point.trend + " | Stability " + point.stability + " | Price " + point.price;
+      });
+    }
+
+    function playScatterAnimation() {
+      if (!scatterHistory || !scatterHistory.length) return;
+      if (scatterTimer) clearInterval(scatterTimer);
+
+      var index = 0;
+      updateScatterFrame(index);
+      scatterTimer = setInterval(function () {
+        index += 1;
+        updateScatterFrame(index);
+        if (index >= scatterHistory.length - 1) {
+          clearInterval(scatterTimer);
+          scatterTimer = null;
+        }
+      }, 720);
+    }
+
+    function closeCountryMatrix() {
+      var visual = document.getElementById("country-matrix-visual");
+      var toggle = document.getElementById("country-matrix-toggle");
+      if (!visual || !toggle) return;
+      visual.classList.remove("is-matrix-open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+
+    function setupCountryMatrixToggle() {
+      var visual = document.getElementById("country-matrix-visual");
+      var toggle = document.getElementById("country-matrix-toggle");
+      var matrix = document.getElementById("country-matrix");
+      if (!visual || !toggle || !matrix) return;
+
+      toggle.addEventListener("click", function () {
+        visual.classList.add("is-matrix-open");
+        toggle.setAttribute("aria-expanded", "true");
+      });
+
+      matrix.addEventListener("click", function (event) {
+        if (event.target === matrix) closeCountryMatrix();
+      });
+    }
+
+    setupCountryMatrixToggle();
+
+    fetch("reports/market_scatter_history.json")
+      .then(function (response) {
+        if (!response.ok) throw new Error("Scatter history unavailable");
+        return response.json();
+      })
+      .then(renderScatterPanel)
+      .catch(function () {
+        fetch("reports/reports_index.json")
+          .then(function (response) {
+            if (!response.ok) throw new Error("Report index unavailable");
+            return response.json();
+          })
+          .then(renderCountryMatrix)
+          .catch(function () {
+            renderCountryMatrix([
+              { Display_Name: "USA100", Country_Code: "US", Trend: 42, Stability: 73, Report_URL: "reports/Report_USA100.pdf", Available: true },
+              { Display_Name: "Europe50", Country_Code: "EU", Trend: 33, Stability: 71, Report_URL: "reports/Report_Europe50.pdf", Available: true },
+              { Display_Name: "Italy30", Country_Code: "IT", Trend: 75, Stability: 84, Report_URL: "reports/Report_Italy30.pdf", Available: true }
+            ]);
+          });
+      });
+  </script>
 </body>
 </html>
