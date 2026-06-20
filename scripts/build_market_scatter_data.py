@@ -1,16 +1,30 @@
 import json
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+# Disable SSL verification for curl_cffi (used by yfinance)
+os.environ['CURL_CA_BUNDLE'] = ''
+try:
+    import curl_cffi.requests as _cffi
+    _orig_init = _cffi.Session.__init__
+    def _patched_init(self, *a, **kw):
+        kw['verify'] = False
+        _orig_init(self, *a, **kw)
+    _cffi.Session.__init__ = _patched_init
+except Exception:
+    pass
+
 import yfinance as yf
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "reports" / "market_scatter_history.json"
 LOOKBACK_WEEKS = 52
-SNAPSHOT_COUNT = 4
+SNAPSHOT_COUNT = 52
 
 MARKETS = [
     {"market": "USA100", "code": "US", "flag": "🇺🇸", "etf": "QQQ"},
@@ -66,7 +80,7 @@ def extract_close(downloaded):
 def main():
     tickers = [item["etf"] for item in MARKETS]
     end = (datetime.now() + timedelta(days=1)).date().isoformat()
-    start = (datetime.now() - timedelta(weeks=LOOKBACK_WEEKS + SNAPSHOT_COUNT + 8)).date().isoformat()
+    start = (datetime.now() - timedelta(weeks=LOOKBACK_WEEKS + SNAPSHOT_COUNT + 12)).date().isoformat()
     downloaded = yf.download(
         tickers,
         start=start,
