@@ -1,1222 +1,645 @@
-<!-- 2026-05-30 Europe/Rome — PROMPT: "vai con HTml" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TradingAlgo | TradingAlgo Framework</title>
-
+  <title>TradingAlgo | Quantitative Research & Mosaic Reports</title>
   <style>
+    :root {
+      --bg: #071423;
+      --bg2: #0d2035;
+      --panel: rgba(255,255,255,0.075);
+      --panel2: rgba(255,255,255,0.105);
+      --text: #f4f7fb;
+      --muted: #aebbd0;
+      --blue: #4aa3ff;
+      --green: #42d392;
+      --red: #ff6b6b;
+      --yellow: #f5c542;
+      --border: rgba(255,255,255,0.16);
+      --shadow: 0 24px 70px rgba(0,0,0,0.42);
+      --radius: 24px;
+    }
+
     * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #06111f;
-      color: white;
-    }
-
-    header {
-      min-height: 85vh;
-      padding: 40px 8%;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
       background:
-        linear-gradient(90deg, rgba(3,12,25,0.95), rgba(3,12,25,0.72), rgba(3,12,25,0.25)),
-        url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1800&q=80");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+        radial-gradient(circle at 20% 0%, rgba(74,163,255,0.22), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(66,211,146,0.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), #050b14 72%);
+      color: var(--text);
     }
 
-    nav {
-      position: static;
-      top: auto;
-      width: 100%;
-      min-height: 72px;
-      padding: calc(28px + env(safe-area-inset-top)) 8% 22px;
-      background: rgba(3,12,25,0.90);
+    a { color: inherit; text-decoration: none; }
+
+    .nav {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      z-index: 10;
-      backdrop-filter: blur(8px);
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    nav .logo {
-      display: inline-block;
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      line-height: 1.1;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      font-size: 20px;
       white-space: nowrap;
-      transform: none;
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 24px;
+    .logo-grid {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      transform: rotateX(12deg) rotateY(-12deg);
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.35);
+    }
+
+    .logo-grid span:nth-child(1),
+    .logo-grid span:nth-child(2) { background: #d94d4d; }
+    .logo-grid span:nth-child(3),
+    .logo-grid span:nth-child(4) { background: #e8a241; }
+    .logo-grid span:nth-child(5),
+    .logo-grid span:nth-child(6) { background: #d8ce45; }
+    .logo-grid span:nth-child(7),
+    .logo-grid span:nth-child(8),
+    .logo-grid span:nth-child(9) { background: var(--green); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 14px 24px;
+      color: var(--muted);
+      font-size: 14px;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 750;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.22);
+    }
+
+    .btn.primary { background: linear-gradient(135deg, var(--blue), #2e7be8); border: none; }
+    .btn.green { background: linear-gradient(135deg, var(--green), #18a86b); border: none; }
+
+    .hero {
+      width: min(1180px, calc(100% - 40px));
+      margin: 40px auto 70px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--green);
       font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-weight: 800;
+      margin-bottom: 18px;
     }
 
-    .hero h1 {
-      font-size: 72px;
+    h1 {
       margin: 0;
-      font-family: Georgia, serif;
+      font-size: clamp(44px, 6vw, 78px);
+      line-height: 0.95;
+      letter-spacing: -3px;
     }
 
-    .hero h2 {
-      color: #39a7ff;
-      letter-spacing: 4px;
-      font-size: 24px;
-      margin-top: 15px;
-    }
-
-    .hero .tagline {
-      font-family: Georgia, serif;
-      font-size: 34px;
-      margin-top: 30px;
+    .hero p,
+    .section-head p {
+      color: var(--muted);
+      line-height: 1.55;
     }
 
     .hero p {
-      max-width: 620px;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #e5e7eb;
+      font-size: 21px;
+      margin: 24px 0 32px;
+      max-width: 650px;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 15px 28px;
-      background: #168eea;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 1px;
-      border-radius: 4px;
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
 
-    .book-feature {
-      margin-top: 36px;
-      max-width: 760px;
+    .visual-card {
+      position: relative;
       padding: 24px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 8px;
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .book-feature img {
-      width: 150px;
-      border-radius: 4px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.35);
-    }
-
-    .book-feature h3 {
-      margin: 0 0 12px;
-      color: #ffffff;
-      font-size: 24px;
-      font-family: Georgia, serif;
-    }
-
-    .book-feature p {
-      margin: 0;
-      color: #e5e7eb;
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
-    .book-feature .button {
-      margin-top: 18px;
-    }
-
-    .event-feature {
-      margin-top: 24px;
-      max-width: 760px;
-      padding: 24px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 8px;
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 24px;
-      align-items: center;
-    }
-
-    .event-feature img {
-      width: 260px;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 4px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.28);
-    }
-
-    .event-feature h3 {
-      margin: 0 0 12px;
-      color: #ffffff;
-      font-size: 24px;
-      font-family: Georgia, serif;
-    }
-
-    .event-feature p {
-      margin: 0;
-      color: #e5e7eb;
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
-    .event-feature .button {
-      margin-top: 18px;
-    }
-
-    .mosaic-research {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 30px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 8px;
-      display: grid;
-      grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.4fr);
-      gap: 28px;
-      align-items: center;
-    }
-
-    .mosaic-research h3 {
-      margin: 0 0 14px;
-      color: #ffffff;
-      font-size: 28px;
-      font-family: Georgia, serif;
-    }
-
-    .mosaic-research p {
-      margin: 0 0 14px;
-      color: #e5e7eb;
-      font-size: 17px;
-      line-height: 1.6;
-    }
-
-    .mosaic-preview-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .mosaic-preview {
-      margin: 0;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
       overflow: hidden;
     }
 
-    .mosaic-preview img {
-      width: 100%;
-      height: 250px;
-      object-fit: contain;
-      object-position: top center;
-      display: block;
-      background: #ffffff;
-    }
-
-    .mosaic-preview figcaption {
-      padding: 12px 14px;
-      color: #dbeafe;
-      font-size: 13px;
-      line-height: 1.4;
-    }
-
-    .countries-matrix {
-      max-width: 1320px;
-      margin: 34px auto 0;
-      padding: 4px 0 0;
-    }
-
-    .matrix-heading {
+    .visual-title {
       display: flex;
       justify-content: space-between;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 14px;
-    }
-
-    .matrix-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .matrix-logo {
-      width: 229px;
-      height: 229px;
-      object-fit: contain;
-      border-radius: 8px;
-      flex: 0 0 auto;
-    }
-
-    .matrix-heading h3 {
-      margin: 0;
-      color: #ffffff;
-      font-size: 28px;
-      line-height: 1.1;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .matrix-heading p {
-      margin: 0;
-      color: #bfdbfe;
+      gap: 16px;
+      color: var(--muted);
       font-size: 13px;
+      margin-bottom: 18px;
+      font-weight: 700;
     }
 
-    .matrix-kicker {
-      text-align: right;
-    }
-
-    .matrix-date {
-      display: block;
-      margin-top: 6px;
-      color: #dbeafe;
-      font-size: 12px;
-    }
-
-    .country-grid {
+    .matrix {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
     }
 
-    .country-card {
-      display: block;
-      min-height: 188px;
-      padding: 20px 18px 18px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.16);
-      color: #ffffff;
-      text-decoration: none;
-      cursor: pointer;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.14), transparent 34%),
-        linear-gradient(135deg, #14532d, #365314);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.20), 0 16px 35px rgba(0,0,0,0.20);
-      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    .market {
+      min-height: 92px;
+      border-radius: 20px;
+      padding: 14px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 160ms ease, border-color 160ms ease;
     }
 
-    .country-card:hover,
-    .country-card:focus-visible {
-      border-color: rgba(255,255,255,0.38);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.24), 0 20px 42px rgba(0,0,0,0.28);
+    .market:hover,
+    .market:focus-visible,
+    .card:hover,
+    .card:focus-within {
+      border-color: rgba(255,255,255,0.30);
       transform: translateY(-2px);
       outline: none;
     }
 
-    .country-card.is-hot {
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 34%),
-        linear-gradient(135deg, #7c2d12, #9a3412);
-    }
-
-    .country-card.is-risk {
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.12), transparent 34%),
-        linear-gradient(135deg, #7f1d1d, #991b1b);
-    }
-
-    .country-card.is-pending {
-      opacity: 0.78;
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.10), transparent 34%),
-        linear-gradient(135deg, #1f2937, #334155);
-    }
-
-    .country-code {
-      margin: 0 0 10px;
-      color: #f8fafc;
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .country-name {
-      margin: 0 0 18px;
+    .market-code {
       color: #ffffff;
-      font-size: 23px;
-      line-height: 1.1;
-      font-weight: 800;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.4px;
     }
 
-    .country-meta {
-      margin: -10px 0 16px;
-      color: #dbeafe;
-      font-size: 12px;
-    }
-
-    .report-pill {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      padding: 7px 10px;
+    .score {
+      height: 8px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.14);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 10px;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 0.7px;
-      text-transform: uppercase;
-    }
-
-    .report-pill.is-disabled {
-      pointer-events: none;
-      opacity: 0.72;
-    }
-
-    .score-row {
-      margin-top: 10px;
-    }
-
-    .score-label {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 6px;
-      color: #ffffff;
-      font-size: 11px;
-      line-height: 1;
-      text-transform: uppercase;
-    }
-
-    .score-label strong {
-      font-size: 11px;
-    }
-
-    .score-track {
-      height: 7px;
-      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
       overflow: hidden;
-      background: rgba(255,255,255,0.24);
     }
 
-    .score-fill {
+    .score span {
       display: block;
       height: 100%;
-      width: 0;
-      border-radius: inherit;
-      background: #65a30d;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--red), var(--yellow), var(--green));
     }
 
-    .country-card.is-hot .score-fill {
-      background: #f59e0b;
-    }
-
-    .country-card.is-risk .score-fill {
-      background: #ef4444;
-    }
-
-    .country-card.is-pending .score-fill {
-      background: #94a3b8;
-    }
-
-    .secondary-research {
-      max-width: 760px;
-      margin: 34px auto 0;
-      opacity: 0.86;
+    .market small {
+      color: var(--muted);
+      font-weight: 700;
     }
 
     section {
-      padding: 75px 8%;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto 72px;
     }
 
-    .dark {
-      background: #071a33;
-    }
+    .section-head { margin-bottom: 24px; }
+    .section-head h2 { font-size: 38px; letter-spacing: -1px; margin: 0 0 10px; }
+    .section-head p { font-size: 18px; margin: 0; max-width: 760px; }
 
-    .light {
-      background: #f4f7fb;
-      color: #071a33;
-    }
-
-    .section-title {
-      text-align: center;
-      font-size: 38px;
-      margin-bottom: 45px;
-      font-family: Georgia, serif;
-    }
-
-    .grid {
+    .two-cards,
+    .reports,
+    .services,
+    .process {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
+      gap: 20px;
+    }
+
+    .two-cards { grid-template-columns: repeat(2, 1fr); }
+    .reports { grid-template-columns: repeat(3, 1fr); }
+    .services { grid-template-columns: repeat(4, 1fr); }
+    .process { grid-template-columns: repeat(4, 1fr); counter-reset: step; }
+
+    .card,
+    .step {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 48px rgba(0,0,0,0.22);
     }
 
     .card {
-      padding: 32px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-    }
-
-    .light .card {
-      background: white;
-      border: 1px solid #dbe3ef;
+      padding: 26px;
+      transition: transform 160ms ease, border-color 160ms ease;
     }
 
     .card h3 {
-      color: #39a7ff;
-      margin-top: 0;
-      font-size: 22px;
+      margin: 0 0 10px;
+      font-size: 24px;
+      letter-spacing: -0.5px;
     }
 
     .card p {
-      line-height: 1.6;
-      color: inherit;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0 0 20px;
     }
 
-    .article-list {
+    .icon {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 16px;
+      border-radius: 14px;
+      color: #071423;
+      background: linear-gradient(135deg, var(--yellow), var(--green));
+      font-weight: 900;
+    }
+
+    .report-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 18px;
+    }
+
+    .chip {
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.09);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .step {
+      padding: 22px;
+      position: relative;
+    }
+
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      width: 34px;
+      height: 34px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 22px;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(74,163,255,0.22);
+      color: #dceeff;
+      font-weight: 900;
+      margin-bottom: 18px;
     }
 
-    .article-card {
-      padding: 26px;
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 8px;
-      overflow: hidden;
-    }
+    .step h3 { margin: 0 0 8px; font-size: 18px; }
+    .step p { margin: 0; color: var(--muted); line-height: 1.45; font-size: 14px; }
 
-    .article-card img {
-      width: calc(100% + 52px);
-      height: 180px;
-      object-fit: cover;
-      display: block;
-      margin: -26px -26px 22px;
-    }
-
-    .article-card h3 {
-      margin: 0 0 12px;
-      color: #0b5fa5;
-      font-size: 20px;
-    }
-
-    .article-card p {
-      margin: 0;
-      line-height: 1.6;
-      color: #26364a;
-    }
-
-    .library-card {
-      padding: 30px;
-      background: white;
-      border: 1px solid #dbe3ef;
-      border-radius: 8px;
-    }
-
-    .library-card h3 {
-      margin: 0 0 12px;
-      color: #0b5fa5;
-      font-size: 22px;
-    }
-
-    .library-card p {
-      margin: 0;
-      color: #26364a;
-      line-height: 1.6;
-    }
-
-    .book-library {
+    .about {
       display: grid;
-      grid-template-columns: 170px 1fr;
+      grid-template-columns: 0.8fr 1.2fr;
       gap: 24px;
       align-items: center;
+      background: linear-gradient(135deg, rgba(74,163,255,0.13), rgba(66,211,146,0.10));
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 34px;
     }
 
-    .book-library img {
-      width: 170px;
-      border-radius: 4px;
-      box-shadow: 0 16px 35px rgba(7,26,51,0.24);
-    }
-
-    .library-card .button {
-      margin-top: 18px;
-    }
-
-    .partner-card {
-      overflow: hidden;
-    }
-
-    .partner-card img {
-      width: calc(100% + 60px);
-      height: 190px;
+    .about img {
+      width: 100%;
+      max-height: 310px;
       object-fit: cover;
-      display: block;
-      margin: -30px -30px 24px;
+      border-radius: 28px;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.24);
     }
 
-    .bio-card {
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 28px;
-      align-items: center;
-    }
+    .about h2 { margin: 0 0 14px; font-size: 34px; }
+    .about p { color: var(--muted); line-height: 1.55; font-size: 17px; }
 
-    .bio-card img {
-      width: 190px;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 16px 35px rgba(7,26,51,0.20);
-    }
-
-    .quote {
+    .footer-cta {
       text-align: center;
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 24px;
-      color: #dbeafe;
+      padding: 54px 26px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, rgba(74,163,255,0.24), rgba(66,211,146,0.18));
+      border: 1px solid var(--border);
+    }
+
+    .footer-cta h2 { font-size: 42px; margin: 0 0 12px; }
+    .footer-cta p {
+      color: var(--muted);
+      margin: 0 auto 24px;
+      max-width: 680px;
+      font-size: 18px;
+      line-height: 1.5;
     }
 
     footer {
-      padding: 40px 8%;
-      background: #020817;
+      color: var(--muted);
       text-align: center;
-      color: #9ca3af;
+      padding: 30px;
+      font-size: 13px;
     }
 
-    @media (max-width: 800px) {
-      nav {
-        position: static;
-        top: auto;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px 18px;
+    @media (max-width: 900px) {
+      .hero,
+      .two-cards,
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .reports,
+      .services,
+      .process {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav {
         align-items: flex-start;
-        min-height: auto;
-        padding: calc(20px + env(safe-area-inset-top)) 8% 16px;
       }
 
-      nav .logo {
-        width: 100%;
-        font-size: 22px;
-        margin-bottom: 4px;
+      .nav-links {
+        max-width: 520px;
       }
+    }
 
-      nav > div:last-child {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px 14px;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 0;
-        font-size: 12px;
-        line-height: 1.2;
-      }
-
-      .hero h1 {
-        font-size: 48px;
-      }
-
-      .hero h2 {
-        font-size: 19px;
-        letter-spacing: 1px;
-        line-height: 1.35;
-      }
-
-      .hero .tagline {
-        font-size: 26px;
-      }
-
-      .book-feature,
-      .event-feature,
-      .mosaic-research,
-      .book-library,
-      .bio-card {
-        grid-template-columns: 1fr;
-      }
-
-      .mosaic-preview-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .matrix-heading {
+    @media (max-width: 640px) {
+      .nav {
         display: block;
       }
 
-      .matrix-heading p {
-        margin-top: 8px;
+      .nav-links {
+        display: none;
       }
 
-      .matrix-title {
-        align-items: flex-start;
+      h1 {
+        font-size: 44px;
+        letter-spacing: -1.6px;
       }
 
-      .matrix-logo {
-        width: 198px;
-        height: 198px;
+      .hero p {
+        font-size: 18px;
       }
 
-      .matrix-heading h3 {
-        font-size: 23px;
-      }
-
-      .country-grid {
+      .matrix,
+      .reports,
+      .services,
+      .process {
         grid-template-columns: 1fr;
       }
 
-      .book-feature img,
-      .event-feature img,
-      .book-library img,
-      .bio-card img {
-        width: 140px;
-      }
-    }
-
-    @media (max-width: 380px) {
-      nav {
-        padding: calc(18px + env(safe-area-inset-top)) 7% 14px;
+      .two-cards {
+        grid-template-columns: 1fr;
       }
 
-      nav .logo {
-        font-size: 20px;
+      .hero-actions {
+        flex-direction: column;
       }
 
-      nav a {
-        font-size: 11px;
+      .btn {
+        width: 100%;
+      }
+
+      .visual-title {
+        display: block;
+      }
+
+      .visual-title span {
+        display: block;
+      }
+
+      .visual-title span + span {
+        margin-top: 6px;
       }
     }
   </style>
 </head>
-
 <body>
-
-  <nav>
-    <div class="logo">TA | TradingAlgo</div>
-    <div>
-      <a href="#framework">Framework</a>
-      <a href="#marketview">Market View</a>
-      <a href="#publications">Publishing</a>
-      <a href="#coaching">Coaching</a>
-      <a href="#partnerships">Partnerships</a>
+  <nav class="nav">
+    <a href="#" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <div class="nav-links">
+      <a href="#mosaic">Mosaic</a>
+      <a href="#reports">Reports</a>
+      <a href="#consulting">Consulting</a>
       <a href="#about">About</a>
+      <a class="btn" href="#contact">Contact</a>
     </div>
   </nav>
 
-  <header>
-    <div class="hero">
-      <h1>TradingAlgo</h1>
-      <h2>Quantitative Research Lab for Portfolio Construction and Market Analysis</h2>
-      <div class="tagline">Research, Validation and Portfolio Design for Quantitative Investors</div>
-      <p>
-        A quantitative framework designed to transform market data into actionable research,
-        trading tools, market intelligence and educational content.
-      </p>
-      <a class="button" href="#framework">Explore the Framework</a>
-    </div>
-  </header>
-<section class="dark">
-  <div class="countries-matrix" id="countries-matrix">
-    <div class="matrix-heading">
-      <div class="matrix-title">
-        <img class="matrix-logo" src="assets/logo_neutro.png" alt="TradingAlgo Mosaic logo">
-        <h3>Countries Matrix</h3>
-      </div>
-      <p class="matrix-kicker">
-        Trend and stability by market
-        <span class="matrix-date" id="matrix-last-update">Last update: loading</span>
-      </p>
-    </div>
-    <div class="country-grid" id="country-grid" aria-live="polite"></div>
-  </div>
-</section>
-  <section id="framework" class="dark">
-    <h2 class="section-title">Mosaic Trading Framework</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>1. Research & Development</h3>
-        <p>Quantitative research, market regime analysis, asset allocation, ETF research, options analytics, relative strength, volatility studies and AI applications.</p>
-      </div>
-
-      <div class="card">
-        <h3>2. Trading Tools Development</h3>
-        <p>Development of scanners, dashboards, reports and trading models using Python, Google Colab, TradeStation, EasyLanguage, TradingView and AI-assisted workflows.</p>
-      </div>
-
-      <div class="card">
-        <h3>3. Coaching</h3>
-        <p>Training and mentoring for traders, developers and professionals interested in systematic trading, portfolio construction, EasyLanguage and AI for trading.</p>
-      </div>
-
-      <div class="card" id="publishing">
-        <h3>4. Publishing</h3>
-        <p>Books, articles, research notes, white papers, market reports and educational content focused on algorithmic trading and quantitative market analysis, including published work in <em>Technical Analysis of Stocks & Commodities</em>.</p>
-      </div>
-
-      <div class="card" id="marketview">
-        <h3>5. TradingAlgo Mosaic - Algorithmic Market View</h3>
-        <p>Every week TradingAlgo Mosaic analyzes hundreds of stocks and identifies the five securities that best represent the current leadership of a market.</p>
-        <p>The framework combines Trend, Stability, and Portfolio Contribution analysis to build focused portfolios whose components are selected to work together, not just to look good individually.</p>
-        <a class="button" href="tradingalgo-mosaic.html">What is TradingAlgo Mosaic?</a>
-        <a class="button" href="how-to-read-mosaic-report.html">How to Read the Weekly Report</a>
-        <span id="mosaic-report-links">
-          <a class="button" href="https://drive.google.com/file/d/1krZJUWeQlGR1KTKKg1g0qBDA7mtKmNEQ/view?usp=drive_link" target="_blank" rel="noopener">View USA Report</a>
-          <a class="button" href="https://drive.google.com/file/d/1PyQVkBjpdQJ-u3A8CTPtZTxUgw7G07N0/view?usp=drive_link" target="_blank" rel="noopener">View Europe Report</a>
-          <a class="button" href="https://drive.google.com/file/d/1vuY1MQdQc6OKyEcm1I7Vfm60XvZobnRi/view?usp=drive_link" target="_blank" rel="noopener">View Italy Report</a>
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <section class="dark">
-    <p class="quote">
-      Like a mosaic, every market signal is only meaningful when viewed as part of the whole.
-    </p>
-  </section>
-
-  <section id="publications" class="light">
-    <h2 class="section-title">Publications</h2>
-
-    <div class="grid">
-      <div class="library-card book-library">
-        <img src="assets/books/tradestation-easylanguage-cover.jpg" alt="TradeStation EasyLanguage for Algorithmic Trading book cover">
-        <div>
-          <h3>Packt Book</h3>
-          <p><strong>TradeStation EasyLanguage for Algorithmic Trading</strong> is the foundation of the TradingAlgo publishing library: a practical guide to systematic strategy design, EasyLanguage development, backtesting, risk management and machine-learning extensions.</p>
-          <a class="button" href="https://www.amazon.it/s?k=9781835881200" target="_blank" rel="noopener">View on Amazon</a>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Quantitative Research Lab</div>
+        <h1>Market intelligence for better portfolio decisions.</h1>
+        <p>TradingAlgo helps traders, advisors and professional investors analyze markets, select stronger portfolios and validate systematic ideas.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#reports">Explore TradingAlgo Mosaic</a>
+          <a class="btn green" href="#consulting">Request a Consultation</a>
         </div>
       </div>
 
-      <div class="library-card">
-        <h3>Stocks & Commodities Articles</h3>
-        <p>A professional archive of published research articles covering technical indicators, volume analysis, market cycles, pair trading, AI, machine learning and portfolio management.</p>
+      <div class="visual-card">
+        <div class="visual-title"><span>Global Market Matrix</span><span>Trend x Stability</span></div>
+        <div class="matrix" id="hero-matrix">
+          <a class="market" href="#reports"><span class="market-code">US</span><small>USA100</small><div class="score"><span style="width:73%"></span></div></a>
+          <a class="market" href="#reports"><span class="market-code">EU</span><small>Europe50</small><div class="score"><span style="width:71%"></span></div></a>
+          <a class="market" href="#reports"><span class="market-code">IT</span><small>Italy30</small><div class="score"><span style="width:84%"></span></div></a>
+          <a class="market" href="#reports"><span class="market-code">JP</span><small>Japan50</small><div class="score"><span style="width:94%"></span></div></a>
+          <a class="market" href="#reports"><span class="market-code">CA</span><small>Canada50</small><div class="score"><span style="width:92%"></span></div></a>
+          <a class="market" href="#reports"><span class="market-code">KR</span><small>South Korea30</small><div class="score"><span style="width:95%"></span></div></a>
+        </div>
       </div>
+    </section>
 
-      <div class="library-card">
-        <h3>Medium Articles</h3>
-        <p>Ongoing market notes and research essays on TradingAlgo Mosaic, prompt trading, market regimes, technical analysis, institutional strategy design and systematic portfolio thinking.</p>
+    <section>
+      <div class="two-cards">
+        <div class="card" id="mosaic">
+          <div class="icon">TA</div>
+          <h3>TradingAlgo Mosaic</h3>
+          <p>Weekly quantitative reports that analyze each market and identify five selected stocks using Trend, Stability and Portfolio Contribution.</p>
+          <a class="btn primary" href="tradingalgo-mosaic.html">What is Mosaic?</a>
+        </div>
+        <div class="card" id="consulting">
+          <div class="icon">AI</div>
+          <h3>Quantitative Consulting</h3>
+          <p>Custom research, strategy validation, portfolio construction, EasyLanguage, Python notebooks and TradingView indicators.</p>
+          <a class="btn green" href="#contact">Request a Proposal</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="light">
-    <h2 class="section-title">Stocks & Commodities Articles</h2>
-
-    <div class="article-list">
-      <div class="article-card">
-        <img src="assets/articles/technical-analysis-portfolio-management.jpg" alt="Technical Analysis For Portfolio Management article image">
-        <h3>Technical Analysis For Portfolio Management</h3>
-        <p>An application of technical analysis to portfolio construction and capital allocation, shifting the focus from single-trade signals to portfolio-level regime awareness, ranking, and risk management.</p>
+    <section id="reports">
+      <div class="section-head">
+        <h2>Available Mosaic Reports</h2>
+        <p>Each report summarizes the market, shows the selected portfolio and monitors positions over time. Data is loaded from the live site report index.</p>
       </div>
-
-      <div class="article-card">
-        <img src="assets/articles/enhanced-technical-indicator-machine-learning.jpg" alt="Enhanced Technical Indicator Analysis Using Machine Learning article image">
-        <h3>Enhanced Technical Indicator Analysis Using Machine Learning</h3>
-        <p>A machine-learning workflow for evaluating technical indicators beyond static rules, using data-driven classification and validation to identify when an indicator adds useful market information.</p>
+      <div class="reports" id="reports-grid">
+        <div class="card"><h3>Loading reports...</h3><p>Reading reports_index.json.</p></div>
       </div>
+    </section>
 
-      <div class="article-card">
-        <img src="assets/articles/artificial-intelligence-technical-trading.jpg" alt="Artificial Intelligence Applied To Technical Trading article image">
-        <h3>Artificial Intelligence Applied To Technical Trading</h3>
-        <p>An exploration of how artificial intelligence can support technical trading research, from pattern interpretation to systematic decision support and model-assisted strategy development.</p>
+    <section>
+      <div class="section-head">
+        <h2>How Mosaic Works</h2>
+        <p>A clear weekly process: market analysis, ranking, portfolio construction and monitoring.</p>
       </div>
-
-      <div class="article-card">
-        <img src="assets/articles/system-development-artificial-intelligence.jpg" alt="System Development Using Artificial Intelligence article image">
-        <h3>System Development Using Artificial Intelligence</h3>
-        <p>A practical look at using AI in the trading-system development process, combining market hypotheses, rules, testing, and optimization into a more structured research workflow.</p>
+      <div class="process">
+        <div class="step"><h3>Market Analysis</h3><p>Trend and stability are measured across the entire market universe.</p></div>
+        <div class="step"><h3>Stock Ranking</h3><p>Each stock receives quantitative scores based on market behavior.</p></div>
+        <div class="step"><h3>Portfolio Selection</h3><p>The framework selects five stocks that best represent the market.</p></div>
+        <div class="step"><h3>Weekly Monitoring</h3><p>Positions, changes and performance are tracked in the weekly report.</p></div>
       </div>
+    </section>
 
-      <div class="article-card">
-        <img src="assets/articles/portfolio-strategy-accumulation-distribution.jpg" alt="Portfolio Strategy Based On Accumulation Distribution article image">
-        <h3>Portfolio Strategy Based On Accumulation/Distribution</h3>
-        <p>A portfolio strategy built around accumulation/distribution concepts, using volume-informed pressure to rank securities and guide allocation decisions across a basket of assets.</p>
+    <section>
+      <div class="section-head">
+        <h2>Consulting Services</h2>
+        <p>For traders, advisors, asset managers and firms that need custom quantitative research.</p>
       </div>
-
-      <div class="article-card">
-        <img src="assets/articles/build-your-own-technical-rating.jpg" alt="Build Your Own Technical Rating article image">
-        <h3>Build Your Own Technical Rating</h3>
-        <p>A framework for transforming multiple technical indicators into a rating model, making discretionary chart evidence easier to compare, score, and apply systematically.</p>
+      <div class="services">
+        <div class="card"><h3>Portfolio Construction</h3><p>Rules, rankings, allocation and monitoring.</p></div>
+        <div class="card"><h3>Strategy Validation</h3><p>Robustness, out-of-sample checks and risk analysis.</p></div>
+        <div class="card"><h3>Trading Tools</h3><p>EasyLanguage, Python and TradingView development.</p></div>
+        <div class="card"><h3>AI Research</h3><p>Machine learning applied to systematic trading.</p></div>
       </div>
+    </section>
 
-      <div class="article-card">
-        <img src="assets/articles/profiting-from-monthly-trading-cycles.jpg" alt="Profiting From Monthly Trading Cycles article image">
-        <h3>Profiting From Monthly Trading Cycles</h3>
-        <p>An investigation of recurring market cycles and how monthly patterns can be measured, validated, and translated into timing rules for trading and research.</p>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/articles/daytrading-with-night-volume.jpg" alt="Daytrading With Night Volume article image">
-        <h3>Daytrading With Night Volume</h3>
-        <p>A study of overnight volume and its potential information value for intraday trading, focusing on how activity outside regular hours can shape next-session expectations.</p>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/articles/detecting-swings.jpg" alt="Detecting Swings article image">
-        <h3>Detecting Swings</h3>
-        <p>A method-oriented article on identifying market swings and turning points, with emphasis on filtering price movement into cleaner structures for analysis and trading decisions.</p>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/articles/playing-with-numbers.jpg" alt="Playing With Numbers article image">
-        <h3>Playing With Numbers</h3>
-        <p>A comparative strategy study that tests different rule-based approaches, showing how performance evaluation can clarify whether a trading idea improves on simple benchmarks.</p>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/articles/pair-trading-with-a-twist.jpg" alt="Pair Trading With A Twist article image">
-        <h3>Pair Trading With A Twist</h3>
-        <p>A variation on pair trading that examines relative behavior between securities, using spread logic and market-neutral thinking to search for opportunities when directional methods are less effective.</p>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/articles/analyze-volume-sp500-sectors.jpg" alt="Analyze Volume With S&P 500 Sectors article image">
-        <h3>Analyze Volume With S&P 500 Sectors</h3>
-        <p>A sector-level volume analysis framework for reading market participation, rotation, and institutional pressure across S&P 500 groups rather than focusing only on the broad index.</p>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/articles/volume-analysis-spy.jpg" alt="Volume Analysis With The SPY article image">
-        <h3>Volume Analysis With The SPY</h3>
-        <p>An introduction to volume-based analysis on SPY, connecting price levels, trading activity, and supply-demand behavior to identify areas of market interest.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="light">
-    <h2 class="section-title">Medium Articles</h2>
-
-    <div class="article-list">
-      <div class="article-card">
-        <img src="assets/medium/dow-jones-technical-analysis.jpg" alt="Dow Jones technical analysis article image">
-        <h3>What Technical Analysis Is Telling Us About The Dow Jones Today</h3>
-        <p>A current-market reading of the Dow Jones through trend structure, technical evidence and risk context.</p>
-        <a class="button" href="https://medium.com/@domderrico/what-technical-analysis-is-telling-us-about-the-dow-jones-today-0c14de321544" target="_blank" rel="noopener">Read on Medium</a>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/medium/tradingalgo-mosaic-india.jpg" alt="TradingAlgo Mosaic India article image">
-        <h3>TradingAlgo Mosaic Applied To India</h3>
-        <p>A regional application of the Mosaic framework to the Nifty, combining trend, momentum and relative-strength evidence.</p>
-        <a class="button" href="https://wire.insiderfinance.io/tradingalgo-mosaic-applied-to-india-reading-the-nifty-through-trend-momentum-and-relative-0e2eeb9367fd" target="_blank" rel="noopener">Read Article</a>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/medium/ftse-mib-trend-stability.jpg" alt="FTSE MIB trend stability article image">
-        <h3>FTSE MIB Under The Microscope</h3>
-        <p>An Italian-market study focused on trend quality, stability and relative strength within a systematic analysis process.</p>
-        <a class="button" href="https://wire.insiderfinance.io/ftse-mib-under-the-microscope-trend-stability-and-relative-strength-268d70c0bd80" target="_blank" rel="noopener">Read Article</a>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/medium/technical-analysis-portfolio-management-medium.jpg" alt="Technical analysis for portfolio management Medium article image">
-        <h3>Technical Analysis For Portfolio Management</h3>
-        <p>A concise essay on using technical analysis as a portfolio-management discipline rather than only as a trading-signal toolkit.</p>
-        <a class="button" href="https://wire.insiderfinance.io/technical-analysis-for-portfolio-management-ba35b5f6518b" target="_blank" rel="noopener">Read Article</a>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/medium/prompting-the-markets.jpg" alt="Prompting the Markets article image">
-        <h3>Prompting The Markets</h3>
-        <p>A research note on using AI prompts as part of a disciplined market-analysis workflow, while keeping validation and context central.</p>
-        <a class="button" href="https://medium.com/@domderrico/prompting-the-markets-bf7a24dc66e3" target="_blank" rel="noopener">Read on Medium</a>
-      </div>
-
-      <div class="article-card">
-        <img src="assets/medium/how-traders-start-prompt-trading.jpg" alt="How traders can start prompt trading article image">
-        <h3>How Traders Can Start Prompt Trading</h3>
-        <p>A practical introduction to prompt-based trading research, connecting trader questions, data workflows and repeatable analysis.</p>
-        <a class="button" href="https://medium.com/@domderrico/how-traders-can-start-prompt-trading-8272d79fbcb7" target="_blank" rel="noopener">Read on Medium</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="coaching" class="light">
-    <h2 class="section-title">Coaching</h2>
-
-    <div class="grid">
-      <div class="library-card">
-        <h3>EasyLanguage Modulo Base</h3>
-        <p>A foundational EasyLanguage course for traders who want to move from discretionary ideas to coded indicators, rules and systematic workflows.</p>
-        <a class="button" href="https://gandalfproject.com/easylanguage-modulo-base/" target="_blank" rel="noopener">Open Course</a>
-      </div>
-
-      <div class="library-card">
-        <h3>EasyLanguage Crash Course - Beginner Level</h3>
-        <p>A beginner-level crash course focused on the practical first steps of TradeStation EasyLanguage programming for algorithmic trading research.</p>
-        <a class="button" href="https://gandalfproject.com/easylanguage-crash-course-beginner-level/" target="_blank" rel="noopener">Open Course</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="partnerships" class="light">
-    <h2 class="section-title">Partnerships</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Building Together</h3>
-        <p>
-          TradingAlgo is open to partnerships with quant researchers, asset managers,
-          hedge funds, educators, technology providers, software platforms and financial data companies.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Collaborative Projects</h3>
-        <p>
-          The objective is to build practical tools, research frameworks and market intelligence
-          solutions for systematic trading and portfolio management.
-        </p>
-      </div>
-
-      <div class="library-card partner-card">
-        <img src="assets/partners/gandalfproject.jpg" alt="Gandalf Project website preview">
-        <h3>Gandalf Project</h3>
-        <p>Financial engineering, systematic trading education and applied research for traders and developers.</p>
-        <a class="button" href="https://gandalfproject.com/" target="_blank" rel="noopener">Visit Website</a>
-      </div>
-
-      <div class="library-card partner-card">
-        <img src="assets/partners/workatwallstreet.jpg" alt="Work At Wall Street website preview">
-        <h3>Work At Wall Street</h3>
-        <p>Market education, analysis and trading culture for investors interested in financial markets and professional trading workflows.</p>
-        <a class="button" href="https://www.workatwallstreet.it/" target="_blank" rel="noopener">Visit Website</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="about" class="light">
-    <h2 class="section-title">About</h2>
-
-    <div class="card bio-card">
+    <section id="about" class="about">
       <img src="assets/bio/domenico-derrico.jpg" alt="Domenico D'Errico portrait">
       <div>
-        <h3>Domenico D'Errico</h3>
-        <p>
-          Domenico D'Errico, after holding various managerial roles within multinational companies,
-          has been working as a quant developer for algorithmic hedge funds for the past 15 years.
-          He is a CSTA (Certified SIAT Technical Analyst), an EasyLanguage specialist, a two-time
-          winner of the 2011 TradeStation Developers Contest, author of
-          <em>TradeStation EasyLanguage for Algorithmic Trading</em>, and contributor to
-          <em>Technical Analysis of Stocks &amp; Commodities</em>. He is also a member of the
-          Gandalf Project R&amp;D Team, an Italy-based research initiative focused on the
-          application of artificial intelligence to financial markets.
-        </p>
-        <h3>Disclaimer</h3>
-        <p>
-          This report is provided for research and educational purposes only and does not constitute
-          investment advice, portfolio management, solicitation, or an offer to buy or sell any
-          financial instrument. TradingAlgo Mosaic is a quantitative research framework designed to
-          support investment analysis and decision-making. All information, rankings, simulations,
-          and backtests are provided for informational purposes only. Past performance is not
-          indicative of future results. Investing in financial markets involves risk, including the
-          possible loss of capital. Investors are solely responsible for their investment decisions
-          and should independently assess the suitability of any investment strategy.
-        </p>
+        <h2>Created by Domenico D'Errico</h2>
+        <p>Domenico D'Errico is a quantitative trading developer, CSTA certified technical analyst, author of <em>TradeStation EasyLanguage for Algorithmic Trading</em>, contributor to <em>Technical Analysis of Stocks &amp; Commodities</em>, and member of the Gandalf Project R&amp;D Team.</p>
+        <a class="btn" href="#contact">Contact Domenico</a>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="contact" class="footer-cta">
+      <h2>Ready to explore global markets?</h2>
+      <p>Use TradingAlgo Mosaic for weekly market reports or request a custom quantitative research project.</p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="btn primary" href="how-to-read-mosaic-report.html">How to Read Mosaic</a>
+        <a class="btn green" href="mailto:domderrico@gmail.com">Request a Consultation</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p><strong>TradingAlgo — Mosaic Trading Framework</strong></p>
-    <p>Quantitative Research • Trading Tools Development • Coaching • Publishing • Market View</p>
-    <p>© 2026 Domenico D'Errico. All rights reserved.</p>
+    <p><strong>TradingAlgo - Mosaic Trading Framework</strong></p>
+    <p>Research material only. Not personalized financial advice.</p>
+    <p>Copyright 2026 Domenico D'Errico. All rights reserved.</p>
   </footer>
 
   <script>
-    var marketFallback = [
-      { Market: 'USA100', Display_Name: 'USA100', Country_Code: 'US', Region: 'North America', Ticker_Count: 100 },
-      { Market: 'Europe50', Display_Name: 'Europe50', Country_Code: 'EU', Region: 'Europe', Ticker_Count: 49 },
-      { Market: 'Italy30', Display_Name: 'Italy30', Country_Code: 'IT', Region: 'Europe', Ticker_Count: 28 },
-      { Market: 'UK30', Display_Name: 'UK30', Country_Code: 'GB', Region: 'Europe', Ticker_Count: 30 },
-      { Market: 'France40', Display_Name: 'France40', Country_Code: 'FR', Region: 'Europe', Ticker_Count: 40 },
-      { Market: 'Germany30', Display_Name: 'Germany30', Country_Code: 'DE', Region: 'Europe', Ticker_Count: 40 },
-      { Market: 'Australia50', Display_Name: 'Australia50', Country_Code: 'AU', Region: 'Pacific', Ticker_Count: 50 },
-      { Market: 'Japan50', Display_Name: 'Japan50', Country_Code: 'JP', Region: 'Asia', Ticker_Count: 50 },
-      { Market: 'Canada50', Display_Name: 'Canada50', Country_Code: 'CA', Region: 'North America', Ticker_Count: 50 },
-      { Market: 'Mexico30', Display_Name: 'Mexico30', Country_Code: 'MX', Region: 'Latin America', Ticker_Count: 35 },
-      { Market: 'South Korea30', Display_Name: 'South Korea30', Country_Code: 'KR', Region: 'Asia', Ticker_Count: 29 },
-      { Market: 'South Africa30', Display_Name: 'South Africa30', Country_Code: 'ZA', Region: 'Africa', Ticker_Count: 26 }
+    var fallbackReports = [
+      { Display_Name: "USA100", Country_Code: "US", Region: "North America", Ticker_Count: 100, Trend: 42, Stability: 73, Report_URL: "reports/Report_USA100.pdf", Available: true },
+      { Display_Name: "Europe50", Country_Code: "EU", Region: "Europe", Ticker_Count: 49, Trend: 33, Stability: 71, Report_URL: "reports/Report_Europe50.pdf", Available: true },
+      { Display_Name: "Italy30", Country_Code: "IT", Region: "Europe", Ticker_Count: 28, Trend: 75, Stability: 84, Report_URL: "reports/Report_Italy30.pdf", Available: true }
     ];
 
-    var marketOrder = marketFallback.reduce(function (acc, item, index) {
-      acc[item.Market] = index;
-      return acc;
-    }, {});
-
-    function scoreValue(report, key) {
-      if (report[key] === null || report[key] === undefined || report[key] === '') {
-        return null;
-      }
-      var value = Number(report[key]);
-      return Number.isFinite(value) ? Math.max(0, Math.min(100, Math.round(value))) : null;
+    function clampScore(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? Math.max(0, Math.min(100, Math.round(number))) : 0;
     }
 
-    function cardTone(trend, available) {
-      if (!available) {
-        return 'is-pending';
-      }
-      if (trend !== null && trend < 50) {
-        return 'is-risk';
-      }
-      if (trend !== null && trend < 65) {
-        return 'is-hot';
-      }
-      return '';
+    function marketScore(report) {
+      var trend = clampScore(report.Trend);
+      var stability = clampScore(report.Stability);
+      if (!trend && !stability) return 0;
+      return Math.round((trend + stability) / 2);
     }
 
-    function scoreRow(label, value) {
-      var width = value === null ? 0 : value;
-      var text = value === null ? '-' : String(value);
-      return '' +
-        '<div class="score-row">' +
-          '<div class="score-label"><span>' + label + '</span><strong>' + text + '</strong></div>' +
-          '<div class="score-track"><span class="score-fill" style="width:' + width + '%"></span></div>' +
-        '</div>';
+    function reportTitle(report) {
+      return report.Display_Name || report.Market || "Market";
     }
 
-    function renderReportLinks(reports) {
-      var container = document.getElementById('mosaic-report-links');
-      if (!container) {
-        return;
-      }
+    function renderHeroMatrix(reports) {
+      var container = document.getElementById("hero-matrix");
+      if (!container) return;
+      var topReports = reports
+        .filter(function (report) { return report.Available !== false; })
+        .sort(function (a, b) { return marketScore(b) - marketScore(a); })
+        .slice(0, 6);
 
-      var availableReports = reports.filter(function (report) {
-        return report.Market && report.Report_URL;
-      });
-      if (!availableReports.length) {
-        return;
-      }
-
-      container.innerHTML = '';
-      availableReports.slice(0, 6).forEach(function (report) {
-        var link = document.createElement('a');
-        link.className = 'button';
-        link.href = report.Report_URL;
-        link.target = '_blank';
-        link.rel = 'noopener';
-        link.textContent = 'View ' + (report.Display_Name || report.Market) + ' Report';
-        container.appendChild(link);
-      });
+      container.innerHTML = topReports.map(function (report) {
+        var score = marketScore(report);
+        var href = report.Report_URL || "#reports";
+        return '<a class="market" href="' + href + '">' +
+          '<span class="market-code">' + (report.Country_Code || "TA") + '</span>' +
+          '<small>' + reportTitle(report) + '</small>' +
+          '<div class="score"><span style="width:' + score + '%"></span></div>' +
+        '</a>';
+      }).join("");
     }
 
-    function renderLastUpdate(reports) {
-      var container = document.getElementById('matrix-last-update');
-      if (!container || !Array.isArray(reports) || !reports.length) {
-        return;
-      }
+    function renderReports(reports) {
+      var container = document.getElementById("reports-grid");
+      if (!container) return;
+      var available = reports.filter(function (report) { return report.Available !== false; });
+      if (!available.length) available = fallbackReports;
 
-      var latestTimestamp = reports
-        .map(function (report) { return report.Scores_Updated_At || report.Updated_At || ''; })
-        .filter(Boolean)
-        .sort()
-        .pop();
-
-      if (!latestTimestamp) {
-        container.textContent = 'Last update: unavailable';
-        return;
-      }
-
-      var date = new Date(latestTimestamp);
-      if (Number.isNaN(date.getTime())) {
-        container.textContent = 'Last update: ' + latestTimestamp;
-        return;
-      }
-
-      container.textContent = 'Last update: ' + date.toLocaleString('en-GB', {
-        day: '2-digit',
-        month: 'short',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZoneName: 'short'
-      });
+      container.innerHTML = available.map(function (report) {
+        var score = marketScore(report);
+        var trend = clampScore(report.Trend);
+        var stability = clampScore(report.Stability);
+        var href = report.Report_URL || "#contact";
+        var cta = report.Report_URL ? "Open Report" : "Coming Soon";
+        return '<article class="card">' +
+          '<div class="icon">' + (report.Country_Code || "TA") + '</div>' +
+          '<h3>' + reportTitle(report) + '</h3>' +
+          '<p>' + (report.Ticker_Count || "Selected") + ' stocks monitored in the ' + (report.Region || "global") + ' universe.</p>' +
+          '<div class="report-meta">' +
+            '<span class="chip">Trend ' + trend + '</span>' +
+            '<span class="chip">Stability ' + stability + '</span>' +
+            '<span class="chip">Score ' + score + '</span>' +
+          '</div>' +
+          '<a class="btn" href="' + href + '">' + cta + '</a>' +
+        '</article>';
+      }).join("");
     }
 
-    function renderCountriesMatrix(reports) {
-      var grid = document.getElementById('country-grid');
-      if (!grid) {
-        return;
-      }
-
-      var mergedByMarket = marketFallback.reduce(function (acc, item) {
-        acc[item.Market] = Object.assign({}, item, { Available: false, Status: 'Coming soon' });
-        return acc;
-      }, {});
-
-      reports.forEach(function (report) {
-        if (report.Market) {
-          mergedByMarket[report.Market] = Object.assign({}, mergedByMarket[report.Market] || {}, report);
-        }
-      });
-
-      var cards = Object.keys(mergedByMarket)
-        .map(function (market) { return mergedByMarket[market]; })
-        .sort(function (a, b) {
-          return (marketOrder[a.Market] ?? 999) - (marketOrder[b.Market] ?? 999);
-        });
-
-      grid.innerHTML = cards.map(function (report) {
-        var trend = scoreValue(report, 'Trend');
-        var stability = scoreValue(report, 'Stability');
-        var available = Boolean(report.Report_URL || report.Available);
-        var tone = cardTone(trend, available);
-        var href = available ? report.Report_URL : '#';
-        var pillClass = available ? 'report-pill' : 'report-pill is-disabled';
-        var pillText = available ? 'Open Report' : 'Coming Soon';
-        var name = report.Display_Name || report.Market;
-        var code = report.Country_Code || String(name || '').slice(0, 2).toUpperCase();
-        var tickerCount = Number(report.Ticker_Count);
-        var meta = Number.isFinite(tickerCount) ? tickerCount + ' tickers' : (report.Region || '');
-        var targetAttrs = available ? ' target="_blank" rel="noopener"' : ' aria-disabled="true"';
-
-        return '' +
-          '<a class="country-card ' + tone + '" href="' + href + '"' + targetAttrs + ' aria-label="Open ' + name + ' report">' +
-            '<span class="' + pillClass + '">' + pillText + '</span>' +
-            '<p class="country-code">' + code + '</p>' +
-            '<h4 class="country-name">' + name + '</h4>' +
-            '<p class="country-meta">' + meta + '</p>' +
-            scoreRow('Trend', trend) +
-            scoreRow('Stability', stability) +
-          '</a>';
-      }).join('');
-    }
-
-    renderCountriesMatrix([]);
-
-    fetch('reports/reports_index.json', { cache: 'no-store' })
+    fetch("reports/reports_index.json")
       .then(function (response) {
-        if (!response.ok) {
-          throw new Error('Reports index unavailable');
-        }
+        if (!response.ok) throw new Error("Report index unavailable");
         return response.json();
       })
       .then(function (reports) {
-        if (!Array.isArray(reports)) {
-          return;
-        }
-        renderReportLinks(reports);
-        renderLastUpdate(reports);
-        renderCountriesMatrix(reports);
+        renderHeroMatrix(reports);
+        renderReports(reports);
       })
       .catch(function () {
-        // Keep the fallback market matrix and the static report links visible.
+        renderHeroMatrix(fallbackReports);
+        renderReports(fallbackReports);
       });
   </script>
-
 </body>
 </html>
