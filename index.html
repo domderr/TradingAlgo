@@ -539,13 +539,13 @@
       TradingAlgo
     </a>
     <div class="nav-links">
-      <a href="#mosaic">Mosaic</a>
-      <a href="#matrix">Market Matrix</a>
+      <a href="reserved-area.html">Reserved Area</a>
+      <a href="reserved-area.html#matrix">Market Matrix</a>
       <a href="#research">Research</a>
       <a href="#services">Services</a>
       <a href="publications.html">Publications</a>
       <a href="#about">About</a>
-      <a class="btn" href="#subscription">Subscribe</a>
+      <a class="btn" href="reserved-area.html">Subscribe</a>
     </div>
   </nav>
 
@@ -556,7 +556,7 @@
         <h1>Quantitative Research for Traders, Advisors and Asset Managers</h1>
         <p>We transform market data into actionable portfolio decisions through systematic analysis and quantitative research.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="#subscription">Explore Mosaic Subscription</a>
+          <a class="btn primary" href="reserved-area.html">Explore Mosaic Subscription</a>
           <a class="btn green" href="mailto:domderrico@gmail.com">Request a Consultation</a>
         </div>
       </div>
@@ -564,52 +564,6 @@
       <div class="matrix-shell">
         <div class="matrix-title"><span>Global Market Matrix</span><span>Market Report -> 5 Selected Stocks</span></div>
         <div class="market-matrix" id="hero-matrix"></div>
-      </div>
-    </section>
-
-    <section id="mosaic">
-      <div class="mosaic-panel">
-        <div>
-          <div class="eyebrow">TradingAlgo Mosaic</div>
-          <h2>Professional weekly market reports for subscribers.</h2>
-          <p>TradingAlgo Mosaic is a paid weekly research service. Subscribers receive market reports, selected stock lists and portfolio monitoring updates based on Trend, Stability and Portfolio Contribution.</p>
-          <div class="button-row">
-            <a class="btn primary" href="#subscription">Subscribe to Mosaic</a>
-            <a class="btn" href="how-to-read-mosaic-report.html">How to Read Reports</a>
-          </div>
-        </div>
-        <div>
-          <div class="matrix-shell mosaic-map" id="matrix">
-            <div class="matrix-title"><span>Country Matrix</span><span>Trend | Stability | Market Status</span></div>
-            <div class="market-matrix" id="country-matrix"></div>
-          </div>
-          <div class="quick-reports">
-            <a class="quick-report" href="reports/Report_USA100.pdf">US100 Sample Report</a>
-            <a class="quick-report" href="reports/Report_Europe50.pdf">Europe 50 Sample Report</a>
-            <a class="quick-report" href="reports/Report_Italy30.pdf">Italy 30 Sample Report</a>
-            <a class="quick-report" href="#matrix">Global Market Overview</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="subscription" class="subscription-panel">
-      <div>
-        <div class="eyebrow">Weekly Market Intelligence</div>
-        <h2>TradingAlgo Mosaic Subscription</h2>
-        <p>Professional weekly market reports for investors, advisors and asset managers who want systematic market selection and portfolio evidence.</p>
-        <div class="button-row">
-          <a class="btn primary" href="reports/Report_USA100.pdf">View Sample Report</a>
-          <a class="btn green" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Subscription">Request Information</a>
-        </div>
-      </div>
-      <div class="benefit-grid">
-        <div class="benefit"><strong>Country Matrix</strong><span>Global market ranking and status.</span></div>
-        <div class="benefit"><strong>Sector Matrix</strong><span>Market leadership and rotation view.</span></div>
-        <div class="benefit"><strong>5 Selected Stocks</strong><span>Five stocks per covered market.</span></div>
-        <div class="benefit"><strong>Portfolio Changes</strong><span>Weekly updates and monitoring.</span></div>
-        <div class="benefit"><strong>Research Report</strong><span>Trend, Stability and contribution logic.</span></div>
-        <div class="benefit"><strong>Track Record</strong><span>Historical evidence and performance context.</span></div>
       </div>
     </section>
 
@@ -754,7 +708,7 @@
       var trend = clampScore(report.Trend);
       var stability = clampScore(report.Stability);
       var score = marketScore(report);
-      var href = "#subscription";
+      var href = "reserved-area.html";
       var title = reportTitle(report);
       var code = report.Country_Code || "TA";
       var status = marketStatus(score);
