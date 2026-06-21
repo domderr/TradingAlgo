@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradingAlgo Mosaic Premium Reports | TradingAlgo</title>
+  <meta name="description" content="Reserved TradingAlgo Mosaic report area for premium market summaries, selected stocks, weekly changes, matrices and performance dashboards." />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef3f8;
+      color: #071a33;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 18px 6%;
+      background: rgba(3,12,25,0.95);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0.8px;
+    }
+
+    .shell {
+      min-height: calc(100vh - 66px);
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+    }
+
+    aside {
+      background: #071a33;
+      color: white;
+      padding: 34px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    aside h1 {
+      margin: 0 0 8px;
+      font-family: Georgia, serif;
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    aside p {
+      margin: 0 0 24px;
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .menu-section {
+      margin-top: 24px;
+    }
+
+    .menu-section h2 {
+      margin: 0 0 10px;
+      color: #7dd3fc;
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .menu-link {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin: 6px 0;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.05);
+      color: white;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .menu-link:hover,
+    .menu-link:focus-visible,
+    .menu-link.is-active {
+      border-color: rgba(125,211,252,0.75);
+      background: rgba(22,142,234,0.24);
+      outline: none;
+    }
+
+    .menu-link small {
+      color: #cbd5e1;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    main {
+      padding: 36px 5%;
+    }
+
+    .notice {
+      margin-bottom: 24px;
+      padding: 18px 20px;
+      border: 1px solid #bfdbfe;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #1e3a8a;
+      line-height: 1.55;
+    }
+
+    .hero-panel {
+      padding: 30px;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid #dbe3ef;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: #0b5fa5;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 38px;
+      line-height: 1.12;
+    }
+
+    .hero-panel p,
+    .panel p {
+      color: #334155;
+      line-height: 1.65;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 8px;
+      background: #071a33;
+      color: white;
+    }
+
+    .stat span {
+      display: block;
+      color: #93c5fd;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .stat strong {
+      display: block;
+      margin-top: 6px;
+      font-size: 26px;
+    }
+
+    .report-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 24px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      color: #0b5fa5;
+      font-size: 21px;
+    }
+
+    .stock-list,
+    .change-list,
+    .download-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .stock-list li,
+    .change-list li,
+    .download-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px solid #e2e8f0;
+      color: #26364a;
+    }
+
+    .stock-list li:last-child,
+    .change-list li:last-child,
+    .download-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .matrix-cell {
+      min-height: 72px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #e0f2fe;
+      color: #075985;
+    }
+
+    .matrix-cell.is-strong {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .matrix-cell.is-weak {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .curve {
+      height: 180px;
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, rgba(14,165,233,0.14), rgba(14,165,233,0.02)),
+        repeating-linear-gradient(0deg, transparent, transparent 35px, #dbeafe 36px),
+        repeating-linear-gradient(90deg, transparent, transparent 55px, #dbeafe 56px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .curve svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 13px 20px;
+      background: #168eea;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+
+    .button.is-muted {
+      background: #64748b;
+      pointer-events: none;
+    }
+
+    footer {
+      padding: 24px 5%;
+      color: #64748b;
+      text-align: center;
+    }
+
+    @media (max-width: 940px) {
+      nav {
+        display: block;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 14px 0 0;
+      }
+
+      .shell,
+      .hero-panel,
+      .report-grid {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+      }
+
+      h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">TA | TradingAlgo</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="how-to-read-mosaic-report.html">How to Read</a>
+      <a href="mailto:domderrico@gmail.com">Request Access</a>
+    </div>
+  </nav>
+
+  <div class="shell">
+    <aside>
+      <h1>Mosaic Premium</h1>
+      <p>Reserved weekly reports by market. Access is intended to be managed through authorized Google Accounts or private Drive folders.</p>
+
+      <div class="menu-section">
+        <h2>Global</h2>
+        <button class="menu-link is-active" data-market="Global Summary"><span>Global Summary</span><small>Free</small></button>
+      </div>
+
+      <div class="menu-section">
+        <h2>Countries</h2>
+        <div id="country-menu"></div>
+      </div>
+
+      <div class="menu-section">
+        <h2>Indices</h2>
+        <button class="menu-link" data-market="DJ30"><span>DJ30</span><small>Planned</small></button>
+        <button class="menu-link" data-market="NQ100"><span>NQ100</span><small>Planned</small></button>
+      </div>
+
+      <div class="menu-section">
+        <h2>Library</h2>
+        <button class="menu-link" data-market="Sectors"><span>Sectors</span><small>Planned</small></button>
+        <button class="menu-link" data-market="Archive"><span>Archive</span><small>Weekly</small></button>
+        <button class="menu-link" data-market="Downloads"><span>Downloads</span><small>PDF extra</small></button>
+      </div>
+    </aside>
+
+    <main>
+      <div class="notice">
+        This page is the product shell for the reserved area. For production, keep HTML, chart PNGs and CSV/JSON data as the main content, and expose PDF downloads only to authorized customers.
+      </div>
+
+      <section class="hero-panel">
+        <div>
+          <p class="eyebrow" id="report-kicker">Global Summary</p>
+          <h2 id="report-title">TradingAlgo Mosaic Weekly Market Summary</h2>
+          <p id="report-summary">A compact view of global trend quality, leadership rotation and market stability before entering the individual country and index reports.</p>
+          <a class="button" href="mailto:domderrico@gmail.com" id="access-button">Request Premium Access</a>
+        </div>
+        <div class="stat-grid">
+          <div class="stat">
+            <span>Trend</span>
+            <strong id="trend-score">-</strong>
+          </div>
+          <div class="stat">
+            <span>Stability</span>
+            <strong id="stability-score">-</strong>
+          </div>
+          <div class="stat">
+            <span>Universe</span>
+            <strong id="ticker-count">12</strong>
+          </div>
+          <div class="stat">
+            <span>Status</span>
+            <strong id="report-status">Preview</strong>
+          </div>
+        </div>
+      </section>
+
+      <div class="report-grid">
+        <section class="panel">
+          <h3>Market Summary</h3>
+          <p id="market-summary">Global leadership is reviewed through Trend and Stability scores. Premium users can open each authorized market to inspect the full weekly dashboard.</p>
+        </section>
+
+        <section class="panel">
+          <h3>5 Selected Stocks</h3>
+          <ul class="stock-list" id="stock-list">
+            <li><span>Leadership list</span><strong>Reserved</strong></li>
+            <li><span>Trend rank</span><strong>Reserved</strong></li>
+            <li><span>Correlation filter</span><strong>Reserved</strong></li>
+            <li><span>Portfolio contribution</span><strong>Reserved</strong></li>
+            <li><span>Weekly review</span><strong>Reserved</strong></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h3>Weekly Changes</h3>
+          <ul class="change-list" id="change-list">
+            <li><span>New entries</span><strong>Premium</strong></li>
+            <li><span>Removed positions</span><strong>Premium</strong></li>
+            <li><span>Weight changes</span><strong>Premium</strong></li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h3>Country/Sector Matrix</h3>
+          <div class="matrix" id="matrix-preview">
+            <div class="matrix-cell is-strong">Leadership<br><strong>Strong</strong></div>
+            <div class="matrix-cell">Neutral<br><strong>Watch</strong></div>
+            <div class="matrix-cell is-weak">Risk<br><strong>Weak</strong></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h3>Equity Curve</h3>
+          <div class="curve" aria-label="Equity curve placeholder">
+            <svg viewBox="0 0 600 180" role="img" aria-hidden="true">
+              <polyline fill="none" stroke="#168eea" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" points="0,150 70,142 130,126 190,132 260,106 330,92 410,76 480,82 560,48 600,38" />
+            </svg>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h3>Historical Performance</h3>
+          <p>Performance tables should be published as HTML from the model output, with PNG charts and CSV/JSON data retained for audit and archive workflows.</p>
+        </section>
+
+        <section class="panel">
+          <h3>Downloads</h3>
+          <ul class="download-list" id="download-list">
+            <li><span>Weekly PDF</span><strong>Available after authorization</strong></li>
+            <li><span>CSV data</span><strong>Internal</strong></li>
+            <li><span>Chart PNGs</span><strong>Embedded</strong></li>
+          </ul>
+          <a class="button is-muted" href="#" id="download-button">PDF Download Locked</a>
+        </section>
+
+        <section class="panel">
+          <h3>Client Management</h3>
+          <p>Suggested Google Sheet fields: Client, Email, Plan, Authorized Markets, Start Date, Expiration Date and Status.</p>
+        </section>
+      </div>
+
+      <footer>
+        TradingAlgo Mosaic reserved area prototype. Reports are for research and educational purposes only.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    var plannedMarkets = [
+      { Market: 'US100', Display_Name: 'US100', Country_Code: 'US', Region: 'North America', Ticker_Count: 100, Alias: 'USA100' },
+      { Market: 'Europe50', Display_Name: 'Europe50', Country_Code: 'EU', Region: 'Europe', Ticker_Count: 50 },
+      { Market: 'Italy30', Display_Name: 'Italy30', Country_Code: 'IT', Region: 'Europe', Ticker_Count: 30 },
+      { Market: 'Spain30', Display_Name: 'Spain30', Country_Code: 'ES', Region: 'Europe', Ticker_Count: 30 },
+      { Market: 'Germany30', Display_Name: 'Germany30', Country_Code: 'DE', Region: 'Europe', Ticker_Count: 30 },
+      { Market: 'France40', Display_Name: 'France40', Country_Code: 'FR', Region: 'Europe', Ticker_Count: 40 },
+      { Market: 'UK30', Display_Name: 'UK30', Country_Code: 'GB', Region: 'Europe', Ticker_Count: 30 },
+      { Market: 'Japan50', Display_Name: 'Japan50', Country_Code: 'JP', Region: 'Asia', Ticker_Count: 50 },
+      { Market: 'Australia50', Display_Name: 'Australia50', Country_Code: 'AU', Region: 'Pacific', Ticker_Count: 50 },
+      { Market: 'Canada50', Display_Name: 'Canada50', Country_Code: 'CA', Region: 'North America', Ticker_Count: 50 },
+      { Market: 'Mexico30', Display_Name: 'Mexico30', Country_Code: 'MX', Region: 'Latin America', Ticker_Count: 30 },
+      { Market: 'South Korea30', Display_Name: 'South Korea30', Country_Code: 'KR', Region: 'Asia', Ticker_Count: 30 },
+      { Market: 'South Africa30', Display_Name: 'South Africa30', Country_Code: 'ZA', Region: 'Africa', Ticker_Count: 30 }
+    ];
+
+    var reportsByMarket = {};
+
+    function findReport(market) {
+      return reportsByMarket[market] || reportsByMarket[market.replace('US100', 'USA100')] || null;
+    }
+
+    function scoreText(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? Math.round(number) : '-';
+    }
+
+    function setActive(button) {
+      document.querySelectorAll('.menu-link').forEach(function (item) {
+        item.classList.toggle('is-active', item === button);
+      });
+    }
+
+    function renderReport(market) {
+      var report = findReport(market);
+      var title = market === 'Global Summary'
+        ? 'TradingAlgo Mosaic Weekly Market Summary'
+        : market + ' Premium Report';
+      var status = report && report.Report_URL ? 'Ready' : 'Planned';
+
+      document.getElementById('report-kicker').textContent = market;
+      document.getElementById('report-title').textContent = title;
+      document.getElementById('trend-score').textContent = report ? scoreText(report.Trend) : '-';
+      document.getElementById('stability-score').textContent = report ? scoreText(report.Stability) : '-';
+      document.getElementById('ticker-count').textContent = report && report.Ticker_Count ? report.Ticker_Count : (market === 'Global Summary' ? plannedMarkets.length : '-');
+      document.getElementById('report-status').textContent = status;
+
+      document.getElementById('report-summary').textContent = report
+        ? 'Reserved dashboard for ' + (report.Display_Name || market) + ', with weekly model output, selected stocks, matrix view and performance history.'
+        : 'This module is part of the premium product map and will be activated when the related model output is generated.';
+
+      document.getElementById('market-summary').textContent = report
+        ? 'Trend score ' + scoreText(report.Trend) + ' and stability score ' + scoreText(report.Stability) + ' are loaded from the current reports index.'
+        : 'No production report is linked yet. Keep the menu item visible as a commercial placeholder and activate it when the weekly output is ready.';
+
+      var downloadButton = document.getElementById('download-button');
+      if (report && report.Report_URL) {
+        downloadButton.href = 'mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request';
+        downloadButton.textContent = 'Request PDF Access';
+        downloadButton.classList.remove('is-muted');
+        downloadButton.removeAttribute('target');
+        downloadButton.removeAttribute('rel');
+      } else {
+        downloadButton.href = '#';
+        downloadButton.textContent = 'PDF Download Locked';
+        downloadButton.classList.add('is-muted');
+        downloadButton.removeAttribute('target');
+        downloadButton.removeAttribute('rel');
+      }
+    }
+
+    function renderMenu() {
+      var menu = document.getElementById('country-menu');
+      menu.innerHTML = plannedMarkets.map(function (market) {
+        var report = findReport(market.Market);
+        var state = report && report.Report_URL ? 'Ready' : 'Planned';
+        return '<button class="menu-link" data-market="' + market.Market + '"><span>' + market.Display_Name + '</span><small>' + state + '</small></button>';
+      }).join('');
+
+      document.querySelectorAll('.menu-link').forEach(function (button) {
+        button.addEventListener('click', function () {
+          setActive(button);
+          renderReport(button.getAttribute('data-market'));
+        });
+      });
+    }
+
+    renderMenu();
+    renderReport('Global Summary');
+
+    fetch('reports/reports_index.json', { cache: 'no-store' })
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error('Reports index unavailable');
+        }
+        return response.json();
+      })
+      .then(function (reports) {
+        reports.forEach(function (report) {
+          reportsByMarket[report.Market] = report;
+          if (report.Market === 'USA100') {
+            reportsByMarket.US100 = report;
+          }
+        });
+        renderMenu();
+        renderReport(document.querySelector('.menu-link.is-active').getAttribute('data-market'));
+      })
+      .catch(function () {
+        renderMenu();
+      });
+  </script>
+</body>
+</html>
