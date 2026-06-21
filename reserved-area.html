@@ -724,7 +724,7 @@
       return '<a class="report-card open" id="rc-' + m.key + '" href="' + reportUrl + '">'
         + '<div class="report-card-head">'
         + '<img src="https://flagcdn.com/' + m.flag + '.svg" width="22" height="14" alt="' + m.flag + '" style="border-radius:2px;flex-shrink:0">'
-        + '<span class="report-card-name">' + m.name + '<span class="market-hedging">Hedging %</span></span>'
+        + '<span class="report-card-name">' + m.name + '<span class="market-hedging" id="hedge-' + m.key + '">Hedge: -</span></span>'
         + '<div class="report-scores">'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + t + '</div><div class="report-score-lbl">Trend</div></div>'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + s + '</div><div class="report-score-lbl">Stab</div></div>'
@@ -774,6 +774,33 @@
         var posKey = POS_KEY[m.key] || m.key;
         return renderCard(m, indexMap[m.key], positions[posKey]);
       }).join("");
+      loadHedgePercentages();
+    }
+
+    function formatPercent(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? (number * 100).toFixed(2) + "%" : "-";
+    }
+
+    function loadHedgePercentages() {
+      MARKET_META.forEach(function(m) {
+        var target = document.getElementById("hedge-" + m.key);
+        if (!target || !m.html) return;
+
+        var dataUrl = m.html.replace(/[^\/]+$/, "report_data.json");
+        fetch(dataUrl, { cache: "no-store" })
+          .then(function(response) {
+            if (!response.ok) throw new Error("Report data unavailable");
+            return response.json();
+          })
+          .then(function(rows) {
+            var row = Array.isArray(rows) ? rows[0] : rows;
+            target.textContent = "Hedge: " + formatPercent(row && row["Benchmark Hedge Short"]);
+          })
+          .catch(function() {
+            target.textContent = "Hedge: -";
+          });
+      });
     }
 
     function loadData() {
