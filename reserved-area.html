@@ -140,6 +140,10 @@
       line-height: 1.45;
     }
 
+    .access-disclaimer:empty {
+      display: none;
+    }
+
     .access-form {
       display: flex;
       flex-wrap: wrap;
@@ -347,7 +351,7 @@
 
     /* ── semaforo ── */
     .semaforo {
-      display: grid;
+      display: none;
       grid-template-columns: repeat(6, 1fr);
       gap: 6px;
       margin-top: 24px;
@@ -403,16 +407,20 @@
     .reports-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 8px;
+      gap: 18px;
+      margin-top: 24px;
     }
 
     .report-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.13);
-      border-radius: 18px;
+      border-radius: 22px;
       overflow: hidden;
       transition: border-color 0.15s;
+      color: var(--text);
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
     }
 
     .report-card:hover { border-color: rgba(74,163,255,0.5); }
@@ -420,16 +428,16 @@
     .report-card-head {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
+      gap: 12px;
+      padding: 16px 18px;
       cursor: pointer;
       user-select: none;
     }
 
     .report-card-name {
       flex: 1;
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 850;
     }
 
     .report-scores {
@@ -442,8 +450,8 @@
     }
 
     .report-score-val {
-      font-size: 14px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 850;
     }
 
     .report-score-val.green { color: #22c55e; }
@@ -451,7 +459,7 @@
     .report-score-val.red   { color: #ff6b6b; }
 
     .report-score-lbl {
-      font-size: 10px;
+      font-size: 11px;
       color: var(--muted);
     }
 
@@ -469,8 +477,8 @@
     }
 
     .report-body {
-      display: none;
-      padding: 10px 14px;
+      display: block;
+      padding: 14px 18px 18px;
     }
 
     .report-card.open .report-body { display: block; }
@@ -498,7 +506,7 @@
     }
 
     .pos-ticker {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--text);
       min-width: 52px;
@@ -506,7 +514,7 @@
     }
 
     .pos-name {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--muted);
       white-space: nowrap;
       overflow: hidden;
@@ -529,8 +537,15 @@
     .change-label-out { font-size: 10px; font-weight: 700; color: #ff6b6b; margin-bottom: 3px; }
 
     .change-tickers {
-      font-size: 11px;
+      font-size: 13px;
       color: var(--text);
+    }
+
+    .red-heading {
+      margin: 8px 0 0;
+      color: var(--red);
+      font-size: 18px;
+      font-weight: 850;
     }
 
     .report-footer {
@@ -630,9 +645,9 @@
     <div class="restricted-content" id="restricted-content">
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
-        <h2>Weekly Reports</h2>
+        <h2>GlobaL</h2>
+        <p class="red-heading">Hedging %</p>
         <p class="access-disclaimer" id="last-processing-date"></p>
-        <div class="semaforo" id="semaforo"></div>
         <div class="reports-grid" id="reports-grid"></div>
       </section>
     </div>
@@ -704,15 +719,15 @@
       var cinText = cin.length ? cin.map(function(p){return p.ticker;}).join(", ") : "—";
       var coutText = cout.length ? cout.map(function(p){return p.ticker;}).join(", ") : "—";
 
-      return '<div class="report-card" id="rc-' + m.key + '">'
-        + '<div class="report-card-head" onclick="toggleCard(\'' + m.key + '\')">'
+      var reportUrl = m.html || m.pdf || "#";
+      return '<a class="report-card open" id="rc-' + m.key + '" href="' + reportUrl + '">'
+        + '<div class="report-card-head">'
         + '<img src="https://flagcdn.com/' + m.flag + '.svg" width="22" height="14" alt="' + m.flag + '" style="border-radius:2px;flex-shrink:0">'
         + '<span class="report-card-name">' + m.name + '</span>'
         + '<div class="report-scores">'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + t + '</div><div class="report-score-lbl">Trend</div></div>'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + s + '</div><div class="report-score-lbl">Stab</div></div>'
         + '</div>'
-        + '<span class="report-chevron">&#8964;</span>'
         + '</div>'
         + '<div class="report-divider"></div>'
         + '<div class="report-body">'
@@ -723,11 +738,7 @@
         + '<div class="change-block"><div class="change-label-out">&#8595; OUT</div><div class="change-tickers">' + coutText + '</div></div>'
         + '</div>'
         + '</div>'
-        + '<div class="report-footer">'
-        + '<span class="report-week">' + (week || "") + '</span>'
-        + '<a class="report-pdf-link" href="' + (m.html || m.pdf) + '" target="_blank">' + (m.html ? 'Open HTML' : 'Open PDF') + ' &#8599;</a>'
-        + '</div>'
-        + '</div>';
+        + '</a>';
     }
 
     function toggleCard(key) {
@@ -757,8 +768,6 @@
       if (dateEl) {
         dateEl.textContent = lastProcessing ? "Last processing: " + lastProcessing : "";
       }
-
-      document.getElementById("semaforo").innerHTML = renderSemaforo(indexMap, positions);
 
       document.getElementById("reports-grid").innerHTML = MARKET_META.map(function(m) {
         var posKey = POS_KEY[m.key] || m.key;
