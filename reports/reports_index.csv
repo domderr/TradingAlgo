@@ -1,16 +1,16 @@
-Market,Benchmark,Status,Report_File,Report_Path,Report_URL,Updated_At,Last_Hedge_Short,Benchmark_Hedge_Short,Benchmark_Hedge_Ticker
-DJ30,DIA,OK,Report_DJ30.pdf,reports/Report_DJ30.pdf,reports/Report_DJ30.pdf,2026-06-21T15:14:24+02:00,0.1258,0.1258,DIA
-USA100,SPY,OK,Report_USA100.pdf,reports/Report_USA100.pdf,reports/Report_USA100.pdf,2026-06-21T15:14:24+02:00,0.0724,0.0724,SPY
-NASDAQ100,QQQ,OK,Report_NASDAQ100.pdf,reports/Report_NASDAQ100.pdf,reports/Report_NASDAQ100.pdf,2026-06-21T15:14:24+02:00,0.0975,0.0975,QQQ
-Europe50,^STOXX50E,OK,Report_Europe50.pdf,reports/Report_Europe50.pdf,reports/Report_Europe50.pdf,2026-06-21T15:14:25+02:00,0.0953,0.0953,^STOXX50E
-Italy30,FTSEMIB.MI,OK,Report_Italy30.pdf,reports/Report_Italy30.pdf,reports/Report_Italy30.pdf,2026-06-21T15:14:25+02:00,0.1267,0.1267,FTSEMIB.MI
-UK30,^FTSE,OK,Report_UK30.pdf,reports/Report_UK30.pdf,reports/Report_UK30.pdf,2026-06-21T15:14:25+02:00,0.1116,0.1116,^FTSE
-France40,^FCHI,OK,Report_France40.pdf,reports/Report_France40.pdf,reports/Report_France40.pdf,2026-06-21T15:14:25+02:00,0.1884,0.1884,^FCHI
-Spain40,EWP,OK,Report_Spain40.pdf,reports/Report_Spain40.pdf,reports/Report_Spain40.pdf,2026-06-21T15:14:25+02:00,0.0637,0.0637,EWP
-Germany30,^GDAXI,OK,Report_Germany30.pdf,reports/Report_Germany30.pdf,reports/Report_Germany30.pdf,2026-06-21T15:14:25+02:00,0.1273,0.1273,^GDAXI
-Australia50,^AXJO,OK,Report_Australia50.pdf,reports/Report_Australia50.pdf,reports/Report_Australia50.pdf,2026-06-21T15:14:25+02:00,0.1573,0.1573,^AXJO
-Japan50,^N225,OK,Report_Japan50.pdf,reports/Report_Japan50.pdf,reports/Report_Japan50.pdf,2026-06-21T15:14:26+02:00,0.0989,0.0989,^N225
-Canada50,^GSPTSE,OK,Report_Canada50.pdf,reports/Report_Canada50.pdf,reports/Report_Canada50.pdf,2026-06-21T15:14:26+02:00,0.1432,0.1432,^GSPTSE
-Mexico30,^MXX,OK,Report_Mexico30.pdf,reports/Report_Mexico30.pdf,reports/Report_Mexico30.pdf,2026-06-21T15:14:26+02:00,0.2211,0.2211,^MXX
-South Korea30,^KS11,OK,Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,2026-06-21T15:14:26+02:00,0.1632,0.1632,^KS11
-South Africa30,^J203.JO,OK,Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,2026-06-21T15:14:26+02:00,0.1536,0.1536,^J203.JO
+Market,Benchmark,Status,Report_File,Report_Path,Report_URL,Updated_At,Last_Hedge_Short,Last_Hedge_Score,Benchmark_Hedge_Short,Benchmark_Hedge_Ticker
+DJ30,DIA,OK,Report_DJ30.pdf,reports/Report_DJ30.pdf,reports/Report_DJ30.pdf,,0.1258314379190354,87.41685620809646,0.1258314379190354,DIA
+USA100,SPY,OK,Report_USA100.pdf,reports/Report_USA100.pdf,reports/Report_USA100.pdf,,0.07239418619074356,92.76058138092564,0.07239418619074356,SPY
+NASDAQ100,QQQ,OK,Report_NASDAQ100.pdf,reports/Report_NASDAQ100.pdf,reports/Report_NASDAQ100.pdf,,0.09754197294637124,90.24580270536288,0.09754197294637124,QQQ
+Europe50,EZU,OK,Report_Europe50.pdf,reports/Report_Europe50.pdf,reports/Report_Europe50.pdf,,0.09525486234290925,90.47451376570908,0.09525486234290925,EZU
+Italy30,EWI,OK,Report_Italy30.pdf,reports/Report_Italy30.pdf,reports/Report_Italy30.pdf,,0.12670391734142428,87.32960826585757,0.12670391734142428,EWI
+UK30,EWU,OK,Report_UK30.pdf,reports/Report_UK30.pdf,reports/Report_UK30.pdf,,0.1116258170739104,88.83741829260896,0.1116258170739104,EWU
+France40,EWQ,OK,Report_France40.pdf,reports/Report_France40.pdf,reports/Report_France40.pdf,,0.18837266724104607,81.16273327589539,0.18837266724104607,EWQ
+Spain40,EWP,OK,Report_Spain40.pdf,reports/Report_Spain40.pdf,reports/Report_Spain40.pdf,,0.06371917832531127,93.62808216746888,0.06371917832531127,EWP
+Germany30,EWG,OK,Report_Germany30.pdf,reports/Report_Germany30.pdf,reports/Report_Germany30.pdf,,0.12733839023904592,87.2661609760954,0.12733839023904592,EWG
+Australia50,EWA,OK,Report_Australia50.pdf,reports/Report_Australia50.pdf,reports/Report_Australia50.pdf,,0.1573494668451546,84.26505331548454,0.1573494668451546,EWA
+Japan50,EWJ,OK,Report_Japan50.pdf,reports/Report_Japan50.pdf,reports/Report_Japan50.pdf,,0.09885141161855016,90.11485883814498,0.09885141161855016,EWJ
+Canada50,EWC,OK,Report_Canada50.pdf,reports/Report_Canada50.pdf,reports/Report_Canada50.pdf,,0.14323280301220354,85.67671969877965,0.14323280301220354,EWC
+Mexico30,EWW,OK,Report_Mexico30.pdf,reports/Report_Mexico30.pdf,reports/Report_Mexico30.pdf,,0.22107324435702214,77.89267556429779,0.22107324435702214,EWW
+South Korea30,EWY,OK,Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,,0.16315766551213073,83.68423344878693,0.16315766551213073,EWY
+South Africa30,EZA,OK,Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,,0.15358034896379263,80.80245637952592,0.15358034896379263,EZA

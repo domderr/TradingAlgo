@@ -684,8 +684,53 @@
       return v >= 65 ? "green" : v >= 35 ? "amber" : "red";
     }
 
+    function clampScore(value) {
+      var number = Math.round(Number(value));
+      if (!Number.isFinite(number)) return 0;
+      return Math.max(0, Math.min(100, number));
+    }
+
     function avgScore(t, s) {
       return Math.round((t + s) / 2);
+    }
+
+    function extractDriverNumbers(text, pattern) {
+      var values = [];
+      String(text || "").replace(pattern, function(_, value) {
+        var number = Number(value);
+        if (Number.isFinite(number)) values.push(number);
+        return _;
+      });
+      return values;
+    }
+
+    function average(values) {
+      if (!values.length) return null;
+      return values.reduce(function(sum, value) { return sum + value; }, 0) / values.length;
+    }
+
+    function deriveWeeklyScores(row) {
+      if (!row) return { Trend: 0, Stability: 0 };
+      var drivers = row["Selection Drivers"] || "";
+      var trendAvg = average(extractDriverNumbers(drivers, /trend slope\s+(-?\d+(?:\.\d+)?)/gi));
+      var stabilityAvg = average(extractDriverNumbers(drivers, /stability R2\s+(-?\d+(?:\.\d+)?)/gi));
+      var trend = trendAvg == null ? row.Trend : trendAvg * 5000;
+      var stability = stabilityAvg == null ? (row.Stability != null ? row.Stability : row["Hedge Portfolio Score"]) : stabilityAvg * 100;
+      return {
+        Trend: clampScore(trend),
+        Stability: clampScore(stability)
+      };
+    }
+
+    function enrichIndexWithReportData(indexMap, reportDataMap) {
+      MARKET_META.forEach(function(m) {
+        var row = reportDataMap[m.key];
+        if (!row) return;
+        var base = indexMap[m.key] || {};
+        var scores = deriveWeeklyScores(row);
+        indexMap[m.key] = Object.assign({}, base, row, scores);
+      });
+      return indexMap;
     }
 
     function renderSemaforo(index, positions) {
@@ -759,6 +804,7 @@
     function renderAll(indexArr, positions) {
       var indexMap = {};
       indexArr.forEach(function(r) { indexMap[r.Market || r.Display_Name] = r; });
+      indexMap = enrichIndexWithReportData(indexMap, positions && positions.__reportData || {});
 
       var weeks = Object.keys(positions || {}).map(function(key) {
         return positions[key] && positions[key].week;
@@ -783,7 +829,7 @@
 
     function formatPercent(value) {
       var number = Number(value);
-      return Number.isFinite(number) ? (number * 100).toFixed(2) + "%" : "-";
+      return Number.isFinite(number) ? Math.round(number * 100) + "%" : "-";
     }
 
     function extractHedgeValue(d) {
@@ -812,11 +858,36 @@
       });
     }
 
+    function loadReportData() {
+      return Promise.all(MARKET_META.map(function(m) {
+        if (!m.html) return Promise.resolve(null);
+        var dataUrl = m.html.replace(/[^\/]+$/, "report_data.json") + "?v=" + Date.now();
+        return fetch(dataUrl, { cache: "no-store" })
+          .then(function(response) {
+            if (!response.ok) throw new Error("Report data unavailable");
+            return response.json();
+          })
+          .then(function(rows) {
+            return { key: m.key, row: Array.isArray(rows) ? rows[0] : rows };
+          })
+          .catch(function() {
+            return null;
+          });
+      })).then(function(results) {
+        return results.reduce(function(map, item) {
+          if (item && item.row) map[item.key] = item.row;
+          return map;
+        }, {});
+      });
+    }
+
     function loadData() {
       var cacheKey = String(Date.now());
       var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
       var posPromise   = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return {}; });
-      Promise.all([indexPromise, posPromise]).then(function(results) {
+      var reportDataPromise = loadReportData();
+      Promise.all([indexPromise, posPromise, reportDataPromise]).then(function(results) {
+        results[1].__reportData = results[2];
         renderAll(results[0], results[1]);
       });
     }
