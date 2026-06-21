@@ -52,6 +52,15 @@ def useful_value(value):
     return value if value and value != "-" else ""
 
 
+def display_name(raw_name, ticker, metadata):
+    raw = useful_value(raw_name)
+    ticker_text = text(ticker).strip()
+    metadata_name = useful_value((metadata or {}).get("Name"))
+    if raw and raw.upper() != ticker_text.upper():
+        return raw
+    return metadata_name or raw or ticker_text
+
+
 def last_available_friday(today=None):
     today = today or datetime.now().date()
     return today - timedelta(days=(today.weekday() - 4) % 7)
@@ -784,7 +793,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         for item in selection:
             ticker_key = text(item.get("Ticker")).upper()
             metadata = ticker_metadata.get(ticker_key, {})
-            name = useful_value(item.get("Name")) or metadata.get("Name") or text(item.get("Ticker"))
+            name = display_name(item.get("Name"), item.get("Ticker"), metadata)
             sector = useful_value(item.get("Sector")) or metadata.get("Sector") or "-"
             industry = useful_value(item.get("Industry")) or metadata.get("Industry") or "-"
             selection_name_map[ticker_key] = name
@@ -817,7 +826,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         metadata = ticker_metadata.get(key, {})
         all_assets.append({
             "ticker": ticker,
-            "name": selection_name_map.get(key) or metadata.get("Name") or ticker,
+            "name": display_name(selection_name_map.get(key), ticker, metadata),
             "status": status_map.get(key, "-"),
             "sector": selection_sector_map.get(key) or metadata.get("Sector") or "-",
             "industry": selection_industry_map.get(key) or metadata.get("Industry") or "-",
@@ -868,7 +877,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             linked_rows.append(
                 "<tr>"
                 f"<td>{linked_ticker_html(ticker_part)}</td>"
-                f"<td>{html_text(name_part if sep else metadata.get('Name') or '')}</td>"
+                f"<td>{html_text(display_name(name_part if sep else '', ticker_part, metadata))}</td>"
                 f"<td>{html_text(metadata.get('Sector') or '-')}</td>"
                 f"<td>{html_text(metadata.get('Industry') or '-')}</td>"
                 "</tr>"
@@ -881,7 +890,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             linked_rows.append(
                 "<tr>"
                 f"<td>{linked_ticker_html(item.get('Ticker'))}</td>"
-                f"<td>{html_text(selection_name_map.get(ticker_key) or item.get('Name'))}</td>"
+                f"<td>{html_text(display_name(selection_name_map.get(ticker_key) or item.get('Name'), item.get('Ticker'), ticker_metadata.get(ticker_key, {})))}</td>"
                 f"<td>{html_text(selection_sector_map.get(ticker_key) or item.get('Sector'))}</td>"
                 f"<td>{html_text(selection_industry_map.get(ticker_key) or item.get('Industry'))}</td>"
                 "</tr>"
