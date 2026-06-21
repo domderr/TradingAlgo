@@ -318,6 +318,7 @@ body {
 .dashboard-header h1 {
   margin: 4px 0 8px;
   color: #071a33;
+  font-size: 46px;
 }
 .dashboard-meta {
   color: #475569;
@@ -343,7 +344,7 @@ body {
   margin: 0 0 14px;
   color: #0b5fa5;
   font-family: Georgia, serif;
-  font-size: 24px;
+  font-size: 31px;
 }
 .changes-table th {
   width: 42%;
@@ -373,7 +374,7 @@ body {
 .chart-frame h3 {
   margin: 0 0 10px;
   color: #071a33;
-  font-size: 15px;
+  font-size: 19px;
 }
 .dashboard-chart {
   width: 100%;
@@ -388,7 +389,7 @@ body {
 }
 .performance-table td,
 .performance-table th {
-  font-size: 14px;
+  font-size: 16px;
 }
 .ticker-link {
   color: #0b5fa5;
@@ -542,9 +543,9 @@ body {
   border-bottom: 3px solid #071a33;
 }
 .brand { color: #0b5fa5; font-size: 13px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
-h1 { margin: 6px 0 6px; font-family: Georgia, serif; font-size: 34px; line-height: 1.1; }
-h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 26px; }
-h3 { margin: 0 0 10px; color: #071a33; font-size: 18px; }
+h1 { margin: 6px 0 6px; font-family: Georgia, serif; font-size: 42px; line-height: 1.1; }
+h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 31px; }
+h3 { margin: 0 0 10px; color: #071a33; font-size: 21px; }
 p { line-height: 1.55; }
 .eyebrow { margin: 0 0 8px; color: #0b5fa5; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
 .meta { color: #475569; font-size: 13px; text-align: right; line-height: 1.6; }
@@ -593,17 +594,17 @@ p { line-height: 1.55; }
 .mini-table, .asset-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 15px;
 }
 .mini-table th, .mini-table td, .asset-table th, .asset-table td {
-  padding: 9px 10px;
+  padding: 12px 12px;
   border-bottom: 1px solid #dbe3ef;
   text-align: left;
   vertical-align: top;
 }
 .mini-table th, .asset-table th {
   color: #0b5fa5;
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.7px;
   text-transform: uppercase;
 }
@@ -642,8 +643,13 @@ p { line-height: 1.55; }
 .gallery-page {
   width: min(1440px, calc(100vw - 48px));
 }
+.gallery-page h1 { font-size: 48px; }
 .gallery-table td {
   vertical-align: middle;
+  font-size: 16px;
+}
+.gallery-table th {
+  font-size: 14px;
 }
 .thumb-button {
   width: 210px;
@@ -816,6 +822,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             }
             for item in asset_pages
         ]
+    all_assets.sort(key=lambda item: text(item.get("ticker")).upper())
 
     def linked_ticker_html(ticker):
         ticker_text = html_text(ticker)
