@@ -401,6 +401,9 @@ p { line-height: 1.55; }
 .gallery-table th {
   font-size: 14px;
 }
+.gallery-table td::before {
+  display: none;
+}
 .thumb-button {
   width: 210px;
   padding: 0;
@@ -543,6 +546,66 @@ p { line-height: 1.55; }
     width: 980px;
     max-width: none;
     border-radius: 0;
+  }
+  .gallery-page {
+    width: 100%;
+  }
+  .gallery-page h1 {
+    font-size: 38px;
+  }
+  .gallery-table,
+  .gallery-table thead,
+  .gallery-table tbody,
+  .gallery-table tr,
+  .gallery-table th,
+  .gallery-table td {
+    display: block;
+    width: 100%;
+  }
+  .gallery-table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .gallery-table thead {
+    display: none;
+  }
+  .gallery-table tr {
+    padding: 12px 0;
+    border-bottom: 1px solid #dbe3ef;
+  }
+  .gallery-table td {
+    display: grid;
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    padding: 5px 0;
+    border-bottom: 0;
+    font-size: 13px;
+  }
+  .gallery-table td::before {
+    display: block;
+    color: #0b5fa5;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  .gallery-table td:nth-child(1)::before { content: "Ticker"; }
+  .gallery-table td:nth-child(2)::before { content: "Name"; }
+  .gallery-table td:nth-child(3)::before { content: "Sector"; }
+  .gallery-table td:nth-child(4)::before { content: "Industry"; }
+  .gallery-table td:nth-child(5)::before { content: "Status"; }
+  .gallery-table td:nth-child(6)::before { content: "Chart"; }
+  .gallery-table td:nth-child(6) {
+    display: block;
+    padding-top: 8px;
+  }
+  .gallery-table td:nth-child(6)::before {
+    margin-bottom: 6px;
+  }
+  .thumb-button {
+    width: 100%;
+    max-width: 320px;
   }
 }
 @media print {
