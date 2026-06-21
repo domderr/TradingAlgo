@@ -288,6 +288,7 @@ body {
   background: #e8eef6;
   color: #071a33;
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 .report-shell, .asset-shell { padding: 24px; }
 .top-actions {
@@ -326,7 +327,8 @@ body {
   font-size: 13px;
 }
 .report-dashboard {
-  width: 1120px;
+  width: 100%;
+  max-width: 1120px;
   margin: 0 auto 24px;
   padding: 30px;
   background: #fff;
@@ -553,7 +555,8 @@ body {
   line-height: 1.2;
 }
 .report-page {
-  width: 1120px;
+  width: 100%;
+  max-width: 1120px;
   min-height: 790px;
   margin: 0 auto 24px;
   padding: 30px;
@@ -624,12 +627,14 @@ p { line-height: 1.55; }
   width: 100%;
   border-collapse: collapse;
   font-size: 15px;
+  table-layout: auto;
 }
 .mini-table th, .mini-table td, .asset-table th, .asset-table td {
   padding: 12px 12px;
   border-bottom: 1px solid #dbe3ef;
   text-align: left;
   vertical-align: top;
+  overflow-wrap: anywhere;
 }
 .mini-table th, .asset-table th {
   color: #0b5fa5;
@@ -747,6 +752,70 @@ p { line-height: 1.55; }
   .report-shell, .asset-shell { padding: 10px; }
   .top-actions { gap: 8px; margin-bottom: 10px; }
   .top-actions a { width: 100%; text-align: center; }
+  .report-dashboard,
+  .report-page {
+    padding: 16px 10px;
+    margin-bottom: 14px;
+    border-radius: 0;
+  }
+  .dashboard-header h1,
+  .report-header h1,
+  h1 {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+  .dashboard-card {
+    padding: 12px 8px;
+  }
+  .dashboard-card h2,
+  .chart-section h2,
+  .performance-section h2,
+  h2 {
+    font-size: 28px;
+  }
+  .mini-table,
+  .asset-table {
+    font-size: 12px;
+    table-layout: fixed;
+  }
+  .mini-table th,
+  .mini-table td,
+  .asset-table th,
+  .asset-table td {
+    padding: 8px 5px;
+  }
+  .mini-table th,
+  .asset-table th {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+  .mini-table th:nth-child(1),
+  .mini-table td:nth-child(1) {
+    width: 18%;
+  }
+  .mini-table th:nth-child(2),
+  .mini-table td:nth-child(2) {
+    width: 28%;
+  }
+  .mini-table th:nth-child(3),
+  .mini-table td:nth-child(3) {
+    width: 25%;
+  }
+  .mini-table th:nth-child(4),
+  .mini-table td:nth-child(4) {
+    width: 29%;
+  }
+  .performance-table th,
+  .performance-table td {
+    font-size: 12px;
+  }
+  .changes-table th,
+  .changes-table td {
+    width: auto;
+  }
+  .chart-frame {
+    padding: 8px 4px;
+  }
   .asset-page { padding: 16px 10px 12px; }
   .asset-page h1 { font-size: 28px; margin-bottom: 12px; }
   .asset-picture {

@@ -23,33 +23,33 @@
     "Last Weekly Selection": [
       {
         "Ticker": "PRY.MI",
-        "Name": "PRYSMIAN",
-        "Sector": "Industrials",
-        "Industry": "Electrical Equipment & Parts"
+        "Name": "PRY.MI",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "TEN.MI",
-        "Name": "TENARIS",
-        "Sector": "Energy",
-        "Industry": "Oil & Gas Equipment & Services"
+        "Name": "TEN.MI",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "TIT.MI",
-        "Name": "TELECOM ITALIA",
-        "Sector": "Communication Services",
-        "Industry": "Telecom Services"
+        "Name": "TIT.MI",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "STMMI.MI",
-        "Name": "STMICROELECTRONICS",
-        "Sector": "Technology",
-        "Industry": "Semiconductors"
+        "Name": "STMMI.MI",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "SRG.MI",
-        "Name": "SNAM",
-        "Sector": "Utilities",
-        "Industry": "Utilities - Regulated Gas"
+        "Name": "SRG.MI",
+        "Sector": "-",
+        "Industry": "-"
       }
     ],
     "Added Tickers": "-",
