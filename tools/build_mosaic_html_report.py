@@ -749,7 +749,16 @@ p { line-height: 1.55; }
   .top-actions a { width: 100%; text-align: center; }
   .asset-page { padding: 16px 10px 12px; }
   .asset-page h1 { font-size: 28px; margin-bottom: 12px; }
-  .asset-chart { border-radius: 0; }
+  .asset-picture {
+    margin: 0 -10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .asset-chart {
+    width: 980px;
+    max-width: none;
+    border-radius: 0;
+  }
 }
 @media print {
   body { background: #fff; }
