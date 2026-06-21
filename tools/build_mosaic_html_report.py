@@ -6,7 +6,7 @@ import os
 import re
 import shutil
 import traceback
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 
@@ -45,6 +45,15 @@ def text(value):
 
 def html_text(value):
     return html.escape(text(value))
+
+
+def last_available_friday(today=None):
+    today = today or datetime.now().date()
+    return today - timedelta(days=(today.weekday() - 4) % 7)
+
+
+def report_date_label():
+    return last_available_friday().strftime("%d %b %Y")
 
 
 def read_tickers(tickers_xlsx, market):
@@ -278,12 +287,16 @@ p { line-height: 1.55; }
   grid-template-columns: 1.2fr 0.8fr;
   gap: 18px;
 }
+.two-col.balanced {
+  grid-template-columns: 1fr 1fr;
+}
 .panel {
   padding: 18px;
   border: 1px solid #dbe3ef;
   border-radius: 6px;
   background: #f8fafc;
 }
+.full-chart-panel { padding: 12px; }
 .chart-img {
   width: 100%;
   max-height: 525px;
@@ -291,6 +304,7 @@ p { line-height: 1.55; }
   border: 1px solid #e2e8f0;
   background: #fff;
 }
+.wide-chart { max-height: 660px; }
 .asset-chart {
   width: 100%;
   display: block;
@@ -343,6 +357,58 @@ p { line-height: 1.55; }
 }
 .asset-card strong { display: block; margin-bottom: 6px; }
 .asset-card span { color: #0b5fa5; font-size: 12px; font-weight: 700; }
+.gallery-page {
+  width: min(1440px, calc(100vw - 48px));
+}
+.gallery-table td {
+  vertical-align: middle;
+}
+.thumb-button {
+  width: 210px;
+  padding: 0;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  overflow: hidden;
+}
+.thumb-button img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: contain;
+  background: #f8fafc;
+}
+.chart-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(7, 26, 51, 0.88);
+}
+.chart-modal.is-open { display: flex; }
+.chart-modal img {
+  max-width: min(1280px, 96vw);
+  max-height: 88vh;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #fff;
+}
+.chart-modal-close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 4px;
+  background: #168eea;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+}
 .footer-note { margin-top: 18px; color: #64748b; font-size: 12px; }
 @media (max-width: 1180px) {
   .report-page { width: 100%; min-height: 0; }
@@ -376,10 +442,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
 
     output_dir = dev_dir / "output"
     summary_src = output_dir / "_summary_charts" / safe_market / f"summary_{safe_market}.png"
-    exposure_src = output_dir / "_exposure_charts" / safe_market / f"exposure_long_net_{safe_market}.png"
-
     copy_if_exists(summary_src, asset_out_dir / summary_src.name)
-    copy_if_exists(exposure_src, asset_out_dir / exposure_src.name)
     shutil.copy2(data_path, out_dir / "report_data.json")
 
     asset_src_dir = output_dir / "_asset_detail_pages" / safe_market
@@ -392,6 +455,35 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             page_name = write_asset_page(out_dir, ticker, target_name, market)
             asset_pages.append({"ticker": ticker, "image": target_name, "page": page_name})
 
+    selection = row.get("Last Weekly Selection") or []
+    selection_name_map = {}
+    selection_sector_map = {}
+    if isinstance(selection, str):
+        selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
+        selection_html = "".join(f"<tr><td>{html_text(item)}</td><td>-</td><td>-</td></tr>" for item in selection_rows)
+    else:
+        selection_html = "".join(
+            "<tr>"
+            f"<td>{html_text(item.get('Ticker'))}</td>"
+            f"<td>{html_text(item.get('Name'))}</td>"
+            f"<td>{html_text(item.get('Sector'))}</td>"
+            "</tr>"
+            for item in selection
+        )
+        for item in selection:
+            ticker_key = text(item.get("Ticker")).upper()
+            selection_name_map[ticker_key] = text(item.get("Name"))
+            selection_sector_map[ticker_key] = text(item.get("Sector"))
+    if not selection_html:
+        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
+
+    status_history = row.get("Status_History") if isinstance(row.get("Status_History"), dict) else {}
+    status_map = {}
+    for status_row in status_history.get("rows", []):
+        statuses = status_row.get("Statuses") or []
+        if statuses:
+            status_map[text(status_row.get("Ticker")).upper()] = text(statuses[-1])
+
     tickers = read_tickers(dev_dir / "Tickers.xlsx", market)
     page_by_ticker = {item["ticker"].upper(): item for item in asset_pages}
     all_assets = []
@@ -400,36 +492,34 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         item = page_by_ticker.get(key)
         all_assets.append({
             "ticker": ticker,
+            "name": selection_name_map.get(key, ticker),
+            "status": status_map.get(key, "-"),
+            "sector": selection_sector_map.get(key, "-"),
             "page": item["page"] if item else "",
+            "image": item["image"] if item else "",
             "has_chart": bool(item),
         })
     if not all_assets:
-        all_assets = [{"ticker": item["ticker"], "page": item["page"], "has_chart": True} for item in asset_pages]
+        all_assets = [
+            {
+                "ticker": item["ticker"],
+                "name": selection_name_map.get(item["ticker"].upper(), item["ticker"]),
+                "status": status_map.get(item["ticker"].upper(), "-"),
+                "sector": selection_sector_map.get(item["ticker"].upper(), "-"),
+                "page": item["page"],
+                "image": item["image"],
+                "has_chart": True,
+            }
+            for item in asset_pages
+        ]
 
     build_css(out_dir)
 
-    selection = row.get("Last Weekly Selection") or []
-    if isinstance(selection, str):
-        selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
-        selection_html = "".join(f"<tr><td>{html_text(item)}</td><td><span class=\"status-badge\">Selected</span></td></tr>" for item in selection_rows)
-    else:
-        selection_html = "".join(
-            "<tr>"
-            f"<td>{html_text(item.get('Ticker'))}</td>"
-            f"<td>{html_text(item.get('Name'))}</td>"
-            f"<td>{html_text(item.get('Sector'))}</td>"
-            f"<td><span class=\"status-badge\">Selected</span></td>"
-            "</tr>"
-            for item in selection
-        )
-    if not selection_html:
-        selection_html = "<tr><td colspan=\"4\">-</td></tr>"
+    updated = report_date_label()
+    hedge_ticker = html_text(row.get("Benchmark Hedge Ticker"))
+    hedge_short = pct(row.get("Benchmark Hedge Short"))
+    hedge_score = num(row.get("Hedge Portfolio Score"))
 
-    drivers = text(row.get("Selection Drivers"))
-    driver_items = [item.strip() for item in re.split(r"<br\s*/?>|\n", drivers) if item.strip() and item.strip() != "-"]
-    drivers_html = "".join(f"<li>{html_text(item)}</li>" for item in driver_items) or "<li>-</li>"
-
-    updated = datetime.now().strftime("%Y-%m-%d %H:%M")
     report_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -443,7 +533,6 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     <nav class="top-actions">
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
-      <a class="secondary" href="report_data.json">JSON Data</a>
     </nav>
 
     <section class="report-page">
@@ -454,39 +543,38 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
           <p class="eyebrow">Benchmark: {html_text(row.get("Benchmark"))}</p>
         </div>
         <div class="meta">
-          Generated: {html_text(updated)}<br />
+          Week ending: {html_text(updated)}<br />
           Universe: {html_text(row.get("Number of Tickers"))} assets<br />
           Status: {html_text(row.get("Status"))}
         </div>
       </header>
 
       <div class="kpi-grid">
-        <div class="kpi"><span>Strategy CAGR</span><strong>{pct(row.get("Strategy CAGR"))}</strong></div>
-        <div class="kpi"><span>Hedged CAGR</span><strong>{pct(row.get("Hedged CAGR"))}</strong></div>
-        <div class="kpi"><span>Strategy MaxDD</span><strong>{pct(row.get("Strategy MaxDD"))}</strong></div>
-        <div class="kpi"><span>Hedged MaxDD</span><strong>{pct(row.get("Hedged MaxDD"))}</strong></div>
-        <div class="kpi"><span>Sharpe</span><strong>{num(row.get("Strategy Sharpe Ratio"))}</strong></div>
-        <div class="kpi"><span>Hedge Short</span><strong>{pct(row.get("Benchmark Hedge Short"))}</strong></div>
+        <div class="kpi"><span>Long CAGR</span><strong>{pct(row.get("Strategy CAGR"))}</strong></div>
+        <div class="kpi"><span>Long + Hedge CAGR</span><strong>{pct(row.get("Hedged CAGR"))}</strong></div>
+        <div class="kpi"><span>Benchmark CAGR</span><strong>{pct(row.get("Bench Cagr"))}</strong></div>
+        <div class="kpi"><span>Long MaxDD</span><strong>{pct(row.get("Strategy MaxDD"))}</strong></div>
+        <div class="kpi"><span>Long + Hedge MaxDD</span><strong>{pct(row.get("Hedged MaxDD"))}</strong></div>
+        <div class="kpi"><span>Hedge Short ETF</span><strong>{hedge_short}</strong></div>
       </div>
 
-      <div class="two-col">
-        <div class="panel">
-          <h2>Summary Page</h2>
-          <img class="chart-img" src="assets/summary_{safe_market}.png" alt="{html_text(market)} summary chart" />
-        </div>
+      <div class="two-col balanced">
         <div class="panel">
           <h2>Current Selection</h2>
           <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Status</th></tr></thead>
+            <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th></tr></thead>
             <tbody>{selection_html}</tbody>
           </table>
-          <h3>Weekly Changes</h3>
+        </div>
+        <div class="panel">
+          <h2>Weekly Changes</h2>
           <table class="mini-table">
             <tbody>
-              <tr><th>Added</th><td>{html_text(row.get("Added Tickers"))}</td></tr>
-              <tr><th>Removed</th><td>{html_text(row.get("Removed Tickers"))}</td></tr>
-              <tr><th>Hedge</th><td>Short {html_text(row.get("Benchmark Hedge Ticker"))}: {pct(row.get("Benchmark Hedge Short"))}</td></tr>
-              <tr><th>Hedge Score</th><td>{num(row.get("Hedge Portfolio Score"))}</td></tr>
+              <tr><th>Capital Invested</th><td>{pct(row.get("Capital Invested"))}</td></tr>
+              <tr><th>IN</th><td>{html_text(row.get("Added Tickers"))}</td></tr>
+              <tr><th>OUT</th><td>{html_text(row.get("Removed Tickers"))}</td></tr>
+              <tr><th>Current Hedge Short ETF</th><td>{hedge_ticker}: {hedge_short}</td></tr>
+              <tr><th>Hedge Score</th><td>{hedge_score}</td></tr>
             </tbody>
           </table>
         </div>
@@ -495,25 +583,16 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     </section>
 
     <section class="report-page">
-      <h2>Equity, Drawdown and Hedge Exposure</h2>
-      <div class="two-col">
-        <div class="panel">
-          <h3>Equity and Drawdown</h3>
-          <img class="chart-img" src="assets/summary_{safe_market}.png" alt="{html_text(market)} equity and drawdown" />
-        </div>
-        <div class="panel">
-          <h3>Long Exposure vs Net Exposure</h3>
-          <img class="chart-img" src="assets/exposure_long_net_{safe_market}.png" alt="{html_text(market)} exposure chart" />
-        </div>
+      <h2>Equity / Drawdown</h2>
+      <div class="panel full-chart-panel">
+        <img class="chart-img wide-chart" src="assets/summary_{safe_market}.png" alt="{html_text(market)} equity and drawdown" />
       </div>
     </section>
 
-    <section class="report-page">
-      <h2>Selection Drivers</h2>
-      <ol class="drivers">{drivers_html}</ol>
-      <h2 style="margin-top: 28px;">Performance Table</h2>
+    <section class="report-page compact-page">
+      <h2>Performance Table</h2>
       <table class="asset-table">
-        <thead><tr><th>Metric</th><th>Strategy</th><th>Hedged</th><th>Benchmark</th></tr></thead>
+        <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
         <tbody>
           <tr><td>CAGR</td><td>{pct(row.get("Strategy CAGR"))}</td><td>{pct(row.get("Hedged CAGR"))}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
           <tr><td>MaxDD</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
@@ -528,29 +607,31 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
 """
     (out_dir / f"Report_{safe_market}.html").write_text(report_html, encoding="utf-8")
 
-    asset_row_parts = []
+    gallery_rows = []
     for item in all_assets:
-        status = '<span class="status-badge">Chart Ready</span>' if item["has_chart"] else "No chart"
-        chart_link = f'<a class="button" href="{html.escape(item["page"])}">View Chart</a>' if item["page"] else "-"
-        asset_row_parts.append(
+        status = html_text(item.get("status") or "-")
+        thumb = (
+            f'<button class="thumb-button" type="button" data-full="assets/{html.escape(item["image"])}" aria-label="Open {html_text(item["ticker"])} chart">'
+            f'<img src="assets/{html.escape(item["image"])}" alt="{html_text(item["ticker"])} asset chart" />'
+            '</button>'
+            if item.get("image") else "-"
+        )
+        gallery_rows.append(
             "<tr>"
             f"<td>{html_text(item['ticker'])}</td>"
-            f"<td>{status}</td>"
-            f"<td>{chart_link}</td>"
+            f"<td>{html_text(item.get('name'))}</td>"
+            f"<td><span class=\"status-badge\">{status}</span></td>"
+            f"<td>{thumb}</td>"
             "</tr>"
         )
-    asset_rows = "".join(asset_row_parts)
-    asset_cards = "".join(
-        f"<a class=\"asset-card\" href=\"{html.escape(item['page'])}\"><strong>{html_text(item['ticker'])}</strong><span>View Chart</span></a>"
-        for item in all_assets
-        if item["page"]
-    )
+    gallery_body = "".join(gallery_rows)
+
     all_assets_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{html_text(market)} Benchmark Assets | TradingAlgo Mosaic</title>
+  <title>{html_text(market)} Chart Gallery | TradingAlgo Mosaic</title>
   <link rel="stylesheet" href="report.css" />
 </head>
 <body>
@@ -558,27 +639,53 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     <nav class="top-actions">
       <a href="Report_{safe_market}.html">Back to Report</a>
     </nav>
-    <section class="report-page">
+    <section class="report-page gallery-page">
       <p class="eyebrow">View All Benchmark Assets</p>
-      <h1>{html_text(market)} Asset List</h1>
-      <p>{len(all_assets)} assets in the benchmark universe. Each chart opens the individual dashboard generated by the Mosaic batch.</p>
-      <table class="asset-table">
-        <thead><tr><th>Ticker</th><th>Status</th><th>Chart</th></tr></thead>
-        <tbody>{asset_rows}</tbody>
+      <h1>{html_text(market)} Chart Gallery</h1>
+      <p>{len(all_assets)} plotted asset dashboards from the benchmark universe. Click any thumbnail to enlarge it.</p>
+      <table class="asset-table gallery-table">
+        <thead><tr><th>Ticker</th><th>Name</th><th>Status</th><th>Chart</th></tr></thead>
+        <tbody>{gallery_body}</tbody>
       </table>
     </section>
-    <section class="report-page">
-      <h2>Chart Gallery</h2>
-      <div class="asset-grid">{asset_cards}</div>
-    </section>
   </main>
+
+  <div class="chart-modal" id="chart-modal" aria-hidden="true">
+    <button class="chart-modal-close" type="button" aria-label="Close chart">Close</button>
+    <img src="" alt="Expanded asset chart" />
+  </div>
+
+  <script>
+    var modal = document.getElementById("chart-modal");
+    var modalImage = modal ? modal.querySelector("img") : null;
+    var closeButton = modal ? modal.querySelector("button") : null;
+
+    document.querySelectorAll(".thumb-button").forEach(function (button) {{
+      button.addEventListener("click", function () {{
+        if (!modal || !modalImage) return;
+        modalImage.src = button.getAttribute("data-full");
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+      }});
+    }});
+
+    function closeModal() {{
+      if (!modal || !modalImage) return;
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      modalImage.src = "";
+    }}
+
+    if (closeButton) closeButton.addEventListener("click", closeModal);
+    if (modal) modal.addEventListener("click", function (event) {{ if (event.target === modal) closeModal(); }});
+    document.addEventListener("keydown", function (event) {{ if (event.key === "Escape") closeModal(); }});
+  </script>
 </body>
 </html>
 """
     (out_dir / "all-assets.html").write_text(all_assets_html, encoding="utf-8")
 
     return out_dir
-
 
 def main():
     parser = argparse.ArgumentParser()

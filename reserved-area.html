@@ -631,6 +631,7 @@
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
         <h2>Weekly Reports</h2>
+        <p class="access-disclaimer" id="last-processing-date"></p>
         <div class="semaforo" id="semaforo"></div>
         <div class="reports-grid" id="reports-grid"></div>
       </section>
@@ -742,6 +743,20 @@
     function renderAll(indexArr, positions) {
       var indexMap = {};
       indexArr.forEach(function(r) { indexMap[r.Market || r.Display_Name] = r; });
+
+      var weeks = Object.keys(positions || {}).map(function(key) {
+        return positions[key] && positions[key].week;
+      }).filter(Boolean);
+      if (!weeks.length) {
+        weeks = indexArr.map(function(r) {
+          return r.Scores_Updated_At || r.Updated_At || "";
+        }).filter(Boolean);
+      }
+      var lastProcessing = weeks.length ? weeks.sort().slice(-1)[0] : "";
+      var dateEl = document.getElementById("last-processing-date");
+      if (dateEl) {
+        dateEl.textContent = lastProcessing ? "Last processing: " + lastProcessing : "";
+      }
 
       document.getElementById("semaforo").innerHTML = renderSemaforo(indexMap, positions);
 

@@ -67,7 +67,7 @@ p { line-height: 1.55; }
   gap: 18px;
 }
 .two-col.balanced {
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 1fr 1fr;
 }
 .panel {
   padding: 18px;
@@ -75,9 +75,7 @@ p { line-height: 1.55; }
   border-radius: 6px;
   background: #f8fafc;
 }
-.full-chart-panel {
-  padding: 12px;
-}
+.full-chart-panel { padding: 12px; }
 .chart-img {
   width: 100%;
   max-height: 525px;
@@ -85,9 +83,7 @@ p { line-height: 1.55; }
   border: 1px solid #e2e8f0;
   background: #fff;
 }
-.wide-chart {
-  max-height: 660px;
-}
+.wide-chart { max-height: 660px; }
 .asset-chart {
   width: 100%;
   display: block;
@@ -143,33 +139,24 @@ p { line-height: 1.55; }
 .gallery-page {
   width: min(1440px, calc(100vw - 48px));
 }
-.chart-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 18px;
+.gallery-table td {
+  vertical-align: middle;
 }
-.gallery-card {
+.thumb-button {
+  width: 210px;
   padding: 0;
   border: 1px solid #dbe3ef;
   border-radius: 6px;
   background: #fff;
-  color: #071a33;
   cursor: pointer;
   overflow: hidden;
-  text-align: left;
 }
-.gallery-card img {
+.thumb-button img {
   width: 100%;
-  aspect-ratio: 16 / 11;
+  aspect-ratio: 16 / 10;
   display: block;
   object-fit: contain;
   background: #f8fafc;
-}
-.gallery-card span {
-  display: block;
-  padding: 10px 12px;
-  color: #0b5fa5;
-  font-weight: 800;
 }
 .chart-modal {
   position: fixed;
@@ -181,9 +168,7 @@ p { line-height: 1.55; }
   padding: 28px;
   background: rgba(7, 26, 51, 0.88);
 }
-.chart-modal.is-open {
-  display: flex;
-}
+.chart-modal.is-open { display: flex; }
 .chart-modal img {
   max-width: min(1280px, 96vw);
   max-height: 88vh;

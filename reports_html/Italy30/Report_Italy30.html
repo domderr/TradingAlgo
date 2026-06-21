@@ -11,7 +11,6 @@
     <nav class="top-actions">
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
-      <a class="secondary" href="report_data.json">JSON Data</a>
     </nav>
 
     <section class="report-page">
@@ -22,22 +21,29 @@
           <p class="eyebrow">Benchmark: FTSEMIB.MI</p>
         </div>
         <div class="meta">
-          Generated: 2026-06-21 08:12<br />
+          Week ending: 19 Jun 2026<br />
           Universe: 28 assets<br />
           Status: OK
         </div>
       </header>
 
       <div class="kpi-grid">
-        <div class="kpi"><span>Strategy CAGR</span><strong>29.61%</strong></div>
+        <div class="kpi"><span>Long CAGR</span><strong>29.61%</strong></div>
+        <div class="kpi"><span>Long + Hedge CAGR</span><strong>24.98%</strong></div>
         <div class="kpi"><span>Benchmark CAGR</span><strong>25.22%</strong></div>
-        <div class="kpi"><span>Strategy MaxDD</span><strong>-11.67%</strong></div>
-        <div class="kpi"><span>Benchmark MaxDD</span><strong>-12.83%</strong></div>
-        <div class="kpi"><span>Sharpe</span><strong>1.78</strong></div>
-        <div class="kpi"><span>Information Ratio</span><strong>0.24</strong></div>
+        <div class="kpi"><span>Long MaxDD</span><strong>-11.67%</strong></div>
+        <div class="kpi"><span>Long + Hedge MaxDD</span><strong>-9.33%</strong></div>
+        <div class="kpi"><span>Hedge Short ETF</span><strong>12.67%</strong></div>
       </div>
 
       <div class="two-col balanced">
+        <div class="panel">
+          <h2>Current Selection</h2>
+          <table class="mini-table">
+            <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th></tr></thead>
+            <tbody><tr><td>PRY.MI</td><td>PRYSMIAN</td><td>Industrials</td></tr><tr><td>TEN.MI</td><td>TENARIS</td><td>Energy</td></tr><tr><td>TIT.MI</td><td>TELECOM ITALIA</td><td>Communication Services</td></tr><tr><td>STMMI.MI</td><td>STMICROELECTRONICS</td><td>Technology</td></tr><tr><td>SRG.MI</td><td>SNAM</td><td>Utilities</td></tr></tbody>
+          </table>
+        </div>
         <div class="panel">
           <h2>Weekly Changes</h2>
           <table class="mini-table">
@@ -45,14 +51,9 @@
               <tr><th>Capital Invested</th><td>100.00%</td></tr>
               <tr><th>IN</th><td>-</td></tr>
               <tr><th>OUT</th><td>-</td></tr>
+              <tr><th>Current Hedge Short ETF</th><td>FTSEMIB.MI: 12.67%</td></tr>
+              <tr><th>Hedge Score</th><td>87.33</td></tr>
             </tbody>
-          </table>
-        </div>
-        <div class="panel">
-          <h2>Current Selection</h2>
-          <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th></tr></thead>
-            <tbody><tr><td>PRY.MI</td><td>PRYSMIAN</td><td>Industrials</td></tr><tr><td>TEN.MI</td><td>TENARIS</td><td>Energy</td></tr><tr><td>TIT.MI</td><td>TELECOM ITALIA</td><td>Communication Services</td></tr><tr><td>STMMI.MI</td><td>STMICROELECTRONICS</td><td>Technology</td></tr><tr><td>SRG.MI</td><td>SNAM</td><td>Utilities</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -69,12 +70,12 @@
     <section class="report-page compact-page">
       <h2>Performance Table</h2>
       <table class="asset-table">
-        <thead><tr><th>Metric</th><th>Strategy</th><th>Benchmark</th></tr></thead>
+        <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
         <tbody>
-          <tr><td>CAGR</td><td>29.61%</td><td>25.22%</td></tr>
-          <tr><td>MaxDD</td><td>-11.67%</td><td>-12.83%</td></tr>
-          <tr><td>Sharpe</td><td>1.78</td><td>1.41</td></tr>
-          <tr><td>Information Ratio</td><td>0.24</td><td>-</td></tr>
+          <tr><td>CAGR</td><td>29.61%</td><td>24.98%</td><td>25.22%</td></tr>
+          <tr><td>MaxDD</td><td>-11.67%</td><td>-9.33%</td><td>-12.83%</td></tr>
+          <tr><td>Sharpe</td><td>1.78</td><td>1.74</td><td>1.41</td></tr>
+          <tr><td>Information Ratio</td><td>0.24</td><td>-0.04</td><td>-</td></tr>
         </tbody>
       </table>
     </section>
