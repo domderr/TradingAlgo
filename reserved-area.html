@@ -541,11 +541,13 @@
       color: var(--text);
     }
 
-    .red-heading {
-      margin: 8px 0 0;
+    .market-hedging {
+      display: block;
+      margin-top: 5px;
       color: var(--red);
-      font-size: 18px;
+      font-size: 12px;
       font-weight: 850;
+      line-height: 1.1;
     }
 
     .report-footer {
@@ -645,8 +647,7 @@
     <div class="restricted-content" id="restricted-content">
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
-        <h2>GlobaL</h2>
-        <p class="red-heading">Hedging %</p>
+        <h2>Global Weekly View</h2>
         <p class="access-disclaimer" id="last-processing-date"></p>
         <div class="reports-grid" id="reports-grid"></div>
       </section>
@@ -723,7 +724,7 @@
       return '<a class="report-card open" id="rc-' + m.key + '" href="' + reportUrl + '">'
         + '<div class="report-card-head">'
         + '<img src="https://flagcdn.com/' + m.flag + '.svg" width="22" height="14" alt="' + m.flag + '" style="border-radius:2px;flex-shrink:0">'
-        + '<span class="report-card-name">' + m.name + '</span>'
+        + '<span class="report-card-name">' + m.name + '<span class="market-hedging">Hedging %</span></span>'
         + '<div class="report-scores">'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + t + '</div><div class="report-score-lbl">Trend</div></div>'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + s + '</div><div class="report-score-lbl">Stab</div></div>'
