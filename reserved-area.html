@@ -622,18 +622,12 @@
   <main>
     <section class="reserved-message">
       <div class="eyebrow">Reserved Area</div>
-      <h1>Reserved Area</h1>
-      <p>This is a reserved area, please contact <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a> for more information.</p>
+      <h1>TradingAlgo Mosaic Reports</h1>
+      <p>The report area is open while the premium workflow is being validated.</p>
       <p class="access-disclaimer">Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
-      <form class="access-form" id="access-form">
-        <label for="access-password">Password</label>
-        <input id="access-password" name="password" type="password" autocomplete="current-password" required>
-        <button class="btn primary" type="submit">Access Markets</button>
-        <p class="access-error" id="access-error" aria-live="polite"></p>
-      </form>
     </section>
 
-    <div class="restricted-content" id="restricted-content" hidden>
+    <div class="restricted-content" id="restricted-content">
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
         <h2>Weekly Reports</h2>
@@ -659,7 +653,7 @@
       { key: "UK30",         flag: "gb", name: "UK30",         pdf: "reports/Report_UK30.pdf" },
       { key: "France40",     flag: "fr", name: "France40",     pdf: "reports/Report_France40.pdf" },
       { key: "Germany30",    flag: "de", name: "Germany30",    pdf: "reports/Report_Germany30.pdf" },
-      { key: "Italy30",      flag: "it", name: "Italy30",      pdf: "reports/Report_Italy30.pdf" },
+      { key: "Italy30",      flag: "it", name: "Italy30",      pdf: "reports/Report_Italy30.pdf", html: "reports_html/Italy30/Report_Italy30.html" },
       { key: "Japan50",      flag: "jp", name: "Japan50",      pdf: "reports/Report_Japan50.pdf" },
       { key: "South Korea30", flag: "kr", name: "S.Korea30",    pdf: "reports/Report_South_Korea30.pdf" },
       { key: "Australia50",  flag: "au", name: "Australia50",  pdf: "reports/Report_Australia50.pdf" },
@@ -730,7 +724,7 @@
         + '</div>'
         + '<div class="report-footer">'
         + '<span class="report-week">' + (week || "") + '</span>'
-        + '<a class="report-pdf-link" href="' + m.pdf + '" target="_blank">Open PDF &#8599;</a>'
+        + '<a class="report-pdf-link" href="' + (m.html || m.pdf) + '" target="_blank">' + (m.html ? 'Open HTML' : 'Open PDF') + ' &#8599;</a>'
         + '</div>'
         + '</div>';
     }
@@ -765,25 +759,7 @@
       });
     }
 
-    var accessForm = document.getElementById("access-form");
-    var passwordInput = document.getElementById("access-password");
-    var accessError = document.getElementById("access-error");
-    var restrictedContent = document.getElementById("restricted-content");
-    var dataLoaded = false;
-
-    accessForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-      if (passwordInput.value === "Mosaic") {
-        accessError.textContent = "";
-        restrictedContent.hidden = false;
-        accessForm.hidden = true;
-        if (!dataLoaded) { loadData(); dataLoaded = true; }
-        return;
-      }
-      accessError.textContent = "Incorrect password. Please try again.";
-      passwordInput.value = "";
-      passwordInput.focus();
-    });
+    loadData();
   </script>
 </body>
 </html>
