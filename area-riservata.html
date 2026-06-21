@@ -485,6 +485,9 @@
     ];
 
     var reportsByMarket = {};
+    var htmlReportsByMarket = {
+      Italy30: 'reports_html/Italy30/Report_Italy30.html'
+    };
 
     function findReport(market) {
       return reportsByMarket[market] || reportsByMarket[market.replace('US100', 'USA100')] || null;
@@ -503,10 +506,11 @@
 
     function renderReport(market) {
       var report = findReport(market);
+      var htmlReportUrl = htmlReportsByMarket[market] || '';
       var title = market === 'Global Summary'
         ? 'TradingAlgo Mosaic Weekly Market Summary'
         : market + ' Premium Report';
-      var status = report && report.Report_URL ? 'Ready' : 'Planned';
+      var status = htmlReportUrl ? 'HTML Ready' : (report && report.Report_URL ? 'Ready' : 'Planned');
 
       document.getElementById('report-kicker').textContent = market;
       document.getElementById('report-title').textContent = title;
@@ -522,6 +526,15 @@
       document.getElementById('market-summary').textContent = report
         ? 'Trend score ' + scoreText(report.Trend) + ' and stability score ' + scoreText(report.Stability) + ' are loaded from the current reports index.'
         : 'No production report is linked yet. Keep the menu item visible as a commercial placeholder and activate it when the weekly output is ready.';
+
+      var accessButton = document.getElementById('access-button');
+      if (htmlReportUrl) {
+        accessButton.href = htmlReportUrl;
+        accessButton.textContent = 'Open HTML Report';
+      } else {
+        accessButton.href = 'mailto:domderrico@gmail.com';
+        accessButton.textContent = 'Request Premium Access';
+      }
 
       var downloadButton = document.getElementById('download-button');
       if (report && report.Report_URL) {
@@ -543,7 +556,7 @@
       var menu = document.getElementById('country-menu');
       menu.innerHTML = plannedMarkets.map(function (market) {
         var report = findReport(market.Market);
-        var state = report && report.Report_URL ? 'Ready' : 'Planned';
+        var state = htmlReportsByMarket[market.Market] ? 'HTML' : (report && report.Report_URL ? 'Ready' : 'Planned');
         return '<button class="menu-link" data-market="' + market.Market + '"><span>' + market.Display_Name + '</span><small>' + state + '</small></button>';
       }).join('');
 
