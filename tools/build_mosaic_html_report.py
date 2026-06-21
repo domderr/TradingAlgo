@@ -245,6 +245,232 @@ body {
   font-size: 13px;
 }
 .top-actions a.secondary { background: #334155; }
+.report-dashboard {
+  width: 1120px;
+  margin: 0 auto 24px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.14);
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 3px solid #071a33;
+}
+.dashboard-header h1 {
+  margin: 4px 0 8px;
+  color: #071a33;
+}
+.dashboard-meta {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.55;
+  text-align: right;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 18px;
+  margin-top: 22px;
+}
+.dashboard-card {
+  padding: 18px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #f8fafc;
+}
+.dashboard-card h2,
+.chart-section h2,
+.performance-section h2 {
+  margin: 0 0 14px;
+  color: #0b5fa5;
+  font-family: Georgia, serif;
+  font-size: 24px;
+}
+.changes-table th {
+  width: 42%;
+}
+.changes-table .in-label {
+  color: #07850d;
+  font-weight: 800;
+}
+.changes-table .out-label {
+  color: #e00000;
+  font-weight: 800;
+}
+.chart-section,
+.performance-section {
+  margin-top: 22px;
+}
+.chart-stack {
+  display: grid;
+  gap: 16px;
+}
+.chart-frame {
+  padding: 12px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #fff;
+}
+.chart-frame h3 {
+  margin: 0 0 10px;
+  color: #071a33;
+  font-size: 15px;
+}
+.dashboard-chart {
+  width: 100%;
+  max-height: 620px;
+  display: block;
+  object-fit: contain;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+}
+.exposure-chart {
+  max-height: 420px;
+}
+.performance-table td,
+.performance-table th {
+  font-size: 14px;
+}
+.ticker-link {
+  color: #0b5fa5;
+  font-weight: 800;
+  text-decoration: none;
+}
+.ticker-link:hover {
+  text-decoration: underline;
+}
+.pdf-summary-page {
+  padding: 34px 44px;
+  font-size: 14px;
+}
+.pdf-summary-header {
+  display: grid;
+  grid-template-columns: 185px 1fr 185px;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #234f7c;
+}
+.pdf-logo {
+  width: 116px;
+  display: block;
+}
+.pdf-title {
+  margin: 0;
+  color: #214f7d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}
+.pdf-week {
+  color: #111;
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+}
+.pdf-section-title {
+  margin: 38px 0 14px;
+  color: #214f7d;
+  font-size: 22px;
+  font-weight: 800;
+}
+.portfolio-summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border: 1px solid #e2e2e2;
+  font-size: 14px;
+}
+.portfolio-summary-table th {
+  padding: 14px 12px;
+  background: #214f7d;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 800;
+  text-align: center;
+}
+.portfolio-summary-table td {
+  height: 238px;
+  padding: 14px 12px;
+  border-left: 1px solid #e2e2e2;
+  vertical-align: middle;
+}
+.portfolio-summary-table td:first-child {
+  border-left: 0;
+}
+.market-cell strong {
+  display: block;
+}
+.metric-mini-table {
+  width: auto;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.metric-mini-table th,
+.metric-mini-table td {
+  height: auto;
+  padding: 4px 4px;
+  border: 0;
+  background: transparent;
+  color: #111;
+  font-size: 12px;
+  text-align: right;
+  white-space: nowrap;
+}
+.metric-mini-table th:first-child,
+.metric-mini-table td:first-child {
+  text-align: left;
+  font-weight: 800;
+}
+.selection-list,
+.changes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 2.05;
+}
+.changes-label-in {
+  color: #07850d;
+  font-weight: 800;
+}
+.changes-label-out {
+  color: #f00;
+  font-weight: 800;
+}
+.pdf-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 20px;
+}
+.pdf-info-block {
+  min-height: 170px;
+  padding: 0 20px;
+  border-left: 1px solid #d7dce4;
+}
+.pdf-info-block:first-child {
+  border-left: 0;
+}
+.pdf-info-block h2 {
+  margin: 0 0 8px;
+  color: #214f7d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+}
+.pdf-info-block p {
+  margin: 0;
+  color: #111;
+  font-size: 12.5px;
+  line-height: 1.2;
+}
 .report-page {
   width: 1120px;
   min-height: 790px;
@@ -411,7 +637,17 @@ p { line-height: 1.55; }
 }
 .footer-note { margin-top: 18px; color: #64748b; font-size: 12px; }
 @media (max-width: 1180px) {
+  .report-dashboard { width: 100%; }
+  .dashboard-header { display: block; }
+  .dashboard-meta { text-align: left; }
+  .dashboard-grid { grid-template-columns: 1fr; }
   .report-page { width: 100%; min-height: 0; }
+  .pdf-summary-header { grid-template-columns: 1fr; text-align: left; }
+  .pdf-title, .pdf-week { text-align: left; }
+  .portfolio-summary-table { table-layout: auto; }
+  .portfolio-summary-table td { height: auto; }
+  .pdf-info-grid { grid-template-columns: 1fr; gap: 18px; }
+  .pdf-info-block { border-left: 0; padding: 0; }
   .kpi-grid { grid-template-columns: repeat(2, 1fr); }
   .two-col { grid-template-columns: 1fr; }
   .asset-grid { grid-template-columns: repeat(2, 1fr); }
@@ -426,6 +662,10 @@ p { line-height: 1.55; }
     margin: 0;
     box-shadow: none;
     page-break-after: always;
+  }
+  .pdf-summary-page {
+    width: 297mm;
+    min-height: 210mm;
   }
 }
 """
@@ -443,6 +683,8 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     output_dir = dev_dir / "output"
     summary_src = output_dir / "_summary_charts" / safe_market / f"summary_{safe_market}.png"
     copy_if_exists(summary_src, asset_out_dir / summary_src.name)
+    exposure_src = output_dir / "_exposure_charts" / safe_market / f"exposure_long_net_{safe_market}.png"
+    exposure_asset_name = exposure_src.name if copy_if_exists(exposure_src, asset_out_dir / exposure_src.name) else ""
     shutil.copy2(data_path, out_dir / "report_data.json")
 
     asset_src_dir = output_dir / "_asset_detail_pages" / safe_market
@@ -513,12 +755,84 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             for item in asset_pages
         ]
 
+    def linked_ticker_html(ticker):
+        ticker_text = html_text(ticker)
+        item = page_by_ticker.get(text(ticker).upper())
+        if item and item.get("page"):
+            return f"<a class=\"ticker-link\" href=\"{html.escape(item['page'])}\">{ticker_text}</a>"
+        return ticker_text
+
+    if isinstance(selection, str):
+        selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
+        linked_rows = []
+        for item in selection_rows:
+            ticker_part, sep, name_part = item.partition(" - ")
+            linked_rows.append(
+                "<tr>"
+                f"<td>{linked_ticker_html(ticker_part)}</td>"
+                f"<td>{html_text(name_part if sep else '')}</td>"
+                "<td>-</td>"
+                "</tr>"
+            )
+        selection_html = "".join(linked_rows)
+    else:
+        selection_html = "".join(
+            "<tr>"
+            f"<td>{linked_ticker_html(item.get('Ticker'))}</td>"
+            f"<td>{html_text(item.get('Name'))}</td>"
+            f"<td>{html_text(item.get('Sector'))}</td>"
+            "</tr>"
+            for item in selection
+        )
+    if not selection_html:
+        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
+
     build_css(out_dir)
 
     updated = report_date_label()
     hedge_ticker = html_text(row.get("Benchmark Hedge Ticker"))
     hedge_short = pct(row.get("Benchmark Hedge Short"))
     hedge_score = num(row.get("Hedge Portfolio Score"))
+    metric_summary_html = (
+        "<table class=\"metric-mini-table\">"
+        "<thead><tr><th></th><th>Long</th><th>L+H</th><th>B</th></tr></thead>"
+        "<tbody>"
+        f"<tr><td>CAGR</td><td>{pct(row.get('Strategy CAGR'))}</td><td>{pct(row.get('Hedged CAGR'))}</td><td>{pct(row.get('Bench Cagr'))}</td></tr>"
+        f"<tr><td>MaxDD</td><td>{pct(row.get('Strategy MaxDD'))}</td><td>{pct(row.get('Hedged MaxDD'))}</td><td>{pct(row.get('Bench_MaxDD'))}</td></tr>"
+        f"<tr><td>Sharpe</td><td>{num(row.get('Strategy Sharpe Ratio'))}</td><td>{num(row.get('Hedged Sharpe Ratio'))}</td><td>{num(row.get('Bench Sharpe'))}</td></tr>"
+        f"<tr><td>IR</td><td>{num(row.get('Information Ratio'))}</td><td>{num(row.get('Hedged Information Ratio'))}</td><td>-</td></tr>"
+        "</tbody></table>"
+    )
+    selection_summary_items = re.findall(r"<td>(.*?)</td><td>(.*?)</td><td>", selection_html)
+    if selection_summary_items:
+        selection_summary_html = "".join(
+            f"<li>{html_text(ticker)} - {html_text(name)}</li>"
+            for ticker, name in selection_summary_items
+        )
+    else:
+        selection_summary_html = "<li>-</li>"
+    processing_objective = (
+        "TradingAlgo Mosaic automatically selects and monitors a weekly portfolio of five stocks from any analyzed market. "
+        "The framework uses systematic trend, stability, and portfolio-contribution analysis to identify opportunities, "
+        "track portfolio positions, and evaluate performance relative to the benchmark. Market currently monitored: "
+        "US100, Europe50, Italy30"
+    )
+    bio_text = (
+        "Domenico D'Errico, after holding various managerial roles within multinational companies, has been working as a quant developer "
+        "for algorithmic hedge funds for the past 15 years. He is a CSTA (Certified SIAT Technical Analyst), an EasyLanguage specialist, "
+        "a two-time winner of the 2011 TradeStation Developers Contest, author of *TradeStation EasyLanguage for Algorithmic Trading*, "
+        "and contributor to *Technical Analysis of Stocks & Commodities*. He is also a member of research initiatives focused on the "
+        "application of artificial intelligence to financial markets."
+    )
+    disclaimer_text = (
+        "This report is provided for research and educational purposes only and does not constitute investment advice, portfolio management, "
+        "solicitation, or an offer to buy or sell any financial instrument. TradingAlgo Mosaic is a quantitative research framework designed "
+        "to support investment analysis and decision-making. All information, rankings, simulations, and backtests are provided for informational "
+        "purposes only. Past performance is not indicative of future results. Investing in financial markets involves risk, including the possible "
+        "loss of capital. Investors are solely responsible for their investment decisions and should independently assess the suitability of any "
+        "investment strategy."
+    )
+    exposure_chart_html = ""
 
     report_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -535,71 +849,64 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
     </nav>
 
-    <section class="report-page">
-      <header class="report-header">
+    <section class="report-dashboard">
+      <header class="dashboard-header">
         <div>
           <div class="brand">TradingAlgo Mosaic</div>
           <h1>{html_text(market)} Weekly Report</h1>
           <p class="eyebrow">Benchmark: {html_text(row.get("Benchmark"))}</p>
         </div>
-        <div class="meta">
+        <div class="dashboard-meta">
           Week ending: {html_text(updated)}<br />
           Universe: {html_text(row.get("Number of Tickers"))} assets<br />
           Status: {html_text(row.get("Status"))}
         </div>
       </header>
 
-      <div class="kpi-grid">
-        <div class="kpi"><span>Long CAGR</span><strong>{pct(row.get("Strategy CAGR"))}</strong></div>
-        <div class="kpi"><span>Long + Hedge CAGR</span><strong>{pct(row.get("Hedged CAGR"))}</strong></div>
-        <div class="kpi"><span>Benchmark CAGR</span><strong>{pct(row.get("Bench Cagr"))}</strong></div>
-        <div class="kpi"><span>Long MaxDD</span><strong>{pct(row.get("Strategy MaxDD"))}</strong></div>
-        <div class="kpi"><span>Long + Hedge MaxDD</span><strong>{pct(row.get("Hedged MaxDD"))}</strong></div>
-        <div class="kpi"><span>Hedge Short ETF</span><strong>{hedge_short}</strong></div>
-      </div>
-
-      <div class="two-col balanced">
-        <div class="panel">
+      <div class="dashboard-grid">
+        <section class="dashboard-card">
           <h2>Current Selection</h2>
           <table class="mini-table">
             <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th></tr></thead>
             <tbody>{selection_html}</tbody>
           </table>
-        </div>
-        <div class="panel">
+        </section>
+        <section class="dashboard-card">
           <h2>Weekly Changes</h2>
-          <table class="mini-table">
+          <table class="mini-table changes-table">
             <tbody>
               <tr><th>Capital Invested</th><td>{pct(row.get("Capital Invested"))}</td></tr>
-              <tr><th>IN</th><td>{html_text(row.get("Added Tickers"))}</td></tr>
-              <tr><th>OUT</th><td>{html_text(row.get("Removed Tickers"))}</td></tr>
+              <tr><th><span class="in-label">IN</span></th><td>{html_text(row.get("Added Tickers"))}</td></tr>
+              <tr><th><span class="out-label">OUT</span></th><td>{html_text(row.get("Removed Tickers"))}</td></tr>
               <tr><th>Current Hedge Short ETF</th><td>{hedge_ticker}: {hedge_short}</td></tr>
               <tr><th>Hedge Score</th><td>{hedge_score}</td></tr>
             </tbody>
           </table>
+        </section>
+      </div>
+
+      <section class="chart-section">
+        <h2>Equity, Drawdown &amp; Exposure</h2>
+        <div class="chart-stack">
+          <div class="chart-frame">
+            <h3>Equity / Drawdown</h3>
+            <img class="dashboard-chart" src="assets/summary_{safe_market}.png" alt="{html_text(market)} equity and drawdown" />
+          </div>{exposure_chart_html}
         </div>
-      </div>
-      <p class="footer-note">This HTML report mirrors the PDF structure and is generated from the same market batch output.</p>
-    </section>
+      </section>
 
-    <section class="report-page">
-      <h2>Equity / Drawdown</h2>
-      <div class="panel full-chart-panel">
-        <img class="chart-img wide-chart" src="assets/summary_{safe_market}.png" alt="{html_text(market)} equity and drawdown" />
-      </div>
-    </section>
-
-    <section class="report-page compact-page">
-      <h2>Performance Table</h2>
-      <table class="asset-table">
-        <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
-        <tbody>
-          <tr><td>CAGR</td><td>{pct(row.get("Strategy CAGR"))}</td><td>{pct(row.get("Hedged CAGR"))}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
-          <tr><td>MaxDD</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
-          <tr><td>Sharpe</td><td>{num(row.get("Strategy Sharpe Ratio"))}</td><td>{num(row.get("Hedged Sharpe Ratio"))}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>
-          <tr><td>Information Ratio</td><td>{num(row.get("Information Ratio"))}</td><td>{num(row.get("Hedged Information Ratio"))}</td><td>-</td></tr>
-        </tbody>
-      </table>
+      <section class="performance-section">
+        <h2>Performance Table</h2>
+        <table class="asset-table performance-table">
+          <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
+          <tbody>
+            <tr><td>CAGR</td><td>{pct(row.get("Strategy CAGR"))}</td><td>{pct(row.get("Hedged CAGR"))}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
+            <tr><td>MaxDD</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
+            <tr><td>Sharpe</td><td>{num(row.get("Strategy Sharpe Ratio"))}</td><td>{num(row.get("Hedged Sharpe Ratio"))}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>
+            <tr><td>Information Ratio</td><td>{num(row.get("Information Ratio"))}</td><td>{num(row.get("Hedged Information Ratio"))}</td><td>-</td></tr>
+          </tbody>
+        </table>
+      </section>
     </section>
   </main>
 </body>
