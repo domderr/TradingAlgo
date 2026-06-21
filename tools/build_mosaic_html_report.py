@@ -270,8 +270,26 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  background: #071423;
+  box-shadow: 0 12px 30px rgba(7,20,35,0.24);
 }
-.top-actions a, .button {
+.top-actions a {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: #f8fafc;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+}
+.top-actions a:hover { background: rgba(74,163,255,0.18); }
+.top-actions a.secondary { background: rgba(255,255,255,0.1); }
+.button {
   display: inline-block;
   padding: 10px 14px;
   border-radius: 4px;
@@ -281,7 +299,6 @@ body {
   font-weight: 700;
   font-size: 13px;
 }
-.top-actions a.secondary { background: #334155; }
 .report-dashboard {
   width: 1120px;
   margin: 0 auto 24px;
