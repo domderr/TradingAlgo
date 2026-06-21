@@ -4,23 +4,23 @@
     "positions": [
       {
         "ticker": "CAT",
-        "name": "Caterpillar, Inc."
+        "name": "Cat"
       },
       {
         "ticker": "MRK",
-        "name": "Merck & Company, Inc"
+        "name": "Mrk"
       },
       {
         "ticker": "CSCO",
-        "name": "Cisco Systems, Inc."
+        "name": "Csco"
       },
       {
         "ticker": "GS",
-        "name": "Goldman Sachs Group,"
+        "name": "Gs"
       },
       {
         "ticker": "CVX",
-        "name": "Chevron Corporation"
+        "name": "Cvx"
       }
     ],
     "changes": {
@@ -33,36 +33,36 @@
     "positions": [
       {
         "ticker": "MU",
-        "name": "Micron Technology, I"
+        "name": "Mu"
       },
       {
         "ticker": "CAT",
-        "name": "Caterpillar, Inc."
+        "name": "Cat"
       },
       {
         "ticker": "FDX",
-        "name": "Fedex Corporation"
+        "name": "Fdx"
       },
       {
         "ticker": "GOOGL",
-        "name": "Alphabet Inc."
+        "name": "Googl"
       },
       {
         "ticker": "SLB",
-        "name": "Slb Limited"
+        "name": "Slb"
       }
     ],
     "changes": {
       "in": [
         {
           "ticker": "SLB",
-          "name": "SLB Limited"
+          "name": "SLB"
         }
       ],
       "out": [
         {
           "ticker": "GEV",
-          "name": "GE Vernova Inc."
+          "name": "GEV"
         }
       ]
     }
@@ -72,23 +72,23 @@
     "positions": [
       {
         "ticker": "MU",
-        "name": "Micron Technology, I"
+        "name": "Mu"
       },
       {
         "ticker": "TER",
-        "name": "Teradyne, Inc."
+        "name": "Ter"
       },
       {
         "ticker": "NBIS",
-        "name": "Nebius Group N.V."
+        "name": "Nbis"
       },
       {
         "ticker": "WBD",
-        "name": "Warner Bros. Discove"
+        "name": "Wbd"
       },
       {
         "ticker": "ROST",
-        "name": "Ross Stores, Inc."
+        "name": "Rost"
       }
     ],
     "changes": {
@@ -101,7 +101,7 @@
     "positions": [
       {
         "ticker": "CVE.TO",
-        "name": "Cenovus Energy Inc."
+        "name": "Cve.To"
       },
       {
         "ticker": "TECK",
@@ -109,15 +109,15 @@
       },
       {
         "ticker": "CM.TO",
-        "name": "Canadian Imperial Ba"
+        "name": "Cm.To"
       },
       {
         "ticker": "GWO.TO",
-        "name": "Great-West Lifeco In"
+        "name": "Gwo.To"
       },
       {
         "ticker": "SAP.TO",
-        "name": "Saputo Inc."
+        "name": "Sap.To"
       }
     ],
     "changes": {
@@ -130,36 +130,36 @@
     "positions": [
       {
         "ticker": "GMEXICOB.MX",
-        "name": "Grupo Mexico Sab De"
+        "name": "Gmexicob.Mx"
       },
       {
         "ticker": "AMXB.MX",
-        "name": "America Movil Sab De"
+        "name": "Amxb.Mx"
       },
       {
         "ticker": "PINFRA.MX",
-        "name": "Promotora Y Operador"
+        "name": "Pinfra.Mx"
       },
       {
         "ticker": "FEMSAUBD.MX",
-        "name": "Fomento Economico Me"
+        "name": "Femsaubd.Mx"
       },
       {
         "ticker": "VOLARA.MX",
-        "name": "Controladora Vuela C"
+        "name": "Volara.Mx"
       }
     ],
     "changes": {
       "in": [
         {
           "ticker": "VOLARA.MX",
-          "name": "CONTROLADORA"
+          "name": "VOLARA.MX"
         }
       ],
       "out": [
         {
           "ticker": "LIVEPOLC-1.MX",
-          "name": "EL PUERTO DE"
+          "name": "LIVEPOLC-1.MX"
         }
       ]
     }
@@ -169,23 +169,23 @@
     "positions": [
       {
         "ticker": "NOKIA.HE",
-        "name": "Nokia Corporation"
+        "name": "Nokia.He"
       },
       {
         "ticker": "ASML.AS",
-        "name": "Asml Holding"
+        "name": "Asml.As"
       },
       {
         "ticker": "ENI.MI",
-        "name": "Eni"
+        "name": "Eni.Mi"
       },
       {
         "ticker": "ENGI.PA",
-        "name": "Engie"
+        "name": "Engi.Pa"
       },
       {
         "ticker": "IFX.DE",
-        "name": "Infineon Technologie"
+        "name": "Ifx.De"
       }
     ],
     "changes": {
@@ -198,36 +198,36 @@
     "positions": [
       {
         "ticker": "GLEN.L",
-        "name": "Glencore Plc Ord Usd"
+        "name": "Glen.L"
       },
       {
         "ticker": "RIO.L",
-        "name": "Rio Tinto Plc Ord 10"
+        "name": "Rio.L"
       },
       {
         "ticker": "HSBA.L",
-        "name": "Hsbc Holdings Plc Or"
+        "name": "Hsba.L"
       },
       {
         "ticker": "GSK.L",
-        "name": "Gsk Plc Ord 31 1/4P"
+        "name": "Gsk.L"
       },
       {
         "ticker": "BP.L",
-        "name": "Bp Plc $0.25"
+        "name": "Bp.L"
       }
     ],
     "changes": {
       "in": [
         {
           "ticker": "HSBA.L",
-          "name": "HSBC HOLDINGS PLC"
+          "name": "HSBA.L"
         }
       ],
       "out": [
         {
           "ticker": "STAN.L",
-          "name": "STANDARD CHARTERED"
+          "name": "STAN.L"
         }
       ]
     }
@@ -237,23 +237,23 @@
     "positions": [
       {
         "ticker": "STMPA.PA",
-        "name": "Stmicroelectronics"
+        "name": "Stmpa.Pa"
       },
       {
         "ticker": "ENGI.PA",
-        "name": "Engie"
+        "name": "Engi.Pa"
       },
       {
         "ticker": "TTE.PA",
-        "name": "Totalenergies"
+        "name": "Tte.Pa"
       },
       {
         "ticker": "GLE.PA",
-        "name": "Societe Generale"
+        "name": "Gle.Pa"
       },
       {
         "ticker": "LR.PA",
-        "name": "Legrand"
+        "name": "Lr.Pa"
       }
     ],
     "changes": {
@@ -266,23 +266,23 @@
     "positions": [
       {
         "ticker": "ACS.MC",
-        "name": "Acs,Actividades De C"
+        "name": "Acs.Mc"
       },
       {
         "ticker": "SLR.MC",
-        "name": "Solaria Energia Y Me"
+        "name": "Slr.Mc"
       },
       {
         "ticker": "MTS.MC",
-        "name": "Arcelormittal Sa"
+        "name": "Mts.Mc"
       },
       {
         "ticker": "REP.MC",
-        "name": "Repsol, S.A."
+        "name": "Rep.Mc"
       },
       {
         "ticker": "CABK.MC",
-        "name": "Caixabank, S.A."
+        "name": "Cabk.Mc"
       }
     ],
     "changes": {
@@ -295,23 +295,23 @@
     "positions": [
       {
         "ticker": "ENR.DE",
-        "name": "Siemens Energy Ag N"
+        "name": "Enr.De"
       },
       {
         "ticker": "RWE.DE",
-        "name": "Rwe Ag I"
+        "name": "Rwe.De"
       },
       {
         "ticker": "IFX.DE",
-        "name": "Infineon Technologie"
+        "name": "Ifx.De"
       },
       {
         "ticker": "BAYN.DE",
-        "name": "Bayer Ag N"
+        "name": "Bayn.De"
       },
       {
         "ticker": "DHL.DE",
-        "name": "Deutsche Post Ag N"
+        "name": "Dhl.De"
       }
     ],
     "changes": {
@@ -324,23 +324,23 @@
     "positions": [
       {
         "ticker": "PRY.MI",
-        "name": "Prysmian"
+        "name": "Pry.Mi"
       },
       {
         "ticker": "TEN.MI",
-        "name": "Tenaris"
+        "name": "Ten.Mi"
       },
       {
         "ticker": "TIT.MI",
-        "name": "Telecom Italia"
+        "name": "Tit.Mi"
       },
       {
         "ticker": "STMMI.MI",
-        "name": "Stmicroelectronics"
+        "name": "Stmmi.Mi"
       },
       {
         "ticker": "SRG.MI",
-        "name": "Snam"
+        "name": "Srg.Mi"
       }
     ],
     "changes": {
@@ -352,49 +352,45 @@
     "week": "19 Jun 2026",
     "positions": [
       {
-        "ticker": "6981.T",
-        "name": "Murata Manufacturing"
-      },
-      {
-        "ticker": "6857.T",
-        "name": "Advantest Corp"
-      },
-      {
         "ticker": "8031.T",
-        "name": "Mitsui & Co"
+        "name": "- / -"
       },
       {
         "ticker": "6954.T",
-        "name": "Fanuc Corporation"
+        "name": "6954.T"
+      },
+      {
+        "ticker": "6954.T",
+        "name": "- / -"
       },
       {
         "ticker": "9983.T",
-        "name": "Fast Retailing Co Lt"
+        "name": "9983.T"
+      },
+      {
+        "ticker": "9983.T",
+        "name": "- / -"
       }
     ],
     "changes": {
       "in": [
         {
           "ticker": "6954.T",
-          "name": "FANUC CORPORATION"
+          "name": "6954.T"
         },
         {
           "ticker": "9983.T",
-          "name": "FAST RETAILING CO LTD"
+          "name": "9983.T"
         }
       ],
       "out": [
         {
           "ticker": "6503.T",
-          "name": "MITSUBISHI ELECTRIC"
-        },
-        {
-          "ticker": "CORP",
-          "name": "8316.T - SUMITOMO MITSUI"
+          "name": "6503.T"
         },
         {
           "ticker": "8316.T",
-          "name": "SUMITOMO MITSUI"
+          "name": "8316.T"
         }
       ]
     }
@@ -404,36 +400,36 @@
     "positions": [
       {
         "ticker": "000660.KS",
-        "name": "Sk Hynix"
+        "name": "000660.Ks"
       },
       {
         "ticker": "005380.KS",
-        "name": "Hyundaimtr"
+        "name": "005380.Ks"
       },
       {
         "ticker": "006400.KS",
-        "name": "Samsung Sdi Co.,Ltd."
+        "name": "006400.Ks"
       },
       {
         "ticker": "034020.KS",
-        "name": "Doosan Enerbility"
+        "name": "034020.Ks"
       },
       {
         "ticker": "017670.KS",
-        "name": "Sktelecom"
+        "name": "017670.Ks"
       }
     ],
     "changes": {
       "in": [
         {
           "ticker": "017670.KS",
-          "name": "SKTelecom"
+          "name": "017670.KS"
         }
       ],
       "out": [
         {
           "ticker": "010130.KS",
-          "name": "KOREA ZINC"
+          "name": "010130.KS"
         }
       ]
     }
@@ -443,36 +439,36 @@
     "positions": [
       {
         "ticker": "RIO.AX",
-        "name": "Rio Tinto Fpo [Rio]"
+        "name": "Rio.Ax"
       },
       {
         "ticker": "S32.AX",
-        "name": "South32 Fpo [S32]"
+        "name": "S32.Ax"
       },
       {
         "ticker": "EVN.AX",
-        "name": "Evolution Fpo [Evn]"
+        "name": "Evn.Ax"
       },
       {
         "ticker": "LYC.AX",
-        "name": "Lynas Fpo [Lyc]"
+        "name": "Lyc.Ax"
       },
       {
         "ticker": "WDS.AX",
-        "name": "Woodside Fpo [Wds]"
+        "name": "Wds.Ax"
       }
     ],
     "changes": {
       "in": [
         {
           "ticker": "EVN.AX",
-          "name": "EVOLUTION FPO [EVN]"
+          "name": "EVN.AX"
         }
       ],
       "out": [
         {
           "ticker": "WOW.AX",
-          "name": "WOOLWORTHS FPO"
+          "name": "WOW.AX"
         }
       ]
     }
@@ -482,19 +478,19 @@
     "positions": [
       {
         "ticker": "SOL.JO",
-        "name": "Sasol Limited"
+        "name": "Sol.Jo"
       },
       {
         "ticker": "ANG.JO",
-        "name": "Anglogold Ashanti Pl"
+        "name": "Ang.Jo"
       },
       {
         "ticker": "MTN.JO",
-        "name": "Mtn Group Ltd"
+        "name": "Mtn.Jo"
       },
       {
         "ticker": "REM.JO",
-        "name": "Remgro Ltd"
+        "name": "Rem.Jo"
       }
     ],
     "changes": {

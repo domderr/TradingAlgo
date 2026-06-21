@@ -202,6 +202,8 @@ def run_notebook(dev_dir, market_choice):
 
 def load_or_create_report_data(dev_dir, market, market_choice, rerun):
     data_dir = dev_dir / "output" / "html_data" / market
+    if not data_dir.exists():
+        data_dir = dev_dir / "output" / "html_data" / safe_market_name(market)
     data_dir.mkdir(parents=True, exist_ok=True)
     data_path = data_dir / "report_data.json"
 
