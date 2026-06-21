@@ -84,6 +84,43 @@ def read_tickers(tickers_xlsx, market):
     return tickers
 
 
+def read_ticker_metadata(dev_dir, market, tickers):
+    metadata_path = dev_dir / "output" / "html_data" / market / "ticker_metadata.json"
+    metadata = {}
+    if metadata_path.exists():
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            metadata = {}
+
+    normalized = {str(key).upper(): value for key, value in metadata.items() if isinstance(value, dict)}
+    missing = [ticker for ticker in tickers if ticker.upper() not in normalized]
+    if missing:
+        try:
+            from curl_cffi import requests
+            import yfinance as yf
+
+            session = requests.Session(impersonate="chrome", verify=False)
+            for ticker in missing:
+                try:
+                    info = yf.Ticker(ticker, session=session).get_info()
+                    normalized[ticker.upper()] = {
+                        "Name": info.get("shortName") or info.get("longName") or ticker,
+                        "Sector": info.get("sector") or "-",
+                        "Industry": info.get("industry") or "-",
+                    }
+                except Exception:
+                    normalized[ticker.upper()] = {"Name": ticker, "Sector": "-", "Industry": "-"}
+        except Exception:
+            for ticker in missing:
+                normalized.setdefault(ticker.upper(), {"Name": ticker, "Sector": "-", "Industry": "-"})
+
+        metadata_path.parent.mkdir(parents=True, exist_ok=True)
+        metadata_path.write_text(json.dumps(normalized, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    return normalized
+
+
 def sanitize_for_json(value):
     try:
         import pandas as pd
@@ -557,12 +594,14 @@ p { line-height: 1.55; }
   display: inline-block;
   padding: 5px 8px;
   border-radius: 999px;
-  background: #dcfce7;
-  color: #166534;
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
 }
+.status-selected { background: #dcfce7; color: #166534; }
+.status-watchlist { background: #fef3c7; color: #92400e; }
+.status-rejected { background: #fee2e2; color: #991b1b; }
+.status-neutral { background: #e2e8f0; color: #334155; }
 .drivers {
   margin: 0;
   padding-left: 18px;
@@ -700,6 +739,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     selection = row.get("Last Weekly Selection") or []
     selection_name_map = {}
     selection_sector_map = {}
+    selection_industry_map = {}
     if isinstance(selection, str):
         selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
         selection_html = "".join(f"<tr><td>{html_text(item)}</td><td>-</td><td>-</td></tr>" for item in selection_rows)
@@ -716,6 +756,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             ticker_key = text(item.get("Ticker")).upper()
             selection_name_map[ticker_key] = text(item.get("Name"))
             selection_sector_map[ticker_key] = text(item.get("Sector"))
+            selection_industry_map[ticker_key] = text(item.get("Industry"))
     if not selection_html:
         selection_html = "<tr><td colspan=\"3\">-</td></tr>"
 
@@ -727,16 +768,19 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             status_map[text(status_row.get("Ticker")).upper()] = text(statuses[-1])
 
     tickers = read_tickers(dev_dir / "Tickers.xlsx", market)
+    ticker_metadata = read_ticker_metadata(dev_dir, market, tickers)
     page_by_ticker = {item["ticker"].upper(): item for item in asset_pages}
     all_assets = []
     for ticker in tickers:
         key = ticker.upper()
         item = page_by_ticker.get(key)
+        metadata = ticker_metadata.get(key, {})
         all_assets.append({
             "ticker": ticker,
-            "name": selection_name_map.get(key, ticker),
+            "name": selection_name_map.get(key) or metadata.get("Name") or ticker,
             "status": status_map.get(key, "-"),
-            "sector": selection_sector_map.get(key, "-"),
+            "sector": selection_sector_map.get(key) or metadata.get("Sector") or "-",
+            "industry": selection_industry_map.get(key) or metadata.get("Industry") or "-",
             "page": item["page"] if item else "",
             "image": item["image"] if item else "",
             "has_chart": bool(item),
@@ -748,6 +792,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
                 "name": selection_name_map.get(item["ticker"].upper(), item["ticker"]),
                 "status": status_map.get(item["ticker"].upper(), "-"),
                 "sector": selection_sector_map.get(item["ticker"].upper(), "-"),
+                "industry": selection_industry_map.get(item["ticker"].upper(), "-"),
                 "page": item["page"],
                 "image": item["image"],
                 "has_chart": True,
@@ -761,6 +806,16 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         if item and item.get("page"):
             return f"<a class=\"ticker-link\" href=\"{html.escape(item['page'])}\">{ticker_text}</a>"
         return ticker_text
+
+    def status_class(status):
+        value = text(status).lower()
+        if "selected" in value:
+            return "status-selected"
+        if "watchlist" in value:
+            return "status-watchlist"
+        if "rejected" in value:
+            return "status-rejected"
+        return "status-neutral"
 
     if isinstance(selection, str):
         selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
@@ -917,6 +972,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     gallery_rows = []
     for item in all_assets:
         status = html_text(item.get("status") or "-")
+        status_css = status_class(item.get("status"))
         thumb = (
             f'<button class="thumb-button" type="button" data-full="assets/{html.escape(item["image"])}" aria-label="Open {html_text(item["ticker"])} chart">'
             f'<img src="assets/{html.escape(item["image"])}" alt="{html_text(item["ticker"])} asset chart" />'
@@ -925,9 +981,11 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         )
         gallery_rows.append(
             "<tr>"
-            f"<td>{html_text(item['ticker'])}</td>"
+            f"<td>{linked_ticker_html(item['ticker'])}</td>"
             f"<td>{html_text(item.get('name'))}</td>"
-            f"<td><span class=\"status-badge\">{status}</span></td>"
+            f"<td>{html_text(item.get('sector'))}</td>"
+            f"<td>{html_text(item.get('industry'))}</td>"
+            f"<td><span class=\"status-badge {status_css}\">{status}</span></td>"
             f"<td>{thumb}</td>"
             "</tr>"
         )
@@ -951,7 +1009,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
       <h1>{html_text(market)} Chart Gallery</h1>
       <p>{len(all_assets)} plotted asset dashboards from the benchmark universe. Click any thumbnail to enlarge it.</p>
       <table class="asset-table gallery-table">
-        <thead><tr><th>Ticker</th><th>Name</th><th>Status</th><th>Chart</th></tr></thead>
+        <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Status</th><th>Chart</th></tr></thead>
         <tbody>{gallery_body}</tbody>
       </table>
     </section>
