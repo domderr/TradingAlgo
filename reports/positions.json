@@ -1,10 +1,39 @@
 {
+  "DJ30": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "CAT",
+        "name": "Caterpillar, Inc."
+      },
+      {
+        "ticker": "MRK",
+        "name": "Merck & Company, Inc"
+      },
+      {
+        "ticker": "CSCO",
+        "name": "Cisco Systems, Inc."
+      },
+      {
+        "ticker": "GS",
+        "name": "Goldman Sachs Group,"
+      },
+      {
+        "ticker": "CVX",
+        "name": "Chevron Corporation"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
   "USA100": {
     "week": "19 Jun 2026",
     "positions": [
       {
         "ticker": "MU",
-        "name": "Micron Technology, Inc."
+        "name": "Micron Technology, I"
       },
       {
         "ticker": "CAT",
@@ -12,7 +41,7 @@
       },
       {
         "ticker": "FDX",
-        "name": "FedEx Corporation"
+        "name": "Fedex Corporation"
       },
       {
         "ticker": "GOOGL",
@@ -20,7 +49,7 @@
       },
       {
         "ticker": "SLB",
-        "name": "SLB Limited"
+        "name": "Slb Limited"
       }
     ],
     "changes": {
@@ -38,28 +67,57 @@
       ]
     }
   },
+  "NASDAQ100": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "MU",
+        "name": "Micron Technology, I"
+      },
+      {
+        "ticker": "TER",
+        "name": "Teradyne, Inc."
+      },
+      {
+        "ticker": "NBIS",
+        "name": "Nebius Group N.V."
+      },
+      {
+        "ticker": "WBD",
+        "name": "Warner Bros. Discove"
+      },
+      {
+        "ticker": "ROST",
+        "name": "Ross Stores, Inc."
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
   "Canada50": {
     "week": "19 Jun 2026",
     "positions": [
       {
         "ticker": "CVE.TO",
-        "name": "CENOVUS ENERGY INC."
+        "name": "Cenovus Energy Inc."
       },
       {
-        "ticker": "TECK-B.TO",
-        "name": "TECK RESOURCES LIMITED CL B"
+        "ticker": "TECK",
+        "name": "B.TO"
       },
       {
         "ticker": "CM.TO",
-        "name": "CANADIAN IMPERIAL BANK OF COMME"
+        "name": "Canadian Imperial Ba"
       },
       {
         "ticker": "GWO.TO",
-        "name": "GREAT-WEST LIFECO INC"
+        "name": "Great-West Lifeco In"
       },
       {
         "ticker": "SAP.TO",
-        "name": "SAPUTO INC."
+        "name": "Saputo Inc."
       }
     ],
     "changes": {
@@ -72,28 +130,38 @@
     "positions": [
       {
         "ticker": "GMEXICOB.MX",
-        "name": "GRUPO MEXICO SAB DE CV"
+        "name": "Grupo Mexico Sab De"
       },
       {
         "ticker": "AMXB.MX",
-        "name": "AMERICA MOVIL SAB DE CV"
+        "name": "America Movil Sab De"
       },
       {
         "ticker": "PINFRA.MX",
-        "name": "PROMOTORA Y OPERADORA DE"
+        "name": "Promotora Y Operador"
       },
       {
         "ticker": "FEMSAUBD.MX",
-        "name": "FOMENTO ECONOMICO"
+        "name": "Fomento Economico Me"
       },
       {
-        "ticker": "LIVEPOLC-1.MX",
-        "name": "EL PUERTO DE LIVERPOOL"
+        "ticker": "VOLARA.MX",
+        "name": "Controladora Vuela C"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "VOLARA.MX",
+          "name": "CONTROLADORA"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "LIVEPOLC-1.MX",
+          "name": "EL PUERTO DE"
+        }
+      ]
     }
   },
   "Europe50": {
@@ -105,19 +173,19 @@
       },
       {
         "ticker": "ASML.AS",
-        "name": "ASML HOLDING"
+        "name": "Asml Holding"
       },
       {
         "ticker": "ENI.MI",
-        "name": "ENI"
+        "name": "Eni"
       },
       {
         "ticker": "ENGI.PA",
-        "name": "ENGIE"
+        "name": "Engie"
       },
       {
         "ticker": "IFX.DE",
-        "name": "INFINEON TECHNOLOGIES AG N"
+        "name": "Infineon Technologie"
       }
     ],
     "changes": {
@@ -130,28 +198,38 @@
     "positions": [
       {
         "ticker": "GLEN.L",
-        "name": "GLENCORE PLC ORD USD0.01"
+        "name": "Glencore Plc Ord Usd"
       },
       {
         "ticker": "RIO.L",
-        "name": "RIO TINTO PLC ORD 10P"
+        "name": "Rio Tinto Plc Ord 10"
+      },
+      {
+        "ticker": "HSBA.L",
+        "name": "Hsbc Holdings Plc Or"
       },
       {
         "ticker": "GSK.L",
-        "name": "GSK PLC ORD 31 1/4P"
-      },
-      {
-        "ticker": "STAN.L",
-        "name": "STANDARD CHARTERED PLC ORD"
+        "name": "Gsk Plc Ord 31 1/4P"
       },
       {
         "ticker": "BP.L",
-        "name": "BP PLC $0.25"
+        "name": "Bp Plc $0.25"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "HSBA.L",
+          "name": "HSBC HOLDINGS PLC"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "STAN.L",
+          "name": "STANDARD CHARTERED"
+        }
+      ]
     }
   },
   "France40": {
@@ -159,23 +237,52 @@
     "positions": [
       {
         "ticker": "STMPA.PA",
-        "name": "STMICROELECTRONICS"
+        "name": "Stmicroelectronics"
       },
       {
         "ticker": "ENGI.PA",
-        "name": "ENGIE"
+        "name": "Engie"
       },
       {
         "ticker": "TTE.PA",
-        "name": "TOTALENERGIES"
+        "name": "Totalenergies"
       },
       {
         "ticker": "GLE.PA",
-        "name": "SOCIETE GENERALE"
+        "name": "Societe Generale"
       },
       {
         "ticker": "LR.PA",
-        "name": "LEGRAND"
+        "name": "Legrand"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
+  "Spain40": {
+    "week": "19 Jun 2026",
+    "positions": [
+      {
+        "ticker": "ACS.MC",
+        "name": "Acs,Actividades De C"
+      },
+      {
+        "ticker": "SLR.MC",
+        "name": "Solaria Energia Y Me"
+      },
+      {
+        "ticker": "MTS.MC",
+        "name": "Arcelormittal Sa"
+      },
+      {
+        "ticker": "REP.MC",
+        "name": "Repsol, S.A."
+      },
+      {
+        "ticker": "CABK.MC",
+        "name": "Caixabank, S.A."
       }
     ],
     "changes": {
@@ -188,23 +295,23 @@
     "positions": [
       {
         "ticker": "ENR.DE",
-        "name": "Siemens Energy AG N"
+        "name": "Siemens Energy Ag N"
       },
       {
         "ticker": "RWE.DE",
-        "name": "RWE AG I"
+        "name": "Rwe Ag I"
       },
       {
         "ticker": "IFX.DE",
-        "name": "INFINEON TECHNOLOGIES AG N"
+        "name": "Infineon Technologie"
       },
       {
         "ticker": "BAYN.DE",
-        "name": "Bayer AG N"
+        "name": "Bayer Ag N"
       },
       {
         "ticker": "DHL.DE",
-        "name": "DEUTSCHE POST AG N"
+        "name": "Deutsche Post Ag N"
       }
     ],
     "changes": {
@@ -217,23 +324,23 @@
     "positions": [
       {
         "ticker": "PRY.MI",
-        "name": "PRYSMIAN"
+        "name": "Prysmian"
       },
       {
         "ticker": "TEN.MI",
-        "name": "TENARIS"
+        "name": "Tenaris"
       },
       {
         "ticker": "TIT.MI",
-        "name": "TELECOM ITALIA"
+        "name": "Telecom Italia"
       },
       {
         "ticker": "STMMI.MI",
-        "name": "STMICROELECTRONICS"
+        "name": "Stmicroelectronics"
       },
       {
         "ticker": "SRG.MI",
-        "name": "SNAM"
+        "name": "Snam"
       }
     ],
     "changes": {
@@ -246,23 +353,23 @@
     "positions": [
       {
         "ticker": "6981.T",
-        "name": "MURATA MANUFACTURING CO"
+        "name": "Murata Manufacturing"
       },
       {
         "ticker": "6857.T",
-        "name": "ADVANTEST CORP"
+        "name": "Advantest Corp"
       },
       {
         "ticker": "8031.T",
-        "name": "MITSUI & CO"
+        "name": "Mitsui & Co"
       },
       {
         "ticker": "6954.T",
-        "name": "FANUC CORPORATION"
+        "name": "Fanuc Corporation"
       },
       {
         "ticker": "9983.T",
-        "name": "FAST RETAILING CO LTD"
+        "name": "Fast Retailing Co Lt"
       }
     ],
     "changes": {
@@ -279,11 +386,15 @@
       "out": [
         {
           "ticker": "6503.T",
-          "name": "MITSUBISHI ELECTRIC CORP"
+          "name": "MITSUBISHI ELECTRIC"
+        },
+        {
+          "ticker": "CORP",
+          "name": "8316.T - SUMITOMO MITSUI"
         },
         {
           "ticker": "8316.T",
-          "name": "SUMITOMO MITSUI FINANCIAL"
+          "name": "SUMITOMO MITSUI"
         }
       ]
     }
@@ -293,15 +404,15 @@
     "positions": [
       {
         "ticker": "000660.KS",
-        "name": "SK hynix"
+        "name": "Sk Hynix"
       },
       {
         "ticker": "005380.KS",
-        "name": "HyundaiMtr"
+        "name": "Hyundaimtr"
       },
       {
         "ticker": "006400.KS",
-        "name": "SAMSUNG SDI CO.,LTD."
+        "name": "Samsung Sdi Co.,Ltd."
       },
       {
         "ticker": "034020.KS",
@@ -309,7 +420,7 @@
       },
       {
         "ticker": "017670.KS",
-        "name": "SKTelecom"
+        "name": "Sktelecom"
       }
     ],
     "changes": {
@@ -332,23 +443,23 @@
     "positions": [
       {
         "ticker": "RIO.AX",
-        "name": "RIO TINTO FPO [RIO]"
+        "name": "Rio Tinto Fpo [Rio]"
       },
       {
         "ticker": "S32.AX",
-        "name": "SOUTH32 FPO [S32]"
+        "name": "South32 Fpo [S32]"
       },
       {
         "ticker": "EVN.AX",
-        "name": "EVOLUTION FPO [EVN]"
+        "name": "Evolution Fpo [Evn]"
       },
       {
         "ticker": "LYC.AX",
-        "name": "LYNAS FPO [LYC]"
+        "name": "Lynas Fpo [Lyc]"
       },
       {
         "ticker": "WDS.AX",
-        "name": "WOODSIDE FPO [WDS]"
+        "name": "Woodside Fpo [Wds]"
       }
     ],
     "changes": {
@@ -361,7 +472,7 @@
       "out": [
         {
           "ticker": "WOW.AX",
-          "name": "WOOLWORTHS FPO [WOW]"
+          "name": "WOOLWORTHS FPO"
         }
       ]
     }
@@ -375,11 +486,11 @@
       },
       {
         "ticker": "ANG.JO",
-        "name": "AngloGold Ashanti plc"
+        "name": "Anglogold Ashanti Pl"
       },
       {
         "ticker": "MTN.JO",
-        "name": "MTN Group Ltd"
+        "name": "Mtn Group Ltd"
       },
       {
         "ticker": "REM.JO",

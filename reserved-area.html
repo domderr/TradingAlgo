@@ -663,12 +663,15 @@
 
   <script>
     var MARKET_META = [
+      { key: "DJ30",         flag: "us", name: "DJ30",         pdf: "reports/Report_DJ30.pdf" },
       { key: "USA100",       flag: "us", name: "USA100",       pdf: "reports/Report_USA100.pdf" },
+      { key: "NASDAQ100",    flag: "us", name: "Nasdaq100",    pdf: "reports/Report_NASDAQ100.pdf" },
       { key: "Canada50",     flag: "ca", name: "Canada50",     pdf: "reports/Report_Canada50.pdf" },
       { key: "Mexico30",     flag: "mx", name: "Mexico30",     pdf: "reports/Report_Mexico30.pdf" },
       { key: "Europe50",     flag: "eu", name: "Europe50",     pdf: "reports/Report_Europe50.pdf" },
       { key: "UK30",         flag: "gb", name: "UK30",         pdf: "reports/Report_UK30.pdf" },
       { key: "France40",     flag: "fr", name: "France40",     pdf: "reports/Report_France40.pdf" },
+      { key: "Spain40",      flag: "es", name: "Spain40",      pdf: "reports/Report_Spain40.pdf" },
       { key: "Germany30",    flag: "de", name: "Germany30",    pdf: "reports/Report_Germany30.pdf" },
       { key: "Italy30",      flag: "it", name: "Italy30",      pdf: "reports/Report_Italy30.pdf", html: "reports_html/Italy30/Report_Italy30.html" },
       { key: "Japan50",      flag: "jp", name: "Japan50",      pdf: "reports/Report_Japan50.pdf" },
@@ -712,6 +715,7 @@
       var positions = pos ? (pos.positions || []) : [];
       var cin = pos ? (pos.changes && pos.changes.in || []) : [];
       var cout = pos ? (pos.changes && pos.changes.out || []) : [];
+      var hedgeText = formatPercent(extractHedgeValue(d));
 
       var posList = positions.map(function(p) {
         return '<div class="pos-row"><span class="pos-ticker">' + p.ticker + '</span><span class="pos-name">' + p.name + '</span></div>';
@@ -724,7 +728,7 @@
       return '<a class="report-card open" id="rc-' + m.key + '" href="' + reportUrl + '">'
         + '<div class="report-card-head">'
         + '<img src="https://flagcdn.com/' + m.flag + '.svg" width="22" height="14" alt="' + m.flag + '" style="border-radius:2px;flex-shrink:0">'
-        + '<span class="report-card-name">' + m.name + '<span class="market-hedging" id="hedge-' + m.key + '">Hedge: -</span></span>'
+        + '<span class="report-card-name">' + m.name + '<span class="market-hedging" id="hedge-' + m.key + '">Hedge: ' + hedgeText + '</span></span>'
         + '<div class="report-scores">'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + t + '</div><div class="report-score-lbl">Trend</div></div>'
         + '<div class="report-score-box"><div class="report-score-val ' + sc + '">' + s + '</div><div class="report-score-lbl">Stab</div></div>'
@@ -782,6 +786,13 @@
       return Number.isFinite(number) ? (number * 100).toFixed(2) + "%" : "-";
     }
 
+    function extractHedgeValue(d) {
+      if (!d) return null;
+      return d.Last_Hedge_Short != null ? d.Last_Hedge_Short :
+        d.Benchmark_Hedge_Short != null ? d.Benchmark_Hedge_Short :
+        d["Benchmark Hedge Short"];
+    }
+
     function loadHedgePercentages() {
       MARKET_META.forEach(function(m) {
         var target = document.getElementById("hedge-" + m.key);
@@ -804,8 +815,9 @@
     }
 
     function loadData() {
-      var indexPromise = fetch("reports/reports_index.json").then(function(r) { return r.json(); }).catch(function() { return []; });
-      var posPromise   = fetch("reports/positions.json").then(function(r) { return r.json(); }).catch(function() { return {}; });
+      var cacheKey = String(Date.now());
+      var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
+      var posPromise   = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return {}; });
       Promise.all([indexPromise, posPromise]).then(function(results) {
         renderAll(results[0], results[1]);
       });
