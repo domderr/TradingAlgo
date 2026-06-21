@@ -743,6 +743,14 @@ p { line-height: 1.55; }
   .two-col { grid-template-columns: 1fr; }
   .asset-grid { grid-template-columns: repeat(2, 1fr); }
 }
+@media (max-width: 720px) {
+  .report-shell, .asset-shell { padding: 10px; }
+  .top-actions { gap: 8px; margin-bottom: 10px; }
+  .top-actions a { width: 100%; text-align: center; }
+  .asset-page { padding: 16px 10px 12px; }
+  .asset-page h1 { font-size: 28px; margin-bottom: 12px; }
+  .asset-chart { border-radius: 0; }
+}
 @media print {
   body { background: #fff; }
   .top-actions { display: none; }
