@@ -47,6 +47,11 @@ def html_text(value):
     return html.escape(text(value))
 
 
+def useful_value(value):
+    value = text(value).strip()
+    return value if value and value != "-" else ""
+
+
 def last_available_friday(today=None):
     today = today or datetime.now().date()
     return today - timedelta(days=(today.weekday() - 4) % 7)
@@ -86,6 +91,8 @@ def read_tickers(tickers_xlsx, market):
 
 def read_ticker_metadata(dev_dir, market, tickers):
     metadata_path = dev_dir / "output" / "html_data" / market / "ticker_metadata.json"
+    if not metadata_path.exists():
+        metadata_path = dev_dir / "output" / "html_data" / safe_market_name(market) / "ticker_metadata.json"
     metadata = {}
     if metadata_path.exists():
         try:
@@ -201,9 +208,10 @@ def run_notebook(dev_dir, market_choice):
 
 
 def load_or_create_report_data(dev_dir, market, market_choice, rerun):
-    data_dir = dev_dir / "output" / "html_data" / market
-    if not data_dir.exists():
-        data_dir = dev_dir / "output" / "html_data" / safe_market_name(market)
+    data_root = dev_dir / "output" / "html_data"
+    safe_data_dir = data_root / safe_market_name(market)
+    display_data_dir = data_root / market
+    data_dir = safe_data_dir if (safe_data_dir / "report_data.json").exists() else display_data_dir
     data_dir.mkdir(parents=True, exist_ok=True)
     data_path = data_dir / "report_data.json"
 
@@ -761,29 +769,38 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             page_name = write_asset_page(out_dir, ticker, target_name, market)
             asset_pages.append({"ticker": ticker, "image": target_name, "page": page_name})
 
+    tickers = read_tickers(dev_dir / "Tickers.xlsx", market)
+    ticker_metadata = read_ticker_metadata(dev_dir, market, tickers)
+
     selection = row.get("Last Weekly Selection") or []
     selection_name_map = {}
     selection_sector_map = {}
     selection_industry_map = {}
     if isinstance(selection, str):
         selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
-        selection_html = "".join(f"<tr><td>{html_text(item)}</td><td>-</td><td>-</td></tr>" for item in selection_rows)
+        selection_html = "".join(f"<tr><td>{html_text(item)}</td><td>-</td><td>-</td><td>-</td></tr>" for item in selection_rows)
     else:
-        selection_html = "".join(
-            "<tr>"
-            f"<td>{html_text(item.get('Ticker'))}</td>"
-            f"<td>{html_text(item.get('Name'))}</td>"
-            f"<td>{html_text(item.get('Sector'))}</td>"
-            "</tr>"
-            for item in selection
-        )
+        selection_parts = []
         for item in selection:
             ticker_key = text(item.get("Ticker")).upper()
-            selection_name_map[ticker_key] = text(item.get("Name"))
-            selection_sector_map[ticker_key] = text(item.get("Sector"))
-            selection_industry_map[ticker_key] = text(item.get("Industry"))
+            metadata = ticker_metadata.get(ticker_key, {})
+            name = useful_value(item.get("Name")) or metadata.get("Name") or text(item.get("Ticker"))
+            sector = useful_value(item.get("Sector")) or metadata.get("Sector") or "-"
+            industry = useful_value(item.get("Industry")) or metadata.get("Industry") or "-"
+            selection_name_map[ticker_key] = name
+            selection_sector_map[ticker_key] = sector
+            selection_industry_map[ticker_key] = industry
+            selection_parts.append(
+                "<tr>"
+                f"<td>{html_text(item.get('Ticker'))}</td>"
+                f"<td>{html_text(name)}</td>"
+                f"<td>{html_text(sector)}</td>"
+                f"<td>{html_text(industry)}</td>"
+                "</tr>"
+            )
+        selection_html = "".join(selection_parts)
     if not selection_html:
-        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
+        selection_html = "<tr><td colspan=\"4\">-</td></tr>"
 
     status_history = row.get("Status_History") if isinstance(row.get("Status_History"), dict) else {}
     status_map = {}
@@ -792,8 +809,6 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         if statuses:
             status_map[text(status_row.get("Ticker")).upper()] = text(statuses[-1])
 
-    tickers = read_tickers(dev_dir / "Tickers.xlsx", market)
-    ticker_metadata = read_ticker_metadata(dev_dir, market, tickers)
     page_by_ticker = {item["ticker"].upper(): item for item in asset_pages}
     all_assets = []
     for ticker in tickers:
@@ -848,25 +863,32 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         linked_rows = []
         for item in selection_rows:
             ticker_part, sep, name_part = item.partition(" - ")
+            ticker_key = text(ticker_part).upper()
+            metadata = ticker_metadata.get(ticker_key, {})
             linked_rows.append(
                 "<tr>"
                 f"<td>{linked_ticker_html(ticker_part)}</td>"
-                f"<td>{html_text(name_part if sep else '')}</td>"
-                "<td>-</td>"
+                f"<td>{html_text(name_part if sep else metadata.get('Name') or '')}</td>"
+                f"<td>{html_text(metadata.get('Sector') or '-')}</td>"
+                f"<td>{html_text(metadata.get('Industry') or '-')}</td>"
                 "</tr>"
             )
         selection_html = "".join(linked_rows)
     else:
-        selection_html = "".join(
-            "<tr>"
-            f"<td>{linked_ticker_html(item.get('Ticker'))}</td>"
-            f"<td>{html_text(item.get('Name'))}</td>"
-            f"<td>{html_text(item.get('Sector'))}</td>"
-            "</tr>"
-            for item in selection
-        )
+        linked_rows = []
+        for item in selection:
+            ticker_key = text(item.get("Ticker")).upper()
+            linked_rows.append(
+                "<tr>"
+                f"<td>{linked_ticker_html(item.get('Ticker'))}</td>"
+                f"<td>{html_text(selection_name_map.get(ticker_key) or item.get('Name'))}</td>"
+                f"<td>{html_text(selection_sector_map.get(ticker_key) or item.get('Sector'))}</td>"
+                f"<td>{html_text(selection_industry_map.get(ticker_key) or item.get('Industry'))}</td>"
+                "</tr>"
+            )
+        selection_html = "".join(linked_rows)
     if not selection_html:
-        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
+        selection_html = "<tr><td colspan=\"4\">-</td></tr>"
 
     build_css(out_dir)
 
@@ -949,7 +971,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         <section class="dashboard-card">
           <h2>Current Selection</h2>
           <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th></tr></thead>
+            <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th></tr></thead>
             <tbody>{selection_html}</tbody>
           </table>
         </section>
