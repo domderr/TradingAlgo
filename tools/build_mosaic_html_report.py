@@ -900,6 +900,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
 <body>
   <main class="report-shell">
     <nav class="top-actions">
+      <a href="../../reserved-area.html">Back to Reserved Area</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
     </nav>
