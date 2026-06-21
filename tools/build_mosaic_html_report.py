@@ -244,8 +244,13 @@ def copy_if_exists(src, dst):
     return False
 
 
-def write_asset_page(out_dir, ticker, image_name, market):
+def write_asset_page(out_dir, ticker, image_name, market, mobile_image_name=""):
     page_name = f"{safe_market_name(ticker)}.html"
+    mobile_source = (
+        f'\n        <source media="(max-width: 720px)" srcset="assets/{html.escape(mobile_image_name)}" />'
+        if mobile_image_name
+        else ""
+    )
     body = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -263,7 +268,9 @@ def write_asset_page(out_dir, ticker, image_name, market):
     <section class="report-page asset-page">
       <p class="eyebrow">{html_text(market)} Asset Detail</p>
       <h1>{html_text(ticker)}</h1>
-      <img class="asset-chart" src="assets/{html.escape(image_name)}" alt="{html_text(ticker)} asset dashboard" />
+      <picture class="asset-picture">{mobile_source}
+        <img class="asset-chart" src="assets/{html.escape(image_name)}" alt="{html_text(ticker)} asset dashboard" />
+      </picture>
     </section>
   </main>
 </body>
@@ -610,6 +617,9 @@ p { line-height: 1.55; }
   display: block;
   border: 1px solid #dbe3ef;
 }
+.asset-picture {
+  display: block;
+}
 .mini-table, .asset-table {
   width: 100%;
   border-collapse: collapse;
@@ -774,8 +784,10 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         for image in sorted(asset_src_dir.glob("*_asset_dashboard.png")):
             ticker = ticker_from_asset_png(image)
             target_name = image.name
+            mobile_image = image.with_name(image.name.replace("_asset_dashboard.png", "_asset_dashboard_mobile.png"))
+            mobile_target_name = mobile_image.name if copy_if_exists(mobile_image, asset_out_dir / mobile_image.name) else ""
             shutil.copy2(image, asset_out_dir / target_name)
-            page_name = write_asset_page(out_dir, ticker, target_name, market)
+            page_name = write_asset_page(out_dir, ticker, target_name, market, mobile_target_name)
             asset_pages.append({"ticker": ticker, "image": target_name, "page": page_name})
 
     tickers = read_tickers(dev_dir / "Tickers.xlsx", market)
