@@ -66,11 +66,17 @@ p { line-height: 1.55; }
   grid-template-columns: 1.2fr 0.8fr;
   gap: 18px;
 }
+.two-col.balanced {
+  grid-template-columns: 0.95fr 1.05fr;
+}
 .panel {
   padding: 18px;
   border: 1px solid #dbe3ef;
   border-radius: 6px;
   background: #f8fafc;
+}
+.full-chart-panel {
+  padding: 12px;
 }
 .chart-img {
   width: 100%;
@@ -78,6 +84,9 @@ p { line-height: 1.55; }
   object-fit: contain;
   border: 1px solid #e2e8f0;
   background: #fff;
+}
+.wide-chart {
+  max-height: 660px;
 }
 .asset-chart {
   width: 100%;
@@ -131,6 +140,69 @@ p { line-height: 1.55; }
 }
 .asset-card strong { display: block; margin-bottom: 6px; }
 .asset-card span { color: #0b5fa5; font-size: 12px; font-weight: 700; }
+.gallery-page {
+  width: min(1440px, calc(100vw - 48px));
+}
+.chart-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+}
+.gallery-card {
+  padding: 0;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #fff;
+  color: #071a33;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: left;
+}
+.gallery-card img {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  display: block;
+  object-fit: contain;
+  background: #f8fafc;
+}
+.gallery-card span {
+  display: block;
+  padding: 10px 12px;
+  color: #0b5fa5;
+  font-weight: 800;
+}
+.chart-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(7, 26, 51, 0.88);
+}
+.chart-modal.is-open {
+  display: flex;
+}
+.chart-modal img {
+  max-width: min(1280px, 96vw);
+  max-height: 88vh;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #fff;
+}
+.chart-modal-close {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 4px;
+  background: #168eea;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 800;
+}
 .footer-note { margin-top: 18px; color: #64748b; font-size: 12px; }
 @media (max-width: 1180px) {
   .report-page { width: 100%; min-height: 0; }
