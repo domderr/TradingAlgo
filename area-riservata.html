@@ -331,14 +331,14 @@
       <a href="index.html">Home</a>
       <a href="tradingalgo-mosaic.html">Mosaic</a>
       <a href="how-to-read-mosaic-report.html">How to Read</a>
-      <a href="mailto:domderrico@gmail.com">Request Access</a>
+      <a href="reports_html/Italy30/Report_Italy30.html">Open Reports</a>
     </div>
   </nav>
 
   <div class="shell">
     <aside>
       <h1>Mosaic Premium</h1>
-      <p>Reserved weekly reports by market. Access is intended to be managed through authorized Google Accounts or private Drive folders.</p>
+      <p>Weekly reports by market. This test area is open while the premium workflow is being validated.</p>
 
       <div class="menu-section">
         <h2>Global</h2>
@@ -366,7 +366,7 @@
 
     <main>
       <div class="notice">
-        This page is the product shell for the reserved area. For production, keep HTML, chart PNGs and CSV/JSON data as the main content, and expose PDF downloads only to authorized customers.
+        This page is the product shell for the report area. For production, keep HTML, chart PNGs and CSV/JSON data as the main content, and expose PDF downloads only when needed.
       </div>
 
       <section class="hero-panel">
@@ -374,7 +374,7 @@
           <p class="eyebrow" id="report-kicker">Global Summary</p>
           <h2 id="report-title">TradingAlgo Mosaic Weekly Market Summary</h2>
           <p id="report-summary">A compact view of global trend quality, leadership rotation and market stability before entering the individual country and index reports.</p>
-          <a class="button" href="mailto:domderrico@gmail.com" id="access-button">Request Premium Access</a>
+          <a class="button" href="reports_html/Italy30/Report_Italy30.html" id="access-button">Open HTML Report</a>
         </div>
         <div class="stat-grid">
           <div class="stat">
@@ -399,7 +399,7 @@
       <div class="report-grid">
         <section class="panel">
           <h3>Market Summary</h3>
-          <p id="market-summary">Global leadership is reviewed through Trend and Stability scores. Premium users can open each authorized market to inspect the full weekly dashboard.</p>
+          <p id="market-summary">Global leadership is reviewed through Trend and Stability scores. Users can open each available market to inspect the full weekly dashboard.</p>
         </section>
 
         <section class="panel">
@@ -416,9 +416,9 @@
         <section class="panel">
           <h3>Weekly Changes</h3>
           <ul class="change-list" id="change-list">
-            <li><span>New entries</span><strong>Premium</strong></li>
-            <li><span>Removed positions</span><strong>Premium</strong></li>
-            <li><span>Weight changes</span><strong>Premium</strong></li>
+            <li><span>New entries</span><strong>Report</strong></li>
+            <li><span>Removed positions</span><strong>Report</strong></li>
+            <li><span>Weight changes</span><strong>Report</strong></li>
           </ul>
         </section>
 
@@ -452,7 +452,7 @@
             <li><span>CSV data</span><strong>Internal</strong></li>
             <li><span>Chart PNGs</span><strong>Embedded</strong></li>
           </ul>
-          <a class="button is-muted" href="#" id="download-button">PDF Download Locked</a>
+          <a class="button is-muted" href="#" id="download-button">PDF Extra Not Published</a>
         </section>
 
         <section class="panel">
@@ -509,7 +509,7 @@
       var htmlReportUrl = htmlReportsByMarket[market] || '';
       var title = market === 'Global Summary'
         ? 'TradingAlgo Mosaic Weekly Market Summary'
-        : market + ' Premium Report';
+        : market + ' Report';
       var status = htmlReportUrl ? 'HTML Ready' : (report && report.Report_URL ? 'Ready' : 'Planned');
 
       document.getElementById('report-kicker').textContent = market;
@@ -532,8 +532,8 @@
         accessButton.href = htmlReportUrl;
         accessButton.textContent = 'Open HTML Report';
       } else {
-        accessButton.href = 'mailto:domderrico@gmail.com';
-        accessButton.textContent = 'Request Premium Access';
+        accessButton.href = '#';
+        accessButton.textContent = 'Report Coming Soon';
       }
 
       var downloadButton = document.getElementById('download-button');
@@ -545,7 +545,7 @@
         downloadButton.removeAttribute('rel');
       } else {
         downloadButton.href = '#';
-        downloadButton.textContent = 'PDF Download Locked';
+        downloadButton.textContent = 'PDF Extra Not Published';
         downloadButton.classList.add('is-muted');
         downloadButton.removeAttribute('target');
         downloadButton.removeAttribute('rel');
