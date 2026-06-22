@@ -141,12 +141,16 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 .monthly-performance-table {
-  min-width: 980px;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 13px;
 }
 .monthly-performance-table th,
 .monthly-performance-table td {
+  padding: 9px 6px;
   text-align: right;
   white-space: nowrap;
+  overflow-wrap: normal;
 }
 .monthly-performance-table th:first-child,
 .monthly-performance-table td:first-child {
@@ -156,6 +160,9 @@ body {
   background: #fff;
   text-align: left;
 }
+.monthly-performance-table .negative-value { color: #b91c1c; font-weight: 800; }
+.monthly-performance-table .positive-value { color: #166534; font-weight: 800; }
+.monthly-performance-table .neutral-value { color: #475569; }
 .data-note {
   margin: 0;
   padding: 14px;
@@ -605,6 +612,8 @@ p { line-height: 1.55; }
   }
   .monthly-performance-table {
     min-width: 900px;
+    table-layout: auto;
+    font-size: 12px;
   }
   .contribution-chart {
     grid-template-columns: repeat(5, minmax(48px, 1fr));

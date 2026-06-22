@@ -27,6 +27,14 @@ def pct(value):
     return f"{number * 100:.2f}%"
 
 
+def pct_cell(value):
+    number = raw_number(value)
+    if number is None:
+        return "<td>-</td>"
+    css_class = "negative-value" if number < 0 else "positive-value" if number > 0 else "neutral-value"
+    return f'<td class="{css_class}">{pct(number)}</td>'
+
+
 def num(value):
     try:
         number = float(value)
@@ -114,7 +122,7 @@ def monthly_year_performance_html(row):
         month_cells = []
         for month in range(1, 13):
             value = compounded_return(monthly.get(year, {}).get(month, []))
-            month_cells.append(f"<td>{pct(value) if value is not None else '-'}</td>")
+            month_cells.append(pct_cell(value))
         year_total = compounded_return(annual_strategy.get(year, []))
         bench_total = compounded_return(annual_benchmark.get(year, []))
         alpha = year_total - bench_total if year_total is not None and bench_total is not None else None
@@ -122,9 +130,9 @@ def monthly_year_performance_html(row):
             "<tr>"
             f"<th>{year}</th>"
             f"{''.join(month_cells)}"
-            f"<td>{pct(year_total) if year_total is not None else '-'}</td>"
-            f"<td>{pct(bench_total) if bench_total is not None else '-'}</td>"
-            f"<td>{pct(alpha) if alpha is not None else '-'}</td>"
+            f"{pct_cell(year_total)}"
+            f"{pct_cell(bench_total)}"
+            f"{pct_cell(alpha)}"
             "</tr>"
         )
 
@@ -614,12 +622,16 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 .monthly-performance-table {
-  min-width: 980px;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 13px;
 }
 .monthly-performance-table th,
 .monthly-performance-table td {
+  padding: 9px 6px;
   text-align: right;
   white-space: nowrap;
+  overflow-wrap: normal;
 }
 .monthly-performance-table th:first-child,
 .monthly-performance-table td:first-child {
@@ -629,6 +641,9 @@ body {
   background: #fff;
   text-align: left;
 }
+.monthly-performance-table .negative-value { color: #b91c1c; font-weight: 800; }
+.monthly-performance-table .positive-value { color: #166534; font-weight: 800; }
+.monthly-performance-table .neutral-value { color: #475569; }
 .data-note {
   margin: 0;
   padding: 14px;
@@ -1078,6 +1093,8 @@ p { line-height: 1.55; }
   }
   .monthly-performance-table {
     min-width: 900px;
+    table-layout: auto;
+    font-size: 12px;
   }
   .contribution-chart {
     grid-template-columns: repeat(5, minmax(48px, 1fr));
