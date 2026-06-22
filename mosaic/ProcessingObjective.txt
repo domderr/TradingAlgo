@@ -1,0 +1,1 @@
+TradingAlgo Mosaic automatically selects and monitors a weekly portfolio of five stocks from any analyzed market. The framework uses systematic trend, stability, and portfolio-contribution analysis to identify opportunities, track portfolio positions, and evaluate performance relative to the benchmark. Market currently monitored: US100, Europe50, Italy30
