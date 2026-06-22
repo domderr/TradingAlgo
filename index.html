@@ -887,23 +887,38 @@
       </p>
       <div class="request-grid">
         <div class="form-field">
-          <label for="request-profile">Profile</label>
-          <select id="request-profile" name="profile" required>
-            <option value="">Select profile</option>
+          <label for="request-name">Name</label>
+          <input id="request-name" name="name" type="text" autocomplete="given-name" required>
+        </div>
+
+        <div class="form-field">
+          <label for="request-surname">Surname</label>
+          <input id="request-surname" name="surname" type="text" autocomplete="family-name" required>
+        </div>
+
+        <div class="form-field">
+          <label for="request-email">Email</label>
+          <input id="request-email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="form-field">
+          <label for="request-country">Country</label>
+          <input id="request-country" name="country" type="text" autocomplete="country-name" required>
+        </div>
+
+        <div class="form-field full">
+          <label for="request-profession">Profession</label>
+          <select id="request-profession" name="profession" required>
+            <option value="">Select profession</option>
             <option>Student</option>
             <option>Private investor</option>
             <option>Financial professional</option>
           </select>
         </div>
 
-        <div class="form-field">
-          <label for="request-country">Country of residence</label>
-          <input id="request-country" name="country" type="text" autocomplete="country-name" required>
-        </div>
-
         <div class="form-field full">
           <fieldset class="markets-fieldset">
-            <legend class="markets-label">Markets followed</legend>
+            <legend class="markets-label">Markets interested</legend>
             <div class="markets-grid">
               <label class="market-option"><input type="checkbox" name="markets" value="USA100">USA100</label>
               <label class="market-option"><input type="checkbox" name="markets" value="Europe50">Europe50</label>
@@ -1295,8 +1310,11 @@
       requestInfoForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        var profile = document.getElementById("request-profile").value;
+        var name = document.getElementById("request-name").value;
+        var surname = document.getElementById("request-surname").value;
+        var email = document.getElementById("request-email").value;
         var country = document.getElementById("request-country").value;
+        var profession = document.getElementById("request-profession").value;
         var markets = Array.prototype.slice.call(document.querySelectorAll('input[name="markets"]:checked'))
           .map(function (input) { return input.value; });
         var otherMarket = document.getElementById("request-other-market").value.trim();
@@ -1306,9 +1324,12 @@
         var body = [
           "TradingAlgo Mosaic information request",
           "",
-          "Profile: " + profile,
-          "Country of residence: " + country,
-          "Markets followed: " + (markets.length ? markets.join(", ") : "-")
+          "Name: " + name,
+          "Surname: " + surname,
+          "Email: " + email,
+          "Country: " + country,
+          "Profession: " + profession,
+          "Markets interested: " + (markets.length ? markets.join(", ") : "-")
         ].join("\n");
 
         window.location.href = "mailto:domderrico@gmail.com?subject=" +
