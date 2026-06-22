@@ -194,6 +194,29 @@
       font-weight: 750;
     }
 
+    .user-access-bar {
+      display: none;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      border: 1px solid rgba(66,211,146,0.22);
+      border-radius: 999px;
+      background: rgba(66,211,146,0.08);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .user-access-bar strong {
+      color: var(--text);
+    }
+
+    .user-access-bar.is-visible {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
     .restricted-content[hidden] {
       display: none;
     }
@@ -645,7 +668,7 @@
   </nav>
 
   <main>
-    <section class="reserved-message">
+    <section class="reserved-message" id="access-panel">
       <div class="eyebrow">Reserved Area</div>
       <h1>Access to the Reserved Area</h1>
       <p>Enter your access password to open the markets included in your subscription.</p>
@@ -658,6 +681,8 @@
       </form>
       <p class="access-disclaimer">Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
     </section>
+
+    <div class="user-access-bar" id="user-access-bar"></div>
 
     <div class="restricted-content" id="restricted-content" hidden>
       <section id="reports">
@@ -743,6 +768,20 @@
       return prefix + name + ". Your account is enabled for " + marketsLabel(authorizedMarkets) + ".";
     }
 
+    function showAuthorizedArea(match) {
+      var accessPanel = document.getElementById("access-panel");
+      var userBar = document.getElementById("user-access-bar");
+      var name = match && match.first_name ? match.first_name : "User";
+
+      if (accessPanel) accessPanel.hidden = true;
+      if (userBar) {
+        userBar.innerHTML = "<strong>" + name + "</strong><span>enabled markets: " + marketsLabel(authorizedMarkets) + "</span>";
+        userBar.classList.add("is-visible");
+      }
+      document.getElementById("restricted-content").hidden = false;
+      loadData();
+    }
+
     function hashPassword(value) {
       var bytes = new TextEncoder().encode(String(value || "").trim());
       return crypto.subtle.digest("SHA-256", bytes).then(function(buffer) {
@@ -763,9 +802,8 @@
         first_name: match.first_name || "",
         markets: authorizedMarkets
       }));
-      document.getElementById("restricted-content").hidden = false;
       setAccessMessage("", welcomeMessage(match, "Welcome back"));
-      loadData();
+      showAuthorizedArea(match);
     }
 
     function restoreAccessSession() {
@@ -781,9 +819,8 @@
 
       if (!authorizedMarkets.length) return false;
 
-      document.getElementById("restricted-content").hidden = false;
       setAccessMessage("", welcomeMessage(match, "Welcome back"));
-      loadData();
+      showAuthorizedArea(match);
       return true;
     }
 
