@@ -144,6 +144,11 @@ body {
 .ticker-link:hover {
   text-decoration: underline;
 }
+.mini-table th:nth-child(3),
+.mini-table td:nth-child(3) {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
 .pdf-summary-page {
   padding: 34px 44px;
   font-size: 14px;
@@ -469,6 +474,13 @@ p { line-height: 1.55; }
   .asset-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
+  .dashboard-card {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dashboard-card .mini-table {
+    min-width: 680px;
+  }
   .report-shell, .asset-shell { padding: 10px; }
   .top-actions { gap: 8px; margin-bottom: 10px; }
   .top-actions a { width: 100%; text-align: center; }
