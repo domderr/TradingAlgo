@@ -35,6 +35,13 @@ def num(value):
     return f"{number:.2f}"
 
 
+def raw_number(value):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
 def text(value):
     if value is None:
         return "-"
@@ -45,6 +52,10 @@ def text(value):
 
 def html_text(value):
     return html.escape(text(value))
+
+
+def html_attr(value):
+    return html.escape(text(value), quote=True)
 
 
 def useful_value(value):
@@ -59,6 +70,181 @@ def display_name(raw_name, ticker, metadata):
     if raw and raw.upper() != ticker_text.upper():
         return raw
     return metadata_name or raw or ticker_text
+
+
+def compounded_return(values):
+    total = 1.0
+    has_value = False
+    for value in values:
+        number = raw_number(value)
+        if number is None:
+            continue
+        total *= 1.0 + number
+        has_value = True
+    return total - 1.0 if has_value else None
+
+
+def monthly_year_performance_html(row):
+    strategy_returns = row.get("Hedged_Strategy_Returns") or row.get("Strategy_Returns") or {}
+    benchmark_returns = row.get("Benchmark_Returns") or {}
+    if not isinstance(strategy_returns, dict) or not strategy_returns:
+        return '<p class="data-note">Monthly performance data is not available for this report.</p>'
+
+    monthly = {}
+    annual_strategy = {}
+    annual_benchmark = {}
+    for date_text, value in strategy_returns.items():
+        try:
+            date = datetime.fromisoformat(str(date_text)[:10])
+        except ValueError:
+            continue
+        monthly.setdefault(date.year, {}).setdefault(date.month, []).append(value)
+        annual_strategy.setdefault(date.year, []).append(value)
+
+    for date_text, value in benchmark_returns.items():
+        try:
+            date = datetime.fromisoformat(str(date_text)[:10])
+        except ValueError:
+            continue
+        annual_benchmark.setdefault(date.year, []).append(value)
+
+    month_names = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    rows = []
+    for year in sorted(monthly):
+        month_cells = []
+        for month in range(1, 13):
+            value = compounded_return(monthly.get(year, {}).get(month, []))
+            month_cells.append(f"<td>{pct(value) if value is not None else '-'}</td>")
+        year_total = compounded_return(annual_strategy.get(year, []))
+        bench_total = compounded_return(annual_benchmark.get(year, []))
+        alpha = year_total - bench_total if year_total is not None and bench_total is not None else None
+        rows.append(
+            "<tr>"
+            f"<th>{year}</th>"
+            f"{''.join(month_cells)}"
+            f"<td>{pct(year_total) if year_total is not None else '-'}</td>"
+            f"<td>{pct(bench_total) if bench_total is not None else '-'}</td>"
+            f"<td>{pct(alpha) if alpha is not None else '-'}</td>"
+            "</tr>"
+        )
+
+    if not rows:
+        return '<p class="data-note">Monthly performance data is not available for this report.</p>'
+
+    return (
+        '<div class="table-scroll">'
+        '<table class="asset-table monthly-performance-table">'
+        f"<thead><tr><th>Year</th>{''.join(f'<th>{month}</th>' for month in month_names)}"
+        "<th>Year Total</th><th>Benchmark</th><th>Excess</th></tr></thead>"
+        f"<tbody>{''.join(rows)}</tbody>"
+        "</table>"
+        "</div>"
+    )
+
+
+def extract_profit_contributors(row):
+    candidate_keys = [
+        "Profit_Contributors",
+        "Profit Contributors",
+        "Ticker_Profit_Contributors",
+        "Ticker Profit Contributors",
+        "Contribution_To_Profit",
+        "Contribution to Profit",
+        "Asset_Contributions",
+        "Asset Contributions",
+        "Ticker_Contributions",
+        "Ticker Contributions",
+    ]
+
+    candidates = []
+    for key in candidate_keys:
+        value = row.get(key)
+        if value:
+            candidates.append(value)
+    for key, value in row.items():
+        key_text = str(key).lower()
+        if value and isinstance(value, list) and ("contrib" in key_text or "profit" in key_text or "pnl" in key_text):
+            candidates.append(value)
+
+    ticker_keys = ("Ticker", "ticker", "Symbol", "symbol", "Asset", "asset")
+    value_keys = (
+        "Contribution",
+        "contribution",
+        "Contribution_Pct",
+        "contribution_pct",
+        "Profit",
+        "profit",
+        "PnL",
+        "pnl",
+        "Total",
+        "total",
+        "Value",
+        "value",
+    )
+    normalized = []
+    for candidate in candidates:
+        if isinstance(candidate, dict):
+            iterable = [{"Ticker": key, "Contribution": value} for key, value in candidate.items()]
+        elif isinstance(candidate, list):
+            iterable = candidate
+        else:
+            continue
+
+        for item in iterable:
+            if not isinstance(item, dict):
+                continue
+            ticker = next((item.get(key) for key in ticker_keys if item.get(key)), "")
+            value = next((item.get(key) for key in value_keys if item.get(key) is not None), None)
+            number = raw_number(value)
+            if ticker and number is not None:
+                normalized.append({"ticker": text(ticker), "value": number})
+
+    deduped = {}
+    for item in normalized:
+        deduped[item["ticker"]] = item["value"]
+    return [{"ticker": ticker, "value": value} for ticker, value in deduped.items()]
+
+
+def profit_contributors_html(row):
+    contributors = extract_profit_contributors(row)
+    if not contributors:
+        return '<p class="data-note">Profit contribution by ticker is not available in the current report data.</p>'
+
+    ordered = sorted(contributors, key=lambda item: item["value"])
+    selected = ordered[-5:] + ordered[:5]
+    selected = sorted(selected, key=lambda item: item["value"], reverse=True)
+    max_abs = max(abs(item["value"]) for item in selected) or 1.0
+    bars = []
+    for item in selected:
+        value = item["value"]
+        height = max(5.0, abs(value) / max_abs * 100.0)
+        css_class = "positive" if value >= 0 else "negative"
+        bars.append(
+            '<div class="contribution-bar-wrap">'
+            f'<div class="contribution-bar {css_class}" style="height: {height:.2f}%;" title="{html_attr(item["ticker"])}: {html_attr(pct(value))}"></div>'
+            f'<div class="contribution-value">{pct(value)}</div>'
+            f'<div class="contribution-label">{html_text(item["ticker"])}</div>'
+            "</div>"
+        )
+
+    return f'<div class="contribution-chart" role="img" aria-label="Top and bottom profit contributors">{"".join(bars)}</div>'
+
+
+def subscriber_id_badge_html():
+    return '<span class="subscriber-id" data-subscriber-id>ID: User</span>'
+
+
+def subscriber_id_script_html():
+    return """  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
+  </script>"""
 
 
 def last_available_friday(today=None):
@@ -264,6 +450,7 @@ def write_asset_page(out_dir, ticker, image_name, market, mobile_image_name=""):
     <nav class="top-actions">
       <a href="Report_{safe_market_name(market)}.html">Back to Report</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
+      {subscriber_id_badge_html()}
     </nav>
     <section class="report-page asset-page">
       <p class="eyebrow">{html_text(market)} Asset Detail</p>
@@ -273,6 +460,7 @@ def write_asset_page(out_dir, ticker, image_name, market, mobile_image_name=""):
       </picture>
     </section>
   </main>
+{subscriber_id_script_html()}
   <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>
@@ -419,6 +607,78 @@ body {
 .performance-table td,
 .performance-table th {
   font-size: 16px;
+}
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.monthly-performance-table {
+  min-width: 980px;
+}
+.monthly-performance-table th,
+.monthly-performance-table td {
+  text-align: right;
+  white-space: nowrap;
+}
+.monthly-performance-table th:first-child,
+.monthly-performance-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #fff;
+  text-align: left;
+}
+.data-note {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 14px;
+}
+.contribution-chart {
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(56px, 1fr));
+  gap: 12px;
+  align-items: end;
+  padding: 18px 12px 10px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: linear-gradient(to top, #e2e8f0 1px, transparent 1px) 0 75% / 100% 25%;
+}
+.contribution-bar-wrap {
+  height: 240px;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  align-items: end;
+  gap: 6px;
+  min-width: 0;
+  text-align: center;
+}
+.contribution-bar {
+  width: 100%;
+  max-width: 42px;
+  min-height: 8px;
+  margin: 0 auto;
+  border-radius: 4px 4px 0 0;
+}
+.contribution-bar.positive { background: #15803d; }
+.contribution-bar.negative { background: #b91c1c; }
+.contribution-value {
+  color: #071a33;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.contribution-label {
+  min-height: 28px;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
 }
 .ticker-link {
   color: #0b5fa5;
@@ -819,6 +1079,16 @@ p { line-height: 1.55; }
   .performance-table td {
     font-size: 12px;
   }
+  .monthly-performance-table {
+    min-width: 900px;
+  }
+  .contribution-chart {
+    grid-template-columns: repeat(5, minmax(48px, 1fr));
+    gap: 10px;
+  }
+  .contribution-bar-wrap {
+    height: 220px;
+  }
   .changes-table th,
   .changes-table td {
     width: auto;
@@ -1073,6 +1343,8 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     hedge_ticker = html_text(row.get("Benchmark Hedge Ticker"))
     hedge_short = pct(row.get("Benchmark Hedge Short"))
     hedge_score = num(row.get("Hedge Portfolio Score"))
+    monthly_performance = monthly_year_performance_html(row)
+    profit_contributors = profit_contributors_html(row)
     metric_summary_html = (
         "<table class=\"metric-mini-table\">"
         "<thead><tr><th></th><th>Long</th><th>L+H</th><th>B</th></tr></thead>"
@@ -1128,6 +1400,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
       <a href="../../reserved-area.html">Back to Reserved Area</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
+      {subscriber_id_badge_html()}
     </nav>
 
     <section class="report-dashboard">
@@ -1188,8 +1461,20 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
           </tbody>
         </table>
       </section>
+
+      <section class="performance-section">
+        <h2>Month / Year Performance</h2>
+        {monthly_performance}
+      </section>
+
+      <section class="performance-section">
+        <h2>Top / Bottom Profit Contributors</h2>
+        {profit_contributors}
+      </section>
     </section>
   </main>
+{subscriber_id_script_html()}
+  <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>
 """
@@ -1229,6 +1514,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
   <main class="report-shell">
     <nav class="top-actions">
       <a href="Report_{safe_market}.html">Back to Report</a>
+      {subscriber_id_badge_html()}
     </nav>
     <section class="report-page gallery-page">
       <p class="eyebrow">View All Benchmark Assets</p>
@@ -1271,6 +1557,8 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     if (modal) modal.addEventListener("click", function (event) {{ if (event.target === modal) closeModal(); }});
     document.addEventListener("keydown", function (event) {{ if (event.key === "Escape") closeModal(); }});
   </script>
+{subscriber_id_script_html()}
+  <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>
 """
