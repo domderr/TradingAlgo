@@ -916,6 +916,7 @@ p { line-height: 1.55; }
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .status-selected { background: #dcfce7; color: #166534; }
 .status-watchlist { background: #fef3c7; color: #92400e; }
@@ -1061,19 +1062,15 @@ p { line-height: 1.55; }
   }
   .mini-table th:nth-child(1),
   .mini-table td:nth-child(1) {
-    width: 18%;
+    width: 22%;
   }
   .mini-table th:nth-child(2),
   .mini-table td:nth-child(2) {
-    width: 28%;
+    width: 32%;
   }
   .mini-table th:nth-child(3),
   .mini-table td:nth-child(3) {
-    width: 25%;
-  }
-  .mini-table th:nth-child(4),
-  .mini-table td:nth-child(4) {
-    width: 29%;
+    width: 46%;
   }
   .performance-table th,
   .performance-table td {
@@ -1219,13 +1216,17 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     tickers = read_tickers(dev_dir / "Tickers.xlsx", market)
     ticker_metadata = read_ticker_metadata(dev_dir, market, tickers)
 
+    def sector_industry_label(sector, industry):
+        parts = [useful_value(sector), useful_value(industry)]
+        return " / ".join(part for part in parts if part) or "-"
+
     selection = row.get("Last Weekly Selection") or []
     selection_name_map = {}
     selection_sector_map = {}
     selection_industry_map = {}
     if isinstance(selection, str):
         selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
-        selection_html = "".join(f"<tr><td>{html_text(item)}</td><td>-</td><td>-</td><td>-</td></tr>" for item in selection_rows)
+        selection_html = "".join(f"<tr><td>{html_text(item)}</td><td>-</td><td>-</td></tr>" for item in selection_rows)
     else:
         selection_parts = []
         for item in selection:
@@ -1241,13 +1242,12 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
                 "<tr>"
                 f"<td>{html_text(item.get('Ticker'))}</td>"
                 f"<td>{html_text(name)}</td>"
-                f"<td>{html_text(sector)}</td>"
-                f"<td>{html_text(industry)}</td>"
+                f"<td>{html_text(sector_industry_label(sector, industry))}</td>"
                 "</tr>"
             )
         selection_html = "".join(selection_parts)
     if not selection_html:
-        selection_html = "<tr><td colspan=\"4\">-</td></tr>"
+        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
 
     status_history = row.get("Status_History") if isinstance(row.get("Status_History"), dict) else {}
     status_map = {}
@@ -1316,8 +1316,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
                 "<tr>"
                 f"<td>{linked_ticker_html(ticker_part)}</td>"
                 f"<td>{html_text(display_name(name_part if sep else '', ticker_part, metadata))}</td>"
-                f"<td>{html_text(metadata.get('Sector') or '-')}</td>"
-                f"<td>{html_text(metadata.get('Industry') or '-')}</td>"
+                f"<td>{html_text(sector_industry_label(metadata.get('Sector'), metadata.get('Industry')))}</td>"
                 "</tr>"
             )
         selection_html = "".join(linked_rows)
@@ -1329,13 +1328,29 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
                 "<tr>"
                 f"<td>{linked_ticker_html(item.get('Ticker'))}</td>"
                 f"<td>{html_text(display_name(selection_name_map.get(ticker_key) or item.get('Name'), item.get('Ticker'), ticker_metadata.get(ticker_key, {})))}</td>"
-                f"<td>{html_text(selection_sector_map.get(ticker_key) or item.get('Sector'))}</td>"
-                f"<td>{html_text(selection_industry_map.get(ticker_key) or item.get('Industry'))}</td>"
+                f"<td>{html_text(sector_industry_label(selection_sector_map.get(ticker_key) or item.get('Sector'), selection_industry_map.get(ticker_key) or item.get('Industry')))}</td>"
                 "</tr>"
             )
         selection_html = "".join(linked_rows)
     if not selection_html:
-        selection_html = "<tr><td colspan=\"4\">-</td></tr>"
+        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
+
+    def formatted_change_tickers(raw_value):
+        raw = useful_value(raw_value)
+        if not raw:
+            return "-"
+        entries = [entry.strip() for entry in re.split(r"<br\s*/?>|[,;]\s*", raw) if entry.strip()]
+        formatted = []
+        for entry in entries:
+            ticker_part, sep, name_part = entry.partition(" - ")
+            ticker = ticker_part.strip()
+            metadata = ticker_metadata.get(ticker.upper(), {})
+            name = display_name(name_part if sep else "", ticker, metadata)
+            if name.upper() == ticker.upper():
+                formatted.append(linked_ticker_html(ticker))
+            else:
+                formatted.append(f"{linked_ticker_html(ticker)} - {html_text(name)}")
+        return "<br />".join(formatted) if formatted else "-"
 
     build_css(out_dir)
 
@@ -1343,6 +1358,8 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     hedge_ticker = html_text(row.get("Benchmark Hedge Ticker"))
     hedge_short = pct(row.get("Benchmark Hedge Short"))
     hedge_score = num(row.get("Hedge Portfolio Score"))
+    added_tickers_html = formatted_change_tickers(row.get("Added Tickers"))
+    removed_tickers_html = formatted_change_tickers(row.get("Removed Tickers"))
     monthly_performance = monthly_year_performance_html(row)
     profit_contributors = profit_contributors_html(row)
     metric_summary_html = (
@@ -1421,7 +1438,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         <section class="dashboard-card">
           <h2>Current Selection</h2>
           <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th></tr></thead>
+            <thead><tr><th>Ticker</th><th>Name</th><th>Sector / Industry</th></tr></thead>
             <tbody>{selection_html}</tbody>
           </table>
         </section>
@@ -1430,8 +1447,8 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
           <table class="mini-table changes-table">
             <tbody>
               <tr><th>Capital Invested</th><td>{pct(row.get("Capital Invested"))}</td></tr>
-              <tr><th><span class="in-label">IN</span></th><td>{html_text(row.get("Added Tickers"))}</td></tr>
-              <tr><th><span class="out-label">OUT</span></th><td>{html_text(row.get("Removed Tickers"))}</td></tr>
+              <tr><th><span class="in-label">IN</span></th><td>{added_tickers_html}</td></tr>
+              <tr><th><span class="out-label">OUT</span></th><td>{removed_tickers_html}</td></tr>
               <tr><th>Current Hedge Short ETF</th><td>{hedge_ticker}: {hedge_short}</td></tr>
               <tr><th>Hedge Score</th><td>{hedge_score}</td></tr>
             </tbody>

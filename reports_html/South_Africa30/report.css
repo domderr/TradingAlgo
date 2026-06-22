@@ -135,17 +135,89 @@ body {
 .performance-table th {
   font-size: 16px;
 }
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.monthly-performance-table {
+  min-width: 980px;
+}
+.monthly-performance-table th,
+.monthly-performance-table td {
+  text-align: right;
+  white-space: nowrap;
+}
+.monthly-performance-table th:first-child,
+.monthly-performance-table td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #fff;
+  text-align: left;
+}
+.data-note {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 14px;
+}
+.contribution-chart {
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: repeat(10, minmax(56px, 1fr));
+  gap: 12px;
+  align-items: end;
+  padding: 18px 12px 10px;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  background: linear-gradient(to top, #e2e8f0 1px, transparent 1px) 0 75% / 100% 25%;
+}
+.contribution-bar-wrap {
+  height: 240px;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  align-items: end;
+  gap: 6px;
+  min-width: 0;
+  text-align: center;
+}
+.contribution-bar {
+  width: 100%;
+  max-width: 42px;
+  min-height: 8px;
+  margin: 0 auto;
+  border-radius: 4px 4px 0 0;
+}
+.contribution-bar.positive { background: #15803d; }
+.contribution-bar.negative { background: #b91c1c; }
+.contribution-value {
+  color: #071a33;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.contribution-label {
+  min-height: 28px;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
 .ticker-link {
   color: #0b5fa5;
   font-weight: 800;
   text-decoration: none;
-  white-space: nowrap;
 }
 .ticker-link:hover {
   text-decoration: underline;
 }
-.mini-table th:nth-child(3),
-.mini-table td:nth-child(3) {
+.mini-table th:first-child,
+.mini-table td:first-child {
+  min-width: 72px;
   white-space: nowrap;
   overflow-wrap: normal;
 }
@@ -371,6 +443,7 @@ p { line-height: 1.55; }
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .status-selected { background: #dcfce7; color: #166534; }
 .status-watchlist { background: #fef3c7; color: #92400e; }
@@ -474,13 +547,6 @@ p { line-height: 1.55; }
   .asset-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 720px) {
-  .dashboard-card {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .dashboard-card .mini-table {
-    min-width: 680px;
-  }
   .report-shell, .asset-shell { padding: 10px; }
   .top-actions { gap: 8px; margin-bottom: 10px; }
   .top-actions a { width: 100%; text-align: center; }
@@ -523,24 +589,29 @@ p { line-height: 1.55; }
   }
   .mini-table th:nth-child(1),
   .mini-table td:nth-child(1) {
-    width: 24%;
-    white-space: nowrap;
+    width: 22%;
   }
   .mini-table th:nth-child(2),
   .mini-table td:nth-child(2) {
-    width: 26%;
+    width: 32%;
   }
   .mini-table th:nth-child(3),
   .mini-table td:nth-child(3) {
-    width: 24%;
-  }
-  .mini-table th:nth-child(4),
-  .mini-table td:nth-child(4) {
-    width: 26%;
+    width: 46%;
   }
   .performance-table th,
   .performance-table td {
     font-size: 12px;
+  }
+  .monthly-performance-table {
+    min-width: 900px;
+  }
+  .contribution-chart {
+    grid-template-columns: repeat(5, minmax(48px, 1fr));
+    gap: 10px;
+  }
+  .contribution-bar-wrap {
+    height: 220px;
   }
   .changes-table th,
   .changes-table td {
@@ -637,14 +708,4 @@ p { line-height: 1.55; }
     width: 297mm;
     min-height: 210mm;
   }
-}
-.subscriber-id {
-  margin-left: auto;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(66,211,146,0.28);
-  background: rgba(66,211,146,0.12);
-  color: #dffbea;
-  font-size: 12px;
-  font-weight: 800;
 }
