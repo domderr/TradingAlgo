@@ -23,38 +23,160 @@
     "Last Weekly Selection": [
       {
         "Ticker": "CAT",
-        "Name": "CAT",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Caterpillar, Inc.",
+        "Sector": "Industrials",
+        "Industry": "Farm & Heavy Construction Machinery"
       },
       {
         "Ticker": "MRK",
-        "Name": "MRK",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Merck & Company, Inc.",
+        "Sector": "Healthcare",
+        "Industry": "Drug Manufacturers - General"
       },
       {
         "Ticker": "CSCO",
-        "Name": "CSCO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Cisco Systems, Inc.",
+        "Sector": "Technology",
+        "Industry": "Communication Equipment"
       },
       {
         "Ticker": "GS",
-        "Name": "GS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Goldman Sachs Group, Inc. (The)",
+        "Sector": "Financial Services",
+        "Industry": "Capital Markets"
       },
       {
         "Ticker": "CVX",
-        "Name": "CVX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Chevron Corporation",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "CAT: trend slope 0.02, stability R2 0.97, score 0.02 and passed correlation filter<br/>MRK: trend slope 0.01, stability R2 0.86, score 0.01 and passed correlation filter<br/>CSCO: trend slope 0.01, stability R2 0.73, score 0.01 and passed correlation filter<br/>GS: trend slope 0.01, stability R2 0.79, score 0.01 and passed correlation filter<br/>CVX: trend slope 0.01, stability R2 0.73, score 0.00 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "CAT",
+        "Contribution": 0.1324882701235824
+      },
+      {
+        "Ticker": "GS",
+        "Contribution": 0.09091326779497483
+      },
+      {
+        "Ticker": "CSCO",
+        "Contribution": 0.06143646544496115
+      },
+      {
+        "Ticker": "JNJ",
+        "Contribution": 0.05355670101205606
+      },
+      {
+        "Ticker": "IBM",
+        "Contribution": 0.04035153772442493
+      },
+      {
+        "Ticker": "MMM",
+        "Contribution": 0.031677426710587264
+      },
+      {
+        "Ticker": "UNH",
+        "Contribution": 0.012920677973679396
+      },
+      {
+        "Ticker": "TRV",
+        "Contribution": 0.011714576674877918
+      },
+      {
+        "Ticker": "CRM",
+        "Contribution": 0.010909262184166726
+      },
+      {
+        "Ticker": "VZ",
+        "Contribution": 0.008324750374443055
+      },
+      {
+        "Ticker": "AAPL",
+        "Contribution": 0.00460108895493655
+      },
+      {
+        "Ticker": "MSFT",
+        "Contribution": 0.0038855296382380783
+      },
+      {
+        "Ticker": "WMT",
+        "Contribution": 0.003027451082831315
+      },
+      {
+        "Ticker": "HD",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SHW",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NKE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HON",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMGN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMZN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DIS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "V",
+        "Contribution": -0.003758849140018364
+      },
+      {
+        "Ticker": "MCD",
+        "Contribution": -0.007029521505236601
+      },
+      {
+        "Ticker": "MRK",
+        "Contribution": -0.013572268728478018
+      },
+      {
+        "Ticker": "JPM",
+        "Contribution": -0.025700630820383704
+      },
+      {
+        "Ticker": "CVX",
+        "Contribution": -0.02764376824242569
+      },
+      {
+        "Ticker": "AXP",
+        "Contribution": -0.03319055554380969
+      },
+      {
+        "Ticker": "BA",
+        "Contribution": -0.05144603867366428
+      },
+      {
+        "Ticker": "NVDA",
+        "Contribution": -0.05589880619042055
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

@@ -23,38 +23,176 @@
     "Last Weekly Selection": [
       {
         "Ticker": "GMEXICOB.MX",
-        "Name": "GMEXICOB.MX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "GRUPO MEXICO SAB DE CV",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
       },
       {
         "Ticker": "AMXB.MX",
-        "Name": "AMXB.MX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "AMERICA MOVIL SAB DE CV",
+        "Sector": "Communication Services",
+        "Industry": "Telecom Services"
       },
       {
         "Ticker": "PINFRA.MX",
-        "Name": "PINFRA.MX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "PROMOTORA Y OPERADORA DE INFRST",
+        "Sector": "Industrials",
+        "Industry": "Infrastructure Operations"
       },
       {
         "Ticker": "FEMSAUBD.MX",
-        "Name": "FEMSAUBD.MX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "FOMENTO ECONOMICO MEXICANO SAB",
+        "Sector": "Consumer Defensive",
+        "Industry": "Beverages - Brewers"
       },
       {
         "Ticker": "VOLARA.MX",
-        "Name": "VOLARA.MX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "CONTROLADORA VUELA CIA DE AVIAC",
+        "Sector": "Industrials",
+        "Industry": "Airlines"
       }
     ],
-    "Added Tickers": "VOLARA.MX - VOLARA.MX",
-    "Removed Tickers": "LIVEPOLC-1.MX - LIVEPOLC-1.MX",
+    "Added Tickers": "VOLARA.MX - CONTROLADORA VUELA CIA DE AVIAC",
+    "Removed Tickers": "LIVEPOLC-1.MX - EL PUERTO DE LIVERPOOL SAB DE C",
     "Selection Drivers": "GMEXICOB.MX: trend slope 0.01, stability R2 0.90, score 0.01 and passed correlation filter<br/>AMXB.MX: trend slope 0.01, stability R2 0.71, score 0.00 and passed correlation filter<br/>PINFRA.MX: trend slope 0.01, stability R2 0.79, score 0.00 and passed correlation filter<br/>FEMSAUBD.MX: trend slope 0.01, stability R2 0.75, score 0.00 and passed correlation filter<br/>VOLARA.MX: trend slope 0.01, stability R2 0.33, score 0.00 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "PE&OLES.MX",
+        "Contribution": 0.3202227197801169
+      },
+      {
+        "Ticker": "GMEXICOB.MX",
+        "Contribution": 0.10454491294281079
+      },
+      {
+        "Ticker": "GENTERA.MX",
+        "Contribution": 0.09229142149974823
+      },
+      {
+        "Ticker": "CEMEXCPO.MX",
+        "Contribution": 0.06856053417015492
+      },
+      {
+        "Ticker": "GAPB.MX",
+        "Contribution": 0.035200485229630284
+      },
+      {
+        "Ticker": "OMAB.MX",
+        "Contribution": 0.033582164393141226
+      },
+      {
+        "Ticker": "GRUMAB.MX",
+        "Contribution": 0.02450004352934254
+      },
+      {
+        "Ticker": "ORBIA.MX",
+        "Contribution": 0.019078950695720437
+      },
+      {
+        "Ticker": "FEMSAUBD.MX",
+        "Contribution": 0.015116576132246949
+      },
+      {
+        "Ticker": "BOLSAA.MX",
+        "Contribution": 0.012793016218626553
+      },
+      {
+        "Ticker": "PINFRA.MX",
+        "Contribution": 0.009411244295425884
+      },
+      {
+        "Ticker": "AC.MX",
+        "Contribution": 0.005643793297958437
+      },
+      {
+        "Ticker": "TLEVISACPO.MX",
+        "Contribution": 0.004269598161270961
+      },
+      {
+        "Ticker": "LIVEPOLC-1.MX",
+        "Contribution": 0.002815691769585168
+      },
+      {
+        "Ticker": "BBAJIOO.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KOFUBL.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WALMEX.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BIMBOA.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GCARSOA1.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VESTA.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CHDRAUIB.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ALSEA.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RA.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CUERVO.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GFINBURO.MX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ASURB.MX",
+        "Contribution": -0.002267237866222813
+      },
+      {
+        "Ticker": "MEGACPO.MX",
+        "Contribution": -0.0023472368093213083
+      },
+      {
+        "Ticker": "KIMBERA.MX",
+        "Contribution": -0.0065547823225482905
+      },
+      {
+        "Ticker": "AMXB.MX",
+        "Contribution": -0.008026719401747564
+      },
+      {
+        "Ticker": "GFNORTEO.MX",
+        "Contribution": -0.008083897997452405
+      },
+      {
+        "Ticker": "Q.MX",
+        "Contribution": -0.011242663364493245
+      },
+      {
+        "Ticker": "GCC.MX",
+        "Contribution": -0.011705743812297963
+      },
+      {
+        "Ticker": "LABB.MX",
+        "Contribution": -0.03235582324311105
+      },
+      {
+        "Ticker": "VOLARA.MX",
+        "Contribution": -0.11872653548715074
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

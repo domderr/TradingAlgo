@@ -23,38 +23,200 @@
     "Last Weekly Selection": [
       {
         "Ticker": "ENR.DE",
-        "Name": "ENR.DE",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Siemens Energy AG             N",
+        "Sector": "Industrials",
+        "Industry": "Specialty Industrial Machinery"
       },
       {
         "Ticker": "RWE.DE",
-        "Name": "RWE.DE",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "RWE AG                        I",
+        "Sector": "Utilities",
+        "Industry": "Utilities - Diversified"
       },
       {
         "Ticker": "IFX.DE",
-        "Name": "IFX.DE",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "INFINEON TECHNOLOGIES AG      N",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
       },
       {
         "Ticker": "BAYN.DE",
-        "Name": "BAYN.DE",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Bayer AG                      N",
+        "Sector": "Healthcare",
+        "Industry": "Drug Manufacturers - General"
       },
       {
         "Ticker": "DHL.DE",
-        "Name": "DHL.DE",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "DEUTSCHE POST AG              N",
+        "Sector": "Industrials",
+        "Industry": "Integrated Freight & Logistics"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "ENR.DE: trend slope 0.02, stability R2 0.90, score 0.01 and passed correlation filter<br/>RWE.DE: trend slope 0.01, stability R2 0.93, score 0.01 and passed correlation filter<br/>IFX.DE: trend slope 0.01, stability R2 0.63, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.64, score 0.01 and passed correlation filter<br/>DHL.DE: trend slope 0.01, stability R2 0.80, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "ENR.DE",
+        "Contribution": 0.3304021064297721
+      },
+      {
+        "Ticker": "RHM.DE",
+        "Contribution": 0.13748401491327142
+      },
+      {
+        "Ticker": "RWE.DE",
+        "Contribution": 0.07822499072096671
+      },
+      {
+        "Ticker": "HEI.DE",
+        "Contribution": 0.06581018781367733
+      },
+      {
+        "Ticker": "DHL.DE",
+        "Contribution": 0.06108138666895606
+      },
+      {
+        "Ticker": "CBK.DE",
+        "Contribution": 0.03160623475547646
+      },
+      {
+        "Ticker": "ZAL.DE",
+        "Contribution": 0.02931660272055823
+      },
+      {
+        "Ticker": "BAS.DE",
+        "Contribution": 0.015008929486769603
+      },
+      {
+        "Ticker": "IFX.DE",
+        "Contribution": 0.003695004282499104
+      },
+      {
+        "Ticker": "EOAN.DE",
+        "Contribution": 0.002416365371492507
+      },
+      {
+        "Ticker": "DTG.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SHL.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ALV.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SIE.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "QIA.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BMW.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ADS.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PAH3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SRT3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FME.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VNA.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MRK.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HEN3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VOW3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "P911.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SY1.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BNR.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HNR1.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BEI.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MBG.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DTE.DE",
+        "Contribution": -0.0012767354665427569
+      },
+      {
+        "Ticker": "DB1.DE",
+        "Contribution": -0.0029128956919046538
+      },
+      {
+        "Ticker": "BAYN.DE",
+        "Contribution": -0.004325272506133635
+      },
+      {
+        "Ticker": "MUV2.DE",
+        "Contribution": -0.004368744430608237
+      },
+      {
+        "Ticker": "FRE.DE",
+        "Contribution": -0.00598179795791931
+      },
+      {
+        "Ticker": "SAP.DE",
+        "Contribution": -0.017307618026388825
+      },
+      {
+        "Ticker": "MTX.DE",
+        "Contribution": -0.020387419807049327
+      },
+      {
+        "Ticker": "DBK.DE",
+        "Contribution": -0.041713571534744504
+      },
+      {
+        "Ticker": "AIR.DE",
+        "Contribution": -0.043491995637700634
+      },
+      {
+        "Ticker": "CON.DE",
+        "Contribution": -0.04635465166654181
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

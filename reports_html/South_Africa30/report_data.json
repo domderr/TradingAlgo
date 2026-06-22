@@ -23,32 +23,122 @@
     "Last Weekly Selection": [
       {
         "Ticker": "SOL.JO",
-        "Name": "SOL.JO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Sasol Limited",
+        "Sector": "Basic Materials",
+        "Industry": "Specialty Chemicals"
       },
       {
         "Ticker": "ANG.JO",
-        "Name": "ANG.JO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "AngloGold Ashanti plc",
+        "Sector": "Basic Materials",
+        "Industry": "Gold"
       },
       {
         "Ticker": "MTN.JO",
-        "Name": "MTN.JO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "MTN Group Ltd",
+        "Sector": "Communication Services",
+        "Industry": "Telecom Services"
       },
       {
         "Ticker": "REM.JO",
-        "Name": "REM.JO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Remgro Ltd",
+        "Sector": "Financial Services",
+        "Industry": "Asset Management"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "SOL.JO: trend slope 0.02, stability R2 0.77, score 0.01 and passed correlation filter<br/>ANG.JO: trend slope 0.01, stability R2 0.70, score 0.01 and passed correlation filter<br/>MTN.JO: trend slope 0.01, stability R2 0.86, score 0.01 and passed correlation filter<br/>REM.JO: trend slope 0.00, stability R2 0.79, score 0.00 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "MTN.JO",
+        "Contribution": 0.23701703107279296
+      },
+      {
+        "Ticker": "SOL.JO",
+        "Contribution": 0.18935707753926567
+      },
+      {
+        "Ticker": "ANG.JO",
+        "Contribution": 0.1876602008509267
+      },
+      {
+        "Ticker": "IMP.JO",
+        "Contribution": 0.095053817186812
+      },
+      {
+        "Ticker": "BTI.JO",
+        "Contribution": 0.06510746014693898
+      },
+      {
+        "Ticker": "PRX.JO",
+        "Contribution": 0.06018169233093545
+      },
+      {
+        "Ticker": "GFI.JO",
+        "Contribution": 0.0551172306521549
+      },
+      {
+        "Ticker": "CPI.JO",
+        "Contribution": 0.04580847888914631
+      },
+      {
+        "Ticker": "DSY.JO",
+        "Contribution": 0.03554246715463687
+      },
+      {
+        "Ticker": "FSR.JO",
+        "Contribution": 0.014302652476076701
+      },
+      {
+        "Ticker": "OMU.JO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BID.JO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MNP.JO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KIO.JO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NED.JO",
+        "Contribution": -0.00010960865095100481
+      },
+      {
+        "Ticker": "SHP.JO",
+        "Contribution": -0.0032224664590012352
+      },
+      {
+        "Ticker": "NPN.JO",
+        "Contribution": -0.0035757572025856264
+      },
+      {
+        "Ticker": "CLS.JO",
+        "Contribution": -0.006242366488919636
+      },
+      {
+        "Ticker": "REM.JO",
+        "Contribution": -0.011602529221473364
+      },
+      {
+        "Ticker": "CFR.JO",
+        "Contribution": -0.012134745393020374
+      },
+      {
+        "Ticker": "ABG.JO",
+        "Contribution": -0.013496991779760718
+      },
+      {
+        "Ticker": "AGL.JO",
+        "Contribution": -0.06757755577236954
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

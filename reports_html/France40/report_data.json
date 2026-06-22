@@ -23,38 +23,192 @@
     "Last Weekly Selection": [
       {
         "Ticker": "STMPA.PA",
-        "Name": "STMPA.PA",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "STMICROELECTRONICS",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
       },
       {
         "Ticker": "ENGI.PA",
-        "Name": "ENGI.PA",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "ENGIE",
+        "Sector": "Utilities",
+        "Industry": "Utilities - Diversified"
       },
       {
         "Ticker": "TTE.PA",
-        "Name": "TTE.PA",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "TOTALENERGIES",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
       },
       {
         "Ticker": "GLE.PA",
-        "Name": "GLE.PA",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "SOCIETE GENERALE",
+        "Sector": "Financial Services",
+        "Industry": "Banks - Regional"
       },
       {
         "Ticker": "LR.PA",
-        "Name": "LR.PA",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "LEGRAND",
+        "Sector": "Industrials",
+        "Industry": "Electrical Equipment & Parts"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "STMPA.PA: trend slope 0.02, stability R2 0.56, score 0.01 and passed correlation filter<br/>ENGI.PA: trend slope 0.01, stability R2 0.88, score 0.01 and passed correlation filter<br/>TTE.PA: trend slope 0.01, stability R2 0.85, score 0.01 and passed correlation filter<br/>GLE.PA: trend slope 0.01, stability R2 0.76, score 0.01 and passed correlation filter<br/>LR.PA: trend slope 0.00, stability R2 0.40, score 0.00 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "GLE.PA",
+        "Contribution": 0.16494026424844208
+      },
+      {
+        "Ticker": "STMPA.PA",
+        "Contribution": 0.09903618169908913
+      },
+      {
+        "Ticker": "ORA.PA",
+        "Contribution": 0.0930796870362901
+      },
+      {
+        "Ticker": "ENGI.PA",
+        "Contribution": 0.07589766996923744
+      },
+      {
+        "Ticker": "LR.PA",
+        "Contribution": 0.03778971973385997
+      },
+      {
+        "Ticker": "SGO.PA",
+        "Contribution": 0.037187711193949896
+      },
+      {
+        "Ticker": "EL.PA",
+        "Contribution": 0.024013565956756626
+      },
+      {
+        "Ticker": "BN.PA",
+        "Contribution": 0.00940289566597572
+      },
+      {
+        "Ticker": "CS.PA",
+        "Contribution": 0.008992182864109383
+      },
+      {
+        "Ticker": "SAF.PA",
+        "Contribution": 0.007448276436085553
+      },
+      {
+        "Ticker": "SAN.PA",
+        "Contribution": 0.005296683689534107
+      },
+      {
+        "Ticker": "HO.PA",
+        "Contribution": 0.003907053008608162
+      },
+      {
+        "Ticker": "AI.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BNP.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WLN.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TEP.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MC.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DG.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ML.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DSY.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CAP.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CA.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "STLAM.MI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VIE.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VIV.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "OR.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RNO.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RMS.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RI.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PUB.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SU.PA",
+        "Contribution": -0.005093589169471294
+      },
+      {
+        "Ticker": "KER.PA",
+        "Contribution": -0.0122854062002547
+      },
+      {
+        "Ticker": "AIR.PA",
+        "Contribution": -0.019180693531513793
+      },
+      {
+        "Ticker": "URW.PA",
+        "Contribution": -0.021147874562529704
+      },
+      {
+        "Ticker": "TTE.PA",
+        "Contribution": -0.022314721722744155
+      },
+      {
+        "Ticker": "ERF.PA",
+        "Contribution": -0.025019922543834904
+      },
+      {
+        "Ticker": "AC.PA",
+        "Contribution": -0.04440427695792514
+      },
+      {
+        "Ticker": "ALO.PA",
+        "Contribution": -0.07368988285622366
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

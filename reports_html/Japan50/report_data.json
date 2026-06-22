@@ -23,38 +23,236 @@
     "Last Weekly Selection": [
       {
         "Ticker": "6981.T",
-        "Name": "6981.T",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "MURATA MANUFACTURING CO",
+        "Sector": "Technology",
+        "Industry": "Electronic Components"
       },
       {
         "Ticker": "6857.T",
-        "Name": "6857.T",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "ADVANTEST CORP",
+        "Sector": "Technology",
+        "Industry": "Semiconductor Equipment & Materials"
       },
       {
         "Ticker": "8031.T",
-        "Name": "8031.T",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "MITSUI & CO",
+        "Sector": "Industrials",
+        "Industry": "Conglomerates"
       },
       {
         "Ticker": "6954.T",
-        "Name": "6954.T",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "FANUC CORPORATION",
+        "Sector": "Industrials",
+        "Industry": "Specialty Industrial Machinery"
       },
       {
         "Ticker": "9983.T",
-        "Name": "9983.T",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "FAST RETAILING CO LTD",
+        "Sector": "Consumer Cyclical",
+        "Industry": "Apparel Retail"
       }
     ],
-    "Added Tickers": "6954.T - 6954.T<br/>9983.T - 9983.T",
-    "Removed Tickers": "6503.T - 6503.T<br/>8316.T - 8316.T",
+    "Added Tickers": "6954.T - FANUC CORPORATION<br/>9983.T - FAST RETAILING CO LTD",
+    "Removed Tickers": "6503.T - MITSUBISHI ELECTRIC CORP<br/>8316.T - SUMITOMO MITSUI FINANCIAL GROUP",
     "Selection Drivers": "6981.T: trend slope 0.02, stability R2 0.80, score 0.02 and passed correlation filter<br/>6857.T: trend slope 0.02, stability R2 0.87, score 0.02 and passed correlation filter<br/>8031.T: trend slope 0.02, stability R2 0.85, score 0.01 and passed correlation filter<br/>6954.T: trend slope 0.01, stability R2 0.87, score 0.01 and passed correlation filter<br/>9983.T: trend slope 0.01, stability R2 0.93, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "6981.T",
+        "Contribution": 0.2534576502584003
+      },
+      {
+        "Ticker": "6857.T",
+        "Contribution": 0.1447664660846767
+      },
+      {
+        "Ticker": "6503.T",
+        "Contribution": 0.13413313159858417
+      },
+      {
+        "Ticker": "7011.T",
+        "Contribution": 0.13401953286995372
+      },
+      {
+        "Ticker": "8802.T",
+        "Contribution": 0.1170531316670313
+      },
+      {
+        "Ticker": "8058.T",
+        "Contribution": 0.0649372320011061
+      },
+      {
+        "Ticker": "6702.T",
+        "Contribution": 0.04395279835963461
+      },
+      {
+        "Ticker": "8306.T",
+        "Contribution": 0.03747676790854809
+      },
+      {
+        "Ticker": "9020.T",
+        "Contribution": 0.02539469590482602
+      },
+      {
+        "Ticker": "8316.T",
+        "Contribution": 0.017892485920761904
+      },
+      {
+        "Ticker": "4063.T",
+        "Contribution": 0.015708730553058256
+      },
+      {
+        "Ticker": "7832.T",
+        "Contribution": 0.012932377711909693
+      },
+      {
+        "Ticker": "7974.T",
+        "Contribution": 0.009799259856823169
+      },
+      {
+        "Ticker": "4519.T",
+        "Contribution": 0.007098029417533954
+      },
+      {
+        "Ticker": "7751.T",
+        "Contribution": 0.006833904788743642
+      },
+      {
+        "Ticker": "9433.T",
+        "Contribution": 0.0043564498750228615
+      },
+      {
+        "Ticker": "7203.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6178.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "7733.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "8725.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "7269.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "4568.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6367.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6501.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "8035.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6861.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "9432.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "8001.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "4502.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "7267.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6902.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6954.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "8766.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6594.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "8801.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "4661.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "4543.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "4901.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "6273.T",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "2914.T",
+        "Contribution": -0.001896612818007
+      },
+      {
+        "Ticker": "8031.T",
+        "Contribution": -0.003782093584903029
+      },
+      {
+        "Ticker": "3382.T",
+        "Contribution": -0.006954821874996873
+      },
+      {
+        "Ticker": "6758.T",
+        "Contribution": -0.016926433555837762
+      },
+      {
+        "Ticker": "9983.T",
+        "Contribution": -0.019007355823662607
+      },
+      {
+        "Ticker": "6098.T",
+        "Contribution": -0.024194847492569418
+      },
+      {
+        "Ticker": "7741.T",
+        "Contribution": -0.035375920721089096
+      },
+      {
+        "Ticker": "4503.T",
+        "Contribution": -0.04020113759891871
+      },
+      {
+        "Ticker": "6301.T",
+        "Contribution": -0.05410919187476453
+      },
+      {
+        "Ticker": "9984.T",
+        "Contribution": -0.06668394853984894
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

@@ -23,38 +23,240 @@
     "Last Weekly Selection": [
       {
         "Ticker": "CVE.TO",
-        "Name": "CVE.TO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "CENOVUS ENERGY INC.",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
       },
       {
         "Ticker": "TECK-B.TO",
-        "Name": "TECK-B.TO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "TECK RESOURCES LIMITED CL B",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
       },
       {
         "Ticker": "CM.TO",
-        "Name": "CM.TO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "CANADIAN IMPERIAL BANK OF COMME",
+        "Sector": "Financial Services",
+        "Industry": "Banks - Diversified"
       },
       {
         "Ticker": "GWO.TO",
-        "Name": "GWO.TO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "GREAT-WEST LIFECO INC",
+        "Sector": "Financial Services",
+        "Industry": "Insurance - Life"
       },
       {
         "Ticker": "SAP.TO",
-        "Name": "SAP.TO",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "SAPUTO INC.",
+        "Sector": "Consumer Defensive",
+        "Industry": "Packaged Foods"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "CVE.TO: trend slope 0.02, stability R2 0.90, score 0.01 and passed correlation filter<br/>TECK-B.TO: trend slope 0.01, stability R2 0.85, score 0.01 and passed correlation filter<br/>CM.TO: trend slope 0.01, stability R2 0.97, score 0.01 and passed correlation filter<br/>GWO.TO: trend slope 0.01, stability R2 0.88, score 0.01 and passed correlation filter<br/>SAP.TO: trend slope 0.01, stability R2 0.78, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "K.TO",
+        "Contribution": 0.3134414224491004
+      },
+      {
+        "Ticker": "TD.TO",
+        "Contribution": 0.0727158554456154
+      },
+      {
+        "Ticker": "POW.TO",
+        "Contribution": 0.05518475195542728
+      },
+      {
+        "Ticker": "CCO.TO",
+        "Contribution": 0.046097373753716336
+      },
+      {
+        "Ticker": "MG.TO",
+        "Contribution": 0.03967243811711271
+      },
+      {
+        "Ticker": "GWO.TO",
+        "Contribution": 0.022633383186715216
+      },
+      {
+        "Ticker": "MRU.TO",
+        "Contribution": 0.021855540237905247
+      },
+      {
+        "Ticker": "CVE.TO",
+        "Contribution": 0.014194580872526726
+      },
+      {
+        "Ticker": "CM.TO",
+        "Contribution": 0.013939601716282965
+      },
+      {
+        "Ticker": "DOL.TO",
+        "Contribution": 0.012765871420127035
+      },
+      {
+        "Ticker": "SAP.TO",
+        "Contribution": 0.0063761837734099165
+      },
+      {
+        "Ticker": "WN.TO",
+        "Contribution": 0.005961986789291143
+      },
+      {
+        "Ticker": "EMA.TO",
+        "Contribution": 0.00526174423536938
+      },
+      {
+        "Ticker": "SHOP.TO",
+        "Contribution": 0.004416640597091508
+      },
+      {
+        "Ticker": "BAM.TO",
+        "Contribution": 0.0036007356314412585
+      },
+      {
+        "Ticker": "BMO.TO",
+        "Contribution": 0.003196933851450089
+      },
+      {
+        "Ticker": "MFC.TO",
+        "Contribution": 0.0011396292618997548
+      },
+      {
+        "Ticker": "RY.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SLF.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GIB-A.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RCI-B.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WCN.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CSU.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SU.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AEM.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ATD.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CNQ.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TRI.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CNR.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CP.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BNS.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BCE.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FNV.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "IFC.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "OTEX.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PPL.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WPM.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "QSR.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NA.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "T.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FTS.TO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TRP.TO",
+        "Contribution": -0.001352908420311061
+      },
+      {
+        "Ticker": "TECK-B.TO",
+        "Contribution": -0.00494411393987337
+      },
+      {
+        "Ticker": "ENB.TO",
+        "Contribution": -0.008274702451374568
+      },
+      {
+        "Ticker": "NTR.TO",
+        "Contribution": -0.013198138943085093
+      },
+      {
+        "Ticker": "BN.TO",
+        "Contribution": -0.019624206854425348
+      },
+      {
+        "Ticker": "IMO.TO",
+        "Contribution": -0.02288984728134139
+      },
+      {
+        "Ticker": "L.TO",
+        "Contribution": -0.037142037282135346
+      },
+      {
+        "Ticker": "FM.TO",
+        "Contribution": -0.042669253177373655
+      },
+      {
+        "Ticker": "ABX.TO",
+        "Contribution": -0.04844831934345162
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

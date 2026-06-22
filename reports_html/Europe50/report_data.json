@@ -23,38 +23,228 @@
     "Last Weekly Selection": [
       {
         "Ticker": "NOKIA.HE",
-        "Name": "NOKIA.HE",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Nokia Corporation",
+        "Sector": "Technology",
+        "Industry": "Communication Equipment"
       },
       {
         "Ticker": "ASML.AS",
-        "Name": "ASML.AS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "ASML HOLDING",
+        "Sector": "Technology",
+        "Industry": "Semiconductor Equipment & Materials"
       },
       {
         "Ticker": "ENI.MI",
-        "Name": "ENI.MI",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "ENI",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
       },
       {
         "Ticker": "ENGI.PA",
-        "Name": "ENGI.PA",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "ENGIE",
+        "Sector": "Utilities",
+        "Industry": "Utilities - Diversified"
       },
       {
         "Ticker": "IFX.DE",
-        "Name": "IFX.DE",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "INFINEON TECHNOLOGIES AG      N",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "NOKIA.HE: trend slope 0.02, stability R2 0.87, score 0.02 and passed correlation filter<br/>ASML.AS: trend slope 0.02, stability R2 0.93, score 0.02 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.89, score 0.01 and passed correlation filter<br/>ENGI.PA: trend slope 0.01, stability R2 0.88, score 0.01 and passed correlation filter<br/>IFX.DE: trend slope 0.01, stability R2 0.63, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "NOKIA.HE",
+        "Contribution": 0.12357107817964172
+      },
+      {
+        "Ticker": "ASML.AS",
+        "Contribution": 0.10366290026164876
+      },
+      {
+        "Ticker": "ENGI.PA",
+        "Contribution": 0.06565720193034207
+      },
+      {
+        "Ticker": "ENI.MI",
+        "Contribution": 0.06419675624287431
+      },
+      {
+        "Ticker": "BAYN.DE",
+        "Contribution": 0.0562001577534105
+      },
+      {
+        "Ticker": "UCG.MI",
+        "Contribution": 0.03528514469609733
+      },
+      {
+        "Ticker": "BBVA.MC",
+        "Contribution": 0.023681349586120636
+      },
+      {
+        "Ticker": "INGA.AS",
+        "Contribution": 0.02069221279056428
+      },
+      {
+        "Ticker": "ISP.MI",
+        "Contribution": 0.015511922266965211
+      },
+      {
+        "Ticker": "DB1.DE",
+        "Contribution": 0.011040487199906038
+      },
+      {
+        "Ticker": "IBE.MC",
+        "Contribution": 0.010232791711189019
+      },
+      {
+        "Ticker": "AIR.PA",
+        "Contribution": 0.009740371554780596
+      },
+      {
+        "Ticker": "SAP.DE",
+        "Contribution": 0.007563161788381071
+      },
+      {
+        "Ticker": "IFX.DE",
+        "Contribution": 0.0070078981081922375
+      },
+      {
+        "Ticker": "DTE.DE",
+        "Contribution": 0.0068282846684025005
+      },
+      {
+        "Ticker": "AD.AS",
+        "Contribution": 0.004163882851901598
+      },
+      {
+        "Ticker": "ALV.DE",
+        "Contribution": 0.0022546061293193466
+      },
+      {
+        "Ticker": "BAS.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CS.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AI.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ADYEN.AS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ABI.BR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BNP.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DG.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NOVO-B.CO",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NDA-FI.HE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MC.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PHIA.AS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RMS.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BMW.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "LIN.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TTE.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VOW3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SHEL.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SU.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SAN.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SIE.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "STLAM.MI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RI.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VNA.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VIV.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KER.PA",
+        "Contribution": -0.004058591006326127
+      },
+      {
+        "Ticker": "ENEL.MI",
+        "Contribution": -0.00457939108031769
+      },
+      {
+        "Ticker": "MUV2.DE",
+        "Contribution": -0.014568225143906075
+      },
+      {
+        "Ticker": "OR.PA",
+        "Contribution": -0.01489620835811852
+      },
+      {
+        "Ticker": "FLTR.L",
+        "Contribution": -0.03791453159761107
+      },
+      {
+        "Ticker": "PRX.AS",
+        "Contribution": -0.038935065482836186
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,
