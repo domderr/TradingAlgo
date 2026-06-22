@@ -33,6 +33,20 @@ Option B: set it before `access-analytics.js` loads on a page:
 
 If no endpoint is configured, events are queued locally in `localStorage` under `ta_access_analytics_queue`.
 
+## Exclude your browser
+
+Open the site once with `?ta_no_track=1` to stop analytics from the current browser:
+
+```text
+https://tradingalgo.it/?ta_no_track=1
+```
+
+Open it once with `?ta_track=1` to enable analytics again for the current browser:
+
+```text
+https://tradingalgo.it/?ta_track=1
+```
+
 ## Google Sheets receiver
 
 Use `tools/access_analytics_google_apps_script.js` as a Google Apps Script Web App receiver.
