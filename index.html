@@ -318,6 +318,106 @@
       transition: opacity 180ms ease, transform 180ms ease;
     }
 
+    .home-visual-link {
+      display: block;
+      max-width: 920px;
+      margin: 32px auto;
+      border-radius: 14px;
+      text-decoration: none;
+    }
+
+    .home-visual-link img {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .request-form {
+      max-width: 840px;
+      margin: 0 auto 32px;
+      padding: 24px;
+      border: 1px solid #1d2b3f;
+      border-radius: 12px;
+      background: #0d1a2b;
+      text-align: left;
+    }
+
+    .request-form h2 {
+      margin: 0 0 18px;
+      color: #ffffff;
+      font-size: 26px;
+      text-align: center;
+    }
+
+    .request-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label,
+    .markets-label {
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .form-field input,
+    .form-field select {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid #24415f;
+      border-radius: 8px;
+      background: #07111f;
+      color: #ffffff;
+      font: inherit;
+    }
+
+    .markets-fieldset {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .markets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 9px 14px;
+    }
+
+    .market-option {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .market-option input {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--green);
+    }
+
+    .request-form .btn {
+      border: 0;
+      cursor: pointer;
+    }
+
     .country-matrix-overlay {
       position: absolute;
       inset: 0;
@@ -686,6 +786,10 @@
       .scatter-chart {
         min-height: 420px;
       }
+
+      .request-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -718,14 +822,9 @@
       15 Markets. 600+ Stocks. 75 Selected Opportunities. One Systematic and Validated Quantitative Framework.
     </p>
 
-    <div class="country-matrix-visual" id="country-matrix-visual">
-      <button class="country-matrix-toggle" type="button" id="country-matrix-toggle" aria-controls="country-matrix" aria-expanded="false">
-        <img src="assets/Countries.png" alt="Countries coverage">
-      </button>
-      <div class="country-matrix-overlay" id="country-matrix" aria-label="Country Matrix calculated from Trend and Stability">
-        <div class="matrix-market"><strong>Loading Country Matrix...</strong></div>
-      </div>
-    </div>
+    <a class="home-visual-link" href="#mosaic" aria-label="Go to What is TradingAlgo Mosaic">
+      <img src="assets/Home.png" alt="TradingAlgo Mosaic market intelligence framework">
+    </a>
 
     <div style="max-width:920px;margin:0 auto 32px;">
       <p style="margin:0 0 16px;color:var(--green);font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;">Covered Markets</p>
@@ -759,9 +858,62 @@
     </div>
 
     <div class="buttons">
-      <a href="reports/Report_USA100.pdf" target="_blank" class="btn btn-primary">Download Free Sample Report</a>
-      <a href="reserved-area.html" class="btn btn-secondary">Request Access</a>
+      <a href="#request-info" class="btn btn-primary">Request Access</a>
     </div>
+  </section>
+
+  <section id="request-info" class="dark-band">
+    <form class="request-form" id="request-info-form">
+      <h2>Request Information</h2>
+      <div class="request-grid">
+        <div class="form-field">
+          <label for="request-profile">Chi sono</label>
+          <select id="request-profile" name="profile" required>
+            <option value="">Select profile</option>
+            <option>Studente</option>
+            <option>Investitore privato</option>
+            <option>Professionista finanziario</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="request-country">Nazione di Residenza</label>
+          <input id="request-country" name="country" type="text" autocomplete="country-name" required>
+        </div>
+
+        <div class="form-field full">
+          <fieldset class="markets-fieldset">
+            <legend class="markets-label">Mercati seguiti</legend>
+            <div class="markets-grid">
+              <label class="market-option"><input type="checkbox" name="markets" value="USA100">USA100</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Europe50">Europe50</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Italy30">Italy30</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="India30">India30</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="UK30">UK30</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="France40">France40</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Germany30">Germany30</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Australia50">Australia50</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Japan50">Japan50</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="China50">China50</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Canada50">Canada50</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Argentina30">Argentina30</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Mexico30">Mexico30</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="Brazil50">Brazil50</label>
+              <label class="market-option"><input type="checkbox" name="markets" value="South Korea30">South Korea30</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-field full">
+          <label for="request-other-market">Altro, specificare</label>
+          <input id="request-other-market" name="other_market" type="text">
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="btn btn-primary" type="submit">Send Request</button>
+      </div>
+    </form>
   </section>
 
   <section id="mosaic">
@@ -905,8 +1057,7 @@
     </p>
 
     <div class="buttons">
-      <a href="reserved-area.html" class="btn btn-primary">Go to Reserved Area</a>
-      <a href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20Access" class="btn btn-secondary">Request Information</a>
+      <a href="#request-info" class="btn btn-primary">Request Access</a>
     </div>
 
     <p class="disclaimer">Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
@@ -1107,6 +1258,33 @@
     }
 
     setupCountryMatrixToggle();
+
+    var requestInfoForm = document.getElementById("request-info-form");
+    if (requestInfoForm) {
+      requestInfoForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var profile = document.getElementById("request-profile").value;
+        var country = document.getElementById("request-country").value;
+        var markets = Array.prototype.slice.call(document.querySelectorAll('input[name="markets"]:checked'))
+          .map(function (input) { return input.value; });
+        var otherMarket = document.getElementById("request-other-market").value.trim();
+
+        if (otherMarket) markets.push("Altro: " + otherMarket);
+
+        var body = [
+          "Richiesta informazioni TradingAlgo Mosaic",
+          "",
+          "Chi sono: " + profile,
+          "Nazione di Residenza: " + country,
+          "Mercati seguiti: " + (markets.length ? markets.join(", ") : "-")
+        ].join("\n");
+
+        window.location.href = "mailto:domderrico@gmail.com?subject=" +
+          encodeURIComponent("TradingAlgo Mosaic - Request Information") +
+          "&body=" + encodeURIComponent(body);
+      });
+    }
 
     var hamburger = document.getElementById('hamburger');
     var mainNav = document.getElementById('main-nav');
