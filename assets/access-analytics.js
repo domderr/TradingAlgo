@@ -3,6 +3,7 @@
 
   var STORAGE_KEY = "ta_access_analytics_queue";
   var SESSION_KEY = "ta_access_session_id";
+  var OPT_OUT_KEY = "ta_access_analytics_opt_out";
   var ACCESS_KEY = "ta_reserved_authorized_markets";
   var DEFAULT_ENDPOINT = "https://script.google.com/macros/s/AKfycbyxKl95rd5Zimaa1pSozp8EtLBG88pv_zHvbhj8a_u4c7b2yhCCLb-mY03BfRDbctw/exec";
 
@@ -81,7 +82,35 @@
     return window.TA_ANALYTICS_ENDPOINT || DEFAULT_ENDPOINT;
   }
 
+  function updateOptOutFromUrl() {
+    var params;
+    try {
+      params = new URLSearchParams(window.location.search || "");
+    } catch (error) {
+      return;
+    }
+
+    try {
+      if (params.get("ta_no_track") === "1") {
+        localStorage.setItem(OPT_OUT_KEY, "1");
+        writeQueue([]);
+      } else if (params.get("ta_track") === "1") {
+        localStorage.removeItem(OPT_OUT_KEY);
+      }
+    } catch (error) {}
+  }
+
+  function isOptedOut() {
+    try {
+      return localStorage.getItem(OPT_OUT_KEY) === "1";
+    } catch (error) {
+      return false;
+    }
+  }
+
   function send(payload) {
+    if (isOptedOut()) return;
+
     var url = endpoint();
     if (!url) {
       var queue = readQueue();
@@ -131,6 +160,9 @@
   }
 
   function setupAutomaticTracking() {
+    updateOptOutFromUrl();
+    if (isOptedOut()) return;
+
     document.addEventListener("click", function (event) {
       var anchor = event.target && event.target.closest ? event.target.closest("a[href]") : null;
       if (!anchor) return;
