@@ -139,6 +139,7 @@ body {
   color: #0b5fa5;
   font-weight: 800;
   text-decoration: none;
+  white-space: nowrap;
 }
 .ticker-link:hover {
   text-decoration: underline;
@@ -510,19 +511,20 @@ p { line-height: 1.55; }
   }
   .mini-table th:nth-child(1),
   .mini-table td:nth-child(1) {
-    width: 18%;
+    width: 24%;
+    white-space: nowrap;
   }
   .mini-table th:nth-child(2),
   .mini-table td:nth-child(2) {
-    width: 28%;
+    width: 26%;
   }
   .mini-table th:nth-child(3),
   .mini-table td:nth-child(3) {
-    width: 25%;
+    width: 24%;
   }
   .mini-table th:nth-child(4),
   .mini-table td:nth-child(4) {
-    width: 29%;
+    width: 26%;
   }
   .performance-table th,
   .performance-table td {
