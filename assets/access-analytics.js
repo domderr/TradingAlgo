@@ -143,8 +143,19 @@
       });
     }, true);
 
-    track("page_view", {});
-    flushQueue();
+    runWhenIdle(function () {
+      track("page_view", {});
+      flushQueue();
+    });
+  }
+
+  function runWhenIdle(callback) {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(callback, { timeout: 2000 });
+      return;
+    }
+
+    window.setTimeout(callback, 250);
   }
 
   window.TAAnalytics = {
