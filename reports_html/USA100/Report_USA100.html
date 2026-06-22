@@ -12,6 +12,7 @@
       <a href="../../reserved-area.html">Back to Reserved Area</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
+      <span class="subscriber-id" data-subscriber-id>ID: User</span>
     </nav>
 
     <section class="report-dashboard">
@@ -74,5 +75,15 @@
       </section>
     </section>
   </main>
+  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
+  </script>
 </body>
 </html>

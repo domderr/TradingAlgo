@@ -10,6 +10,7 @@
   <main class="report-shell">
     <nav class="top-actions">
       <a href="Report_South_Africa30.html">Back to Report</a>
+      <span class="subscriber-id" data-subscriber-id>ID: User</span>
     </nav>
     <section class="report-page gallery-page">
       <p class="eyebrow">View All Benchmark Assets</p>
@@ -51,6 +52,16 @@
     if (closeButton) closeButton.addEventListener("click", closeModal);
     if (modal) modal.addEventListener("click", function (event) { if (event.target === modal) closeModal(); });
     document.addEventListener("keydown", function (event) { if (event.key === "Escape") closeModal(); });
+  </script>
+  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
   </script>
 </body>
 </html>
