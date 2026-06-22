@@ -624,3 +624,13 @@ p { line-height: 1.55; }
     min-height: 210mm;
   }
 }
+.subscriber-id {
+  margin-left: auto;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(66,211,146,0.28);
+  background: rgba(66,211,146,0.12);
+  color: #dffbea;
+  font-size: 12px;
+  font-weight: 800;
+}

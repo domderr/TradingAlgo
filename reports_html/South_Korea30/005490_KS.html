@@ -11,6 +11,7 @@
     <nav class="top-actions">
       <a href="Report_South_Korea30.html">Back to Report</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
+      <span class="subscriber-id" data-subscriber-id>ID: User</span>
     </nav>
     <section class="report-page asset-page">
       <p class="eyebrow">South Korea30 Asset Detail</p>
@@ -20,5 +21,15 @@
       </picture>
     </section>
   </main>
+  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
+  </script>
 </body>
 </html>

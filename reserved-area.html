@@ -775,7 +775,7 @@
 
       if (accessPanel) accessPanel.hidden = true;
       if (userBar) {
-        userBar.innerHTML = "<strong>" + name + "</strong><span>enabled markets: " + marketsLabel(authorizedMarkets) + "</span>";
+        userBar.innerHTML = "<strong>ID: " + name + "</strong><span>enabled markets: " + marketsLabel(authorizedMarkets) + "</span>";
         userBar.classList.add("is-visible");
       }
       document.getElementById("restricted-content").hidden = false;
