@@ -264,7 +264,7 @@ def report_date_label():
     return last_available_friday().strftime("%d %b %Y")
 
 
-REPORT_CSS_VERSION = "20260622"
+REPORT_CSS_VERSION = "20260622b"
 
 
 def read_tickers(tickers_xlsx, market):
@@ -625,8 +625,9 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 .monthly-performance-table {
-  width: 100%;
-  table-layout: fixed;
+  width: max-content;
+  min-width: 1040px;
+  table-layout: auto;
   font-size: 13px;
 }
 .monthly-performance-table th,
@@ -643,6 +644,10 @@ body {
   z-index: 1;
   background: #fff;
   text-align: left;
+}
+.monthly-performance-table th:nth-last-child(-n+3),
+.monthly-performance-table td:nth-last-child(-n+3) {
+  min-width: 96px;
 }
 .monthly-performance-table .negative-value { color: #b91c1c; font-weight: 800; }
 .monthly-performance-table .positive-value { color: #166534; font-weight: 800; }
@@ -928,9 +933,10 @@ p { line-height: 1.55; }
   text-transform: uppercase;
 }
 table.monthly-performance-table {
-  width: 100%;
-  max-width: 100%;
-  table-layout: fixed;
+  width: max-content;
+  min-width: 1040px;
+  max-width: none;
+  table-layout: auto;
   font-size: 13px;
 }
 table.monthly-performance-table th,
@@ -943,6 +949,10 @@ table.monthly-performance-table td {
 table.monthly-performance-table th:first-child,
 table.monthly-performance-table td:first-child {
   text-align: left;
+}
+table.monthly-performance-table th:nth-last-child(-n+3),
+table.monthly-performance-table td:nth-last-child(-n+3) {
+  min-width: 96px;
 }
 .status-badge {
   display: inline-block;
