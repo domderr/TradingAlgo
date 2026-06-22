@@ -701,6 +701,7 @@
     </div>
   </footer>
 
+  <script src="assets/access-analytics.js"></script>
   <script>
     var MARKET_META = [
       { key: "DJ30",         flag: "us", name: "DJ30",         pdf: "reports/Report_DJ30.pdf", html: "reports_html/DJ30/Report_DJ30.html" },
@@ -795,6 +796,9 @@
       authorizedMarkets = normalizeMarketList(match.markets);
       if (!authorizedMarkets.length) {
         setAccessMessage("This password is valid, but no markets are enabled for this subscription.", "");
+        if (window.TAAnalytics) {
+          window.TAAnalytics.track("access_denied", { reason: "no_markets" });
+        }
         return;
       }
 
@@ -802,6 +806,12 @@
         first_name: match.first_name || "",
         markets: authorizedMarkets
       }));
+      if (window.TAAnalytics) {
+        window.TAAnalytics.track("access_granted", {
+          subscriber_id: match.first_name || "",
+          markets: authorizedMarkets
+        });
+      }
       setAccessMessage("", welcomeMessage(match, "Welcome back"));
       showAuthorizedArea(match);
     }
@@ -819,6 +829,12 @@
 
       if (!authorizedMarkets.length) return false;
 
+      if (window.TAAnalytics) {
+        window.TAAnalytics.track("access_restored", {
+          subscriber_id: firstName,
+          markets: authorizedMarkets
+        });
+      }
       setAccessMessage("", welcomeMessage(match, "Welcome back"));
       showAuthorizedArea(match);
       return true;
@@ -855,6 +871,9 @@
           if (!match) {
             document.getElementById("restricted-content").hidden = true;
             setAccessMessage("Invalid password.", "");
+            if (window.TAAnalytics) {
+              window.TAAnalytics.track("access_denied", { reason: "invalid_password" });
+            }
             return;
           }
 

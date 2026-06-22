@@ -273,6 +273,7 @@ def write_asset_page(out_dir, ticker, image_name, market, mobile_image_name=""):
       </picture>
     </section>
   </main>
+  <script src="../../assets/access-analytics.js"></script>
 </body>
 </html>
 """
