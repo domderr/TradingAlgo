@@ -93,7 +93,7 @@ def compounded_return(values):
 
 
 def monthly_year_performance_html(row):
-    strategy_returns = row.get("Hedged_Strategy_Returns") or row.get("Strategy_Returns") or {}
+    strategy_returns = row.get("Strategy_Returns") or {}
     benchmark_returns = row.get("Benchmark_Returns") or {}
     if not isinstance(strategy_returns, dict) or not strategy_returns:
         return '<p class="data-note">Monthly performance data is not available for this report.</p>'
