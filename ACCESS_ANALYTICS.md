@@ -28,7 +28,7 @@ Option B: set it before `access-analytics.js` loads on a page:
 <script>
   window.TA_ANALYTICS_ENDPOINT = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec";
 </script>
-<script src="assets/access-analytics.js"></script>
+<script defer src="assets/access-analytics.js"></script>
 ```
 
 If no endpoint is configured, events are queued locally in `localStorage` under `ta_access_analytics_queue`.

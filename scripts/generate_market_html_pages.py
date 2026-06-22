@@ -215,7 +215,7 @@ def render_page(market, display_name, index_row, pos_row):
       </div>
     </section>
   </main>
-  <script src="../../assets/access-analytics.js"></script>
+  <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>
 """
