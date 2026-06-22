@@ -427,6 +427,12 @@ body {
 .ticker-link:hover {
   text-decoration: underline;
 }
+.mini-table th:first-child,
+.mini-table td:first-child {
+  min-width: 72px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
 .pdf-summary-page {
   padding: 34px 44px;
   font-size: 14px;

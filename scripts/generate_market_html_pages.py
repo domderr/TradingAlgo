@@ -151,6 +151,7 @@ def render_page(market, display_name, index_row, pos_row):
     table {{ width: 100%; border-collapse: collapse; font-size: 14px; }}
     th, td {{ padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; vertical-align: top; }}
     th {{ color: var(--muted); font-weight: 600; }}
+    th:first-child, td:first-child {{ min-width: 72px; white-space: nowrap; overflow-wrap: normal; }}
     .changes {{ color: var(--muted); line-height: 1.5; }}
     .pdf-frame {{
       height: calc(100vh - 255px);
