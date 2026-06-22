@@ -443,6 +443,23 @@ p { line-height: 1.55; }
   letter-spacing: 0.7px;
   text-transform: uppercase;
 }
+table.monthly-performance-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  font-size: 13px;
+}
+table.monthly-performance-table th,
+table.monthly-performance-table td {
+  padding: 9px 4px;
+  text-align: right;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+table.monthly-performance-table th:first-child,
+table.monthly-performance-table td:first-child {
+  text-align: left;
+}
 .status-badge {
   display: inline-block;
   padding: 5px 8px;
