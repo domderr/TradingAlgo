@@ -333,6 +333,415 @@
       box-shadow: var(--shadow);
     }
 
+    .hero {
+      text-align: left;
+    }
+
+    .hero-inner,
+    .editorial-section,
+    .process-section,
+    .output-section,
+    .validation-section {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+      gap: 54px;
+      align-items: center;
+    }
+
+    .hero-copy h1,
+    .hero-copy h2,
+    .hero-copy p {
+      max-width: 620px;
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    .hero-copy h1 {
+      letter-spacing: 0;
+    }
+
+    .hero-copy .buttons {
+      justify-content: flex-start;
+    }
+
+    .hero-kicker,
+    .section-kicker {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .hero-panel {
+      padding: 18px;
+      border: 1px solid rgba(125,211,252,0.22);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-panel .home-visual-link {
+      max-width: none;
+      margin: 0;
+    }
+
+    .hero-panel img {
+      border-radius: 6px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .hero-metric {
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      background: rgba(5,11,20,0.72);
+    }
+
+    .hero-metric strong {
+      display: block;
+      color: #ffffff;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .hero-metric span {
+      display: block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .editorial-section {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(480px, 1.2fr);
+      gap: 44px;
+      align-items: center;
+    }
+
+    .editorial-copy h2,
+    .output-copy h2,
+    .validation-copy h2,
+    .process-section h2 {
+      margin: 0 0 18px;
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.08;
+    }
+
+    .editorial-copy p,
+    .output-copy p,
+    .validation-copy p {
+      margin: 0 0 20px;
+      color: var(--muted-2);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .report-preview {
+      overflow: hidden;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #132235;
+      box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+    }
+
+    .report-preview-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      padding: 20px 22px;
+      border-bottom: 1px solid #dbe3ef;
+      background: #f5f8fc;
+    }
+
+    .report-preview-header h3 {
+      margin: 0;
+      color: #16385d;
+      font-size: 24px;
+    }
+
+    .report-preview-date {
+      color: #5f7087;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .market-badge,
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 6px 10px;
+      border-radius: 8px;
+      background: #12385f;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .report-preview-body {
+      padding: 22px;
+    }
+
+    .report-preview h4 {
+      margin: 0 0 12px;
+      color: #16385d;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .preview-table th,
+    .preview-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid #e5edf6;
+      text-align: left;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+
+    .preview-table th {
+      color: #315f8d;
+      font-size: 11px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+
+    .preview-table td:nth-child(2),
+    .preview-table td:nth-child(4) {
+      white-space: normal;
+    }
+
+    .ticker-sample {
+      color: #0b5fa5;
+      font-weight: 900;
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .status-chip {
+      background: #eaf7f0;
+      color: #0f6a3b;
+    }
+
+    .status-chip.blue {
+      background: #e8f3fb;
+      color: #15537d;
+    }
+
+    .status-chip.gold {
+      background: #fff4d8;
+      color: #8a6100;
+    }
+
+    .process-section {
+      text-align: center;
+    }
+
+    .process-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .process-step {
+      padding: 22px 18px;
+      border: 1px solid rgba(125,211,252,0.18);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      text-align: left;
+    }
+
+    .process-step span {
+      display: inline-flex;
+      width: 32px;
+      height: 32px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #04110a;
+      font-weight: 900;
+    }
+
+    .process-step h3 {
+      margin: 0 0 8px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .light-band {
+      background: #f4f7fb;
+      color: #132235;
+    }
+
+    .light-band .section-kicker {
+      color: #0f8a4c;
+    }
+
+    .light-band h2 {
+      color: #102640;
+    }
+
+    .light-band p {
+      color: #52667d;
+    }
+
+    .output-section,
+    .validation-section {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(420px, 1.12fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .deliverables-list {
+      display: grid;
+      gap: 12px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .deliverables-list li {
+      padding: 14px 16px;
+      border-left: 4px solid #22c55e;
+      border-radius: 6px;
+      background: #ffffff;
+      box-shadow: 0 10px 28px rgba(16,38,64,0.08);
+      color: #263d55;
+      font-weight: 800;
+    }
+
+    .output-panel {
+      padding: 22px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 18px 50px rgba(16,38,64,0.12);
+    }
+
+    .output-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .output-item {
+      padding: 18px;
+      border: 1px solid #e0e8f2;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .output-item strong {
+      display: block;
+      color: #14375c;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .output-item span {
+      color: #5f7087;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .equity-preview {
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .equity-frame {
+      height: 220px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 8px;
+      background:
+        linear-gradient(180deg, transparent 24%, rgba(255,255,255,0.08) 25%, transparent 26%, transparent 49%, rgba(255,255,255,0.08) 50%, transparent 51%, transparent 74%, rgba(255,255,255,0.08) 75%, transparent 76%),
+        linear-gradient(90deg, transparent 24%, rgba(255,255,255,0.07) 25%, transparent 26%, transparent 49%, rgba(255,255,255,0.07) 50%, transparent 51%, transparent 74%, rgba(255,255,255,0.07) 75%, transparent 76%),
+        #08182a;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .equity-line {
+      position: absolute;
+      left: 26px;
+      right: 26px;
+      top: 40px;
+      bottom: 34px;
+      border-bottom: 4px solid #22c55e;
+      border-right: 4px solid #22c55e;
+      transform: skew(-18deg);
+    }
+
+    .equity-line.benchmark {
+      top: 72px;
+      border-color: #f5c542;
+      opacity: 0.78;
+    }
+
+    .equity-legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .legend-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin-right: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .legend-dot.gold {
+      background: #f5c542;
+    }
+
     .request-form {
       max-width: 840px;
       margin: 0 auto 32px;
@@ -753,6 +1162,37 @@
         padding-top: 72px;
       }
 
+      .hero-inner,
+      .editorial-section,
+      .output-section,
+      .validation-section {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        padding: 12px;
+      }
+
+      .hero-metrics,
+      .process-flow,
+      .output-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .editorial-section,
+      .output-section,
+      .validation-section {
+        gap: 28px;
+      }
+
+      .report-preview {
+        overflow-x: auto;
+      }
+
+      .preview-table {
+        min-width: 620px;
+      }
+
       .hero p {
         font-size: 18px;
       }
@@ -833,49 +1273,44 @@
   </header>
 
   <section class="hero">
-    <h1>TradingAlgo Mosaic</h1>
-    <h2>A Weekly Market Intelligence Framework</h2>
-    <p>
-      15 Markets. 600+ Stocks. 75 Selected Opportunities. One Systematic and Validated Quantitative Framework.
-    </p>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">TradingAlgo Mosaic</p>
+        <h1>TradingAlgo Mosaic</h1>
+        <h2>A Weekly Market Intelligence Framework</h2>
+        <p>
+          15 Markets. 600+ Stocks. 75 Selected Opportunities. One Systematic and Validated Quantitative Framework.
+        </p>
 
-    <a class="home-visual-link" href="#mosaic" aria-label="Go to What is TradingAlgo Mosaic">
-      <img src="assets/Home.png" alt="TradingAlgo Mosaic market intelligence framework">
-    </a>
-
-    <div style="max-width:920px;margin:0 auto 32px;">
-      <p style="margin:0 0 16px;color:var(--green);font-size:13px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;">Covered Markets</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;">
-        <div style="padding:20px;border:1px solid #1d2b3f;border-radius:14px;background:#0d1a2b;">
-          <strong style="display:block;font-size:30px;line-height:1;color:#fff;">15</strong>
-          <span style="display:block;margin-top:8px;color:var(--muted);font-weight:700;">Markets</span>
-        </div>
-        <div style="padding:20px;border:1px solid #1d2b3f;border-radius:14px;background:#0d1a2b;">
-          <strong style="display:block;font-size:30px;line-height:1;color:#fff;">600+</strong>
-          <span style="display:block;margin-top:8px;color:var(--muted);font-weight:700;">Stocks Monitored Weekly</span>
-        </div>
-        <div style="padding:20px;border:1px solid #1d2b3f;border-radius:14px;background:#0d1a2b;">
-          <strong style="display:block;font-size:30px;line-height:1;color:#fff;">75</strong>
-          <span style="display:block;margin-top:8px;color:var(--muted);font-weight:700;">Selected Opportunities Every Week</span>
-        </div>
-        <div style="padding:20px;border:1px solid #1d2b3f;border-radius:14px;background:#0d1a2b;">
-          <strong style="display:block;font-size:30px;line-height:1;color:#fff;">1</strong>
-          <span style="display:block;margin-top:8px;color:var(--muted);font-weight:700;">Quantitative Framework</span>
+        <div class="buttons">
+          <a href="#request-info" class="btn btn-primary">Request Access</a>
         </div>
       </div>
-    </div>
 
-    <div style="max-width:720px;margin:0 auto 32px;padding:20px 24px;border:1px solid #1d2b3f;border-radius:12px;background:#0d1a2b;">
-      <p style="margin:0 0 10px;font-weight:700;font-size:15px;">Disclaimer</p>
-      <p style="margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.65;">TradingAlgo Mosaic is a quantitative research service intended solely for educational and informational purposes.</p>
-      <p style="margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.65;">The information, reports, rankings, and market analyses provided through TradingAlgo Mosaic do not constitute investment advice, portfolio management, a solicitation to buy or sell securities, or a recommendation to engage in any specific investment strategy.</p>
-      <p style="margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.65;">Past performance is not indicative of future results. All investments involve risk, including the possible loss of principal. Financial markets are inherently uncertain, and no representation is made that any strategy, model, ranking, or security selection will achieve profits or avoid losses.</p>
-      <p style="margin:0 0 10px;color:var(--muted);font-size:13px;line-height:1.65;">Subscribers are solely responsible for their own investment decisions and should consult qualified financial, legal, and tax professionals before making any investment.</p>
-      <p style="margin:0;color:var(--muted);font-size:13px;line-height:1.65;">TradingAlgo Mosaic is designed for research purposes and should be used as one component of a broader investment decision-making process.</p>
-    </div>
+      <div class="hero-panel">
+        <a class="home-visual-link" href="#mosaic" aria-label="Go to What is TradingAlgo Mosaic">
+          <img src="assets/Home.png" alt="TradingAlgo Mosaic market intelligence framework">
+        </a>
 
-    <div class="buttons">
-      <a href="#request-info" class="btn btn-primary">Request Access</a>
+        <div class="hero-metrics" aria-label="TradingAlgo Mosaic coverage">
+          <div class="hero-metric">
+            <strong>15</strong>
+            <span>Markets</span>
+          </div>
+          <div class="hero-metric">
+            <strong>600+</strong>
+            <span>Stocks monitored</span>
+          </div>
+          <div class="hero-metric">
+            <strong>75</strong>
+            <span>Weekly selections</span>
+          </div>
+          <div class="hero-metric">
+            <strong>1</strong>
+            <span>Systematic framework</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -952,109 +1387,140 @@
   </section>
 
   <section id="mosaic">
-    <h2 class="section-title">What is TradingAlgo Mosaic?</h2>
-    <p class="section-subtitle">
-      TradingAlgo Mosaic is a professional research service designed to transform
-      hundreds of market signals into a small number of actionable investment ideas.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Market Selection</h3>
+    <div class="editorial-section">
+      <div class="editorial-copy">
+        <p class="section-kicker">What is TradingAlgo Mosaic?</p>
+        <h2>From market complexity to weekly selection.</h2>
         <p>
-          Each market is analyzed through quantitative indicators designed to detect
-          trend, stability and portfolio contribution.
+          TradingAlgo Mosaic is a professional research service designed to transform broad market universes into compact weekly model portfolios.
+        </p>
+        <p>
+          Each market is reviewed through a systematic framework focused on trend, stability, portfolio contribution and weekly monitoring.
         </p>
       </div>
 
-      <div class="card">
-        <h3>5 Selected Stocks</h3>
-        <p>
-          Every weekly report highlights the five stocks that best summarize the
-          current structure of the market.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Model Portfolio</h3>
-        <p>
-          The research is translated into a compact model portfolio with weekly
-          updates and historical tracking.
-        </p>
-      </div>
-
-      <a href="validation.html" class="card" style="text-decoration:none;display:block;">
-        <h3>Portfolio Validation</h3>
-        <p>
-          Every strategy has been back-tested and validated since 2024. View the equity lines for all 12 covered markets.
-        </p>
-        <span style="color:var(--blue);font-weight:700;font-size:14px;">View Results &rarr;</span>
-      </a>
+      <article class="report-preview" aria-label="DJ30 weekly report preview">
+        <div class="report-preview-header">
+          <div>
+            <span class="report-preview-date">Weekly report example</span>
+            <h3>DJ30 Weekly Report</h3>
+          </div>
+          <span class="market-badge">DJ30</span>
+        </div>
+        <div class="report-preview-body">
+          <h4>Current Portfolio</h4>
+          <table class="preview-table">
+            <thead>
+              <tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="ticker-sample">AAPL</td><td>Apple Inc.</td><td>Technology</td><td>Consumer Electronics</td></tr>
+              <tr><td class="ticker-sample">MSFT</td><td>Microsoft Corp.</td><td>Technology</td><td>Software Infrastructure</td></tr>
+              <tr><td class="ticker-sample">JPM</td><td>JPMorgan Chase</td><td>Financial Services</td><td>Banks Diversified</td></tr>
+              <tr><td class="ticker-sample">CAT</td><td>Caterpillar Inc.</td><td>Industrials</td><td>Farm & Heavy Construction</td></tr>
+              <tr><td class="ticker-sample">V</td><td>Visa Inc.</td><td>Financial Services</td><td>Credit Services</td></tr>
+            </tbody>
+          </table>
+          <div class="status-row">
+            <span class="status-chip">Trend: Positive</span>
+            <span class="status-chip blue">Stability: High</span>
+            <span class="status-chip gold">Contribution: Balanced</span>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
   <section class="dark-band">
-    <div class="quote">
-      &ldquo;Instead of monitoring hundreds of stocks, focus on the few that best represent the market.&rdquo;
-    </div>
-  </section>
-
-
-  <section>
-    <h2 class="section-title">Weekly Deliverables</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Global Market Matrix</h3>
-        <p>Visual overview of market status across the covered countries.</p>
-      </div>
-
-      <div class="card">
-        <h3>Country Reports</h3>
-        <p>Dedicated weekly reports for each available market universe.</p>
-      </div>
-
-      <div class="card">
-        <h3>Model Portfolio</h3>
-        <p>Five selected stocks based on Trend, Stability and Portfolio Contribution.</p>
-      </div>
-
-      <div class="card">
-        <h3>Weekly Changes</h3>
-        <p>Portfolio updates, additions, removals and changes from the previous report.</p>
-      </div>
-
-      <div class="card">
-        <h3>Historical Track Record</h3>
-        <p>Performance context, equity curves and model history for validation.</p>
+    <div class="process-section">
+      <p class="section-kicker">A systematic weekly process</p>
+      <h2>One disciplined workflow for every covered market.</h2>
+      <div class="process-flow">
+        <div class="process-step">
+          <span>1</span>
+          <h3>Universe</h3>
+          <p>Start from a defined market universe and comparable stock data.</p>
+        </div>
+        <div class="process-step">
+          <span>2</span>
+          <h3>Ranking</h3>
+          <p>Score trend quality, stability and portfolio contribution.</p>
+        </div>
+        <div class="process-step">
+          <span>3</span>
+          <h3>Selection</h3>
+          <p>Condense the market into five selected stocks for weekly review.</p>
+        </div>
+        <div class="process-step">
+          <span>4</span>
+          <h3>Monitoring</h3>
+          <p>Track changes, benchmark context and portfolio history over time.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="dark-band how">
-    <h2 class="section-title">How It Works</h2>
-
-    <div class="grid">
-      <div class="card step">
-        <h3>Analyze</h3>
+  <section id="reports" class="light-band">
+    <div class="output-section">
+      <div class="output-copy">
+        <p class="section-kicker">Weekly research output</p>
+        <h2>Focused reports, not market noise.</h2>
         <p>
-          We scan hundreds of stocks across each market using systematic indicators.
+          Each weekly delivery is structured for review: market overview, current selection, weekly changes and validation context.
         </p>
+        <ul class="deliverables-list">
+          <li>Global Market Matrix</li>
+          <li>Country Reports</li>
+          <li>5 Selected Stocks</li>
+          <li>Weekly Changes</li>
+        </ul>
       </div>
 
-      <div class="card step">
-        <h3>Select</h3>
+      <div class="output-panel" aria-label="Weekly deliverables preview">
+        <div class="output-grid">
+          <div class="output-item">
+            <strong>Market Matrix</strong>
+            <span>Visual status across the covered countries.</span>
+          </div>
+          <div class="output-item">
+            <strong>Country Report</strong>
+            <span>Dedicated report for each enabled market universe.</span>
+          </div>
+          <div class="output-item">
+            <strong>Current Selection</strong>
+            <span>Five stocks selected through the quantitative framework.</span>
+          </div>
+          <div class="output-item">
+            <strong>Weekly Changes</strong>
+            <span>Additions, removals and unchanged positions from the prior week.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-band">
+    <div class="validation-section">
+      <div class="validation-copy">
+        <p class="section-kicker">Validated portfolio research</p>
+        <h2>Track the model before trusting the output.</h2>
         <p>
-          The model identifies the stocks with the best combination of trend,
-          stability and portfolio role.
+          Every market model is monitored through historical equity lines, benchmark comparison and weekly portfolio history.
         </p>
+        <div class="buttons" style="justify-content:flex-start;">
+          <a href="validation.html" class="btn btn-secondary">View Validation</a>
+        </div>
       </div>
 
-      <div class="card step">
-        <h3>Publish</h3>
-        <p>
-          The results are delivered through weekly reports and model portfolio updates.
-        </p>
+      <div class="equity-preview" aria-label="Validation equity line preview">
+        <div class="equity-frame">
+          <div class="equity-line"></div>
+          <div class="equity-line benchmark"></div>
+        </div>
+        <div class="equity-legend">
+          <span><span class="legend-dot"></span>Model portfolio</span>
+          <span><span class="legend-dot gold"></span>Benchmark</span>
+        </div>
       </div>
     </div>
   </section>
