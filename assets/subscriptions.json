@@ -1,0 +1,23 @@
+{
+  "subscriptions": [
+    {
+      "password_hash": "6a7777b75458adf9a824414623537e137d8442f314dc6dc5e711e5e9329aa748",
+      "markets": [
+        "All"
+      ],
+      "active": true
+    },
+    {
+      "password_hash": "a62ac48e60fab84cceaa92ce67fb31bc89774328f0ede75e04b540f4ab0c2ca7",
+      "markets": [],
+      "active": true
+    },
+    {
+      "password_hash": "68e2bdc787caac5b7816e49ef29924992885f8c8d698a62cab9bc911c1878be6",
+      "markets": [
+        "Italy30"
+      ],
+      "active": true
+    }
+  ]
+}
