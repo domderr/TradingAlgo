@@ -264,6 +264,9 @@ def report_date_label():
     return last_available_friday().strftime("%d %b %Y")
 
 
+REPORT_CSS_VERSION = "20260622"
+
+
 def read_tickers(tickers_xlsx, market):
     try:
         import openpyxl
@@ -451,7 +454,7 @@ def write_asset_page(out_dir, ticker, image_name, market, mobile_image_name=""):
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{html_text(ticker)} | {html_text(market)} Asset Chart</title>
-  <link rel="stylesheet" href="report.css" />
+  <link rel="stylesheet" href="report.css?v={REPORT_CSS_VERSION}" />
 </head>
 <body>
   <main class="asset-shell">
@@ -923,6 +926,23 @@ p { line-height: 1.55; }
   font-size: 13px;
   letter-spacing: 0.7px;
   text-transform: uppercase;
+}
+table.monthly-performance-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  font-size: 13px;
+}
+table.monthly-performance-table th,
+table.monthly-performance-table td {
+  padding: 9px 4px;
+  text-align: right;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+table.monthly-performance-table th:first-child,
+table.monthly-performance-table td:first-child {
+  text-align: left;
 }
 .status-badge {
   display: inline-block;
@@ -1426,7 +1446,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Report {html_text(market)} | TradingAlgo Mosaic</title>
-  <link rel="stylesheet" href="report.css" />
+  <link rel="stylesheet" href="report.css?v={REPORT_CSS_VERSION}" />
 </head>
 <body>
   <main class="report-shell">
@@ -1542,7 +1562,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{html_text(market)} Chart Gallery | TradingAlgo Mosaic</title>
-  <link rel="stylesheet" href="report.css" />
+  <link rel="stylesheet" href="report.css?v={REPORT_CSS_VERSION}" />
 </head>
 <body>
   <main class="report-shell">
