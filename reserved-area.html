@@ -647,12 +647,12 @@
   <main>
     <section class="reserved-message">
       <div class="eyebrow">Reserved Area</div>
-      <h1>TradingAlgo Mosaic Reports</h1>
+      <h1>Access to the Reserved Area</h1>
       <p>Enter your access password to open the markets included in your subscription.</p>
       <form class="access-form" id="access-form">
         <label for="access-password">Access password</label>
         <input id="access-password" name="password" type="password" autocomplete="current-password" required>
-        <button class="btn primary" type="submit">Unlock Reports</button>
+        <button class="btn primary" type="submit">Unlock</button>
         <p class="access-error" id="access-error" aria-live="polite"></p>
         <p class="access-status" id="access-status" aria-live="polite"></p>
       </form>
@@ -697,6 +697,7 @@
 
     var subscriptions = [];
     var authorizedMarkets = [];
+    var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
 
     function activeMarkets() {
       if (authorizedMarkets.indexOf("All") !== -1) return MARKET_META;
@@ -749,9 +750,26 @@
         return;
       }
 
+      sessionStorage.setItem(ACCESS_STORAGE_KEY, JSON.stringify(authorizedMarkets));
       document.getElementById("restricted-content").hidden = false;
       setAccessMessage("", authorizedMarkets.indexOf("All") !== -1 ? "Access enabled: all markets." : "Access enabled: " + authorizedMarkets.join(", "));
       loadData();
+    }
+
+    function restoreAccessSession() {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem(ACCESS_STORAGE_KEY) || "[]");
+        authorizedMarkets = normalizeMarketList(stored);
+      } catch (error) {
+        authorizedMarkets = [];
+      }
+
+      if (!authorizedMarkets.length) return false;
+
+      document.getElementById("restricted-content").hidden = false;
+      setAccessMessage("", authorizedMarkets.indexOf("All") !== -1 ? "Access restored: all markets." : "Access restored: " + authorizedMarkets.join(", "));
+      loadData();
+      return true;
     }
 
     function loadSubscriptions() {
@@ -1005,7 +1023,10 @@
       });
     }
 
-    loadSubscriptions().then(setupAccessForm);
+    loadSubscriptions().then(function() {
+      setupAccessForm();
+      restoreAccessSession();
+    });
   </script>
 </body>
 </html>
