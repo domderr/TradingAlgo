@@ -734,6 +734,15 @@
       if (statusEl) statusEl.textContent = status || "";
     }
 
+    function marketsLabel(markets) {
+      return markets.indexOf("All") !== -1 ? "all markets" : markets.join(", ");
+    }
+
+    function welcomeMessage(match, prefix) {
+      var name = match && match.first_name ? " " + match.first_name : "";
+      return prefix + name + ". Your account is enabled for " + marketsLabel(authorizedMarkets) + ".";
+    }
+
     function hashPassword(value) {
       var bytes = new TextEncoder().encode(String(value || "").trim());
       return crypto.subtle.digest("SHA-256", bytes).then(function(buffer) {
@@ -750,24 +759,30 @@
         return;
       }
 
-      sessionStorage.setItem(ACCESS_STORAGE_KEY, JSON.stringify(authorizedMarkets));
+      sessionStorage.setItem(ACCESS_STORAGE_KEY, JSON.stringify({
+        first_name: match.first_name || "",
+        markets: authorizedMarkets
+      }));
       document.getElementById("restricted-content").hidden = false;
-      setAccessMessage("", authorizedMarkets.indexOf("All") !== -1 ? "Access enabled: all markets." : "Access enabled: " + authorizedMarkets.join(", "));
+      setAccessMessage("", welcomeMessage(match, "Welcome back"));
       loadData();
     }
 
     function restoreAccessSession() {
       try {
-        var stored = JSON.parse(sessionStorage.getItem(ACCESS_STORAGE_KEY) || "[]");
-        authorizedMarkets = normalizeMarketList(stored);
+        var stored = JSON.parse(sessionStorage.getItem(ACCESS_STORAGE_KEY) || "{}");
+        authorizedMarkets = normalizeMarketList(stored.markets || stored);
+        var firstName = stored.first_name || "";
+        var match = { first_name: firstName };
       } catch (error) {
         authorizedMarkets = [];
+        var match = {};
       }
 
       if (!authorizedMarkets.length) return false;
 
       document.getElementById("restricted-content").hidden = false;
-      setAccessMessage("", authorizedMarkets.indexOf("All") !== -1 ? "Access restored: all markets." : "Access restored: " + authorizedMarkets.join(", "));
+      setAccessMessage("", welcomeMessage(match, "Welcome back"));
       loadData();
       return true;
     }
