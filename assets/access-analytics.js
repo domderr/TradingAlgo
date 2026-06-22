@@ -4,7 +4,7 @@
   var STORAGE_KEY = "ta_access_analytics_queue";
   var SESSION_KEY = "ta_access_session_id";
   var ACCESS_KEY = "ta_reserved_authorized_markets";
-  var DEFAULT_ENDPOINT = "";
+  var DEFAULT_ENDPOINT = "https://script.google.com/macros/s/AKfycbyxKl95rd5Zimaa1pSozp8EtLBG88pv_zHvbhj8a_u4c7b2yhCCLb-mY03BfRDbctw/exec";
 
   function nowIso() {
     return new Date().toISOString();
