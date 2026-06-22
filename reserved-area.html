@@ -186,6 +186,14 @@
       font-weight: 750;
     }
 
+    .access-status {
+      width: 100%;
+      margin: 0;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
     .restricted-content[hidden] {
       display: none;
     }
@@ -640,11 +648,18 @@
     <section class="reserved-message">
       <div class="eyebrow">Reserved Area</div>
       <h1>TradingAlgo Mosaic Reports</h1>
-      <p>The report area is open while the premium workflow is being validated.</p>
+      <p>Enter your access password to open the markets included in your subscription.</p>
+      <form class="access-form" id="access-form">
+        <label for="access-password">Access password</label>
+        <input id="access-password" name="password" type="password" autocomplete="current-password" required>
+        <button class="btn primary" type="submit">Unlock Reports</button>
+        <p class="access-error" id="access-error" aria-live="polite"></p>
+        <p class="access-status" id="access-status" aria-live="polite"></p>
+      </form>
       <p class="access-disclaimer">Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
     </section>
 
-    <div class="restricted-content" id="restricted-content">
+    <div class="restricted-content" id="restricted-content" hidden>
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
         <h2>Global Weekly View</h2>
@@ -679,6 +694,104 @@
       { key: "Australia50",  flag: "au", name: "Australia50",  pdf: "reports/Report_Australia50.pdf", html: "reports_html/Australia50/Report_Australia50.html" },
       { key: "South Africa30",flag: "za", name: "S.Africa30",  pdf: "reports/Report_South_Africa30.pdf", html: "reports_html/South_Africa30/Report_South_Africa30.html" }
     ];
+
+    var subscriptions = [];
+    var authorizedMarkets = [];
+
+    function activeMarkets() {
+      if (authorizedMarkets.indexOf("All") !== -1) return MARKET_META;
+      return MARKET_META.filter(function(m) {
+        return authorizedMarkets.indexOf(m.key) !== -1;
+      });
+    }
+
+    function normalizeMarketName(value) {
+      var key = String(value || "").trim();
+      var aliases = {
+        "Italy": "Italy30",
+        "US100": "USA100",
+        "NQ100": "NASDAQ100",
+        "Nasdaq100": "NASDAQ100",
+        "South_Korea30": "South Korea30",
+        "South_Africa30": "South Africa30"
+      };
+      return aliases[key] || key;
+    }
+
+    function normalizeMarketList(markets) {
+      if (!Array.isArray(markets)) return [];
+      if (markets.indexOf("All") !== -1) return ["All"];
+      return markets.map(normalizeMarketName).filter(function(market) {
+        return MARKET_META.some(function(meta) { return meta.key === market; });
+      });
+    }
+
+    function setAccessMessage(error, status) {
+      var errorEl = document.getElementById("access-error");
+      var statusEl = document.getElementById("access-status");
+      if (errorEl) errorEl.textContent = error || "";
+      if (statusEl) statusEl.textContent = status || "";
+    }
+
+    function hashPassword(value) {
+      var bytes = new TextEncoder().encode(String(value || "").trim());
+      return crypto.subtle.digest("SHA-256", bytes).then(function(buffer) {
+        return Array.prototype.map.call(new Uint8Array(buffer), function(byte) {
+          return byte.toString(16).padStart(2, "0");
+        }).join("");
+      });
+    }
+
+    function unlockSubscription(match) {
+      authorizedMarkets = normalizeMarketList(match.markets);
+      if (!authorizedMarkets.length) {
+        setAccessMessage("This password is valid, but no markets are enabled for this subscription.", "");
+        return;
+      }
+
+      document.getElementById("restricted-content").hidden = false;
+      setAccessMessage("", authorizedMarkets.indexOf("All") !== -1 ? "Access enabled: all markets." : "Access enabled: " + authorizedMarkets.join(", "));
+      loadData();
+    }
+
+    function loadSubscriptions() {
+      return fetch("assets/subscriptions.json?v=" + Date.now(), { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Subscriptions unavailable");
+          return response.json();
+        })
+        .then(function(data) {
+          subscriptions = Array.isArray(data.subscriptions) ? data.subscriptions : [];
+        })
+        .catch(function() {
+          subscriptions = [];
+          setAccessMessage("Access database unavailable. Please contact domderrico@gmail.com.", "");
+        });
+    }
+
+    function setupAccessForm() {
+      var form = document.getElementById("access-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        setAccessMessage("", "");
+
+        hashPassword(document.getElementById("access-password").value).then(function(hash) {
+          var match = subscriptions.find(function(item) {
+            return item && item.active !== false && item.password_hash === hash;
+          });
+
+          if (!match) {
+            document.getElementById("restricted-content").hidden = true;
+            setAccessMessage("Invalid password.", "");
+            return;
+          }
+
+          unlockSubscription(match);
+        });
+      });
+    }
 
     function scoreClass(v) {
       return v >= 65 ? "green" : v >= 35 ? "amber" : "red";
@@ -723,7 +836,7 @@
     }
 
     function enrichIndexWithReportData(indexMap, reportDataMap) {
-      MARKET_META.forEach(function(m) {
+      activeMarkets().forEach(function(m) {
         var row = reportDataMap[m.key];
         if (!row) return;
         var base = indexMap[m.key] || {};
@@ -734,7 +847,7 @@
     }
 
     function renderSemaforo(index, positions) {
-      var sorted = MARKET_META.slice().sort(function(a, b) {
+      var sorted = activeMarkets().slice().sort(function(a, b) {
         var ia = index[a.key] || {}, ib = index[b.key] || {};
         return avgScore(ib.Trend||0, ib.Stability||0) - avgScore(ia.Trend||0, ia.Stability||0);
       });
@@ -820,7 +933,7 @@
         dateEl.textContent = lastProcessing ? "Last processing: " + lastProcessing : "";
       }
 
-      document.getElementById("reports-grid").innerHTML = MARKET_META.map(function(m) {
+      document.getElementById("reports-grid").innerHTML = activeMarkets().map(function(m) {
         var posKey = POS_KEY[m.key] || m.key;
         return renderCard(m, indexMap[m.key], positions[posKey]);
       }).join("");
@@ -840,7 +953,7 @@
     }
 
     function loadHedgePercentages() {
-      MARKET_META.forEach(function(m) {
+      activeMarkets().forEach(function(m) {
         var target = document.getElementById("hedge-" + m.key);
         if (!target || !m.html) return;
 
@@ -859,7 +972,7 @@
     }
 
     function loadReportData() {
-      return Promise.all(MARKET_META.map(function(m) {
+      return Promise.all(activeMarkets().map(function(m) {
         if (!m.html) return Promise.resolve(null);
         var dataUrl = m.html.replace(/[^\/]+$/, "report_data.json") + "?v=" + Date.now();
         return fetch(dataUrl, { cache: "no-store" })
@@ -892,7 +1005,7 @@
       });
     }
 
-    loadData();
+    loadSubscriptions().then(setupAccessForm);
   </script>
 </body>
 </html>
