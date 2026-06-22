@@ -343,6 +343,14 @@
       text-align: left;
     }
 
+    .request-section {
+      display: none;
+    }
+
+    .request-section.is-visible {
+      display: block;
+    }
+
     .request-form h2 {
       margin: 0 0 18px;
       color: #ffffff;
@@ -872,30 +880,30 @@
   </section>
 
   <section id="request-info" class="dark-band">
-    <form class="request-form" id="request-info-form">
+    <form class="request-form request-section" id="request-info-form">
       <h2>Request Information</h2>
       <p class="request-intro">
         To request access to the reserved area, write to domderrico@gmail.com and specify whether you are a student, a private investor, or a financial professional.
       </p>
       <div class="request-grid">
         <div class="form-field">
-          <label for="request-profile">Chi sono</label>
+          <label for="request-profile">Profile</label>
           <select id="request-profile" name="profile" required>
             <option value="">Select profile</option>
-            <option>Studente</option>
-            <option>Investitore privato</option>
-            <option>Professionista finanziario</option>
+            <option>Student</option>
+            <option>Private investor</option>
+            <option>Financial professional</option>
           </select>
         </div>
 
         <div class="form-field">
-          <label for="request-country">Nazione di Residenza</label>
+          <label for="request-country">Country of residence</label>
           <input id="request-country" name="country" type="text" autocomplete="country-name" required>
         </div>
 
         <div class="form-field full">
           <fieldset class="markets-fieldset">
-            <legend class="markets-label">Mercati seguiti</legend>
+            <legend class="markets-label">Markets followed</legend>
             <div class="markets-grid">
               <label class="market-option"><input type="checkbox" name="markets" value="USA100">USA100</label>
               <label class="market-option"><input type="checkbox" name="markets" value="Europe50">Europe50</label>
@@ -917,7 +925,7 @@
         </div>
 
         <div class="form-field full">
-          <label for="request-other-market">Altro, specificare</label>
+          <label for="request-other-market">Other market, please specify</label>
           <input id="request-other-market" name="other_market" type="text">
         </div>
       </div>
@@ -1271,6 +1279,17 @@
 
     setupCountryMatrixToggle();
 
+    Array.prototype.slice.call(document.querySelectorAll('a[href="#request-info"]')).forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        var form = document.getElementById("request-info-form");
+        if (!form) return;
+
+        event.preventDefault();
+        form.classList.add("is-visible");
+        form.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    });
+
     var requestInfoForm = document.getElementById("request-info-form");
     if (requestInfoForm) {
       requestInfoForm.addEventListener("submit", function (event) {
@@ -1282,14 +1301,14 @@
           .map(function (input) { return input.value; });
         var otherMarket = document.getElementById("request-other-market").value.trim();
 
-        if (otherMarket) markets.push("Altro: " + otherMarket);
+        if (otherMarket) markets.push("Other: " + otherMarket);
 
         var body = [
-          "Richiesta informazioni TradingAlgo Mosaic",
+          "TradingAlgo Mosaic information request",
           "",
-          "Chi sono: " + profile,
-          "Nazione di Residenza: " + country,
-          "Mercati seguiti: " + (markets.length ? markets.join(", ") : "-")
+          "Profile: " + profile,
+          "Country of residence: " + country,
+          "Markets followed: " + (markets.length ? markets.join(", ") : "-")
         ].join("\n");
 
         window.location.href = "mailto:domderrico@gmail.com?subject=" +
