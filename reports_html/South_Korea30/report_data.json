@@ -23,38 +23,156 @@
     "Last Weekly Selection": [
       {
         "Ticker": "000660.KS",
-        "Name": "000660.KS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "SK hynix",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
       },
       {
         "Ticker": "005380.KS",
-        "Name": "005380.KS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "HyundaiMtr",
+        "Sector": "Consumer Cyclical",
+        "Industry": "Auto Manufacturers"
       },
       {
         "Ticker": "006400.KS",
-        "Name": "006400.KS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "SAMSUNG SDI CO.,LTD.",
+        "Sector": "Industrials",
+        "Industry": "Electrical Equipment & Parts"
       },
       {
         "Ticker": "034020.KS",
-        "Name": "034020.KS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Doosan Enerbility",
+        "Sector": "Industrials",
+        "Industry": "Specialty Industrial Machinery"
       },
       {
         "Ticker": "017670.KS",
-        "Name": "017670.KS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "SKTelecom",
+        "Sector": "Communication Services",
+        "Industry": "Telecom Services"
       }
     ],
-    "Added Tickers": "017670.KS - 017670.KS",
-    "Removed Tickers": "010130.KS - 010130.KS",
+    "Added Tickers": "017670.KS - SKTelecom",
+    "Removed Tickers": "010130.KS - KOREA ZINC",
     "Selection Drivers": "000660.KS: trend slope 0.04, stability R2 0.95, score 0.04 and passed correlation filter<br/>005380.KS: trend slope 0.03, stability R2 0.91, score 0.03 and passed correlation filter<br/>006400.KS: trend slope 0.03, stability R2 0.91, score 0.02 and passed correlation filter<br/>034020.KS: trend slope 0.01, stability R2 0.83, score 0.01 and passed correlation filter<br/>017670.KS: trend slope 0.01, stability R2 0.76, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "000660.KS",
+        "Contribution": 1.1943505309407956
+      },
+      {
+        "Ticker": "009150.KS",
+        "Contribution": 0.38627214938738497
+      },
+      {
+        "Ticker": "012450.KS",
+        "Contribution": 0.2687700172203815
+      },
+      {
+        "Ticker": "034020.KS",
+        "Contribution": 0.2580069430778622
+      },
+      {
+        "Ticker": "005380.KS",
+        "Contribution": 0.23256750303587845
+      },
+      {
+        "Ticker": "032830.KS",
+        "Contribution": 0.23168208795774212
+      },
+      {
+        "Ticker": "015760.KS",
+        "Contribution": 0.19670789333856104
+      },
+      {
+        "Ticker": "316140.KS",
+        "Contribution": 0.14528336070673678
+      },
+      {
+        "Ticker": "259960.KS",
+        "Contribution": 0.018733221592545576
+      },
+      {
+        "Ticker": "033780.KS",
+        "Contribution": 0.001347235882452869
+      },
+      {
+        "Ticker": "005490.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "373220.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "005930.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "003550.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "017670.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "086790.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "096770.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "018260.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "068270.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "000270.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "051910.KS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "055550.KS",
+        "Contribution": -0.0002180035313781017
+      },
+      {
+        "Ticker": "028260.KS",
+        "Contribution": -0.0015043775094717056
+      },
+      {
+        "Ticker": "105560.KS",
+        "Contribution": -0.009537170632445639
+      },
+      {
+        "Ticker": "207940.KS",
+        "Contribution": -0.02712427452176236
+      },
+      {
+        "Ticker": "035420.KS",
+        "Contribution": -0.029776508935619235
+      },
+      {
+        "Ticker": "006400.KS",
+        "Contribution": -0.12811915056958473
+      },
+      {
+        "Ticker": "066570.KS",
+        "Contribution": -0.16840024062370398
+      },
+      {
+        "Ticker": "010130.KS",
+        "Contribution": -0.2551444933671933
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

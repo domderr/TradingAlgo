@@ -23,38 +23,188 @@
     "Last Weekly Selection": [
       {
         "Ticker": "ACS.MC",
-        "Name": "ACS.MC",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "ACS,ACTIVIDADES DE CONSTRUCCION",
+        "Sector": "Industrials",
+        "Industry": "Engineering & Construction"
       },
       {
         "Ticker": "SLR.MC",
-        "Name": "SLR.MC",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "SOLARIA ENERGIA Y MEDIO AMBIENT",
+        "Sector": "Utilities",
+        "Industry": "Utilities - Renewable"
       },
       {
         "Ticker": "MTS.MC",
-        "Name": "MTS.MC",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "ARCELORMITTAL SA",
+        "Sector": "Basic Materials",
+        "Industry": "Steel"
       },
       {
         "Ticker": "REP.MC",
-        "Name": "REP.MC",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "REPSOL,  S.A.",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
       },
       {
         "Ticker": "CABK.MC",
-        "Name": "CABK.MC",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "CAIXABANK, S.A.",
+        "Sector": "Financial Services",
+        "Industry": "Banks - Regional"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "ACS.MC: trend slope 0.02, stability R2 0.98, score 0.02 and passed correlation filter<br/>SLR.MC: trend slope 0.02, stability R2 0.93, score 0.02 and passed correlation filter<br/>MTS.MC: trend slope 0.02, stability R2 0.93, score 0.02 and passed correlation filter<br/>REP.MC: trend slope 0.01, stability R2 0.89, score 0.01 and passed correlation filter<br/>CABK.MC: trend slope 0.01, stability R2 0.89, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "ACS.MC",
+        "Contribution": 0.19680049868858737
+      },
+      {
+        "Ticker": "CABK.MC",
+        "Contribution": 0.14430982541991094
+      },
+      {
+        "Ticker": "SLR.MC",
+        "Contribution": 0.13562132624555517
+      },
+      {
+        "Ticker": "UNI.MC",
+        "Contribution": 0.10334732352410098
+      },
+      {
+        "Ticker": "REP.MC",
+        "Contribution": 0.10288055135667977
+      },
+      {
+        "Ticker": "ELE.MC",
+        "Contribution": 0.0766539353679308
+      },
+      {
+        "Ticker": "SAB.MC",
+        "Contribution": 0.05587477326773414
+      },
+      {
+        "Ticker": "MAP.MC",
+        "Contribution": 0.04478463398811203
+      },
+      {
+        "Ticker": "SAN.MC",
+        "Contribution": 0.03290998622971063
+      },
+      {
+        "Ticker": "FER.MC",
+        "Contribution": 0.023534167973928294
+      },
+      {
+        "Ticker": "TEF.MC",
+        "Contribution": 0.02121031425722101
+      },
+      {
+        "Ticker": "ITX.MC",
+        "Contribution": 0.020697647328559048
+      },
+      {
+        "Ticker": "CIE.MC",
+        "Contribution": 0.01571304264220763
+      },
+      {
+        "Ticker": "ACX.MC",
+        "Contribution": 0.015267343834419212
+      },
+      {
+        "Ticker": "NTGY.MC",
+        "Contribution": 0.011614320152409189
+      },
+      {
+        "Ticker": "BBVA.MC",
+        "Contribution": 0.008709798346264239
+      },
+      {
+        "Ticker": "MTS.MC",
+        "Contribution": 0.008120146842233049
+      },
+      {
+        "Ticker": "AENA.MC",
+        "Contribution": 0.004681238216130243
+      },
+      {
+        "Ticker": "IBE.MC",
+        "Contribution": 0.0023258846996430903
+      },
+      {
+        "Ticker": "VIS.MC",
+        "Contribution": 0.001720511900546027
+      },
+      {
+        "Ticker": "AMS.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ANE.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SCYR.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GRF.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MRL.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "COL.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ENG.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "EXSA.MI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FDR.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TLGO.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VID.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PUIG.MC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "QDV5.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "LOG.MC",
+        "Contribution": -0.00818102591557377
+      },
+      {
+        "Ticker": "RED.MC",
+        "Contribution": -0.015572800119708293
+      },
+      {
+        "Ticker": "ROVI.MC",
+        "Contribution": -0.02131657503994791
+      },
+      {
+        "Ticker": "IAG.MC",
+        "Contribution": -0.031817754506146656
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

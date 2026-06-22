@@ -23,38 +23,160 @@
     "Last Weekly Selection": [
       {
         "Ticker": "GLEN.L",
-        "Name": "GLEN.L",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "GLENCORE PLC ORD USD0.01",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
       },
       {
         "Ticker": "RIO.L",
-        "Name": "RIO.L",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "RIO TINTO PLC ORD 10P",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
       },
       {
         "Ticker": "HSBA.L",
-        "Name": "HSBA.L",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "HSBC HOLDINGS PLC ORD $0.50 (UK",
+        "Sector": "Financial Services",
+        "Industry": "Banks - Diversified"
       },
       {
         "Ticker": "GSK.L",
-        "Name": "GSK.L",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "GSK PLC ORD 31 1/4P",
+        "Sector": "Healthcare",
+        "Industry": "Drug Manufacturers - General"
       },
       {
         "Ticker": "BP.L",
-        "Name": "BP.L",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "BP PLC $0.25",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
       }
     ],
-    "Added Tickers": "HSBA.L - HSBA.L",
-    "Removed Tickers": "STAN.L - STAN.L",
+    "Added Tickers": "HSBA.L - HSBC HOLDINGS PLC ORD $0.50 (UK",
+    "Removed Tickers": "STAN.L - STANDARD CHARTERED PLC ORD USD0",
     "Selection Drivers": "GLEN.L: trend slope 0.02, stability R2 0.94, score 0.02 and passed correlation filter<br/>RIO.L: trend slope 0.01, stability R2 0.95, score 0.01 and passed correlation filter<br/>HSBA.L: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>GSK.L: trend slope 0.01, stability R2 0.76, score 0.01 and passed correlation filter<br/>BP.L: trend slope 0.01, stability R2 0.80, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "STAN.L",
+        "Contribution": 0.1357466010811214
+      },
+      {
+        "Ticker": "PRU.L",
+        "Contribution": 0.05447903867990393
+      },
+      {
+        "Ticker": "IMB.L",
+        "Contribution": 0.044409992927675564
+      },
+      {
+        "Ticker": "VOD.L",
+        "Contribution": 0.03892539610530614
+      },
+      {
+        "Ticker": "BATS.L",
+        "Contribution": 0.03715716305920928
+      },
+      {
+        "Ticker": "RIO.L",
+        "Contribution": 0.030837351357477845
+      },
+      {
+        "Ticker": "GLEN.L",
+        "Contribution": 0.024596582951008528
+      },
+      {
+        "Ticker": "LLOY.L",
+        "Contribution": 0.02122230236819287
+      },
+      {
+        "Ticker": "CPG.L",
+        "Contribution": 0.012818769452863117
+      },
+      {
+        "Ticker": "NWG.L",
+        "Contribution": 0.012500324197026638
+      },
+      {
+        "Ticker": "AZN.L",
+        "Contribution": 0.005454449227857271
+      },
+      {
+        "Ticker": "MNG.L",
+        "Contribution": 0.0048811804265701045
+      },
+      {
+        "Ticker": "SMIN.L",
+        "Contribution": 0.004417795366605911
+      },
+      {
+        "Ticker": "HLN.L",
+        "Contribution": 0.003644437711052849
+      },
+      {
+        "Ticker": "SHEL.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HSBA.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ENT.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "EXPN.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DGE.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ULVR.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NG.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AV.L",
+        "Contribution": -0.002731391041881457
+      },
+      {
+        "Ticker": "LSEG.L",
+        "Contribution": -0.0077746956813086725
+      },
+      {
+        "Ticker": "AAL.L",
+        "Contribution": -0.009513957840409315
+      },
+      {
+        "Ticker": "REL.L",
+        "Contribution": -0.013118989503024444
+      },
+      {
+        "Ticker": "GSK.L",
+        "Contribution": -0.013500820881288528
+      },
+      {
+        "Ticker": "BP.L",
+        "Contribution": -0.01642704442750527
+      },
+      {
+        "Ticker": "SGE.L",
+        "Contribution": -0.019950533283047127
+      },
+      {
+        "Ticker": "BA.L",
+        "Contribution": -0.021485102589172623
+      },
+      {
+        "Ticker": "BARC.L",
+        "Contribution": -0.04102770213454326
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

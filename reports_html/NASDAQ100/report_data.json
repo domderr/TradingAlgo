@@ -23,38 +23,440 @@
     "Last Weekly Selection": [
       {
         "Ticker": "MU",
-        "Name": "MU",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Micron Technology, Inc.",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
       },
       {
         "Ticker": "TER",
-        "Name": "TER",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Teradyne, Inc.",
+        "Sector": "Technology",
+        "Industry": "Semiconductor Equipment & Materials"
       },
       {
         "Ticker": "NBIS",
-        "Name": "NBIS",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Nebius Group N.V.",
+        "Sector": "Communication Services",
+        "Industry": "Internet Content & Information"
       },
       {
         "Ticker": "WBD",
-        "Name": "WBD",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Warner Bros. Discovery, Inc. -",
+        "Sector": "Communication Services",
+        "Industry": "Entertainment"
       },
       {
         "Ticker": "ROST",
-        "Name": "ROST",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "Ross Stores, Inc.",
+        "Sector": "Consumer Cyclical",
+        "Industry": "Apparel Retail"
       }
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
     "Selection Drivers": "MU: trend slope 0.04, stability R2 0.95, score 0.04 and passed correlation filter<br/>TER: trend slope 0.03, stability R2 0.97, score 0.03 and passed correlation filter<br/>NBIS: trend slope 0.02, stability R2 0.69, score 0.02 and passed correlation filter<br/>WBD: trend slope 0.02, stability R2 0.70, score 0.01 and passed correlation filter<br/>ROST: trend slope 0.01, stability R2 0.98, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "MU",
+        "Contribution": 0.6048739633288184
+      },
+      {
+        "Ticker": "RKLB",
+        "Contribution": 0.3524740457767831
+      },
+      {
+        "Ticker": "NBIS",
+        "Contribution": 0.2624561840703049
+      },
+      {
+        "Ticker": "TER",
+        "Contribution": 0.1349328202170074
+      },
+      {
+        "Ticker": "INTC",
+        "Contribution": 0.12863009387997945
+      },
+      {
+        "Ticker": "APP",
+        "Contribution": 0.04811993093074029
+      },
+      {
+        "Ticker": "EBAY",
+        "Contribution": 0.028260205110307225
+      },
+      {
+        "Ticker": "GOOGL",
+        "Contribution": 0.022472616971923886
+      },
+      {
+        "Ticker": "TTWO",
+        "Contribution": 0.018031327719813046
+      },
+      {
+        "Ticker": "CEG",
+        "Contribution": 0.014094003945748276
+      },
+      {
+        "Ticker": "WBD",
+        "Contribution": 0.009846881897357222
+      },
+      {
+        "Ticker": "ORLY",
+        "Contribution": 0.008279022791784281
+      },
+      {
+        "Ticker": "GILD",
+        "Contribution": 0.005235235712236689
+      },
+      {
+        "Ticker": "AMD",
+        "Contribution": 0.0037712884378504827
+      },
+      {
+        "Ticker": "IDXX",
+        "Contribution": 0.003291236657278483
+      },
+      {
+        "Ticker": "XEL",
+        "Contribution": 0.0022897533483340433
+      },
+      {
+        "Ticker": "AMZN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NVDA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MSFT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AAPL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MELI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VRTX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PANW",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ADI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TSLA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "COST",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "META",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GOOG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "QCOM",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMGN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TXN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ADBE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "INTU",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMAT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PEP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "LIN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ILMN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ALGN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KHC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GEHC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ODFL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "EA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TEAM",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CRWD",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HON",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ADP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BKNG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CMCSA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MAR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ABNB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PYPL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SNPS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "EXC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PAYX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PCAR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AEP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CHTR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FAST",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CTAS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CDNS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "REGN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NXPI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WDAY",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MRVL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CPRT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CSX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MNST",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FTNT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MCHP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SIRI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SBUX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AZN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ARM",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MDB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GFS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CTSH",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KDP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FANG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CCEP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BIIB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DXCM",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ON",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BKR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DDOG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ALAB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CRWV",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CDW",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ZS",
+        "Contribution": -0.0015744379819659857
+      },
+      {
+        "Ticker": "TMUS",
+        "Contribution": -0.006728204981153238
+      },
+      {
+        "Ticker": "DASH",
+        "Contribution": -0.007210834651098255
+      },
+      {
+        "Ticker": "KLAC",
+        "Contribution": -0.009129914328041574
+      },
+      {
+        "Ticker": "TTD",
+        "Contribution": -0.009621281153807528
+      },
+      {
+        "Ticker": "NFLX",
+        "Contribution": -0.014209965656692983
+      },
+      {
+        "Ticker": "ISRG",
+        "Contribution": -0.014512200174322884
+      },
+      {
+        "Ticker": "LRCX",
+        "Contribution": -0.015194628462883232
+      },
+      {
+        "Ticker": "AVGO",
+        "Contribution": -0.015528042739770154
+      },
+      {
+        "Ticker": "CSCO",
+        "Contribution": -0.01602188911797184
+      },
+      {
+        "Ticker": "VRSN",
+        "Contribution": -0.030332029996979246
+      },
+      {
+        "Ticker": "DLTR",
+        "Contribution": -0.0322160362471339
+      },
+      {
+        "Ticker": "ROST",
+        "Contribution": -0.037413107995621676
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,

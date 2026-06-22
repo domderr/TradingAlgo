@@ -23,38 +23,240 @@
     "Last Weekly Selection": [
       {
         "Ticker": "RIO.AX",
-        "Name": "RIO.AX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "RIO TINTO FPO [RIO]",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
       },
       {
         "Ticker": "S32.AX",
-        "Name": "S32.AX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "SOUTH32 FPO [S32]",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
       },
       {
         "Ticker": "EVN.AX",
-        "Name": "EVN.AX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "EVOLUTION FPO [EVN]",
+        "Sector": "Basic Materials",
+        "Industry": "Gold"
       },
       {
         "Ticker": "LYC.AX",
-        "Name": "LYC.AX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "LYNAS FPO [LYC]",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
       },
       {
         "Ticker": "WDS.AX",
-        "Name": "WDS.AX",
-        "Sector": "-",
-        "Industry": "-"
+        "Name": "WOODSIDE FPO [WDS]",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas E&P"
       }
     ],
-    "Added Tickers": "EVN.AX - EVN.AX",
-    "Removed Tickers": "WOW.AX - WOW.AX",
+    "Added Tickers": "EVN.AX - EVOLUTION FPO [EVN]",
+    "Removed Tickers": "WOW.AX - WOOLWORTHS FPO [WOW]",
     "Selection Drivers": "RIO.AX: trend slope 0.01, stability R2 0.97, score 0.01 and passed correlation filter<br/>S32.AX: trend slope 0.01, stability R2 0.81, score 0.01 and passed correlation filter<br/>EVN.AX: trend slope 0.01, stability R2 0.65, score 0.01 and passed correlation filter<br/>LYC.AX: trend slope 0.01, stability R2 0.54, score 0.01 and passed correlation filter<br/>WDS.AX: trend slope 0.01, stability R2 0.59, score 0.00 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "EVN.AX",
+        "Contribution": 0.1495706980742223
+      },
+      {
+        "Ticker": "LYC.AX",
+        "Contribution": 0.0902508575136796
+      },
+      {
+        "Ticker": "PME.AX",
+        "Contribution": 0.05567450767971635
+      },
+      {
+        "Ticker": "NEM.AX",
+        "Contribution": 0.05383386151887333
+      },
+      {
+        "Ticker": "JBH.AX",
+        "Contribution": 0.032934714268847455
+      },
+      {
+        "Ticker": "SIG.AX",
+        "Contribution": 0.028001019857361052
+      },
+      {
+        "Ticker": "WOW.AX",
+        "Contribution": 0.01942715193412871
+      },
+      {
+        "Ticker": "NAB.AX",
+        "Contribution": 0.015225842033926374
+      },
+      {
+        "Ticker": "BHP.AX",
+        "Contribution": 0.01424171002737877
+      },
+      {
+        "Ticker": "ANZ.AX",
+        "Contribution": 0.006567311941836559
+      },
+      {
+        "Ticker": "FPH.AX",
+        "Contribution": 0.00347922052274798
+      },
+      {
+        "Ticker": "FMG.AX",
+        "Contribution": 0.0029835833936655374
+      },
+      {
+        "Ticker": "TLS.AX",
+        "Contribution": 0.002270063389820262
+      },
+      {
+        "Ticker": "IAG.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GMG.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMC.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ASX.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CAR.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "XRO.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "XYZ.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WTC.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CSL.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "COH.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CBA.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "COL.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NST.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RMD.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ORG.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "QBE.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "REA.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SGH.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MQG.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NWS.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "JHX.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SUN.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TCL.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "STO.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WES.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SOL.AX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SGP.AX",
+        "Contribution": -0.008117890984332994
+      },
+      {
+        "Ticker": "S32.AX",
+        "Contribution": -0.009355725138842395
+      },
+      {
+        "Ticker": "CPU.AX",
+        "Contribution": -0.009578004141701818
+      },
+      {
+        "Ticker": "RIO.AX",
+        "Contribution": -0.010730007470899281
+      },
+      {
+        "Ticker": "MPL.AX",
+        "Contribution": -0.01131591626717287
+      },
+      {
+        "Ticker": "QAN.AX",
+        "Contribution": -0.011612788538936101
+      },
+      {
+        "Ticker": "WBC.AX",
+        "Contribution": -0.012945771033307954
+      },
+      {
+        "Ticker": "ALL.AX",
+        "Contribution": -0.014594612444708348
+      },
+      {
+        "Ticker": "BXB.AX",
+        "Contribution": -0.016398961156018448
+      },
+      {
+        "Ticker": "SCG.AX",
+        "Contribution": -0.02590939939282116
+      },
+      {
+        "Ticker": "WDS.AX",
+        "Contribution": -0.046671499042287345
+      }
+    ],
     "Strategy_Returns": {
       "2024-01-12": 0.0,
       "2024-01-19": 0.0,
