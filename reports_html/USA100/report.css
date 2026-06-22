@@ -443,6 +443,7 @@ p { line-height: 1.55; }
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 .status-selected { background: #dcfce7; color: #166534; }
 .status-watchlist { background: #fef3c7; color: #92400e; }
@@ -588,19 +589,15 @@ p { line-height: 1.55; }
   }
   .mini-table th:nth-child(1),
   .mini-table td:nth-child(1) {
-    width: 18%;
+    width: 22%;
   }
   .mini-table th:nth-child(2),
   .mini-table td:nth-child(2) {
-    width: 28%;
+    width: 32%;
   }
   .mini-table th:nth-child(3),
   .mini-table td:nth-child(3) {
-    width: 25%;
-  }
-  .mini-table th:nth-child(4),
-  .mini-table td:nth-child(4) {
-    width: 29%;
+    width: 46%;
   }
   .performance-table th,
   .performance-table td {
