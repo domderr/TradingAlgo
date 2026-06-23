@@ -23,6 +23,14 @@
         "Italy30"
       ],
       "active": true
+    },
+    {
+      "password_hash": "db74c940d447e877d119df613edd2700c4a84cd1cf08beb7cbc319bcfaeab97a",
+      "first_name": "Alex",
+      "markets": [
+        "All"
+      ],
+      "active": true
     }
   ]
 }
