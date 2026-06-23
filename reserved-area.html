@@ -852,6 +852,7 @@
                 <tr>
                   <th>Market</th>
                   <th>ETF</th>
+                  <th>Haircut</th>
                   <th>CAGR Mosaic</th>
                   <th>CAGR Bench</th>
                   <th>CAGR Diff</th>
@@ -861,7 +862,7 @@
                 </tr>
               </thead>
               <tbody id="performance-summary-body">
-                <tr><td colspan="8">Loading performance data...</td></tr>
+                <tr><td colspan="9">Loading performance data...</td></tr>
               </tbody>
             </table>
           </div>
@@ -903,6 +904,18 @@
       { key: "Australia50",  flag: "au", name: "Australia50",  pdf: "reports/Report_Australia50.pdf", html: "reports_html/Australia50/Report_Australia50.html" },
       { key: "South Africa30",flag: "za", name: "S.Africa30",  pdf: "reports/Report_South_Africa30.pdf", html: "reports_html/South_Africa30/Report_South_Africa30.html" }
     ];
+
+    var CONSERVATIVE_HAIRCUTS = {
+      "Australia50": 0.73,
+      "Germany30": 0.80,
+      "Italy30": 0.90,
+      "Japan50": 0.93,
+      "Mexico30": 0.98,
+      "NASDAQ100": 0.90,
+      "South Africa30": 0.98,
+      "South Korea30": 0.95,
+      "USA100": 0.86
+    };
 
     var subscriptions = [];
     var authorizedMarkets = [];
@@ -1229,6 +1242,11 @@
       return Number.isFinite(number) ? number.toFixed(2) : "-";
     }
 
+    function formatHaircut(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? number.toFixed(2) : "1.00";
+    }
+
     function metricClass(value) {
       var number = Number(value);
       if (!Number.isFinite(number) || Math.abs(number) < 0.000001) return "metric-neutral";
@@ -1249,6 +1267,7 @@
         return {
           market: m.name,
           benchmark: row.Benchmark || "-",
+          haircut: CONSERVATIVE_HAIRCUTS[m.key] || 1,
           cagrMosaic: cagrMosaic,
           cagrBench: cagrBench,
           cagrDiff: cagrMosaic - cagrBench,
@@ -1261,7 +1280,7 @@
       });
 
       if (!rows.length) {
-        tbody.innerHTML = '<tr><td colspan="8">Performance data unavailable for the enabled markets.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="9">Performance data unavailable for the enabled markets.</td></tr>';
         return;
       }
 
@@ -1269,6 +1288,7 @@
         return '<tr>'
           + '<td>' + row.market + '</td>'
           + '<td>' + row.benchmark + '</td>'
+          + '<td>' + formatHaircut(row.haircut) + '</td>'
           + '<td>' + formatMetricPercent(row.cagrMosaic) + '</td>'
           + '<td>' + formatMetricPercent(row.cagrBench) + '</td>'
           + '<td class="' + metricClass(row.cagrDiff) + '">' + formatMetricPercent(row.cagrDiff) + '</td>'
