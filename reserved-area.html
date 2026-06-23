@@ -221,6 +221,153 @@
       display: none;
     }
 
+    .performance-summary {
+      margin-top: 24px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .performance-summary-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-end;
+      margin-bottom: 16px;
+    }
+
+    .performance-summary h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .performance-summary p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .performance-table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+    }
+
+    .performance-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .performance-table th,
+    .performance-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .performance-table th:first-child,
+    .performance-table td:first-child,
+    .performance-table th:nth-child(2),
+    .performance-table td:nth-child(2) {
+      text-align: left;
+    }
+
+    .performance-table th {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.045);
+    }
+
+    .performance-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .metric-positive {
+      color: var(--green);
+      font-weight: 850;
+    }
+
+    .metric-negative {
+      color: var(--red);
+      font-weight: 850;
+    }
+
+    .metric-neutral {
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .summary-chart-section {
+      margin-top: 24px;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+    }
+
+    .summary-chart-section h3 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .summary-chart-section p {
+      margin: 6px 0 16px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .summary-chart-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .summary-chart-card {
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      background: rgba(5,11,20,0.36);
+    }
+
+    .summary-chart-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .summary-chart-title span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .summary-chart-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+    }
+
     .eyebrow {
       color: var(--green);
       font-size: 12px;
@@ -604,11 +751,13 @@
 
     @media (max-width: 900px) {
       .semaforo { grid-template-columns: repeat(4, 1fr); }
+      .summary-chart-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
       .semaforo { grid-template-columns: repeat(3, 1fr); }
       .reports-grid { grid-template-columns: 1fr; }
+      .performance-summary-head { display: block; }
     }
 
     footer {
@@ -689,6 +838,40 @@
         <div class="eyebrow">TradingAlgo Mosaic</div>
         <h2>Global Weekly View</h2>
         <p class="access-disclaimer" id="last-processing-date"></p>
+        <section class="performance-summary" aria-labelledby="performance-summary-title">
+          <div class="performance-summary-head">
+            <div>
+              <div class="eyebrow">Performance Summary</div>
+              <h3 id="performance-summary-title">Mosaic vs Benchmark</h3>
+              <p>CAGR and Sharpe Ratio from the latest HTML report data for the markets enabled by your Mosaic password.</p>
+            </div>
+          </div>
+          <div class="performance-table-wrap">
+            <table class="performance-table">
+              <thead>
+                <tr>
+                  <th>Market</th>
+                  <th>ETF</th>
+                  <th>CAGR Mosaic</th>
+                  <th>CAGR Bench</th>
+                  <th>CAGR Diff</th>
+                  <th>Sharpe Mosaic</th>
+                  <th>Sharpe Bench</th>
+                  <th>Sharpe Diff</th>
+                </tr>
+              </thead>
+              <tbody id="performance-summary-body">
+                <tr><td colspan="8">Loading performance data...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="summary-chart-section" aria-labelledby="summary-chart-title">
+          <div class="eyebrow">Equity / Drawdown / Exposure</div>
+          <h3 id="summary-chart-title">Market Charts</h3>
+          <p>Latest summary charts for the markets enabled by your Mosaic password.</p>
+          <div class="summary-chart-grid" id="summary-chart-grid"></div>
+        </section>
         <div class="reports-grid" id="reports-grid"></div>
       </section>
     </div>
@@ -1026,12 +1209,97 @@
         var posKey = POS_KEY[m.key] || m.key;
         return renderCard(m, indexMap[m.key], positions[posKey]);
       }).join("");
+      renderPerformanceSummary(positions && positions.__reportData || {});
+      renderSummaryCharts();
       loadHedgePercentages();
     }
 
     function formatPercent(value) {
       var number = Number(value);
       return Number.isFinite(number) ? Math.round(number * 100) + "%" : "-";
+    }
+
+    function formatMetricPercent(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? (number * 100).toFixed(2) + "%" : "-";
+    }
+
+    function formatMetricNumber(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? number.toFixed(2) : "-";
+    }
+
+    function metricClass(value) {
+      var number = Number(value);
+      if (!Number.isFinite(number) || Math.abs(number) < 0.000001) return "metric-neutral";
+      return number > 0 ? "metric-positive" : "metric-negative";
+    }
+
+    function renderPerformanceSummary(reportDataMap) {
+      var tbody = document.getElementById("performance-summary-body");
+      if (!tbody) return;
+
+      var rows = activeMarkets().map(function(m) {
+        var row = reportDataMap[m.key];
+        if (!row) return null;
+        var cagrMosaic = Number(row["Strategy CAGR"]);
+        var cagrBench = Number(row["Bench Cagr"]);
+        var sharpeMosaic = Number(row["Strategy Sharpe Ratio"]);
+        var sharpeBench = Number(row["Bench Sharpe"]);
+        return {
+          market: m.name,
+          benchmark: row.Benchmark || "-",
+          cagrMosaic: cagrMosaic,
+          cagrBench: cagrBench,
+          cagrDiff: cagrMosaic - cagrBench,
+          sharpeMosaic: sharpeMosaic,
+          sharpeBench: sharpeBench,
+          sharpeDiff: sharpeMosaic - sharpeBench
+        };
+      }).filter(Boolean).sort(function(a, b) {
+        return b.sharpeDiff - a.sharpeDiff;
+      });
+
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="8">Performance data unavailable for the enabled markets.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = rows.map(function(row) {
+        return '<tr>'
+          + '<td>' + row.market + '</td>'
+          + '<td>' + row.benchmark + '</td>'
+          + '<td>' + formatMetricPercent(row.cagrMosaic) + '</td>'
+          + '<td>' + formatMetricPercent(row.cagrBench) + '</td>'
+          + '<td class="' + metricClass(row.cagrDiff) + '">' + formatMetricPercent(row.cagrDiff) + '</td>'
+          + '<td>' + formatMetricNumber(row.sharpeMosaic) + '</td>'
+          + '<td>' + formatMetricNumber(row.sharpeBench) + '</td>'
+          + '<td class="' + metricClass(row.sharpeDiff) + '">' + formatMetricNumber(row.sharpeDiff) + '</td>'
+          + '</tr>';
+      }).join("");
+    }
+
+    function reportFolderFromUrl(url) {
+      var parts = String(url || "").split("/");
+      return parts.length >= 2 ? parts[parts.length - 2] : "";
+    }
+
+    function renderSummaryCharts() {
+      var grid = document.getElementById("summary-chart-grid");
+      if (!grid) return;
+
+      var cards = activeMarkets().map(function(m) {
+        if (!m.html) return "";
+        var folder = reportFolderFromUrl(m.html);
+        if (!folder) return "";
+        var imageUrl = m.html.replace(/[^\/]+$/, "assets/summary_" + folder + ".png");
+        return '<article class="summary-chart-card">'
+          + '<div class="summary-chart-title">' + m.name + '<span>Equity / Drawdown / Exposure</span></div>'
+          + '<img src="' + imageUrl + '" alt="' + m.name + ' equity drawdown exposure chart" loading="lazy">'
+          + '</article>';
+      }).filter(Boolean);
+
+      grid.innerHTML = cards.length ? cards.join("") : '<p>No summary charts available for the enabled markets.</p>';
     }
 
     function extractHedgeValue(d) {
