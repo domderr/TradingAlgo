@@ -1,6 +1,15 @@
 {
   "subscriptions": [
     {
+      "password_hash": "c1c224b03cd9bc7b6a86d77f5dace40191766c485cd55dc48caf9ac873335d6f",
+      "first_name": "Admin",
+      "markets": [
+        "All"
+      ],
+      "role": "admin",
+      "active": true
+    },
+    {
       "password_hash": "4b4440482b36a212f3c5c1d9c0a0b7557d3753185bd32954e6bb7f4d12846f05",
       "first_name": "Ahmad",
       "markets": [

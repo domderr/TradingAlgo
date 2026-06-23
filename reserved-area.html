@@ -221,6 +221,10 @@
       display: none;
     }
 
+    [data-admin-only][hidden] {
+      display: none;
+    }
+
     .performance-summary {
       margin-top: 24px;
       padding: 22px;
@@ -838,7 +842,7 @@
         <div class="eyebrow">TradingAlgo Mosaic</div>
         <h2>Global Weekly View</h2>
         <p class="access-disclaimer" id="last-processing-date"></p>
-        <section class="performance-summary" aria-labelledby="performance-summary-title">
+        <section class="performance-summary" aria-labelledby="performance-summary-title" data-admin-only hidden>
           <div class="performance-summary-head">
             <div>
               <div class="eyebrow">Performance Summary</div>
@@ -867,7 +871,7 @@
             </table>
           </div>
         </section>
-        <section class="summary-chart-section" aria-labelledby="summary-chart-title">
+        <section class="summary-chart-section" aria-labelledby="summary-chart-title" data-admin-only hidden>
           <div class="eyebrow">Equity / Drawdown / Exposure</div>
           <h3 id="summary-chart-title">Market Charts</h3>
           <p>Latest summary charts for the markets enabled by your Mosaic password.</p>
@@ -919,7 +923,19 @@
 
     var subscriptions = [];
     var authorizedMarkets = [];
+    var currentRole = "";
     var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
+
+    function isAdminAccess() {
+      return currentRole === "admin";
+    }
+
+    function setAdminOnlyVisibility() {
+      var visible = isAdminAccess();
+      Array.prototype.forEach.call(document.querySelectorAll("[data-admin-only]"), function(el) {
+        el.hidden = !visible;
+      });
+    }
 
     function activeMarkets() {
       if (authorizedMarkets.indexOf("All") !== -1) return MARKET_META;
@@ -975,6 +991,7 @@
         userBar.innerHTML = "<strong>ID: " + name + "</strong><span>enabled markets: " + marketsLabel(authorizedMarkets) + "</span>";
         userBar.classList.add("is-visible");
       }
+      setAdminOnlyVisibility();
       document.getElementById("restricted-content").hidden = false;
       loadData();
     }
@@ -990,6 +1007,7 @@
 
     function unlockSubscription(match) {
       authorizedMarkets = normalizeMarketList(match.markets);
+      currentRole = match.role === "admin" ? "admin" : "";
       if (!authorizedMarkets.length) {
         setAccessMessage("This password is valid, but no markets are enabled for this subscription.", "");
         if (window.TAAnalytics) {
@@ -1000,7 +1018,8 @@
 
       sessionStorage.setItem(ACCESS_STORAGE_KEY, JSON.stringify({
         first_name: match.first_name || "",
-        markets: authorizedMarkets
+        markets: authorizedMarkets,
+        role: currentRole
       }));
       if (window.TAAnalytics) {
         window.TAAnalytics.track("access_granted", {
@@ -1016,10 +1035,12 @@
       try {
         var stored = JSON.parse(sessionStorage.getItem(ACCESS_STORAGE_KEY) || "{}");
         authorizedMarkets = normalizeMarketList(stored.markets || stored);
+        currentRole = stored.role === "admin" ? "admin" : "";
         var firstName = stored.first_name || "";
         var match = { first_name: firstName };
       } catch (error) {
         authorizedMarkets = [];
+        currentRole = "";
         var match = {};
       }
 
@@ -1222,8 +1243,10 @@
         var posKey = POS_KEY[m.key] || m.key;
         return renderCard(m, indexMap[m.key], positions[posKey]);
       }).join("");
-      renderPerformanceSummary(positions && positions.__reportData || {});
-      renderSummaryCharts();
+      if (isAdminAccess()) {
+        renderPerformanceSummary(positions && positions.__reportData || {});
+        renderSummaryCharts();
+      }
       loadHedgePercentages();
     }
 
