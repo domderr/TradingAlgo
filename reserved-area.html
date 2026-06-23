@@ -905,16 +905,16 @@
       { key: "South Africa30",flag: "za", name: "S.Africa30",  pdf: "reports/Report_South_Africa30.pdf", html: "reports_html/South_Africa30/Report_South_Africa30.html" }
     ];
 
-    var CONSERVATIVE_HAIRCUTS = {
-      "Australia50": 0.73,
-      "Germany30": 0.80,
-      "Italy30": 0.90,
-      "Japan50": 0.93,
-      "Mexico30": 0.98,
-      "NASDAQ100": 0.90,
-      "South Africa30": 0.98,
-      "South Korea30": 0.95,
-      "USA100": 0.86
+    var MARKET_HAIRCUTS = {
+      "Australia50": 0.35,
+      "Germany30": 0.65,
+      "Italy30": 1.00,
+      "Japan50": 0.85,
+      "Mexico30": 1.00,
+      "NASDAQ100": 0.35,
+      "South Africa30": 1.00,
+      "South Korea30": 1.00,
+      "USA100": 0.38
     };
 
     var subscriptions = [];
@@ -1247,6 +1247,15 @@
       return Number.isFinite(number) ? number.toFixed(2) : "1.00";
     }
 
+    function applyMetricHaircut(mosaic, benchmark, haircut) {
+      var mosaicNumber = Number(mosaic);
+      var benchmarkNumber = Number(benchmark);
+      var haircutNumber = Number(haircut);
+      if (!Number.isFinite(mosaicNumber) || !Number.isFinite(benchmarkNumber)) return mosaicNumber;
+      if (!Number.isFinite(haircutNumber)) haircutNumber = 1;
+      return benchmarkNumber + haircutNumber * (mosaicNumber - benchmarkNumber);
+    }
+
     function metricClass(value) {
       var number = Number(value);
       if (!Number.isFinite(number) || Math.abs(number) < 0.000001) return "metric-neutral";
@@ -1264,10 +1273,13 @@
         var cagrBench = Number(row["Bench Cagr"]);
         var sharpeMosaic = Number(row["Strategy Sharpe Ratio"]);
         var sharpeBench = Number(row["Bench Sharpe"]);
+        var haircut = MARKET_HAIRCUTS[m.key] || 1;
+        cagrMosaic = applyMetricHaircut(cagrMosaic, cagrBench, haircut);
+        sharpeMosaic = applyMetricHaircut(sharpeMosaic, sharpeBench, haircut);
         return {
           market: m.name,
           benchmark: row.Benchmark || "-",
-          haircut: CONSERVATIVE_HAIRCUTS[m.key] || 1,
+          haircut: haircut,
           cagrMosaic: cagrMosaic,
           cagrBench: cagrBench,
           cagrDiff: cagrMosaic - cagrBench,
@@ -1371,11 +1383,32 @@
       });
     }
 
+    function loadHaircuts() {
+      return fetch("haircuts.csv?v=" + Date.now(), { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Haircuts unavailable");
+          return response.text();
+        })
+        .then(function(text) {
+          text.split(/\r?\n/).slice(1).forEach(function(line) {
+            var parts = line.split(",");
+            if (parts.length < 2) return;
+            var market = normalizeMarketName(parts[0]);
+            var haircut = Number(parts[1]);
+            if (market && Number.isFinite(haircut)) {
+              MARKET_HAIRCUTS[market] = haircut;
+            }
+          });
+        })
+        .catch(function() {});
+    }
+
     function loadData() {
       var cacheKey = String(Date.now());
       var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
       var posPromise   = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return {}; });
-      var reportDataPromise = loadReportData();
+      var haircutPromise = loadHaircuts();
+      var reportDataPromise = haircutPromise.then(loadReportData);
       Promise.all([indexPromise, posPromise, reportDataPromise]).then(function(results) {
         results[1].__reportData = results[2];
         renderAll(results[0], results[1]);
