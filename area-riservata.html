@@ -452,7 +452,7 @@
             <li><span>CSV data</span><strong>Internal</strong></li>
             <li><span>Chart PNGs</span><strong>Embedded</strong></li>
           </ul>
-          <a class="button is-muted" href="#" id="download-button">PDF Extra Not Published</a>
+          <a class="button" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Request" id="download-button">Request PDF</a>
         </section>
 
         <section class="panel">
@@ -498,6 +498,11 @@
       return Number.isFinite(number) ? Math.round(number) : '-';
     }
 
+    function pdfRequestLink(market) {
+      return 'mailto:domderrico@gmail.com?subject=' +
+        encodeURIComponent('TradingAlgo Mosaic PDF Request - ' + market);
+    }
+
     function setActive(button) {
       document.querySelectorAll('.menu-link').forEach(function (item) {
         item.classList.toggle('is-active', item === button);
@@ -538,15 +543,15 @@
 
       var downloadButton = document.getElementById('download-button');
       if (report && report.Report_URL) {
-        downloadButton.href = 'mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request';
+        downloadButton.href = pdfRequestLink(market);
         downloadButton.textContent = 'Request PDF Access';
         downloadButton.classList.remove('is-muted');
         downloadButton.removeAttribute('target');
         downloadButton.removeAttribute('rel');
       } else {
-        downloadButton.href = '#';
-        downloadButton.textContent = 'PDF Extra Not Published';
-        downloadButton.classList.add('is-muted');
+        downloadButton.href = pdfRequestLink(market);
+        downloadButton.textContent = 'Request PDF';
+        downloadButton.classList.remove('is-muted');
         downloadButton.removeAttribute('target');
         downloadButton.removeAttribute('rel');
       }
