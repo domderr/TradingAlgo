@@ -31,6 +31,14 @@
         "All"
       ],
       "active": true
+    },
+    {
+      "password_hash": "34908e09111b7dc719d4dc5720be519e46513fd62a3721dc8baad8c968fbf465",
+      "first_name": "Elia",
+      "markets": [
+        "All"
+      ],
+      "active": true
     }
   ]
 }
