@@ -1455,7 +1455,6 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         "<table class=\"metric-mini-table\">"
         "<thead><tr><th></th><th>Long</th><th>L+H</th><th>B</th></tr></thead>"
         "<tbody>"
-        f"<tr><td>Haircut</td><td>{num(market_haircut)}</td><td>{num(market_haircut)}</td><td>1.00</td></tr>"
         f"<tr><td>CAGR</td><td>{pct(adjusted_strategy_cagr)}</td><td>{pct(adjusted_hedged_cagr)}</td><td>{pct(row.get('Bench Cagr'))}</td></tr>"
         f"<tr><td>MaxDD</td><td>{pct(row.get('Strategy MaxDD'))}</td><td>{pct(row.get('Hedged MaxDD'))}</td><td>{pct(row.get('Bench_MaxDD'))}</td></tr>"
         f"<tr><td>Sharpe</td><td>{num(adjusted_strategy_sharpe)}</td><td>{num(adjusted_hedged_sharpe)}</td><td>{num(row.get('Bench Sharpe'))}</td></tr>"
@@ -1561,7 +1560,6 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         <table class="asset-table performance-table">
           <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
           <tbody>
-            <tr><td>Haircut</td><td>{num(market_haircut)}</td><td>{num(market_haircut)}</td><td>1.00</td></tr>
             <tr><td>CAGR</td><td>{pct(adjusted_strategy_cagr)}</td><td>{pct(adjusted_hedged_cagr)}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
             <tr><td>MaxDD</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
             <tr><td>Sharpe</td><td>{num(adjusted_strategy_sharpe)}</td><td>{num(adjusted_hedged_sharpe)}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>

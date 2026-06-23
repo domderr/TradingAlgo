@@ -71,7 +71,6 @@ def performance_section(row, haircut):
         <table class="asset-table performance-table">
           <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
           <tbody>
-            <tr><td>Haircut</td><td>{num(haircut)}</td><td>{num(haircut)}</td><td>1.00</td></tr>
             <tr><td>CAGR</td><td>{pct(strategy_cagr)}</td><td>{pct(hedged_cagr)}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
             <tr><td>MaxDD</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
             <tr><td>Sharpe</td><td>{num(strategy_sharpe)}</td><td>{num(hedged_sharpe)}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>
