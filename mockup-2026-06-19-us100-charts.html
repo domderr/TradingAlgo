@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TradingAlgo Mosaic | US100 Sample Charts</title>
+  <title>TradingAlgo Mosaic | US100 Sample Charts (sample)</title>
   <style>
     :root {
       --bg: #071423;
       --panel: rgba(255,255,255,0.075);
       --text: #f4f7fb;
       --muted: #aebbd0;
+      --blue: #4aa3ff;
       --green: #42d392;
+      --yellow: #f5c542;
+      --red: #ff6b6b;
       --border: rgba(255,255,255,0.16);
       --shadow: 0 24px 70px rgba(0,0,0,0.42);
     }
@@ -43,8 +46,30 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       font-size: 21px;
       font-weight: 850;
+    }
+
+    .logo-grid {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      background: var(--blue);
+    }
+
+    .logo-grid span:nth-child(2),
+    .logo-grid span:nth-child(6),
+    .logo-grid span:nth-child(8) {
+      background: var(--green);
     }
 
     .nav-links {
@@ -160,6 +185,37 @@
 
     .status strong {
       color: #ffffff;
+      display: inline-block;
+      margin-bottom: 4px;
+      font-size: 20px;
+      line-height: 1.1;
+    }
+
+    .status.selected {
+      border-color: rgba(66,211,146,0.5);
+      background: rgba(66,211,146,0.11);
+    }
+
+    .status.selected strong {
+      color: var(--green);
+    }
+
+    .status.watchlist {
+      border-color: rgba(245,197,66,0.5);
+      background: rgba(245,197,66,0.11);
+    }
+
+    .status.watchlist strong {
+      color: var(--yellow);
+    }
+
+    .status.rejected {
+      border-color: rgba(255,107,107,0.5);
+      background: rgba(255,107,107,0.11);
+    }
+
+    .status.rejected strong {
+      color: var(--red);
     }
 
     @media (max-width: 640px) {
@@ -177,18 +233,22 @@
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="mosaic-home-19jun-mockup.html">TradingAlgo Mosaic</a>
+    <a class="brand" href="index.html">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo Mosaic
+    </a>
     <nav class="nav-links" aria-label="Snapshot navigation">
-      <a href="mosaic-home-19jun-mockup.html">Home Mockup</a>
+      <a href="index.html">Home</a>
       <a href="mockup-2026-06-19-markets.html">Explore Markets</a>
-      <a href="mockup-2026-06-19-us100-sample-report.html">US100 Report</a>
+      <a href="mockup-2026-06-19/reports_html/USA100/Report_USA100.html">US100 Report</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h1>US100 Sample Charts</h1>
-      <p>Static sample chart for the weekly snapshot dated June 19, 2026.</p>
+      <h1>US100 Sample Charts (sample)</h1>
     </section>
     <section class="chart-layout" aria-label="US100 sample chart explanation">
       <article class="chart-card">
@@ -199,12 +259,11 @@
         <h2>How to read the chart</h2>
         <p>The main chart shows the asset behavior inside the Mosaic framework. It is designed to explain why a stock belongs, or does not belong, to the current portfolio.</p>
         <h3>Histograms at the bottom</h3>
-        <p>The histograms summarize the scoring components used by Mosaic. They make the decision more inspectable: trend quality, stability, and portfolio contribution are shown visually instead of hidden behind a single rank.</p>
         <h3>Possible status values</h3>
         <div class="status-list">
-          <div class="status"><strong>Selected</strong><br>The stock is currently part of the five-stock portfolio for the market.</div>
-          <div class="status"><strong>Watchlist</strong><br>The stock is close to selection quality and should be monitored for possible inclusion.</div>
-          <div class="status"><strong>Rejected</strong><br>The stock does not currently satisfy the required Mosaic conditions.</div>
+          <div class="status selected"><strong>Selected</strong><br>The stock is currently part of the five-stock portfolio for the market.</div>
+          <div class="status watchlist"><strong>Watchlist</strong><br>The stock is close to selection quality and should be monitored for possible inclusion.</div>
+          <div class="status rejected"><strong>Rejected</strong><br>The stock does not currently satisfy the required Mosaic conditions.</div>
         </div>
       </aside>
     </section>
