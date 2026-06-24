@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradingAlgo Mosaic | Static Market Snapshot</title>
+  <style>
+    :root {
+      --bg: #071423;
+      --panel: rgba(255,255,255,0.075);
+      --text: #f4f7fb;
+      --muted: #aebbd0;
+      --blue: #4aa3ff;
+      --green: #42d392;
+      --border: rgba(255,255,255,0.16);
+      --shadow: 0 24px 70px rgba(0,0,0,0.42);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(74,163,255,0.22), transparent 28%),
+        radial-gradient(circle at 82% 8%, rgba(66,211,146,0.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), #050b14 74%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav,
+    main,
+    footer {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .nav-links a,
+    .btn {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #edf5ff;
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 34px 0 68px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 0.96;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .matrix-shell {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .matrix-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+    }
+
+    .matrix-title h2 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .matrix-title span {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    .market-matrix {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .market-card {
+      min-height: 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.18);
+      transition: transform .16s ease, border-color .16s ease;
+    }
+
+    .market-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(66,211,146,0.52);
+    }
+
+    .flag {
+      width: 34px;
+      height: 24px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .market-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .market-name {
+      text-align: right;
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+    .market-note {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .open {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    footer {
+      padding: 0 0 30px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 980px) {
+      .market-matrix {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav,
+      .matrix-title {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .market-matrix {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="mosaic-home-19jun-mockup.html">TradingAlgo Mosaic</a>
+    <nav class="nav-links" aria-label="Snapshot navigation">
+      <a href="mosaic-home-19jun-mockup.html">Home Mockup</a>
+      <a href="mockup-2026-06-19-us100-sample-report.html">US100 Sample Report</a>
+      <a href="mockup-2026-06-19-us100-charts.html">US100 Charts</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Explore Markets</h1>
+      <p>Static public replica of the Reserved Area, frozen to the weekly snapshot dated June 19, 2026. Each card links to its corresponding static weekly market report.</p>
+    </section>
+
+    <section class="matrix-shell">
+      <div class="matrix-title">
+        <h2>Country Matrix</h2>
+        <span>Week of June 19, 2026</span>
+      </div>
+      <div class="market-matrix">
+        <a class="market-card" href="mockup-2026-06-19/reports_html/DJ30/Report_DJ30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">DJ30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/USA100/Report_USA100.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">USA100</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/NASDAQ100/Report_NASDAQ100.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">Nasdaq100</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Canada50/Report_Canada50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/ca.svg" alt=""><span class="market-name">Canada50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Mexico30/Report_Mexico30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/mx.svg" alt=""><span class="market-name">Mexico30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Europe50/Report_Europe50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/eu.svg" alt=""><span class="market-name">Europe50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/UK30/Report_UK30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/gb.svg" alt=""><span class="market-name">UK30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/France40/Report_France40.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/fr.svg" alt=""><span class="market-name">France40</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Spain40/Report_Spain40.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/es.svg" alt=""><span class="market-name">Spain40</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Germany30/Report_Germany30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/de.svg" alt=""><span class="market-name">Germany30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Italy30/Report_Italy30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/it.svg" alt=""><span class="market-name">Italy30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Japan50/Report_Japan50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/jp.svg" alt=""><span class="market-name">Japan50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/South_Korea30/Report_South_Korea30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/kr.svg" alt=""><span class="market-name">S.Korea30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/Australia50/Report_Australia50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/au.svg" alt=""><span class="market-name">Australia50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <a class="market-card" href="mockup-2026-06-19/reports_html/South_Africa30/Report_South_Africa30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/za.svg" alt=""><span class="market-name">S.Africa30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Mockup snapshot only. The live Reserved Area remains unchanged.</footer>
+</body>
+</html>

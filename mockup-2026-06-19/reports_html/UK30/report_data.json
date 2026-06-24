@@ -1,0 +1,1012 @@
+[
+  {
+    "Market": "UK30",
+    "Benchmark": "EWU",
+    "Number of Tickers": 30,
+    "Strategy CAGR": 0.13814261179449372,
+    "Hedged CAGR": 0.10584923496997223,
+    "Strategy MaxDD": -0.11526291736586047,
+    "Hedged MaxDD": -0.1123236751197706,
+    "Strategy Sharpe Ratio": 0.8661580654274706,
+    "Hedged Sharpe Ratio": 0.7166932362148984,
+    "Bench Cagr": 0.1863850421,
+    "Bench_MaxDD": -0.0992194154,
+    "Bench Sharpe": 1.3453961412,
+    "Information Ratio": -0.30348323360062035,
+    "Hedged Information Ratio": -0.5111686234434643,
+    "PDF_Output": "",
+    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\UK30\\summary_UK30.png",
+    "Capital Invested": 1.0,
+    "Benchmark Hedge Short": 0.1116258173,
+    "Benchmark Hedge Ticker": "EWU",
+    "Hedge Portfolio Score": 88.8374182687,
+    "Last Weekly Selection": [
+      {
+        "Ticker": "GLEN.L",
+        "Name": "GLENCORE PLC ORD USD0.01",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "Ticker": "RIO.L",
+        "Name": "RIO TINTO PLC ORD 10P",
+        "Sector": "Basic Materials",
+        "Industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "Ticker": "HSBA.L",
+        "Name": "HSBC HOLDINGS PLC ORD $0.50 (UK",
+        "Sector": "Financial Services",
+        "Industry": "Banks - Diversified"
+      },
+      {
+        "Ticker": "GSK.L",
+        "Name": "GSK PLC ORD 31 1/4P",
+        "Sector": "Healthcare",
+        "Industry": "Drug Manufacturers - General"
+      },
+      {
+        "Ticker": "BP.L",
+        "Name": "BP PLC $0.25",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
+      }
+    ],
+    "Added Tickers": "HSBA.L - HSBC HOLDINGS PLC ORD $0.50 (UK",
+    "Removed Tickers": "STAN.L - STANDARD CHARTERED PLC ORD USD0",
+    "Selection Drivers": "GLEN.L: trend slope 0.02, stability R2 0.94, score 0.02 and passed correlation filter<br/>RIO.L: trend slope 0.01, stability R2 0.95, score 0.01 and passed correlation filter<br/>HSBA.L: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>GSK.L: trend slope 0.01, stability R2 0.76, score 0.01 and passed correlation filter<br/>BP.L: trend slope 0.01, stability R2 0.80, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "STAN.L",
+        "Contribution": 0.150825318
+      },
+      {
+        "Ticker": "IMB.L",
+        "Contribution": 0.0719700437
+      },
+      {
+        "Ticker": "PRU.L",
+        "Contribution": 0.0593220266
+      },
+      {
+        "Ticker": "NWG.L",
+        "Contribution": 0.0545035794
+      },
+      {
+        "Ticker": "BATS.L",
+        "Contribution": 0.0479720317
+      },
+      {
+        "Ticker": "VOD.L",
+        "Contribution": 0.0423857218
+      },
+      {
+        "Ticker": "RIO.L",
+        "Contribution": 0.0335786794
+      },
+      {
+        "Ticker": "CPG.L",
+        "Contribution": 0.029542075
+      },
+      {
+        "Ticker": "GLEN.L",
+        "Contribution": 0.0267831295
+      },
+      {
+        "Ticker": "LLOY.L",
+        "Contribution": 0.0231088876
+      },
+      {
+        "Ticker": "EXPN.L",
+        "Contribution": 0.0200453436
+      },
+      {
+        "Ticker": "LSEG.L",
+        "Contribution": 0.0143407314
+      },
+      {
+        "Ticker": "AV.L",
+        "Contribution": 0.0060672893
+      },
+      {
+        "Ticker": "SMIN.L",
+        "Contribution": 0.0048104963
+      },
+      {
+        "Ticker": "HLN.L",
+        "Contribution": 0.0025061923
+      },
+      {
+        "Ticker": "SHEL.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HSBA.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ENT.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DGE.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NG.L",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BA.L",
+        "Contribution": -0.002051992
+      },
+      {
+        "Ticker": "REL.L",
+        "Contribution": -0.0080864646
+      },
+      {
+        "Ticker": "AAL.L",
+        "Contribution": -0.010359714
+      },
+      {
+        "Ticker": "ULVR.L",
+        "Contribution": -0.0105720085
+      },
+      {
+        "Ticker": "GSK.L",
+        "Contribution": -0.0119669908
+      },
+      {
+        "Ticker": "MNG.L",
+        "Contribution": -0.017702322
+      },
+      {
+        "Ticker": "BP.L",
+        "Contribution": -0.0178873488
+      },
+      {
+        "Ticker": "SGE.L",
+        "Contribution": -0.0294750837
+      },
+      {
+        "Ticker": "AZN.L",
+        "Contribution": -0.0335530206
+      },
+      {
+        "Ticker": "BARC.L",
+        "Contribution": -0.0344828015
+      }
+    ],
+    "Strategy_Returns": {
+      "2024-01-12": 0.0125051984,
+      "2024-01-19": -0.0061867647,
+      "2024-01-26": 0.0035785908,
+      "2024-02-02": -0.0011818639,
+      "2024-02-09": 0.0104250221,
+      "2024-02-16": 0.0029910613,
+      "2024-02-23": 0.0080453757,
+      "2024-03-01": 0.0035718959,
+      "2024-03-08": 0.0074085252,
+      "2024-03-15": -0.0040199284,
+      "2024-03-22": 0.0384314063,
+      "2024-03-29": -0.020444576,
+      "2024-04-05": -0.0272210542,
+      "2024-04-12": -0.0233269189,
+      "2024-04-19": -0.0250194421,
+      "2024-04-26": 0.0222627667,
+      "2024-05-03": 0.0105234035,
+      "2024-05-10": 0.03182131,
+      "2024-05-17": -0.004907537,
+      "2024-05-24": -0.0024086924,
+      "2024-05-31": -0.0209799709,
+      "2024-06-07": 0.0163705554,
+      "2024-06-14": -0.0084859261,
+      "2024-06-21": 0.0134586539,
+      "2024-06-28": -0.0029234825,
+      "2024-07-05": -0.0081957309,
+      "2024-07-12": 0.0106080119,
+      "2024-07-19": -0.0030224044,
+      "2024-07-26": 0.0305304509,
+      "2024-08-02": -0.0260920997,
+      "2024-08-09": 0.0037053702,
+      "2024-08-16": 0.033286524,
+      "2024-08-23": -0.000371093,
+      "2024-08-30": 0.0164698045,
+      "2024-09-06": -0.0216489038,
+      "2024-09-13": 0.0248183312,
+      "2024-09-20": -0.0173138647,
+      "2024-09-27": 0.0069392564,
+      "2024-10-04": -0.0038554324,
+      "2024-10-11": 0.0157696053,
+      "2024-10-18": 0.0088186631,
+      "2024-10-25": -0.0067968664,
+      "2024-11-01": -0.0031860501,
+      "2024-11-08": -0.0244125684,
+      "2024-11-15": -0.0094632849,
+      "2024-11-22": 0.0365978176,
+      "2024-11-29": 0.0049204914,
+      "2024-12-06": 0.0053477232,
+      "2024-12-13": -0.0129900032,
+      "2024-12-20": -0.010657948,
+      "2024-12-27": 0.0011716704,
+      "2025-01-03": 0.0064213415,
+      "2025-01-10": -0.0106515191,
+      "2025-01-17": 0.0327817723,
+      "2025-01-24": 0.0062209041,
+      "2025-01-31": 0.0265117514,
+      "2025-02-07": 0.0088887481,
+      "2025-02-14": -0.0025112229,
+      "2025-02-21": 0.0093006726,
+      "2025-02-28": 0.0377480507,
+      "2025-03-07": -0.0496828165,
+      "2025-03-14": -0.0120024621,
+      "2025-03-21": 0.0023621383,
+      "2025-03-28": 0.0185141048,
+      "2025-04-04": -0.0734136302,
+      "2025-04-11": -0.0038788138,
+      "2025-04-18": 0.0321324925,
+      "2025-04-25": 0.0093794408,
+      "2025-05-02": 0.0265590867,
+      "2025-05-09": -0.0051453612,
+      "2025-05-16": -0.0011439214,
+      "2025-05-23": 0.0204868911,
+      "2025-05-30": -0.0104846827,
+      "2025-06-06": 0.027581275,
+      "2025-06-13": -0.0062485151,
+      "2025-06-20": 0.0061612267,
+      "2025-06-27": -0.0120658521,
+      "2025-07-04": -0.0062995674,
+      "2025-07-11": 0.0296519012,
+      "2025-07-18": 0.0235444498,
+      "2025-07-25": -0.0131560053,
+      "2025-08-01": 0.003616453,
+      "2025-08-08": -0.011486259,
+      "2025-08-15": -0.021084084,
+      "2025-08-22": 0.0191847092,
+      "2025-08-29": -0.0275592603,
+      "2025-09-05": -0.0048534279,
+      "2025-09-12": 0.0387454333,
+      "2025-09-19": -0.0173170502,
+      "2025-09-26": 0.0094429092,
+      "2025-10-03": -0.005129915,
+      "2025-10-10": -0.0107452736,
+      "2025-10-17": -0.0364763049,
+      "2025-10-24": 0.031726654,
+      "2025-10-31": 0.0309770869,
+      "2025-11-07": 0.0159024559,
+      "2025-11-14": 0.0029299483,
+      "2025-11-21": -0.0227564544,
+      "2025-11-28": 0.0287522932,
+      "2025-12-05": -0.0128561508,
+      "2025-12-12": 0.0003833865,
+      "2025-12-19": 0.0308219045,
+      "2025-12-26": 0.0017409531,
+      "2026-01-02": 0.0125669081,
+      "2026-01-09": -0.0036740679,
+      "2026-01-16": 0.0275688522,
+      "2026-01-23": 0.0025553318,
+      "2026-01-30": 0.0247073118,
+      "2026-02-06": 0.0152072784,
+      "2026-02-13": -0.0052973329,
+      "2026-02-20": 0.029714631,
+      "2026-02-27": 0.0064350476,
+      "2026-03-06": -0.0823592369,
+      "2026-03-13": -0.0096302831,
+      "2026-03-20": -0.0202542889,
+      "2026-03-27": 0.0219156212,
+      "2026-04-03": 0.057065592,
+      "2026-04-10": 0.0269920761,
+      "2026-04-17": 0.0029774391,
+      "2026-04-24": -0.0077518827,
+      "2026-05-01": 0.0059468283,
+      "2026-05-08": -0.0092838089,
+      "2026-05-15": 0.0141753242,
+      "2026-05-22": 0.0098372669,
+      "2026-05-29": -0.0048294662,
+      "2026-06-05": 0.0079652739,
+      "2026-06-12": 0.0051002615,
+      "2026-06-19": -0.02733506
+    },
+    "Hedged_Strategy_Returns": {
+      "2024-01-12": 0.0125832475,
+      "2024-01-19": -0.0051509689,
+      "2024-01-26": 0.0026829889,
+      "2024-02-02": -0.0009525216,
+      "2024-02-09": 0.0106891157,
+      "2024-02-16": 0.002372496,
+      "2024-02-23": 0.0068135668,
+      "2024-03-01": 0.0040635083,
+      "2024-03-08": 0.0050929942,
+      "2024-03-15": -0.0044838717,
+      "2024-03-22": 0.0359983807,
+      "2024-03-29": -0.0219632948,
+      "2024-04-05": -0.026990267,
+      "2024-04-12": -0.0212634483,
+      "2024-04-19": -0.0240014146,
+      "2024-04-26": 0.0165388888,
+      "2024-05-03": 0.0084247116,
+      "2024-05-10": 0.0285402723,
+      "2024-05-17": -0.0071440619,
+      "2024-05-24": -0.0009296156,
+      "2024-05-31": -0.0209044087,
+      "2024-06-07": 0.0178788237,
+      "2024-06-14": -0.0070557085,
+      "2024-06-21": 0.0124947814,
+      "2024-06-28": -0.0017470357,
+      "2024-07-05": -0.0109804395,
+      "2024-07-12": 0.008191459,
+      "2024-07-19": -0.0007079834,
+      "2024-07-26": 0.0283400987,
+      "2024-08-02": -0.0236305571,
+      "2024-08-09": 0.0040004047,
+      "2024-08-16": 0.0270932794,
+      "2024-08-23": -0.0054931582,
+      "2024-08-30": 0.0157570707,
+      "2024-09-06": -0.0160192254,
+      "2024-09-13": 0.022595462,
+      "2024-09-20": -0.018084004,
+      "2024-09-27": 0.0037480724,
+      "2024-10-04": -0.000528707,
+      "2024-10-11": 0.0178502009,
+      "2024-10-18": 0.0065344061,
+      "2024-10-25": -0.0030106804,
+      "2024-11-01": -0.0011246135,
+      "2024-11-08": -0.0223450287,
+      "2024-11-15": -0.00495432,
+      "2024-11-22": 0.0329728398,
+      "2024-11-29": 0.0003592664,
+      "2024-12-06": 0.004735093,
+      "2024-12-13": -0.0108394321,
+      "2024-12-20": -0.0046107476,
+      "2024-12-27": -0.0003431566,
+      "2025-01-03": 0.0063598545,
+      "2025-01-10": -0.0081947403,
+      "2025-01-17": 0.0295981632,
+      "2025-01-24": 0.0027678916,
+      "2025-01-31": 0.0251615199,
+      "2025-02-07": 0.0080525209,
+      "2025-02-14": -0.0043901633,
+      "2025-02-21": 0.0097954184,
+      "2025-02-28": 0.0360479173,
+      "2025-03-07": -0.0516357411,
+      "2025-03-14": -0.0116044363,
+      "2025-03-21": 0.002936901,
+      "2025-03-28": 0.0183428275,
+      "2025-04-04": -0.0650363214,
+      "2025-04-11": -0.0082863018,
+      "2025-04-18": 0.0253901086,
+      "2025-04-25": 0.0046772832,
+      "2025-05-02": 0.0232839376,
+      "2025-05-09": -0.003560603,
+      "2025-05-16": -0.0044864932,
+      "2025-05-23": 0.0155743058,
+      "2025-05-30": -0.0106874463,
+      "2025-06-06": 0.0253992124,
+      "2025-06-13": -0.0066097808,
+      "2025-06-20": 0.0100082898,
+      "2025-06-27": -0.0164548512,
+      "2025-07-04": -0.0069272093,
+      "2025-07-11": 0.029066621,
+      "2025-07-18": 0.0242437213,
+      "2025-07-25": -0.0183181219,
+      "2025-08-01": 0.0076665258,
+      "2025-08-08": -0.0147214866,
+      "2025-08-15": -0.0254033288,
+      "2025-08-22": 0.014774969,
+      "2025-08-29": -0.0244042983,
+      "2025-09-05": -0.0053470021,
+      "2025-09-12": 0.0370729532,
+      "2025-09-19": -0.0150621619,
+      "2025-09-26": 0.0082179542,
+      "2025-10-03": -0.0080547432,
+      "2025-10-10": -0.0085131622,
+      "2025-10-17": -0.0372724252,
+      "2025-10-24": 0.0300981095,
+      "2025-10-31": 0.0312518624,
+      "2025-11-07": 0.0153918987,
+      "2025-11-14": 0.0031572931,
+      "2025-11-21": -0.0204845645,
+      "2025-11-28": 0.0251016428,
+      "2025-12-05": -0.0131262118,
+      "2025-12-12": 0.0001437326,
+      "2025-12-19": 0.026305004,
+      "2025-12-26": -0.0006125081,
+      "2026-01-02": 0.0117551418,
+      "2026-01-09": -0.0046408779,
+      "2026-01-16": 0.0264118764,
+      "2026-01-23": 0.0009747647,
+      "2026-01-30": 0.022446098,
+      "2026-02-06": 0.0122814339,
+      "2026-02-13": -0.0066065317,
+      "2026-02-20": 0.0270030133,
+      "2026-02-27": 0.0042890519,
+      "2026-03-06": -0.0733043449,
+      "2026-03-13": -0.0072386576,
+      "2026-03-20": -0.0152866806,
+      "2026-03-27": 0.0209702119,
+      "2026-04-03": 0.0509562124,
+      "2026-04-10": 0.0233805599,
+      "2026-04-17": 0.0016031848,
+      "2026-04-24": -0.0044723948,
+      "2026-05-01": 0.005865643,
+      "2026-05-08": -0.0084347683,
+      "2026-05-15": 0.0171457482,
+      "2026-05-22": 0.005584793,
+      "2026-05-29": -0.0043830468,
+      "2026-06-05": 0.0095229421,
+      "2026-06-12": 0.0029583471,
+      "2026-06-19": -0.0244283482
+    },
+    "Benchmark_Returns": {
+      "2024-01-12": -0.0018283309,
+      "2024-01-19": -0.0244198402,
+      "2024-01-26": 0.0212765623,
+      "2024-02-02": -0.0055147276,
+      "2024-02-09": -0.0064694513,
+      "2024-02-16": 0.0133334251,
+      "2024-02-23": 0.0100978403,
+      "2024-03-01": -0.0027264889,
+      "2024-03-08": 0.0124544027,
+      "2024-03-15": 0.0027002493,
+      "2024-03-22": 0.0143628606,
+      "2024-03-29": 0.0091444093,
+      "2024-04-05": -0.0014616109,
+      "2024-04-12": -0.0128804634,
+      "2024-04-19": -0.0068207628,
+      "2024-04-26": 0.0400117537,
+      "2024-05-03": 0.0146425571,
+      "2024-05-10": 0.0229203235,
+      "2024-05-17": 0.0163208155,
+      "2024-05-24": -0.0108874599,
+      "2024-05-31": -0.0005502383,
+      "2024-06-07": -0.0107378602,
+      "2024-06-14": -0.0096091861,
+      "2024-06-21": 0.0057291009,
+      "2024-06-28": -0.0065508063,
+      "2024-07-05": 0.016915111,
+      "2024-07-12": 0.0157879634,
+      "2024-07-19": -0.0144323529,
+      "2024-07-26": 0.014362162,
+      "2024-08-02": -0.0152693439,
+      "2024-08-09": -0.0019735389,
+      "2024-08-16": 0.0307910242,
+      "2024-08-23": 0.0249382829,
+      "2024-08-30": 0.0034759753,
+      "2024-09-06": -0.0277111491,
+      "2024-09-13": 0.011235926,
+      "2024-09-20": 0.0037941151,
+      "2024-09-27": 0.0170084294,
+      "2024-10-04": -0.0185822614,
+      "2024-10-11": -0.0113606822,
+      "2024-10-18": 0.0125855476,
+      "2024-10-25": -0.0237771918,
+      "2024-11-01": -0.0105177717,
+      "2024-11-08": -0.0117481467,
+      "2024-11-15": -0.0237758454,
+      "2024-11-22": 0.0197158348,
+      "2024-11-29": 0.017913008,
+      "2024-12-06": 0.0027934513,
+      "2024-12-13": -0.0108636308,
+      "2024-12-20": -0.0314056652,
+      "2024-12-27": 0.0080141802,
+      "2025-01-03": 0.0002946328,
+      "2025-01-10": -0.0141300934,
+      "2025-01-17": 0.0265751175,
+      "2025-01-24": 0.0229784096,
+      "2025-01-31": 0.01251062,
+      "2025-02-07": 0.0078628307,
+      "2025-02-14": 0.0183896324,
+      "2025-02-21": -0.0051983636,
+      "2025-02-28": 0.0187019588,
+      "2025-03-07": 0.0213283418,
+      "2025-03-14": -0.0031722004,
+      "2025-03-21": -0.0047733362,
+      "2025-03-28": 0.0015987791,
+      "2025-04-04": -0.079010352,
+      "2025-04-11": 0.0274408122,
+      "2025-04-18": 0.0393590415,
+      "2025-04-25": 0.0262373877,
+      "2025-05-02": 0.0173959896,
+      "2025-05-09": -0.0080312052,
+      "2025-05-16": 0.0159311408,
+      "2025-05-23": 0.0251927496,
+      "2025-05-30": 0.0010029782,
+      "2025-06-06": 0.0107715647,
+      "2025-06-13": 0.0017348168,
+      "2025-06-20": -0.0178998429,
+      "2025-06-27": 0.0210796099,
+      "2025-07-04": 0.0025175751,
+      "2025-07-11": 0.0025113518,
+      "2025-07-18": -0.0030060729,
+      "2025-07-25": 0.02110556,
+      "2025-08-01": -0.0172243706,
+      "2025-08-08": 0.0147721117,
+      "2025-08-15": 0.0182581589,
+      "2025-08-22": 0.0196269098,
+      "2025-08-29": -0.0147339498,
+      "2025-09-05": 0.0021707634,
+      "2025-09-12": 0.0093863294,
+      "2025-09-19": -0.0138292774,
+      "2025-09-26": 0.0053191611,
+      "2025-10-03": 0.0254929714,
+      "2025-10-10": -0.0213414795,
+      "2025-10-17": 0.0081476863,
+      "2025-10-24": 0.0168765533,
+      "2025-10-31": -0.0025713011,
+      "2025-11-07": 0.0046871365,
+      "2025-11-14": -0.0023325889,
+      "2025-11-21": -0.0166003419,
+      "2025-11-28": 0.025915272,
+      "2025-12-05": 0.0016222351,
+      "2025-12-12": 0.0013881831,
+      "2025-12-19": 0.0254381018,
+      "2025-12-26": 0.0160771358,
+      "2026-01-02": 0.0049728547,
+      "2026-01-09": 0.0074224152,
+      "2026-01-16": 0.0087072688,
+      "2026-01-23": 0.0086321067,
+      "2026-01-30": 0.0129471351,
+      "2026-02-06": 0.0160312753,
+      "2026-02-13": 0.0074626293,
+      "2026-02-20": 0.016719564,
+      "2026-02-27": 0.0133222429,
+      "2026-03-06": -0.0546425132,
+      "2026-03-13": -0.0149934838,
+      "2026-03-20": -0.0326495336,
+      "2026-03-27": 0.0061573255,
+      "2026-04-03": 0.0478241579,
+      "2026-04-10": 0.031148569,
+      "2026-04-17": 0.0121670354,
+      "2026-04-24": -0.026113919,
+      "2026-05-01": 0.00063833,
+      "2026-05-08": -0.0068055795,
+      "2026-05-15": -0.0241970497,
+      "2026-05-22": 0.0333552967,
+      "2026-05-29": -0.0033976903,
+      "2026-06-05": -0.0117195751,
+      "2026-06-12": 0.0168175317,
+      "2026-06-19": -0.0222394375
+    },
+    "Status_History": {
+      "dates": [
+        "05-01",
+        "05-08",
+        "05-15",
+        "05-22",
+        "05-29",
+        "06-05",
+        "06-12",
+        "06-19"
+      ],
+      "rows": [
+        {
+          "Ticker": "GLEN.L",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "RIO.L",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "AAL.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "HSBA.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "VOD.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GSK.L",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "STAN.L",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BP.L",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "LLOY.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AZN.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MNG.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "NG.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "SHEL.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BARC.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BATS.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "NWG.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "PRU.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "SMIN.L",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BA.L",
+          "Statuses": [
+            "Watchlist",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CPG.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "HLN.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "IMB.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "AV.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "LSEG.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ULVR.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DGE.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SGE.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "REL.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "EXPN.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ENT.L",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        }
+      ]
+    },
+    "Asset_Detail_Pages": [
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\AZN_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\SHEL_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\HSBA_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\ULVR_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\BP_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\GSK_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\RIO_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\REL_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\DGE_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\BATS_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\NG_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\LSEG_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\BARC_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\LLOY_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\PRU_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\GLEN_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\NWG_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\VOD_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\AAL_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\STAN_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\CPG_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\EXPN_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\IMB_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\HLN_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\AV_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\MNG_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\SMIN_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\BA_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\ENT_L_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\UK30\\SGE_L_asset_dashboard.png"
+    ],
+    "Report_PDF": "",
+    "Summary_PDF_Temp": "",
+    "Detailed_PDF_Temp": "",
+    "Status": "OK",
+    "Error": ""
+  }
+]

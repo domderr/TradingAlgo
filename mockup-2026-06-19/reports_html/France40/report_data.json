@@ -1,0 +1,1156 @@
+[
+  {
+    "Market": "France40",
+    "Benchmark": "EWQ",
+    "Number of Tickers": 38,
+    "Strategy CAGR": 0.13689235489525253,
+    "Hedged CAGR": 0.11267938197497007,
+    "Strategy MaxDD": -0.168397429110678,
+    "Hedged MaxDD": -0.1611789039944881,
+    "Strategy Sharpe Ratio": 0.735128844924404,
+    "Hedged Sharpe Ratio": 0.6609849256483031,
+    "Bench Cagr": 0.1145602279,
+    "Bench_MaxDD": -0.1377690092,
+    "Bench Sharpe": 0.6938128898,
+    "Information Ratio": 0.1400809641517731,
+    "Hedged Information Ratio": -0.018014023643961753,
+    "PDF_Output": "",
+    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\France40\\summary_France40.png",
+    "Capital Invested": 1.0,
+    "Benchmark Hedge Short": 0.1883726716,
+    "Benchmark Hedge Ticker": "EWQ",
+    "Hedge Portfolio Score": 81.1627328444,
+    "Last Weekly Selection": [
+      {
+        "Ticker": "STMPA.PA",
+        "Name": "STMICROELECTRONICS",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
+      },
+      {
+        "Ticker": "ENGI.PA",
+        "Name": "ENGIE",
+        "Sector": "Utilities",
+        "Industry": "Utilities - Diversified"
+      },
+      {
+        "Ticker": "TTE.PA",
+        "Name": "TOTALENERGIES",
+        "Sector": "Energy",
+        "Industry": "Oil & Gas Integrated"
+      },
+      {
+        "Ticker": "GLE.PA",
+        "Name": "SOCIETE GENERALE",
+        "Sector": "Financial Services",
+        "Industry": "Banks - Regional"
+      },
+      {
+        "Ticker": "LR.PA",
+        "Name": "LEGRAND",
+        "Sector": "Industrials",
+        "Industry": "Electrical Equipment & Parts"
+      }
+    ],
+    "Added Tickers": "-",
+    "Removed Tickers": "-",
+    "Selection Drivers": "STMPA.PA: trend slope 0.02, stability R2 0.56, score 0.01 and passed correlation filter<br/>ENGI.PA: trend slope 0.01, stability R2 0.88, score 0.01 and passed correlation filter<br/>TTE.PA: trend slope 0.01, stability R2 0.85, score 0.01 and passed correlation filter<br/>GLE.PA: trend slope 0.01, stability R2 0.76, score 0.01 and passed correlation filter<br/>LR.PA: trend slope 0.00, stability R2 0.40, score 0.00 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "GLE.PA",
+        "Contribution": 0.1703992628
+      },
+      {
+        "Ticker": "STMPA.PA",
+        "Contribution": 0.1023139802
+      },
+      {
+        "Ticker": "ORA.PA",
+        "Contribution": 0.0961603106
+      },
+      {
+        "Ticker": "SGO.PA",
+        "Contribution": 0.0557035492
+      },
+      {
+        "Ticker": "ENGI.PA",
+        "Contribution": 0.0531020893
+      },
+      {
+        "Ticker": "SAF.PA",
+        "Contribution": 0.0497157002
+      },
+      {
+        "Ticker": "LR.PA",
+        "Contribution": 0.0390404394
+      },
+      {
+        "Ticker": "EL.PA",
+        "Contribution": 0.0388907255
+      },
+      {
+        "Ticker": "BN.PA",
+        "Contribution": 0.0212819645
+      },
+      {
+        "Ticker": "CS.PA",
+        "Contribution": 0.0204878481
+      },
+      {
+        "Ticker": "SU.PA",
+        "Contribution": 0.0152444414
+      },
+      {
+        "Ticker": "BNP.PA",
+        "Contribution": 0.0108875361
+      },
+      {
+        "Ticker": "VIV.PA",
+        "Contribution": 0.0108856547
+      },
+      {
+        "Ticker": "AI.PA",
+        "Contribution": 0.0055482573
+      },
+      {
+        "Ticker": "HO.PA",
+        "Contribution": 0.0040363515
+      },
+      {
+        "Ticker": "AIR.PA",
+        "Contribution": 0.0038130522
+      },
+      {
+        "Ticker": "PUB.PA",
+        "Contribution": 0.0010433728
+      },
+      {
+        "Ticker": "TEP.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WLN.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MC.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "OR.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CA.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DSY.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DG.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "RI.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VIE.PA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "STLAM.MI",
+        "Contribution": -0.0085358522
+      },
+      {
+        "Ticker": "RMS.PA",
+        "Contribution": -0.0110849824
+      },
+      {
+        "Ticker": "KER.PA",
+        "Contribution": -0.0126920141
+      },
+      {
+        "Ticker": "SAN.PA",
+        "Contribution": -0.0197939164
+      },
+      {
+        "Ticker": "URW.PA",
+        "Contribution": -0.0233738329
+      },
+      {
+        "Ticker": "CAP.PA",
+        "Contribution": -0.0240706217
+      },
+      {
+        "Ticker": "ERF.PA",
+        "Contribution": -0.0258480025
+      },
+      {
+        "Ticker": "RNO.PA",
+        "Contribution": -0.0273297061
+      },
+      {
+        "Ticker": "TTE.PA",
+        "Contribution": -0.031398957
+      },
+      {
+        "Ticker": "ML.PA",
+        "Contribution": -0.0326715762
+      },
+      {
+        "Ticker": "ALO.PA",
+        "Contribution": -0.0328966982
+      },
+      {
+        "Ticker": "AC.PA",
+        "Contribution": -0.0458739416
+      }
+    ],
+    "Strategy_Returns": {
+      "2024-01-12": -0.0041118332,
+      "2024-01-19": -0.0253731859,
+      "2024-01-26": 0.0052109283,
+      "2024-02-02": 0.0252200365,
+      "2024-02-09": 0.0094434083,
+      "2024-02-16": 0.0311560551,
+      "2024-02-23": 0.0247125384,
+      "2024-03-01": 0.0032870811,
+      "2024-03-08": 0.0194042149,
+      "2024-03-15": 0.0305432309,
+      "2024-03-22": 0.0218412162,
+      "2024-03-29": 0.0004628926,
+      "2024-04-05": -0.0241076124,
+      "2024-04-12": -0.005156387,
+      "2024-04-19": -0.0206115118,
+      "2024-04-26": 0.0195669058,
+      "2024-05-03": -0.016631286,
+      "2024-05-10": 0.0147814094,
+      "2024-05-17": 0.0043947138,
+      "2024-05-24": 0.0144309069,
+      "2024-05-31": -0.0141640267,
+      "2024-06-07": -0.0047027224,
+      "2024-06-14": -0.0575122936,
+      "2024-06-21": 0.018745689,
+      "2024-06-28": -0.0178931564,
+      "2024-07-05": 0.0134214245,
+      "2024-07-12": 0.0213576583,
+      "2024-07-19": -0.030049922,
+      "2024-07-26": -0.0450236523,
+      "2024-08-02": -0.0430028554,
+      "2024-08-09": -0.0062107202,
+      "2024-08-16": 0.0207199764,
+      "2024-08-23": 0.0216774326,
+      "2024-08-30": 0.0139433117,
+      "2024-09-06": -0.0025685442,
+      "2024-09-13": 0.0170161353,
+      "2024-09-20": 0.0028206091,
+      "2024-09-27": 0.0394690411,
+      "2024-10-04": -0.0209812612,
+      "2024-10-11": -0.0046307113,
+      "2024-10-18": 0.023058883,
+      "2024-10-25": -0.0200832279,
+      "2024-11-01": -0.0135650953,
+      "2024-11-08": 0.0033189806,
+      "2024-11-15": 0.0186815795,
+      "2024-11-22": -0.0070348396,
+      "2024-11-29": -0.0098464435,
+      "2024-12-06": 0.0162780085,
+      "2024-12-13": -0.0052322986,
+      "2024-12-20": -0.0135390204,
+      "2024-12-27": 0.0093199092,
+      "2025-01-03": -0.0086794711,
+      "2025-01-10": 0.0019730555,
+      "2025-01-17": 0.0324014348,
+      "2025-01-24": 0.0099603608,
+      "2025-01-31": 0.0238247859,
+      "2025-02-07": 0.0180541912,
+      "2025-02-14": 0.0264869389,
+      "2025-02-21": -0.0046114978,
+      "2025-02-28": -0.0051768472,
+      "2025-03-07": 0.0379721072,
+      "2025-03-14": -0.0252703772,
+      "2025-03-21": 0.0058312576,
+      "2025-03-28": -0.0303670041,
+      "2025-04-04": -0.0986055624,
+      "2025-04-11": -0.0022323374,
+      "2025-04-18": 0.041447423,
+      "2025-04-25": 0.033824756,
+      "2025-05-02": 0.0476800735,
+      "2025-05-09": -0.0067038934,
+      "2025-05-16": 0.0155797281,
+      "2025-05-23": 0.025470262,
+      "2025-05-30": 0.0082586852,
+      "2025-06-06": 0.0002749043,
+      "2025-06-13": -0.0071698141,
+      "2025-06-20": -0.0095986803,
+      "2025-06-27": -0.0002905484,
+      "2025-07-04": 0.0040660336,
+      "2025-07-11": 0.0014106198,
+      "2025-07-18": 0.0005077451,
+      "2025-07-25": -0.0042494727,
+      "2025-08-01": -0.0022893754,
+      "2025-08-08": 0.0057811776,
+      "2025-08-15": 0.0235503046,
+      "2025-08-22": -0.0046897183,
+      "2025-08-29": -0.053892502,
+      "2025-09-05": -0.00617246,
+      "2025-09-12": 0.051708311,
+      "2025-09-19": -0.0102318689,
+      "2025-09-26": -1.25113e-05,
+      "2025-10-03": 0.0094420777,
+      "2025-10-10": -0.0124660404,
+      "2025-10-17": 0.0104565352,
+      "2025-10-24": 0.0021656412,
+      "2025-10-31": -0.0060626273,
+      "2025-11-07": -0.0364539861,
+      "2025-11-14": 0.0115540362,
+      "2025-11-21": -0.0235014363,
+      "2025-11-28": 0.0222423528,
+      "2025-12-05": -0.00264875,
+      "2025-12-12": 0.0062207243,
+      "2025-12-19": 0.0284702628,
+      "2025-12-26": 0.003067254,
+      "2026-01-02": 0.0262293564,
+      "2026-01-09": 0.0130801992,
+      "2026-01-16": 0.0150906067,
+      "2026-01-23": -0.006315358,
+      "2026-01-30": 0.0258351742,
+      "2026-02-06": 0.0099658435,
+      "2026-02-13": 0.0246927917,
+      "2026-02-20": 0.0214925258,
+      "2026-02-27": 0.0303175584,
+      "2026-03-06": -0.0949329066,
+      "2026-03-13": -0.0046872561,
+      "2026-03-20": -0.0418944335,
+      "2026-03-27": 0.016272309,
+      "2026-04-03": 0.0514351691,
+      "2026-04-10": 0.0483786677,
+      "2026-04-17": -0.0863004614,
+      "2026-04-24": 2.63354e-05,
+      "2026-05-01": 0.0110812498,
+      "2026-05-08": -0.0014095388,
+      "2026-05-15": 0.0051080419,
+      "2026-05-22": 0.0345515682,
+      "2026-05-29": -0.002428419,
+      "2026-06-05": 0.0163151781,
+      "2026-06-12": 0.0261063383,
+      "2026-06-19": 0.0201702156
+    },
+    "Hedged_Strategy_Returns": {
+      "2024-01-12": -0.0052510408,
+      "2024-01-19": -0.0237524656,
+      "2024-01-26": 0.0003739805,
+      "2024-02-02": 0.0269619592,
+      "2024-02-09": 0.008332928,
+      "2024-02-16": 0.0300600267,
+      "2024-02-23": 0.0189994416,
+      "2024-03-01": 0.0037168653,
+      "2024-03-08": 0.0165762967,
+      "2024-03-15": 0.0278933441,
+      "2024-03-22": 0.0236047257,
+      "2024-03-29": -0.0006292248,
+      "2024-04-05": -0.0220578652,
+      "2024-04-12": -0.0010133678,
+      "2024-04-19": -0.0215615354,
+      "2024-04-26": 0.0171644032,
+      "2024-05-03": -0.0165644168,
+      "2024-05-10": 0.0114525693,
+      "2024-05-17": 0.0038066056,
+      "2024-05-24": 0.0150970014,
+      "2024-05-31": -0.0135318067,
+      "2024-06-07": -0.0042736107,
+      "2024-06-14": -0.0506484392,
+      "2024-06-21": 0.0159774517,
+      "2024-06-28": -0.0155813968,
+      "2024-07-05": 0.00740831,
+      "2024-07-12": 0.0197411492,
+      "2024-07-19": -0.0267156906,
+      "2024-07-26": -0.0453432062,
+      "2024-08-02": -0.0369888701,
+      "2024-08-09": -0.006498939,
+      "2024-08-16": 0.0134574713,
+      "2024-08-23": 0.0141054245,
+      "2024-08-30": 0.0150986318,
+      "2024-09-06": 0.0060088992,
+      "2024-09-13": 0.0130677554,
+      "2024-09-20": -0.0010091204,
+      "2024-09-27": 0.0316252253,
+      "2024-10-04": -0.0130424206,
+      "2024-10-11": -0.0039248016,
+      "2024-10-18": 0.023452131,
+      "2024-10-25": -0.0139518487,
+      "2024-11-01": -0.0117596133,
+      "2024-11-08": 0.0059214278,
+      "2024-11-15": 0.0234071024,
+      "2024-11-22": -0.0050882623,
+      "2024-11-29": -0.011622853,
+      "2024-12-06": 0.012209266,
+      "2024-12-13": -0.003592799,
+      "2024-12-20": -0.0096875957,
+      "2024-12-27": 0.0072592778,
+      "2025-01-03": -0.0051771669,
+      "2025-01-10": -0.0008244597,
+      "2025-01-17": 0.0262463706,
+      "2025-01-24": 0.0021036245,
+      "2025-01-31": 0.0256445248,
+      "2025-02-07": 0.0180528834,
+      "2025-02-14": 0.0198656914,
+      "2025-02-21": -0.002640619,
+      "2025-02-28": -0.004375848,
+      "2025-03-07": 0.029598971,
+      "2025-03-14": -0.0227056809,
+      "2025-03-21": 0.0074668477,
+      "2025-03-28": -0.0280275107,
+      "2025-04-04": -0.0856995371,
+      "2025-04-11": -0.0117410532,
+      "2025-04-18": 0.0401133982,
+      "2025-04-25": 0.0248987834,
+      "2025-05-02": 0.0428817758,
+      "2025-05-09": -0.005675069,
+      "2025-05-16": 0.0125274911,
+      "2025-05-23": 0.0247220392,
+      "2025-05-30": 0.0078546429,
+      "2025-06-06": -0.0017862489,
+      "2025-06-13": -0.0064666764,
+      "2025-06-20": -0.0076214175,
+      "2025-06-27": -0.0047731747,
+      "2025-07-04": 0.0025334109,
+      "2025-07-11": 0.0007641954,
+      "2025-07-18": 0.0016457945,
+      "2025-07-25": -0.0068967454,
+      "2025-08-01": 0.0045598636,
+      "2025-08-08": 0.0006309664,
+      "2025-08-15": 0.0189832413,
+      "2025-08-22": -0.0057131866,
+      "2025-08-29": -0.048640088,
+      "2025-09-05": -0.0061777839,
+      "2025-09-12": 0.0488078033,
+      "2025-09-19": -0.0108197198,
+      "2025-09-26": 0.0002600424,
+      "2025-10-03": 0.0062759056,
+      "2025-10-10": -0.0078972822,
+      "2025-10-17": 0.0054145164,
+      "2025-10-24": 0.0024543718,
+      "2025-10-31": -0.0041313654,
+      "2025-11-07": -0.0352667325,
+      "2025-11-14": 0.0087891546,
+      "2025-11-21": -0.0205593218,
+      "2025-11-28": 0.0197991024,
+      "2025-12-05": -0.002795732,
+      "2025-12-12": 0.0054394244,
+      "2025-12-19": 0.0277221916,
+      "2025-12-26": 0.0022540281,
+      "2026-01-02": 0.0258290322,
+      "2026-01-09": 0.0114137035,
+      "2026-01-16": 0.0168304309,
+      "2026-01-23": -0.006972095,
+      "2026-01-30": 0.0262869299,
+      "2026-02-06": 0.0061819791,
+      "2026-02-13": 0.0236273561,
+      "2026-02-20": 0.0183085296,
+      "2026-02-27": 0.0297470876,
+      "2026-03-06": -0.0846920101,
+      "2026-03-13": -0.0007598597,
+      "2026-03-20": -0.0385105184,
+      "2026-03-27": 0.0156204294,
+      "2026-04-03": 0.0440848515,
+      "2026-04-10": 0.0401678349,
+      "2026-04-17": -0.0894660895,
+      "2026-04-24": 0.003846375,
+      "2026-05-01": 0.0111022638,
+      "2026-05-08": -0.0026657632,
+      "2026-05-15": 0.0120172574,
+      "2026-05-22": 0.0298524399,
+      "2026-05-29": -0.0046746384,
+      "2026-06-05": 0.0187781949,
+      "2026-06-12": 0.0228554868,
+      "2026-06-19": 0.0189959623
+    },
+    "Benchmark_Returns": {
+      "2024-01-12": 0.0084032773,
+      "2024-01-19": -0.0125000377,
+      "2024-01-26": 0.0287447726,
+      "2024-02-02": -0.0105101705,
+      "2024-02-09": 0.0064768243,
+      "2024-02-16": 0.0061775177,
+      "2024-02-23": 0.0319774384,
+      "2024-03-01": -0.0024787572,
+      "2024-03-08": 0.0164015606,
+      "2024-03-15": 0.0163813013,
+      "2024-03-22": -0.0110656809,
+      "2024-03-29": 0.0072974915,
+      "2024-04-05": -0.0142476471,
+      "2024-04-12": -0.0296424312,
+      "2024-04-19": 0.0075738417,
+      "2024-04-26": 0.0190428521,
+      "2024-05-03": -0.0007375831,
+      "2024-05-10": 0.0334644621,
+      "2024-05-17": 0.0059524114,
+      "2024-05-24": -0.00662719,
+      "2024-05-31": -0.0064331242,
+      "2024-06-07": -0.0045564056,
+      "2024-06-14": -0.0722442984,
+      "2024-06-21": 0.0193890326,
+      "2024-06-28": -0.0156331632,
+      "2024-07-05": 0.037056587,
+      "2024-07-12": 0.0089332192,
+      "2024-07-19": -0.0232734122,
+      "2024-07-26": 0.0018128941,
+      "2024-08-02": -0.0289554889,
+      "2024-08-09": 0.0013313398,
+      "2024-08-16": 0.0316403601,
+      "2024-08-23": 0.0327318937,
+      "2024-08-30": -0.004741522,
+      "2024-09-06": -0.0351055623,
+      "2024-09-13": 0.0161122586,
+      "2024-09-20": 0.015345395,
+      "2024-09-27": 0.0357682806,
+      "2024-10-04": -0.039883362,
+      "2024-10-11": -0.0035458893,
+      "2024-10-18": -0.0022878175,
+      "2024-10-25": -0.0254777405,
+      "2024-11-01": -0.0075817783,
+      "2024-11-08": -0.0158060277,
+      "2024-11-15": -0.0289079401,
+      "2024-11-22": -0.0124035729,
+      "2024-11-29": 0.0117221162,
+      "2024-12-06": 0.0267585944,
+      "2024-12-13": -0.0099409542,
+      "2024-12-20": -0.0255942462,
+      "2024-12-27": 0.0117845596,
+      "2025-01-03": -0.0196895597,
+      "2025-01-10": 0.0155588014,
+      "2025-01-17": 0.0387186339,
+      "2025-01-24": 0.0490748044,
+      "2025-01-31": -0.0125255454,
+      "2025-02-07": 0.0,
+      "2025-02-14": 0.042971786,
+      "2025-02-21": -0.0126582796,
+      "2025-02-28": -0.0060331065,
+      "2025-03-07": 0.0589275691,
+      "2025-03-14": -0.013852298,
+      "2025-03-21": -0.009203299,
+      "2025-03-28": -0.0136886089,
+      "2025-04-04": -0.0778190766,
+      "2025-04-11": 0.0472991666,
+      "2025-04-18": 0.0064151489,
+      "2025-04-25": 0.044110195,
+      "2025-05-02": 0.0222222484,
+      "2025-05-09": -0.0043000654,
+      "2025-05-16": 0.0136755837,
+      "2025-05-23": 0.0035504056,
+      "2025-05-30": 0.0021225554,
+      "2025-06-06": 0.0129442126,
+      "2025-06-13": -0.004879109,
+      "2025-06-20": -0.0139936491,
+      "2025-06-27": 0.0319689529,
+      "2025-07-04": 0.0110303036,
+      "2025-07-11": 0.0046425298,
+      "2025-07-18": -0.0083179919,
+      "2025-07-25": 0.0186393474,
+      "2025-08-01": -0.0523787709,
+      "2025-08-08": 0.0301714026,
+      "2025-08-15": 0.0283504133,
+      "2025-08-22": 0.0066075597,
+      "2025-08-29": -0.0359892035,
+      "2025-09-05": -0.000704373,
+      "2025-09-12": 0.0218515063,
+      "2025-09-19": 0.0043688607,
+      "2025-09-26": -0.0020604774,
+      "2025-10-03": 0.0302822217,
+      "2025-10-10": -0.0360721946,
+      "2025-10-17": 0.0448140335,
+      "2025-10-24": -0.0026531263,
+      "2025-10-31": -0.0183994688,
+      "2025-11-07": -0.0112917908,
+      "2025-11-14": 0.0242120471,
+      "2025-11-21": -0.0256467678,
+      "2025-11-28": 0.0201419101,
+      "2025-12-05": 0.0011217438,
+      "2025-12-12": 0.0058270423,
+      "2025-12-19": 0.0057439524,
+      "2025-12-26": 0.0060119726,
+      "2026-01-02": 0.0028774542,
+      "2026-01-09": 0.0125799923,
+      "2026-01-16": -0.012859653,
+      "2026-01-23": 0.0048574982,
+      "2026-01-30": -0.0035157033,
+      "2026-02-06": 0.0231533053,
+      "2026-02-13": 0.0064655557,
+      "2026-02-20": 0.0209849953,
+      "2026-02-27": 0.0039848956,
+      "2026-03-06": -0.0779193918,
+      "2026-03-13": -0.0303579854,
+      "2026-03-20": -0.0261681682,
+      "2026-03-27": 0.0045585371,
+      "2026-04-03": 0.0449009016,
+      "2026-04-10": 0.0479999272,
+      "2026-04-17": 0.0198473336,
+      "2026-04-24": -0.0295123298,
+      "2026-05-01": -0.0002204201,
+      "2026-05-08": 0.0085959538,
+      "2026-05-15": -0.0349649604,
+      "2026-05-22": 0.0228713649,
+      "2026-05-29": 0.0177109176,
+      "2026-06-05": -0.0132695734,
+      "2026-06-12": 0.0277777706,
+      "2026-06-19": 0.0060835091
+    },
+    "Status_History": {
+      "dates": [
+        "05-01",
+        "05-08",
+        "05-15",
+        "05-22",
+        "05-29",
+        "06-05",
+        "06-12",
+        "06-19"
+      ],
+      "rows": [
+        {
+          "Ticker": "STMPA.PA",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "ENGI.PA",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "TTE.PA",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "CA.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ORA.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GLE.PA",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "URW.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BNP.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "VIE.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "SU.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "LR.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Watchlist",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "DG.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "KER.PA",
+          "Statuses": [
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SAF.PA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ML.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "AC.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CS.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ERF.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "AI.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "HO.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "OR.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MC.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ALO.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "AIR.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PUB.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SAN.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "BN.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "RNO.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "TEP.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CAP.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "STLAM.MI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SGO.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "EL.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "RMS.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "RI.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "VIV.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DSY.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "WLN.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        }
+      ]
+    },
+    "Asset_Detail_Pages": [
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\AC_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\AI_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\AIR_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\ALO_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\BN_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\BNP_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\CA_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\CAP_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\CS_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\DG_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\DSY_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\EL_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\ENGI_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\ERF_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\GLE_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\HO_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\KER_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\LR_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\MC_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\ML_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\ORA_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\OR_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\PUB_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\RI_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\RMS_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\RNO_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\SAF_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\SAN_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\SGO_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\SU_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\STMPA_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\TEP_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\TTE_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\URW_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\VIE_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\VIV_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\WLN_PA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\France40\\STLAM_MI_asset_dashboard.png"
+    ],
+    "Report_PDF": "",
+    "Summary_PDF_Temp": "",
+    "Detailed_PDF_Temp": "",
+    "Status": "OK",
+    "Error": ""
+  }
+]
