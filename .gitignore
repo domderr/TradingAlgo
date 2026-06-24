@@ -1,0 +1,9 @@
+mosaic_dev/
+site/
+*.gsheet
+*.log
+__pycache__/
+*.pyc
+reports_html/**/assets/_annotation_backup/
+Welcome letter.txt
+medium-*
