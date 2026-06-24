@@ -5,6 +5,7 @@ mockup-2026-06-19-*.html
 reports/Report_USA.pdf
 reports/Report_Europe.pdf
 reports/Report_Italy.pdf
+*.pdf
 *.gsheet
 *.log
 __pycache__/

@@ -888,21 +888,21 @@
   <script defer src="assets/access-analytics.js"></script>
   <script>
     var MARKET_META = [
-      { key: "DJ30",         flag: "us", name: "DJ30",         pdf: "reports/Report_DJ30.pdf", html: "reports_html/DJ30/Report_DJ30.html" },
-      { key: "USA100",       flag: "us", name: "USA100",       pdf: "reports/Report_USA100.pdf", html: "reports_html/USA100/Report_USA100.html" },
-      { key: "NASDAQ100",    flag: "us", name: "Nasdaq100",    pdf: "reports/Report_NASDAQ100.pdf", html: "reports_html/NASDAQ100/Report_NASDAQ100.html" },
-      { key: "Canada50",     flag: "ca", name: "Canada50",     pdf: "reports/Report_Canada50.pdf", html: "reports_html/Canada50/Report_Canada50.html" },
-      { key: "Mexico30",     flag: "mx", name: "Mexico30",     pdf: "reports/Report_Mexico30.pdf", html: "reports_html/Mexico30/Report_Mexico30.html" },
-      { key: "Europe50",     flag: "eu", name: "Europe50",     pdf: "reports/Report_Europe50.pdf", html: "reports_html/Europe50/Report_Europe50.html" },
-      { key: "UK30",         flag: "gb", name: "UK30",         pdf: "reports/Report_UK30.pdf", html: "reports_html/UK30/Report_UK30.html" },
-      { key: "France40",     flag: "fr", name: "France40",     pdf: "reports/Report_France40.pdf", html: "reports_html/France40/Report_France40.html" },
-      { key: "Spain40",      flag: "es", name: "Spain40",      pdf: "reports/Report_Spain40.pdf", html: "reports_html/Spain40/Report_Spain40.html" },
-      { key: "Germany30",    flag: "de", name: "Germany30",    pdf: "reports/Report_Germany30.pdf", html: "reports_html/Germany30/Report_Germany30.html" },
-      { key: "Italy30",      flag: "it", name: "Italy30",      pdf: "reports/Report_Italy30.pdf", html: "reports_html/Italy30/Report_Italy30.html" },
-      { key: "Japan50",      flag: "jp", name: "Japan50",      pdf: "reports/Report_Japan50.pdf", html: "reports_html/Japan50/Report_Japan50.html" },
-      { key: "South Korea30", flag: "kr", name: "S.Korea30",    pdf: "reports/Report_South_Korea30.pdf", html: "reports_html/South_Korea30/Report_South_Korea30.html" },
-      { key: "Australia50",  flag: "au", name: "Australia50",  pdf: "reports/Report_Australia50.pdf", html: "reports_html/Australia50/Report_Australia50.html" },
-      { key: "South Africa30",flag: "za", name: "S.Africa30",  pdf: "reports/Report_South_Africa30.pdf", html: "reports_html/South_Africa30/Report_South_Africa30.html" }
+      { key: "DJ30",         flag: "us", name: "DJ30",         html: "reports_html/DJ30/Report_DJ30.html" },
+      { key: "USA100",       flag: "us", name: "USA100",       html: "reports_html/USA100/Report_USA100.html" },
+      { key: "NASDAQ100",    flag: "us", name: "Nasdaq100",    html: "reports_html/NASDAQ100/Report_NASDAQ100.html" },
+      { key: "Canada50",     flag: "ca", name: "Canada50",     html: "reports_html/Canada50/Report_Canada50.html" },
+      { key: "Mexico30",     flag: "mx", name: "Mexico30",     html: "reports_html/Mexico30/Report_Mexico30.html" },
+      { key: "Europe50",     flag: "eu", name: "Europe50",     html: "reports_html/Europe50/Report_Europe50.html" },
+      { key: "UK30",         flag: "gb", name: "UK30",         html: "reports_html/UK30/Report_UK30.html" },
+      { key: "France40",     flag: "fr", name: "France40",     html: "reports_html/France40/Report_France40.html" },
+      { key: "Spain40",      flag: "es", name: "Spain40",      html: "reports_html/Spain40/Report_Spain40.html" },
+      { key: "Germany30",    flag: "de", name: "Germany30",    html: "reports_html/Germany30/Report_Germany30.html" },
+      { key: "Italy30",      flag: "it", name: "Italy30",      html: "reports_html/Italy30/Report_Italy30.html" },
+      { key: "Japan50",      flag: "jp", name: "Japan50",      html: "reports_html/Japan50/Report_Japan50.html" },
+      { key: "South Korea30", flag: "kr", name: "S.Korea30",    html: "reports_html/South_Korea30/Report_South_Korea30.html" },
+      { key: "Australia50",  flag: "au", name: "Australia50",  html: "reports_html/Australia50/Report_Australia50.html" },
+      { key: "South Africa30",flag: "za", name: "S.Africa30",  html: "reports_html/South_Africa30/Report_South_Africa30.html" }
     ];
 
     var MARKET_HAIRCUTS = {
@@ -1167,7 +1167,7 @@
       var cinText = cin.length ? cin.map(function(p){return p.ticker;}).join(", ") : "—";
       var coutText = cout.length ? cout.map(function(p){return p.ticker;}).join(", ") : "—";
 
-      var reportUrl = m.html || m.pdf || "#";
+      var reportUrl = m.html || "#";
       return '<a class="report-card open" id="rc-' + m.key + '" href="' + reportUrl + '">'
         + '<div class="report-card-head">'
         + '<img src="https://flagcdn.com/' + m.flag + '.svg" width="22" height="14" alt="' + m.flag + '" style="border-radius:2px;flex-shrink:0">'
