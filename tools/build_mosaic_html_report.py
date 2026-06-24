@@ -71,6 +71,24 @@ def useful_value(value):
     return value if value and value != "-" else ""
 
 
+METRIC_TOOLTIPS = {
+    "CAGR": "Compound Annual Growth Rate: the annualized return that shows how fast the strategy grew per year.",
+    "MaxDD": "Maximum Drawdown: the largest peak-to-trough decline during the period. Lower absolute drawdown means less downside stress.",
+    "Sharpe": "Sharpe Ratio: return earned per unit of volatility. Higher values indicate better risk-adjusted performance.",
+    "Information Ratio": "Information Ratio: excess return versus the benchmark divided by tracking error. Higher values show more consistent outperformance.",
+}
+
+
+def metric_label_html(label):
+    tooltip = METRIC_TOOLTIPS.get(label)
+    if not tooltip:
+        return html_text(label)
+    return (
+        f'<span class="metric-tooltip" tabindex="0" '
+        f'data-tooltip="{html_attr(tooltip)}">{html_text(label)}</span>'
+    )
+
+
 def display_name(raw_name, ticker, metadata):
     raw = useful_value(raw_name)
     ticker_text = text(ticker).strip()
@@ -264,7 +282,7 @@ def report_date_label():
     return last_available_friday().strftime("%d %b %Y")
 
 
-REPORT_CSS_VERSION = "20260624-no-bold"
+REPORT_CSS_VERSION = "20260624-tooltips-exposure"
 
 
 def read_tickers(tickers_xlsx, market):
@@ -618,6 +636,61 @@ body {
 .performance-table td,
 .performance-table th {
   font-size: 16px;
+}
+.metric-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-bottom: 1px dotted #0b5fa5;
+  color: #071a33;
+  font-weight: 800;
+  cursor: help;
+  outline: none;
+}
+.metric-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 10px);
+  z-index: 20;
+  width: min(280px, calc(100vw - 48px));
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #071423;
+  color: #f8fafc;
+  box-shadow: 0 12px 24px rgba(7, 20, 35, 0.24);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: left;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+.metric-tooltip::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  bottom: calc(100% + 4px);
+  z-index: 21;
+  border: 6px solid transparent;
+  border-top-color: #071423;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+}
+.metric-tooltip:hover::after,
+.metric-tooltip:hover::before,
+.metric-tooltip:focus::after,
+.metric-tooltip:focus::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+.metric-tooltip:focus {
+  box-shadow: 0 0 0 3px rgba(11, 95, 165, 0.16);
 }
 .table-scroll {
   width: 100%;
@@ -1415,9 +1488,9 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         "<table class=\"metric-mini-table\">"
         "<thead><tr><th></th><th>Long</th><th>L+H</th><th>B</th></tr></thead>"
         "<tbody>"
-        f"<tr><td>CAGR</td><td>{pct(row.get('Strategy CAGR'))}</td><td>{pct(row.get('Hedged CAGR'))}</td><td>{pct(row.get('Bench Cagr'))}</td></tr>"
-        f"<tr><td>MaxDD</td><td>{pct(row.get('Strategy MaxDD'))}</td><td>{pct(row.get('Hedged MaxDD'))}</td><td>{pct(row.get('Bench_MaxDD'))}</td></tr>"
-        f"<tr><td>Sharpe</td><td>{num(row.get('Strategy Sharpe Ratio'))}</td><td>{num(row.get('Hedged Sharpe Ratio'))}</td><td>{num(row.get('Bench Sharpe'))}</td></tr>"
+        f"<tr><td>{metric_label_html('CAGR')}</td><td>{pct(row.get('Strategy CAGR'))}</td><td>{pct(row.get('Hedged CAGR'))}</td><td>{pct(row.get('Bench Cagr'))}</td></tr>"
+        f"<tr><td>{metric_label_html('MaxDD')}</td><td>{pct(row.get('Strategy MaxDD'))}</td><td>{pct(row.get('Hedged MaxDD'))}</td><td>{pct(row.get('Bench_MaxDD'))}</td></tr>"
+        f"<tr><td>{metric_label_html('Sharpe')}</td><td>{num(row.get('Strategy Sharpe Ratio'))}</td><td>{num(row.get('Hedged Sharpe Ratio'))}</td><td>{num(row.get('Bench Sharpe'))}</td></tr>"
         f"<tr><td>IR</td><td>{num(row.get('Information Ratio'))}</td><td>{num(row.get('Hedged Information Ratio'))}</td><td>-</td></tr>"
         "</tbody></table>"
     )
@@ -1451,6 +1524,13 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         "investment strategy."
     )
     exposure_chart_html = ""
+    if exposure_asset_name:
+        exposure_alt = html_attr(f"{market} long and net exposure")
+        exposure_chart_html = f"""
+          <div class="chart-frame">
+            <h3>Long / Net Exposure</h3>
+            <img class="dashboard-chart exposure-chart" src="assets/{html_attr(exposure_asset_name)}" alt="{exposure_alt}" />
+          </div>"""
 
     report_html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1520,10 +1600,10 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         <table class="asset-table performance-table">
           <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
           <tbody>
-            <tr><td>CAGR</td><td>{pct(row.get("Strategy CAGR"))}</td><td>{pct(row.get("Hedged CAGR"))}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
-            <tr><td>MaxDD</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
-            <tr><td>Sharpe</td><td>{num(row.get("Strategy Sharpe Ratio"))}</td><td>{num(row.get("Hedged Sharpe Ratio"))}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>
-            <tr><td>Information Ratio</td><td>{num(row.get("Information Ratio"))}</td><td>{num(row.get("Hedged Information Ratio"))}</td><td>-</td></tr>
+            <tr><td>{metric_label_html("CAGR")}</td><td>{pct(row.get("Strategy CAGR"))}</td><td>{pct(row.get("Hedged CAGR"))}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
+            <tr><td>{metric_label_html("MaxDD")}</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
+            <tr><td>{metric_label_html("Sharpe")}</td><td>{num(row.get("Strategy Sharpe Ratio"))}</td><td>{num(row.get("Hedged Sharpe Ratio"))}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>
+            <tr><td>{metric_label_html("Information Ratio")}</td><td>{num(row.get("Information Ratio"))}</td><td>{num(row.get("Hedged Information Ratio"))}</td><td>-</td></tr>
           </tbody>
         </table>
       </section>
