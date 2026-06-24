@@ -221,6 +221,10 @@
       display: none;
     }
 
+    .admin-only[hidden] {
+      display: none;
+    }
+
     .performance-summary {
       margin-top: 24px;
       padding: 22px;
@@ -229,6 +233,15 @@
       background: rgba(255,255,255,0.07);
       box-shadow: var(--shadow);
       overflow: hidden;
+    }
+
+    .reports-section-head {
+      margin-bottom: 18px;
+    }
+
+    .reports-section-head h2 {
+      margin: 0;
+      font-size: 30px;
     }
 
     .performance-summary-head {
@@ -836,43 +849,48 @@
     <div class="restricted-content" id="restricted-content" hidden>
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
-        <h2>Global Weekly View</h2>
-        <p class="access-disclaimer" id="last-processing-date"></p>
-        <section class="performance-summary" aria-labelledby="performance-summary-title">
-          <div class="performance-summary-head">
-            <div>
-              <div class="eyebrow">Performance Summary</div>
-              <h3 id="performance-summary-title">Mosaic vs Benchmark</h3>
-              <p>CAGR and Sharpe Ratio from the latest HTML report data for the markets enabled by your Mosaic password.</p>
+        <div class="admin-only" id="admin-market-view" hidden>
+          <h2>Global Weekly View</h2>
+          <p class="access-disclaimer" id="last-processing-date"></p>
+          <section class="performance-summary" aria-labelledby="performance-summary-title">
+            <div class="performance-summary-head">
+              <div>
+                <div class="eyebrow">Performance Summary</div>
+                <h3 id="performance-summary-title">Mosaic vs Benchmark</h3>
+                <p>CAGR and Sharpe Ratio from the latest HTML report data for the markets enabled by your Mosaic password.</p>
+              </div>
             </div>
-          </div>
-          <div class="performance-table-wrap">
-            <table class="performance-table">
-              <thead>
-                <tr>
-                  <th>Market</th>
-                  <th>ETF</th>
-                  <th>Haircut</th>
-                  <th>CAGR Mosaic</th>
-                  <th>CAGR Bench</th>
-                  <th>CAGR Diff</th>
-                  <th>Sharpe Mosaic</th>
-                  <th>Sharpe Bench</th>
-                  <th>Sharpe Diff</th>
-                </tr>
-              </thead>
-              <tbody id="performance-summary-body">
-                <tr><td colspan="9">Loading performance data...</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-        <section class="summary-chart-section" aria-labelledby="summary-chart-title">
-          <div class="eyebrow">Equity / Drawdown / Exposure</div>
-          <h3 id="summary-chart-title">Market Charts</h3>
-          <p>Latest summary charts for the markets enabled by your Mosaic password.</p>
-          <div class="summary-chart-grid" id="summary-chart-grid"></div>
-        </section>
+            <div class="performance-table-wrap">
+              <table class="performance-table">
+                <thead>
+                  <tr>
+                    <th>Market</th>
+                    <th>ETF</th>
+                    <th>Haircut</th>
+                    <th>CAGR Mosaic</th>
+                    <th>CAGR Bench</th>
+                    <th>CAGR Diff</th>
+                    <th>Sharpe Mosaic</th>
+                    <th>Sharpe Bench</th>
+                    <th>Sharpe Diff</th>
+                  </tr>
+                </thead>
+                <tbody id="performance-summary-body">
+                  <tr><td colspan="9">Loading performance data...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="summary-chart-section" aria-labelledby="summary-chart-title">
+            <div class="eyebrow">Chart Gallery</div>
+            <h3 id="summary-chart-title">Market Charts</h3>
+            <p>Latest summary charts for the markets enabled by your Mosaic password.</p>
+            <div class="summary-chart-grid" id="summary-chart-grid"></div>
+          </section>
+        </div>
+        <div class="reports-section-head">
+          <h2>Available Weekly Reports</h2>
+        </div>
         <div class="reports-grid" id="reports-grid"></div>
       </section>
     </div>
@@ -919,6 +937,7 @@
 
     var subscriptions = [];
     var authorizedMarkets = [];
+    var isAdminAccess = false;
     var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
 
     function activeMarkets() {
@@ -968,9 +987,11 @@
     function showAuthorizedArea(match) {
       var accessPanel = document.getElementById("access-panel");
       var userBar = document.getElementById("user-access-bar");
+      var adminView = document.getElementById("admin-market-view");
       var name = match && match.first_name ? match.first_name : "User";
 
       if (accessPanel) accessPanel.hidden = true;
+      if (adminView) adminView.hidden = !isAdminAccess;
       if (userBar) {
         userBar.innerHTML = "<strong>ID: " + name + "</strong><span>enabled markets: " + marketsLabel(authorizedMarkets) + "</span>";
         userBar.classList.add("is-visible");
@@ -990,6 +1011,7 @@
 
     function unlockSubscription(match) {
       authorizedMarkets = normalizeMarketList(match.markets);
+      isAdminAccess = String(match.first_name || "").toLowerCase() === "admin";
       if (!authorizedMarkets.length) {
         setAccessMessage("This password is valid, but no markets are enabled for this subscription.", "");
         if (window.TAAnalytics) {
@@ -1000,12 +1022,14 @@
 
       sessionStorage.setItem(ACCESS_STORAGE_KEY, JSON.stringify({
         first_name: match.first_name || "",
-        markets: authorizedMarkets
+        markets: authorizedMarkets,
+        is_admin: isAdminAccess
       }));
       if (window.TAAnalytics) {
         window.TAAnalytics.track("access_granted", {
           subscriber_id: match.first_name || "",
-          markets: authorizedMarkets
+          markets: authorizedMarkets,
+          is_admin: isAdminAccess
         });
       }
       setAccessMessage("", welcomeMessage(match, "Welcome back"));
@@ -1017,9 +1041,11 @@
         var stored = JSON.parse(sessionStorage.getItem(ACCESS_STORAGE_KEY) || "{}");
         authorizedMarkets = normalizeMarketList(stored.markets || stored);
         var firstName = stored.first_name || "";
+        isAdminAccess = stored.is_admin === true || String(firstName || "").toLowerCase() === "admin";
         var match = { first_name: firstName };
       } catch (error) {
         authorizedMarkets = [];
+        isAdminAccess = false;
         var match = {};
       }
 
@@ -1028,7 +1054,8 @@
       if (window.TAAnalytics) {
         window.TAAnalytics.track("access_restored", {
           subscriber_id: firstName,
-          markets: authorizedMarkets
+          markets: authorizedMarkets,
+          is_admin: isAdminAccess
         });
       }
       setAccessMessage("", welcomeMessage(match, "Welcome back"));
@@ -1066,6 +1093,7 @@
 
           if (!match) {
             document.getElementById("restricted-content").hidden = true;
+            isAdminAccess = false;
             setAccessMessage("Invalid password.", "");
             if (window.TAAnalytics) {
               window.TAAnalytics.track("access_denied", { reason: "invalid_password" });
@@ -1222,8 +1250,10 @@
         var posKey = POS_KEY[m.key] || m.key;
         return renderCard(m, indexMap[m.key], positions[posKey]);
       }).join("");
-      renderPerformanceSummary(positions && positions.__reportData || {});
-      renderSummaryCharts();
+      if (isAdminAccess) {
+        renderPerformanceSummary(positions && positions.__reportData || {});
+        renderSummaryCharts();
+      }
       loadHedgePercentages();
     }
 
@@ -1407,8 +1437,7 @@
       var cacheKey = String(Date.now());
       var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
       var posPromise   = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return {}; });
-      var haircutPromise = loadHaircuts();
-      var reportDataPromise = haircutPromise.then(loadReportData);
+      var reportDataPromise = isAdminAccess ? loadHaircuts().then(loadReportData) : Promise.resolve({});
       Promise.all([indexPromise, posPromise, reportDataPromise]).then(function(results) {
         results[1].__reportData = results[2];
         renderAll(results[0], results[1]);
