@@ -12,6 +12,8 @@
       --muted: #aebbd0;
       --blue: #4aa3ff;
       --green: #42d392;
+      --red: #ff6b6b;
+      --yellow: #f5c542;
       --border: rgba(255,255,255,0.16);
       --shadow: 0 24px 70px rgba(0,0,0,0.42);
     }
@@ -46,8 +48,30 @@
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       font-size: 21px;
       font-weight: 850;
+    }
+
+    .logo-grid {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      background: var(--blue);
+    }
+
+    .logo-grid span:nth-child(2),
+    .logo-grid span:nth-child(6),
+    .logo-grid span:nth-child(8) {
+      background: var(--green);
     }
 
     .nav-links {
@@ -127,7 +151,7 @@
     }
 
     .market-card {
-      min-height: 150px;
+      min-height: 228px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -137,12 +161,6 @@
       border-radius: 20px;
       background: rgba(255,255,255,0.08);
       box-shadow: 0 16px 40px rgba(0,0,0,0.18);
-      transition: transform .16s ease, border-color .16s ease;
-    }
-
-    .market-card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(66,211,146,0.52);
     }
 
     .flag {
@@ -165,16 +183,61 @@
       font-weight: 850;
     }
 
-    .market-note {
+    .market-label {
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.45;
+      font-size: 10px;
+      font-weight: 850;
+      letter-spacing: .7px;
+      text-transform: uppercase;
     }
 
-    .open {
-      color: var(--green);
-      font-size: 13px;
+    .portfolio {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .ticker {
+      padding: 5px 7px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      color: #ffffff;
+      font-size: 11px;
       font-weight: 850;
+    }
+
+    .market-bottom {
+      display: grid;
+      grid-template-columns: 1fr 74px;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .weekly-change,
+    .hedge {
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.055);
+    }
+
+    .change-row {
+      color: #dbeafe;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 750;
+    }
+
+    .plus { color: var(--green); }
+    .minus { color: var(--red); }
+
+    .hedge-value {
+      display: block;
+      margin-top: 6px;
+      color: var(--yellow);
+      font-size: 22px;
+      font-weight: 850;
+      line-height: 1;
     }
 
     footer {
@@ -204,9 +267,14 @@
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="mosaic-home-19jun-mockup.html">TradingAlgo Mosaic</a>
+    <a class="brand" href="index.html">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo Mosaic
+    </a>
     <nav class="nav-links" aria-label="Snapshot navigation">
-      <a href="mosaic-home-19jun-mockup.html">Home Mockup</a>
+      <a href="index.html">Home</a>
       <a href="mockup-2026-06-19-us100-sample-report.html">US100 Sample Report</a>
       <a href="mockup-2026-06-19-us100-charts.html">US100 Charts</a>
     </nav>
@@ -215,30 +283,29 @@
   <main>
     <section class="hero">
       <h1>Explore Markets</h1>
-      <p>Static public replica of the Reserved Area, frozen to the weekly snapshot dated June 19, 2026. Each card links to its corresponding static weekly market report.</p>
     </section>
 
     <section class="matrix-shell">
       <div class="matrix-title">
-        <h2>Country Matrix</h2>
+        <h2>Country Matrix (sample)</h2>
         <span>Week of June 19, 2026</span>
       </div>
       <div class="market-matrix">
-        <a class="market-card" href="mockup-2026-06-19/reports_html/DJ30/Report_DJ30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">DJ30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/USA100/Report_USA100.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">USA100</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/NASDAQ100/Report_NASDAQ100.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">Nasdaq100</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Canada50/Report_Canada50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/ca.svg" alt=""><span class="market-name">Canada50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Mexico30/Report_Mexico30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/mx.svg" alt=""><span class="market-name">Mexico30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Europe50/Report_Europe50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/eu.svg" alt=""><span class="market-name">Europe50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/UK30/Report_UK30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/gb.svg" alt=""><span class="market-name">UK30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/France40/Report_France40.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/fr.svg" alt=""><span class="market-name">France40</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Spain40/Report_Spain40.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/es.svg" alt=""><span class="market-name">Spain40</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Germany30/Report_Germany30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/de.svg" alt=""><span class="market-name">Germany30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Italy30/Report_Italy30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/it.svg" alt=""><span class="market-name">Italy30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Japan50/Report_Japan50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/jp.svg" alt=""><span class="market-name">Japan50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/South_Korea30/Report_South_Korea30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/kr.svg" alt=""><span class="market-name">S.Korea30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/Australia50/Report_Australia50.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/au.svg" alt=""><span class="market-name">Australia50</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
-        <a class="market-card" href="mockup-2026-06-19/reports_html/South_Africa30/Report_South_Africa30.html"><div class="market-head"><img class="flag" src="https://flagcdn.com/za.svg" alt=""><span class="market-name">S.Africa30</span></div><div class="market-note">Static weekly report snapshot.</div><span class="open">Open report</span></a>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">DJ30</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">NVDA</span><span class="ticker">MSFT</span><span class="ticker">JPM</span><span class="ticker">GS</span><span class="ticker">CAT</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> NVDA</div><div class="change-row"><span class="minus">-</span> MRK</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">20%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">USA100</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">NVDA</span><span class="ticker">MSFT</span><span class="ticker">META</span><span class="ticker">AVGO</span><span class="ticker">AMZN</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> NVDA</div><div class="change-row"><span class="minus">-</span> TSLA</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">15%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/us.svg" alt=""><span class="market-name">Nasdaq100</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">NVDA</span><span class="ticker">MSFT</span><span class="ticker">AVGO</span><span class="ticker">AAPL</span><span class="ticker">ADBE</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> AVGO</div><div class="change-row"><span class="minus">-</span> INTC</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">25%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/ca.svg" alt=""><span class="market-name">Canada50</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">RY</span><span class="ticker">TD</span><span class="ticker">SHOP</span><span class="ticker">ENB</span><span class="ticker">BNS</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row">No change</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">45%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/mx.svg" alt=""><span class="market-name">Mexico30</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">AMXL</span><span class="ticker">WALMEX</span><span class="ticker">GFNORTE</span><span class="ticker">FEMSA</span><span class="ticker">GMEX</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> AMXL</div><div class="change-row"><span class="minus">-</span> CEMEX</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">65%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/eu.svg" alt=""><span class="market-name">Europe50</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">ASML</span><span class="ticker">SAP</span><span class="ticker">NOVO</span><span class="ticker">MC</span><span class="ticker">NESN</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> SAP</div><div class="change-row"><span class="minus">-</span> SAN</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">25%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/gb.svg" alt=""><span class="market-name">UK30</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">SHEL</span><span class="ticker">AZN</span><span class="ticker">HSBA</span><span class="ticker">ULVR</span><span class="ticker">RIO</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> RIO</div><div class="change-row"><span class="minus">-</span> BP</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">50%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/fr.svg" alt=""><span class="market-name">France40</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">MC</span><span class="ticker">AIR</span><span class="ticker">OR</span><span class="ticker">SAN</span><span class="ticker">BNP</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row">No change</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">40%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/es.svg" alt=""><span class="market-name">Spain40</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">SAN</span><span class="ticker">IBE</span><span class="ticker">ITX</span><span class="ticker">BBVA</span><span class="ticker">REP</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row">No change</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">40%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/de.svg" alt=""><span class="market-name">Germany30</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">SAP</span><span class="ticker">SIE</span><span class="ticker">ALV</span><span class="ticker">DTE</span><span class="ticker">MUV2</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> DTE</div><div class="change-row"><span class="minus">-</span> BMW</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">35%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/it.svg" alt=""><span class="market-name">Italy30</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">ENEL</span><span class="ticker">ISP</span><span class="ticker">UCG</span><span class="ticker">RACE</span><span class="ticker">ENI</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row">No change</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">45%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/jp.svg" alt=""><span class="market-name">Japan50</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">7203</span><span class="ticker">6758</span><span class="ticker">9984</span><span class="ticker">8035</span><span class="ticker">8306</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> 8035</div><div class="change-row"><span class="minus">-</span> 6861</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">30%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/kr.svg" alt=""><span class="market-name">S.Korea30</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">005930</span><span class="ticker">000660</span><span class="ticker">035420</span><span class="ticker">005380</span><span class="ticker">051910</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> 000660</div><div class="change-row"><span class="minus">-</span> 068270</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">40%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/au.svg" alt=""><span class="market-name">Australia50</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">BHP</span><span class="ticker">CBA</span><span class="ticker">CSL</span><span class="ticker">NAB</span><span class="ticker">WBC</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row">No change</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">45%</span></div></div></article>
+        <article class="market-card"><div class="market-head"><img class="flag" src="https://flagcdn.com/za.svg" alt=""><span class="market-name">S.Africa30</span></div><div><div class="market-label">Current portfolio</div><div class="portfolio"><span class="ticker">NPN</span><span class="ticker">PRX</span><span class="ticker">FSR</span><span class="ticker">AGL</span><span class="ticker">SBK</span></div></div><div class="market-bottom"><div class="weekly-change"><div class="market-label">Weekly changes</div><div class="change-row"><span class="plus">+</span> FSR</div><div class="change-row"><span class="minus">-</span> MTN</div></div><div class="hedge"><div class="market-label">Hedge</div><span class="hedge-value">60%</span></div></div></article>
       </div>
     </section>
   </main>
