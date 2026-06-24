@@ -71,43 +71,6 @@ def useful_value(value):
     return value if value and value != "-" else ""
 
 
-def normalize_market_name(value):
-    aliases = {
-        "South_Africa30": "South Africa30",
-        "South_Korea30": "South Korea30",
-        "Nasdaq100": "NASDAQ100",
-    }
-    key = text(value).strip()
-    return aliases.get(key, key)
-
-
-def load_haircuts(site_dir):
-    path = site_dir / "haircuts.csv"
-    haircuts = {}
-    if not path.exists():
-        return haircuts
-    for line in path.read_text(encoding="utf-8").splitlines()[1:]:
-        parts = [part.strip() for part in line.split(",")]
-        if len(parts) < 2:
-            continue
-        try:
-            haircuts[normalize_market_name(parts[0])] = float(parts[1])
-        except ValueError:
-            continue
-    return haircuts
-
-
-def apply_metric_haircut(mosaic, benchmark, haircut):
-    mosaic_number = raw_number(mosaic)
-    benchmark_number = raw_number(benchmark)
-    haircut_number = raw_number(haircut)
-    if mosaic_number is None or benchmark_number is None:
-        return mosaic_number
-    if haircut_number is None:
-        haircut_number = 1.0
-    return benchmark_number + haircut_number * (mosaic_number - benchmark_number)
-
-
 def display_name(raw_name, ticker, metadata):
     raw = useful_value(raw_name)
     ticker_text = text(ticker).strip()
@@ -670,7 +633,6 @@ body {
 .monthly-performance-table th,
 .monthly-performance-table td {
   padding: 9px 6px;
-  font-weight: 400;
   text-align: right;
   white-space: nowrap;
   overflow-wrap: normal;
@@ -687,8 +649,8 @@ body {
 .monthly-performance-table td:nth-last-child(-n+3) {
   min-width: 96px;
 }
-.monthly-performance-table .negative-value { color: #b91c1c; font-weight: 400; }
-.monthly-performance-table .positive-value { color: #166534; font-weight: 400; }
+.monthly-performance-table .negative-value { color: #b91c1c; font-weight: 800; }
+.monthly-performance-table .positive-value { color: #166534; font-weight: 800; }
 .monthly-performance-table .neutral-value { color: #475569; }
 .data-note {
   margin: 0;
@@ -980,7 +942,6 @@ table.monthly-performance-table {
 table.monthly-performance-table th,
 table.monthly-performance-table td {
   padding: 9px 4px;
-  font-weight: 400;
   text-align: right;
   white-space: nowrap;
   overflow-wrap: normal;
@@ -1275,11 +1236,6 @@ table.monthly-performance-table td:nth-last-child(-n+3) {
 def build_html(dev_dir, site_dir, market, market_choice, rerun):
     row, data_path = load_or_create_report_data(dev_dir, market, market_choice, rerun)
     safe_market = safe_market_name(market)
-    market_haircut = load_haircuts(site_dir).get(normalize_market_name(market), 1.0)
-    adjusted_strategy_cagr = apply_metric_haircut(row.get("Strategy CAGR"), row.get("Bench Cagr"), market_haircut)
-    adjusted_hedged_cagr = apply_metric_haircut(row.get("Hedged CAGR"), row.get("Bench Cagr"), market_haircut)
-    adjusted_strategy_sharpe = apply_metric_haircut(row.get("Strategy Sharpe Ratio"), row.get("Bench Sharpe"), market_haircut)
-    adjusted_hedged_sharpe = apply_metric_haircut(row.get("Hedged Sharpe Ratio"), row.get("Bench Sharpe"), market_haircut)
     out_dir = site_dir / "reports_html" / safe_market
     asset_out_dir = out_dir / "assets"
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -1457,9 +1413,9 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         "<table class=\"metric-mini-table\">"
         "<thead><tr><th></th><th>Long</th><th>L+H</th><th>B</th></tr></thead>"
         "<tbody>"
-        f"<tr><td>CAGR</td><td>{pct(adjusted_strategy_cagr)}</td><td>{pct(adjusted_hedged_cagr)}</td><td>{pct(row.get('Bench Cagr'))}</td></tr>"
+        f"<tr><td>CAGR</td><td>{pct(row.get('Strategy CAGR'))}</td><td>{pct(row.get('Hedged CAGR'))}</td><td>{pct(row.get('Bench Cagr'))}</td></tr>"
         f"<tr><td>MaxDD</td><td>{pct(row.get('Strategy MaxDD'))}</td><td>{pct(row.get('Hedged MaxDD'))}</td><td>{pct(row.get('Bench_MaxDD'))}</td></tr>"
-        f"<tr><td>Sharpe</td><td>{num(adjusted_strategy_sharpe)}</td><td>{num(adjusted_hedged_sharpe)}</td><td>{num(row.get('Bench Sharpe'))}</td></tr>"
+        f"<tr><td>Sharpe</td><td>{num(row.get('Strategy Sharpe Ratio'))}</td><td>{num(row.get('Hedged Sharpe Ratio'))}</td><td>{num(row.get('Bench Sharpe'))}</td></tr>"
         f"<tr><td>IR</td><td>{num(row.get('Information Ratio'))}</td><td>{num(row.get('Hedged Information Ratio'))}</td><td>-</td></tr>"
         "</tbody></table>"
     )
@@ -1562,9 +1518,9 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         <table class="asset-table performance-table">
           <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
           <tbody>
-            <tr><td>CAGR</td><td>{pct(adjusted_strategy_cagr)}</td><td>{pct(adjusted_hedged_cagr)}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
+            <tr><td>CAGR</td><td>{pct(row.get("Strategy CAGR"))}</td><td>{pct(row.get("Hedged CAGR"))}</td><td>{pct(row.get("Bench Cagr"))}</td></tr>
             <tr><td>MaxDD</td><td>{pct(row.get("Strategy MaxDD"))}</td><td>{pct(row.get("Hedged MaxDD"))}</td><td>{pct(row.get("Bench_MaxDD"))}</td></tr>
-            <tr><td>Sharpe</td><td>{num(adjusted_strategy_sharpe)}</td><td>{num(adjusted_hedged_sharpe)}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>
+            <tr><td>Sharpe</td><td>{num(row.get("Strategy Sharpe Ratio"))}</td><td>{num(row.get("Hedged Sharpe Ratio"))}</td><td>{num(row.get("Bench Sharpe"))}</td></tr>
             <tr><td>Information Ratio</td><td>{num(row.get("Information Ratio"))}</td><td>{num(row.get("Hedged Information Ratio"))}</td><td>-</td></tr>
           </tbody>
         </table>
