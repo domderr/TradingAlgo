@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Report Mexico30 | TradingAlgo Mosaic</title>
-  <link rel="stylesheet" href="report.css?v=20260624-no-bold" />
+  <link rel="stylesheet" href="report.css?v=20260624-tooltips" />
 </head>
 <body>
   <main class="report-shell">
@@ -66,10 +66,10 @@
         <table class="asset-table performance-table">
           <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
           <tbody>
-            <tr><td>CAGR</td><td>12.99%</td><td>12.04%</td><td>10.11%</td></tr>
-            <tr><td>MaxDD</td><td>-17.94%</td><td>-16.34%</td><td>-30.71%</td></tr>
-            <tr><td>Sharpe</td><td>0.65</td><td>0.66</td><td>0.54</td></tr>
-            <tr><td>Information Ratio</td><td>0.16</td><td>0.06</td><td>-</td></tr>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Compound Annual Growth Rate: the annualized return that shows how fast the strategy grew per year.">CAGR</span></td><td>12.99%</td><td>12.04%</td><td>10.11%</td></tr>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Maximum Drawdown: the largest peak-to-trough decline during the period. Lower absolute drawdown means less downside stress.">MaxDD</span></td><td>-17.94%</td><td>-16.34%</td><td>-30.71%</td></tr>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Sharpe Ratio: return earned per unit of volatility. Higher values indicate better risk-adjusted performance.">Sharpe</span></td><td>0.65</td><td>0.66</td><td>0.54</td></tr>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Information Ratio: excess return versus the benchmark divided by tracking error. Higher values show more consistent outperformance.">Information Ratio</span></td><td>0.16</td><td>0.06</td><td>-</td></tr>
           </tbody>
         </table>
       </section>
