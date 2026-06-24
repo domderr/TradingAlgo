@@ -88,15 +88,17 @@ def write_site_index(market_reports_df):
         market = record.get("Market")
         if not market:
             continue
-        report_file = f"Report_{str(market).replace(' ', '_')}.pdf"
+        market_slug = str(market).replace(" ", "_")
+        report_file = f"Report_{market_slug}.html"
+        report_url = f"reports_html/{market_slug}/{report_file}"
         rows.append(
             {
                 "Market": market,
                 "Benchmark": record.get("Benchmark"),
                 "Status": record.get("Status"),
                 "Report_File": report_file,
-                "Report_Path": f"reports/{report_file}",
-                "Report_URL": f"reports/{report_file}",
+                "Report_Path": report_url,
+                "Report_URL": report_url,
                 "Updated_At": record.get("Updated_At"),
                 "Last_Hedge_Short": record.get("Benchmark Hedge Short"),
                 "Last_Hedge_Score": record.get("Hedge Portfolio Score"),
@@ -139,11 +141,13 @@ try:
         if idx == 2:
             namespace["MARKETS_TO_PROCESS"] = "all"
             namespace["PROCESS_ALL_MARKETS"] = True
+            namespace["GENERATE_PDF_REPORTS"] = False
             namespace["UPDATE_SITE_REPORTS"] = True
             namespace["SITE_PROJECT_DIR"] = SITE_DIR
             namespace["SITE_REPORTS_DIR"] = SITE_DIR / "reports"
             namespace["SITE_REPORT_URLS"] = {}
             print("Runner override: all markets, site reports ->", namespace["SITE_REPORTS_DIR"], flush=True)
+            print("Runner override: GENERATE_PDF_REPORTS ->", namespace["GENERATE_PDF_REPORTS"], flush=True)
 
         if idx == 5:
             namespace["download_prices_yfinance"] = load_prices_from_csv

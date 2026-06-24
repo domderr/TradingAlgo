@@ -3,7 +3,6 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORTS_DIR = ROOT / "reports"
 HTML_DIR = ROOT / "reports_html"
 
 MARKETS = [
@@ -24,8 +23,9 @@ MARKETS = [
 ]
 
 
-def pdf_name(market):
-    return f"Report_{market.replace(' ', '_')}.pdf"
+def report_name(market):
+    market_slug = market.replace(" ", "_")
+    return f"Report_{market_slug}.html"
 
 
 def fmt_pct(value):
@@ -57,7 +57,6 @@ def change_text(items):
 
 
 def render_page(market, display_name, index_row, pos_row):
-    pdf = pdf_name(market)
     benchmark = html.escape(index_row.get("Benchmark") or "-")
     status = html.escape(index_row.get("Status") or "-")
     updated = html.escape(index_row.get("Updated_At") or "-")
@@ -153,17 +152,10 @@ def render_page(market, display_name, index_row, pos_row):
     th {{ color: var(--muted); font-weight: 600; }}
     th:first-child, td:first-child {{ min-width: 72px; white-space: nowrap; overflow-wrap: normal; }}
     .changes {{ color: var(--muted); line-height: 1.5; }}
-    .pdf-frame {{
-      height: calc(100vh - 255px);
-      min-height: 620px;
-      background: #0b1115;
-    }}
-    .pdf-frame object {{ display: block; width: 100%; height: 100%; border: 0; }}
     @media (max-width: 900px) {{
       .shell {{ width: min(100% - 24px, 1440px); }}
       .hero, .grid {{ grid-template-columns: 1fr; }}
       .meta {{ text-align: left; }}
-      .pdf-frame {{ height: 74vh; min-height: 520px; }}
     }}
   </style>
 </head>
@@ -207,10 +199,8 @@ def render_page(market, display_name, index_row, pos_row):
 
       <div class="panel">
         <h2>Report</h2>
-        <div class="pdf-frame">
-          <object data="../../reports/{html.escape(pdf)}#toolbar=1&navpanes=0" type="application/pdf">
-            <iframe src="../../reports/{html.escape(pdf)}#toolbar=1&navpanes=0" title="{html.escape(display_name)} PDF report"></iframe>
-          </object>
+        <div class="summary">
+          <a class="back-link" href="{html.escape(report_name(market))}">Open HTML report</a>
         </div>
       </div>
     </section>
@@ -222,8 +212,8 @@ def render_page(market, display_name, index_row, pos_row):
 
 
 def main():
-    index = {row["Market"]: row for row in read_json(REPORTS_DIR / "reports_index.json", [])}
-    positions = read_json(REPORTS_DIR / "positions.json", {})
+    index = {row["Market"]: row for row in read_json(ROOT / "reports" / "reports_index.json", [])}
+    positions = read_json(ROOT / "reports" / "positions.json", {})
 
     for market, display_name in MARKETS:
         market_dir = HTML_DIR / market.replace(" ", "_")
