@@ -1,0 +1,2272 @@
+[
+  {
+    "Market": "NASDAQ100",
+    "Benchmark": "QQQ",
+    "Number of Tickers": 100,
+    "Strategy CAGR": 0.8163254887641911,
+    "Hedged CAGR": 0.7809147380998342,
+    "Strategy MaxDD": -0.37371021940951954,
+    "Hedged MaxDD": -0.35838718997287244,
+    "Strategy Sharpe Ratio": 1.7100725179727763,
+    "Hedged Sharpe Ratio": 1.7023239424454424,
+    "Bench Cagr": 0.2961983535,
+    "Bench_MaxDD": -0.2134157147,
+    "Bench Sharpe": 1.4127316234,
+    "Information Ratio": 1.4509593899942448,
+    "Hedged Information Ratio": 1.3854779754557114,
+    "PDF_Output": "",
+    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\NASDAQ100\\summary_NASDAQ100.png",
+    "Capital Invested": 1.0,
+    "Benchmark Hedge Short": 0.0975419735,
+    "Benchmark Hedge Ticker": "QQQ",
+    "Hedge Portfolio Score": 90.2458026473,
+    "Last Weekly Selection": [
+      {
+        "Ticker": "MU",
+        "Name": "Micron Technology, Inc.",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
+      },
+      {
+        "Ticker": "TER",
+        "Name": "Teradyne, Inc.",
+        "Sector": "Technology",
+        "Industry": "Semiconductor Equipment & Materials"
+      },
+      {
+        "Ticker": "NBIS",
+        "Name": "Nebius Group N.V.",
+        "Sector": "Communication Services",
+        "Industry": "Internet Content & Information"
+      },
+      {
+        "Ticker": "WBD",
+        "Name": "Warner Bros. Discovery, Inc. -",
+        "Sector": "Communication Services",
+        "Industry": "Entertainment"
+      },
+      {
+        "Ticker": "ROST",
+        "Name": "Ross Stores, Inc.",
+        "Sector": "Consumer Cyclical",
+        "Industry": "Apparel Retail"
+      }
+    ],
+    "Added Tickers": "-",
+    "Removed Tickers": "-",
+    "Selection Drivers": "MU: trend slope 0.04, stability R2 0.95, score 0.04 and passed correlation filter<br/>TER: trend slope 0.03, stability R2 0.97, score 0.03 and passed correlation filter<br/>NBIS: trend slope 0.02, stability R2 0.69, score 0.02 and passed correlation filter<br/>WBD: trend slope 0.02, stability R2 0.70, score 0.01 and passed correlation filter<br/>ROST: trend slope 0.01, stability R2 0.98, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "MU",
+        "Contribution": 1.5653248735
+      },
+      {
+        "Ticker": "RKLB",
+        "Contribution": 1.1242608307
+      },
+      {
+        "Ticker": "APP",
+        "Contribution": 0.8826777386
+      },
+      {
+        "Ticker": "NBIS",
+        "Contribution": 0.679198023
+      },
+      {
+        "Ticker": "TER",
+        "Contribution": 0.3491863061
+      },
+      {
+        "Ticker": "CEG",
+        "Contribution": 0.323933057
+      },
+      {
+        "Ticker": "INTC",
+        "Contribution": 0.3175289358
+      },
+      {
+        "Ticker": "NVDA",
+        "Contribution": 0.1075528224
+      },
+      {
+        "Ticker": "EBAY",
+        "Contribution": 0.0897215915
+      },
+      {
+        "Ticker": "CRWD",
+        "Contribution": 0.0696553499
+      },
+      {
+        "Ticker": "GOOGL",
+        "Contribution": 0.0581558297
+      },
+      {
+        "Ticker": "META",
+        "Contribution": 0.0512745159
+      },
+      {
+        "Ticker": "TTWO",
+        "Contribution": 0.0466624279
+      },
+      {
+        "Ticker": "PANW",
+        "Contribution": 0.031572308
+      },
+      {
+        "Ticker": "CTAS",
+        "Contribution": 0.0300231513
+      },
+      {
+        "Ticker": "AVGO",
+        "Contribution": 0.0272332331
+      },
+      {
+        "Ticker": "WBD",
+        "Contribution": 0.0254822819
+      },
+      {
+        "Ticker": "ORLY",
+        "Contribution": 0.0214248954
+      },
+      {
+        "Ticker": "GILD",
+        "Contribution": 0.0135479779
+      },
+      {
+        "Ticker": "AMD",
+        "Contribution": 0.0116100654
+      },
+      {
+        "Ticker": "IDXX",
+        "Contribution": 0.008517238
+      },
+      {
+        "Ticker": "QCOM",
+        "Contribution": 0.0084066603
+      },
+      {
+        "Ticker": "XEL",
+        "Contribution": 0.0059255433
+      },
+      {
+        "Ticker": "COST",
+        "Contribution": 0.001774661
+      },
+      {
+        "Ticker": "ADI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ADP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BKNG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AAPL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMZN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MSFT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ADBE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PEP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TXN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "LIN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TSLA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GOOG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ILMN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ALGN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SBUX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AZN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ODFL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "EA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VRTX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MELI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HON",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMAT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "INTU",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CMCSA",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AMGN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PYPL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MAR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SNPS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CTSH",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "TEAM",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KDP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "AEP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FANG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FAST",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ABNB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CDNS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "REGN",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "NXPI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MRVL",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CPRT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MNST",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CSX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PAYX",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FTNT",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MCHP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SIRI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ALAB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CRWV",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ARM",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MDB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "KHC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GEHC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CHTR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "EXC",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CCEP",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BIIB",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DXCM",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ON",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BKR",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DDOG",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "GFS",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "CDW",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "WDAY",
+        "Contribution": -0.0010254699
+      },
+      {
+        "Ticker": "PCAR",
+        "Contribution": -0.003645186
+      },
+      {
+        "Ticker": "ZS",
+        "Contribution": -0.0040744139
+      },
+      {
+        "Ticker": "ISRG",
+        "Contribution": -0.0139259444
+      },
+      {
+        "Ticker": "DASH",
+        "Contribution": -0.018660582
+      },
+      {
+        "Ticker": "KLAC",
+        "Contribution": -0.0236269559
+      },
+      {
+        "Ticker": "TMUS",
+        "Contribution": -0.0261942872
+      },
+      {
+        "Ticker": "NFLX",
+        "Contribution": -0.036511591
+      },
+      {
+        "Ticker": "LRCX",
+        "Contribution": -0.0393215218
+      },
+      {
+        "Ticker": "CSCO",
+        "Contribution": -0.0414622944
+      },
+      {
+        "Ticker": "TTD",
+        "Contribution": -0.0511458185
+      },
+      {
+        "Ticker": "VRSN",
+        "Contribution": -0.07849477
+      },
+      {
+        "Ticker": "DLTR",
+        "Contribution": -0.0833703708
+      },
+      {
+        "Ticker": "ROST",
+        "Contribution": -0.0968196245
+      }
+    ],
+    "Strategy_Returns": {
+      "2024-01-12": 0.05986578816,
+      "2024-01-19": 0.023529395430000002,
+      "2024-01-26": 0.01118499939,
+      "2024-02-02": 0.029960362170000004,
+      "2024-02-09": 0.026698710060000002,
+      "2024-02-16": 0.04775428422,
+      "2024-02-23": -0.0026372326,
+      "2024-03-01": 0.07609509,
+      "2024-03-08": -0.0018279212,
+      "2024-03-15": -0.0217796037,
+      "2024-03-22": 0.07497971595000001,
+      "2024-03-29": -0.0153832707,
+      "2024-04-05": 0.01181511765,
+      "2024-04-12": -0.0090399958,
+      "2024-04-19": -0.0911681359,
+      "2024-04-26": 0.046682943660000004,
+      "2024-05-03": 0.00757132029,
+      "2024-05-10": 0.06925584249000001,
+      "2024-05-17": 0.011212847730000001,
+      "2024-05-24": 0.02060456625,
+      "2024-05-31": -0.0427466632,
+      "2024-06-07": 0.01534343688,
+      "2024-06-14": 0.03629999448,
+      "2024-06-21": -0.0034741266,
+      "2024-06-28": 0.00090965637,
+      "2024-07-05": 0.03757141584,
+      "2024-07-12": -0.018773333,
+      "2024-07-19": -0.0640125658,
+      "2024-07-26": -0.0430385183,
+      "2024-08-02": -0.0313310695,
+      "2024-08-09": 0.060765768899999996,
+      "2024-08-16": 0.06380017119,
+      "2024-08-23": 0.0231924528,
+      "2024-08-30": -0.0052619971,
+      "2024-09-06": -0.0682751759,
+      "2024-09-13": 0.12072952367999999,
+      "2024-09-20": 0.05711974407,
+      "2024-09-27": 0.01345008195,
+      "2024-10-04": 0.03340186893,
+      "2024-10-11": 0.0054226494,
+      "2024-10-18": 0.01701788283,
+      "2024-10-25": 0.01049877729,
+      "2024-11-01": -0.024938397,
+      "2024-11-08": 0.18420902334,
+      "2024-11-15": -0.0322665509,
+      "2024-11-22": 0.09192467349,
+      "2024-11-29": 0.03115108953,
+      "2024-12-06": 0.023300241120000002,
+      "2024-12-13": -0.0556029899,
+      "2024-12-20": 0.0034968024,
+      "2024-12-27": 0.02472007257,
+      "2025-01-03": 0.028906346880000003,
+      "2025-01-10": -0.0034686725,
+      "2025-01-17": 0.01731855357,
+      "2025-01-24": 0.07535054106,
+      "2025-01-31": -0.0544588677,
+      "2025-02-07": 0.00913879134,
+      "2025-02-14": 0.08675002611,
+      "2025-02-21": -0.093560655,
+      "2025-02-28": -0.1172425813,
+      "2025-03-07": -0.0777613881,
+      "2025-03-14": 0.0009471375,
+      "2025-03-21": 0.007146895590000001,
+      "2025-03-28": -0.0452928601,
+      "2025-04-04": -0.1181844176,
+      "2025-04-11": 0.10279508274,
+      "2025-04-18": -0.0047102795,
+      "2025-04-25": 0.0415863612,
+      "2025-05-02": 0.04534430148,
+      "2025-05-09": -0.0186555831,
+      "2025-05-16": 0.07225066782,
+      "2025-05-23": 0.00163667853,
+      "2025-05-30": 0.029892750750000002,
+      "2025-06-06": 0.03433673547,
+      "2025-06-13": -0.0475567936,
+      "2025-06-20": 0.03179793717,
+      "2025-06-27": 0.04094815068,
+      "2025-07-04": 0.00557734041,
+      "2025-07-11": 0.00206654445,
+      "2025-07-18": 0.05456208573,
+      "2025-07-25": 0.011992060260000001,
+      "2025-08-01": -0.0509267153,
+      "2025-08-08": 0.01397600289,
+      "2025-08-15": 0.02193075396,
+      "2025-08-22": -0.0141377108,
+      "2025-08-29": 0.0104296734,
+      "2025-09-05": -0.012010491,
+      "2025-09-12": 0.009787572360000002,
+      "2025-09-19": -0.0190660851,
+      "2025-09-26": -0.0057825923,
+      "2025-10-03": 0.019144746360000003,
+      "2025-10-10": 0.01981055844,
+      "2025-10-17": 0.01819519002,
+      "2025-10-24": 0.014168970539999999,
+      "2025-10-31": 0.025829116290000002,
+      "2025-11-07": -0.0864798058,
+      "2025-11-14": -0.1050393515,
+      "2025-11-21": -0.0212073063,
+      "2025-11-28": 0.0981198612,
+      "2025-12-05": 0.04244345208,
+      "2025-12-12": 0.05366213118,
+      "2025-12-19": 0.03755810619,
+      "2025-12-26": 0.01733421537,
+      "2026-01-02": 0.043182383219999995,
+      "2026-01-09": 0.0399355191,
+      "2026-01-16": 0.07681245138000001,
+      "2026-01-23": 0.0025445007899999998,
+      "2026-01-30": -0.05690046,
+      "2026-02-06": -0.0521624363,
+      "2026-02-13": 0.023309748539999998,
+      "2026-02-20": 0.02689848225,
+      "2026-02-27": -0.0330960035,
+      "2026-03-06": -0.0524817963,
+      "2026-03-13": 0.07396561755,
+      "2026-03-20": 0.007601518979999999,
+      "2026-03-27": -0.0776356642,
+      "2026-04-03": 0.04918123629,
+      "2026-04-10": 0.12172983362999999,
+      "2026-04-17": 0.07918645221000001,
+      "2026-04-24": 0.02189837655,
+      "2026-05-01": -0.0098033433,
+      "2026-05-08": 0.1822186872,
+      "2026-05-15": -0.0334330734,
+      "2026-05-22": 0.029524986540000003,
+      "2026-05-29": 0.08411963067,
+      "2026-06-05": -0.1104969633,
+      "2026-06-12": 0.10167960258,
+      "2026-06-19": 0.07483116744
+    },
+    "Hedged_Strategy_Returns": {
+      "2024-01-12": 0.056824787880000005,
+      "2024-01-19": 0.02035140129,
+      "2024-01-26": 0.0104787504,
+      "2024-02-02": 0.028832351939999997,
+      "2024-02-09": 0.02532390201,
+      "2024-02-16": 0.048784687199999996,
+      "2024-02-23": -0.0037656835,
+      "2024-03-01": 0.07439774436,
+      "2024-03-08": -0.0007362564,
+      "2024-03-15": -0.0209026482,
+      "2024-03-22": 0.07294738059,
+      "2024-03-29": -0.0149901183,
+      "2024-04-05": 0.01238838345,
+      "2024-04-12": -0.0086772634,
+      "2024-04-19": -0.0873705577,
+      "2024-04-26": 0.04416062634,
+      "2024-05-03": 0.006897029670000001,
+      "2024-05-10": 0.06826262400000001,
+      "2024-05-17": 0.00977104692,
+      "2024-05-24": 0.019681302419999998,
+      "2024-05-31": -0.0414101959,
+      "2024-06-07": 0.013230390960000001,
+      "2024-06-14": 0.033794196209999995,
+      "2024-06-21": -0.0036509978,
+      "2024-06-28": 0.0009595206900000001,
+      "2024-07-05": 0.03469589244,
+      "2024-07-12": -0.0185576269,
+      "2024-07-19": -0.0607083246,
+      "2024-07-26": -0.0409851958,
+      "2024-08-02": -0.028839276,
+      "2024-08-09": 0.06048267408000001,
+      "2024-08-16": 0.05952072411,
+      "2024-08-23": 0.02230318287,
+      "2024-08-30": -0.0046110758,
+      "2024-09-06": -0.0633440412,
+      "2024-09-13": 0.11528579385,
+      "2024-09-20": 0.0556898103,
+      "2024-09-27": 0.01248949548,
+      "2024-10-04": 0.03330211896,
+      "2024-10-11": 0.00443093616,
+      "2024-10-18": 0.01687259223,
+      "2024-10-25": 0.01038594231,
+      "2024-11-01": -0.023780344,
+      "2024-11-08": 0.17988395391,
+      "2024-11-15": -0.0296330174,
+      "2024-11-22": 0.09002919969,
+      "2024-11-29": 0.030345003899999997,
+      "2024-12-06": 0.01990581219,
+      "2024-12-13": -0.0564977785,
+      "2024-12-20": 0.00596322288,
+      "2024-12-27": 0.0237237876,
+      "2025-01-03": 0.02973756546,
+      "2025-01-10": -0.0008790715,
+      "2025-01-17": 0.01434155022,
+      "2025-01-24": 0.07387344828,
+      "2025-01-31": -0.0530003317,
+      "2025-02-07": 0.0090369054,
+      "2025-02-14": 0.08437563197999999,
+      "2025-02-21": -0.0916518417,
+      "2025-02-28": -0.1138221045,
+      "2025-03-07": -0.0750978432,
+      "2025-03-14": 0.0028350126900000003,
+      "2025-03-21": 0.00694397421,
+      "2025-03-28": -0.0430874189,
+      "2025-04-04": -0.1081395182,
+      "2025-04-11": 0.09453709125,
+      "2025-04-18": -0.002246302,
+      "2025-04-25": 0.03543168087,
+      "2025-05-02": 0.04226579424,
+      "2025-05-09": -0.0184830842,
+      "2025-05-16": 0.06558389991,
+      "2025-05-23": 0.00398610486,
+      "2025-05-30": 0.027929981340000003,
+      "2025-06-06": 0.032189610960000004,
+      "2025-06-13": -0.0469346089,
+      "2025-06-20": 0.03181526847,
+      "2025-06-27": 0.03694477923,
+      "2025-07-04": 0.00411992478,
+      "2025-07-11": 0.00242387478,
+      "2025-07-18": 0.053216336700000005,
+      "2025-07-25": 0.01084507569,
+      "2025-08-01": -0.048351075,
+      "2025-08-08": 0.00986522562,
+      "2025-08-15": 0.021389103,
+      "2025-08-22": -0.0130252531,
+      "2025-08-29": 0.01071498888,
+      "2025-09-05": -0.0134237212,
+      "2025-09-12": 0.00749114865,
+      "2025-09-19": -0.0221014189,
+      "2025-09-26": -0.0051834521,
+      "2025-10-03": 0.01785699486,
+      "2025-10-10": 0.02230517214,
+      "2025-10-17": 0.015337325250000002,
+      "2025-10-24": 0.01142009001,
+      "2025-10-31": 0.02332859085,
+      "2025-11-07": -0.0819902316,
+      "2025-11-14": -0.1048254922,
+      "2025-11-21": -0.0166678046,
+      "2025-11-28": 0.09103351725,
+      "2025-12-05": 0.041002648200000005,
+      "2025-12-12": 0.05618996559,
+      "2025-12-19": 0.036814066650000005,
+      "2025-12-26": 0.0157945257,
+      "2026-01-02": 0.04518356436,
+      "2026-01-09": 0.03755649384,
+      "2026-01-16": 0.07767814842,
+      "2026-01-23": 0.00231461118,
+      "2026-01-30": -0.0567786592,
+      "2026-02-06": -0.050441392,
+      "2026-02-13": 0.02427801975,
+      "2026-02-20": 0.026066963789999998,
+      "2026-02-27": -0.0329194998,
+      "2026-03-06": -0.0516387934,
+      "2026-03-13": 0.07456017087,
+      "2026-03-20": 0.00874984815,
+      "2026-03-27": -0.0755513698,
+      "2026-04-03": 0.046692671309999996,
+      "2026-04-10": 0.11877392448000001,
+      "2026-04-17": 0.07552970415,
+      "2026-04-24": 0.020474973900000002,
+      "2026-05-01": -0.0110888929,
+      "2026-05-08": 0.17886807279,
+      "2026-05-15": -0.0332380499,
+      "2026-05-22": 0.02852070975,
+      "2026-05-29": 0.08166112893,
+      "2026-06-05": -0.106959253,
+      "2026-06-12": 0.09992822579999999,
+      "2026-06-19": 0.0726510933
+    },
+    "Benchmark_Returns": {
+      "2024-01-12": 0.0322873544,
+      "2024-01-19": 0.028371787,
+      "2024-01-26": 0.0062443881,
+      "2024-02-02": 0.0122697041,
+      "2024-02-09": 0.0187407517,
+      "2024-02-16": -0.0148265811,
+      "2024-02-23": 0.0144227202,
+      "2024-03-01": 0.0202161553,
+      "2024-03-08": -0.0147887782,
+      "2024-03-15": -0.0116167207,
+      "2024-03-22": 0.0300751783,
+      "2024-03-29": -0.0053092252,
+      "2024-04-05": -0.007972955,
+      "2024-04-12": -0.0049946504,
+      "2024-04-19": -0.0538937238,
+      "2024-04-26": 0.0394308396,
+      "2024-05-03": 0.0103944654,
+      "2024-05-10": 0.0151097572,
+      "2024-05-17": 0.0219427477,
+      "2024-05-24": 0.0137019465,
+      "2024-05-31": -0.0158096835,
+      "2024-06-07": 0.0271794371,
+      "2024-06-14": 0.0350568967,
+      "2024-06-21": 0.0020660064,
+      "2024-06-28": -0.0006423943,
+      "2024-07-05": 0.0355868833,
+      "2024-07-12": -0.0027007162,
+      "2024-07-19": -0.0395699659,
+      "2024-07-26": -0.0258185623,
+      "2024-08-02": -0.0307147339,
+      "2024-08-09": 0.0036991408,
+      "2024-08-16": 0.0546612873,
+      "2024-08-23": 0.0104625138,
+      "2024-08-30": -0.007770825,
+      "2024-09-06": -0.0579082679,
+      "2024-09-13": 0.0593951251,
+      "2024-09-20": 0.0149367272,
+      "2024-09-27": 0.0103514162,
+      "2024-10-04": 0.0011710395,
+      "2024-10-11": 0.0123943292,
+      "2024-10-18": 0.0022499053,
+      "2024-10-25": 0.0017189834,
+      "2024-11-01": -0.0159291707,
+      "2024-11-08": 0.0547977547,
+      "2024-11-15": -0.0341736205,
+      "2024-11-22": 0.0185674626,
+      "2024-11-29": 0.0078094263,
+      "2024-12-06": 0.0328401428,
+      "2024-12-13": 0.0076929745,
+      "2024-12-20": -0.022373948,
+      "2024-12-27": 0.0091439021,
+      "2025-01-03": -0.0076162984,
+      "2025-01-10": -0.0219639164,
+      "2025-01-17": 0.0286874685,
+      "2025-01-24": 0.015122655,
+      "2025-01-31": -0.0138588612,
+      "2025-02-07": 0.0012062685,
+      "2025-02-14": 0.0291248722,
+      "2025-02-21": -0.0224286334,
+      "2025-02-28": -0.0340442517,
+      "2025-03-07": -0.0322333411,
+      "2025-03-14": -0.0246649014,
+      "2025-03-21": 0.0024599793,
+      "2025-03-28": -0.0232940083,
+      "2025-04-04": -0.098669313,
+      "2025-04-11": 0.0750702906,
+      "2025-04-18": -0.0226671295,
+      "2025-04-25": 0.0640846515,
+      "2025-05-02": 0.0344294395,
+      "2025-05-09": -0.0017593063,
+      "2025-05-16": 0.0687337421,
+      "2025-05-23": -0.0235278127,
+      "2025-05-30": 0.0193817098,
+      "2025-06-06": 0.0208240586,
+      "2025-06-13": -0.0055856284,
+      "2025-06-20": -0.0002465427,
+      "2025-06-27": 0.0415228583,
+      "2025-07-04": 0.0148332777,
+      "2025-07-11": -0.0036316513,
+      "2025-07-18": 0.0127391263,
+      "2025-07-25": 0.0091045202,
+      "2025-08-01": -0.0220527954,
+      "2025-08-08": 0.0373185486,
+      "2025-08-15": 0.0048560535,
+      "2025-08-22": -0.0093013448,
+      "2025-08-29": -0.0027448364,
+      "2025-09-05": 0.009922758,
+      "2025-09-12": 0.018400865,
+      "2025-09-19": 0.0216310957,
+      "2025-09-26": -0.0044868943,
+      "2025-10-03": 0.012098057,
+      "2025-10-10": -0.0226798564,
+      "2025-10-17": 0.0244784047,
+      "2025-10-24": 0.0218070637,
+      "2025-10-31": 0.019397308,
+      "2025-11-07": -0.0307279856,
+      "2025-11-14": -0.0014431932,
+      "2025-11-21": -0.0308609587,
+      "2025-11-28": 0.0494518466,
+      "2025-12-05": 0.0100605726,
+      "2025-12-12": -0.018961529,
+      "2025-12-19": 0.0055898191,
+      "2025-12-26": 0.0123876273,
+      "2026-01-02": -0.0172625605,
+      "2026-01-09": 0.0220674247,
+      "2026-01-16": -0.0086013187,
+      "2026-01-23": 0.0023500342,
+      "2026-01-30": -0.0013649211,
+      "2026-02-06": -0.0196504241,
+      "2026-02-13": -0.0126794084,
+      "2026-02-20": 0.0114467203,
+      "2026-02-27": -0.0024967728,
+      "2026-03-06": -0.0124157801,
+      "2026-03-13": -0.0100542111,
+      "2026-03-20": -0.0196388452,
+      "2026-03-27": -0.0322485607,
+      "2026-04-03": 0.0398164783,
+      "2026-04-10": 0.0445998873,
+      "2026-04-17": 0.0618258714,
+      "2026-04-24": 0.0231641361,
+      "2026-05-01": 0.0154696656,
+      "2026-05-08": 0.0550025201,
+      "2026-05-15": -0.0032337629,
+      "2026-05-22": 0.0121450302,
+      "2026-05-29": 0.0289461113,
+      "2026-06-05": -0.0450352854,
+      "2026-06-12": 0.0230902584,
+      "2026-06-19": 0.0267280541
+    },
+    "Status_History": {
+      "dates": [
+        "05-01",
+        "05-08",
+        "05-15",
+        "05-22",
+        "05-29",
+        "06-05",
+        "06-12",
+        "06-19"
+      ],
+      "rows": [
+        {
+          "Ticker": "MU",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "TER",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "INTC",
+          "Statuses": [
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "LRCX",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AMAT",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "KLAC",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "NBIS",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "RKLB",
+          "Statuses": [
+            "Selected",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "WBD",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "AMD",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ROST",
+          "Statuses": [
+            "Watchlist",
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "MRVL",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GOOGL",
+          "Statuses": [
+            "Watchlist",
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GOOG",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ADI",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GFS",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ON",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BKR",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BIIB",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CSCO",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "FANG",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MAR",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ILMN",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MNST",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ODFL",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CSX",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AZN",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AEP",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "PCAR",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AAPL",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "TXN",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AMGN",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AVGO",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GILD",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "EA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MCHP",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "REGN",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "EBAY",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "NVDA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "SBUX",
+          "Statuses": [
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "XEL",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "SIRI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "PEP",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "HON",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "EXC",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ARM",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ALAB",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "NXPI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "TSLA",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "LIN",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "FTNT",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ALGN",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MDB",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CCEP",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DDOG",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "QCOM",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "AMZN",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "COST",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "VRTX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CRWD",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ABNB",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PANW",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "APP",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DLTR",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "FAST",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CDNS",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "VRSN",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "IDXX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "KDP",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ISRG",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "GEHC",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "TTWO",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CRWV",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ORLY",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CMCSA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DXCM",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SNPS",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CEG",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "KHC",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CTSH",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "META",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CTAS",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "TMUS",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MSFT",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "BKNG",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CDW",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "NFLX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ADP",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MELI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PAYX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CPRT",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DASH",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ADBE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PYPL",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "CHTR",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "WDAY",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "INTU",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ZS",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "TEAM",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "TTD",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        }
+      ]
+    },
+    "Asset_Detail_Pages": [
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AAPL_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MSFT_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\NVDA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AMZN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\GOOGL_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\GOOG_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\META_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\TSLA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AVGO_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\COST_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\NFLX_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AMD_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\TMUS_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CSCO_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\PEP_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\LIN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ADBE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\TXN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\QCOM_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AMGN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\INTU_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\HON_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AMAT_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ISRG_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\BKNG_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CMCSA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\GILD_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ADP_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\VRTX_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\PANW_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ADI_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MU_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\LRCX_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\KLAC_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CRWD_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MELI_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\SNPS_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CDNS_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\PYPL_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MAR_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ABNB_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CTAS_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ORLY_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\FTNT_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\REGN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\NXPI_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\WDAY_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MRVL_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CPRT_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CSX_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ROST_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MNST_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\PAYX_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AEP_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\PCAR_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\KDP_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CHTR_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\FAST_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\FANG_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\EXC_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\TEAM_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\EA_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\XEL_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ODFL_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\VRSN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CTSH_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\KHC_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\GEHC_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\IDXX_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\DDOG_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\BIIB_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\DXCM_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ON_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\BKR_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ZS_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CEG_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\DLTR_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\GFS_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\TTWO_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MDB_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ARM_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\DASH_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CCEP_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\TTD_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\MCHP_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CDW_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\AZN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\WBD_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\SBUX_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ALGN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ILMN_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\EBAY_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\SIRI_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\INTC_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\APP_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\ALAB_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\CRWV_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\NBIS_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\RKLB_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgoMosaic_Dev\\output\\_asset_detail_pages\\NASDAQ100\\TER_asset_dashboard.png"
+    ],
+    "Report_PDF": "",
+    "Summary_PDF_Temp": "",
+    "Detailed_PDF_Temp": "",
+    "Status": "OK",
+    "Error": ""
+  }
+]

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradingAlgo Mosaic | US100 Sample Charts</title>
+  <style>
+    :root {
+      --bg: #071423;
+      --panel: rgba(255,255,255,0.075);
+      --text: #f4f7fb;
+      --muted: #aebbd0;
+      --green: #42d392;
+      --border: rgba(255,255,255,0.16);
+      --shadow: 0 24px 70px rgba(0,0,0,0.42);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(74,163,255,0.22), transparent 28%),
+        linear-gradient(180deg, var(--bg), #050b14 74%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav,
+    main {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #edf5ff;
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 34px 0 68px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 0.96;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .chart-layout {
+      display: grid;
+      grid-template-columns: minmax(360px, 1.15fr) minmax(300px, 0.85fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .chart-card,
+    .notes-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .chart-card img {
+      width: 100%;
+      display: block;
+      background: #ffffff;
+    }
+
+    .chart-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      color: #ffffff;
+      font-weight: 850;
+    }
+
+    .chart-title span:last-child {
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .notes-card {
+      padding: 24px;
+      overflow: visible;
+    }
+
+    .notes-card h2 {
+      margin: 0 0 12px;
+      font-size: 30px;
+      line-height: 1.08;
+    }
+
+    .notes-card h3 {
+      margin: 24px 0 8px;
+      color: #ffffff;
+      font-size: 18px;
+    }
+
+    .status-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .status {
+      padding: 12px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.055);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .status strong {
+      color: #ffffff;
+    }
+
+    @media (max-width: 640px) {
+      .nav,
+      .chart-layout {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .chart-layout {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="mosaic-home-19jun-mockup.html">TradingAlgo Mosaic</a>
+    <nav class="nav-links" aria-label="Snapshot navigation">
+      <a href="mosaic-home-19jun-mockup.html">Home Mockup</a>
+      <a href="mockup-2026-06-19-markets.html">Explore Markets</a>
+      <a href="mockup-2026-06-19-us100-sample-report.html">US100 Report</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>US100 Sample Charts</h1>
+      <p>Static sample chart for the weekly snapshot dated June 19, 2026.</p>
+    </section>
+    <section class="chart-layout" aria-label="US100 sample chart explanation">
+      <article class="chart-card">
+        <img src="mockup-2026-06-19/reports_html/USA100/assets/NVDA_asset_dashboard.png" alt="NVDA dashboard chart">
+        <div class="chart-title"><span>NVDA</span><span>June 19 snapshot</span></div>
+      </article>
+      <aside class="notes-card">
+        <h2>How to read the chart</h2>
+        <p>The main chart shows the asset behavior inside the Mosaic framework. It is designed to explain why a stock belongs, or does not belong, to the current portfolio.</p>
+        <h3>Histograms at the bottom</h3>
+        <p>The histograms summarize the scoring components used by Mosaic. They make the decision more inspectable: trend quality, stability, and portfolio contribution are shown visually instead of hidden behind a single rank.</p>
+        <h3>Possible status values</h3>
+        <div class="status-list">
+          <div class="status"><strong>Selected</strong><br>The stock is currently part of the five-stock portfolio for the market.</div>
+          <div class="status"><strong>Watchlist</strong><br>The stock is close to selection quality and should be monitored for possible inclusion.</div>
+          <div class="status"><strong>Rejected</strong><br>The stock does not currently satisfy the required Mosaic conditions.</div>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
