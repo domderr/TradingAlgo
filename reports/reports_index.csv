@@ -1,16 +1,16 @@
 Market,Benchmark,Status,Report_File,Report_Path,Report_URL,Updated_At,Last_Hedge_Short,Last_Hedge_Score,Benchmark_Hedge_Short,Benchmark_Hedge_Ticker
-DJ30,DIA,OK,Report_DJ30.pdf,reports/Report_DJ30.pdf,reports/Report_DJ30.pdf,,0.12583144580612937,87.41685541938706,0.12583144580612937,DIA
-USA100,SPY,OK,Report_USA100.pdf,reports/Report_USA100.pdf,reports/Report_USA100.pdf,,0.07239418662706076,92.76058133729393,0.07239418662706076,SPY
-NASDAQ100,QQQ,OK,Report_NASDAQ100.pdf,reports/Report_NASDAQ100.pdf,reports/Report_NASDAQ100.pdf,,0.0975419735272236,90.24580264727764,0.0975419735272236,QQQ
-Europe50,EZU,OK,Report_Europe50.pdf,reports/Report_Europe50.pdf,reports/Report_Europe50.pdf,,0.0952548585558125,90.47451414441875,0.0952548585558125,EZU
-Italy30,EWI,OK,Report_Italy30.pdf,reports/Report_Italy30.pdf,reports/Report_Italy30.pdf,,0.12670392062244928,87.32960793775507,0.12670392062244928,EWI
-UK30,EWU,OK,Report_UK30.pdf,reports/Report_UK30.pdf,reports/Report_UK30.pdf,,0.1116258173132555,88.83741826867445,0.1116258173132555,EWU
-France40,EWQ,OK,Report_France40.pdf,reports/Report_France40.pdf,reports/Report_France40.pdf,,0.18837267155620352,81.16273284437965,0.18837267155620352,EWQ
-Spain40,EWP,OK,Report_Spain40.pdf,reports/Report_Spain40.pdf,reports/Report_Spain40.pdf,,0.06371917811998662,93.62808218800134,0.06371917811998662,EWP
-Germany30,EWG,OK,Report_Germany30.pdf,reports/Report_Germany30.pdf,reports/Report_Germany30.pdf,,0.12733839023904592,87.2661609760954,0.12733839023904592,EWG
-Australia50,EWA,OK,Report_Australia50.pdf,reports/Report_Australia50.pdf,reports/Report_Australia50.pdf,,0.15734946685354712,84.26505331464529,0.15734946685354712,EWA
-Japan50,EWJ,OK,Report_Japan50.pdf,reports/Report_Japan50.pdf,reports/Report_Japan50.pdf,,0.0988514115779725,90.11485884220275,0.0988514115779725,EWJ
-Canada50,EWC,OK,Report_Canada50.pdf,reports/Report_Canada50.pdf,reports/Report_Canada50.pdf,,0.14323280081241452,85.67671991875855,0.14323280081241452,EWC
-Mexico30,EWW,OK,Report_Mexico30.pdf,reports/Report_Mexico30.pdf,reports/Report_Mexico30.pdf,,0.22107324689464258,77.89267531053574,0.22107324689464258,EWW
-South Korea30,EWY,OK,Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,reports/Report_South_Korea30.pdf,,0.16315766640818308,83.68423335918169,0.16315766640818308,EWY
-South Africa30,EZA,OK,Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,reports/Report_South_Africa30.pdf,,0.15358034403819965,80.80245699522504,0.15358034403819965,EZA
+DJ30,DIA,OK,Report_DJ30.html,reports_html/DJ30/Report_DJ30.html,reports_html/DJ30/Report_DJ30.html,,0.12583144580612937,87.41685541938706,0.12583144580612937,DIA
+USA100,SPY,OK,Report_USA100.html,reports_html/USA100/Report_USA100.html,reports_html/USA100/Report_USA100.html,,0.07239418662706076,92.76058133729393,0.07239418662706076,SPY
+NASDAQ100,QQQ,OK,Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,,0.0975419735272236,90.24580264727764,0.0975419735272236,QQQ
+Europe50,EZU,OK,Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,,0.0952548585558125,90.47451414441875,0.0952548585558125,EZU
+Italy30,EWI,OK,Report_Italy30.html,reports_html/Italy30/Report_Italy30.html,reports_html/Italy30/Report_Italy30.html,,0.12670392062244928,87.32960793775507,0.12670392062244928,EWI
+UK30,EWU,OK,Report_UK30.html,reports_html/UK30/Report_UK30.html,reports_html/UK30/Report_UK30.html,,0.1116258173132555,88.83741826867445,0.1116258173132555,EWU
+France40,EWQ,OK,Report_France40.html,reports_html/France40/Report_France40.html,reports_html/France40/Report_France40.html,,0.18837267155620352,81.16273284437965,0.18837267155620352,EWQ
+Spain40,EWP,OK,Report_Spain40.html,reports_html/Spain40/Report_Spain40.html,reports_html/Spain40/Report_Spain40.html,,0.06371917811998662,93.62808218800134,0.06371917811998662,EWP
+Germany30,EWG,OK,Report_Germany30.html,reports_html/Germany30/Report_Germany30.html,reports_html/Germany30/Report_Germany30.html,,0.12733839023904592,87.2661609760954,0.12733839023904592,EWG
+Australia50,EWA,OK,Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,,0.15734946685354712,84.26505331464529,0.15734946685354712,EWA
+Japan50,EWJ,OK,Report_Japan50.html,reports_html/Japan50/Report_Japan50.html,reports_html/Japan50/Report_Japan50.html,,0.0988514115779725,90.11485884220275,0.0988514115779725,EWJ
+Canada50,EWC,OK,Report_Canada50.html,reports_html/Canada50/Report_Canada50.html,reports_html/Canada50/Report_Canada50.html,,0.14323280081241452,85.67671991875855,0.14323280081241452,EWC
+Mexico30,EWW,OK,Report_Mexico30.html,reports_html/Mexico30/Report_Mexico30.html,reports_html/Mexico30/Report_Mexico30.html,,0.22107324689464258,77.89267531053574,0.22107324689464258,EWW
+South Korea30,EWY,OK,Report_South_Korea30.html,reports_html/South_Korea30/Report_South_Korea30.html,reports_html/South_Korea30/Report_South_Korea30.html,,0.16315766640818308,83.68423335918169,0.16315766640818308,EWY
+South Africa30,EZA,OK,Report_South_Africa30.html,reports_html/South_Africa30/Report_South_Africa30.html,reports_html/South_Africa30/Report_South_Africa30.html,,0.15358034403819965,80.80245699522504,0.15358034403819965,EZA
