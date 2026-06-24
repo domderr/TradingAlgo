@@ -264,7 +264,7 @@ def report_date_label():
     return last_available_friday().strftime("%d %b %Y")
 
 
-REPORT_CSS_VERSION = "20260622b"
+REPORT_CSS_VERSION = "20260624-no-bold"
 
 
 def read_tickers(tickers_xlsx, market):
@@ -634,7 +634,7 @@ body {
 .monthly-performance-table td {
   padding: 9px 6px;
   text-align: right;
-  font-weight: 400;
+  font-weight: 400 !important;
   white-space: nowrap;
   overflow-wrap: normal;
 }
@@ -944,7 +944,7 @@ table.monthly-performance-table th,
 table.monthly-performance-table td {
   padding: 9px 4px;
   text-align: right;
-  font-weight: 400;
+  font-weight: 400 !important;
   white-space: nowrap;
   overflow-wrap: normal;
 }
