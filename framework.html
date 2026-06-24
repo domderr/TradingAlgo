@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradingAlgo Mosaic Framework | TradingAlgo</title>
+  <meta name="description" content="TradingAlgo Mosaic Framework is the quantitative research infrastructure behind TradingAlgo.it, powering portfolios, models and weekly reports." />
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-dark: #050b14;
+      --panel: #0d1f36;
+      --panel-2: #102842;
+      --border: #203854;
+      --text: #ffffff;
+      --muted: #c9d6e8;
+      --muted-2: #aebdd0;
+      --blue: #7dd3fc;
+      --green: #22c55e;
+      --yellow: #f5c542;
+      --shadow: 0 18px 48px rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 26px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      background: var(--bg-dark);
+      border-bottom: 1px solid #1d2b3f;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo-grid {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.35);
+    }
+
+    .logo-grid span:nth-child(1),
+    .logo-grid span:nth-child(2) { background: #d94d4d; }
+    .logo-grid span:nth-child(3),
+    .logo-grid span:nth-child(4) { background: #e8a241; }
+    .logo-grid span:nth-child(5),
+    .logo-grid span:nth-child(6) { background: #d8ce45; }
+    .logo-grid span:nth-child(7),
+    .logo-grid span:nth-child(8),
+    .logo-grid span:nth-child(9) { background: var(--green); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 24px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 86px 8% 72px;
+      background: linear-gradient(180deg, #07111f 0%, #0b1c33 100%);
+    }
+
+    .hero-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+      gap: 46px;
+      align-items: center;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.98;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 780px;
+      color: #d8e4f2;
+      font-size: 20px;
+      line-height: 1.62;
+    }
+
+    .system-panel {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(13,31,54,0.88);
+      box-shadow: var(--shadow);
+    }
+
+    .system-row {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(201,214,232,0.14);
+    }
+
+    .system-row:last-child { border-bottom: 0; }
+
+    .system-index {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(125,211,252,0.12);
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .system-row strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 17px;
+    }
+
+    .system-row span {
+      color: var(--muted-2);
+      line-height: 1.5;
+    }
+
+    section {
+      padding: 72px 8%;
+    }
+
+    .section-inner {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: clamp(30px, 4vw, 42px);
+      line-height: 1.08;
+    }
+
+    .section-copy {
+      max-width: 800px;
+      margin: 0 0 34px;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      min-height: 160px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted-2);
+      line-height: 1.6;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .workflow-step {
+      min-height: 112px;
+      padding: 18px;
+      border: 1px solid rgba(125,211,252,0.28);
+      border-radius: 8px;
+      background: var(--panel-2);
+    }
+
+    .workflow-step span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--yellow);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .workflow-step strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .powered {
+      background: #09182b;
+      border-top: 1px solid #1d2b3f;
+      border-bottom: 1px solid #1d2b3f;
+    }
+
+    .powered-box {
+      padding: 32px;
+      border-left: 4px solid var(--green);
+      background: rgba(13,31,54,0.72);
+      border-radius: 8px;
+    }
+
+    .powered-box p {
+      margin: 0;
+      color: #d8e4f2;
+      font-size: 20px;
+      line-height: 1.65;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: var(--bg-dark);
+      color: var(--muted-2);
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero-inner,
+      .card-grid,
+      .workflow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#mosaic">Mosaic</a>
+      <a href="framework.html">Framework</a>
+      <a href="publications.html">Publications</a>
+      <a href="reserved-area.html">Reserved Area</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="kicker">TradingAlgo Mosaic Framework</p>
+          <h1>The quantitative research infrastructure behind TradingAlgo.it.</h1>
+          <p class="lead">
+            TradingAlgo Mosaic Framework is the research engine that powers every portfolio and report published on TradingAlgo.it.
+          </p>
+        </div>
+        <div class="system-panel" aria-label="Framework capabilities">
+          <div class="system-row">
+            <span class="system-index">01</span>
+            <div><strong>Market Data</strong><span>Processes market data across the monitored investment universe.</span></div>
+          </div>
+          <div class="system-row">
+            <span class="system-index">02</span>
+            <div><strong>Quant Scores</strong><span>Calculates quantitative scores used by research models.</span></div>
+          </div>
+          <div class="system-row">
+            <span class="system-index">03</span>
+            <div><strong>Portfolios</strong><span>Builds portfolios and generates weekly report outputs.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <h2>What it does</h2>
+        <p class="section-copy">
+          The framework connects the full research pipeline, from market data processing to model validation and subscriber-ready reports.
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Processes market data</h3>
+            <p>Transforms raw market information into consistent research inputs.</p>
+          </article>
+          <article class="card">
+            <h3>Calculates quantitative scores</h3>
+            <p>Ranks securities using systematic scoring logic.</p>
+          </article>
+          <article class="card">
+            <h3>Builds portfolios</h3>
+            <p>Turns validated model output into compact portfolio selections.</p>
+          </article>
+          <article class="card">
+            <h3>Validates investment models</h3>
+            <p>Tests research ideas before they are used in portfolio construction.</p>
+          </article>
+          <article class="card">
+            <h3>Generates weekly reports</h3>
+            <p>Produces the recurring analysis delivered through TradingAlgo.it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="powered">
+      <div class="section-inner">
+        <h2>Multiple Research Models</h2>
+        <p class="section-copy">
+          Different investment methodologies can share the same infrastructure.
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Trend + Stability + Portfolio</h3>
+            <p>A model focused on persistent trend behavior and portfolio structure.</p>
+          </article>
+          <article class="card">
+            <h3>Trend + Momentum + Risk</h3>
+            <p>A model combining directional strength, momentum and risk controls.</p>
+          </article>
+          <article class="card">
+            <h3>Custom Quantitative Models</h3>
+            <p>Additional systematic methodologies can run on the same research stack.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-inner">
+        <h2>Research Workflow</h2>
+        <p class="section-copy">
+          Research Idea to Validation to Portfolio Construction to Weekly Reports.
+        </p>
+        <div class="workflow" aria-label="Research workflow">
+          <div class="workflow-step"><span>Step 01</span><strong>Research Idea</strong></div>
+          <div class="workflow-step"><span>Step 02</span><strong>Validation</strong></div>
+          <div class="workflow-step"><span>Step 03</span><strong>Portfolio Construction</strong></div>
+          <div class="workflow-step"><span>Step 04</span><strong>Weekly Reports</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="powered">
+      <div class="section-inner">
+        <h2>Powered by the Framework</h2>
+        <div class="powered-box">
+          <p>
+            TradingAlgo.it delivers the final research through a subscription service, while the TradingAlgo Mosaic Framework provides the technology behind every analysis and portfolio.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TradingAlgo. Quantitative trading research and portfolio analytics.</p>
+  </footer>
+</body>
+</html>
