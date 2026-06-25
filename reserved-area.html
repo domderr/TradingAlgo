@@ -691,22 +691,31 @@
     }
 
     .pos-row {
-      display: flex;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 4px 8px;
       align-items: baseline;
-      gap: 6px;
     }
 
     .pos-ticker {
       font-size: 13px;
       font-weight: 700;
       color: var(--text);
-      min-width: 52px;
-      flex-shrink: 0;
     }
 
     .pos-name {
       font-size: 13px;
       color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .pos-meta {
+      grid-column: 2;
+      color: rgba(174,187,208,0.78);
+      font-size: 11px;
+      line-height: 1.25;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1121,6 +1130,20 @@
       return Math.round((t + s) / 2);
     }
 
+    function escapeHtml(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function displayText(value, fallback) {
+      var text = String(value == null ? "" : value).trim();
+      return text && text !== "-" ? text : fallback;
+    }
+
     function extractDriverNumbers(text, pattern) {
       var values = [];
       String(text || "").replace(pattern, function(_, value) {
@@ -1184,13 +1207,31 @@
       var s = d ? (d.Stability || 0) : 0;
       var sc = scoreClass(avgScore(t, s));
       var week = pos ? pos.week : "";
-      var positions = pos ? (pos.positions || []) : [];
+      var positions = d && Array.isArray(d["Last Weekly Selection"]) && d["Last Weekly Selection"].length
+        ? d["Last Weekly Selection"].map(function(item) {
+            return {
+              ticker: item.Ticker || item.ticker,
+              name: item.Name || item.name,
+              sector: item.Sector || item.sector,
+              industry: item.Industry || item.industry
+            };
+          })
+        : (pos ? (pos.positions || []) : []);
       var cin = pos ? (pos.changes && pos.changes.in || []) : [];
       var cout = pos ? (pos.changes && pos.changes.out || []) : [];
       var hedgeText = formatPercent(extractHedgeValue(d));
 
       var posList = positions.map(function(p) {
-        return '<div class="pos-row"><span class="pos-ticker">' + p.ticker + '</span><span class="pos-name">' + p.name + '</span></div>';
+        var ticker = displayText(p.ticker, "-");
+        var name = displayText(p.name, ticker);
+        var sector = displayText(p.sector, "");
+        var industry = displayText(p.industry, "");
+        var meta = [sector, industry].filter(Boolean).join(" / ");
+        return '<div class="pos-row">'
+          + '<span class="pos-ticker">' + escapeHtml(ticker) + '</span>'
+          + '<span class="pos-name">' + escapeHtml(name) + '</span>'
+          + (meta ? '<span class="pos-meta">' + escapeHtml(meta) + '</span>' : "")
+          + '</div>';
       }).join("") || '<div class="pos-row"><span class="pos-name">—</span></div>';
 
       var cinText = cin.length ? cin.map(function(p){return p.ticker;}).join(", ") : "—";
@@ -1438,7 +1479,7 @@
       var cacheKey = String(Date.now());
       var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
       var posPromise   = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return {}; });
-      var reportDataPromise = isAdminAccess ? loadHaircuts().then(loadReportData) : Promise.resolve({});
+      var reportDataPromise = loadHaircuts().then(loadReportData);
       Promise.all([indexPromise, posPromise, reportDataPromise]).then(function(results) {
         results[1].__reportData = results[2];
         renderAll(results[0], results[1]);
