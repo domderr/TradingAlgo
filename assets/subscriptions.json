@@ -52,9 +52,7 @@
       "password_hash": "4cb39c1bdf5da40bb629d3fb041a2af0c9d388370c9e5ea5369f01aa23b02589",
       "first_name": "Eric",
       "markets": [
-        "USA100",
-        "Europe50",
-        "China50"
+        "All"
       ],
       "active": true
     }
