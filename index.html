@@ -427,6 +427,39 @@
       line-height: 1.35;
     }
 
+    .publication-alert {
+      padding: 0 8% 52px;
+      background: #0b1c33;
+    }
+
+    .publication-alert-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 22px 24px;
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      border: 1px solid rgba(125,211,252,0.24);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .publication-alert h2 {
+      margin: 0;
+      color: #ffffff;
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.15;
+    }
+
+    .publication-alert p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
     .editorial-section {
       display: grid;
       grid-template-columns: minmax(0, 0.8fr) minmax(480px, 1.2fr);
@@ -1179,6 +1212,15 @@
         grid-template-columns: 1fr;
       }
 
+      .publication-alert-inner {
+        display: block;
+      }
+
+      .publication-alert .btn {
+        width: 100%;
+        margin-top: 18px;
+      }
+
       .editorial-section,
       .output-section,
       .validation-section {
@@ -1311,6 +1353,17 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="publication-alert" aria-label="New Stocks and Commodities article">
+    <div class="publication-alert-inner">
+      <div>
+        <p class="section-kicker">New Publication</p>
+        <h2>New Stocks and Commodities Article Available</h2>
+        <p>Prompting the Market, Domenico's July 2026 article on AI prompting, Python and systematic trading research.</p>
+      </div>
+      <a class="btn btn-primary" href="publications.html#prompting-the-market">Read Abstract</a>
     </div>
   </section>
 
