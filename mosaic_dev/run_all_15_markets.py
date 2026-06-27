@@ -8,13 +8,13 @@ from pathlib import Path
 import matplotlib
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "mosaic_dev"))
 from apply_conservative_haircuts import DEFAULT_CONFIG, load_haircuts, update_rows
 
 matplotlib.use("Agg")
 
-DEV_DIR = Path(__file__).resolve().parent
-SITE_DIR = DEV_DIR.parent
+PROJECT_DIR = Path(__file__).resolve().parents[1]
+DEV_DIR = PROJECT_DIR / "mosaic_dev"
+SITE_DIR = PROJECT_DIR
 NOTEBOOK = DEV_DIR / "TA_Portfolios.ipynb"
 
 
@@ -100,8 +100,8 @@ try:
         reports_dir.mkdir(parents=True, exist_ok=True)
         output_dir = DEV_DIR / "output"
         output_dir.mkdir(parents=True, exist_ok=True)
-        full_json = output_dir / "all_market_reports_data.json"
-        full_csv = output_dir / "all_market_reports_data.csv"
+        full_json = DEV_DIR / "output" / "all_market_reports_data.json"
+        full_csv = DEV_DIR / "output" / "all_market_reports_data.csv"
         market_reports_df.to_json(
             output_dir / "all_market_reports_data.pre_conservative_haircut.json",
             orient="records",

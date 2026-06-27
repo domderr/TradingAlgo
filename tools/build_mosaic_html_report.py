@@ -5,9 +5,14 @@ import json
 import os
 import re
 import shutil
+import sys
 import traceback
 from datetime import datetime, timedelta
 from pathlib import Path
+
+ROOT_FOR_IMPORTS = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT_FOR_IMPORTS / "mosaic_dev"))
+from apply_conservative_haircuts import DEFAULT_CONFIG, load_haircuts, update_rows
 
 
 def safe_market_name(value):
@@ -441,6 +446,18 @@ def load_or_create_report_data(dev_dir, market, market_choice, rerun):
 
     if rerun or not data_path.exists():
         rows = run_notebook(dev_dir, market_choice)
+        haircuts = load_haircuts(DEFAULT_CONFIG)
+        import pandas as pd
+
+        adjusted_df, summary = update_rows(
+            pd.DataFrame(rows),
+            haircuts,
+            output_dir=dev_dir / "output",
+            regenerate_summary_charts=True,
+        )
+        rows = sanitize_for_json(adjusted_df.to_dict(orient="records"))
+        print("HTML builder: applied conservative positive-return haircuts", flush=True)
+        print(summary.to_string(index=False), flush=True)
         data_path.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
     else:
         rows = json.loads(data_path.read_text(encoding="utf-8"))

@@ -1,20 +1,19 @@
 import builtins
 import json
 import os
-import sys
 import traceback
 from pathlib import Path
 
 import matplotlib
 import pandas as pd
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "mosaic_dev"))
 from apply_conservative_haircuts import DEFAULT_CONFIG, load_haircuts, update_rows
 
 matplotlib.use("Agg")
 
-DEV_DIR = Path(__file__).resolve().parent
-SITE_DIR = DEV_DIR.parent
+PROJECT_DIR = Path(__file__).resolve().parents[1]
+DEV_DIR = PROJECT_DIR / "mosaic_dev"
+SITE_DIR = PROJECT_DIR
 NOTEBOOK = DEV_DIR / "TA_Portfolios.ipynb"
 MARKET_DATA_DIR = DEV_DIR / "market_data"
 
@@ -169,9 +168,9 @@ try:
     market_reports_df = namespace.get("market_reports_df")
     if market_reports_df is not None and not market_reports_df.empty:
         output_dir = DEV_DIR / "output"
-        output_dir.mkdir(parents=True, exist_ok=True)
         full_json = output_dir / "all_market_reports_data_from_csv.json"
         full_csv = output_dir / "all_market_reports_data_from_csv.csv"
+        output_dir.mkdir(parents=True, exist_ok=True)
         market_reports_df.to_json(
             output_dir / "all_market_reports_data_from_csv.pre_conservative_haircut.json",
             orient="records",
@@ -181,6 +180,8 @@ try:
         )
         market_reports_df.to_csv(output_dir / "all_market_reports_data_from_csv.pre_conservative_haircut.csv", index=False)
         market_reports_df = apply_configured_haircuts(market_reports_df)
+        full_json = DEV_DIR / "output" / "all_market_reports_data_from_csv.json"
+        full_csv = DEV_DIR / "output" / "all_market_reports_data_from_csv.csv"
         market_reports_df.to_json(full_json, orient="records", indent=2, force_ascii=False, default_handler=str)
         market_reports_df.to_csv(full_csv, index=False)
         write_html_data(market_reports_df)
