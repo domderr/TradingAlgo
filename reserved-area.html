@@ -252,7 +252,8 @@
       margin-bottom: 16px;
     }
 
-    .member-guides {
+    .member-hub,
+    .member-section {
       margin-bottom: 28px;
       padding: 22px;
       border: 1px solid var(--border);
@@ -261,32 +262,64 @@
       box-shadow: var(--shadow);
     }
 
-    .member-guides h2 {
+    .member-hub h2,
+    .member-section h2 {
       margin: 6px 0 8px;
       font-size: 28px;
       line-height: 1.08;
     }
 
-    .member-guides p {
+    .member-hub p,
+    .member-section p {
       margin: 0 0 16px;
       color: var(--muted);
       font-size: 14px;
       line-height: 1.5;
     }
 
+    .member-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .member-nav a {
+      padding: 9px 12px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 999px;
+      background: rgba(5,11,20,0.26);
+      color: var(--text);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .member-nav a:hover {
+      border-color: rgba(74,163,255,0.5);
+    }
+
+    .start-grid,
     .guide-links {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
 
+    .start-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .start-step,
     .guide-card {
       display: block;
-      min-height: 132px;
       padding: 18px;
       border: 1px solid rgba(255,255,255,0.13);
       border-radius: 18px;
       background: rgba(5,11,20,0.28);
+    }
+
+    .guide-card {
+      min-height: 132px;
       transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
@@ -295,6 +328,7 @@
       transform: translateY(-1px);
     }
 
+    .start-step strong,
     .guide-card strong {
       display: block;
       margin-bottom: 8px;
@@ -303,10 +337,74 @@
       line-height: 1.2;
     }
 
+    .start-step span,
     .guide-card span {
       display: block;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .weekly-update {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .weekly-update-note {
+      padding: 18px;
+      border: 1px solid rgba(66,211,146,0.24);
+      border-radius: 18px;
+      background: rgba(66,211,146,0.08);
+    }
+
+    .weekly-update-note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    .member-list {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .member-list li {
+      margin-bottom: 7px;
+    }
+
+    .terminology-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .term-card {
+      min-height: 118px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      background: rgba(5,11,20,0.26);
+    }
+
+    .term-card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    .term-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
       line-height: 1.45;
     }
 
@@ -832,6 +930,9 @@
     @media (max-width: 900px) {
       .semaforo { grid-template-columns: repeat(4, 1fr); }
       .summary-chart-grid { grid-template-columns: 1fr; }
+      .start-grid,
+      .terminology-grid,
+      .weekly-update { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -919,10 +1020,65 @@
     <div class="user-access-bar" id="user-access-bar"></div>
 
     <div class="restricted-content" id="restricted-content" hidden>
-      <section class="member-guides" aria-labelledby="member-guides-title">
-        <div class="eyebrow">Member Guides</div>
-        <h2 id="member-guides-title">Mosaic Operating Menu</h2>
-        <p>Reference material for reading reports and following the weekly Mosaic process.</p>
+      <section class="member-hub" aria-labelledby="member-hub-title">
+        <div class="eyebrow">Mosaic Member Area</div>
+        <h2 id="member-hub-title">Operating menu</h2>
+        <p>Use this area to follow the weekly Mosaic process, read portfolio updates, understand report terminology and open the reports enabled by your subscription.</p>
+        <nav class="member-nav" aria-label="Reserved area sections">
+          <a href="#start-here">Start Here</a>
+          <a href="#weekly-update">Weekly Update</a>
+          <a href="#how-to-guides">How-To Guides</a>
+          <a href="#terminology">Terminology</a>
+          <a href="#reports">Reports</a>
+          <a href="#charts-dashboards">Charts</a>
+        </nav>
+      </section>
+
+      <section class="member-section" id="start-here" aria-labelledby="start-here-title">
+        <div class="eyebrow">Start Here</div>
+        <h2 id="start-here-title">Weekly operating workflow</h2>
+        <p>Start each week with the same sequence so that portfolio changes, hedge level and report interpretation remain consistent.</p>
+        <div class="start-grid">
+          <div class="start-step">
+            <strong>1. Open your market report</strong>
+            <span>Select the latest report for the market enabled by your Mosaic subscription.</span>
+          </div>
+          <div class="start-step">
+            <strong>2. Review positions and hedge</strong>
+            <span>Check the five current stocks, weekly changes and the current dynamic hedge level.</span>
+          </div>
+          <div class="start-step">
+            <strong>3. Apply the Monday rebalance</strong>
+            <span>Rebalance at the Monday market open, or the first open exchange day after the weekend.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="member-section" id="weekly-update" aria-labelledby="weekly-update-title">
+        <div class="eyebrow">Weekly Portfolio Update</div>
+        <h2 id="weekly-update-title">Latest portfolio commentary</h2>
+        <div class="weekly-update">
+          <div>
+            <p><strong>Updated:</strong> weekly after the Mosaic reports are processed.</p>
+            <p>This space is reserved for the weekly comment on portfolio changes, hedge variation, trend quality, stability and the Monday rebalance note.</p>
+            <ul class="member-list">
+              <li>Portfolio changes: stocks entering and exiting the current Mosaic selection.</li>
+              <li>Hedge update: whether the dynamic hedge increased, decreased or remained stable.</li>
+              <li>Market tone: short comment on trend, stability and portfolio score.</li>
+              <li>Operational note: what members should verify before the next rebalance.</li>
+            </ul>
+          </div>
+          <div class="weekly-update-note">
+            <strong>Monday rebalance note</strong>
+            <p>At the next market open, bring the five Mosaic stocks back toward equal weight and then update the hedge according to the latest report.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="member-section" id="how-to-guides" aria-labelledby="how-to-guides-title">
+        <div class="eyebrow">How-To Guides</div>
+        <h2 id="how-to-guides-title">Use Mosaic reports correctly</h2>
+        <p>Practical guides for reading weekly reports, understanding charts and following the rebalance process.</p>
         <div class="guide-links">
           <a class="guide-card" href="how-to-rebalance-tradingalgo-mosaic.html">
             <strong>How to Rebalance TradingAlgo Mosaic</strong>
@@ -932,7 +1088,46 @@
             <strong>How to Read the Weekly Report</strong>
             <span>Performance metrics, current positions, weekly changes, charts and exposure data.</span>
           </a>
+          <a class="guide-card" href="#reports">
+            <strong>How to Read Month-Year Tables</strong>
+            <span>Use the report tables to review monthly and yearly consistency without overreacting to a single period.</span>
+          </a>
+          <a class="guide-card" href="#charts-dashboards">
+            <strong>How to Use Charts and Dashboards</strong>
+            <span>Open equity, drawdown, exposure and stock dashboards from the enabled market reports.</span>
+          </a>
         </div>
+      </section>
+
+      <section class="member-section" id="terminology" aria-labelledby="terminology-title">
+        <div class="eyebrow">Mosaic Terminology</div>
+        <h2 id="terminology-title">Terms used in the reports</h2>
+        <p>A compact glossary for the main metrics and labels used across Mosaic reports.</p>
+        <div class="terminology-grid">
+          <div class="term-card"><strong>CAGR</strong><span>Annualized growth rate of the portfolio over the full test period.</span></div>
+          <div class="term-card"><strong>Sharpe Ratio</strong><span>Risk-adjusted return measure comparing performance to volatility.</span></div>
+          <div class="term-card"><strong>Maximum Drawdown</strong><span>Largest historical decline from an equity peak to a following trough.</span></div>
+          <div class="term-card"><strong>Hedge</strong><span>Portion of market exposure reduced through a short or protective position.</span></div>
+          <div class="term-card"><strong>Benchmark</strong><span>Reference ETF or index used to compare Mosaic performance.</span></div>
+          <div class="term-card"><strong>Portfolio Rebalancing</strong><span>Process of bringing the five selected stocks back toward equal weight.</span></div>
+          <div class="term-card"><strong>Trend Score</strong><span>Score measuring the strength and quality of the price trend.</span></div>
+          <div class="term-card"><strong>Stability Score</strong><span>Score measuring the consistency of the trend behavior.</span></div>
+          <div class="term-card"><strong>Portfolio Score</strong><span>Combined portfolio-level reading used to summarize Mosaic quality.</span></div>
+          <div class="term-card"><strong>Long Exposure</strong><span>Total exposure invested in the five selected stock positions.</span></div>
+          <div class="term-card"><strong>Net Exposure</strong><span>Long exposure after subtracting the effect of the dynamic hedge.</span></div>
+          <div class="term-card"><strong>Weekly Changes</strong><span>Portfolio changes between the current report and the previous weekly report.</span></div>
+        </div>
+      </section>
+
+      <section class="member-section" id="charts-dashboards" aria-labelledby="charts-dashboards-title">
+        <div class="eyebrow">Charts &amp; Stock Dashboards</div>
+        <h2 id="charts-dashboards-title">Where to inspect Mosaic charts</h2>
+        <p>Use the report cards below to open a market report. Inside each report, you can review equity, drawdown and exposure charts, open the dashboards for the five current portfolio stocks and access the updated charts for the full market universe.</p>
+        <ul class="member-list">
+          <li>Use equity and drawdown charts to evaluate the portfolio path and historical risk.</li>
+          <li>Use exposure charts to understand long exposure, hedge and net exposure.</li>
+          <li>Use stock dashboards to inspect the current portfolio names and the wider stock universe.</li>
+        </ul>
       </section>
 
       <section id="reports">
