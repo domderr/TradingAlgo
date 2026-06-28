@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradingAlgo Mosaic | Pricing</title>
+  <meta name="description" content="TradingAlgo Mosaic pricing: one subscription for all markets, weekly validated model portfolios, reports, Reserved Area access and support." />
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-dark: #050b14;
+      --panel: #0d1f36;
+      --panel-soft: #102743;
+      --panel-border: #203854;
+      --text: #ffffff;
+      --muted: #c9d6e8;
+      --muted-2: #b7c7da;
+      --green: #42d392;
+      --blue: #4aa3ff;
+      --yellow: #f5c542;
+      --shadow: 0 18px 48px rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 26px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      background: var(--bg-dark);
+      border-bottom: 1px solid #1d2b3f;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo-grid {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.35);
+    }
+
+    .logo-grid span:nth-child(1),
+    .logo-grid span:nth-child(2) { background: #d94d4d; }
+    .logo-grid span:nth-child(3),
+    .logo-grid span:nth-child(4) { background: #e8a241; }
+    .logo-grid span:nth-child(5),
+    .logo-grid span:nth-child(6) { background: #d8ce45; }
+    .logo-grid span:nth-child(7),
+    .logo-grid span:nth-child(8),
+    .logo-grid span:nth-child(9) { background: var(--green); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 24px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--text);
+    }
+
+    main { overflow: hidden; }
+
+    .hero {
+      padding: 86px 8% 72px;
+      background: linear-gradient(180deg, #07111f 0%, #0b1c33 100%);
+    }
+
+    .hero-inner,
+    .section-inner {
+      width: min(1080px, 100%);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.98;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 780px;
+      color: #d8e4f2;
+      font-size: 20px;
+      line-height: 1.62;
+    }
+
+    .cta {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 22px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #04110a;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--blue);
+      color: #ffffff;
+    }
+
+    .pricing-section {
+      padding: 72px 8%;
+      background: #f4f7fb;
+      color: #132235;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .subscription-card,
+    .premium-card,
+    .faq-item {
+      border: 1px solid #d9e2ec;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 16px 35px rgba(7,26,51,0.10);
+    }
+
+    .subscription-card {
+      padding: 34px;
+      border-top: 5px solid var(--green);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 11px;
+      border-radius: 999px;
+      background: rgba(66,211,146,0.14);
+      color: #0f7a45;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 18px 0 0;
+      font-size: 34px;
+      line-height: 1.08;
+    }
+
+    .subscription-copy {
+      margin: 16px 0 0;
+      color: #50627a;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .price-row {
+      margin-top: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .price-box {
+      padding: 20px;
+      border: 1px solid #d9e2ec;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .price-box strong {
+      display: block;
+      color: #07111f;
+      font-size: 30px;
+      line-height: 1.05;
+    }
+
+    .price-box span {
+      display: block;
+      margin-top: 8px;
+      color: #5f7086;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .included {
+      padding: 34px;
+      border-radius: 8px;
+      background: #0d1f36;
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .included h2 {
+      margin-top: 0;
+      font-size: 28px;
+    }
+
+    .included ul,
+    .premium-card ul {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 13px;
+    }
+
+    .included li,
+    .premium-card li {
+      position: relative;
+      padding-left: 26px;
+      color: #d8e4f2;
+      line-height: 1.45;
+    }
+
+    .included li::before,
+    .premium-card li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.58em;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .support-section {
+      padding: 72px 8%;
+      background: var(--bg);
+    }
+
+    .premium-card {
+      padding: 30px;
+      background: var(--panel);
+      border-color: var(--panel-border);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .premium-card h2 {
+      margin-top: 0;
+      font-size: 30px;
+    }
+
+    .premium-card p {
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .premium-card .btn { margin-top: 18px; }
+
+    .faq-section {
+      padding: 72px 8%;
+      background: #f4f7fb;
+      color: #132235;
+    }
+
+    .faq-heading {
+      margin-bottom: 24px;
+    }
+
+    .faq-heading h2 {
+      margin-top: 0;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .faq-item {
+      padding: 24px;
+    }
+
+    .faq-item h3 {
+      margin: 0;
+      color: #07111f;
+      font-size: 20px;
+    }
+
+    .faq-item p {
+      margin: 12px 0 0;
+      color: #50627a;
+      line-height: 1.6;
+    }
+
+    footer {
+      padding: 34px 8%;
+      border-top: 1px solid #1d2b3f;
+      color: var(--muted-2);
+      font-size: 13px;
+      text-align: center;
+      background: var(--bg-dark);
+    }
+
+    @media (max-width: 840px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .pricing-grid,
+      .faq-grid,
+      .price-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero,
+      .pricing-section,
+      .support-section,
+      .faq-section {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#mission">Mission</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#mosaic">Mosaic</a>
+      <a href="index.html#consulting">Consulting</a>
+      <a href="publications.html">Publications</a>
+      <a href="index.html#about">About</a>
+      <a href="https://gandalfproject.com/gandalf-symposium-2026-html/">Gandalf Symposium</a>
+      <a href="framework.html">Framework</a>
+      <a href="pricing.html" aria-current="page">Pricing</a>
+      <a href="reserved-area.html">Reserved Area</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="kicker">TradingAlgo Mosaic Pricing</p>
+        <h1>One subscription. All markets. Weekly validated portfolio research.</h1>
+        <p class="lead">TradingAlgo Mosaic gives subscribers full access to weekly model portfolios, validation reports, performance tracking and Reserved Area research across all available markets.</p>
+      </div>
+    </section>
+
+    <section class="pricing-section">
+      <div class="section-inner pricing-grid">
+        <article class="subscription-card">
+          <span class="badge">All markets included</span>
+          <h2>Mosaic Research Subscription</h2>
+          <p class="subscription-copy">A single subscription covers the complete TradingAlgo Mosaic research service. The value is in comparing, validating and following the full market universe.</p>
+          <div class="price-row" aria-label="Subscription prices">
+            <div class="price-box">
+              <strong>USD 199</strong>
+              <span>per month</span>
+            </div>
+            <div class="price-box">
+              <strong>USD 1,990</strong>
+              <span>per year, about 17% discount vs monthly billing</span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="included" aria-label="Included in the subscription">
+          <h2>Included</h2>
+          <ul>
+            <li>Weekly model portfolios</li>
+            <li>Access to all available markets</li>
+            <li>Historical performance tracking</li>
+            <li>Validation reports</li>
+            <li>Weekly rebalancing reports</li>
+            <li>Reserved Area</li>
+            <li>Email &amp; WhatsApp support</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="support-section">
+      <div class="section-inner">
+        <article class="premium-card">
+          <p class="kicker">Professional framework</p>
+          <h2>TradingAlgo Mosaic Framework</h2>
+          <p>The TradingAlgo Mosaic Framework is available to professional investors, financial advisors, and asset managers who wish to build their own systematic investment strategies. Through direct collaboration with Domenico, clients gain access to a proven research infrastructure, portfolio validation tools, and years of practical experience in quantitative portfolio management.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="section-inner">
+        <div class="faq-heading">
+          <p class="kicker">Pricing FAQ</p>
+          <h2>Common subscription questions</h2>
+        </div>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Is every market included?</h3>
+            <p>Yes. The Mosaic Research Subscription provides access to all available markets included in the TradingAlgo Mosaic coverage.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What do I receive every week?</h3>
+            <p>You receive updated model portfolios, rebalancing context and the supporting research reports for the covered markets.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Who can access the framework?</h3>
+            <p>The TradingAlgo Mosaic Framework is available to professional investors, financial advisors and asset managers who want to build systematic investment strategies through direct collaboration with Domenico.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Is this investment advice?</h3>
+            <p>No. TradingAlgo Mosaic provides research material and portfolio analytics. It does not provide personalized financial advice.</p>
+          </article>
+          <article class="faq-item">
+            <h3>Will I receive assistance?</h3>
+            <p>Yes. Every subscriber receives direct support from the TradingAlgo team via email and WhatsApp. Whether you have questions about the weekly reports, portfolio rebalancing, or using the platform, we're here to help.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 TradingAlgo. Quantitative trading research and portfolio analytics.</p>
+    <p>Research material only. Not personalized financial advice.</p>
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
