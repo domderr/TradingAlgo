@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Rebalance TradingAlgo Mosaic | TradingAlgo</title>
+  <meta name="description" content="A practical guide to rebalancing TradingAlgo Mosaic, a five-stock equally weighted portfolio with dynamic hedging updated at the market open on Monday or the first open exchange day after the weekend." />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 92px 8% 74px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.72)),
+        url("assets/reports/tradingalgo-mosaic-usa-report-cover.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 830px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 64px 8%;
+    }
+
+    .content {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      padding: 34px;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: 30px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #071a33;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.7;
+      color: #26364a;
+    }
+
+    ul, ol {
+      margin: 0 0 16px;
+      padding-left: 22px;
+      color: #26364a;
+      line-height: 1.7;
+    }
+
+    li { margin-bottom: 8px; }
+
+    code {
+      padding: 2px 5px;
+      border-radius: 5px;
+      background: #eef5fd;
+      color: #071a33;
+      font-size: 0.94em;
+    }
+
+    .formula {
+      margin: 18px 0;
+      padding: 18px;
+      border-left: 4px solid #168eea;
+      background: #f8fbff;
+      color: #071a33;
+      font-family: Consolas, Monaco, monospace;
+      line-height: 1.65;
+      overflow-x: auto;
+    }
+
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+
+    .step-card {
+      padding: 20px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .step-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #071a33;
+      font-size: 17px;
+    }
+
+    .note {
+      border-left: 4px solid #168eea;
+      padding-left: 18px;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 900px) {
+      .step-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 800px) {
+      nav { display: block; }
+      nav a { display: inline-block; margin: 10px 12px 0 0; }
+      header h1 { font-size: 38px; }
+      section { padding: 26px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="publications.html">Publications</a>
+      <a href="validation.html">Validation</a>
+      <a href="reserved-area.html">Reserved Area</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">TradingAlgo Mosaic Guide</p>
+    <h1>How to Rebalance TradingAlgo Mosaic</h1>
+    <p>A practical guide to the weekly rebalance of a five-stock equally weighted portfolio with dynamic hedging.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>Core Structure</h2>
+        <p>TradingAlgo Mosaic is built around a concentrated and disciplined structure: five stocks, each with a target weight of 20%, combined with a dynamic hedge that adapts to the current market regime.</p>
+        <p>The rebalance is not discretionary. It takes place at the market open on Monday, or on the first open exchange day after the weekend when Monday is a market holiday.</p>
+        <div class="formula">Stock 1: 20%<br>Stock 2: 20%<br>Stock 3: 20%<br>Stock 4: 20%<br>Stock 5: 20%</div>
+      </section>
+
+      <section>
+        <h2>The Monday Rule</h2>
+        <p>TradingAlgo Mosaic uses a fixed operating rule:</p>
+        <div class="formula">Rebalance timing: Monday at the market open<br>Exception: if Monday is closed, rebalance on the first open exchange day after the weekend</div>
+        <p>This timing keeps the process systematic. The portfolio starts each trading week with updated stock weights and a hedge level aligned with the current model signal.</p>
+        <p class="note">The rebalance is performed at the beginning of the week, not continuously during the week.</p>
+      </section>
+
+      <section>
+        <h2>Why Rebalancing Matters</h2>
+        <p>Even if the portfolio starts equally weighted, prices do not move equally. One stock may rise sharply, another may fall, and the portfolio can quickly move away from its intended 20% structure.</p>
+        <p>For example, after a few weeks the portfolio may look like this:</p>
+        <div class="formula">Stock 1: 26%<br>Stock 2: 22%<br>Stock 3: 20%<br>Stock 4: 17%<br>Stock 5: 15%</div>
+        <p>At that point, Mosaic is no longer a balanced five-stock portfolio. The risk has become concentrated in the stocks that moved the most. Rebalancing brings the structure back toward 20% per position.</p>
+      </section>
+
+      <section>
+        <h2>Operational Sequence</h2>
+        <ol>
+          <li>Calculate the updated value of each of the five stocks.</li>
+          <li>Calculate the total equity value of the Mosaic portfolio.</li>
+          <li>Divide the total equity value by five to obtain the new target value per stock.</li>
+          <li>Sell the positions above target and buy the positions below target.</li>
+          <li>Calculate the dynamic hedge required by the model.</li>
+          <li>Update the hedge after the equity positions have been rebalanced.</li>
+          <li>Verify the final net market exposure.</li>
+        </ol>
+        <p>The equity rebalance comes first. The hedge is updated only after the five-stock portfolio has been brought back toward equal weight, because the hedge must refer to the updated portfolio value.</p>
+      </section>
+
+      <section>
+        <h2>Example</h2>
+        <p>Assume that on Monday morning, at the market open, the five Mosaic positions have the following values:</p>
+        <div class="formula">Stock 1: EUR 27,000<br>Stock 2: EUR 23,000<br>Stock 3: EUR 20,000<br>Stock 4: EUR 18,000<br>Stock 5: EUR 17,000<br><br>Total equity value: EUR 105,000</div>
+        <p>The new target value for each position is:</p>
+        <div class="formula">EUR 105,000 / 5 = EUR 21,000 per stock</div>
+        <p>The rebalance orders are therefore:</p>
+        <div class="formula">Stock 1: sell EUR 6,000<br>Stock 2: sell EUR 2,000<br>Stock 3: buy EUR 1,000<br>Stock 4: buy EUR 3,000<br>Stock 5: buy EUR 4,000</div>
+        <p>After these trades, each stock is brought back close to the 20% target weight.</p>
+      </section>
+
+      <section>
+        <h2>Dynamic Hedging</h2>
+        <p>Once the five stocks have been rebalanced, Mosaic updates the hedge. The hedge may rise or fall depending on the model's market-risk signal.</p>
+        <div class="step-grid">
+          <div class="step-card"><strong>Favorable Market</strong><p>Low or no hedge. The portfolio remains mostly exposed to the selected stocks.</p></div>
+          <div class="step-card"><strong>Neutral Market</strong><p>Partial hedge. The portfolio keeps upside participation while reducing some market exposure.</p></div>
+          <div class="step-card"><strong>Weak Market</strong><p>Higher hedge. The portfolio reduces net exposure when risk conditions deteriorate.</p></div>
+        </div>
+        <p>If the model requires a 40% hedge after the rebalance, the hedge is calculated on the updated equity value:</p>
+        <div class="formula">Equity value: EUR 105,000<br>Target hedge: 40%<br><br>Desired hedge = EUR 105,000 x 40% = EUR 42,000</div>
+        <p>The approximate net exposure becomes:</p>
+        <div class="formula">Net exposure = EUR 105,000 - EUR 42,000 = EUR 63,000</div>
+      </section>
+
+      <section>
+        <h2>What to Avoid</h2>
+        <ul>
+          <li>Changing stock weights during the week without a predefined rule.</li>
+          <li>Updating the hedge before rebalancing the five stock positions.</li>
+          <li>Using the hedge as a substitute for position rebalancing.</li>
+          <li>Allowing one stock to dominate the portfolio.</li>
+          <li>Rebalancing too frequently and increasing costs, spreads and turnover.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Conclusion</h2>
+        <p>Rebalancing TradingAlgo Mosaic means restoring the model's original architecture: five equally weighted stocks and a dynamic hedge aligned with the current market regime.</p>
+        <p>The portfolio is reviewed at the market open on Monday, or on the first open exchange day after the weekend. First, the five stocks are brought back toward 20% each. Then the dynamic hedge is updated. This keeps Mosaic disciplined, transparent and consistent with its risk-control framework.</p>
+        <p><strong>Research material only. Not personalized financial advice.</strong></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    TradingAlgo - Mosaic Trading Framework. Research material only. Not personalized financial advice.
+  </footer>
+</body>
+</html>
