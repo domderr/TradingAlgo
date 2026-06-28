@@ -951,12 +951,45 @@
     var authorizedMarkets = [];
     var isAdminAccess = false;
     var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
+    var RESERVED_REQUEST = parseReservedRequest();
 
     function activeMarkets() {
       if (authorizedMarkets.indexOf("All") !== -1) return MARKET_META;
       return MARKET_META.filter(function(m) {
         return authorizedMarkets.indexOf(m.key) !== -1;
       });
+    }
+
+    function parseReservedRequest() {
+      var params = new URLSearchParams(window.location.search);
+      var market = normalizeMarketName(params.get("market"));
+      var section = String(params.get("section") || "").toLowerCase();
+      var anchors = {
+        monthly: "month-year-performance",
+        equity: "equity-drawdown"
+      };
+      if (!market || !anchors[section]) return null;
+      return {
+        market: market,
+        section: section,
+        anchor: anchors[section]
+      };
+    }
+
+    function redirectReservedRequestIfAllowed() {
+      if (!RESERVED_REQUEST) return;
+      var meta = MARKET_META.find(function(item) {
+        return item.key === RESERVED_REQUEST.market;
+      });
+      if (!meta) return;
+
+      var allowed = authorizedMarkets.indexOf("All") !== -1 || authorizedMarkets.indexOf(meta.key) !== -1;
+      if (!allowed) {
+        setAccessMessage("This market is not enabled for your subscription.", "");
+        return;
+      }
+
+      window.location.href = meta.html + "#" + RESERVED_REQUEST.anchor;
     }
 
     function normalizeMarketName(value) {
@@ -1010,6 +1043,7 @@
       }
       document.getElementById("restricted-content").hidden = false;
       loadData();
+      redirectReservedRequestIfAllowed();
     }
 
     function hashPassword(value) {
