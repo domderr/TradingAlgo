@@ -248,6 +248,44 @@
       font-weight: 700;
     }
 
+    .fit-note {
+      margin: 24px 0 0;
+      padding: 18px;
+      border: 1px solid #cbd8e7;
+      border-radius: 8px;
+      background: #f7fbff;
+      color: #384c63;
+      line-height: 1.6;
+    }
+
+    .cost-context {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .cost-context div {
+      padding: 14px;
+      border: 1px solid #d9e2ec;
+      border-radius: 8px;
+      background: #ffffff;
+    }
+
+    .cost-context strong {
+      display: block;
+      color: #102640;
+      font-size: 18px;
+    }
+
+    .cost-context span {
+      display: block;
+      margin-top: 6px;
+      color: #5f7087;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
     .included {
       padding: 34px;
       border-radius: 8px;
@@ -372,7 +410,8 @@
 
       .pricing-grid,
       .faq-grid,
-      .price-row {
+      .price-row,
+      .cost-context {
         grid-template-columns: 1fr;
       }
 
@@ -434,6 +473,23 @@
               <span>per year, about 17% discount vs monthly billing</span>
             </div>
           </div>
+          <div class="fit-note">
+            TradingAlgo Mosaic is generally most appropriate for investors managing portfolios of about USD/EUR 100,000 or more, where diversification, transaction costs and research cost can be evaluated in proportion to the capital managed.
+            <div class="cost-context" aria-label="Annual subscription cost by portfolio size">
+              <div>
+                <strong>2.99%</strong>
+                <span>annual subscription cost on USD 100,000</span>
+              </div>
+              <div>
+                <strong>1.20%</strong>
+                <span>annual subscription cost on USD 250,000</span>
+              </div>
+              <div>
+                <strong>0.60%</strong>
+                <span>annual subscription cost on USD 500,000</span>
+              </div>
+            </div>
+          </div>
         </article>
 
         <aside class="included" aria-label="Included in the subscription">
@@ -456,7 +512,7 @@
         <article class="premium-card">
           <p class="kicker">Professional framework</p>
           <h2>TradingAlgo Mosaic Framework</h2>
-          <p>The TradingAlgo Mosaic Framework is available to professional investors, financial advisors, and asset managers who wish to build their own systematic investment strategies. Through direct collaboration with Domenico, clients gain access to a proven research infrastructure, portfolio validation tools, and years of practical experience in quantitative portfolio management.</p>
+          <p>The TradingAlgo Mosaic Framework is available to professional investors, financial advisors, and asset managers who wish to build their own systematic investment strategies. Through direct collaboration with Domenico, clients gain access to a structured research infrastructure, portfolio validation tools, and years of practical experience in quantitative portfolio management.</p>
         </article>
       </div>
     </section>
@@ -477,8 +533,16 @@
             <p>You receive updated model portfolios, rebalancing context and the supporting research reports for the covered markets.</p>
           </article>
           <article class="faq-item">
+            <h3>Who is the subscription designed for?</h3>
+            <p>It is designed for independent investors and professionals who actively review their portfolios and generally manage at least USD/EUR 100,000 of investable capital.</p>
+          </article>
+          <article class="faq-item">
             <h3>Who can access the framework?</h3>
             <p>The TradingAlgo Mosaic Framework is available to professional investors, financial advisors and asset managers who want to build systematic investment strategies through direct collaboration with Domenico.</p>
+          </article>
+          <article class="faq-item">
+            <h3>What happens during the free trial?</h3>
+            <p>The 2-week trial lets you review the latest model portfolios, compare markets, inspect validation reports and ask questions before deciding whether the service fits your investment process.</p>
           </article>
           <article class="faq-item">
             <h3>Is this investment advice?</h3>
@@ -498,7 +562,7 @@
 
   <footer>
     <p>&copy; 2026 TradingAlgo. Quantitative trading research and portfolio analytics.</p>
-    <p>Research material only. Not personalized financial advice.</p>
+    <p>Systematic portfolio research. Weekly model portfolios. Transparent validation. No personalized financial advice.</p>
   </footer>
   <script defer src="assets/access-analytics.js"></script>
 </body>
