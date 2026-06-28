@@ -438,6 +438,86 @@
       line-height: 1.35;
     }
 
+    .audience-section,
+    .risk-section {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .audience-section {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .audience-copy h2,
+    .risk-section h2 {
+      margin: 0 0 18px;
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.08;
+    }
+
+    .audience-copy p,
+    .risk-section > p {
+      margin: 0;
+      color: var(--muted-2);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .audience-grid,
+    .risk-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .audience-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .audience-item,
+    .risk-item {
+      padding: 20px;
+      border: 1px solid rgba(125,211,252,0.18);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .audience-item h3,
+    .risk-item h3 {
+      margin: 0 0 10px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+
+    .audience-item p,
+    .risk-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .audience-item.warning {
+      border-color: rgba(245,197,66,0.34);
+      background: rgba(245,197,66,0.08);
+    }
+
+    .risk-section {
+      text-align: center;
+    }
+
+    .risk-section > p {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .risk-grid {
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 34px;
+      text-align: left;
+    }
+
     .publication-alert {
       padding: 0 8% 52px;
       background: #0b1c33;
@@ -1207,6 +1287,7 @@
       }
 
       .hero-inner,
+      .audience-section,
       .editorial-section,
       .output-section,
       .validation-section {
@@ -1218,6 +1299,8 @@
       }
 
       .hero-metrics,
+      .audience-grid,
+      .risk-grid,
       .process-flow,
       .output-grid {
         grid-template-columns: 1fr;
@@ -1233,6 +1316,7 @@
       }
 
       .editorial-section,
+      .audience-section,
       .output-section,
       .validation-section {
         gap: 28px;
@@ -1333,13 +1417,13 @@
     <div class="hero-inner">
       <div class="hero-copy">
         <p class="hero-kicker">TradingAlgo Mosaic</p>
-        <h1>Discover the Five Stocks Driving Each Market</h1>
+        <h1>Systematic Portfolio Research for Independent Investors</h1>
         <p>
-          Every week TradingAlgo Mosaic analyzes hundreds of stocks across 15 global markets and identifies the five securities that best represent each market.
+          TradingAlgo Mosaic helps investors review global equity markets through weekly model portfolios, transparent selection rules and risk-aware validation.
         </p>
         <div class="buttons">
-          <a class="btn btn-primary" href="explore-markets.html">Explore Markets</a>
-          <a class="btn btn-secondary" href="#about">About Domenico</a>
+          <a class="btn btn-primary" href="#request-info">Request Free Trial</a>
+          <a class="btn btn-secondary" href="reports_html/USA100/Report_USA100.html">View Sample Report</a>
         </div>
       </div>
 
@@ -1366,6 +1450,65 @@
             <span>Systematic framework</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark-band">
+    <div class="audience-section">
+      <div class="audience-copy">
+        <p class="section-kicker">Who this is for</p>
+        <h2>Built for investors who make their own decisions.</h2>
+        <p>
+          TradingAlgo Mosaic is designed for independent investors and financial professionals managing meaningful capital, typically USD/EUR 100,000 or more, who want a disciplined framework for reviewing equity markets without relying on market noise or discretionary opinions.
+        </p>
+      </div>
+
+      <div class="audience-grid" aria-label="TradingAlgo Mosaic target audience">
+        <article class="audience-item">
+          <h3>Independent investors</h3>
+          <p>For people who manage their own portfolio and want a structured weekly reference before making allocation decisions.</p>
+        </article>
+        <article class="audience-item">
+          <h3>Risk-aware capital</h3>
+          <p>Most useful when portfolio size makes diversification, transaction costs and research cost proportionate to the capital managed.</p>
+        </article>
+        <article class="audience-item">
+          <h3>Active portfolio review</h3>
+          <p>For investors willing to review model portfolios, benchmark context, drawdowns and weekly changes before acting.</p>
+        </article>
+        <article class="audience-item warning">
+          <h3>Not a signal service</h3>
+          <p>Not designed for investors looking for short-term trading calls, guaranteed returns or personalized financial advice.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="risk-section">
+      <p class="section-kicker">Risk comes first</p>
+      <h2>Research is useful only when the risk is visible.</h2>
+      <p>
+        TradingAlgo Mosaic presents model portfolios as standardized research outputs. The service is built to make assumptions, history and limits easier to inspect before an investor decides whether a portfolio is suitable for their own circumstances.
+      </p>
+      <div class="risk-grid" aria-label="Risk controls and transparency">
+        <article class="risk-item">
+          <h3>Benchmark context</h3>
+          <p>Each market report compares model behavior with a reference benchmark.</p>
+        </article>
+        <article class="risk-item">
+          <h3>Drawdowns shown</h3>
+          <p>Historical declines are part of the analysis, not hidden behind performance summaries.</p>
+        </article>
+        <article class="risk-item">
+          <h3>No performance promise</h3>
+          <p>Past results, simulations and backtests are evidence to review, not forecasts or guarantees.</p>
+        </article>
+        <article class="risk-item">
+          <h3>Investor responsibility</h3>
+          <p>Position sizing, suitability and final investment decisions remain with the investor.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -1669,7 +1812,7 @@
 
   <footer>
     <p>&copy; 2026 TradingAlgo. Quantitative trading research and portfolio analytics.</p>
-    <p>Research material only. Not personalized financial advice.</p>
+    <p>Systematic portfolio research. Weekly model portfolios. Transparent validation. No personalized financial advice.</p>
   </footer>
 
   <script>
