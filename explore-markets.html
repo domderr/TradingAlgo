@@ -153,6 +153,12 @@
       color: #ffffff;
     }
 
+    .market-name .flag {
+      display: inline-block;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+
     .etf,
     .count {
       font-weight: 800;
@@ -177,7 +183,7 @@
       }
 
       .table-shell { overflow-x: auto; }
-      table { min-width: 680px; }
+      table { min-width: 1080px; }
     }
   </style>
 </head>
@@ -206,29 +212,30 @@
       <table>
         <thead>
           <tr>
-            <th>Bandiera</th>
             <th>Market</th>
             <th>ETF</th>
-            <th>NumTitoli</th>
+            <th>Number of Stocks</th>
             <th>View Stocks</th>
+            <th>Portfolio Monthly Performance</th>
+            <th>Portfolio Equity</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><img class="flag" src="https://flagcdn.com/au.svg" alt=""></td><td class="market-name">Australia50</td><td class="etf">EWA</td><td class="count">50</td><td><a class="table-link" href="market-stocks.html?market=Australia50">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/ca.svg" alt=""></td><td class="market-name">Canada50</td><td class="etf">EWC</td><td class="count">50</td><td><a class="table-link" href="market-stocks.html?market=Canada50">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/us.svg" alt=""></td><td class="market-name">DJ30</td><td class="etf">DIA</td><td class="count">30</td><td><a class="table-link" href="market-stocks.html?market=DJ30">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/eu.svg" alt=""></td><td class="market-name">Europe50</td><td class="etf">EZU</td><td class="count">47</td><td><a class="table-link" href="market-stocks.html?market=Europe50">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/fr.svg" alt=""></td><td class="market-name">France40</td><td class="etf">EWQ</td><td class="count">38</td><td><a class="table-link" href="market-stocks.html?market=France40">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/de.svg" alt=""></td><td class="market-name">Germany30</td><td class="etf">EWG</td><td class="count">40</td><td><a class="table-link" href="market-stocks.html?market=Germany30">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/it.svg" alt=""></td><td class="market-name">Italy30</td><td class="etf">EWI</td><td class="count">28</td><td><a class="table-link" href="market-stocks.html?market=Italy30">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/jp.svg" alt=""></td><td class="market-name">Japan50</td><td class="etf">EWJ</td><td class="count">49</td><td><a class="table-link" href="market-stocks.html?market=Japan50">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/mx.svg" alt=""></td><td class="market-name">Mexico30</td><td class="etf">EWW</td><td class="count">34</td><td><a class="table-link" href="market-stocks.html?market=Mexico30">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/us.svg" alt=""></td><td class="market-name">NASDAQ100</td><td class="etf">QQQ</td><td class="count">100</td><td><a class="table-link" href="market-stocks.html?market=NASDAQ100">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/za.svg" alt=""></td><td class="market-name">South Africa30</td><td class="etf">EZA</td><td class="count">22</td><td><a class="table-link" href="market-stocks.html?market=South_Africa30">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/kr.svg" alt=""></td><td class="market-name">South Korea30</td><td class="etf">EWY</td><td class="count">29</td><td><a class="table-link" href="market-stocks.html?market=South_Korea30">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/es.svg" alt=""></td><td class="market-name">Spain40</td><td class="etf">EWP</td><td class="count">37</td><td><a class="table-link" href="market-stocks.html?market=Spain40">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/gb.svg" alt=""></td><td class="market-name">UK30</td><td class="etf">EWU</td><td class="count">30</td><td><a class="table-link" href="market-stocks.html?market=UK30">View Stocks</a></td></tr>
-          <tr><td><img class="flag" src="https://flagcdn.com/us.svg" alt=""></td><td class="market-name">USA100</td><td class="etf">SPY</td><td class="count">99</td><td><a class="table-link" href="market-stocks.html?market=USA100">View Stocks</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/au.svg" alt="">Australia50</td><td class="etf">EWA</td><td class="count">50</td><td><a class="table-link" href="market-stocks.html?market=Australia50">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Australia50&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Australia50&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/ca.svg" alt="">Canada50</td><td class="etf">EWC</td><td class="count">50</td><td><a class="table-link" href="market-stocks.html?market=Canada50">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Canada50&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Canada50&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/us.svg" alt="">DJ30</td><td class="etf">DIA</td><td class="count">30</td><td><a class="table-link" href="market-stocks.html?market=DJ30">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=DJ30&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=DJ30&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/eu.svg" alt="">Europe50</td><td class="etf">EZU</td><td class="count">47</td><td><a class="table-link" href="market-stocks.html?market=Europe50">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Europe50&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Europe50&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/fr.svg" alt="">France40</td><td class="etf">EWQ</td><td class="count">38</td><td><a class="table-link" href="market-stocks.html?market=France40">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=France40&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=France40&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/de.svg" alt="">Germany30</td><td class="etf">EWG</td><td class="count">40</td><td><a class="table-link" href="market-stocks.html?market=Germany30">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Germany30&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Germany30&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/it.svg" alt="">Italy30</td><td class="etf">EWI</td><td class="count">28</td><td><a class="table-link" href="market-stocks.html?market=Italy30">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Italy30&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Italy30&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/jp.svg" alt="">Japan50</td><td class="etf">EWJ</td><td class="count">49</td><td><a class="table-link" href="market-stocks.html?market=Japan50">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Japan50&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Japan50&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/mx.svg" alt="">Mexico30</td><td class="etf">EWW</td><td class="count">34</td><td><a class="table-link" href="market-stocks.html?market=Mexico30">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Mexico30&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Mexico30&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/us.svg" alt="">NASDAQ100</td><td class="etf">QQQ</td><td class="count">100</td><td><a class="table-link" href="market-stocks.html?market=NASDAQ100">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=NASDAQ100&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=NASDAQ100&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/za.svg" alt="">South Africa30</td><td class="etf">EZA</td><td class="count">22</td><td><a class="table-link" href="market-stocks.html?market=South_Africa30">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=South%20Africa30&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=South%20Africa30&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/kr.svg" alt="">South Korea30</td><td class="etf">EWY</td><td class="count">29</td><td><a class="table-link" href="market-stocks.html?market=South_Korea30">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=South%20Korea30&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=South%20Korea30&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/es.svg" alt="">Spain40</td><td class="etf">EWP</td><td class="count">37</td><td><a class="table-link" href="market-stocks.html?market=Spain40">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=Spain40&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=Spain40&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/gb.svg" alt="">UK30</td><td class="etf">EWU</td><td class="count">30</td><td><a class="table-link" href="market-stocks.html?market=UK30">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=UK30&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=UK30&section=equity">View Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/us.svg" alt="">USA100</td><td class="etf">SPY</td><td class="count">99</td><td><a class="table-link" href="market-stocks.html?market=USA100">View Stocks</a></td><td><a class="table-link" href="reserved-area.html?market=USA100&section=monthly">View Table</a></td><td><a class="table-link" href="reserved-area.html?market=USA100&section=equity">View Equity</a></td></tr>
         </tbody>
       </table>
     </section>
