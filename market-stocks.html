@@ -215,6 +215,7 @@
     </section>
   </main>
 
+  <script src="assets/market-stocks-data.js"></script>
   <script>
     var markets = {
       Australia50: { label: "Australia50", folder: "Australia50", etf: "EWA" },
@@ -256,32 +257,47 @@
       document.getElementById("page-title").textContent = market.label + " Stocks";
       document.getElementById("page-meta").textContent = "ETF: " + market.etf;
 
+      var embeddedRows = window.MARKET_STOCKS_DATA && window.MARKET_STOCKS_DATA[market.folder];
+      if (Array.isArray(embeddedRows) && embeddedRows.length) {
+        renderRows(embeddedRows.map(function(item) {
+          return [item.ticker, item.name, item.sector, item.industry];
+        }));
+        return;
+      }
+
       try {
         var response = await fetch("reports_html/" + market.folder + "/all-assets.html");
         if (!response.ok) throw new Error("HTTP " + response.status);
         var html = await response.text();
         var doc = new DOMParser().parseFromString(html, "text/html");
         var rows = Array.from(doc.querySelectorAll(".gallery-table tbody tr"));
-        var tbody = document.querySelector("#stocks-table tbody");
-
-        rows.forEach(function (row) {
+        renderRows(rows.map(function (row) {
           var cells = row.querySelectorAll("td");
-          if (cells.length < 4) return;
-          var tr = document.createElement("tr");
-          [0, 1, 2, 3].forEach(function (index) {
-            var td = document.createElement("td");
-            td.textContent = text(cells[index]);
-            if (index === 0) td.className = "ticker";
-            tr.appendChild(td);
-          });
-          tbody.appendChild(tr);
-        });
-
-        document.getElementById("loading").hidden = true;
-        document.getElementById("stocks-table").hidden = false;
+          if (cells.length < 4) return null;
+          return [text(cells[0]), text(cells[1]), text(cells[2]), text(cells[3])];
+        }).filter(Boolean));
       } catch (error) {
         showError("Unable to load stocks for this market.");
       }
+    }
+
+    function renderRows(rows) {
+      var tbody = document.querySelector("#stocks-table tbody");
+      tbody.innerHTML = "";
+
+      rows.forEach(function (cells) {
+        var tr = document.createElement("tr");
+        cells.forEach(function (value, index) {
+          var td = document.createElement("td");
+          td.textContent = value;
+          if (index === 0) td.className = "ticker";
+          tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+      });
+
+      document.getElementById("loading").hidden = true;
+      document.getElementById("stocks-table").hidden = false;
     }
 
     loadStocks();
