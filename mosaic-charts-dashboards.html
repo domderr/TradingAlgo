@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charts &amp; Stock Dashboards | TradingAlgo Mosaic</title>
+  <meta name="description" content="Guide to TradingAlgo Mosaic charts and stock dashboards: equity curve, drawdown, exposure, portfolio stock dashboards and all available stock charts." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
+    a { color: inherit; }
+    nav { position: sticky; top: 0; z-index: 10; padding: 18px 8%; background: rgba(3,12,25,0.94); display: flex; justify-content: space-between; align-items: center; gap: 22px; backdrop-filter: blur(8px); }
+    nav .logo { color: white; font-size: 24px; font-weight: bold; letter-spacing: 1px; text-decoration: none; }
+    nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+    header { padding: 78px 8% 58px; background: linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.72)), url("assets/reports/tradingalgo-mosaic-nvda-dashboard.png"); background-size: cover; background-position: center; color: white; }
+    .kicker { margin: 0 0 14px; color: #7dd3fc; font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 60px); line-height: 1.06; }
+    header p { max-width: 820px; margin: 22px 0 0; color: #e5e7eb; font-size: 20px; line-height: 1.6; }
+    main { padding: 58px 8%; }
+    .content { max-width: 1040px; margin: 0 auto; display: grid; gap: 24px; }
+    section { padding: 32px; background: white; border: 1px solid #dbe3ef; border-radius: 8px; }
+    h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 30px; }
+    h3 { margin: 20px 0 8px; color: #071a33; }
+    p, li { color: #26364a; line-height: 1.7; }
+    ul { margin: 0; padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .btn { display: inline-block; padding: 11px 15px; border-radius: 999px; background: #071a33; color: white; text-decoration: none; font-size: 13px; font-weight: 800; }
+    footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
+    @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } section { padding: 26px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="reserved-area.html">Reports</a>
+      <a href="mosaic-start-here.html">Start Here</a>
+      <a href="mosaic-weekly-update.html">Weekly Update</a>
+      <a href="mosaic-how-to-guides.html">How-To</a>
+      <a href="mosaic-terminology.html">Terminology</a>
+    </div>
+  </nav>
+  <header>
+    <p class="kicker">Mosaic Member Area</p>
+    <h1>Charts &amp; Stock Dashboards</h1>
+    <p>How to use equity, drawdown, exposure and stock dashboards inside Mosaic reports.</p>
+  </header>
+  <main>
+    <div class="content">
+      <!-- Charts guidance page linked from the reserved-area collapsible menu. -->
+      <section>
+        <h2>Portfolio Charts</h2>
+        <ul>
+          <li><strong>Equity curve:</strong> shows the historical portfolio path over time.</li>
+          <li><strong>Drawdown:</strong> shows declines from previous equity peaks and helps evaluate historical risk.</li>
+          <li><strong>Exposure:</strong> shows invested capital, hedge and net exposure behavior.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Stock Dashboards</h2>
+        <p>Open a market report from the reserved area, then use the current positions and stock links to inspect the five portfolio names. The all-assets page inside each market folder provides updated charts for the broader stock universe.</p>
+        <h3>Recommended Use</h3>
+        <ul>
+          <li>Use portfolio charts to understand Mosaic as a system.</li>
+          <li>Use stock dashboards to inspect the individual names currently selected.</li>
+          <li>Use all available stock charts to understand the wider opportunity set.</li>
+        </ul>
+        <div class="button-row">
+          <a class="btn" href="reserved-area.html">Open Reports</a>
+          <a class="btn" href="how-to-read-mosaic-report.html">Read Report Guide</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>TradingAlgo - Mosaic Trading Framework. Research material only. Not personalized financial advice.</footer>
+</body>
+</html>

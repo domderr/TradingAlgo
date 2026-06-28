@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How-To Guides | TradingAlgo Mosaic</title>
+  <meta name="description" content="How-To Guides for TradingAlgo Mosaic members: reports, rebalance, month-year tables, performance summary, charts and stock dashboards." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
+    a { color: inherit; }
+    nav { position: sticky; top: 0; z-index: 10; padding: 18px 8%; background: rgba(3,12,25,0.94); display: flex; justify-content: space-between; align-items: center; gap: 22px; backdrop-filter: blur(8px); }
+    nav .logo { color: white; font-size: 24px; font-weight: bold; letter-spacing: 1px; text-decoration: none; }
+    nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+    header { padding: 78px 8% 58px; background: linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.72)), url("assets/reports/mosaic-weekly-report-layout.png"); background-size: cover; background-position: center; color: white; }
+    .kicker { margin: 0 0 14px; color: #7dd3fc; font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 60px); line-height: 1.06; }
+    header p { max-width: 820px; margin: 22px 0 0; color: #e5e7eb; font-size: 20px; line-height: 1.6; }
+    main { padding: 58px 8%; }
+    .content { max-width: 1080px; margin: 0 auto; display: grid; gap: 24px; }
+    section { padding: 32px; background: white; border: 1px solid #dbe3ef; border-radius: 8px; }
+    h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 30px; }
+    p { color: #26364a; line-height: 1.7; }
+    .guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .guide-card { display: block; padding: 20px; border: 1px solid #dbe3ef; border-radius: 8px; background: #f8fbff; text-decoration: none; }
+    .guide-card strong { display: block; margin-bottom: 8px; color: #071a33; font-size: 18px; }
+    .guide-card span { display: block; color: #26364a; line-height: 1.55; }
+    footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
+    @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } .guide-grid { grid-template-columns: 1fr; } section { padding: 26px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="reserved-area.html">Reports</a>
+      <a href="mosaic-start-here.html">Start Here</a>
+      <a href="mosaic-weekly-update.html">Weekly Update</a>
+      <a href="mosaic-terminology.html">Terminology</a>
+      <a href="mosaic-charts-dashboards.html">Charts</a>
+    </div>
+  </nav>
+  <header>
+    <p class="kicker">Mosaic Member Area</p>
+    <h1>How-To Guides</h1>
+    <p>Practical guides for reading reports, interpreting tables and following the Mosaic rebalance workflow.</p>
+  </header>
+  <main>
+    <div class="content">
+      <!-- This index separates education from the report landing page. -->
+      <section>
+        <h2>Guide Index</h2>
+        <div class="guide-grid">
+          <a class="guide-card" href="how-to-read-mosaic-report.html"><strong>How to Read the Weekly Market Report</strong><span>Performance metrics, selected stocks, weekly changes, charts and capital invested.</span></a>
+          <a class="guide-card" href="how-to-rebalance-tradingalgo-mosaic.html"><strong>How to Rebalance TradingAlgo Mosaic</strong><span>Five equally weighted stocks, Monday market-open rebalance and dynamic hedging.</span></a>
+          <a class="guide-card" href="reserved-area.html"><strong>How to Read Month-Year Tables</strong><span>Open a market report and use monthly and yearly tables to evaluate consistency over time.</span></a>
+          <a class="guide-card" href="mosaic-charts-dashboards.html"><strong>How to Read Equity, Drawdown and Exposure Charts</strong><span>Use charts to separate portfolio growth, historical risk and market exposure.</span></a>
+          <a class="guide-card" href="reserved-area.html"><strong>How to Use the Performance Summary</strong><span>Compare Mosaic versus benchmark across CAGR, Sharpe Ratio and adjusted metrics.</span></a>
+          <a class="guide-card" href="mosaic-charts-dashboards.html"><strong>How to Open Stock Dashboards</strong><span>Inspect the five portfolio stocks and the wider universe from each market report.</span></a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>TradingAlgo - Mosaic Trading Framework. Research material only. Not personalized financial advice.</footer>
+</body>
+</html>

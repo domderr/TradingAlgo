@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Portfolio Update | TradingAlgo Mosaic</title>
+  <meta name="description" content="Weekly Portfolio Update page for TradingAlgo Mosaic members: commentary, portfolio changes, hedge notes and Monday rebalance reminders." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
+    a { color: inherit; }
+    nav { position: sticky; top: 0; z-index: 10; padding: 18px 8%; background: rgba(3,12,25,0.94); display: flex; justify-content: space-between; align-items: center; gap: 22px; backdrop-filter: blur(8px); }
+    nav .logo { color: white; font-size: 24px; font-weight: bold; letter-spacing: 1px; text-decoration: none; }
+    nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+    header { padding: 78px 8% 58px; background: linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.72)), url("assets/reports/mosaic-weekly-report-layout.png"); background-size: cover; background-position: top center; color: white; }
+    .kicker { margin: 0 0 14px; color: #7dd3fc; font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 60px); line-height: 1.06; }
+    header p { max-width: 820px; margin: 22px 0 0; color: #e5e7eb; font-size: 20px; line-height: 1.6; }
+    main { padding: 58px 8%; }
+    .content { max-width: 1040px; margin: 0 auto; display: grid; gap: 24px; }
+    section { padding: 32px; background: white; border: 1px solid #dbe3ef; border-radius: 8px; }
+    h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 30px; }
+    h3 { margin: 20px 0 8px; color: #071a33; }
+    p, li { color: #26364a; line-height: 1.7; }
+    ul { margin: 0; padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    .note { padding: 18px; border-left: 4px solid #168eea; background: #f8fbff; }
+    footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
+    @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } section { padding: 26px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="reserved-area.html">Reports</a>
+      <a href="mosaic-start-here.html">Start Here</a>
+      <a href="mosaic-how-to-guides.html">How-To</a>
+      <a href="mosaic-terminology.html">Terminology</a>
+      <a href="mosaic-charts-dashboards.html">Charts</a>
+    </div>
+  </nav>
+  <header>
+    <p class="kicker">Mosaic Member Area</p>
+    <h1>Weekly Portfolio Update</h1>
+    <p>A dedicated page for the weekly portfolio comment, hedge notes and operational reminders.</p>
+  </header>
+  <main>
+    <div class="content">
+      <!-- Replace this placeholder text each week after Mosaic reports are processed. -->
+      <section>
+        <h2>Latest Commentary</h2>
+        <p><strong>Updated:</strong> after the weekly Mosaic reports are processed.</p>
+        <p>This page is reserved for the weekly comment on portfolio changes, hedge variation, trend quality, stability and the Monday rebalance note.</p>
+        <h3>Key Points To Update</h3>
+        <ul>
+          <li>Portfolio changes: stocks entering and exiting the current Mosaic selection.</li>
+          <li>Hedge update: whether the dynamic hedge increased, decreased or remained stable.</li>
+          <li>Market tone: trend, stability and portfolio score comment.</li>
+          <li>Risk note: any relevant change in drawdown, volatility or exposure.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Monday Rebalance Note</h2>
+        <p class="note">At the next market open, bring the five Mosaic stocks back toward equal weight and then update the hedge according to the latest report.</p>
+      </section>
+    </div>
+  </main>
+  <footer>TradingAlgo - Mosaic Trading Framework. Research material only. Not personalized financial advice.</footer>
+</body>
+</html>
