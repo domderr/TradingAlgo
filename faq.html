@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frequently Asked Questions | TradingAlgo Mosaic</title>
+  <meta name="description" content="Frequently asked questions about TradingAlgo Mosaic, weekly model portfolios, equal allocation, hedging, rebalancing, subscriptions and the free trial." />
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-dark: #050b14;
+      --panel: #0d1f36;
+      --panel-2: #102842;
+      --border: #203854;
+      --text: #ffffff;
+      --muted: #c9d6e8;
+      --muted-2: #aebdd0;
+      --blue: #7dd3fc;
+      --green: #22c55e;
+      --yellow: #f5c542;
+      --shadow: 0 18px 48px rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 26px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      background: var(--bg-dark);
+      border-bottom: 1px solid #1d2b3f;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo-grid {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.35);
+    }
+
+    .logo-grid span:nth-child(1),
+    .logo-grid span:nth-child(2) { background: #d94d4d; }
+    .logo-grid span:nth-child(3),
+    .logo-grid span:nth-child(4) { background: #e8a241; }
+    .logo-grid span:nth-child(5),
+    .logo-grid span:nth-child(6) { background: #d8ce45; }
+    .logo-grid span:nth-child(7),
+    .logo-grid span:nth-child(8),
+    .logo-grid span:nth-child(9) { background: var(--green); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 24px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--text);
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 86px 8% 72px;
+      background: linear-gradient(180deg, #07111f 0%, #0b1c33 100%);
+    }
+
+    .hero-inner,
+    .faq-inner {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 840px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.98;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 780px;
+      color: #d8e4f2;
+      font-size: 20px;
+      line-height: 1.62;
+    }
+
+    .faq-section {
+      padding: 72px 8%;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item h2 {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: clamp(21px, 2.4vw, 28px);
+      line-height: 1.2;
+    }
+
+    .faq-item p,
+    .faq-item li {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .faq-item p {
+      margin: 0 0 12px;
+    }
+
+    .faq-item p:last-child,
+    .faq-item ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .faq-item li {
+      margin-bottom: 8px;
+    }
+
+    .example {
+      padding: 14px 16px;
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      background: rgba(66,211,146,0.1);
+    }
+
+    .cta {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #04110a;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--blue);
+      color: #ffffff;
+    }
+
+    footer {
+      padding: 34px 8%;
+      border-top: 1px solid #1d2b3f;
+      color: var(--muted-2);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero,
+      .faq-section {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .faq-item {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="index.html#mosaic">Mosaic</a>
+      <a href="framework.html">Framework</a>
+      <a href="publications.html">Publications</a>
+      <a href="reserved-area.html">Reserved Area</a>
+      <a href="faq.html" aria-current="page">FAQ</a>
+      <a href="index.html#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="kicker">TradingAlgo Mosaic</p>
+        <h1>Frequently Asked Questions</h1>
+        <p class="lead">Answers to the most common questions about weekly portfolios, allocation, hedging, rebalancing and access to TradingAlgo Mosaic.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="reserved-area.html">Request Access</a>
+          <a class="btn btn-secondary" href="explore-markets.html">Explore Markets</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-inner">
+        <div class="faq-list">
+          <article class="faq-item">
+            <h2>What is TradingAlgo Mosaic?</h2>
+            <p>TradingAlgo Mosaic is a weekly portfolio selection service that identifies the five stocks to hold for the coming week in each supported market.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Which stocks should I hold next week?</h2>
+            <p>Every week, Mosaic publishes a model portfolio containing the five selected stocks for each market.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Why only five stocks?</h2>
+            <p>Five carefully selected stocks provide a balance between concentration and diversification. The objective is to capture the characteristics of a market while keeping the portfolio simple and easy to manage.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>How much should I invest in each stock?</h2>
+            <p>You decide how much capital to invest in a specific market. TradingAlgo Mosaic allocates your investment equally across the five selected stocks.</p>
+            <p class="example">Example: If you decide to invest USD 10,000 in the NASDAQ 100 portfolio, simply invest USD 2,000 in each of the five selected stocks.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>How can I protect my portfolio?</h2>
+            <p>For every weekly portfolio, TradingAlgo Mosaic provides a suggested hedge percentage to help manage overall market exposure.</p>
+            <p class="example">Example: If you decide to invest USD 10,000 in the NASDAQ 100 portfolio and the suggested hedge is 10%, invest USD 9,000 equally across the five selected stocks (USD 1,800 per stock) and allocate the remaining USD 1,000 to a hedge using the QQQ ETF.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>When should I invest?</h2>
+            <p>TradingAlgo Mosaic portfolios are designed to be implemented at the market open on the first trading day following the weekly publication of the report.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>How much time do I need to invest?</h2>
+            <p>In most cases, about one hour per week is enough to review the new report and adjust your portfolio to match the latest weekly recommendations.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>How do I rebalance my portfolio?</h2>
+            <p>TradingAlgo Mosaic uses weekly rebalancing based on your portfolio's current value.</p>
+            <p class="example">Example: You start with USD 100,000. After one week your portfolio is worth USD 102,000. For the following week, use USD 102,000 as your investment amount. Apply the suggested hedge percentage, then allocate the remaining capital equally across the five newly selected stocks.</p>
+            <p>TradingAlgo staff is available to assist you with the practical aspects of the weekly rebalancing process whenever needed.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>What if one of the selected stocks gains 5% in one week?</h2>
+            <p>No action is required during the week.</p>
+            <p>At the next weekly rebalance, restore equal weighting across the five newly selected stocks.</p>
+            <p class="example">Example: If one stock has grown to 23% of your portfolio while the others are below 20%, rebalance so that each selected stock once again represents 20% of the equity portion of your portfolio before applying any suggested hedge.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Why were these stocks selected?</h2>
+            <p>Each stock is selected using a systematic quantitative framework based on Trend, Stability, and Portfolio Contribution.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>What changes from week to week?</h2>
+            <p>Every report highlights which stocks have been added, removed, or retained, making it easy to update your portfolio.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>What if there are no changes this week?</h2>
+            <p>If the current portfolio continues to be the best representation of the market, no changes are made. Simply continue holding the existing positions.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Which markets are available?</h2>
+            <p>TradingAlgo Mosaic covers a growing selection of international country and sector markets, all analyzed using the same systematic methodology.</p>
+            <p>View the complete list of available markets on the <a href="explore-markets.html">Explore Markets</a> page.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Can I subscribe to more than one market?</h2>
+            <p>Yes. You can follow a single market or build a diversified portfolio across multiple countries and sectors.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>How much capital do I need?</h2>
+            <p>There is no minimum investment required by TradingAlgo Mosaic. You decide how much capital to allocate to each market.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Can I use my own broker?</h2>
+            <p>Yes. TradingAlgo Mosaic is broker-independent. You can implement the portfolios using your preferred brokerage account.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Why should I subscribe to TradingAlgo Mosaic?</h2>
+            <p>Because it is:</p>
+            <ul>
+              <li><strong>Straightforward</strong> - Know exactly which five stocks to hold every week.</li>
+              <li><strong>Transparent</strong> - Every portfolio and its historical performance are fully tracked.</li>
+              <li><strong>Global</strong> - Invest across multiple international markets using one consistent methodology.</li>
+            </ul>
+          </article>
+
+          <article class="faq-item">
+            <h2>How do I subscribe?</h2>
+            <p>Click any Request Access button on the website and complete the request form. You'll receive a 2-week free trial with full access to the Reserved Area.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>What happens during the free trial?</h2>
+            <p>During your free trial, you'll receive the same weekly reports and portfolio updates available to paying subscribers, allowing you to fully evaluate the service.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Do I need a credit card to request access?</h2>
+            <p>No. Your free trial requires no credit card and no payment information.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Do I receive assistance?</h2>
+            <p>Yes. TradingAlgo staff is available throughout your subscription to answer questions and help you implement the weekly portfolios via email or WhatsApp.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Who is the service for?</h2>
+            <p>TradingAlgo Mosaic is designed for investors who want a disciplined, data-driven way to build and manage equity portfolios without analyzing hundreds of individual stocks.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Is this investment advice?</h2>
+            <p>No. TradingAlgo Mosaic provides systematic research and model portfolios. All investment decisions remain your responsibility.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    TradingAlgo Mosaic FAQ. Research material only. Not personalized financial advice.
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
