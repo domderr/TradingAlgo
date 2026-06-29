@@ -177,6 +177,20 @@
       box-shadow: 0 0 0 3px rgba(74,163,255,0.14);
     }
 
+    .access-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .access-actions .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
     .access-error {
       width: 100%;
       min-height: 20px;
@@ -969,6 +983,9 @@
         <p class="access-error" id="access-error" aria-live="polite"></p>
         <p class="access-status" id="access-status" aria-live="polite"></p>
       </form>
+      <div class="access-actions">
+        <a class="btn primary" href="index.html#request-info">Request Access</a>
+      </div>
       <p class="access-disclaimer">Research material only. Not personalized financial advice. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
     </section>
 
