@@ -1133,6 +1133,7 @@
     var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
     var LAST_WEEK_REPORTS_INDEX_URL = "reports/previous_reports_index.json";
     var RESERVED_REQUEST = parseReservedRequest();
+    var RESERVED_NEXT = parseReservedNextRequest();
 
     function activeMarkets() {
       if (authorizedMarkets.indexOf("All") !== -1) return MARKET_META;
@@ -1171,6 +1172,21 @@
       }
 
       window.location.href = meta.html + "#" + RESERVED_REQUEST.anchor;
+    }
+
+    function parseReservedNextRequest() {
+      var params = new URLSearchParams(window.location.search);
+      var next = String(params.get("next") || "").trim();
+      var allowedNext = {
+        "mosaic-weekly-update.html": true
+      };
+      return allowedNext[next] ? next : "";
+    }
+
+    function redirectReservedNextIfAllowed() {
+      if (!RESERVED_NEXT) return false;
+      window.location.href = RESERVED_NEXT;
+      return true;
     }
 
     function normalizeMarketName(value) {
@@ -1224,6 +1240,7 @@
       }
       document.getElementById("restricted-content").hidden = false;
       loadData();
+      if (redirectReservedNextIfAllowed()) return;
       redirectReservedRequestIfAllowed();
     }
 
