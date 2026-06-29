@@ -1417,23 +1417,72 @@
       "South Africa30": "SouthAfrica30"
     };
 
+    function latestDateKeyFromObject(values) {
+      if (!values || typeof values !== "object") return "";
+      return Object.keys(values).filter(function(key) {
+        return /^\d{4}-\d{2}-\d{2}$/.test(key);
+      }).sort().slice(-1)[0] || "";
+    }
+
+    function latestReportProcessingDate(reportDataMap) {
+      var dates = [];
+      Object.keys(reportDataMap || {}).forEach(function(key) {
+        var row = reportDataMap[key] || {};
+        ["Strategy_Returns", "Hedged_Strategy_Returns", "Benchmark_Returns"].forEach(function(field) {
+          var latest = latestDateKeyFromObject(row[field]);
+          if (latest) dates.push(latest);
+        });
+      });
+      return dates.sort().slice(-1)[0] || "";
+    }
+
+    function formatProcessingDate(value) {
+      var text = String(value || "").trim();
+      if (!text) return "";
+      var iso = text.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (iso) {
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        return Number(iso[3]) + " " + months[Number(iso[2]) - 1] + " " + iso[1];
+      }
+      return text;
+    }
+
+    function processingDateSortKey(value) {
+      var text = String(value || "").trim();
+      var iso = text.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (iso) return iso[1] + iso[2] + iso[3];
+      var display = text.match(/^(\d{1,2})\s+([A-Za-z]{3})\s+(\d{4})$/);
+      if (display) {
+        var monthIndex = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].indexOf(display[2]);
+        if (monthIndex >= 0) {
+          return display[3] + String(monthIndex + 1).padStart(2, "0") + String(Number(display[1])).padStart(2, "0");
+        }
+      }
+      return text;
+    }
+
     function renderAll(indexArr, positions) {
       var indexMap = {};
       indexArr.forEach(function(r) { indexMap[r.Market || r.Display_Name] = r; });
-      indexMap = enrichIndexWithReportData(indexMap, positions && positions.__reportData || {});
+      var reportDataMap = positions && positions.__reportData || {};
+      indexMap = enrichIndexWithReportData(indexMap, reportDataMap);
 
       var weeks = Object.keys(positions || {}).map(function(key) {
         return positions[key] && positions[key].week;
       }).filter(Boolean);
+      var latestReportDate = latestReportProcessingDate(reportDataMap);
+      if (latestReportDate) weeks.push(latestReportDate);
       if (!weeks.length) {
         weeks = indexArr.map(function(r) {
           return r.Scores_Updated_At || r.Updated_At || "";
         }).filter(Boolean);
       }
-      var lastProcessing = weeks.length ? weeks.sort().slice(-1)[0] : "";
+      var lastProcessing = weeks.length ? weeks.sort(function(a, b) {
+        return processingDateSortKey(a).localeCompare(processingDateSortKey(b));
+      }).slice(-1)[0] : "";
       var dateEl = document.getElementById("last-processing-date");
       if (dateEl) {
-        dateEl.textContent = lastProcessing ? "Last processing: " + lastProcessing : "";
+        dateEl.textContent = lastProcessing ? "Last processing: " + formatProcessingDate(lastProcessing) : "";
       }
 
       document.getElementById("reports-grid").innerHTML = activeMarkets().map(function(m) {
