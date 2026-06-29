@@ -968,6 +968,31 @@
       cursor: pointer;
     }
 
+    .request-status {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .request-status.success {
+      color: #8ee6b0;
+    }
+
+    .request-status.error {
+      color: #f3a0a0;
+    }
+
+    .request-honey {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
     .country-matrix-overlay {
       position: absolute;
       inset: 0;
@@ -1525,11 +1550,19 @@
   </section>
 
   <section id="request-info" class="dark-band">
-    <form class="request-form request-section" id="request-info-form">
+    <form class="request-form request-section" id="request-info-form" action="https://formsubmit.co/ajax/domderrico@gmail.com" method="POST">
       <h2>Request Information</h2>
       <p class="request-intro">
-        To request access to the reserved area, write to domderrico@gmail.com and specify whether you are a student, a private investor, or a financial professional.
+        Request access to the reserved area by completing the form below. You will receive a reply by email.
       </p>
+      <input type="hidden" name="_subject" value="TradingAlgo Mosaic - Request Information">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="markets_summary" id="request-markets-summary" value="">
+      <input type="hidden" name="disclaimer" value="The requester understands that TradingAlgo Mosaic provides standardized research and model portfolios for informational purposes only, and does not constitute personalized financial advice or investment recommendations.">
+      <div class="request-honey" aria-hidden="true">
+        <label for="request-website">Website</label>
+        <input id="request-website" name="_honey" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div class="request-grid">
         <div class="form-field">
           <label for="request-name">Name</label>
@@ -1593,6 +1626,7 @@
       <div class="buttons">
         <button class="btn btn-primary" type="submit">Send Request</button>
       </div>
+      <p class="request-status" id="request-status" role="status" aria-live="polite"></p>
     </form>
   </section>
 
@@ -1984,49 +2018,67 @@
 
     setupCountryMatrixToggle();
 
+    function revealRequestInfo() {
+      var form = document.getElementById("request-info-form");
+      if (!form) return;
+
+      form.classList.add("is-visible");
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
     Array.prototype.slice.call(document.querySelectorAll('a[href="#request-info"]')).forEach(function (link) {
       link.addEventListener("click", function (event) {
-        var form = document.getElementById("request-info-form");
-        if (!form) return;
-
         event.preventDefault();
-        form.classList.add("is-visible");
-        form.scrollIntoView({ behavior: "smooth", block: "start" });
+        revealRequestInfo();
       });
     });
+
+    if (window.location.hash === "#request-info") {
+      revealRequestInfo();
+    }
 
     var requestInfoForm = document.getElementById("request-info-form");
     if (requestInfoForm) {
       requestInfoForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        var name = document.getElementById("request-name").value;
-        var surname = document.getElementById("request-surname").value;
-        var email = document.getElementById("request-email").value;
-        var country = document.getElementById("request-country").value;
-        var profession = document.getElementById("request-profession").value;
+        var submitButton = requestInfoForm.querySelector('button[type="submit"]');
+        var status = document.getElementById("request-status");
         var markets = Array.prototype.slice.call(document.querySelectorAll('input[name="markets"]:checked'))
           .map(function (input) { return input.value; });
         var otherMarket = document.getElementById("request-other-market").value.trim();
+        var marketsSummary = document.getElementById("request-markets-summary");
 
         if (otherMarket) markets.push("Other: " + otherMarket);
+        marketsSummary.value = markets.length ? markets.join(", ") : "-";
 
-        var body = [
-          "TradingAlgo Mosaic information request",
-          "",
-          "Name: " + name,
-          "Surname: " + surname,
-          "Email: " + email,
-          "Country: " + country,
-          "Profession: " + profession,
-          "Markets interested: " + (markets.length ? markets.join(", ") : "-"),
-          "",
-          "I understand that TradingAlgo Mosaic provides standardized research and model portfolios for informational purposes only, and does not constitute personalized financial advice or investment recommendations."
-        ].join("\n");
+        if (status) {
+          status.className = "request-status";
+          status.textContent = "Sending request...";
+        }
 
-        window.location.href = "mailto:domderrico@gmail.com?subject=" +
-          encodeURIComponent("TradingAlgo Mosaic - Request Information") +
-          "&body=" + encodeURIComponent(body);
+        if (submitButton) submitButton.disabled = true;
+
+        fetch(requestInfoForm.action, {
+          method: "POST",
+          body: new FormData(requestInfoForm),
+          headers: { "Accept": "application/json" }
+        }).then(function (response) {
+          if (!response.ok) throw new Error("Request failed");
+          requestInfoForm.reset();
+          if (status) {
+            status.className = "request-status success";
+            status.textContent = "Thank you. Your request has been sent.";
+          }
+        }).catch(function () {
+          if (status) {
+            status.className = "request-status error";
+            status.textContent = "The inline send did not complete. Opening the secure form submission page instead.";
+          }
+          requestInfoForm.submit();
+        }).finally(function () {
+          if (submitButton) submitButton.disabled = false;
+        });
       });
     }
 
