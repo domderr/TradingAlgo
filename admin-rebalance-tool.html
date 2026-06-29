@@ -34,7 +34,7 @@
     .nav,
     main,
     footer {
-      width: min(1180px, calc(100% - 40px));
+      width: min(1360px, calc(100% - 32px));
       margin: 0 auto;
     }
 
@@ -156,8 +156,8 @@
 
     .tool-grid {
       display: grid;
-      grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
-      gap: 22px;
+      grid-template-columns: minmax(220px, 0.45fr) minmax(0, 1.55fr);
+      gap: 16px;
       align-items: start;
     }
 
@@ -195,11 +195,11 @@
     }
 
     textarea {
-      min-height: 210px;
+      min-height: 118px;
       resize: vertical;
       line-height: 1.45;
       font-family: Consolas, "Courier New", monospace;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     select:focus,
@@ -247,7 +247,7 @@
     }
 
     .table-wrap {
-      overflow-x: auto;
+      overflow-x: visible;
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 16px;
       margin-top: 16px;
@@ -255,18 +255,28 @@
 
     table {
       width: 100%;
-      min-width: 980px;
+      table-layout: fixed;
       border-collapse: collapse;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     th,
     td {
-      padding: 11px 12px;
+      padding: 9px 8px;
       border-bottom: 1px solid rgba(255,255,255,0.09);
       text-align: right;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
+
+    th:nth-child(1), td:nth-child(1) { width: 11%; }
+    th:nth-child(2), td:nth-child(2) { width: 15%; }
+    th:nth-child(3), td:nth-child(3) { width: 15%; }
+    th:nth-child(4), td:nth-child(4) { width: 15%; }
+    th:nth-child(5), td:nth-child(5) { width: 14%; }
+    th:nth-child(6), td:nth-child(6) { width: 11%; }
+    th:nth-child(7), td:nth-child(7) { width: 19%; }
 
     th:first-child,
     td:first-child,
@@ -277,9 +287,9 @@
 
     th {
       color: var(--muted);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 850;
-      letter-spacing: 0.2px;
+      letter-spacing: 0;
       text-transform: uppercase;
       background: rgba(255,255,255,0.045);
     }
@@ -324,6 +334,14 @@
       .tool-grid,
       .metric-grid {
         grid-template-columns: 1fr;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        min-width: 760px;
       }
     }
 
