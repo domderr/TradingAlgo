@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weekly Portfolio Update | TradingAlgo Mosaic</title>
   <meta name="description" content="TradingAlgo Mosaic weekly portfolio update with current positions, weekly changes, hedge levels and latest net change versus benchmark." />
+  <script>
+    (function () {
+      var storageKey = "ta_reserved_authorized_markets";
+      try {
+        var stored = JSON.parse(sessionStorage.getItem(storageKey) || "{}");
+        var markets = Array.isArray(stored.markets) ? stored.markets : stored;
+        if (Array.isArray(markets) && markets.length) return;
+      } catch (error) {}
+      window.location.replace("reserved-area.html?next=mosaic-weekly-update.html");
+    }());
+  </script>
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
