@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weekly Portfolio Update | TradingAlgo Mosaic</title>
-  <meta name="description" content="Weekly Portfolio Update page for TradingAlgo Mosaic members: commentary, portfolio changes, hedge notes and Monday rebalance reminders." />
+  <meta name="description" content="TradingAlgo Mosaic weekly portfolio update with current positions, weekly changes, hedge levels and latest net change versus benchmark." />
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
@@ -24,8 +24,24 @@
     p, li { color: #26364a; line-height: 1.7; }
     ul { margin: 0; padding-left: 22px; }
     li { margin-bottom: 8px; }
+    .article-meta { margin: 0 0 18px; color: #5b6b80; font-size: 14px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; }
+    .lead { color: #17263a; font-size: 19px; line-height: 1.75; }
+    .summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
+    .summary-item { padding: 18px; border: 1px solid #dbe3ef; border-radius: 8px; background: #f8fbff; }
+    .summary-item strong { display: block; color: #071a33; font-size: 22px; }
+    .summary-item span { display: block; margin-top: 6px; color: #506176; font-size: 13px; line-height: 1.45; }
+    .table-wrap { overflow-x: auto; border: 1px solid #dbe3ef; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; min-width: 980px; background: white; }
+    th, td { padding: 12px 14px; border-bottom: 1px solid #e5edf6; text-align: left; vertical-align: top; font-size: 13px; line-height: 1.45; }
+    th { background: #071a33; color: white; font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; }
+    tr:last-child td { border-bottom: 0; }
+    .market { font-weight: 900; color: #071a33; }
+    .pos { color: #0f766e; font-weight: 800; }
+    .neg { color: #b42318; font-weight: 800; }
+    .flat { color: #5b6b80; font-weight: 800; }
     .note { padding: 18px; border-left: 4px solid #168eea; background: #f8fbff; }
     footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
+    @media (max-width: 900px) { .summary-grid { grid-template-columns: 1fr; } }
     @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } section { padding: 26px; } }
   </style>
 </head>
@@ -43,26 +59,76 @@
   <header>
     <p class="kicker">Mosaic Member Area</p>
     <h1>Weekly Portfolio Update</h1>
-    <p>A dedicated page for the weekly portfolio comment, hedge notes and operational reminders.</p>
+    <p>Current positions, weekly rotations, hedge levels and latest net changes versus benchmark.</p>
   </header>
   <main>
     <div class="content">
-      <!-- Replace this placeholder text each week after Mosaic reports are processed. -->
       <section>
-        <h2>Latest Commentary</h2>
-        <p><strong>Updated:</strong> after the weekly Mosaic reports are processed.</p>
-        <p>This page is reserved for the weekly comment on portfolio changes, hedge variation, trend quality, stability and the Monday rebalance note.</p>
-        <h3>Key Points To Update</h3>
-        <ul>
-          <li>Portfolio changes: stocks entering and exiting the current Mosaic selection.</li>
-          <li>Hedge update: whether the dynamic hedge increased, decreased or remained stable.</li>
-          <li>Market tone: trend, stability and portfolio score comment.</li>
-          <li>Risk note: any relevant change in drawdown, volatility or exposure.</li>
-        </ul>
+        <p class="article-meta">Weekly update - Monday, June 29, 2026</p>
+        <h2>TradingAlgo Mosaic: selective strength into the new week</h2>
+        <p class="lead">The new week opens with a highly selective picture for the TradingAlgo Mosaic portfolios. Dispersion remains high across regions and indices: several portfolios delivered clear relative strength versus their benchmarks, while others were held back by weaker local markets or less favorable sector rotation.</p>
+        <div class="summary-grid" aria-label="Weekly Mosaic highlights">
+          <div class="summary-item">
+            <strong>6</strong>
+            <span>Markets with clear relative strength: DJ30, USA100, Nasdaq100, Mexico30, Germany30 and S.Africa30.</span>
+          </div>
+          <div class="summary-item">
+            <strong>+4.36 pp</strong>
+            <span>Mexico30 relative spread versus benchmark, the strongest weekly gap in the dashboard.</span>
+          </div>
+          <div class="summary-item">
+            <strong>20%</strong>
+            <span>S.Korea30 current hedge, the highest hedge level after a difficult week for the local market.</span>
+          </div>
+        </div>
+        <p>The strongest contribution came from the US portfolios. <strong>DJ30</strong> gained <strong>2.52%</strong> versus a <strong>0.73%</strong> benchmark move, confirming solid stock selection quality. The rotation into <strong>WMT</strong> and out of <strong>CVX</strong> points to a more defensive and resilient portfolio mix. <strong>USA100</strong> also performed well, rising <strong>1.28%</strong> while its benchmark declined <strong>1.67%</strong>. The entry of <strong>GEV</strong> in place of <strong>SLB</strong> strengthens a basket already exposed to names such as <strong>MU</strong>, <strong>CAT</strong>, <strong>FDX</strong> and <strong>GOOGL</strong>.</p>
+        <p>The <strong>Nasdaq100</strong> result was more modest in absolute terms, with the portfolio up <strong>0.13%</strong>, but still materially ahead of a benchmark down <strong>3.17%</strong>. Rotation was more active here, with <strong>MRVL</strong> and <strong>RKLB</strong> entering the selection while <strong>WBD</strong> and <strong>ROST</strong> exited. The hedge increased from <strong>10%</strong> to <strong>12%</strong>, signalling a slightly more cautious stance in a still volatile market.</p>
+        <p>In North America outside the US, <strong>Canada50</strong> remained under pressure at <strong>-0.94%</strong>, below a benchmark at <strong>-0.43%</strong>. The internal change brings <strong>TD.TO</strong> into the portfolio and removes <strong>CM.TO</strong>, while the hedge edges up from <strong>14%</strong> to <strong>15%</strong>. <strong>Mexico30</strong> was much stronger, advancing <strong>2.03%</strong> against a benchmark decline of <strong>2.33%</strong>. The entry of <strong>LIVEPOLC-1.MX</strong> in place of <strong>VOLARA.MX</strong> accompanies one of the best relative performances of the week.</p>
+        <p>Europe was more mixed and generally weaker. <strong>Europe50</strong> fell <strong>3.68%</strong>, underperforming a benchmark down <strong>1.31%</strong>, even as the hedge eased from <strong>10%</strong> to <strong>9%</strong>. <strong>UK30</strong> also struggled, losing <strong>3.13%</strong> while its benchmark rose <strong>0.92%</strong>. <strong>France40</strong> and <strong>Spain40</strong> were also negative, down <strong>2.77%</strong> and <strong>2.52%</strong> respectively.</p>
+        <p>The clear European exception was <strong>Germany30</strong>, which gained <strong>1.87%</strong> versus a benchmark decline of <strong>1.08%</strong>. The current selection, including <strong>ENR.DE</strong>, <strong>RWE.DE</strong>, <strong>IFX.DE</strong>, <strong>BAYN.DE</strong> and <strong>DHL.DE</strong>, delivered a meaningful weekly spread despite a slightly lower hedge, from <strong>13%</strong> to <strong>12%</strong>. <strong>Italy30</strong> remained weak at <strong>-2.54%</strong>, broadly in line with its benchmark at <strong>-2.72%</strong>.</p>
+        <p>In Asia-Pacific, conditions remain complex. <strong>Japan50</strong> declined <strong>2.78%</strong>, slightly ahead of a benchmark down <strong>2.98%</strong>. <strong>S.Korea30</strong> posted the most difficult weekly result, falling <strong>11.91%</strong> against a benchmark decline of <strong>6.48%</strong>. The hedge increased sharply from <strong>16%</strong> to <strong>20%</strong>, while <strong>055550.KS</strong> entered and <strong>006400.KS</strong> exited, confirming a more defensive adjustment after the deterioration in the Korean market.</p>
+        <p><strong>Australia50</strong> closed at <strong>-2.19%</strong>, almost aligned with its benchmark at <strong>-2.21%</strong>, with the hedge moving up from <strong>16%</strong> to <strong>17%</strong>. In South Africa, <strong>S.Africa30</strong> lost <strong>2.54%</strong> but outperformed a benchmark down <strong>5.35%</strong>. The entry of <strong>AGL.JO</strong> in place of <strong>ANG.JO</strong> helped maintain better relative resilience, while the hedge decreased from <strong>15%</strong> to <strong>14%</strong>.</p>
+        <p>Overall, the weekly message is clear: market dispersion remains elevated, portfolio rotation continues to matter, and hedge management remains a central part of navigating unstable market conditions. TradingAlgo Mosaic showed its strongest relative profile in <strong>DJ30</strong>, <strong>USA100</strong>, <strong>Nasdaq100</strong>, <strong>Mexico30</strong>, <strong>Germany30</strong> and <strong>S.Africa30</strong>, while Europe, the UK and South Korea require a more cautious read into the new week.</p>
+      </section>
+      <section>
+        <h2>Market Weekly Dashboard</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Market</th>
+                <th>Current Tickers</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>Current Hedge</th>
+                <th>Last Hedge</th>
+                <th>Portfolio NetCh vs Last Friday</th>
+                <th>Benchmark NetCh vs Last Friday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="market">DJ30</td><td>CAT, MRK, CSCO, GS, WMT</td><td>WMT</td><td>CVX</td><td>13%</td><td>13%</td><td class="pos">2.52%</td><td class="pos">0.73%</td></tr>
+              <tr><td class="market">USA100</td><td>MU, CAT, FDX, GEV, GOOGL</td><td>GEV</td><td>SLB</td><td>7%</td><td>7%</td><td class="pos">1.28%</td><td class="neg">-1.67%</td></tr>
+              <tr><td class="market">Nasdaq100</td><td>MU, TER, NBIS, MRVL, RKLB</td><td>MRVL, RKLB</td><td>WBD, ROST</td><td>12%</td><td>10%</td><td class="pos">0.13%</td><td class="neg">-3.17%</td></tr>
+              <tr><td class="market">Canada50</td><td>CVE.TO, TECK-B.TO, TD.TO, GWO.TO, SAP.TO</td><td>TD.TO</td><td>CM.TO</td><td>15%</td><td>14%</td><td class="neg">-0.94%</td><td class="neg">-0.43%</td></tr>
+              <tr><td class="market">Mexico30</td><td>GMEXICOB.MX, FEMSAUBD.MX, AMXB.MX, PINFRA.MX, LIVEPOLC-1.MX</td><td>LIVEPOLC-1.MX</td><td>VOLARA.MX</td><td>22%</td><td>22%</td><td class="pos">2.03%</td><td class="neg">-2.33%</td></tr>
+              <tr><td class="market">Europe50</td><td>NOKIA.HE, ASML.AS, ENI.MI, IFX.DE, ENGI.PA</td><td class="flat">-</td><td class="flat">-</td><td>9%</td><td>10%</td><td class="neg">-3.68%</td><td class="neg">-1.31%</td></tr>
+              <tr><td class="market">UK30</td><td>GLEN.L, RIO.L, HSBA.L, GSK.L, BP.L</td><td class="flat">-</td><td class="flat">-</td><td>12%</td><td>11%</td><td class="neg">-3.13%</td><td class="pos">0.92%</td></tr>
+              <tr><td class="market">France40</td><td>STMPA.PA, ENGI.PA, TTE.PA, GLE.PA, LR.PA</td><td class="flat">-</td><td class="flat">-</td><td>18%</td><td>19%</td><td class="neg">-2.77%</td><td class="neg">-1.46%</td></tr>
+              <tr><td class="market">Spain40</td><td>ACS.MC, SLR.MC, MTS.MC, REP.MC, CABK.MC</td><td class="flat">-</td><td class="flat">-</td><td>7%</td><td>6%</td><td class="neg">-2.52%</td><td class="neg">-0.36%</td></tr>
+              <tr><td class="market">Germany30</td><td>ENR.DE, RWE.DE, IFX.DE, BAYN.DE, DHL.DE</td><td class="flat">-</td><td class="flat">-</td><td>12%</td><td>13%</td><td class="pos">1.87%</td><td class="neg">-1.08%</td></tr>
+              <tr><td class="market">Italy30</td><td>PRY.MI, TEN.MI, TIT.MI, STMMI.MI, SRG.MI</td><td class="flat">-</td><td class="flat">-</td><td>12%</td><td>13%</td><td class="neg">-2.54%</td><td class="neg">-2.72%</td></tr>
+              <tr><td class="market">Japan50</td><td>6981.T, 6857.T, 6954.T, 9983.T, 8031.T</td><td class="flat">-</td><td class="flat">-</td><td>10%</td><td>10%</td><td class="neg">-2.78%</td><td class="neg">-2.98%</td></tr>
+              <tr><td class="market">S.Korea30</td><td>000660.KS, 005380.KS, 017670.KS, 034020.KS, 055550.KS</td><td>055550.KS</td><td>006400.KS</td><td>20%</td><td>16%</td><td class="neg">-11.91%</td><td class="neg">-6.48%</td></tr>
+              <tr><td class="market">Australia50</td><td>RIO.AX, S32.AX, EVN.AX, LYC.AX, WDS.AX</td><td class="flat">-</td><td class="flat">-</td><td>17%</td><td>16%</td><td class="neg">-2.19%</td><td class="neg">-2.21%</td></tr>
+              <tr><td class="market">S.Africa30</td><td>SOL.JO, AGL.JO, MTN.JO, REM.JO</td><td>AGL.JO</td><td>ANG.JO</td><td>14%</td><td>15%</td><td class="neg">-2.54%</td><td class="neg">-5.35%</td></tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       <section>
         <h2>Monday Rebalance Note</h2>
-        <p class="note">At the next market open, bring the five Mosaic stocks back toward equal weight and then update the hedge according to the latest report.</p>
+        <p class="note">At the next market open, bring each active Mosaic selection back toward equal weight and update the hedge according to the latest report for the enabled market. This weekly update is research material only and is not personalized financial advice.</p>
       </section>
     </div>
   </main>
