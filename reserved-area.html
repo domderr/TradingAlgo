@@ -371,6 +371,10 @@
       font-size: 13px;
     }
 
+    .performance-table.dashboard-table {
+      min-width: 1120px;
+    }
+
     .performance-table th,
     .performance-table td {
       padding: 11px 12px;
@@ -412,6 +416,22 @@
     .metric-neutral {
       color: var(--muted);
       font-weight: 750;
+    }
+
+    .ticker-list {
+      max-width: 260px;
+      white-space: normal;
+      line-height: 1.45;
+    }
+
+    .ticker-change-in {
+      color: var(--green);
+      font-weight: 850;
+    }
+
+    .ticker-change-out {
+      color: var(--red);
+      font-weight: 850;
     }
 
     .summary-chart-section {
@@ -980,6 +1000,34 @@
         <div class="admin-only" id="admin-market-view" hidden>
           <h2>Global Weekly View</h2>
           <p class="access-disclaimer" id="last-processing-date"></p>
+          <section class="performance-summary" aria-labelledby="admin-dashboard-title">
+            <div class="performance-summary-head">
+              <div>
+                <div class="eyebrow">Dashboard</div>
+                <h3 id="admin-dashboard-title">Market Weekly Dashboard</h3>
+                <p>Admin-only operational view with current positions, weekly changes, hedge levels and latest weekly net changes.</p>
+              </div>
+            </div>
+            <div class="performance-table-wrap">
+              <table class="performance-table dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Mercato</th>
+                    <th>Current Tickers</th>
+                    <th>In</th>
+                    <th>Out</th>
+                    <th>Current Hedge%</th>
+                    <th>Last Hedge%</th>
+                    <th>Portfolio NetCh% vs Last Friday</th>
+                    <th>Benchmark NetCh% vs Last Friday</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-dashboard-body">
+                  <tr><td colspan="8">Loading dashboard data...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
           <section class="performance-summary" aria-labelledby="performance-summary-title">
             <div class="performance-summary-head">
               <div>
@@ -1490,6 +1538,7 @@
         return renderCard(m, indexMap[m.key], positions[posKey]);
       }).join("");
       if (isAdminAccess) {
+        renderAdminDashboard(indexMap, positions, positions && positions.__reportData || {});
         renderPerformanceSummary(positions && positions.__reportData || {});
         renderSummaryCharts();
       }
@@ -1529,6 +1578,96 @@
       var number = Number(value);
       if (!Number.isFinite(number) || Math.abs(number) < 0.000001) return "metric-neutral";
       return number > 0 ? "metric-positive" : "metric-negative";
+    }
+
+    function tickerText(items) {
+      if (!Array.isArray(items) || !items.length) return "-";
+      return items.map(function(item) {
+        return item && (item.Ticker || item.ticker) || "";
+      }).filter(Boolean).join(", ") || "-";
+    }
+
+    function changeTickerText(items) {
+      if (!Array.isArray(items) || !items.length) return "-";
+      return items.map(function(item) {
+        return item && (item.Ticker || item.ticker) || "";
+      }).filter(Boolean).join(", ") || "-";
+    }
+
+    function parseReportTickerChanges(value) {
+      var text = String(value == null ? "" : value).trim();
+      if (!text || text === "-") return [];
+      return text.split(/\s*[,;]\s*/).map(function(part) {
+        return part.split(/\s+-\s+/)[0].trim();
+      }).filter(Boolean);
+    }
+
+    function latestReturnValue(series) {
+      var latest = latestDateKeyFromObject(series);
+      if (!latest) return null;
+      var value = Number(series[latest]);
+      return Number.isFinite(value) ? value : null;
+    }
+
+    function adminDashboardPositions(m, positions, reportRow) {
+      var posKey = POS_KEY[m.key] || m.key;
+      var pos = positions && positions[posKey];
+      if (reportRow && Array.isArray(reportRow["Last Weekly Selection"]) && reportRow["Last Weekly Selection"].length) {
+        return reportRow["Last Weekly Selection"];
+      }
+      return pos && Array.isArray(pos.positions) ? pos.positions : [];
+    }
+
+    function adminDashboardChanges(m, positions, reportRow, direction) {
+      var posKey = POS_KEY[m.key] || m.key;
+      var pos = positions && positions[posKey];
+      var fromPositions = pos && pos.changes && Array.isArray(pos.changes[direction]) ? pos.changes[direction] : [];
+      if (fromPositions.length) return changeTickerText(fromPositions);
+      var reportField = direction === "in" ? "Added Tickers" : "Removed Tickers";
+      var fromReport = parseReportTickerChanges(reportRow && reportRow[reportField]);
+      return fromReport.length ? fromReport.join(", ") : "-";
+    }
+
+    function renderAdminDashboard(indexMap, positions, reportDataMap) {
+      var tbody = document.getElementById("admin-dashboard-body");
+      if (!tbody) return;
+
+      var rows = activeMarkets().map(function(m) {
+        var indexRow = indexMap[m.key] || {};
+        var reportRow = reportDataMap[m.key] || {};
+        var currentHedge = reportRow["Benchmark Hedge Short"] != null ? reportRow["Benchmark Hedge Short"] : extractHedgeValue(indexRow);
+        var lastHedge = indexRow.Last_Hedge_Short != null ? indexRow.Last_Hedge_Short : indexRow.Benchmark_Hedge_Short;
+        var portfolioNetChange = latestReturnValue(reportRow.Hedged_Strategy_Returns || reportRow.Strategy_Returns);
+        var benchmarkNetChange = latestReturnValue(reportRow.Benchmark_Returns);
+        return {
+          market: m.name,
+          tickers: tickerText(adminDashboardPositions(m, positions, reportRow)),
+          inTickers: adminDashboardChanges(m, positions, reportRow, "in"),
+          outTickers: adminDashboardChanges(m, positions, reportRow, "out"),
+          currentHedge: currentHedge,
+          lastHedge: lastHedge,
+          portfolioNetChange: portfolioNetChange,
+          benchmarkNetChange: benchmarkNetChange
+        };
+      });
+
+      if (!rows.length) {
+        tbody.innerHTML = '<tr><td colspan="8">Dashboard data unavailable.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = rows.map(function(row) {
+        return '<tr>'
+          + '<td>' + escapeHtml(row.market) + '</td>'
+          + '<td class="ticker-list">' + escapeHtml(row.tickers) + '</td>'
+          + '<td class="ticker-change-in">' + escapeHtml(row.inTickers) + '</td>'
+          + '<td class="ticker-change-out">' + escapeHtml(row.outTickers) + '</td>'
+          + '<td>' + formatPercent(row.currentHedge) + '</td>'
+          + '<td>' + formatPercent(row.lastHedge) + '</td>'
+          + '<td class="' + metricClass(row.portfolioNetChange) + '">' + formatMetricPercent(row.portfolioNetChange) + '</td>'
+          + '<td class="' + metricClass(row.benchmarkNetChange) + '">' + formatMetricPercent(row.benchmarkNetChange) + '</td>'
+          + '</tr>';
+      }).join("");
     }
 
     function renderPerformanceSummary(reportDataMap) {
