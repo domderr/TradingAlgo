@@ -1,0 +1,107 @@
+[
+  {
+    "Market": "DJ30",
+    "Benchmark": "DIA",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.12583144580612937,
+    "Benchmark_Hedge_Ticker": "DIA"
+  },
+  {
+    "Market": "USA100",
+    "Benchmark": "SPY",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.07239418662706076,
+    "Benchmark_Hedge_Ticker": "SPY"
+  },
+  {
+    "Market": "NASDAQ100",
+    "Benchmark": "QQQ",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.0975419735272236,
+    "Benchmark_Hedge_Ticker": "QQQ"
+  },
+  {
+    "Market": "Europe50",
+    "Benchmark": "EZU",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.0952548585558125,
+    "Benchmark_Hedge_Ticker": "EZU"
+  },
+  {
+    "Market": "Italy30",
+    "Benchmark": "EWI",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.12670392062244928,
+    "Benchmark_Hedge_Ticker": "EWI"
+  },
+  {
+    "Market": "UK30",
+    "Benchmark": "EWU",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.1116258173132555,
+    "Benchmark_Hedge_Ticker": "EWU"
+  },
+  {
+    "Market": "France40",
+    "Benchmark": "EWQ",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.18837267155620352,
+    "Benchmark_Hedge_Ticker": "EWQ"
+  },
+  {
+    "Market": "Spain40",
+    "Benchmark": "EWP",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.06371917811998662,
+    "Benchmark_Hedge_Ticker": "EWP"
+  },
+  {
+    "Market": "Germany30",
+    "Benchmark": "EWG",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.12733839023904592,
+    "Benchmark_Hedge_Ticker": "EWG"
+  },
+  {
+    "Market": "Australia50",
+    "Benchmark": "EWA",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.15734946685354712,
+    "Benchmark_Hedge_Ticker": "EWA"
+  },
+  {
+    "Market": "Japan50",
+    "Benchmark": "EWJ",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.0988514115779725,
+    "Benchmark_Hedge_Ticker": "EWJ"
+  },
+  {
+    "Market": "Canada50",
+    "Benchmark": "EWC",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.14323280081241452,
+    "Benchmark_Hedge_Ticker": "EWC"
+  },
+  {
+    "Market": "Mexico30",
+    "Benchmark": "EWW",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.22107324689464258,
+    "Benchmark_Hedge_Ticker": "EWW"
+  },
+  {
+    "Market": "South Korea30",
+    "Benchmark": "EWY",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.16315766640818308,
+    "Benchmark_Hedge_Ticker": "EWY"
+  },
+  {
+    "Market": "South Africa30",
+    "Benchmark": "EZA",
+    "Week_Ending": "2026-06-19",
+    "Benchmark_Hedge_Short": 0.15358034403819965,
+    "Benchmark_Hedge_Ticker": "EZA"
+  }
+]

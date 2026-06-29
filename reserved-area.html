@@ -1111,6 +1111,7 @@
     var authorizedMarkets = [];
     var isAdminAccess = false;
     var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
+    var LAST_WEEK_REPORTS_INDEX_URL = "reports/previous_reports_index.json";
     var RESERVED_REQUEST = parseReservedRequest();
 
     function activeMarkets() {
@@ -1509,9 +1510,11 @@
       return text;
     }
 
-    function renderAll(indexArr, positions) {
+    function renderAll(indexArr, positions, previousIndexArr) {
       var indexMap = {};
+      var previousIndexMap = {};
       indexArr.forEach(function(r) { indexMap[r.Market || r.Display_Name] = r; });
+      (previousIndexArr || []).forEach(function(r) { previousIndexMap[r.Market || r.Display_Name] = r; });
       var reportDataMap = positions && positions.__reportData || {};
       indexMap = enrichIndexWithReportData(indexMap, reportDataMap);
 
@@ -1538,7 +1541,7 @@
         return renderCard(m, indexMap[m.key], positions[posKey]);
       }).join("");
       if (isAdminAccess) {
-        renderAdminDashboard(indexMap, positions, positions && positions.__reportData || {});
+        renderAdminDashboard(indexMap, previousIndexMap, positions, positions && positions.__reportData || {});
         renderPerformanceSummary(positions && positions.__reportData || {});
         renderSummaryCharts();
       }
@@ -1628,15 +1631,16 @@
       return fromReport.length ? fromReport.join(", ") : "-";
     }
 
-    function renderAdminDashboard(indexMap, positions, reportDataMap) {
+    function renderAdminDashboard(indexMap, previousIndexMap, positions, reportDataMap) {
       var tbody = document.getElementById("admin-dashboard-body");
       if (!tbody) return;
 
       var rows = activeMarkets().map(function(m) {
         var indexRow = indexMap[m.key] || {};
+        var previousIndexRow = previousIndexMap[m.key] || {};
         var reportRow = reportDataMap[m.key] || {};
         var currentHedge = reportRow["Benchmark Hedge Short"] != null ? reportRow["Benchmark Hedge Short"] : extractHedgeValue(indexRow);
-        var lastHedge = indexRow.Last_Hedge_Short != null ? indexRow.Last_Hedge_Short : indexRow.Benchmark_Hedge_Short;
+        var lastHedge = previousIndexRow.Benchmark_Hedge_Short != null ? previousIndexRow.Benchmark_Hedge_Short : previousIndexRow.Last_Hedge_Short;
         var portfolioNetChange = latestReturnValue(reportRow.Hedged_Strategy_Returns || reportRow.Strategy_Returns);
         var benchmarkNetChange = latestReturnValue(reportRow.Benchmark_Returns);
         return {
@@ -1814,11 +1818,12 @@
     function loadData() {
       var cacheKey = String(Date.now());
       var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
+      var previousIndexPromise = fetch(LAST_WEEK_REPORTS_INDEX_URL + "?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
       var posPromise   = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return {}; });
       var reportDataPromise = loadHaircuts().then(loadReportData);
-      Promise.all([indexPromise, posPromise, reportDataPromise]).then(function(results) {
-        results[1].__reportData = results[2];
-        renderAll(results[0], results[1]);
+      Promise.all([indexPromise, previousIndexPromise, posPromise, reportDataPromise]).then(function(results) {
+        results[2].__reportData = results[3];
+        renderAll(results[0], results[2], results[1]);
       });
     }
 
