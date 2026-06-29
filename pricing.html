@@ -229,7 +229,7 @@
 
     .workflow-item {
       display: grid;
-      grid-template-columns: 38px 1fr;
+      grid-template-columns: 34px 1fr;
       gap: 12px;
       align-items: start;
       padding: 16px;
@@ -238,16 +238,12 @@
       background: #f8fbff;
     }
 
-    .workflow-item strong:first-child {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: #0d1f36;
-      color: var(--green);
+    .workflow-number {
+      display: block;
+      color: #0d1f36;
       font-size: 14px;
+      font-weight: 900;
+      line-height: 1.5;
     }
 
     .workflow-item span {
@@ -607,15 +603,15 @@
           <h2>Your weekly research stack, ready before allocation decisions.</h2>
           <p>Each update is designed to answer the practical questions that matter at the start of the week: what to hold, what changed, how much market exposure remains and how the model compares with its benchmark.</p>
           <div class="workflow-list" aria-label="Weekly Mosaic workflow">
-            <div class="workflow-item"><strong>01</strong><span><strong>Current portfolio</strong> Five selected stocks for each enabled market.</span></div>
-            <div class="workflow-item"><strong>02</strong><span><strong>Weekly changes</strong> Clear in/out rotation and rebalancing context.</span></div>
-            <div class="workflow-item"><strong>03</strong><span><strong>Risk control</strong> Dynamic hedge level and net exposure reference.</span></div>
-            <div class="workflow-item"><strong>04</strong><span><strong>Validation</strong> Benchmark comparison, equity, drawdown and report history.</span></div>
+            <div class="workflow-item"><strong class="workflow-number">01</strong><span>Five selected stocks for each enabled market.</span></div>
+            <div class="workflow-item"><strong class="workflow-number">02</strong><span>Clear in/out rotation and rebalancing context.</span></div>
+            <div class="workflow-item"><strong class="workflow-number">03</strong><span>Dynamic hedge level and net exposure reference.</span></div>
+            <div class="workflow-item"><strong class="workflow-number">04</strong><span>Benchmark comparison, equity, drawdown and report history.</span></div>
           </div>
         </div>
         <figure class="preview-panel">
-          <img src="assets/reports/mosaic-weekly-report-layout.png" alt="TradingAlgo Mosaic weekly report preview">
-          <figcaption class="preview-caption">Preview of the Mosaic weekly report environment: portfolio composition, benchmark context and model evidence in one operating view.</figcaption>
+          <img src="assets/reports/usa100-weekly-report-preview.png" alt="USA100 weekly report preview">
+          <figcaption class="preview-caption">Preview of the USA100 Mosaic weekly report: portfolio composition, benchmark context and model evidence in one operating view.</figcaption>
         </figure>
       </div>
     </section>
