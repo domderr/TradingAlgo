@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradingAlgo | Weekly Rebalance Tool</title>
+  <style>
+    :root {
+      --bg: #071423;
+      --panel: rgba(255,255,255,0.075);
+      --text: #f4f7fb;
+      --muted: #aebbd0;
+      --blue: #4aa3ff;
+      --green: #42d392;
+      --red: #ff6b6b;
+      --yellow: #f5c542;
+      --border: rgba(255,255,255,0.16);
+      --shadow: 0 24px 70px rgba(0,0,0,0.42);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(74,163,255,0.22), transparent 28%),
+        radial-gradient(circle at 82% 8%, rgba(66,211,146,0.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), #050b14 74%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav,
+    main,
+    footer {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .logo-grid {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      background: var(--blue);
+    }
+
+    .logo-grid span:nth-child(2),
+    .logo-grid span:nth-child(6),
+    .logo-grid span:nth-child(8) {
+      background: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .nav-links a,
+    .btn {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #edf5ff;
+      font-weight: 750;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn.primary { background: var(--blue); border-color: transparent; color: #04101c; }
+    .btn.green { background: var(--green); border-color: transparent; color: #041810; }
+    .btn.danger { color: #ffc8c8; border-color: rgba(255,107,107,0.28); }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    main { padding: 34px 0 68px; }
+    section { margin-bottom: 28px; }
+
+    .access-guard,
+    .tool-panel,
+    .summary-panel {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+    }
+
+    .access-guard {
+      display: none;
+      padding: 28px;
+    }
+
+    .access-guard.is-visible { display: block; }
+
+    .tool-page[hidden] { display: none; }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 10px 0 0;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 0.96;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    .tool-panel,
+    .summary-panel {
+      padding: 22px;
+    }
+
+    .field-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    select,
+    input,
+    textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 14px;
+      background: rgba(5,11,20,0.34);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    textarea {
+      min-height: 210px;
+      resize: vertical;
+      line-height: 1.45;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+    }
+
+    select:focus,
+    input:focus,
+    textarea:focus {
+      border-color: rgba(74,163,255,0.72);
+      box-shadow: 0 0 0 3px rgba(74,163,255,0.14);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .metric-card {
+      min-height: 86px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      background: rgba(5,11,20,0.28);
+    }
+
+    .metric-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .metric-card strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      margin-top: 16px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 11px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.09);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    th:first-child,
+    td:first-child,
+    th:last-child,
+    td:last-child {
+      text-align: left;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.045);
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .positive { color: var(--green); font-weight: 850; }
+    .negative { color: var(--red); font-weight: 850; }
+    .neutral { color: var(--muted); font-weight: 750; }
+    .warning { color: var(--yellow); font-weight: 850; }
+
+    .notice {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px solid rgba(245,197,66,0.28);
+      border-radius: 16px;
+      background: rgba(245,197,66,0.08);
+      color: #f6df99;
+      font-size: 13px;
+      font-weight: 750;
+      line-height: 1.45;
+    }
+
+    .notice:empty { display: none; }
+
+    footer {
+      padding: 0 0 34px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 900px) {
+      .tool-grid,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav { display: block; padding-top: 18px; }
+      .nav-links { margin-top: 16px; justify-content: flex-start; }
+      .button-row { flex-direction: column; }
+      .btn { width: 100%; text-align: center; }
+      .footer-inner { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <div class="nav-links">
+      <a href="reserved-area.html">Reserved Area</a>
+      <a href="index.html#about">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="access-guard" id="access-guard">
+      <div class="eyebrow">Admin Only</div>
+      <h1>Admin access required</h1>
+      <p>This tool is available only after unlocking the reserved area with the Admin profile.</p>
+      <div class="button-row">
+        <a class="btn primary" href="reserved-area.html">Go to Reserved Area</a>
+      </div>
+    </section>
+
+    <div class="tool-page" id="tool-page" hidden>
+      <section class="hero">
+        <div class="eyebrow">Weekly Rebalance Tool</div>
+        <h1>Rebalance Calculator</h1>
+        <p>Admin workspace for translating the latest Mosaic weekly output into target allocations, hedge level and trade deltas.</p>
+      </section>
+
+      <div class="tool-grid">
+        <section class="tool-panel" aria-labelledby="inputs-title">
+          <h2 id="inputs-title">Inputs</h2>
+          <div class="field-grid">
+            <label for="market-select">
+              Market
+              <select id="market-select"></select>
+            </label>
+            <label for="capital-input">
+              Long capital
+              <input id="capital-input" inputmode="decimal" autocomplete="off" placeholder="100000">
+            </label>
+            <label for="positions-input">
+              Current positions
+              <textarea id="positions-input" spellcheck="false" placeholder="MU 18000&#10;CAT 20000&#10;FDX 19000&#10;GOOGL 21000&#10;SLB 17000&#10;SPY -7240"></textarea>
+            </label>
+          </div>
+          <div class="button-row">
+            <button class="btn primary" id="calculate-btn" type="button">Calculate</button>
+            <button class="btn" id="save-btn" type="button">Save</button>
+            <button class="btn" id="load-btn" type="button">Load</button>
+            <button class="btn danger" id="clear-btn" type="button">Clear</button>
+          </div>
+          <p class="notice" id="input-notice"></p>
+        </section>
+
+        <section class="summary-panel" aria-labelledby="summary-title">
+          <h2 id="summary-title">Rebalance Output</h2>
+          <div class="metric-grid">
+            <div class="metric-card"><span>Target Tickers</span><strong id="target-count">-</strong></div>
+            <div class="metric-card"><span>Current Hedge</span><strong id="current-hedge">-</strong></div>
+            <div class="metric-card"><span>Last Hedge</span><strong id="last-hedge">-</strong></div>
+            <div class="metric-card"><span>Hedge Delta</span><strong id="hedge-delta">-</strong></div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ticker</th>
+                  <th>Current</th>
+                  <th>Target</th>
+                  <th>Delta</th>
+                  <th>Last Price</th>
+                  <th>Qty</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="rebalance-body">
+                <tr><td colspan="7">Enter a market and capital to calculate the weekly rebalance.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="button-row">
+            <button class="btn" id="csv-btn" type="button" disabled>Export CSV</button>
+          </div>
+          <p class="notice" id="output-notice">Calculations are mechanical estimates from Mosaic weekly targets. Verify prices, liquidity, costs and tax impact before trading.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <strong>TradingAlgo - Mosaic Trading Framework</strong>
+      <p>Research material only. Not personalized financial advice.</p>
+    </div>
+  </footer>
+
+  <script>
+    var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
+    var LAST_WEEK_REPORTS_INDEX_URL = "reports/previous_reports_index.json";
+    var MARKET_META = [
+      { key: "DJ30", name: "DJ30", html: "reports_html/DJ30/Report_DJ30.html" },
+      { key: "USA100", name: "USA100", html: "reports_html/USA100/Report_USA100.html" },
+      { key: "NASDAQ100", name: "Nasdaq100", html: "reports_html/NASDAQ100/Report_NASDAQ100.html" },
+      { key: "Canada50", name: "Canada50", html: "reports_html/Canada50/Report_Canada50.html" },
+      { key: "Mexico30", name: "Mexico30", html: "reports_html/Mexico30/Report_Mexico30.html" },
+      { key: "Europe50", name: "Europe50", html: "reports_html/Europe50/Report_Europe50.html" },
+      { key: "UK30", name: "UK30", html: "reports_html/UK30/Report_UK30.html" },
+      { key: "France40", name: "France40", html: "reports_html/France40/Report_France40.html" },
+      { key: "Spain40", name: "Spain40", html: "reports_html/Spain40/Report_Spain40.html" },
+      { key: "Germany30", name: "Germany30", html: "reports_html/Germany30/Report_Germany30.html" },
+      { key: "Italy30", name: "Italy30", html: "reports_html/Italy30/Report_Italy30.html" },
+      { key: "Japan50", name: "Japan50", html: "reports_html/Japan50/Report_Japan50.html" },
+      { key: "South Korea30", name: "S.Korea30", html: "reports_html/South_Korea30/Report_South_Korea30.html" },
+      { key: "Australia50", name: "Australia50", html: "reports_html/Australia50/Report_Australia50.html" },
+      { key: "South Africa30", name: "S.Africa30", html: "reports_html/South_Africa30/Report_South_Africa30.html" }
+    ];
+
+    var indexMap = {};
+    var previousIndexMap = {};
+    var positionsMap = {};
+    var reportDataMap = {};
+    var latestPriceMap = {};
+    var latestRows = [];
+
+    function isAdminSession() {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem(ACCESS_STORAGE_KEY) || "{}");
+        return stored && (stored.is_admin === true || String(stored.first_name || "").toLowerCase() === "admin");
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function showAccessState() {
+      var isAdmin = isAdminSession();
+      document.getElementById("tool-page").hidden = !isAdmin;
+      document.getElementById("access-guard").classList.toggle("is-visible", !isAdmin);
+      if (isAdmin) loadData();
+    }
+
+    function storageKey() {
+      return "ta_rebalance_positions_" + document.getElementById("market-select").value;
+    }
+
+    function normalizeTicker(value) {
+      return String(value || "").trim().toUpperCase();
+    }
+
+    function parseMoney(value) {
+      var text = String(value || "").replace(/\s/g, "").replace(/,/g, "");
+      var number = Number(text);
+      return Number.isFinite(number) ? number : null;
+    }
+
+    function formatMoney(value) {
+      var number = Number(value);
+      if (!Number.isFinite(number)) return "-";
+      var sign = number < 0 ? "-" : "";
+      return sign + Math.abs(number).toLocaleString("en-US", { maximumFractionDigits: 0 });
+    }
+
+    function formatPrice(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? number.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : "-";
+    }
+
+    function formatQuantity(value) {
+      var number = Number(value);
+      if (!Number.isFinite(number)) return "-";
+      var rounded = Math.round(number);
+      if (rounded === 0 && Math.abs(number) > 0) rounded = number > 0 ? 1 : -1;
+      return rounded.toLocaleString("en-US", { maximumFractionDigits: 0 });
+    }
+
+    function formatPercent(value) {
+      var number = Number(value);
+      return Number.isFinite(number) ? (number * 100).toFixed(2) + "%" : "-";
+    }
+
+    function metricClass(value) {
+      var number = Number(value);
+      if (!Number.isFinite(number) || Math.abs(number) < 0.5) return "neutral";
+      return number > 0 ? "positive" : "negative";
+    }
+
+    function escapeHtml(value) {
+      return String(value == null ? "" : value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function tickerOf(item) {
+      return item && (item.Ticker || item.ticker) || "";
+    }
+
+    function parsePositions(text) {
+      var map = {};
+      var warnings = [];
+      String(text || "").split(/\r?\n/).forEach(function(line, index) {
+        var clean = line.trim();
+        if (!clean) return;
+        var parts = clean.split(/[\s,;]+/).filter(Boolean);
+        if (parts.length < 2) {
+          warnings.push("Line " + (index + 1) + " ignored.");
+          return;
+        }
+        var ticker = normalizeTicker(parts[0]);
+        var amount = parseMoney(parts[1]);
+        if (!ticker || amount == null) {
+          warnings.push("Line " + (index + 1) + " ignored.");
+          return;
+        }
+        map[ticker] = (map[ticker] || 0) + amount;
+      });
+      return { map: map, warnings: warnings };
+    }
+
+    function getMarketMeta(key) {
+      return MARKET_META.find(function(item) { return item.key === key; });
+    }
+
+    function marketPrices(key) {
+      var payload = latestPriceMap[key] || {};
+      return payload.prices || {};
+    }
+
+    function priceForTicker(market, ticker) {
+      var prices = marketPrices(market);
+      var normalizedTicker = normalizeTicker(ticker);
+      var direct = prices[ticker] != null ? prices[ticker] : prices[normalizedTicker];
+      if (direct != null) return Number(direct);
+      var keys = Object.keys(prices);
+      for (var i = 0; i < keys.length; i += 1) {
+        if (normalizeTicker(keys[i]) === normalizedTicker) return Number(prices[keys[i]]);
+      }
+      return null;
+    }
+
+    function reportDataUrl(meta) {
+      return meta.html.replace(/[^\/]+$/, "report_data.json");
+    }
+
+    function setupMarketSelect() {
+      var select = document.getElementById("market-select");
+      select.innerHTML = MARKET_META.map(function(m) {
+        return '<option value="' + escapeHtml(m.key) + '">' + escapeHtml(m.name) + '</option>';
+      }).join("");
+      select.value = "USA100";
+      select.addEventListener("change", function() {
+        latestRows = [];
+        document.getElementById("csv-btn").disabled = true;
+        updateMarketHints();
+      });
+    }
+
+    function updateMarketHints() {
+      var key = document.getElementById("market-select").value;
+      var row = reportDataMap[key] || {};
+      var previous = previousIndexMap[key] || {};
+      var target = row["Last Weekly Selection"] || [];
+      document.getElementById("target-count").textContent = target.length || "-";
+      document.getElementById("current-hedge").textContent = formatPercent(row["Benchmark Hedge Short"]);
+      document.getElementById("last-hedge").textContent = formatPercent(previous.Benchmark_Hedge_Short);
+      document.getElementById("hedge-delta").textContent = "-";
+    }
+
+    function calculateRebalance() {
+      var market = document.getElementById("market-select").value;
+      var capital = parseMoney(document.getElementById("capital-input").value);
+      var notice = document.getElementById("input-notice");
+      if (capital == null || capital <= 0) {
+        notice.textContent = "Enter a positive long capital amount.";
+        return;
+      }
+
+      var report = reportDataMap[market] || {};
+      var index = indexMap[market] || {};
+      var previous = previousIndexMap[market] || {};
+      var targetSelection = report["Last Weekly Selection"] || [];
+      var targetTickers = targetSelection.map(tickerOf).filter(Boolean);
+      if (!targetTickers.length) {
+        notice.textContent = "Target tickers unavailable for this market.";
+        return;
+      }
+
+      var parsed = parsePositions(document.getElementById("positions-input").value);
+      var currentMap = parsed.map;
+      var targetPerTicker = capital / targetTickers.length;
+      var hedgeTicker = normalizeTicker(report["Benchmark Hedge Ticker"] || index.Benchmark_Hedge_Ticker || index.Benchmark);
+      var hedgeShort = Number(report["Benchmark Hedge Short"]);
+      var previousHedgeShort = Number(previous.Benchmark_Hedge_Short);
+      var targetMap = {};
+      targetTickers.forEach(function(ticker) {
+        targetMap[normalizeTicker(ticker)] = targetPerTicker;
+      });
+      if (hedgeTicker && Number.isFinite(hedgeShort)) {
+        targetMap[hedgeTicker] = -capital * hedgeShort;
+      }
+
+      var allTickers = Object.keys(Object.assign({}, currentMap, targetMap)).sort(function(a, b) {
+        var hedgeA = a === hedgeTicker, hedgeB = b === hedgeTicker;
+        if (hedgeA && !hedgeB) return 1;
+        if (!hedgeA && hedgeB) return -1;
+        return a.localeCompare(b);
+      });
+
+      latestRows = allTickers.map(function(ticker) {
+        var current = currentMap[ticker] || 0;
+        var target = targetMap[ticker] || 0;
+        var delta = target - current;
+        var price = priceForTicker(market, ticker);
+        var quantity = Number.isFinite(price) && price > 0 ? delta / price : null;
+        var action = actionLabel(ticker, hedgeTicker, current, target, delta);
+        return { ticker: ticker, current: current, target: target, delta: delta, price: price, quantity: quantity, action: action };
+      });
+
+      renderRows(latestRows);
+      document.getElementById("target-count").textContent = String(targetTickers.length);
+      document.getElementById("current-hedge").textContent = formatPercent(hedgeShort);
+      document.getElementById("last-hedge").textContent = formatPercent(previousHedgeShort);
+      document.getElementById("hedge-delta").textContent = Number.isFinite(hedgeShort) && Number.isFinite(previousHedgeShort)
+        ? formatPercent(hedgeShort - previousHedgeShort)
+        : "-";
+      document.getElementById("csv-btn").disabled = !latestRows.length;
+      notice.textContent = parsed.warnings.join(" ");
+    }
+
+    function actionLabel(ticker, hedgeTicker, current, target, delta) {
+      if (Math.abs(delta) < 0.5) return "KEEP";
+      if (ticker === hedgeTicker) {
+        if (target < current) return "INCREASE SHORT";
+        return "REDUCE SHORT";
+      }
+      if (target === 0) return "SELL";
+      return delta > 0 ? "BUY" : "SELL";
+    }
+
+    function renderRows(rows) {
+      var body = document.getElementById("rebalance-body");
+      body.innerHTML = rows.map(function(row) {
+        return '<tr>'
+          + '<td>' + escapeHtml(row.ticker) + '</td>'
+          + '<td>' + formatMoney(row.current) + '</td>'
+          + '<td>' + formatMoney(row.target) + '</td>'
+          + '<td class="' + metricClass(row.delta) + '">' + formatMoney(row.delta) + '</td>'
+          + '<td>' + formatPrice(row.price) + '</td>'
+          + '<td class="' + metricClass(row.quantity) + '">' + formatQuantity(row.quantity) + '</td>'
+          + '<td class="' + actionClass(row.action) + '">' + escapeHtml(row.action) + '</td>'
+          + '</tr>';
+      }).join("");
+    }
+
+    function actionClass(action) {
+      if (action === "BUY" || action === "REDUCE SHORT") return "positive";
+      if (action === "SELL" || action === "INCREASE SHORT") return "negative";
+      return "neutral";
+    }
+
+    function savePositions() {
+      localStorage.setItem(storageKey(), document.getElementById("positions-input").value);
+      document.getElementById("input-notice").textContent = "Saved locally in this browser.";
+    }
+
+    function loadPositions() {
+      document.getElementById("positions-input").value = localStorage.getItem(storageKey()) || "";
+      document.getElementById("input-notice").textContent = "Loaded local positions for this market.";
+    }
+
+    function clearPositions() {
+      document.getElementById("positions-input").value = "";
+      document.getElementById("input-notice").textContent = "";
+    }
+
+    function exportCsv() {
+      if (!latestRows.length) return;
+      var lines = [["Ticker", "Current", "Target", "Delta", "Last Price", "Quantity", "Action"]].concat(latestRows.map(function(row) {
+        return [row.ticker, row.current, row.target, row.delta, row.price == null ? "" : row.price, row.quantity == null ? "" : Math.round(row.quantity), row.action];
+      }));
+      var csv = lines.map(function(row) {
+        return row.map(function(value) {
+          return '"' + String(value).replace(/"/g, '""') + '"';
+        }).join(",");
+      }).join("\r\n");
+      var blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+      var url = URL.createObjectURL(blob);
+      var link = document.createElement("a");
+      link.href = url;
+      link.download = "mosaic-rebalance-" + document.getElementById("market-select").value + ".csv";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function loadData() {
+      var cacheKey = String(Date.now());
+      var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
+      var previousPromise = fetch(LAST_WEEK_REPORTS_INDEX_URL + "?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
+      var positionsPromise = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
+      var pricesPromise = fetch("reports/latest_prices.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
+      var reportPromises = MARKET_META.map(function(m) {
+        return fetch(reportDataUrl(m) + "?v=" + cacheKey, { cache: "no-store" })
+          .then(function(r) { return r.json(); })
+          .then(function(rows) { return { key: m.key, row: Array.isArray(rows) ? rows[0] : rows }; })
+          .catch(function() { return null; });
+      });
+
+      Promise.all([indexPromise, previousPromise, positionsPromise, pricesPromise, Promise.all(reportPromises)])
+        .then(function(results) {
+          indexMap = {};
+          previousIndexMap = {};
+          reportDataMap = {};
+          results[0].forEach(function(row) { indexMap[row.Market] = row; });
+          results[1].forEach(function(row) { previousIndexMap[row.Market] = row; });
+          positionsMap = results[2] || {};
+          latestPriceMap = results[3] || {};
+          results[4].forEach(function(item) {
+            if (item && item.row) reportDataMap[item.key] = item.row;
+          });
+          updateMarketHints();
+        })
+        .catch(function() {
+          document.getElementById("input-notice").textContent = "Data unavailable. Refresh the page or check the report files.";
+        });
+    }
+
+    setupMarketSelect();
+    document.getElementById("calculate-btn").addEventListener("click", calculateRebalance);
+    document.getElementById("save-btn").addEventListener("click", savePositions);
+    document.getElementById("load-btn").addEventListener("click", loadPositions);
+    document.getElementById("clear-btn").addEventListener("click", clearPositions);
+    document.getElementById("csv-btn").addEventListener("click", exportCsv);
+    showAccessState();
+  </script>
+</body>
+</html>
