@@ -55,6 +55,14 @@
         "All"
       ],
       "active": true
+    },
+    {
+      "password_hash": "adae5a93fc7fa002ac1d6f3f13aa332139585ce69c9d7caec8e99cd2674937d1",
+      "first_name": "Mensur",
+      "markets": [
+        "All"
+      ],
+      "active": true
     }
   ]
 }
