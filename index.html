@@ -948,6 +948,27 @@
       gap: 9px 14px;
     }
 
+    .markets-actions {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .select-markets-btn {
+      min-height: 34px;
+      padding: 0 13px;
+      border: 1px solid var(--blue);
+      border-radius: 8px;
+      background: transparent;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .select-markets-btn:hover {
+      background: rgba(74,163,255,0.12);
+    }
+
     .market-option {
       display: flex;
       gap: 8px;
@@ -983,6 +1004,16 @@
 
     .request-status.error {
       color: #f3a0a0;
+    }
+
+    .request-disclaimer {
+      max-width: 760px;
+      margin: 14px auto 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.55;
+      text-align: center;
     }
 
     .request-honey {
@@ -1597,6 +1628,9 @@
         <div class="form-field full">
           <fieldset class="markets-fieldset">
             <legend class="markets-label">Markets interested</legend>
+            <div class="markets-actions">
+              <button class="select-markets-btn" type="button" id="select-all-markets">Select All markets</button>
+            </div>
             <div class="markets-grid">
               <label class="market-option"><input type="checkbox" name="markets" value="USA100">USA100</label>
               <label class="market-option"><input type="checkbox" name="markets" value="Europe50">Europe50</label>
@@ -1626,6 +1660,9 @@
       <div class="buttons">
         <button class="btn btn-primary" type="submit">Send Request</button>
       </div>
+      <p class="request-disclaimer">
+        By submitting this request, you acknowledge that TradingAlgo Mosaic provides standardized research and model portfolios for informational purposes only, and does not provide personalized financial advice or investment recommendations.
+      </p>
       <p class="request-status" id="request-status" role="status" aria-live="polite"></p>
     </form>
   </section>
@@ -2040,6 +2077,15 @@
 
     if (window.location.hash === "#request-info") {
       revealRequestInfo();
+    }
+
+    var selectAllMarketsButton = document.getElementById("select-all-markets");
+    if (selectAllMarketsButton) {
+      selectAllMarketsButton.addEventListener("click", function () {
+        Array.prototype.slice.call(document.querySelectorAll('input[name="markets"]')).forEach(function (input) {
+          input.checked = true;
+        });
+      });
     }
 
     var requestInfoForm = document.getElementById("request-info-form");
