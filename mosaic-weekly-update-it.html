@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="mosaic-weekly-update.html" />
+  <link rel="alternate" hreflang="it" href="mosaic-weekly-update-it.html" />
+  <title>Aggiornamento Settimanale Portafoglio | TradingAlgo Mosaic</title>
+  <meta name="description" content="Aggiornamento settimanale TradingAlgo Mosaic con posizioni correnti, variazioni settimanali, livelli di hedge e ultima variazione netta rispetto al benchmark." />
+  <script>
+    (function () {
+      var storageKey = "ta_reserved_authorized_markets";
+      try {
+        var stored = JSON.parse(sessionStorage.getItem(storageKey) || "{}");
+        var markets = Array.isArray(stored.markets) ? stored.markets : stored;
+        if (Array.isArray(markets) && markets.length) return;
+      } catch (error) {}
+      window.location.replace("reserved-area.html?next=mosaic-weekly-update.html");
+    }());
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
+    a { color: inherit; }
+    nav { position: sticky; top: 0; z-index: 10; padding: 18px 8%; background: rgba(3,12,25,0.94); display: flex; justify-content: space-between; align-items: center; gap: 22px; backdrop-filter: blur(8px); }
+    nav .logo { color: white; font-size: 24px; font-weight: bold; letter-spacing: 1px; text-decoration: none; }
+    nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+    header { padding: 78px 8% 58px; background: linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.72)), url("assets/reports/mosaic-weekly-report-layout.png"); background-size: cover; background-position: top center; color: white; }
+    .kicker { margin: 0 0 14px; color: #7dd3fc; font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 60px); line-height: 1.06; }
+    header p { max-width: 820px; margin: 22px 0 0; color: #e5e7eb; font-size: 20px; line-height: 1.6; }
+    main { padding: 58px 8%; }
+    .content { max-width: 1040px; margin: 0 auto; display: grid; gap: 24px; }
+    section { padding: 32px; background: white; border: 1px solid #dbe3ef; border-radius: 8px; }
+    h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 30px; }
+    h3 { margin: 20px 0 8px; color: #071a33; }
+    p, li { color: #26364a; line-height: 1.7; }
+    ul { margin: 0; padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    .article-meta { margin: 0 0 18px; color: #5b6b80; font-size: 14px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; }
+    .lead { color: #17263a; font-size: 19px; line-height: 1.75; }
+    .summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
+    .summary-item { padding: 18px; border: 1px solid #dbe3ef; border-radius: 8px; background: #f8fbff; }
+    .summary-item strong { display: block; color: #071a33; font-size: 22px; }
+    .summary-item span { display: block; margin-top: 6px; color: #506176; font-size: 13px; line-height: 1.45; }
+    .table-wrap { overflow-x: auto; border: 1px solid #dbe3ef; border-radius: 8px; }
+    table { width: 100%; border-collapse: collapse; min-width: 980px; background: white; }
+    th, td { padding: 12px 14px; border-bottom: 1px solid #e5edf6; text-align: left; vertical-align: top; font-size: 13px; line-height: 1.45; }
+    th { background: #071a33; color: white; font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; }
+    tr:last-child td { border-bottom: 0; }
+    .market { font-weight: 900; color: #071a33; }
+    .pos { color: #0f766e; font-weight: 800; }
+    .neg { color: #b42318; font-weight: 800; }
+    .flat { color: #5b6b80; font-weight: 800; }
+    .note { padding: 18px; border-left: 4px solid #168eea; background: #f8fbff; }
+    footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
+    @media (max-width: 900px) { .summary-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } section { padding: 26px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="reserved-area-it.html">Report</a>
+      <a href="mosaic-start-here-it.html">Inizia Qui</a>
+      <a href="mosaic-how-to-guides-it.html">Guide</a>
+      <a href="mosaic-terminology-it.html">Terminologia</a>
+      <a href="mosaic-charts-dashboards-it.html">Grafici</a>
+    </div>
+        <a href="mosaic-weekly-update.html">English</a>
+  </nav>
+  <header>
+    <p class="kicker">Area Membri Mosaic</p>
+    <h1>Aggiornamento Settimanale Portafoglio</h1>
+    <p>Posizioni correnti, rotazioni settimanali, livelli di hedge e ultime variazioni nette rispetto al benchmark.</p>
+  </header>
+  <main>
+    <div class="content">
+      <article>
+        <p class="article-meta">Aggiornamento settimanale - lunedi 29 giugno 2026</p>
+        <h2>TradingAlgo Mosaic: forza selettiva verso la nuova settimana</h2>
+        <p class="lead">La nuova settimana si apre con un quadro selettivo. La dispersione tra mercati resta elevata: alcuni portafogli mostrano forza relativa rispetto ai benchmark, mentre altri risentono di mercati locali piu deboli o rotazioni settoriali meno favorevoli.</p>
+        <div class="summary-grid" aria-label="Highlight settimanali Mosaic">
+          <div class="summary-card"><strong>DJ30</strong><span>Portafoglio in forte vantaggio sul benchmark grazie alla selezione titoli.</span></div>
+          <div class="summary-card"><strong>Mexico30</strong><span>Uno dei migliori spread relativi della settimana rispetto al benchmark.</span></div>
+          <div class="summary-card"><strong>S.Korea30</strong><span>Mercato difficile, con hedge corrente salito al livello piu alto della dashboard.</span></div>
+        </div>
+        <p>I portafogli USA hanno fornito il contributo piu solido. DJ30 e USA100 hanno chiuso sopra i rispettivi benchmark, confermando l'importanza della selezione e della rotazione settimanale. Nasdaq100 ha avuto un progresso piu modesto in termini assoluti, ma resta nettamente migliore del benchmark.</p>
+        <p>Fuori dagli Stati Uniti, Mexico30 ha mostrato una forte resilienza relativa, mentre Canada50 e rimasto sotto pressione. In Europa il quadro e misto: Germany30 e l'eccezione positiva, mentre Europe50, UK30, France40, Spain40 e Italy30 richiedono una lettura piu prudente.</p>
+        <p>In Asia-Pacifico, Japan50 e rimasto leggermente migliore del benchmark, mentre South Korea30 ha avuto la settimana piu difficile e un aumento deciso dell'hedge. Australia50 e South Africa30 mostrano dinamiche piu difensive.</p>
+        <p>Il messaggio operativo e chiaro: la dispersione resta alta, la rotazione conta e la gestione dell'hedge e parte centrale del processo Mosaic.</p>
+        <h2>Dashboard Settimanale Mercati</h2>
+        <div class="table-wrap"><table><thead><tr><th>Mercato</th><th>Ticker Correnti</th><th>In</th><th>Uscite</th><th>Hedge Corrente</th><th>Hedge Precedente</th><th>NetCh Portafoglio vs venerdi precedente</th><th>NetCh Benchmark vs venerdi precedente</th></tr></thead><tbody>
+          <tr><td class="market">DJ30</td><td>CAT, MRK, CSCO, GS, WMT</td><td>WMT</td><td>CVX</td><td>13%</td><td>13%</td><td class="pos">2.52%</td><td class="pos">0.73%</td></tr>
+          <tr><td class="market">USA100</td><td>MU, CAT, FDX, GEV, GOOGL</td><td>GEV</td><td>SLB</td><td>7%</td><td>7%</td><td class="pos">1.28%</td><td class="neg">-1.67%</td></tr>
+          <tr><td class="market">Nasdaq100</td><td>MU, TER, NBIS, MRVL, RKLB</td><td>MRVL, RKLB</td><td>WBD, ROST</td><td>12%</td><td>10%</td><td class="pos">0.13%</td><td class="neg">-3.17%</td></tr>
+          <tr><td class="market">Mexico30</td><td>GMEXICOB.MX, FEMSAUBD.MX, AMXB.MX, PINFRA.MX, LIVEPOLC-1.MX</td><td>LIVEPOLC-1.MX</td><td>VOLARA.MX</td><td>22%</td><td>22%</td><td class="pos">2.03%</td><td class="neg">-2.33%</td></tr>
+          <tr><td class="market">Germany30</td><td>ENR.DE, RWE.DE, IFX.DE, BAYN.DE, DHL.DE</td><td class="flat">-</td><td class="flat">-</td><td>12%</td><td>13%</td><td class="pos">1.87%</td><td class="neg">-1.08%</td></tr>
+          <tr><td class="market">S.Korea30</td><td>000660.KS, 005380.KS, 017670.KS, 034020.KS, 055550.KS</td><td>055550.KS</td><td>006400.KS</td><td>20%</td><td>16%</td><td class="neg">-11.91%</td><td class="neg">-6.48%</td></tr>
+        </tbody></table></div>
+        <h2>Nota di Ribilanciamento del Lunedi</h2>
+        <p class="note">Alla prossima apertura del mercato, riporta ogni selezione Mosaic attiva verso l'equal-weight e aggiorna l'hedge secondo l'ultimo report del mercato abilitato.</p>
+      </article>
+    </div>
+  </main>
+  <footer>TradingAlgo - Mosaic Trading Framework. Materiale di ricerca. Non costituisce consulenza finanziaria personalizzata.</footer>
+</body>
+</html>

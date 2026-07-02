@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="how-to-read-mosaic-report.html" />
+  <link rel="alternate" hreflang="it" href="how-to-read-mosaic-report-it.html" />
+  <title>Come Leggere il Report Settimanale TradingAlgo Mosaic | TradingAlgo</title>
+  <meta name="description" content="Guida pratica alla lettura del Report Settimanale TradingAlgo Mosaic: metriche di performance, azioni selezionate, variazioni settimanali, grafici, capitale investito e disclaimer di ricerca." />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #071a33;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 90px 8% 70px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.95), rgba(3,12,25,0.70)),
+        url("https://images.unsplash.com/photo-1604079628040-94301bb21b91?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    header h1 {
+      max-width: 940px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: 54px;
+      line-height: 1.08;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 65px 8%;
+    }
+
+    .content {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      padding: 34px;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: 30px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #071a33;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.7;
+      color: #26364a;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 22px;
+      color: #26364a;
+      line-height: 1.7;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .note {
+      border-left: 4px solid #168eea;
+      padding-left: 18px;
+      font-weight: bold;
+    }
+
+    .report-example {
+      margin-top: 24px;
+      overflow-x: auto;
+    }
+
+    .report-example img {
+      width: 100%;
+      min-width: 860px;
+      height: auto;
+      display: block;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: block;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 12px 0 0;
+      }
+
+      header h1 {
+        font-size: 38px;
+      }
+
+      section {
+        padding: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="logo">TA | TradingAlgo</div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#marketview">Vista Mercati</a>
+      <a href="tradingalgo-mosaic-it.html">Mosaic</a>
+      <a href="index.html#publications">Pubblicazioni</a>
+      <a href="faq-it.html">FAQ</a>
+    </div>
+        <a href="how-to-read-mosaic-report.html">English</a>
+  </nav>
+
+  <header>
+    <h1>Come Leggere il Report Settimanale TradingAlgo Mosaic</h1>
+    <p>Think of each page as a dashboard: first assess performance, then review the five selected stocks, and finally examine what changed during the week.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>Obiettivo della Guida</h2>
+        <p>Il report settimanale TradingAlgo Mosaic va letto come una dashboard operativa: prima si valuta il portafoglio modello, poi si controllano le cinque azioni selezionate, infine si analizzano variazioni, metriche, grafici e rischio.</p>
+        <p class="note">Il report e materiale di ricerca. Non e consulenza finanziaria personalizzata e non e una raccomandazione di acquisto o vendita.</p>
+        <div class="report-example"><img src="assets/reports/mosaic-weekly-report-layout.png" alt="Layout di esempio del report settimanale TradingAlgo Mosaic"></div>
+      </section>
+      <section>
+        <h2>1. Parti dal Riepilogo</h2>
+        <p>Controlla mercato, benchmark, data del report, hedge corrente e composizione del portafoglio. Questi elementi definiscono il contesto prima di guardare i singoli titoli.</p>
+      </section>
+      <section>
+        <h2>2. Rivedi le Cinque Azioni</h2>
+        <p>La sezione posizioni correnti mostra le cinque azioni selezionate dal modello. La selezione deriva da un universo piu ampio e combina trend, stabilita, filtri di correlazione e contributo al portafoglio.</p>
+      </section>
+      <section>
+        <h2>3. Controlla le Variazioni Settimanali</h2>
+        <ul><li><strong>IN:</strong> nuove posizioni entrate nel portafoglio.</li><li><strong>OUT:</strong> posizioni uscite rispetto alla settimana precedente.</li><li><strong>Unchanged:</strong> titoli confermati.</li></ul>
+        <p>Questa sezione mostra come il modello si adatta al cambiamento della leadership di mercato.</p>
+      </section>
+      <section>
+        <h2>4. Leggi le Metriche Insieme</h2>
+        <p>CAGR, Sharpe Ratio, drawdown, Information Ratio e confronto con benchmark non vanno interpretati isolatamente. Una strategia puo crescere di piu ma avere drawdown piu profondi; per questo performance e rischio devono essere letti insieme.</p>
+      </section>
+      <section>
+        <h2>5. Usa i Grafici per Capire il Rischio</h2>
+        <p>L'equity curve mostra il percorso storico del portafoglio. Il drawdown mostra le perdite dai massimi precedenti. Il grafico di esposizione aiuta a capire quanto capitale e investito e quanto viene ridotto dall'hedge dinamico.</p>
+      </section>
+      <section>
+        <h2>6. Capitale Investito e Hedge</h2>
+        <p>Il capitale investito indica la parte del portafoglio modello allocata sulle azioni selezionate. Quando l'hedge aumenta, l'esposizione netta al mercato diminuisce; quando l'hedge scende, il portafoglio partecipa di piu al movimento dei titoli selezionati.</p>
+      </section>
+      <section>
+        <h2>7. Disclaimer</h2>
+        <p>TradingAlgo Mosaic e un framework di ricerca quantitativa e analisi di portafoglio. Ogni decisione di investimento resta sotto la responsabilita dell'investitore.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>TradingAlgo - Guida Report Settimanale Mosaic</strong></p>
+    <p>Ricerca quantitativa - Costruzione di portafoglio - Analisi di mercato</p>
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>

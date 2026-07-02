@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="mosaic-terminology.html" />
+  <link rel="alternate" hreflang="it" href="mosaic-terminology-it.html" />
+  <title>Mosaic Terminologia | TradingAlgo Mosaic</title>
+  <meta name="description" content="Glossario della terminologia TradingAlgo Mosaic: CAGR, Sharpe Ratio, drawdown, hedge, benchmark, ribilanciamento, trend score, stability score, rotazione settoriale, correlazione pairwise e survivorship bias." />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
+    a { color: inherit; }
+    nav { position: sticky; top: 0; z-index: 10; padding: 18px 8%; background: rgba(3,12,25,0.94); display: flex; justify-content: space-between; align-items: center; gap: 22px; backdrop-filter: blur(8px); }
+    nav .logo { color: white; font-size: 24px; font-weight: bold; letter-spacing: 1px; text-decoration: none; }
+    nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+    header { padding: 78px 8% 58px; background: linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.72)), url("assets/reports/tradingalgo-mosaic-nvda-dashboard.png"); background-size: cover; background-position: center; color: white; }
+    .kicker { margin: 0 0 14px; color: #7dd3fc; font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 60px); line-height: 1.06; }
+    header p { max-width: 820px; margin: 22px 0 0; color: #e5e7eb; font-size: 20px; line-height: 1.6; }
+    main { padding: 58px 8%; }
+    .content { max-width: 1080px; margin: 0 auto; display: grid; gap: 24px; }
+    section { padding: 32px; background: white; border: 1px solid #dbe3ef; border-radius: 8px; }
+    h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 30px; }
+    p { color: #26364a; line-height: 1.7; }
+    .term-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .term-card { padding: 18px; border: 1px solid #dbe3ef; border-radius: 8px; background: #f8fbff; }
+    .term-card strong { display: block; margin-bottom: 8px; color: #071a33; font-size: 17px; }
+    .term-card span { display: block; color: #26364a; line-height: 1.55; }
+    footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
+    @media (max-width: 900px) { .term-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } .term-grid { grid-template-columns: 1fr; } section { padding: 26px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="reserved-area-it.html">Report</a>
+      <a href="mosaic-start-here-it.html">Inizia Qui</a>
+      <a href="mosaic-weekly-update-it.html">Aggiornamento Settimanale</a>
+      <a href="mosaic-how-to-guides-it.html">Guide</a>
+      <a href="mosaic-charts-dashboards-it.html">Grafici</a>
+    </div>
+        <a href="mosaic-terminology.html">English</a>
+  </nav>
+  <header>
+    <p class="kicker">Area Membri Mosaic</p>
+    <h1>Mosaic Terminologia</h1>
+    <p>Definizioni delle principali metriche ed etichette usate nei report Mosaic.</p>
+  </header>
+  <main>
+    <div class="content">
+      <!-- Glossario page linked from the reserved-area collapsible menu. -->
+      <section>
+        <h2>Glossario</h2>
+        <div class="term-grid">
+          <div class="term-card"><strong>CAGR</strong><span>Tasso di crescita annualizzato del portafoglio sull'intero periodo di test.</span></div>
+          <div class="term-card"><strong>Sharpe Ratio</strong><span>Misura di rendimento aggiustato per il rischio che confronta performance e volatilita.</span></div>
+          <div class="term-card"><strong>Drawdown Massimo</strong><span>Massima perdita storica da un picco dell'equity al minimo successivo.</span></div>
+          <div class="term-card"><strong>Hedge</strong><span>Quota di esposizione al mercato ridotta tramite posizione short o protettiva.</span></div>
+          <div class="term-card"><strong>Benchmark</strong><span>ETF o indice di riferimento usato per confrontare la performance Mosaic.</span></div>
+          <div class="term-card"><strong>Ribilanciamento del Portafoglio</strong><span>Processo che riporta le cinque azioni selezionate verso pesi uguali.</span></div>
+          <div class="term-card"><strong>Trend Score</strong><span>Punteggio che misura forza e qualita del trend dei prezzi.</span></div>
+          <div class="term-card"><strong>Stability Score</strong><span>Punteggio che misura la coerenza del comportamento del trend.</span></div>
+          <div class="term-card"><strong>Portfolio Score</strong><span>Lettura combinata a livello di portafoglio usata per sintetizzare la qualita Mosaic.</span></div>
+          <div class="term-card"><strong>Esposizione Long</strong><span>Esposizione totale investita nelle cinque posizioni azionarie selezionate.</span></div>
+          <div class="term-card"><strong>Esposizione Netta</strong><span>Esposizione long dopo aver sottratto l'effetto dell'hedge dinamico.</span></div>
+          <div class="term-card"><strong>Correlazione Pairwise</strong><span>Misura di quanto due posizioni tendono a muoversi insieme. Una correlazione pairwise piu bassa puo migliorare la diversificazione in un portafoglio concentrato.</span></div>
+          <div class="term-card"><strong>Rotazione Settoriale</strong><span>Spostamento della leadership di mercato da un settore a un altro, spesso visibile quando Mosaic sostituisce esposizioni piu deboli con azioni di settori con trend di qualita superiore.</span></div>
+          <div class="term-card"><strong>Survivorship Bias</strong><span>Distorsione che si verifica quando l'analisi include solo titoli ancora esistenti e ignora societa delistate, fuse o fallite presenti nell'universo investibile originale.</span></div>
+          <div class="term-card"><strong>Variazioni Settimanali</strong><span>Variazioni del portafoglio tra il report corrente e quello settimanale precedente.</span></div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>TradingAlgo - Mosaic Trading Framework. Materiale di ricerca. Non costituisce consulenza finanziaria personalizzata.</footer>
+</body>
+</html>

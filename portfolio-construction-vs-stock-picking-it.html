@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="portfolio-construction-vs-stock-picking.html" />
+  <link rel="alternate" hreflang="it" href="portfolio-construction-vs-stock-picking-it.html" />
+  <title>Costruzione del Portafoglio vs Stock Picking | TradingAlgo</title>
+  <meta name="description" content="Why portfolio construction is different from stock picking, with a practical DJ30 example based on the latest TradingAlgo Mosaic charts." />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 92px 8% 74px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.74)),
+        url("assets/medium/technical-analysis-portfolio-management-medium.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 64px 8%;
+    }
+
+    .content {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+    section {
+      padding: 34px;
+      background: white;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: 30px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #071a33;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.7;
+      color: #26364a;
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 22px;
+      color: #26364a;
+      line-height: 1.7;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      overflow: hidden;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #dbe3ef;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: #eef5fd;
+      color: #071a33;
+      font-weight: 900;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .comparison-card,
+    .metric-card {
+      padding: 20px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .comparison-card h3,
+    .metric-card strong {
+      margin-top: 0;
+      color: #071a33;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .metric-card span {
+      display: block;
+      margin-top: 7px;
+      color: #0b5fa5;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .note {
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    figure {
+      margin: 24px 0 0;
+    }
+
+    figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #eef3f9;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      color: #607086;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 13px 20px;
+      border-radius: 6px;
+      background: #168eea;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 850px) {
+      nav { display: block; }
+      nav a {
+        display: inline-block;
+        margin: 10px 12px 0 0;
+      }
+
+      section { padding: 26px; }
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .comparison,
+      .metric-grid,
+      .chart-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic-it.html">Mosaic</a>
+      <a href="index.html#mission">Mission</a>
+      <a href="publications-it.html">Pubblicazioni</a>
+      <a href="validation-it.html">Validazione</a>
+      <a href="faq-it.html">FAQ</a>
+    </div>
+        <a href="portfolio-construction-vs-stock-picking.html">English</a>
+  </nav>
+
+  <header>
+    <p class="kicker">Nota di Ricerca TradingAlgo Mosaic</p>
+    <h1>Costruzione del Portafoglio vs Stock Picking: perche la combinazione conta piu del singolo titolo</h1>
+    <p>Stock picking asks which securities look attractive. Portfolio construction asks whether those securities work together as a coherent, measurable and risk-aware portfolio.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>La Differenza Centrale</h2>
+        <p>Lo stock picking cerca il singolo titolo interessante. La costruzione del portafoglio chiede invece se quei titoli funzionano insieme come struttura coerente, misurabile e attenta al rischio.</p>
+        <p>Un portafoglio non e una lista di buone azioni. E un insieme di posizioni che interagiscono tra loro. Due titoli possono sembrare validi singolarmente, ma se aggiungono la stessa esposizione o lo stesso fattore di rischio, la seconda posizione puo aumentare la concentrazione senza migliorare la diversificazione.</p>
+        <p class="note">La domanda non e solo: quali azioni sono buone? La domanda e: quale combinazione crea il portafoglio piu robusto?</p>
+      </section>
+      <section>
+        <div class="comparison-grid"><div><h3>Stock Picking</h3><p>Si concentra sul singolo titolo e valuta se appare interessante da solo.</p></div><div><h3>Costruzione del Portafoglio</h3><p>Si concentra sull'interazione tra posizioni: trend, stabilita, diversificazione e contributo al portafoglio.</p></div></div>
+      </section>
+      <section>
+        <h2>Come TradingAlgo Mosaic Affronta il Problema</h2>
+        <p>TradingAlgo Mosaic parte da un universo di mercato ampio, classifica i titoli, applica criteri di trend e stabilita e verifica se ogni candidato migliora la struttura complessiva del portafoglio.</p>
+        <p>L'obiettivo non e generare una lista di cinque azioni interessanti, ma costruire un portafoglio modello concentrato che possa essere monitorato, confrontato con un benchmark e aggiornato quando cambia la leadership di mercato.</p>
+      </section>
+      <section>
+        <h2>Esempio DJ30: le Ultime Otto Settimane</h2>
+        <p>Il portafoglio DJ30 e rimasto stabile per gran parte del periodo, con una rotazione rilevante: MRK e entrata nella selezione e JNJ e uscita verso la watchlist. Da quel momento il modello ha mantenuto CAT, MRK, CSCO, GS e CVX.</p>
+        <div class="table-wrap"><table><thead><tr><th>Settimana</th><th>Portafoglio Selezionato</th><th>Hedge</th><th>Variazione</th></tr></thead><tbody><tr><td>2026-05-01</td><td>CAT, CSCO, CVX, GS, JNJ</td><td>11.83% short DIA</td><td>Nessuna variazione</td></tr><tr><td>2026-05-22</td><td>CAT, CSCO, CVX, GS, MRK</td><td>12.83% short DIA</td><td>MRK entrata; JNJ uscita</td></tr><tr><td>2026-06-19</td><td>CAT, CSCO, CVX, GS, MRK</td><td>12.40% short DIA</td><td>Nessuna variazione</td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Portafoglio DJ30 Corrente</h2>
+        <ul><li><strong>CAT - Caterpillar</strong>, Industrials</li><li><strong>MRK - Merck &amp; Company</strong>, Healthcare</li><li><strong>CSCO - Cisco Systems</strong>, Technology</li><li><strong>GS - Goldman Sachs</strong>, Financial Services</li><li><strong>CVX - Chevron</strong>, Energy</li></ul>
+        <p>La selezione e ampia per un portafoglio a cinque azioni: combina ciclicita industriale, healthcare, tecnologia, finanza ed energia. Il punto chiave e che ogni posizione ha un ruolo diverso nella struttura complessiva.</p>
+      </section>
+      <section>
+        <h2>Grafici nel Contesto</h2>
+        <p>Le dashboard dei singoli titoli aiutano a valutare trend, stabilita e comportamento dei prezzi. Il loro valore principale emerge pero quando vengono lette insieme al riepilogo di portafoglio.</p>
+        <p>Questa e la differenza pratica tra stock picking e costruzione del portafoglio: il primo si ferma al singolo grafico, la seconda verifica se quel grafico sostiene la struttura dell'intera selezione.</p>
+      </section>
+      <section>
+        <h2>Conclusione</h2>
+        <p>Lo stock picking puo generare idee utili. La costruzione del portafoglio trasforma quelle idee in un processo disciplinato.</p>
+        <p>TradingAlgo Mosaic costruisce e monitora portafogli modello in cui ogni posizione ha un ruolo, ogni aggiornamento ha una ragione e il risultato puo essere misurato contro un benchmark.</p>
+        <a class="button" href="reports_html/DJ30/Report_DJ30.html">Apri il report HTML DJ30</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>TradingAlgo - Ricerca sulla Costruzione del Portafoglio</strong></p>
+    <p>Materiale di ricerca. Non costituisce consulenza finanziaria personalizzata.</p>
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
