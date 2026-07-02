@@ -1,5 +1,6 @@
 import argparse
 import builtins
+import csv
 import html
 import json
 import os
@@ -591,6 +592,56 @@ def held_since_by_ticker(status_history, as_of):
     return result
 
 
+def load_market_price_rows(dev_dir, market):
+    path = dev_dir / "market_data" / safe_market_name(market) / "prices_daily.csv"
+    if not path.exists():
+        return []
+    try:
+        with path.open(newline="", encoding="utf-8-sig") as handle:
+            return list(csv.DictReader(handle))
+    except OSError:
+        return []
+
+
+def price_on_or_before(price_rows, ticker, date_text):
+    ticker_text = text(ticker).strip()
+    date_value = useful_value(date_text)
+    if not price_rows or not ticker_text or not date_value:
+        return None
+    first_row = price_rows[0] if price_rows else {}
+    column_map = {text(column).upper(): column for column in first_row}
+    ticker_column = column_map.get(ticker_text.upper())
+    if not ticker_column:
+        return None
+
+    selected_price = None
+    for row in price_rows:
+        row_date = useful_value(row.get("Date"))
+        if not row_date or row_date > date_value:
+            break
+        value = raw_number(row.get(ticker_column))
+        if value is not None:
+            selected_price = value
+    return selected_price
+
+
+def latest_price_from_rows(price_rows, ticker):
+    ticker_text = text(ticker).strip()
+    if not price_rows or not ticker_text:
+        return None
+    first_row = price_rows[0] if price_rows else {}
+    column_map = {text(column).upper(): column for column in first_row}
+    ticker_column = column_map.get(ticker_text.upper())
+    if not ticker_column:
+        return None
+
+    for row in reversed(price_rows):
+        value = raw_number(row.get(ticker_column))
+        if value is not None:
+            return value
+    return None
+
+
 def copy_if_exists(src, dst):
     if src.exists():
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -714,7 +765,7 @@ body {
 }
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1fr;
   gap: 18px;
   margin-top: 22px;
 }
@@ -733,7 +784,7 @@ body {
   font-size: 31px;
 }
 .changes-table th {
-  width: 42%;
+  width: 30%;
 }
 .changes-table .in-label {
   color: #07850d;
@@ -1516,6 +1567,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     market_latest_prices, latest_prices_as_of = latest_price_context(latest_prices, market)
     status_history = row.get("Status_History") if isinstance(row.get("Status_History"), dict) else {}
     held_since_map = held_since_by_ticker(status_history, latest_prices_as_of)
+    market_price_rows = load_market_price_rows(dev_dir, market)
 
     entry_price_keys = [
         "Entry Price",
@@ -1537,8 +1589,12 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         item_data = item if isinstance(item, dict) else {}
         entry_price = first_useful_value(item_data, entry_price_keys)
         held_since = first_useful_value(item_data, held_since_keys) or held_since_map.get(ticker_key, "-")
+        if not entry_price:
+            entry_price = price_on_or_before(market_price_rows, ticker, held_since)
         explicit_open_pnl = first_useful_value(item_data, open_pnl_keys)
         latest_price = latest_price_for(market_latest_prices, ticker)
+        if latest_price is None:
+            latest_price = price_on_or_before(market_price_rows, ticker, latest_prices_as_of) or latest_price_from_rows(market_price_rows, ticker)
 
         open_pnl_value = None
         open_pnl_html = "-"
