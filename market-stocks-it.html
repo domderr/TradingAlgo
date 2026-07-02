@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="alternate" hreflang="en" href="market-stocks.html" />
   <link rel="alternate" hreflang="it" href="market-stocks-it.html" />
-  <title>TradingAlgo Mosaic | Market Stocks</title>
+  <title>TradingAlgo Mosaic | Azioni del Mercato</title>
   <style>
     :root {
       --bg: #071423;
@@ -176,41 +176,41 @@
 </head>
 <body>
   <header class="nav">
-    <a class="brand" href="index-en.html">
+    <a class="brand" href="index.html">
       <span class="logo-grid" aria-hidden="true">
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
       </span>
       TradingAlgo Mosaic
     </a>
     <nav class="nav-links" aria-label="Market navigation">
-      <a href="index-en.html#mission">Mission</a>
-      <a href="faq.html">FAQ</a>
-      <a href="index-en.html#mosaic">Mosaic</a>
-      <a href="index-en.html#consulting">Consulting</a>
-      <a href="publications.html">Publications</a>
-      <a href="index-en.html#about">About</a>
+      <a href="index.html#mission">Missione</a>
+      <a href="faq-it.html">FAQ</a>
+      <a href="index.html#mosaic">Mosaic</a>
+      <a href="index.html#consulting">Consulenza</a>
+      <a href="publications-it.html">Pubblicazioni</a>
+      <a href="index.html#about">Chi Sono</a>
       <a href="https://gandalfproject.com/gandalf-symposium-2026-html/">Gandalf Symposium</a>
-      <a href="framework.html">Framework</a>
-      <a href="reserved-area.html">Reserved Area</a>
-          <a href="market-stocks-it.html">Italiano</a>
+      <a href="framework-it.html">Framework</a>
+      <a href="reserved-area-it.html">Area Riservata</a>
+          <a href="market-stocks.html">English</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <h1 id="page-title">Market Stocks</h1>
-      <p class="meta" id="page-meta">Loading market data...</p>
+      <h1 id="page-title">Azioni del Mercato</h1>
+      <p class="meta" id="page-meta">Caricamento dati del mercato...</p>
     </section>
 
     <section class="table-shell" aria-label="Market stock detail">
-      <div class="loading" id="loading">Loading stocks...</div>
+      <div class="loading" id="loading">Caricamento azioni...</div>
       <table id="stocks-table" hidden>
         <thead>
           <tr>
             <th>Ticker</th>
-            <th>Name</th>
-            <th>Sector</th>
-            <th>Industry</th>
+            <th>Nome</th>
+            <th>Settore</th>
+            <th>Industria</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -252,12 +252,12 @@
       var key = new URLSearchParams(window.location.search).get("market") || "USA100";
       var market = markets[key];
       if (!market) {
-        showError("Market not found.");
+        showError("Mercato non trovato.");
         return;
       }
 
-      document.title = "TradingAlgo Mosaic | " + market.label + " Stocks";
-      document.getElementById("page-title").textContent = market.label + " Stocks";
+      document.title = "TradingAlgo Mosaic | " + market.label + " - Azioni";
+      document.getElementById("page-title").textContent = market.label + " - Azioni";
       document.getElementById("page-meta").textContent = "ETF: " + market.etf;
 
       var embeddedRows = window.MARKET_STOCKS_DATA && window.MARKET_STOCKS_DATA[market.folder];
@@ -280,7 +280,7 @@
           return [text(cells[0]), text(cells[1]), text(cells[2]), text(cells[3])];
         }).filter(Boolean));
       } catch (error) {
-        showError("Unable to load stocks for this market.");
+        showError("Impossibile caricare le azioni per questo mercato.");
       }
     }
 

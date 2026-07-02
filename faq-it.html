@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="faq.html" />
+  <link rel="alternate" hreflang="it" href="faq-it.html" />
+  <title>Domande Frequenti | TradingAlgo Mosaic</title>
+  <meta name="description" content="Domande frequenti su TradingAlgo Mosaic, portafogli modello settimanali, allocazione equal-weight, hedging, ribilanciamento, abbonamenti e prova gratuita." />
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-dark: #050b14;
+      --panel: #0d1f36;
+      --panel-2: #102842;
+      --border: #203854;
+      --text: #ffffff;
+      --muted: #c9d6e8;
+      --muted-2: #aebdd0;
+      --blue: #7dd3fc;
+      --green: #22c55e;
+      --yellow: #f5c542;
+      --shadow: 0 18px 48px rgba(0,0,0,0.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      padding: 26px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      background: var(--bg-dark);
+      border-bottom: 1px solid #1d2b3f;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .logo-grid {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.35);
+    }
+
+    .logo-grid span:nth-child(1),
+    .logo-grid span:nth-child(2) { background: #d94d4d; }
+    .logo-grid span:nth-child(3),
+    .logo-grid span:nth-child(4) { background: #e8a241; }
+    .logo-grid span:nth-child(5),
+    .logo-grid span:nth-child(6) { background: #d8ce45; }
+    .logo-grid span:nth-child(7),
+    .logo-grid span:nth-child(8),
+    .logo-grid span:nth-child(9) { background: var(--green); }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 24px;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--text);
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      padding: 86px 8% 72px;
+      background: linear-gradient(180deg, #07111f 0%, #0b1c33 100%);
+    }
+
+    .hero-inner,
+    .faq-inner {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 840px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.98;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 780px;
+      color: #d8e4f2;
+      font-size: 20px;
+      line-height: 1.62;
+    }
+
+    .faq-section {
+      padding: 72px 8%;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .faq-item {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .faq-item h2 {
+      margin: 0 0 12px;
+      color: #ffffff;
+      font-size: clamp(21px, 2.4vw, 28px);
+      line-height: 1.2;
+    }
+
+    .faq-item p,
+    .faq-item li {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .faq-item p {
+      margin: 0 0 12px;
+    }
+
+    .faq-item p:last-child,
+    .faq-item ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-item ul {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .faq-item li {
+      margin-bottom: 8px;
+    }
+
+    .example {
+      padding: 14px 16px;
+      border-left: 4px solid var(--green);
+      border-radius: 6px;
+      background: rgba(66,211,146,0.1);
+    }
+
+    .cta {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 800;
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #04110a;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--blue);
+      color: #ffffff;
+    }
+
+    footer {
+      padding: 34px 8%;
+      border-top: 1px solid #1d2b3f;
+      color: var(--muted-2);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .hero,
+      .faq-section {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .faq-item {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="index.html#mission">Missione</a>
+      <a href="faq-it.html" aria-current="page">FAQ</a>
+      <a href="index.html#mosaic">Mosaic</a>
+      <a href="index.html#consulting">Consulenza</a>
+      <a href="publications-it.html">Pubblicazioni</a>
+      <a href="index.html#about">Chi Sono</a>
+      <a href="https://gandalfproject.com/gandalf-symposium-2026-html/">Gandalf Symposium</a>
+      <a href="framework-it.html">Framework</a>
+      <a href="reserved-area-it.html">Area Riservata</a>
+          <a href="faq.html">English</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="kicker">TradingAlgo Mosaic</p>
+        <h1>Domande Frequenti</h1>
+        <p class="lead">Risposte alle domande piu comuni su portafogli settimanali, allocazione, hedging, ribilanciamento e accesso a TradingAlgo Mosaic.</p>
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-inner">
+        <div class="faq-list">
+          <article class="faq-item">
+            <h2>Che cos?e TradingAlgo Mosaic?</h2>
+            <p>TradingAlgo Mosaic e un servizio di ricerca settimanale che identifica le cinque azioni incluse in ciascun portafoglio modello per ogni mercato supportato.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Quali azioni sono incluse nel portafoglio modello settimanale?</h2>
+            <p>Ogni settimana Mosaic pubblica un portafoglio modello con le cinque azioni selezionate per ciascun mercato.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Perche solo cinque azioni?</h2>
+            <p>Cinque azioni selezionate con criterio offrono un equilibrio tra concentrazione e diversificazione. L?obiettivo e catturare le caratteristiche del mercato mantenendo il portafoglio semplice da gestire.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Come viene calcolata l?allocazione del modello?</h2>
+            <p>Il portafoglio modello assume un?allocazione equal-weight sulle cinque azioni selezionate. L?investitore resta responsabile di valutare se tale allocazione sia adatta alla propria situazione.</p>
+            <p class="example">Esempio: applicando il portafoglio modello a USD 100.000, l?allocazione equal-weight corrisponde a USD 20.000 per ciascuna delle cinque azioni selezionate.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Come viene rappresentato l?hedging nel modello?</h2>
+            <p>Per ogni portafoglio settimanale, TradingAlgo Mosaic fornisce un?allocazione hedge del modello per illustrare come l?esposizione complessiva al mercato viene rappresentata nel framework di ricerca.</p>
+            <p class="example">Esempio: se il portafoglio modello viene applicato a USD 100.000 di capitale e l?hedge del modello e pari al 10%, il modello allocherebbe USD 90.000 in parti uguali sulle cinque azioni selezionate (USD 18.000 per azione) e USD 10.000 a una copertura tramite ETF QQQ.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Quando si assume l?implementazione dei portafogli modello?</h2>
+            <p>I portafogli modello sono costruiti assumendo l?implementazione all?apertura del primo giorno di mercato successivo alla pubblicazione settimanale del report.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Quanto tempo richiede la revisione settimanale?</h2>
+            <p>Nella maggior parte dei casi, circa un?ora alla settimana e sufficiente per rivedere il nuovo report e comprendere gli aggiornamenti del portafoglio modello.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Come avviene il ribilanciamento del modello?</h2>
+            <p>I portafogli modello TradingAlgo Mosaic usano un ribilanciamento settimanale basato sul valore aggiornato del portafoglio.</p>
+            <p class="example">Esempio: se il portafoglio modello parte da USD 100.000 e dopo una settimana vale USD 102.000, il portafoglio modello successivo assume un ribilanciamento basato sul valore aggiornato di USD 102.000. Viene poi applicata l?allocazione hedge del modello e il capitale restante viene ripartito in parti uguali sulle cinque nuove azioni selezionate.</p>
+            <p>Il team TradingAlgo e disponibile per rispondere a domande sul processo di ribilanciamento settimanale.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Cosa succede se una delle azioni selezionate sale del 5% in una settimana?</h2>
+            <p>Il portafoglio modello pubblicato non prevede aggiustamenti intra-settimanali.</p>
+            <p>Al successivo ribilanciamento settimanale programmato, il portafoglio modello torna all?equal-weight sulle cinque azioni selezionate.</p>
+            <p class="example">Esempio: se una delle azioni selezionate e salita al 23% del portafoglio modello mentre le altre sono sotto il 20%, il successivo ribilanciamento programmato riporterebbe ogni azione selezionata al 20% della componente equity del portafoglio modello prima di applicare l?eventuale hedge del modello.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Perche sono state selezionate queste azioni?</h2>
+            <p>Ogni azione e selezionata tramite un framework quantitativo sistematico basato su Trend, Stabilita e Contributo al Portafoglio.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Cosa cambia da una settimana all?altra?</h2>
+            <p>Ogni report evidenzia le azioni aggiunte, rimosse o confermate, rendendo piu semplice verificare come il portafoglio modello e cambiato rispetto alla pubblicazione precedente.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Cosa succede se questa settimana non ci sono variazioni?</h2>
+            <p>Se il modello non identifica motivi per modificare il portafoglio corrente, il portafoglio modello settimanale resta invariato e continua a includere gli stessi cinque titoli.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Quali mercati sono disponibili?</h2>
+            <p>TradingAlgo Mosaic copre una selezione crescente di mercati internazionali paese e settoriali, tutti analizzati con la stessa metodologia sistematica.</p>
+            <p>Consulta l?elenco completo dei mercati disponibili nella pagina <a href="explore-markets-it.html">Mercati Disponibili</a>.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Posso abbonarmi a piu di un mercato?</h2>
+            <p>Si. Puoi seguire un singolo mercato o costruire un portafoglio diversificato su piu paesi e settori.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Quanto capitale serve?</h2>
+            <p>TradingAlgo Mosaic non impone un importo minimo formale. Gli abbonati restano responsabili di decidere quanto capitale, eventualmente, allocare a ciascun mercato.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Qual e la dimensione minima suggerita del portafoglio?</h2>
+            <p>Per mantenere proporzionati diversificazione, costi di transazione e costo dell?abbonamento, TradingAlgo Mosaic e generalmente piu adatto a investitori che gestiscono portafogli di circa USD/EUR 100.000 o superiori.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Posso usare il mio broker?</h2>
+            <p>Si. TradingAlgo Mosaic e indipendente dal broker. Gli abbonati possono usare il proprio conto preferito quando valutano o applicano i portafogli modello.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Perche abbonarsi a TradingAlgo Mosaic?</h2>
+            <p>Perche e:</p>
+            <ul>
+              <li><strong>Semplice</strong> - Ricevi un portafoglio modello settimanale definito in modo chiaro.</li>
+              <li><strong>Trasparente</strong> - Ogni portafoglio e la sua performance storica sono tracciati in modo completo.</li>
+              <li><strong>Globale</strong> - Analizza piu mercati internazionali con una metodologia coerente.</li>
+            </ul>
+          </article>
+
+          <article class="faq-item">
+            <h2>Come mi abbono?</h2>
+            <p>Clicca su un pulsante Richiedi Accesso nel sito e completa il modulo. Riceverai una prova gratuita di 4 settimane con accesso completo all?Area Riservata.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Cosa succede durante la prova gratuita?</h2>
+            <p>Durante la prova gratuita di 4 settimane puoi esaminare gli ultimi portafogli modello, confrontare i mercati, verificare la validazione storica, studiare le variazioni settimanali e fare domande sul processo di ricerca prima di decidere se il servizio e adatto al tuo workflow di investimento.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Serve una carta di credito per richiedere l?accesso?</h2>
+            <p>No. La prova gratuita non richiede carta di credito ne informazioni di pagamento.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Ricevo assistenza?</h2>
+            <p>Si. Il team TradingAlgo e disponibile durante l?abbonamento per rispondere alle domande e aiutarti a comprendere i portafogli modello settimanali via email o WhatsApp.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>A chi si rivolge il servizio?</h2>
+            <p>TradingAlgo Mosaic e pensato per investitori indipendenti e professionisti finanziari che rivedono attivamente le decisioni di portafoglio e vogliono un framework disciplinato, basato sui dati, per valutare i mercati azionari globali.</p>
+            <p>Non e pensato per investitori che cercano segnali di breve periodo, rendimenti garantiti o raccomandazioni personalizzate di portafoglio.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>Si tratta di consulenza finanziaria?</h2>
+            <p>No. TradingAlgo Mosaic fornisce ricerca sistematica e portafogli modello. Tutte le decisioni di investimento restano sotto la tua responsabilita.</p>
+          </article>
+
+          <article class="faq-item">
+            <h2>I portafogli modello sono adatti a ogni investitore?</h2>
+            <p>No. TradingAlgo Mosaic fornisce ricerca standardizzata e portafogli modello a scopo informativo. Non considera la situazione finanziaria, gli obiettivi di investimento o la tolleranza al rischio del singolo investitore. Ogni investitore deve valutare se la ricerca e adeguata alla propria situazione e, quando opportuno, consultare un professionista qualificato.</p>
+          </article>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="reserved-area-it.html">Richiedi Accesso</a>
+          <a class="btn btn-secondary" href="explore-markets-it.html">Vedi Mercati</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    TradingAlgo Mosaic FAQ. Ricerca sistematica di portafoglio. Portafogli modello settimanali. Validazione trasparente. Nessuna consulenza finanziaria personalizzata.
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>

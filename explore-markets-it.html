@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="explore-markets.html" />
+  <link rel="alternate" hreflang="it" href="explore-markets-it.html" />
+  <title>TradingAlgo Mosaic | Mercati Disponibili</title>
+  <style>
+    :root {
+      --bg: #071423;
+      --panel: rgba(255,255,255,0.075);
+      --text: #f4f7fb;
+      --muted: #aebbd0;
+      --blue: #4aa3ff;
+      --green: #42d392;
+      --border: rgba(255,255,255,0.16);
+      --shadow: 0 24px 70px rgba(0,0,0,0.42);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(74,163,255,0.22), transparent 28%),
+        radial-gradient(circle at 82% 8%, rgba(66,211,146,0.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), #050b14 74%);
+      color: var(--text);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .nav,
+    main {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 21px;
+      font-weight: 850;
+    }
+
+    .logo-grid {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      background: var(--blue);
+    }
+
+    .logo-grid span:nth-child(2),
+    .logo-grid span:nth-child(6),
+    .logo-grid span:nth-child(8) {
+      background: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .nav-links a,
+    .table-link {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      color: #edf5ff;
+      font-weight: 750;
+      font-size: 14px;
+    }
+
+    main { padding: 34px 0 68px; }
+
+    .hero {
+      margin-bottom: 28px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 0.96;
+    }
+
+    .table-shell {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      background: rgba(255,255,255,0.06);
+    }
+
+    tbody tr:hover { background: rgba(255,255,255,0.055); }
+    tbody tr:last-child td { border-bottom: 0; }
+
+    .flag {
+      width: 36px;
+      height: 25px;
+      display: block;
+      object-fit: cover;
+      border-radius: 5px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .market-name {
+      font-weight: 850;
+      color: #ffffff;
+    }
+
+    .market-name .flag {
+      display: inline-block;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+
+    .etf,
+    .count {
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .table-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 104px;
+      background: rgba(66,211,146,0.14);
+      border-color: rgba(66,211,146,0.34);
+      color: #dfffee;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 0;
+      }
+
+      .table-shell { overflow-x: auto; }
+      table { min-width: 1080px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="index.html">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo Mosaic
+    </a>
+    <nav class="nav-links" aria-label="Mercato navigation">
+      <a href="index.html#mission">Missione</a>
+      <a href="faq-it.html">FAQ</a>
+      <a href="index.html#mosaic">Mosaic</a>
+      <a href="index.html#consulting">Consulenza</a>
+      <a href="publications-it.html">Pubblicazioni</a>
+      <a href="index.html#about">Chi Sono</a>
+      <a href="https://gandalfproject.com/gandalf-symposium-2026-html/">Gandalf Symposium</a>
+      <a href="framework-it.html">Framework</a>
+      <a href="reserved-area-it.html">Area Riservata</a>
+          <a href="explore-markets.html">English</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Mercati Disponibili</h1>
+    </section>
+
+    <section class="table-shell" aria-label="Mercato universe table">
+      <table>
+        <thead>
+          <tr>
+            <th>Mercato</th>
+            <th>ETF</th>
+            <th>Numero di Azioni</th>
+            <th>Vedi Azioni</th>
+            <th>Performance Mensile Portafoglio</th>
+            <th>Equity Portafoglio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/au.svg" alt="">Australia50</td><td class="etf">EWA</td><td class="count">50</td><td><a class="table-link" href="market-stocks-it.html?market=Australia50">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Australia50&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Australia50&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/ca.svg" alt="">Canada50</td><td class="etf">EWC</td><td class="count">50</td><td><a class="table-link" href="market-stocks-it.html?market=Canada50">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Canada50&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Canada50&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/us.svg" alt="">DJ30</td><td class="etf">DIA</td><td class="count">30</td><td><a class="table-link" href="market-stocks-it.html?market=DJ30">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=DJ30&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=DJ30&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/eu.svg" alt="">Europe50</td><td class="etf">EZU</td><td class="count">47</td><td><a class="table-link" href="market-stocks-it.html?market=Europe50">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Europe50&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Europe50&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/fr.svg" alt="">France40</td><td class="etf">EWQ</td><td class="count">38</td><td><a class="table-link" href="market-stocks-it.html?market=France40">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=France40&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=France40&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/de.svg" alt="">Germany40</td><td class="etf">EWG</td><td class="count">40</td><td><a class="table-link" href="market-stocks-it.html?market=Germany40">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Germany40&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Germany40&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/it.svg" alt="">Italy40</td><td class="etf">EWI</td><td class="count">40</td><td><a class="table-link" href="market-stocks-it.html?market=Italy40">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Italy40&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Italy40&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/jp.svg" alt="">Japan50</td><td class="etf">EWJ</td><td class="count">49</td><td><a class="table-link" href="market-stocks-it.html?market=Japan50">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Japan50&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Japan50&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/mx.svg" alt="">Mexico30</td><td class="etf">EWW</td><td class="count">34</td><td><a class="table-link" href="market-stocks-it.html?market=Mexico30">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Mexico30&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Mexico30&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/us.svg" alt="">NASDAQ100</td><td class="etf">QQQ</td><td class="count">100</td><td><a class="table-link" href="market-stocks-it.html?market=NASDAQ100">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=NASDAQ100&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=NASDAQ100&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/za.svg" alt="">South Africa30</td><td class="etf">EZA</td><td class="count">22</td><td><a class="table-link" href="market-stocks-it.html?market=South_Africa30">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=South%20Africa30&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=South%20Africa30&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/kr.svg" alt="">South Korea30</td><td class="etf">EWY</td><td class="count">29</td><td><a class="table-link" href="market-stocks-it.html?market=South_Korea30">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=South%20Korea30&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=South%20Korea30&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/es.svg" alt="">Spain40</td><td class="etf">EWP</td><td class="count">37</td><td><a class="table-link" href="market-stocks-it.html?market=Spain40">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=Spain40&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=Spain40&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/gb.svg" alt="">UK30</td><td class="etf">EWU</td><td class="count">30</td><td><a class="table-link" href="market-stocks-it.html?market=UK30">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=UK30&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=UK30&section=equity">Vedi Equity</a></td></tr>
+          <tr><td class="market-name"><img class="flag" src="https://flagcdn.com/us.svg" alt="">USA100</td><td class="etf">SPY</td><td class="count">99</td><td><a class="table-link" href="market-stocks-it.html?market=USA100">Vedi Azioni</a></td><td><a class="table-link" href="reserved-area-it.html?market=USA100&section=monthly">Vedi Tabella</a></td><td><a class="table-link" href="reserved-area-it.html?market=USA100&section=equity">Vedi Equity</a></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>
