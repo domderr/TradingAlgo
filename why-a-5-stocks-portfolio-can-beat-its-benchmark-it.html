@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="why-a-5-stocks-portfolio-can-beat-its-benchmark.html" />
+  <link rel="alternate" hreflang="it" href="why-a-5-stocks-portfolio-can-beat-its-benchmark-it.html" />
+  <title>Perche un Portafoglio di 5 Azioni Puo Battere il Benchmark | TradingAlgo</title>
+  <meta name="description" content="Perche un portafoglio concentrato di cinque azioni puo sovraperformare il benchmark quando selezione, diversificazione, controllo del rischio e costruzione del portafoglio lavorano insieme." />
+  <meta property="og:title" content="Perche un Portafoglio di 5 Azioni Puo Battere il Benchmark" />
+  <meta property="og:description" content="Come concentrazione selettiva, controlli di diversificazione e misurazione relativa al benchmark possono trasformare cinque azioni in un portafoglio disciplinato." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/why-a-5-stocks-portfolio-can-beat-its-benchmark.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/articles/five-stocks-portfolio-benchmark.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Perche un Portafoglio di 5 Azioni Puo Battere il Benchmark" />
+  <meta name="twitter:description" content="Come concentrazione selettiva, controlli di diversificazione e misurazione relativa al benchmark possono trasformare cinque azioni in un portafoglio disciplinato." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/articles/five-stocks-portfolio-benchmark.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.36)),
+        url("assets/articles/five-stocks-portfolio-benchmark.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    h3 {
+      margin: 26px 0 8px;
+      color: #071a33;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 22px;
+      color: #26364a;
+      line-height: 1.7;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .comparison-card,
+    .metric-card {
+      padding: 20px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .comparison-card h3,
+    .metric-card strong {
+      margin-top: 0;
+      color: #071a33;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .metric-card span {
+      display: block;
+      margin-top: 7px;
+      color: #0b5fa5;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #dbe3ef;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: #eef5fd;
+      color: #071a33;
+      font-weight: 900;
+    }
+
+    .data-table tr:last-child td { border-bottom: 0; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .cta {
+      padding: 34px;
+      margin: 8px 0 48px;
+      background: #071a33;
+      border: 1px solid #102a49;
+      border-radius: 8px;
+      color: white;
+    }
+
+    .cta h2,
+    .cta p {
+      color: white;
+    }
+
+    .cta p {
+      max-width: 780px;
+      color: #d8e4f2;
+    }
+
+    .cta .button {
+      background: #22c55e;
+      color: #04110a;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    footer p {
+      margin: 0 0 8px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 900px) {
+      nav { display: block; }
+      nav a {
+        display: inline-block;
+        margin: 10px 12px 0 0;
+      }
+
+      header {
+        padding: 74px 8% 58px;
+        background-position: center right;
+      }
+
+      main { padding: 44px 7% 56px; }
+
+      section {
+        padding-bottom: 34px;
+        margin-bottom: 34px;
+      }
+
+      .cta { padding: 26px; }
+
+      .comparison,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic-it.html">Mosaic</a>
+      <a href="publications-it.html">Pubblicazioni</a>
+      <a href="validation-it.html">Validazione</a>
+      <a href="faq-it.html">FAQ</a>
+    </div>
+        <a href="why-a-5-stocks-portfolio-can-beat-its-benchmark.html">English</a>
+  </nav>
+
+  <header>
+    <p class="kicker">Nota di Ricerca TradingAlgo Mosaic</p>
+    <h1>Perche un Portafoglio di 5 Azioni Puo Battere il Benchmark</h1>
+    <p>Un portafoglio di cinque azioni non e automaticamente migliore di un benchmark. Ma quando la concentrazione e disciplinata, diversificata e basata su regole, puo creare un profilo di rendimento che un indice ampio difficilmente replica.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>Il Benchmark Non e Progettato per Vincere Ogni Gara</h2>
+        <p>Un benchmark rappresenta un mercato. Non seleziona solo i titoli piu forti in ogni momento. Include leader, titoli medi e componenti deboli; questa ampiezza riduce la dipendenza dal singolo titolo, ma porta anche il peso delle parti meno efficienti dell'indice.</p>
+        <p>Un portafoglio concentrato ha un obiettivo diverso: non possedere tutto il mercato, ma selezionare un numero piu piccolo di strumenti con una migliore combinazione di trend, stabilita, diversificazione e contributo al portafoglio.</p>
+        <p class="note">L'opportunita non e la concentrazione in se. E la concentrazione selettiva: possedere meno titoli solo quando ogni posizione ha un ruolo chiaro.</p>
+      </section>
+      <section>
+        <h2>Perche Cinque Azioni Possono Bastare</h2>
+        <p>Cinque azioni sono poche se scelte in modo casuale. Possono essere sufficienti quando il processo controlla tre domande:</p>
+        <ul><li><strong>Sono piu forti del componente medio del benchmark?</strong></li><li><strong>Rappresentano fonti diverse di esposizione?</strong></li><li><strong>Migliorano il portafoglio invece di sembrare valide solo da sole?</strong></li></ul>
+        <div class="grid"><div><h3>Selezione</h3><p>Il capitale si concentra sui titoli con comportamento tecnico piu forte.</p></div><div><h3>Diversificazione</h3><p>Le cinque posizioni non devono essere ridondanti. Correlazione e settori contano quanto il ranking.</p></div><div><h3>Disciplina</h3><p>Il portafoglio deve essere rivisto con un processo ripetibile, non con opinioni mutevoli.</p></div></div>
+      </section>
+      <section>
+        <h2>La Matematica della Concentrazione</h2>
+        <p>In un benchmark ampio, l'impatto di un titolo vincente e diluito. In un portafoglio a cinque azioni, ogni posizione pesa circa il 20% e quindi un trend forte ha un effetto visibile.</p>
+        <p>La stessa logica vale al contrario: una scelta sbagliata pesa di piu. Per questo la concentrazione richiede controllo del rischio, regole di sostituzione e confronto costante con il benchmark.</p>
+        <div class="table-wrap"><table><thead><tr><th>Tipo di Portafoglio</th><th>Vantaggio Principale</th><th>Rischio Principale</th><th>Cosa Va Controllato</th></tr></thead><tbody><tr><td>Benchmark ampio</td><td>Ampia rappresentazione del mercato</td><td>Include componenti deboli o medi</td><td>Beta di mercato e drawdown</td></tr><tr><td>Portafoglio a cinque azioni</td><td>Capitale focalizzato sulla leadership selezionata</td><td>Maggiore rischio su singolo titolo e selezione modello</td><td>Correlazione, rotazione, position sizing e confronto con benchmark</td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Come Puo Battere il Benchmark</h2>
+        <h3>1. Evita il peso dei componenti deboli</h3><p>Un portafoglio selettivo puo escludere molti titoli che in quel momento non contribuiscono alla performance.</p>
+        <h3>2. Aumenta il peso della leadership</h3><p>Quando la leadership e chiara, il portafoglio puo allocare capitale significativo sui titoli piu forti.</p>
+        <h3>3. Ruota quando cambia la leadership</h3><p>Un portafoglio sistematico puo cambiare composizione quando trend, stabilita o ranking relativo peggiorano.</p>
+        <h3>4. Riduce esposizioni ridondanti</h3><p>Il processo puo scartare un candidato se aggiunge troppo dello stesso rischio gia presente.</p>
+        <h3>5. Misura il risultato</h3><p>La sovraperformance non e una storia: va misurata con CAGR, drawdown, Sharpe Ratio, Information Ratio e comportamento relativo al benchmark.</p>
+      </section>
+      <section>
+        <h2>Il Rischio</h2>
+        <p>Un portafoglio a cinque azioni puo battere il benchmark e avere comunque drawdown piu profondi o periodi di sottoperformance. L'obiettivo non e massimizzare l'aggressivita, ma giustificare la concentrazione con evidenza e controllo.</p>
+      </section>
+      <section>
+        <h2>La Visione TradingAlgo Mosaic</h2>
+        <p>TradingAlgo Mosaic parte da un universo di mercato, classifica i candidati, applica filtri e costruisce un portafoglio modello a cinque azioni confrontabile con il benchmark rilevante.</p>
+        <p>La domanda non e solo quali titoli sembrano forti, ma quale combinazione crea la migliore struttura di portafoglio sotto le regole del modello.</p>
+        <a class="button" href="tradingalgo-mosaic-it.html">Esplora TradingAlgo Mosaic</a>
+      </section>
+      <section>
+        <h2>Vedi i Portafogli Correnti</h2>
+        <p>L'area riservata include gli ultimi report Mosaic, le selezioni correnti a cinque azioni, il confronto con benchmark, le variazioni settimanali e le dashboard azionarie.</p>
+        <a class="button" href="reserved-area-it.html?next=mosaic-weekly-update-it.html">Apri Area Riservata</a>
+      </section>
+      <section>
+        <h2>Conclusione</h2>
+        <p>Un portafoglio a cinque azioni puo battere il benchmark perche non e costretto a possedere tutto il mercato. Puo concentrarsi sulla leadership, evitare componenti deboli, ridurre esposizioni ridondanti e ruotare quando le condizioni cambiano.</p>
+        <p>La concentrazione aiuta solo quando e disciplinata. Senza regole di selezione, controlli di diversificazione e misurazione del rischio, cinque azioni sono soltanto una scommessa concentrata.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>TradingAlgo - Ricerca sulla Costruzione del Portafoglio</strong></p>
+    <p>Materiale di ricerca. Non costituisce consulenza finanziaria personalizzata.</p>
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
