@@ -1,15 +1,29 @@
-mosaic_dev/
-site/
+# Generated/local runtime artifacts.
+__pycache__/
+*.pyc
+*.log
+*.pdf
+*.gsheet
+~$*
+
+# Mosaic generated data and run archives.
+mosaic_dev/output/
+mosaic_dev/market_data/
+mosaic_dev/runs/
+mosaic_dev/TestStorico/
+mosaic_dev/To do list.backup*.xlsx
+mosaic_dev/*.out.log
+mosaic_dev/*.full.out.log
+
+# Old visual mockups kept out of the active pipeline.
 mockup-2026-06-19/
 mockup-2026-06-19-*.html
+
+# Legacy report PDFs are generated externally when needed.
 reports/Report_USA.pdf
 reports/Report_Europe.pdf
 reports/Report_Italy.pdf
-*.pdf
-*.gsheet
-*.log
-__pycache__/
-*.pyc
+
 reports_html/**/assets/_annotation_backup/
 Welcome letter.txt
 medium-*
