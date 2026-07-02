@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why a 5 Stocks Portfolio Can Beat Its Benchmark | TradingAlgo</title>
+  <meta name="description" content="Why a concentrated five-stock portfolio can outperform its benchmark when selection, diversification, risk control and portfolio construction work together." />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 92px 8% 74px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.70)),
+        url("assets/articles/five-stocks-portfolio-benchmark.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main { padding: 64px 8%; }
+
+    .content {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+    }
+
+      section {
+        padding: 34px;
+        background: white;
+        border: 1px solid #dbe3ef;
+        border-radius: 8px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: 30px;
+    }
+
+    h3 {
+      margin: 22px 0 8px;
+      color: #071a33;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.7;
+      color: #26364a;
+    }
+
+    ul {
+      margin: 0 0 16px;
+      padding-left: 22px;
+      color: #26364a;
+      line-height: 1.7;
+    }
+
+    li { margin-bottom: 8px; }
+
+    .note {
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .comparison-card,
+    .metric-card {
+      padding: 20px;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .comparison-card h3,
+    .metric-card strong {
+      margin-top: 0;
+      color: #071a33;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .metric-card span {
+      display: block;
+      margin-top: 7px;
+      color: #0b5fa5;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 14px;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #dbe3ef;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .data-table th {
+      background: #eef5fd;
+      color: #071a33;
+      font-weight: 900;
+    }
+
+    .data-table tr:last-child td { border-bottom: 0; }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: white;
+        text-decoration: none;
+        font-weight: 800;
+      }
+
+      .cta {
+        background: #071a33;
+        border-color: #071a33;
+        color: white;
+      }
+
+      .cta h2,
+      .cta p {
+        color: white;
+      }
+
+      .cta p {
+        max-width: 780px;
+        color: #d8e4f2;
+      }
+
+      .cta .button {
+        background: #22c55e;
+        color: #04110a;
+      }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    footer p {
+      margin: 0 0 8px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 900px) {
+      nav { display: block; }
+      nav a {
+        display: inline-block;
+        margin: 10px 12px 0 0;
+      }
+
+      section { padding: 26px; }
+
+      .comparison,
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="publications.html">Publications</a>
+      <a href="validation.html">Validation</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">TradingAlgo Mosaic Research Note</p>
+    <h1>Why a 5 Stocks Portfolio Can Beat Its Benchmark</h1>
+    <p>A five-stock portfolio is not automatically better than a benchmark. But when concentration is disciplined, diversified and rules-based, it can create a return profile that a broad index cannot easily replicate.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>The Benchmark Is Not Designed to Win Every Race</h2>
+        <p>A benchmark is built to represent a market. It is not built to select only the strongest stocks in that market at every point in time. This distinction matters.</p>
+        <p>An equity index normally holds many securities, including market leaders, average performers and laggards. That broad exposure is useful because it gives investors a reference point and reduces single-stock dependence. But it also means the benchmark carries the weight of weaker components.</p>
+        <p>A concentrated portfolio has a different objective. It does not try to own the whole market. It tries to own a smaller number of securities that currently offer a better combination of trend, stability, diversification and portfolio contribution.</p>
+        <p class="note">The opportunity is not concentration by itself. The opportunity is selective concentration: owning fewer stocks only when each position has a clear role inside the portfolio.</p>
+      </section>
+
+      <section>
+        <h2>Why Five Stocks Can Be Enough</h2>
+        <p>Five stocks can look too few if the portfolio is built casually. If all five names belong to the same sector, depend on the same macro factor or move almost identically, the result is not a portfolio. It is one large concentrated bet divided into five tickers.</p>
+        <p>Five stocks can be enough when the selection process controls three questions:</p>
+        <ul>
+          <li><strong>Are these stocks stronger than the average component of the benchmark?</strong></li>
+          <li><strong>Do they represent different sources of market exposure?</strong></li>
+          <li><strong>Does each stock improve the portfolio rather than simply looking good alone?</strong></li>
+        </ul>
+
+        <div class="comparison">
+          <div class="comparison-card">
+            <h3>Selection</h3>
+            <p>The portfolio can focus capital on securities showing stronger technical behavior than the broader universe.</p>
+          </div>
+          <div class="comparison-card">
+            <h3>Diversification</h3>
+            <p>The five positions should not be redundant. Correlation and sector exposure matter as much as individual ranking.</p>
+          </div>
+          <div class="comparison-card">
+            <h3>Discipline</h3>
+            <p>The portfolio must be reviewed with a repeatable process, not with changing opinions after every market move.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>The Mathematics of Concentration</h2>
+        <p>In a broad benchmark, the impact of a winning stock is diluted. A strong component may represent only a small percentage of the index, so even a very good move can have limited influence on total benchmark performance.</p>
+        <p>In a five-stock portfolio, each position matters. A 20% allocation to a strong trend has a visible effect on the portfolio. This is why concentration can improve performance when the selection process is effective.</p>
+        <p>The same logic also works in reverse. A poor selection can hurt more because there are fewer positions to absorb the mistake. That is why concentration requires stricter risk control, clearer replacement rules and constant comparison with the benchmark.</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Portfolio Type</th>
+              <th>Main Advantage</th>
+              <th>Main Risk</th>
+              <th>What Must Be Controlled</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Broad benchmark</td>
+              <td>Wide market representation</td>
+              <td>Includes many weak or average components</td>
+              <td>Market beta and drawdown</td>
+            </tr>
+            <tr>
+              <td>Five-stock portfolio</td>
+              <td>Capital focused on selected leadership</td>
+              <td>Higher single-stock and model-selection risk</td>
+              <td>Correlation, rotation, position sizing and benchmark tracking</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>How a Five-Stock Portfolio Can Beat the Benchmark</h2>
+        <p>A concentrated portfolio can outperform when several conditions work together.</p>
+
+        <h3>1. It avoids benchmark drag</h3>
+        <p>The benchmark owns the full mix of winners and laggards. A selective portfolio can avoid many names that do not currently contribute to performance.</p>
+
+        <h3>2. It gives more weight to leadership</h3>
+        <p>When market leadership is clear, a concentrated portfolio can allocate meaningful capital to the strongest names instead of giving them only benchmark-sized weights.</p>
+
+        <h3>3. It can rotate when leadership changes</h3>
+        <p>A benchmark changes slowly. A systematic portfolio can change its composition when trend, stability or relative ranking deteriorates.</p>
+
+        <h3>4. It can remove redundant exposure</h3>
+        <p>Owning five strong stocks from the same theme may feel attractive, but it often creates hidden concentration. A portfolio-construction process can reject a candidate if it adds too much of the same risk.</p>
+
+        <h3>5. It measures success against a clear reference</h3>
+        <p>Outperformance is not a story. It has to be measured. CAGR, drawdown, Sharpe ratio, Information Ratio and benchmark-relative behavior are necessary to understand whether the five-stock selection is actually adding value.</p>
+      </section>
+
+      <section>
+        <h2>The Risk: Beating the Benchmark Is Not the Same as Being Safer</h2>
+        <p>A five-stock portfolio may beat its benchmark over a period and still experience deeper drawdowns, sharper volatility or longer periods of underperformance. Concentration increases the importance of every decision.</p>
+        <p>That is why the goal should not be to create the most aggressive portfolio possible. The goal should be to create a portfolio where concentration is justified by evidence and where each position contributes something useful.</p>
+
+        <div class="metric-grid">
+          <div class="metric-card">
+            <strong>Return</strong>
+            <span>CAGR</span>
+            <p>Does the portfolio produce more growth than the benchmark?</p>
+          </div>
+          <div class="metric-card">
+            <strong>Risk</strong>
+            <span>MaxDD</span>
+            <p>How deep were the historical declines?</p>
+          </div>
+          <div class="metric-card">
+            <strong>Efficiency</strong>
+            <span>Sharpe</span>
+            <p>Was the return achieved with acceptable volatility?</p>
+          </div>
+          <div class="metric-card">
+            <strong>Benchmark Edge</strong>
+            <span>IR</span>
+            <p>Was excess return consistent relative to the benchmark?</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>The TradingAlgo Mosaic View</h2>
+        <p>TradingAlgo Mosaic is built around this principle: the portfolio matters more than the individual stock idea. The process starts from a market universe, ranks candidates, applies filters and builds a five-stock model portfolio that can be compared with the relevant benchmark.</p>
+        <p>The model does not simply ask, "Which stocks look strong?" It asks, "Which five-stock combination creates the best current portfolio structure under the rules?"</p>
+        <p>This is where a five-stock portfolio can become powerful. It is concentrated enough for good selections to matter, but structured enough to avoid becoming a random collection of high-conviction names.</p>
+        <a class="button" href="tradingalgo-mosaic.html">Explore TradingAlgo Mosaic</a>
+      </section>
+
+      <section class="cta">
+        <h2>See the Current Five-Stock Portfolios</h2>
+        <p>The reserved area includes the latest TradingAlgo Mosaic market reports, current five-stock selections, benchmark comparisons, weekly changes and stock dashboards.</p>
+        <p>Use the public article as the framework. Use the reserved area to review the actual portfolios and the data behind each selection.</p>
+        <a class="button" href="reserved-area.html?next=mosaic-weekly-update.html">Open the Reserved Area</a>
+      </section>
+
+      <section>
+        <h2>Conclusion</h2>
+        <p>A five-stock portfolio can beat its benchmark because it is not forced to own the whole market. It can focus on leadership, avoid weaker components, reduce redundant exposure and rotate when conditions change.</p>
+        <p>But concentration only helps when it is disciplined. Without selection rules, diversification checks and risk measurement, five stocks are simply a concentrated bet.</p>
+        <p>The real question is therefore not whether five stocks are too few. The real question is whether those five stocks form a measurable, diversified and repeatable portfolio.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>TradingAlgo - Portfolio Construction Research</strong></p>
+    <p>Research material only. Not personalized financial advice.</p>
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
