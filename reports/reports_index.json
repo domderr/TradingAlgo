@@ -52,19 +52,6 @@
     "Benchmark_Hedge_Ticker": "EZU"
   },
   {
-    "Market": "Italy30",
-    "Benchmark": "EWI",
-    "Status": "OK",
-    "Report_File": "Report_Italy30.html",
-    "Report_Path": "reports_html/Italy30/Report_Italy30.html",
-    "Report_URL": "reports_html/Italy30/Report_Italy30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1181125465597332,
-    "Last_Hedge_Score": 88.18874534402667,
-    "Benchmark_Hedge_Short": 0.1181125465597332,
-    "Benchmark_Hedge_Ticker": "EWI"
-  },
-  {
     "Market": "UK30",
     "Benchmark": "EWU",
     "Status": "OK",
@@ -102,19 +89,6 @@
     "Last_Hedge_Score": 93.05127723504022,
     "Benchmark_Hedge_Short": 0.0694872276495978,
     "Benchmark_Hedge_Ticker": "EWP"
-  },
-  {
-    "Market": "Germany30",
-    "Benchmark": "EWG",
-    "Status": "OK",
-    "Report_File": "Report_Germany30.html",
-    "Report_Path": "reports_html/Germany30/Report_Germany30.html",
-    "Report_URL": "reports_html/Germany30/Report_Germany30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1242206621395348,
-    "Last_Hedge_Score": 87.57793378604651,
-    "Benchmark_Hedge_Short": 0.1242206621395348,
-    "Benchmark_Hedge_Ticker": "EWG"
   },
   {
     "Market": "Australia50",
@@ -193,5 +167,31 @@
     "Last_Hedge_Score": 81.9523487805844,
     "Benchmark_Hedge_Short": 0.1443812097553247,
     "Benchmark_Hedge_Ticker": "EZA"
+  },
+  {
+    "Market": "Italy40",
+    "Benchmark": "EWI",
+    "Status": "OK",
+    "Report_File": "Report_Italy40.html",
+    "Report_Path": "reports_html/Italy40/Report_Italy40.html",
+    "Report_URL": "reports_html/Italy40/Report_Italy40.html",
+    "Updated_At": null,
+    "Last_Hedge_Short": 0.11917058348186926,
+    "Last_Hedge_Score": 88.08294165181307,
+    "Benchmark_Hedge_Short": 0.11917058348186926,
+    "Benchmark_Hedge_Ticker": "EWI"
+  },
+  {
+    "Market": "Germany40",
+    "Benchmark": "EWG",
+    "Status": "OK",
+    "Report_File": "Report_Germany40.html",
+    "Report_Path": "reports_html/Germany40/Report_Germany40.html",
+    "Report_URL": "reports_html/Germany40/Report_Germany40.html",
+    "Updated_At": null,
+    "Last_Hedge_Short": 0.12422066213953487,
+    "Last_Hedge_Score": 87.57793378604651,
+    "Benchmark_Hedge_Short": 0.12422066213953487,
+    "Benchmark_Hedge_Ticker": "EWG"
   }
 ]

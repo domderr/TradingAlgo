@@ -15,7 +15,7 @@ MARKETS = [
     ("UK30", "UK30"),
     ("France40", "France40"),
     ("Spain40", "Spain40"),
-    ("Germany30", "Germany30"),
+    ("Germany40", "Germany40"),
     ("Japan50", "Japan50"),
     ("South Korea30", "S.Korea30"),
     ("Australia50", "Australia50"),

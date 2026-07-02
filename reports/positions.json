@@ -408,84 +408,6 @@
       "out": []
     }
   },
-  "Germany30": {
-    "week": "26 Jun 2026",
-    "positions": [
-      {
-        "ticker": "ENR.DE",
-        "name": "Siemens Energy AG             N",
-        "sector": "Industrials",
-        "industry": "Specialty Industrial Machinery"
-      },
-      {
-        "ticker": "RWE.DE",
-        "name": "RWE AG                        I",
-        "sector": "Utilities",
-        "industry": "Utilities - Diversified"
-      },
-      {
-        "ticker": "IFX.DE",
-        "name": "INFINEON TECHNOLOGIES AG      N",
-        "sector": "Technology",
-        "industry": "Semiconductors"
-      },
-      {
-        "ticker": "BAYN.DE",
-        "name": "Bayer AG                      N",
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
-      },
-      {
-        "ticker": "DHL.DE",
-        "name": "DEUTSCHE POST AG              N",
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
-      }
-    ],
-    "changes": {
-      "in": [],
-      "out": []
-    }
-  },
-  "Italy30": {
-    "week": "26 Jun 2026",
-    "positions": [
-      {
-        "ticker": "PRY.MI",
-        "name": "PRYSMIAN",
-        "sector": "Industrials",
-        "industry": "Electrical Equipment & Parts"
-      },
-      {
-        "ticker": "TEN.MI",
-        "name": "TENARIS",
-        "sector": "Energy",
-        "industry": "Oil & Gas Equipment & Services"
-      },
-      {
-        "ticker": "TIT.MI",
-        "name": "TELECOM ITALIA",
-        "sector": "Communication Services",
-        "industry": "Telecom Services"
-      },
-      {
-        "ticker": "STMMI.MI",
-        "name": "STMICROELECTRONICS",
-        "sector": "Technology",
-        "industry": "Semiconductors"
-      },
-      {
-        "ticker": "SRG.MI",
-        "name": "SNAM",
-        "sector": "Utilities",
-        "industry": "Utilities - Regulated Gas"
-      }
-    ],
-    "changes": {
-      "in": [],
-      "out": []
-    }
-  },
   "Japan50": {
     "week": "26 Jun 2026",
     "positions": [
@@ -654,6 +576,94 @@
           "name": "AngloGold Ashanti plc"
         }
       ]
+    }
+  },
+  "Italy40": {
+    "week": "26 Jun 2026",
+    "positions": [
+      {
+        "ticker": "PRY.MI",
+        "name": "PRYSMIAN",
+        "sector": "Industrials",
+        "industry": "Electrical Equipment & Parts"
+      },
+      {
+        "ticker": "SPM.MI",
+        "name": "SAIPEM",
+        "sector": "Energy",
+        "industry": "Oil & Gas Equipment & Services"
+      },
+      {
+        "ticker": "TIT.MI",
+        "name": "TELECOM ITALIA",
+        "sector": "Communication Services",
+        "industry": "Telecom Services"
+      },
+      {
+        "ticker": "STMMI.MI",
+        "name": "STMICROELECTRONICS",
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      },
+      {
+        "ticker": "SRG.MI",
+        "name": "SNAM",
+        "sector": "Utilities",
+        "industry": "Utilities - Regulated Gas"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "SRG.MI",
+          "name": "SNAM"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "BPE.MI",
+          "name": "BPER BANCA"
+        }
+      ]
+    }
+  },
+  "Germany40": {
+    "week": "26 Jun 2026",
+    "positions": [
+      {
+        "ticker": "ENR.DE",
+        "name": "Siemens Energy AG             N",
+        "sector": "Industrials",
+        "industry": "Specialty Industrial Machinery"
+      },
+      {
+        "ticker": "RWE.DE",
+        "name": "RWE AG                        I",
+        "sector": "Utilities",
+        "industry": "Utilities - Diversified"
+      },
+      {
+        "ticker": "IFX.DE",
+        "name": "INFINEON TECHNOLOGIES AG      N",
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      },
+      {
+        "ticker": "BAYN.DE",
+        "name": "Bayer AG                      N",
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      },
+      {
+        "ticker": "DHL.DE",
+        "name": "DEUTSCHE POST AG              N",
+        "sector": "Industrials",
+        "industry": "Integrated Freight & Logistics"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
     }
   }
 }

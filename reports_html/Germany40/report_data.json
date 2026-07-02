@@ -1,0 +1,1197 @@
+[
+  {
+    "Market": "Germany40",
+    "Benchmark": "EWG",
+    "Number of Tickers": 40,
+    "Strategy CAGR": 0.25728994892961166,
+    "Hedged CAGR": 0.24418446077558098,
+    "Strategy MaxDD": -0.12653999108376834,
+    "Hedged MaxDD": -0.12054399144854966,
+    "Strategy Sharpe Ratio": 1.253421665709022,
+    "Hedged Sharpe Ratio": 1.2606207913839855,
+    "Bench Cagr": 0.17402861206779674,
+    "Bench_MaxDD": -0.14118171855188477,
+    "Bench Sharpe": 0.9771128406082343,
+    "Information Ratio": 0.45960816729586934,
+    "Hedged Information Ratio": 0.36241409936727,
+    "PDF_Output": "",
+    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Germany40\\summary_Germany40.png",
+    "Capital Invested": 1.0,
+    "Benchmark Hedge Short": 0.12422066213953487,
+    "Benchmark Hedge Ticker": "EWG",
+    "Hedge Portfolio Score": 87.57793378604651,
+    "Last Weekly Selection": [
+      {
+        "Ticker": "ENR.DE",
+        "Name": "Siemens Energy AG             N",
+        "Sector": "Industrials",
+        "Industry": "Specialty Industrial Machinery"
+      },
+      {
+        "Ticker": "RWE.DE",
+        "Name": "RWE AG                        I",
+        "Sector": "Utilities",
+        "Industry": "Utilities - Diversified"
+      },
+      {
+        "Ticker": "IFX.DE",
+        "Name": "INFINEON TECHNOLOGIES AG      N",
+        "Sector": "Technology",
+        "Industry": "Semiconductors"
+      },
+      {
+        "Ticker": "BAYN.DE",
+        "Name": "Bayer AG                      N",
+        "Sector": "Healthcare",
+        "Industry": "Drug Manufacturers - General"
+      },
+      {
+        "Ticker": "DHL.DE",
+        "Name": "DEUTSCHE POST AG              N",
+        "Sector": "Industrials",
+        "Industry": "Integrated Freight & Logistics"
+      }
+    ],
+    "Added Tickers": "-",
+    "Removed Tickers": "-",
+    "Selection Drivers": "ENR.DE: trend slope 0.01, stability R2 0.89, score 0.01 and passed correlation filter<br/>RWE.DE: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>IFX.DE: trend slope 0.02, stability R2 0.66, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.65, score 0.01 and passed correlation filter<br/>DHL.DE: trend slope 0.01, stability R2 0.81, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "ENR.DE",
+        "Contribution": 0.7133746928206379
+      },
+      {
+        "Ticker": "RHM.DE",
+        "Contribution": 0.378475165619363
+      },
+      {
+        "Ticker": "HEI.DE",
+        "Contribution": 0.13394293301223106
+      },
+      {
+        "Ticker": "RWE.DE",
+        "Contribution": 0.11985916831956432
+      },
+      {
+        "Ticker": "BAYN.DE",
+        "Contribution": 0.11681652263489817
+      },
+      {
+        "Ticker": "DHL.DE",
+        "Contribution": 0.11172190993987874
+      },
+      {
+        "Ticker": "MUV2.DE",
+        "Contribution": 0.09715880986323819
+      },
+      {
+        "Ticker": "SAP.DE",
+        "Contribution": 0.07682376915825201
+      },
+      {
+        "Ticker": "CBK.DE",
+        "Contribution": 0.05233401352820689
+      },
+      {
+        "Ticker": "ZAL.DE",
+        "Contribution": 0.025659836401478238
+      },
+      {
+        "Ticker": "BAS.DE",
+        "Contribution": 0.02485198015142892
+      },
+      {
+        "Ticker": "DBK.DE",
+        "Contribution": 0.016148347201827784
+      },
+      {
+        "Ticker": "VNA.DE",
+        "Contribution": 0.01465161635589051
+      },
+      {
+        "Ticker": "EOAN.DE",
+        "Contribution": 0.003885625435077503
+      },
+      {
+        "Ticker": "SIE.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BMW.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DTG.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BEI.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ALV.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "FME.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "PAH3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MRK.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HEN3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "VOW3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "P911.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "HNR1.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SHL.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SRT3.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "MBG.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "QIA.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "SY1.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "BNR.DE",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DTE.DE",
+        "Contribution": -0.002114033253516362
+      },
+      {
+        "Ticker": "DB1.DE",
+        "Contribution": -0.004823210474951597
+      },
+      {
+        "Ticker": "FRE.DE",
+        "Contribution": -0.007021901439440689
+      },
+      {
+        "Ticker": "IFX.DE",
+        "Contribution": -0.01681220848080605
+      },
+      {
+        "Ticker": "ADS.DE",
+        "Contribution": -0.018475674622766516
+      },
+      {
+        "Ticker": "MTX.DE",
+        "Contribution": -0.026796121458024506
+      },
+      {
+        "Ticker": "AIR.DE",
+        "Contribution": -0.07201461058811362
+      },
+      {
+        "Ticker": "CON.DE",
+        "Contribution": -0.07675463357721768
+      }
+    ],
+    "Strategy_Returns": {
+      "2024-01-12": 0.021382329039747995,
+      "2024-01-19": -0.010691773500221102,
+      "2024-01-26": 0.030546946038012026,
+      "2024-02-02": 0.005538133220100683,
+      "2024-02-09": -0.011279031209256662,
+      "2024-02-16": 0.030851765722864678,
+      "2024-02-23": 0.016785268013217624,
+      "2024-03-01": 0.014903679052489594,
+      "2024-03-08": 0.013166167445166188,
+      "2024-03-15": -0.005287642204068077,
+      "2024-03-22": 0.044207172697560006,
+      "2024-03-29": 0.021291903278121718,
+      "2024-04-05": -0.022938454556349797,
+      "2024-04-12": -0.008579708852781365,
+      "2024-04-19": -0.019022764754208166,
+      "2024-04-26": 0.04087222699589415,
+      "2024-05-03": -0.002407168287214545,
+      "2024-05-10": 0.034499576901641404,
+      "2024-05-17": 0.012719666215978087,
+      "2024-05-24": 0.0009083274630752314,
+      "2024-05-31": -0.018121645902176242,
+      "2024-06-07": 0.002576769563601289,
+      "2024-06-14": -0.033257385903769365,
+      "2024-06-21": 0.011059570326024294,
+      "2024-06-28": 0.012792550034479967,
+      "2024-07-05": 0.007746046340866286,
+      "2024-07-12": 0.017159460172377017,
+      "2024-07-19": -0.04414895176563294,
+      "2024-07-26": 0.009646107753719768,
+      "2024-08-02": -0.0487964615531995,
+      "2024-08-09": 0.023610142063973785,
+      "2024-08-16": 0.03810646630769785,
+      "2024-08-23": 0.007373520894938857,
+      "2024-08-30": 0.010573349990652759,
+      "2024-09-06": -0.04963450430415861,
+      "2024-09-13": 0.048395331342767814,
+      "2024-09-20": 0.015163164978312871,
+      "2024-09-27": 0.022740074106449983,
+      "2024-10-04": 0.021417830795352977,
+      "2024-10-11": -0.005048161974443022,
+      "2024-10-18": 0.006558351174165544,
+      "2024-10-25": -0.009137004542648874,
+      "2024-11-01": -0.008463144568202075,
+      "2024-11-08": 0.0349108103990714,
+      "2024-11-15": 0.04157309617484657,
+      "2024-11-22": 0.021710260662111482,
+      "2024-11-29": 0.013361703998592135,
+      "2024-12-06": 0.02327945423719289,
+      "2024-12-13": -0.021025775810084024,
+      "2024-12-20": -0.007110431931191097,
+      "2024-12-27": 0.0020077118458823764,
+      "2025-01-03": -0.00030342402684324643,
+      "2025-01-10": -0.006126317388304381,
+      "2025-01-17": 0.04829971744643977,
+      "2025-01-24": 0.03574752962483903,
+      "2025-01-31": 0.011464409264161547,
+      "2025-02-07": 0.0012827691200083535,
+      "2025-02-14": 0.02322542789690232,
+      "2025-02-21": -0.029898955363954927,
+      "2025-02-28": 0.011439782921672937,
+      "2025-03-07": -0.003337057812849653,
+      "2025-03-14": 4.2909571931737395e-05,
+      "2025-03-21": 0.019861866537203635,
+      "2025-03-28": -0.04583338672071702,
+      "2025-04-04": -0.08110148881122203,
+      "2025-04-11": 0.01787252977452276,
+      "2025-04-18": 0.055969582961215285,
+      "2025-04-25": 0.023054346348249946,
+      "2025-05-02": 0.04482024441936208,
+      "2025-05-09": 0.02253335831035095,
+      "2025-05-16": 0.016926223962761357,
+      "2025-05-23": 0.01222611803003968,
+      "2025-05-30": 0.011937224779304145,
+      "2025-06-06": 0.011201413041498754,
+      "2025-06-13": -0.043908139277749836,
+      "2025-06-20": 0.004223984624084842,
+      "2025-06-27": 0.04017782427139043,
+      "2025-07-04": -0.016842249816113708,
+      "2025-07-11": 0.012987905084680486,
+      "2025-07-18": -0.00373940868586764,
+      "2025-07-25": 0.0008294668557061514,
+      "2025-08-01": 0.0038954241407878954,
+      "2025-08-08": 0.019934394598912067,
+      "2025-08-15": -0.011530491817456356,
+      "2025-08-22": -0.012966765378309209,
+      "2025-08-29": -0.024153670396452775,
+      "2025-09-05": 0.0001533629246035062,
+      "2025-09-12": 0.026377371494178625,
+      "2025-09-19": 0.006254940333257686,
+      "2025-09-26": 0.00353973158077725,
+      "2025-10-03": 0.00928238817550433,
+      "2025-10-10": -0.021637421187644112,
+      "2025-10-17": -0.053535865296938434,
+      "2025-10-24": 0.024120229892953662,
+      "2025-10-31": 0.020424532876921832,
+      "2025-11-07": -0.011214652348225718,
+      "2025-11-14": 0.027977719840175476,
+      "2025-11-21": -0.07502550374269168,
+      "2025-11-28": 0.04180341401002039,
+      "2025-12-05": 0.004832419176546843,
+      "2025-12-12": 0.015951076576779678,
+      "2025-12-19": 0.006206454232121317,
+      "2025-12-26": 0.00014040444826495248,
+      "2026-01-02": 0.01980505909675863,
+      "2026-01-09": 0.037609683126355264,
+      "2026-01-16": 0.02635477157510149,
+      "2026-01-23": 0.008303354256584683,
+      "2026-01-30": -0.00020810052531727852,
+      "2026-02-06": 0.01085716188893997,
+      "2026-02-13": -0.012816753387588586,
+      "2026-02-20": 0.020098546235244187,
+      "2026-02-27": 0.006385833878444203,
+      "2026-03-06": -0.0920645651576677,
+      "2026-03-13": 0.0071665186250942986,
+      "2026-03-20": -0.044816570613076756,
+      "2026-03-27": 0.0006399850841345867,
+      "2026-04-03": 0.039873512902944164,
+      "2026-04-10": 0.04018715275803508,
+      "2026-04-17": -0.015900106465451147,
+      "2026-04-24": 0.02635903435941671,
+      "2026-05-01": 0.008841985514934692,
+      "2026-05-08": -0.03180966333413904,
+      "2026-05-15": -0.014179048035806607,
+      "2026-05-22": 0.02072879339150049,
+      "2026-05-29": -0.029911734437798376,
+      "2026-06-05": -0.008787278650987052,
+      "2026-06-12": 0.004171634709085126,
+      "2026-06-19": 0.019222388110502742,
+      "2026-06-26": 0.01764609012535061
+    },
+    "Hedged_Strategy_Returns": {
+      "2024-01-12": 0.02056494052830793,
+      "2024-01-19": -0.008790885374240998,
+      "2024-01-26": 0.02804855415968941,
+      "2024-02-02": 0.006298535946996253,
+      "2024-02-09": -0.011510212249067231,
+      "2024-02-16": 0.029775091592689585,
+      "2024-02-23": 0.013871973879787803,
+      "2024-03-01": 0.01279812138652421,
+      "2024-03-08": 0.012449636209861127,
+      "2024-03-15": -0.005876949884696003,
+      "2024-03-22": 0.043841566130967104,
+      "2024-03-29": 0.019902138979478325,
+      "2024-04-05": -0.021408660486671005,
+      "2024-04-12": -0.0043397410022921745,
+      "2024-04-19": -0.018082163698210696,
+      "2024-04-26": 0.03791655897648987,
+      "2024-05-03": -0.002373061258803877,
+      "2024-05-10": 0.030956205482023515,
+      "2024-05-17": 0.012068573617204238,
+      "2024-05-24": 0.0012666069072711395,
+      "2024-05-31": -0.01741700493525855,
+      "2024-06-07": 0.0028509842426043264,
+      "2024-06-14": -0.029269174965648292,
+      "2024-06-21": 0.010572515657075777,
+      "2024-06-28": 0.011604228282159035,
+      "2024-07-05": 0.005906514611701042,
+      "2024-07-12": 0.015285686958146983,
+      "2024-07-19": -0.040447289264985975,
+      "2024-07-26": 0.008416553454834741,
+      "2024-08-02": -0.044868986553095125,
+      "2024-08-09": 0.0235500650102086,
+      "2024-08-16": 0.034564160869621934,
+      "2024-08-23": 0.004670786097131163,
+      "2024-08-30": 0.010037609103051893,
+      "2024-09-06": -0.0465965108826899,
+      "2024-09-13": 0.04645634782920016,
+      "2024-09-20": 0.014371228292145233,
+      "2024-09-27": 0.019293156061205963,
+      "2024-10-04": 0.02377429684258239,
+      "2024-10-11": -0.0054590403762093676,
+      "2024-10-18": 0.006041958987043117,
+      "2024-10-25": -0.006713145430055745,
+      "2024-11-01": -0.0076491378826267775,
+      "2024-11-08": 0.035728265982034914,
+      "2024-11-15": 0.043159322439609585,
+      "2024-11-22": 0.02224840712973375,
+      "2024-11-29": 0.010953121751158791,
+      "2024-12-06": 0.019410434861361382,
+      "2024-12-13": -0.020092697050469344,
+      "2024-12-20": -0.0032624209038972785,
+      "2024-12-27": 0.0016030323850378281,
+      "2025-01-03": 0.0012391361379311405,
+      "2025-01-10": -0.00754319410960369,
+      "2025-01-17": 0.04478848014612087,
+      "2025-01-24": 0.03259766714411168,
+      "2025-01-31": 0.011301069480918713,
+      "2025-02-07": 0.0012654980284557027,
+      "2025-02-14": 0.020275595435327,
+      "2025-02-21": -0.028913051852377025,
+      "2025-02-28": 0.01119177960161668,
+      "2025-03-07": -0.008316314310579664,
+      "2025-03-14": 0.0002811210168887968,
+      "2025-03-21": 0.020793838804519817,
+      "2025-03-28": -0.0443148933237848,
+      "2025-04-04": -0.07450436670607952,
+      "2025-04-11": 0.013118775309320442,
+      "2025-04-18": 0.05370435650981875,
+      "2025-04-25": 0.018599910319812986,
+      "2025-05-02": 0.04277253501917464,
+      "2025-05-09": 0.021612562500007294,
+      "2025-05-16": 0.016749723253504278,
+      "2025-05-23": 0.01132885834319044,
+      "2025-05-30": 0.010455829879749601,
+      "2025-06-06": 0.010097159128017452,
+      "2025-06-13": -0.04156214501459454,
+      "2025-06-20": 0.004983372724927371,
+      "2025-06-27": 0.03707615797377439,
+      "2025-07-04": -0.01667204577648096,
+      "2025-07-11": 0.012619964317687683,
+      "2025-07-18": -0.00324557869525377,
+      "2025-07-25": 2.4019272807151996e-06,
+      "2025-08-01": 0.006361467882215699,
+      "2025-08-08": 0.017828738642577058,
+      "2025-08-15": -0.012163863018814558,
+      "2025-08-22": -0.013179921396798355,
+      "2025-08-29": -0.022982980108248174,
+      "2025-09-05": 0.001294778947402442,
+      "2025-09-12": 0.026434630913820457,
+      "2025-09-19": 0.006404953926345947,
+      "2025-09-26": 0.0035655756315923883,
+      "2025-10-03": 0.007646828750259261,
+      "2025-10-10": -0.019808761266192354,
+      "2025-10-17": -0.05330943745285033,
+      "2025-10-24": 0.02382981082475837,
+      "2025-10-31": 0.021643829642620818,
+      "2025-11-07": -0.010752965266134118,
+      "2025-11-14": 0.02735607482507252,
+      "2025-11-21": -0.07199261224995535,
+      "2025-11-28": 0.03854856051088103,
+      "2025-12-05": 0.0038199625377062676,
+      "2025-12-12": 0.014367342553911656,
+      "2025-12-19": 0.006370196889551494,
+      "2025-12-26": -0.0013275434674027142,
+      "2026-01-02": 0.020003869136439967,
+      "2026-01-09": 0.03564373923856756,
+      "2026-01-16": 0.02651369087711597,
+      "2026-01-23": 0.007989662698105882,
+      "2026-01-30": 0.0007025367568731511,
+      "2026-02-06": 0.009849860118699283,
+      "2026-02-13": -0.014229154979804925,
+      "2026-02-20": 0.019191748391966357,
+      "2026-02-27": 0.0063429934714468676,
+      "2026-03-06": -0.08276695601210193,
+      "2026-03-13": 0.010326091640796342,
+      "2026-03-20": -0.03754953047009235,
+      "2026-03-27": 0.0011229280915065587,
+      "2026-04-03": 0.03252246238060508,
+      "2026-04-10": 0.033894922253298,
+      "2026-04-17": -0.022626914829959266,
+      "2026-04-24": 0.02882195124337237,
+      "2026-05-01": 0.008886391176585918,
+      "2026-05-08": -0.03271410054442181,
+      "2026-05-15": -0.010217382623174953,
+      "2026-05-22": 0.016897718562351473,
+      "2026-05-29": -0.03147393709630142,
+      "2026-06-05": -0.0047503932891374,
+      "2026-06-12": 0.0036733526849451084,
+      "2026-06-19": 0.019116730709840546,
+      "2026-06-26": 0.019827239263527655
+    },
+    "Benchmark_Returns": {
+      "2024-01-12": 0.006544900672365461,
+      "2024-01-19": -0.01129359868527402,
+      "2024-01-26": 0.017306964769985944,
+      "2024-02-02": -0.00544394877605614,
+      "2024-02-09": 0.0013684715550146276,
+      "2024-02-16": 0.008199469946122306,
+      "2024-02-23": 0.024059638961565266,
+      "2024-03-01": 0.018530837156376156,
+      "2024-03-08": 0.007472282583257828,
+      "2024-03-15": 0.005159680965433733,
+      "2024-03-22": 0.003849896486455062,
+      "2024-03-29": 0.01470117600860088,
+      "2024-04-05": -0.012598494644256442,
+      "2024-04-12": -0.03508767280745595,
+      "2024-04-19": -0.007933968398227909,
+      "2024-04-26": 0.031656132155189365,
+      "2024-05-03": -0.00032291905209980154,
+      "2024-05-10": 0.039741497509859114,
+      "2024-05-17": 0.007457938706665779,
+      "2024-05-24": -0.0043182120598308504,
+      "2024-05-31": -0.006815343694215992,
+      "2024-06-07": -0.0034310556707379813,
+      "2024-06-14": -0.03778409593582721,
+      "2024-06-21": 0.00566477629877693,
+      "2024-06-28": 0.014579247805398987,
+      "2024-07-05": 0.022534236124775342,
+      "2024-07-12": 0.01948264563814428,
+      "2024-07-19": -0.03289471564312907,
+      "2024-07-26": 0.014253246193640212,
+      "2024-08-02": -0.03736826508057389,
+      "2024-08-09": 0.0006636083718343233,
+      "2024-08-16": 0.04111407288096203,
+      "2024-08-23": 0.03248400007987451,
+      "2024-08-30": 0.006477613637666968,
+      "2024-09-06": -0.02911435543526808,
+      "2024-09-13": 0.022727336581944924,
+      "2024-09-20": 0.008950523167950752,
+      "2024-09-27": 0.037932163453390455,
+      "2024-10-04": -0.025051623473870688,
+      "2024-10-11": 0.003325224963319773,
+      "2024-10-18": 0.0051220824160151945,
+      "2024-10-25": -0.019184633651850747,
+      "2024-11-01": -0.00855752808395116,
+      "2024-11-08": -0.010480944856309904,
+      "2024-11-15": -0.01619926672430483,
+      "2024-11-22": -0.005383151594213764,
+      "2024-11-29": 0.02737975912940449,
+      "2024-12-06": 0.03470714173151923,
+      "2024-12-13": -0.008086246982407563,
+      "2024-12-20": -0.03381634953176271,
+      "2024-12-27": 0.004374943519904972,
+      "2025-01-03": -0.014623505566019546,
+      "2025-01-10": 0.011367194191997942,
+      "2025-01-17": 0.034967263270689,
+      "2025-01-24": 0.04253400663211071,
+      "2025-01-31": 0.0020254653476590168,
+      "2025-02-07": 0.0002886693894728065,
+      "2025-02-14": 0.05138556722411258,
+      "2025-02-21": -0.014003236646335626,
+      "2025-02-28": 0.004455620767912283,
+      "2025-03-07": 0.0759635177526925,
+      "2025-03-14": -0.004895724034060356,
+      "2025-03-21": -0.013723535150368282,
+      "2025-03-28": -0.018377447592301754,
+      "2025-04-04": -0.08210749746657886,
+      "2025-04-11": 0.059731926167599925,
+      "2025-04-18": 0.02832004811935862,
+      "2025-04-25": 0.0524064820469774,
+      "2025-05-02": 0.024898302791841465,
+      "2025-05-09": 0.010659422440880029,
+      "2025-05-16": 0.0019622433828017094,
+      "2025-05-23": 0.010036621111718436,
+      "2025-05-30": 0.01720808155379827,
+      "2025-06-06": 0.0131046004092219,
+      "2025-06-13": -0.023753688443602372,
+      "2025-06-20": -0.012025116264264946,
+      "2025-06-27": 0.04858695044053496,
+      "2025-07-04": -0.002127658008665212,
+      "2025-07-11": 0.005685913696868106,
+      "2025-07-18": -0.007538233600725586,
+      "2025-07-25": 0.01614046281358439,
+      "2025-08-01": -0.04811955021872538,
+      "2025-08-08": 0.03901834037317076,
+      "2025-08-15": 0.005668455547592766,
+      "2025-08-22": 0.0018788046273481296,
+      "2025-08-29": -0.018284061476828484,
+      "2025-09-05": -0.012894064539914929,
+      "2025-09-12": -0.0007256260842857243,
+      "2025-09-19": -0.0021786473905024417,
+      "2025-09-26": -0.00048522192436528666,
+      "2025-10-03": 0.029854312699406638,
+      "2025-10-10": -0.021447082904172965,
+      "2025-10-17": -0.003371824692482095,
+      "2025-10-24": 0.005074848538335175,
+      "2025-10-31": -0.02067799033249451,
+      "2025-11-07": -0.006138051121000965,
+      "2025-11-14": 0.00938746224857323,
+      "2025-11-21": -0.03573175754661073,
+      "2025-11-28": 0.038578537023482795,
+      "2025-12-05": 0.011974618088848032,
+      "2025-12-12": 0.018594580413042294,
+      "2025-12-19": -0.001896713961512253,
+      "2025-12-26": 0.013064226322736072,
+      "2026-01-02": -0.002110197585256657,
+      "2026-01-09": 0.019971828915243073,
+      "2026-01-16": -0.0016126000446221589,
+      "2026-01-23": 0.003230319664188297,
+      "2026-01-30": -0.008509662618716551,
+      "2026-02-06": 0.009742481135141201,
+      "2026-02-13": 0.010108043142167844,
+      "2026-02-20": 0.00795995614439926,
+      "2026-02-27": 0.0004511948762384588,
+      "2026-03-06": -0.07938650778383582,
+      "2026-03-13": -0.024007809122622348,
+      "2026-03-20": -0.04116464549405252,
+      "2026-03-27": -0.0031413925091453576,
+      "2026-04-03": 0.04779410074140533,
+      "2026-04-10": 0.04260647082831692,
+      "2026-04-17": 0.038221186809601626,
+      "2026-04-24": -0.01944896097153015,
+      "2026-05-01": -0.0004721831824503475,
+      "2026-05-08": 0.007559603024319239,
+      "2026-05-15": -0.03001171926498447,
+      "2026-05-22": 0.03722502240717551,
+      "2026-05-29": 0.012118357524283585,
+      "2026-06-05": -0.030393683883825684,
+      "2026-06-12": 0.004749482318624931,
+      "2026-06-19": 0.0010125805546459254,
+      "2026-06-26": -0.02143543785732349
+    },
+    "Status_History": {
+      "dates": [
+        "05-08",
+        "05-15",
+        "05-22",
+        "05-29",
+        "06-05",
+        "06-12",
+        "06-19",
+        "06-26"
+      ],
+      "rows": [
+        {
+          "Ticker": "ENR.DE",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "RWE.DE",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "IFX.DE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "BAYN.DE",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "DHL.DE",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "EOAN.DE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CON.DE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BAS.DE",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ALV.DE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "SIE.DE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CBK.DE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MRK.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "DTG.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SRT3.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "BNR.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DB1.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "HEN3.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MBG.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DTE.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "P911.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "DBK.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "HNR1.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SY1.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "AIR.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "FRE.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "VOW3.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "HEI.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "BMW.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PAH3.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MUV2.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ZAL.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "FME.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ADS.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MTX.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "QIA.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "VNA.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "RHM.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "BEI.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SHL.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SAP.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        }
+      ]
+    },
+    "Asset_Detail_Pages": [
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\SIE_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\DTE_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\ALV_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\MUV2_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\DHL_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\BMW_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\BAS_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\DB1_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\CBK_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\RWE_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\BAYN_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\HEI_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\FRE_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\VOW3_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\MRK_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\VNA_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\MTX_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\HEN3_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\FME_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\SRT3_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\PAH3_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\ZAL_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\ADS_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\DBK_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\RHM_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\SAP_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\SY1_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\BNR_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\MBG_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\QIA_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\CON_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\BEI_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\IFX_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\EOAN_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\HNR1_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\AIR_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\SHL_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\ENR_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\DTG_DE_asset_dashboard.png",
+      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Germany40\\P911_DE_asset_dashboard.png"
+    ],
+    "Report_PDF": "",
+    "Summary_PDF_Temp": "",
+    "Detailed_PDF_Temp": "",
+    "Status": "OK",
+    "Error": "",
+    "Positive_Return_Haircut": 0.8,
+    "Haircut_Applied": true
+  }
+]

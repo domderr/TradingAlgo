@@ -1107,8 +1107,8 @@
       { key: "UK30",         flag: "gb", name: "UK30",         html: "reports_html/UK30/Report_UK30.html" },
       { key: "France40",     flag: "fr", name: "France40",     html: "reports_html/France40/Report_France40.html" },
       { key: "Spain40",      flag: "es", name: "Spain40",      html: "reports_html/Spain40/Report_Spain40.html" },
-      { key: "Germany30",    flag: "de", name: "Germany30",    html: "reports_html/Germany30/Report_Germany30.html" },
-      { key: "Italy30",      flag: "it", name: "Italy30",      html: "reports_html/Italy30/Report_Italy30.html" },
+      { key: "Germany40",    flag: "de", name: "Germany40",    html: "reports_html/Germany40/Report_Germany40.html" },
+      { key: "Italy40",      flag: "it", name: "Italy40",      html: "reports_html/Italy40/Report_Italy40.html" },
       { key: "Japan50",      flag: "jp", name: "Japan50",      html: "reports_html/Japan50/Report_Japan50.html" },
       { key: "South Korea30", flag: "kr", name: "S.Korea30",    html: "reports_html/South_Korea30/Report_South_Korea30.html" },
       { key: "Australia50",  flag: "au", name: "Australia50",  html: "reports_html/Australia50/Report_Australia50.html" },
@@ -1117,8 +1117,8 @@
 
     var MARKET_HAIRCUTS = {
       "Australia50": 0.35,
-      "Germany30": 0.65,
-      "Italy30": 1.00,
+      "Germany40": 0.65,
+      "Italy40": 1.00,
       "Japan50": 0.85,
       "Mexico30": 1.00,
       "NASDAQ100": 0.35,
@@ -1192,7 +1192,9 @@
     function normalizeMarketName(value) {
       var key = String(value || "").trim();
       var aliases = {
-        "Italy": "Italy30",
+        "Italy": "Italy40",
+        "Italy30": "Italy40",
+        "Germany30": "Germany40",
         "US100": "USA100",
         "NQ100": "NASDAQ100",
         "Nasdaq100": "NASDAQ100",
