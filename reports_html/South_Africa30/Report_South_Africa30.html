@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Report South Africa30 | TradingAlgo Mosaic</title>
+  <title>Report South_Africa30 | TradingAlgo Mosaic</title>
   <link rel="stylesheet" href="report.css?v=20260624-tooltips-exposure" />
 </head>
 <body>
@@ -19,7 +19,7 @@
       <header class="dashboard-header">
         <div>
           <div class="brand">TradingAlgo Mosaic</div>
-          <h1>South Africa30 Weekly Report</h1>
+          <h1>South_Africa30 Weekly Report</h1>
           <p class="eyebrow">Benchmark: EZA</p>
         </div>
         <div class="dashboard-meta">
@@ -32,10 +32,12 @@
       <div class="dashboard-grid">
         <section class="dashboard-card">
           <h2>Current Selection</h2>
-          <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector / Industry</th></tr></thead>
-            <tbody><tr><td><a class="ticker-link" href="SOL_JO.html">SOL.JO</a></td><td>Sasol Limited</td><td>Basic Materials / Specialty Chemicals</td></tr><tr><td><a class="ticker-link" href="AGL_JO.html">AGL.JO</a></td><td>Anglo American plc</td><td>Basic Materials / Other Industrial Metals &amp; Mining</td></tr><tr><td><a class="ticker-link" href="MTN_JO.html">MTN.JO</a></td><td>MTN Group Ltd</td><td>Communication Services / Telecom Services</td></tr><tr><td><a class="ticker-link" href="REM_JO.html">REM.JO</a></td><td>Remgro Ltd</td><td>Financial Services / Asset Management</td></tr></tbody>
-          </table>
+          <div class="table-scroll">
+            <table class="mini-table selection-table">
+              <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
+              <tbody><tr><td><a class="ticker-link" href="SOL_JO.html">SOL.JO</a></td><td>Sasol Limited</td><td>Basic Materials</td><td>Specialty Chemicals</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="AGL_JO.html">AGL.JO</a></td><td>Anglo American plc</td><td>Basic Materials</td><td>Other Industrial Metals &amp; Mining</td><td class="number-cell">-</td><td>2026-06-26</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="MTN_JO.html">MTN.JO</a></td><td>MTN Group Ltd</td><td>Communication Services</td><td>Telecom Services</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="REM_JO.html">REM.JO</a></td><td>Remgro Ltd</td><td>Financial Services</td><td>Asset Management</td><td class="number-cell">-</td><td>2026-06-12</td><td class="number-cell neutral-value">-</td></tr></tbody>
+            </table>
+          </div>
         </section>
         <section class="dashboard-card">
           <h2>Weekly Changes</h2>
@@ -51,12 +53,12 @@
         </section>
       </div>
 
-      <section class="chart-section" id="equity-drawdown">
+      <section class="chart-section">
         <h2>Equity, Drawdown &amp; Exposure</h2>
         <div class="chart-stack">
           <div class="chart-frame">
             <h3>Equity / Drawdown</h3>
-            <img class="dashboard-chart" src="assets/summary_South_Africa30.png" alt="South Africa30 equity and drawdown" />
+            <img class="dashboard-chart" src="assets/summary_South_Africa30.png" alt="South_Africa30 equity and drawdown" />
           </div>
         </div>
       </section>
@@ -74,7 +76,7 @@
         </table>
       </section>
 
-      <section class="performance-section" id="month-year-performance">
+      <section class="performance-section">
         <h2>Month / Year Performance</h2>
         <div class="table-scroll"><table class="asset-table monthly-performance-table"><thead><tr><th>Year</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Year Total</th><th>Benchmark</th><th>Excess</th></tr></thead><tbody><tr><th>2024</th><td class="negative-value">-0.21%</td><td class="negative-value">-1.63%</td><td class="negative-value">-7.80%</td><td class="positive-value">0.07%</td><td class="negative-value">-0.12%</td><td class="positive-value">4.80%</td><td class="positive-value">3.12%</td><td class="positive-value">3.73%</td><td class="positive-value">0.88%</td><td class="positive-value">4.48%</td><td class="negative-value">-4.36%</td><td class="negative-value">-2.23%</td><td class="negative-value">-0.07%</td><td class="positive-value">15.28%</td><td class="negative-value">-15.35%</td></tr><tr><th>2025</th><td class="positive-value">4.27%</td><td class="positive-value">3.70%</td><td class="negative-value">-0.04%</td><td class="positive-value">2.08%</td><td class="positive-value">6.00%</td><td class="positive-value">3.20%</td><td class="positive-value">5.74%</td><td class="positive-value">7.17%</td><td class="negative-value">-0.33%</td><td class="positive-value">2.18%</td><td class="positive-value">5.17%</td><td class="positive-value">4.95%</td><td class="positive-value">53.74%</td><td class="positive-value">75.32%</td><td class="negative-value">-21.59%</td></tr><tr><th>2026</th><td class="positive-value">4.12%</td><td class="positive-value">18.93%</td><td class="negative-value">-7.66%</td><td class="positive-value">5.03%</td><td class="positive-value">1.05%</td><td class="negative-value">-5.97%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="positive-value">14.11%</td><td class="negative-value">-8.19%</td><td class="positive-value">22.30%</td></tr></tbody></table></div>
       </section>

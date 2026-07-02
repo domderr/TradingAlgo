@@ -32,10 +32,12 @@
       <div class="dashboard-grid">
         <section class="dashboard-card">
           <h2>Current Selection</h2>
-          <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector / Industry</th></tr></thead>
-            <tbody><tr><td><a class="ticker-link" href="ACS_MC.html">ACS.MC</a></td><td>ACS,ACTIVIDADES DE CONSTRUCCION</td><td>Industrials / Engineering &amp; Construction</td></tr><tr><td><a class="ticker-link" href="SLR_MC.html">SLR.MC</a></td><td>SOLARIA ENERGIA Y MEDIO AMBIENT</td><td>Utilities / Utilities - Renewable</td></tr><tr><td><a class="ticker-link" href="MTS_MC.html">MTS.MC</a></td><td>ARCELORMITTAL SA</td><td>Basic Materials / Steel</td></tr><tr><td><a class="ticker-link" href="REP_MC.html">REP.MC</a></td><td>REPSOL,  S.A.</td><td>Energy / Oil &amp; Gas Integrated</td></tr><tr><td><a class="ticker-link" href="CABK_MC.html">CABK.MC</a></td><td>CAIXABANK, S.A.</td><td>Financial Services / Banks - Regional</td></tr></tbody>
-          </table>
+          <div class="table-scroll">
+            <table class="mini-table selection-table">
+              <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
+              <tbody><tr><td><a class="ticker-link" href="ACS_MC.html">ACS.MC</a></td><td>ACS,ACTIVIDADES DE CONSTRUCCION</td><td>Industrials</td><td>Engineering &amp; Construction</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="SLR_MC.html">SLR.MC</a></td><td>SOLARIA ENERGIA Y MEDIO AMBIENT</td><td>Utilities</td><td>Utilities - Renewable</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="MTS_MC.html">MTS.MC</a></td><td>ARCELORMITTAL SA</td><td>Basic Materials</td><td>Steel</td><td class="number-cell">-</td><td>2026-05-22</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="REP_MC.html">REP.MC</a></td><td>REPSOL,  S.A.</td><td>Energy</td><td>Oil &amp; Gas Integrated</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="CABK_MC.html">CABK.MC</a></td><td>CAIXABANK, S.A.</td><td>Financial Services</td><td>Banks - Regional</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr></tbody>
+            </table>
+          </div>
         </section>
         <section class="dashboard-card">
           <h2>Weekly Changes</h2>
@@ -51,7 +53,7 @@
         </section>
       </div>
 
-      <section class="chart-section" id="equity-drawdown">
+      <section class="chart-section">
         <h2>Equity, Drawdown &amp; Exposure</h2>
         <div class="chart-stack">
           <div class="chart-frame">
@@ -74,7 +76,7 @@
         </table>
       </section>
 
-      <section class="performance-section" id="month-year-performance">
+      <section class="performance-section">
         <h2>Month / Year Performance</h2>
         <div class="table-scroll"><table class="asset-table monthly-performance-table"><thead><tr><th>Year</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Year Total</th><th>Benchmark</th><th>Excess</th></tr></thead><tbody><tr><th>2024</th><td class="positive-value">1.47%</td><td class="positive-value">6.26%</td><td class="positive-value">10.15%</td><td class="positive-value">2.15%</td><td class="positive-value">0.44%</td><td class="negative-value">-2.41%</td><td class="positive-value">2.69%</td><td class="negative-value">-2.31%</td><td class="positive-value">2.65%</td><td class="negative-value">-2.86%</td><td class="positive-value">3.00%</td><td class="positive-value">3.76%</td><td class="positive-value">27.12%</td><td class="positive-value">5.77%</td><td class="positive-value">21.35%</td></tr><tr><th>2025</th><td class="positive-value">8.88%</td><td class="positive-value">6.40%</td><td class="positive-value">0.73%</td><td class="positive-value">1.49%</td><td class="positive-value">11.20%</td><td class="positive-value">2.17%</td><td class="positive-value">1.14%</td><td class="positive-value">4.97%</td><td class="positive-value">1.40%</td><td class="positive-value">2.35%</td><td class="positive-value">7.85%</td><td class="positive-value">4.36%</td><td class="positive-value">66.87%</td><td class="positive-value">78.13%</td><td class="negative-value">-11.26%</td></tr><tr><th>2026</th><td class="positive-value">5.20%</td><td class="positive-value">11.53%</td><td class="negative-value">-6.45%</td><td class="positive-value">5.01%</td><td class="positive-value">1.13%</td><td class="negative-value">-2.93%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="positive-value">13.15%</td><td class="positive-value">10.86%</td><td class="positive-value">2.30%</td></tr></tbody></table></div>
       </section>

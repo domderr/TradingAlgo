@@ -76,6 +76,43 @@ def useful_value(value):
     return value if value and value != "-" else ""
 
 
+def first_useful_value(source, keys):
+    if not isinstance(source, dict):
+        return ""
+    for key in keys:
+        value = useful_value(source.get(key))
+        if value:
+            return value
+    return ""
+
+
+def format_price(value):
+    number = raw_number(value)
+    if number is None:
+        return html_text(value) if useful_value(value) else "-"
+    return f"{number:,.2f}"
+
+
+def format_rate(value, already_percent=False):
+    number = raw_number(value)
+    if number is None:
+        return html_text(value) if useful_value(value) else "-"
+    if already_percent and abs(number) > 1:
+        return f"{number:.2f}%"
+    return pct(number)
+
+
+def value_class_from_number(value):
+    number = raw_number(value)
+    if number is None:
+        return "neutral-value"
+    if number > 0:
+        return "positive-value"
+    if number < 0:
+        return "negative-value"
+    return "neutral-value"
+
+
 METRIC_TOOLTIPS = {
     "CAGR": "Compound Annual Growth Rate: the annualized return that shows how fast the strategy grew per year.",
     "MaxDD": "Maximum Drawdown: the largest peak-to-trough decline during the period. Lower absolute drawdown means less downside stress.",
@@ -468,6 +505,92 @@ def load_or_create_report_data(dev_dir, market, market_choice, rerun):
     return rows[0], data_path
 
 
+def load_latest_prices(site_dir):
+    path = site_dir / "reports" / "latest_prices.json"
+    if not path.exists():
+        return {}
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
+    return data if isinstance(data, dict) else {}
+
+
+def latest_price_context(latest_prices, market):
+    if not isinstance(latest_prices, dict):
+        return {}, ""
+    candidates = [market, safe_market_name(market)]
+    lower_map = {text(key).lower(): key for key in latest_prices}
+    for candidate in candidates:
+        key = lower_map.get(text(candidate).lower())
+        if key is None:
+            continue
+        payload = latest_prices.get(key)
+        if isinstance(payload, dict):
+            prices = payload.get("prices")
+            return prices if isinstance(prices, dict) else {}, useful_value(payload.get("as_of"))
+    return {}, ""
+
+
+def latest_price_for(prices, ticker):
+    if not isinstance(prices, dict):
+        return None
+    ticker_text = text(ticker).strip()
+    if ticker_text in prices:
+        return raw_number(prices.get(ticker_text))
+    upper_map = {text(key).upper(): key for key in prices}
+    key = upper_map.get(ticker_text.upper())
+    return raw_number(prices.get(key)) if key is not None else None
+
+
+def is_selected_status(value):
+    status = text(value).strip().lower()
+    return status in {"selected", "select", "in", "current", "held"} or "selected" in status
+
+
+def status_date_label(raw_value, as_of):
+    value = useful_value(raw_value)
+    if not value:
+        return "-"
+    try:
+        return datetime.fromisoformat(value[:10]).strftime("%Y-%m-%d")
+    except ValueError:
+        pass
+
+    match = re.fullmatch(r"(\d{1,2})-(\d{1,2})", value)
+    if not match:
+        return value
+    try:
+        base = datetime.fromisoformat(as_of[:10]) if as_of else datetime.now()
+        candidate = datetime(base.year, int(match.group(1)), int(match.group(2)))
+        if candidate > base + timedelta(days=7):
+            candidate = datetime(base.year - 1, candidate.month, candidate.day)
+        return candidate.strftime("%Y-%m-%d")
+    except ValueError:
+        return value
+
+
+def held_since_by_ticker(status_history, as_of):
+    if not isinstance(status_history, dict):
+        return {}
+    dates = status_history.get("dates") or []
+    result = {}
+    for status_row in status_history.get("rows", []):
+        if not isinstance(status_row, dict):
+            continue
+        ticker = text(status_row.get("Ticker")).upper()
+        statuses = status_row.get("Statuses") or []
+        if not ticker or not statuses or not is_selected_status(statuses[-1]):
+            continue
+        index = len(statuses) - 1
+        while index >= 0 and is_selected_status(statuses[index]):
+            index -= 1
+        entry_index = index + 1
+        date_value = dates[entry_index] if entry_index < len(dates) else ""
+        result[ticker] = status_date_label(date_value, as_of)
+    return result
+
+
 def copy_if_exists(src, dst):
     if src.exists():
         dst.parent.mkdir(parents=True, exist_ok=True)
@@ -808,6 +931,28 @@ body {
   white-space: nowrap;
   overflow-wrap: normal;
 }
+.selection-table {
+  min-width: 840px;
+  font-size: 13px;
+}
+.selection-table th,
+.selection-table td {
+  padding: 10px 8px;
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+.selection-table th:nth-child(2),
+.selection-table td:nth-child(2) {
+  min-width: 190px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.selection-table .number-cell {
+  text-align: right;
+}
+.negative-value { color: #b91c1c; }
+.positive-value { color: #166534; }
+.neutral-value { color: #475569; }
 .pdf-summary-page {
   padding: 34px 44px;
   font-size: 14px;
@@ -1209,6 +1354,14 @@ table.monthly-performance-table td:nth-last-child(-n+3) {
   .mini-table td:nth-child(3) {
     width: 46%;
   }
+  .selection-table {
+    min-width: 820px;
+    table-layout: auto;
+  }
+  .selection-table th,
+  .selection-table td {
+    width: auto;
+  }
   .performance-table th,
   .performance-table td {
     font-size: 12px;
@@ -1359,16 +1512,78 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         parts = [useful_value(sector), useful_value(industry)]
         return " / ".join(part for part in parts if part) or "-"
 
+    latest_prices = load_latest_prices(site_dir)
+    market_latest_prices, latest_prices_as_of = latest_price_context(latest_prices, market)
+    status_history = row.get("Status_History") if isinstance(row.get("Status_History"), dict) else {}
+    held_since_map = held_since_by_ticker(status_history, latest_prices_as_of)
+
+    entry_price_keys = [
+        "Entry Price",
+        "Entry_Price",
+        "EntryPrice",
+        "Prezzo di Carico",
+        "Cost Basis",
+        "Cost_Basis",
+        "Average Cost",
+        "Avg Cost",
+        "Buy Price",
+        "Purchase Price",
+    ]
+    held_since_keys = ["Held Since", "Held_Since", "In carico dal", "Entry Date", "Entry_Date", "Since"]
+    open_pnl_keys = ["Open P&L %", "Open PnL %", "Open P&L", "Open PnL", "Open_PL", "Unrealized P&L %"]
+
+    def selection_extra_cells(item, ticker):
+        ticker_key = text(ticker).upper()
+        item_data = item if isinstance(item, dict) else {}
+        entry_price = first_useful_value(item_data, entry_price_keys)
+        held_since = first_useful_value(item_data, held_since_keys) or held_since_map.get(ticker_key, "-")
+        explicit_open_pnl = first_useful_value(item_data, open_pnl_keys)
+        latest_price = latest_price_for(market_latest_prices, ticker)
+
+        open_pnl_value = None
+        open_pnl_html = "-"
+        if explicit_open_pnl:
+            open_pnl_value = raw_number(explicit_open_pnl)
+            open_pnl_html = format_rate(explicit_open_pnl, already_percent=True)
+        else:
+            entry_number = raw_number(entry_price)
+            if entry_number and latest_price is not None:
+                open_pnl_value = (latest_price / entry_number) - 1.0
+                open_pnl_html = pct(open_pnl_value)
+
+        open_class = value_class_from_number(open_pnl_value)
+        return (
+            f'<td class="number-cell">{format_price(entry_price)}</td>'
+            f"<td>{html_text(held_since)}</td>"
+            f'<td class="number-cell {open_class}">{open_pnl_html}</td>'
+        )
+
+    def selection_row_html(ticker_html, name, sector, industry, item, ticker):
+        return (
+            "<tr>"
+            f"<td>{ticker_html}</td>"
+            f"<td>{html_text(name)}</td>"
+            f"<td>{html_text(sector)}</td>"
+            f"<td>{html_text(industry)}</td>"
+            f"{selection_extra_cells(item, ticker)}"
+            "</tr>"
+        )
+
     selection = row.get("Last Weekly Selection") or []
     selection_name_map = {}
     selection_sector_map = {}
     selection_industry_map = {}
     if isinstance(selection, str):
         selection_rows = [line for line in re.split(r"<br\s*/?>|\n", selection) if line.strip()]
-        selection_html = "".join(f"<tr><td>{html_text(item)}</td><td>-</td><td>-</td></tr>" for item in selection_rows)
+        selection_html = "".join(
+            selection_row_html(html_text(item), "-", "-", "-", {}, item)
+            for item in selection_rows
+        )
     else:
         selection_parts = []
         for item in selection:
+            if not isinstance(item, dict):
+                continue
             ticker_key = text(item.get("Ticker")).upper()
             metadata = ticker_metadata.get(ticker_key, {})
             name = display_name(item.get("Name"), item.get("Ticker"), metadata)
@@ -1378,17 +1593,12 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             selection_sector_map[ticker_key] = sector
             selection_industry_map[ticker_key] = industry
             selection_parts.append(
-                "<tr>"
-                f"<td>{html_text(item.get('Ticker'))}</td>"
-                f"<td>{html_text(name)}</td>"
-                f"<td>{html_text(sector_industry_label(sector, industry))}</td>"
-                "</tr>"
+                selection_row_html(html_text(item.get("Ticker")), name, sector, industry, item, item.get("Ticker"))
             )
         selection_html = "".join(selection_parts)
     if not selection_html:
-        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
+        selection_html = "<tr><td colspan=\"7\">-</td></tr>"
 
-    status_history = row.get("Status_History") if isinstance(row.get("Status_History"), dict) else {}
     status_map = {}
     for status_row in status_history.get("rows", []):
         statuses = status_row.get("Statuses") or []
@@ -1451,28 +1661,40 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
             ticker_part, sep, name_part = item.partition(" - ")
             ticker_key = text(ticker_part).upper()
             metadata = ticker_metadata.get(ticker_key, {})
+            sector = metadata.get("Sector") or "-"
+            industry = metadata.get("Industry") or "-"
             linked_rows.append(
-                "<tr>"
-                f"<td>{linked_ticker_html(ticker_part)}</td>"
-                f"<td>{html_text(display_name(name_part if sep else '', ticker_part, metadata))}</td>"
-                f"<td>{html_text(sector_industry_label(metadata.get('Sector'), metadata.get('Industry')))}</td>"
-                "</tr>"
+                selection_row_html(
+                    linked_ticker_html(ticker_part),
+                    display_name(name_part if sep else "", ticker_part, metadata),
+                    sector,
+                    industry,
+                    {},
+                    ticker_part,
+                )
             )
         selection_html = "".join(linked_rows)
     else:
         linked_rows = []
         for item in selection:
+            if not isinstance(item, dict):
+                continue
             ticker_key = text(item.get("Ticker")).upper()
+            sector = selection_sector_map.get(ticker_key) or item.get("Sector") or "-"
+            industry = selection_industry_map.get(ticker_key) or item.get("Industry") or "-"
             linked_rows.append(
-                "<tr>"
-                f"<td>{linked_ticker_html(item.get('Ticker'))}</td>"
-                f"<td>{html_text(display_name(selection_name_map.get(ticker_key) or item.get('Name'), item.get('Ticker'), ticker_metadata.get(ticker_key, {})))}</td>"
-                f"<td>{html_text(sector_industry_label(selection_sector_map.get(ticker_key) or item.get('Sector'), selection_industry_map.get(ticker_key) or item.get('Industry')))}</td>"
-                "</tr>"
+                selection_row_html(
+                    linked_ticker_html(item.get("Ticker")),
+                    display_name(selection_name_map.get(ticker_key) or item.get("Name"), item.get("Ticker"), ticker_metadata.get(ticker_key, {})),
+                    sector,
+                    industry,
+                    item,
+                    item.get("Ticker"),
+                )
             )
         selection_html = "".join(linked_rows)
     if not selection_html:
-        selection_html = "<tr><td colspan=\"3\">-</td></tr>"
+        selection_html = "<tr><td colspan=\"7\">-</td></tr>"
 
     def formatted_change_tickers(raw_value):
         raw = useful_value(raw_value)
@@ -1583,10 +1805,12 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
       <div class="dashboard-grid">
         <section class="dashboard-card">
           <h2>Current Selection</h2>
-          <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector / Industry</th></tr></thead>
-            <tbody>{selection_html}</tbody>
-          </table>
+          <div class="table-scroll">
+            <table class="mini-table selection-table">
+              <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
+              <tbody>{selection_html}</tbody>
+            </table>
+          </div>
         </section>
         <section class="dashboard-card">
           <h2>Weekly Changes</h2>

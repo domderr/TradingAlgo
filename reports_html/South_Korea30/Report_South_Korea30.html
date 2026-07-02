@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Report South Korea30 | TradingAlgo Mosaic</title>
+  <title>Report South_Korea30 | TradingAlgo Mosaic</title>
   <link rel="stylesheet" href="report.css?v=20260624-tooltips-exposure" />
 </head>
 <body>
@@ -19,7 +19,7 @@
       <header class="dashboard-header">
         <div>
           <div class="brand">TradingAlgo Mosaic</div>
-          <h1>South Korea30 Weekly Report</h1>
+          <h1>South_Korea30 Weekly Report</h1>
           <p class="eyebrow">Benchmark: EWY</p>
         </div>
         <div class="dashboard-meta">
@@ -32,10 +32,12 @@
       <div class="dashboard-grid">
         <section class="dashboard-card">
           <h2>Current Selection</h2>
-          <table class="mini-table">
-            <thead><tr><th>Ticker</th><th>Name</th><th>Sector / Industry</th></tr></thead>
-            <tbody><tr><td><a class="ticker-link" href="000660_KS.html">000660.KS</a></td><td>SK hynix</td><td>Technology / Semiconductors</td></tr><tr><td><a class="ticker-link" href="005380_KS.html">005380.KS</a></td><td>HyundaiMtr</td><td>Consumer Cyclical / Auto Manufacturers</td></tr><tr><td><a class="ticker-link" href="017670_KS.html">017670.KS</a></td><td>SKTelecom</td><td>Communication Services / Telecom Services</td></tr><tr><td><a class="ticker-link" href="034020_KS.html">034020.KS</a></td><td>Doosan Enerbility</td><td>Industrials / Specialty Industrial Machinery</td></tr><tr><td><a class="ticker-link" href="055550_KS.html">055550.KS</a></td><td>ShinhanGroup</td><td>Financial Services / Banks - Regional</td></tr></tbody>
-          </table>
+          <div class="table-scroll">
+            <table class="mini-table selection-table">
+              <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
+              <tbody><tr><td><a class="ticker-link" href="000660_KS.html">000660.KS</a></td><td>SK hynix</td><td>Technology</td><td>Semiconductors</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="005380_KS.html">005380.KS</a></td><td>HyundaiMtr</td><td>Consumer Cyclical</td><td>Auto Manufacturers</td><td class="number-cell">-</td><td>2026-06-12</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="017670_KS.html">017670.KS</a></td><td>SKTelecom</td><td>Communication Services</td><td>Telecom Services</td><td class="number-cell">-</td><td>2026-06-19</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="034020_KS.html">034020.KS</a></td><td>Doosan Enerbility</td><td>Industrials</td><td>Specialty Industrial Machinery</td><td class="number-cell">-</td><td>2026-05-08</td><td class="number-cell neutral-value">-</td></tr><tr><td><a class="ticker-link" href="055550_KS.html">055550.KS</a></td><td>ShinhanGroup</td><td>Financial Services</td><td>Banks - Regional</td><td class="number-cell">-</td><td>2026-06-26</td><td class="number-cell neutral-value">-</td></tr></tbody>
+            </table>
+          </div>
         </section>
         <section class="dashboard-card">
           <h2>Weekly Changes</h2>
@@ -51,12 +53,12 @@
         </section>
       </div>
 
-      <section class="chart-section" id="equity-drawdown">
+      <section class="chart-section">
         <h2>Equity, Drawdown &amp; Exposure</h2>
         <div class="chart-stack">
           <div class="chart-frame">
             <h3>Equity / Drawdown</h3>
-            <img class="dashboard-chart" src="assets/summary_South_Korea30.png" alt="South Korea30 equity and drawdown" />
+            <img class="dashboard-chart" src="assets/summary_South_Korea30.png" alt="South_Korea30 equity and drawdown" />
           </div>
         </div>
       </section>
@@ -74,7 +76,7 @@
         </table>
       </section>
 
-      <section class="performance-section" id="month-year-performance">
+      <section class="performance-section">
         <h2>Month / Year Performance</h2>
         <div class="table-scroll"><table class="asset-table monthly-performance-table"><thead><tr><th>Year</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Year Total</th><th>Benchmark</th><th>Excess</th></tr></thead><tbody><tr><th>2024</th><td class="negative-value">-2.60%</td><td class="positive-value">8.25%</td><td class="positive-value">9.33%</td><td class="positive-value">0.74%</td><td class="negative-value">-2.83%</td><td class="positive-value">10.25%</td><td class="negative-value">-0.67%</td><td class="negative-value">-2.12%</td><td class="positive-value">1.90%</td><td class="positive-value">6.65%</td><td class="negative-value">-4.63%</td><td class="negative-value">-3.36%</td><td class="positive-value">21.15%</td><td class="negative-value">-16.20%</td><td class="positive-value">37.36%</td></tr><tr><th>2025</th><td class="positive-value">5.75%</td><td class="positive-value">1.44%</td><td class="positive-value">2.79%</td><td class="positive-value">5.47%</td><td class="positive-value">9.86%</td><td class="positive-value">22.03%</td><td class="positive-value">1.58%</td><td class="negative-value">-5.77%</td><td class="positive-value">6.38%</td><td class="positive-value">20.39%</td><td class="negative-value">-1.43%</td><td class="positive-value">2.66%</td><td class="positive-value">93.42%</td><td class="positive-value">90.42%</td><td class="positive-value">2.99%</td></tr><tr><th>2026</th><td class="positive-value">21.86%</td><td class="positive-value">21.55%</td><td class="negative-value">-10.95%</td><td class="positive-value">16.40%</td><td class="positive-value">14.66%</td><td class="negative-value">-21.92%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="positive-value">37.46%</td><td class="positive-value">113.90%</td><td class="negative-value">-76.44%</td></tr></tbody></table></div>
       </section>
