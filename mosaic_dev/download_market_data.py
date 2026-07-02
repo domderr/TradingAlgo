@@ -20,7 +20,7 @@ import yfinance as yf
 BASE_DIR = Path(__file__).resolve().parent
 DEFAULT_TICKERS_XLSX = BASE_DIR / "Tickers.xlsx"
 DEFAULT_OUTPUT_DIR = BASE_DIR / "market_data"
-DEFAULT_START_DATE = "2024-01-01"
+DEFAULT_START_DATE = "2023-01-01"
 PRICE_FIELD_PRIORITY = ["Adj Close", "Close"]
 
 

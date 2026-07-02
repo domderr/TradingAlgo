@@ -1,7 +1,10 @@
 import builtins
+import hashlib
 import json
 import os
+import shutil
 import traceback
+from datetime import datetime
 from pathlib import Path
 
 import matplotlib
@@ -16,6 +19,7 @@ DEV_DIR = PROJECT_DIR / "mosaic_dev"
 SITE_DIR = PROJECT_DIR
 NOTEBOOK = DEV_DIR / "TA_Portfolios.ipynb"
 MARKET_DATA_DIR = DEV_DIR / "market_data"
+SITE_SNAPSHOT_DIR = DEV_DIR / "output" / "site_snapshots"
 
 
 def display(value=None, *args, **kwargs):
@@ -82,6 +86,80 @@ def write_html_data(market_reports_df):
             encoding="utf-8",
         )
     print(f"Runner postprocess: wrote html_data for {len(market_reports_df)} markets", flush=True)
+
+
+def archive_existing_pipeline_outputs():
+    reports_dir = SITE_DIR / "reports"
+    output_dir = DEV_DIR / "output"
+    candidates = [
+        reports_dir / "reports_index.json",
+        reports_dir / "reports_index.csv",
+        reports_dir / "positions.json",
+        reports_dir / "latest_prices.json",
+        reports_dir / "market_scatter_history.json",
+        output_dir / "all_market_reports_data_from_csv.json",
+        output_dir / "all_market_reports_data_from_csv.csv",
+        output_dir / "all_market_reports_data_from_csv.pre_conservative_haircut.json",
+        output_dir / "all_market_reports_data_from_csv.pre_conservative_haircut.csv",
+    ]
+    candidate_dirs = [
+        output_dir / "html_data",
+    ]
+    existing = [path for path in candidates if path.exists()]
+    existing_dirs = [path for path in candidate_dirs if path.exists()]
+    if not existing and not existing_dirs:
+        print("Runner snapshot: no previous pipeline outputs to archive", flush=True)
+        return None
+
+    snapshot_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+    snapshot_dir = SITE_SNAPSHOT_DIR / snapshot_id
+    suffix = 1
+    while snapshot_dir.exists():
+        suffix += 1
+        snapshot_dir = SITE_SNAPSHOT_DIR / f"{snapshot_id}_{suffix}"
+    snapshot_dir.mkdir(parents=True, exist_ok=False)
+
+    manifest = {
+        "snapshot_id": snapshot_dir.name,
+        "created_at": datetime.now().isoformat(timespec="seconds"),
+        "source_dirs": [str(reports_dir), str(output_dir)],
+        "inputs": {},
+        "files": [],
+        "directories": [],
+        "immutable": True,
+        "reprocess_policy": "Do not rerun or recalculate this snapshot when portfolio construction logic changes. Use it only as historical evidence for coherence checks.",
+        "note": "Previous pipeline output snapshot saved before writing the new run. Not published by the site.",
+    }
+    for path in existing:
+        destination = snapshot_dir / path.name
+        shutil.copy2(path, destination)
+        manifest["files"].append(path.name)
+    for path in existing_dirs:
+        destination = snapshot_dir / path.name
+        shutil.copytree(path, destination)
+        manifest["directories"].append(path.name)
+    inputs_dir = snapshot_dir / "inputs"
+    input_files = [
+        DEV_DIR / "Tickers.xlsx",
+        DEV_DIR / "conservative_haircuts.csv",
+    ]
+    for path in input_files:
+        if not path.exists():
+            continue
+        inputs_dir.mkdir(exist_ok=True)
+        destination = inputs_dir / path.name
+        shutil.copy2(path, destination)
+        manifest["inputs"][path.name] = {
+            "path": str(destination.relative_to(snapshot_dir)),
+            "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+        }
+
+    (snapshot_dir / "manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(f"Runner snapshot: archived previous pipeline outputs -> {snapshot_dir}", flush=True)
+    return snapshot_dir
 
 
 def write_site_index(market_reports_df):
@@ -171,6 +249,7 @@ try:
         full_json = output_dir / "all_market_reports_data_from_csv.json"
         full_csv = output_dir / "all_market_reports_data_from_csv.csv"
         output_dir.mkdir(parents=True, exist_ok=True)
+        archive_existing_pipeline_outputs()
         market_reports_df.to_json(
             output_dir / "all_market_reports_data_from_csv.pre_conservative_haircut.json",
             orient="records",

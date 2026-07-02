@@ -1,7 +1,0 @@
-output/
-market_data/
-*.log
-*.out.log
-*.err.log
-__pycache__/
-.ipynb_checkpoints/

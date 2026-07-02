@@ -757,7 +757,7 @@
     function loadData() {
       var cacheKey = String(Date.now());
       var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
-      var previousPromise = fetch(LAST_WEEK_REPORTS_INDEX_URL + "?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
+      var previousPromise = fetch(LAST_WEEK_REPORTS_INDEX_URL + "?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
       var positionsPromise = fetch("reports/positions.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
       var pricesPromise = fetch("reports/latest_prices.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); });
       var reportPromises = MARKET_META.map(function(m) {
