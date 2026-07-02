@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f4f7fb;
+      background: #ffffff;
       color: #071a33;
     }
 
@@ -49,9 +49,9 @@
     }
 
     header {
-      padding: 92px 8% 74px;
+      padding: 96px 8% 86px;
       background:
-        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.70)),
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.36)),
         url("assets/articles/five-stocks-portfolio-benchmark.png");
       background-size: cover;
       background-position: center;
@@ -83,39 +83,43 @@
       line-height: 1.6;
     }
 
-    main { padding: 64px 8%; }
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
 
     .content {
-      max-width: 1080px;
+      max-width: 900px;
       margin: 0 auto;
-      display: grid;
-      gap: 28px;
     }
 
-      section {
-        padding: 34px;
-        background: white;
-        border: 1px solid #dbe3ef;
-        border-radius: 8px;
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
     }
+
+    section:last-child { border-bottom: 0; }
 
     h2 {
       margin: 0 0 18px;
       color: #0b5fa5;
       font-family: Georgia, serif;
-      font-size: 30px;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
     }
 
     h3 {
-      margin: 22px 0 8px;
+      margin: 26px 0 8px;
       color: #071a33;
       font-size: 20px;
     }
 
     p {
       margin: 0 0 16px;
-      line-height: 1.7;
+      line-height: 1.76;
       color: #26364a;
+      font-size: 17px;
     }
 
     ul {
@@ -128,6 +132,7 @@
     li { margin-bottom: 8px; }
 
     .note {
+      margin: 22px 0 0;
       padding-left: 18px;
       border-left: 4px solid #168eea;
       font-weight: bold;
@@ -195,40 +200,43 @@
 
     .data-table tr:last-child td { border-bottom: 0; }
 
-      .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       min-height: 46px;
       margin-top: 10px;
       padding: 13px 22px;
       border-radius: 8px;
       background: #0b5fa5;
       color: white;
-        text-decoration: none;
-        font-weight: 800;
-      }
+      text-decoration: none;
+      font-weight: 800;
+    }
 
-      .cta {
-        background: #071a33;
-        border-color: #071a33;
-        color: white;
-      }
+    .cta {
+      padding: 34px;
+      margin: 8px 0 48px;
+      background: #071a33;
+      border: 1px solid #102a49;
+      border-radius: 8px;
+      color: white;
+    }
 
-      .cta h2,
-      .cta p {
-        color: white;
-      }
+    .cta h2,
+    .cta p {
+      color: white;
+    }
 
-      .cta p {
-        max-width: 780px;
-        color: #d8e4f2;
-      }
+    .cta p {
+      max-width: 780px;
+      color: #d8e4f2;
+    }
 
-      .cta .button {
-        background: #22c55e;
-        color: #04110a;
-      }
+    .cta .button {
+      background: #22c55e;
+      color: #04110a;
+    }
 
     footer {
       padding: 34px 8%;
@@ -249,7 +257,19 @@
         margin: 10px 12px 0 0;
       }
 
-      section { padding: 26px; }
+      header {
+        padding: 74px 8% 58px;
+        background-position: center right;
+      }
+
+      main { padding: 44px 7% 56px; }
+
+      section {
+        padding-bottom: 34px;
+        margin-bottom: 34px;
+      }
+
+      .cta { padding: 26px; }
 
       .comparison,
       .metric-grid {
