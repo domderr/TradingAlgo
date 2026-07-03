@@ -1,0 +1,31 @@
+ticker,company,member_2025_01_01,member_2026_01_01
+MMM,3M,True,True
+AXP,American Express,True,True
+AMGN,Amgen,True,True
+AMZN,Amazon,True,True
+AAPL,Apple,True,True
+BA,Boeing,True,True
+CAT,Caterpillar,True,True
+CVX,Chevron,True,True
+CSCO,Cisco,True,True
+KO,Coca-Cola,True,True
+DIS,Walt Disney,True,True
+GS,Goldman Sachs,True,True
+HD,Home Depot,True,True
+HON,Honeywell,True,True
+IBM,IBM,True,True
+JNJ,Johnson & Johnson,True,True
+JPM,JPMorgan Chase,True,True
+MCD,McDonald's,True,True
+MRK,Merck,True,True
+MSFT,Microsoft,True,True
+NKE,Nike,True,True
+NVDA,Nvidia,True,True
+PG,Procter & Gamble,True,True
+CRM,Salesforce,True,True
+SHW,Sherwin-Williams,True,True
+TRV,Travelers,True,True
+UNH,UnitedHealth,True,True
+VZ,Verizon,True,True
+V,Visa,True,True
+WMT,Walmart,True,True
