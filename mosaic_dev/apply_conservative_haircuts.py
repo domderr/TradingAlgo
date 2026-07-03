@@ -59,6 +59,85 @@ def raw_number(value):
         return np.nan
 
 
+def is_selected_status(value):
+    status = str(value or "").strip().lower()
+    return status in {"selected", "select", "in", "current", "held"} or "selected" in status
+
+
+def parse_status_history_date(value, index):
+    text = str(value or "").strip()
+    if not text or index.empty:
+        return None
+    latest = pd.Timestamp(index.max())
+    for fmt in ("%Y-%m-%d", "%m-%d", "%m/%d"):
+        try:
+            if fmt.startswith("%Y"):
+                parsed = pd.to_datetime(text, format=fmt)
+            else:
+                parsed = pd.to_datetime(f"{latest.year}-{text}", format=f"%Y-{fmt}")
+            break
+        except (TypeError, ValueError):
+            parsed = None
+    if parsed is None:
+        return None
+    if parsed > latest + pd.Timedelta(days=31):
+        parsed = parsed - pd.DateOffset(years=1)
+    return pd.Timestamp(parsed).normalize()
+
+
+def exposure_history_from_status(row, index):
+    current_exposure = raw_number(row.get("Capital Invested"))
+    if not np.isfinite(current_exposure):
+        current_exposure = 1.0
+    status_history = row.get("Status_History")
+    if not isinstance(status_history, dict) or index.empty:
+        return pd.Series(current_exposure, index=index, dtype=float)
+
+    dates = status_history.get("dates") or []
+    rows = status_history.get("rows") or []
+    if not dates or not rows:
+        return pd.Series(current_exposure, index=index, dtype=float)
+
+    k_select = raw_number(row.get("k_select"))
+    if not np.isfinite(k_select) or k_select <= 0:
+        k_select = 5.0
+
+    points = {}
+    for idx, raw_date in enumerate(dates):
+        parsed = parse_status_history_date(raw_date, index)
+        if parsed is None:
+            continue
+        selected_count = 0
+        for status_row in rows:
+            statuses = status_row.get("Statuses") if isinstance(status_row, dict) else None
+            if isinstance(statuses, list) and idx < len(statuses) and is_selected_status(statuses[idx]):
+                selected_count += 1
+        points[parsed] = min(selected_count / k_select, 1.0)
+
+    if not points:
+        return pd.Series(current_exposure, index=index, dtype=float)
+
+    point_series = pd.Series(points).sort_index()
+    combined_index = index.union(point_series.index).sort_values()
+    exposure = point_series.reindex(combined_index).ffill().reindex(index)
+    exposure = exposure.fillna(point_series.iloc[0]).clip(lower=0.0, upper=1.0)
+    return exposure
+
+
+def hedge_history_from_returns(strategy_returns, hedged_returns, benchmark_returns, current_hedge, index):
+    if hedged_returns.empty or benchmark_returns.empty:
+        return pd.Series(current_hedge, index=index, dtype=float)
+    aligned_strategy = strategy_returns.reindex(index).fillna(0.0)
+    aligned_hedged = hedged_returns.reindex(index).fillna(0.0)
+    aligned_benchmark = benchmark_returns.reindex(index).fillna(0.0)
+    denominator = aligned_benchmark.where(aligned_benchmark.abs() > 1e-9)
+    hedge = ((aligned_strategy - aligned_hedged) / denominator).replace([np.inf, -np.inf], np.nan)
+    hedge = hedge.clip(lower=0.0, upper=1.0).ffill().bfill()
+    if hedge.dropna().empty:
+        hedge = pd.Series(current_hedge, index=index, dtype=float)
+    return hedge.fillna(current_hedge)
+
+
 def return_map(series):
     series = pd.Series(series).dropna()
     return {idx.strftime("%Y-%m-%d"): float(value) for idx, value in series.items()}
@@ -219,14 +298,12 @@ def make_summary_chart(row, strategy_returns, hedged_returns, benchmark_returns,
     benchmark_dd = benchmark_equity / benchmark_equity.cummax() - 1.0
     hedged_dd = hedged_equity / hedged_equity.cummax() - 1.0 if not hedged_equity.empty else pd.Series(dtype=float)
 
-    exposure_value = raw_number(row.get("Capital Invested"))
-    if not np.isfinite(exposure_value):
-        exposure_value = 1.0
     hedge_value = raw_number(row.get("Benchmark Hedge Short"))
     if not np.isfinite(hedge_value):
         hedge_value = 0.0
-    exposure = pd.Series(exposure_value, index=index, dtype=float)
-    net_exposure = pd.Series(exposure_value - hedge_value, index=index, dtype=float)
+    exposure = exposure_history_from_status(row, index)
+    hedge = hedge_history_from_returns(strategy_returns, hedged_returns, benchmark_returns, hedge_value, index)
+    net_exposure = (exposure - hedge).clip(lower=-1.0, upper=1.0)
 
     fig, (ax1, ax2, ax3) = plt.subplots(
         3,
@@ -255,11 +332,12 @@ def make_summary_chart(row, strategy_returns, hedged_returns, benchmark_returns,
     ax3.set_title("Exposure", color="black", fontsize=9.2, fontweight="bold", pad=2)
     ax3.plot(exposure.index, exposure * 100.0, color="#123E73", lw=1.0, label="Long")
     ax3.plot(net_exposure.index, net_exposure * 100.0, color="#008C7A", lw=0.95, label="Net")
+    ax3.plot(hedge.index, hedge * 100.0, color="#7C3AED", lw=0.9, ls="--", label="Hedge short")
     ax3.set_ylim(-5, 105)
     ax3.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=100))
     ax3.grid(True, alpha=0.18)
     ax3.tick_params(labelsize=8)
-    ax3.legend(loc="upper center", ncol=2, fontsize=8.4, frameon=False)
+    ax3.legend(loc="upper center", ncol=3, fontsize=8.4, frameon=False)
 
     if len(index) > 0:
         quarter_ticks = pd.date_range(index.min(), index.max(), freq="QS-DEC")

@@ -305,6 +305,13 @@ body {
 .selection-table .number-cell {
   text-align: right;
 }
+.changes-table {
+  min-width: 520px;
+  table-layout: auto;
+}
+.changes-table th {
+  min-width: 170px;
+}
 .negative-value { color: #b91c1c; }
 .positive-value { color: #166534; }
 .neutral-value { color: #475569; }
@@ -715,6 +722,14 @@ table.monthly-performance-table td:nth-last-child(-n+3) {
   }
   .selection-table th,
   .selection-table td {
+    width: auto;
+  }
+  .changes-table {
+    min-width: 520px;
+    table-layout: auto;
+  }
+  .changes-table th,
+  .changes-table td {
     width: auto;
   }
   .performance-table th,

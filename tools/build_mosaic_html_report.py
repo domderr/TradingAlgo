@@ -325,7 +325,7 @@ def report_date_label():
     return last_available_friday().strftime("%d %b %Y")
 
 
-REPORT_CSS_VERSION = "20260703-uniform-equity-exposure"
+REPORT_CSS_VERSION = "20260703-scroll-historical-exposure"
 
 
 def read_tickers(tickers_xlsx, market):
@@ -998,6 +998,13 @@ body {
 .selection-table .number-cell {
   text-align: right;
 }
+.changes-table {
+  min-width: 520px;
+  table-layout: auto;
+}
+.changes-table th {
+  min-width: 170px;
+}
 .negative-value { color: #b91c1c; }
 .positive-value { color: #166534; }
 .neutral-value { color: #475569; }
@@ -1408,6 +1415,14 @@ table.monthly-performance-table td:nth-last-child(-n+3) {
   }
   .selection-table th,
   .selection-table td {
+    width: auto;
+  }
+  .changes-table {
+    min-width: 520px;
+    table-layout: auto;
+  }
+  .changes-table th,
+  .changes-table td {
     width: auto;
   }
   .performance-table th,
@@ -1856,15 +1871,17 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         </section>
         <section class="dashboard-card">
           <h2>Weekly Changes</h2>
-          <table class="mini-table changes-table">
-            <tbody>
-              <tr><th>Capital Invested</th><td>{pct(row.get("Capital Invested"))}</td></tr>
-              <tr><th><span class="in-label">IN</span></th><td>{added_tickers_html}</td></tr>
-              <tr><th><span class="out-label">OUT</span></th><td>{removed_tickers_html}</td></tr>
-              <tr><th>Current Hedge Short ETF</th><td>{hedge_ticker}: {hedge_short}</td></tr>
-              <tr><th>Hedge Score</th><td>{hedge_score}</td></tr>
-            </tbody>
-          </table>
+          <div class="table-scroll">
+            <table class="mini-table changes-table">
+              <tbody>
+                <tr><th>Capital Invested</th><td>{pct(row.get("Capital Invested"))}</td></tr>
+                <tr><th><span class="in-label">IN</span></th><td>{added_tickers_html}</td></tr>
+                <tr><th><span class="out-label">OUT</span></th><td>{removed_tickers_html}</td></tr>
+                <tr><th>Current Hedge Short ETF</th><td>{hedge_ticker}: {hedge_short}</td></tr>
+                <tr><th>Hedge Score</th><td>{hedge_score}</td></tr>
+              </tbody>
+            </table>
+          </div>
         </section>
       </div>
 
