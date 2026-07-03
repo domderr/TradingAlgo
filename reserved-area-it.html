@@ -361,6 +361,161 @@
       line-height: 1.45;
     }
 
+    .analyst-panel {
+      margin-bottom: 32px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.075);
+      box-shadow: var(--shadow);
+    }
+
+    .analyst-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .analyst-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .analyst-head h2 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.05;
+    }
+
+    .analyst-status {
+      padding: 8px 10px;
+      border: 1px solid rgba(66,211,146,0.28);
+      border-radius: 999px;
+      background: rgba(66,211,146,0.1);
+      color: #bdf5d1;
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .analyst-chat {
+      display: grid;
+      grid-template-rows: minmax(280px, 1fr) auto auto;
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      background: rgba(5,11,20,0.28);
+    }
+
+    .analyst-messages {
+      overflow: auto;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .analyst-message {
+      max-width: 92%;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.075);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+
+    .analyst-message.user {
+      align-self: flex-end;
+      background: rgba(74,163,255,0.22);
+      color: var(--text);
+    }
+
+    .analyst-message a {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .analyst-prompts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 16px 14px;
+    }
+
+    .analyst-prompt,
+    .analyst-send {
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 850;
+    }
+
+    .analyst-prompt {
+      padding: 9px 11px;
+      border-radius: 999px;
+      background: rgba(125,211,252,0.18);
+      color: #d9f6ff;
+    }
+
+    .analyst-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 14px 16px 16px;
+      border-top: 1px solid rgba(255,255,255,0.09);
+    }
+
+    .analyst-form input {
+      min-height: 46px;
+      padding: 10px 13px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: var(--text);
+      font: inherit;
+      outline: none;
+    }
+
+    .analyst-send {
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #041810;
+    }
+
+    .analyst-sources {
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      background: rgba(5,11,20,0.24);
+    }
+
+    .analyst-sources h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .analyst-sources p,
+    .analyst-sources li {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .analyst-sources ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
     .performance-summary h3 {
       margin: 0;
       font-size: 24px;
@@ -933,6 +1088,7 @@
       .subscription-panel { grid-template-columns: 1fr; }
       .quick-reports { grid-template-columns: repeat(2, 1fr); }
       .nav { align-items: flex-start; }
+      .analyst-layout { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 640px) {
@@ -949,6 +1105,10 @@
       .matrix-shell { min-height: auto; }
       .access-form input,
       .access-form button { width: 100%; }
+      .analyst-head { display: block; }
+      .analyst-status { display: inline-flex; margin-top: 10px; }
+      .analyst-form { grid-template-columns: 1fr; }
+      .analyst-send { width: 100%; }
     }
   </style>
 </head>
@@ -1010,6 +1170,40 @@
           </nav>
         </div>
       </details>
+
+      <section class="analyst-panel" id="mosaic-ai-analyst" aria-labelledby="mosaic-ai-analyst-title">
+        <div class="analyst-head">
+          <div>
+            <div class="eyebrow">Mosaic AI Analyst</div>
+            <h2 id="mosaic-ai-analyst-title">Analista riservato su tutti i contenuti Mosaic</h2>
+          </div>
+          <span class="analyst-status" id="analyst-status">Indicizzazione in corso</span>
+        </div>
+        <div class="analyst-layout">
+          <div class="analyst-chat">
+            <div class="analyst-messages" id="analyst-messages" aria-live="polite"></div>
+            <div class="analyst-prompts" aria-label="Domande suggerite">
+              <button class="analyst-prompt" type="button" data-question="Riassumi i mercati disponibili e indicami dove aprire i report">Mercati e report</button>
+              <button class="analyst-prompt" type="button" data-question="Quali sono le posizioni correnti per USA100?">Posizioni USA100</button>
+              <button class="analyst-prompt" type="button" data-question="Confronta CAGR e Sharpe dei mercati">CAGR e Sharpe</button>
+              <button class="analyst-prompt" type="button" data-question="Come devo leggere hedge, ribilanciamento e dashboard?">Guida operativa</button>
+            </div>
+            <form class="analyst-form" id="analyst-form">
+              <input id="analyst-input" type="text" autocomplete="off" maxlength="260" placeholder="Chiedi qualcosa sui contenuti dell'area riservata..." aria-label="Domanda per Mosaic AI Analyst">
+              <button class="analyst-send" type="submit">Analizza</button>
+            </form>
+          </div>
+          <aside class="analyst-sources">
+            <h3>Accesso contenuti</h3>
+            <p>Ogni password valida abilita tutti i mercati, report, guide operative e pagine dell'area riservata. I contenuti operativi contrassegnati come Admin restano riservati al profilo Admin.</p>
+            <ul>
+              <li>Report HTML e dati JSON dei mercati Mosaic.</li>
+              <li>Posizioni, variazioni, hedge, CAGR, Sharpe e benchmark dove disponibili.</li>
+              <li>Guide membri, FAQ, framework, pricing, validazione e pagine pubbliche del sito.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
 
       <section id="reports">
         <div class="eyebrow">TradingAlgo Mosaic</div>
@@ -1133,6 +1327,8 @@
     var subscriptions = [];
     var authorizedMarkets = [];
     var isAdminAccess = false;
+    var analystDocuments = [];
+    var analystReady = false;
     var ACCESS_STORAGE_KEY = "ta_reserved_authorized_markets";
     var LAST_WEEK_REPORTS_INDEX_URL = "reports/previous_reports_index.json";
     var RESERVED_REQUEST = parseReservedRequest();
@@ -1259,7 +1455,7 @@
     }
 
     function unlockSubscription(match) {
-      authorizedMarkets = normalizeMarketList(match.markets);
+      authorizedMarkets = ["All"];
       isAdminAccess = String(match.first_name || "").toLowerCase() === "admin";
       if (!authorizedMarkets.length) {
         setAccessMessage("La password e valida, ma nessun mercato e abilitato per questo abbonamento.", "");
@@ -1289,8 +1485,9 @@
       try {
         var stored = JSON.parse(sessionStorage.getItem(ACCESS_STORAGE_KEY) || "{}");
         authorizedMarkets = normalizeMarketList(stored.markets || stored);
+        if (authorizedMarkets.length) authorizedMarkets = ["All"];
         var firstName = stored.first_name || "";
-        isAdminAccess = stored.is_admin === true || String(firstName || "").toLowerCase() === "admin";
+        isAdminAccess = String(firstName || "").toLowerCase() === "admin";
         var match = { first_name: firstName };
       } catch (error) {
         authorizedMarkets = [];
@@ -1299,6 +1496,11 @@
       }
 
       if (!authorizedMarkets.length) return false;
+      sessionStorage.setItem(ACCESS_STORAGE_KEY, JSON.stringify({
+        first_name: firstName || "",
+        markets: ["All"],
+        is_admin: isAdminAccess
+      }));
 
       if (window.TAAnalytics) {
         window.TAAnalytics.track("access_restored", {
@@ -1588,6 +1790,7 @@
         renderSummaryGrafici();
       }
       loadHedgePercentages();
+      updateAnalystFromData(indexMap, previousIndexMap, positions, reportDataMap);
     }
 
     function formatPercent(value) {
@@ -1857,6 +2060,204 @@
         .catch(function() {});
     }
 
+    var ANALYST_SITE_PAGES = [
+      { title: "FAQ", url: "faq-it.html" },
+      { title: "Framework", url: "framework-it.html" },
+      { title: "Prezzi", url: "pricing-it.html" },
+      { title: "Validazione", url: "validation-it.html" },
+      { title: "Mercati disponibili", url: "explore-markets-it.html" },
+      { title: "Azioni per mercato", url: "market-stocks-it.html" },
+      { title: "Come leggere un report", url: "how-to-read-mosaic-report-it.html" },
+      { title: "Come ribilanciare Mosaic", url: "how-to-rebalance-tradingalgo-mosaic-it.html" },
+      { title: "Inizia qui", url: "mosaic-start-here-it.html" },
+      { title: "Aggiornamento settimanale", url: "mosaic-weekly-update-it.html" },
+      { title: "Guide operative", url: "mosaic-how-to-guides-it.html" },
+      { title: "Terminologia", url: "mosaic-terminology-it.html" },
+      { title: "Grafici e dashboard", url: "mosaic-charts-dashboards-it.html" },
+      { title: "Area riservata", url: "reserved-area-it.html#reports" }
+    ];
+
+    function setAnalystStatus(text) {
+      var el = document.getElementById("analyst-status");
+      if (el) el.textContent = text;
+    }
+
+    function analystAddMessage(text, type, sources) {
+      var box = document.getElementById("analyst-messages");
+      if (!box) return;
+      var div = document.createElement("div");
+      div.className = "analyst-message" + (type ? " " + type : "");
+      div.textContent = text;
+      if (sources && sources.length) {
+        div.appendChild(document.createElement("br"));
+        div.appendChild(document.createElement("br"));
+        var label = document.createElement("strong");
+        label.textContent = "Fonti: ";
+        div.appendChild(label);
+        sources.slice(0, 4).forEach(function(source, index) {
+          if (index) div.appendChild(document.createTextNode(" | "));
+          var a = document.createElement("a");
+          a.href = source.url;
+          a.textContent = source.title;
+          div.appendChild(a);
+        });
+      }
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function stripHtml(html) {
+      return String(html || "")
+        .replace(/<script[\s\S]*?<\/script>/gi, " ")
+        .replace(/<style[\s\S]*?<\/style>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function compactText(text, maxLength) {
+      var cleaned = String(text || "").replace(/\s+/g, " ").trim();
+      if (cleaned.length <= maxLength) return cleaned;
+      return cleaned.slice(0, maxLength - 1).trim() + "...";
+    }
+
+    function tokenize(text) {
+      return String(text || "").toLowerCase().split(/[^a-z0-9àèéìòù]+/i).filter(function(token) {
+        return token.length > 2;
+      });
+    }
+
+    function addAnalystDocument(title, url, text, type, market) {
+      var clean = compactText(text, 5000);
+      if (!clean) return;
+      analystDocuments.push({
+        title: title,
+        url: url,
+        text: clean,
+        type: type || "pagina",
+        market: market || "",
+        tokens: tokenize(title + " " + clean)
+      });
+    }
+
+    function summarizeReportRow(m, row, positionData) {
+      row = row || {};
+      var positions = Array.isArray(row["Last Weekly Selection"]) && row["Last Weekly Selection"].length
+        ? row["Last Weekly Selection"].map(function(item) { return item.Ticker || item.ticker; }).filter(Boolean)
+        : tickerText(positionData && positionData.positions).split(/\s*,\s*/).filter(function(item) { return item && item !== "-"; });
+      var added = parseReportTickerChanges(row["Added Tickers"]);
+      var removed = parseReportTickerChanges(row["Removed Tickers"]);
+      return [
+        "Mercato " + m.name + ".",
+        "Report: " + m.html + ".",
+        "Posizioni correnti: " + (positions.length ? positions.join(", ") : "-") + ".",
+        "Ticker in ingresso: " + (added.length ? added.join(", ") : changeTickerText(positionData && positionData.changes && positionData.changes.in)) + ".",
+        "Ticker in uscita: " + (removed.length ? removed.join(", ") : changeTickerText(positionData && positionData.changes && positionData.changes.out)) + ".",
+        "Hedge: " + formatPercent(row["Benchmark Hedge Short"]) + ".",
+        "CAGR Mosaic: " + formatMetricPercent(row["Strategy CAGR"]) + ", CAGR benchmark: " + formatMetricPercent(row["Bench Cagr"]) + ".",
+        "Sharpe Mosaic: " + formatMetricNumber(row["Strategy Sharpe Ratio"]) + ", Sharpe benchmark: " + formatMetricNumber(row["Bench Sharpe"]) + ".",
+        "Benchmark: " + displayText(row.Benchmark, "-") + "."
+      ].join(" ");
+    }
+
+    function updateAnalystFromData(indexMap, previousIndexMap, positions, reportDataMap) {
+      analystDocuments = [];
+      activeMarkets().forEach(function(m) {
+        var posKey = POS_KEY[m.key] || m.key;
+        addAnalystDocument(
+          "Report " + m.name,
+          m.html,
+          summarizeReportRow(m, reportDataMap[m.key] || indexMap[m.key], positions && positions[posKey]),
+          "report",
+          m.key
+        );
+      });
+      loadAnalystSitePages().then(function() {
+        analystReady = true;
+        setAnalystStatus(analystDocuments.length + " fonti indicizzate");
+      });
+    }
+
+    function loadAnalystSitePages() {
+      setAnalystStatus("Indicizzazione contenuti");
+      return Promise.all(ANALYST_SITE_PAGES.map(function(page) {
+        return fetch(page.url + (page.url.indexOf("?") === -1 ? "?v=" : "&v=") + Date.now(), { cache: "no-store" })
+          .then(function(response) {
+            if (!response.ok) throw new Error("Pagina non disponibile");
+            return response.text();
+          })
+          .then(function(html) {
+            addAnalystDocument(page.title, page.url, stripHtml(html), "pagina", "");
+          })
+          .catch(function() {});
+      }));
+    }
+
+    function scoreAnalystDocument(doc, queryTokens) {
+      var score = 0;
+      queryTokens.forEach(function(token) {
+        if (doc.tokens.indexOf(token) !== -1) score += 4;
+        if (doc.title.toLowerCase().indexOf(token) !== -1) score += 8;
+        if (doc.market.toLowerCase().indexOf(token) !== -1) score += 12;
+      });
+      return score;
+    }
+
+    function answerAnalystQuestion(question) {
+      var q = String(question || "").trim();
+      var tokens = tokenize(q);
+      if (!tokens.length) {
+        return { text: "Scrivi una domanda sui report, sui mercati, sulle posizioni correnti, sulle metriche o sulle guide Mosaic.", sources: [] };
+      }
+      if (!analystReady) {
+        return { text: "Sto ancora indicizzando i contenuti. Riprova tra pochi secondi.", sources: [] };
+      }
+
+      var ranked = analystDocuments.map(function(doc) {
+        return { doc: doc, score: scoreAnalystDocument(doc, tokens) };
+      }).filter(function(item) {
+        return item.score > 0;
+      }).sort(function(a, b) {
+        return b.score - a.score;
+      }).slice(0, 4);
+
+      if (!ranked.length) {
+        ranked = analystDocuments.filter(function(doc) { return doc.type === "pagina"; }).slice(0, 4).map(function(doc) {
+          return { doc: doc, score: 1 };
+        });
+      }
+
+      var lines = ranked.map(function(item) {
+        return "- " + item.doc.title + ": " + compactText(item.doc.text, 420);
+      });
+      return {
+        text: "Risposta basata sui contenuti riservati indicizzati:\n" + lines.join("\n"),
+        sources: ranked.map(function(item) { return { title: item.doc.title, url: item.doc.url }; })
+      };
+    }
+
+    function setupAnalyst() {
+      var form = document.getElementById("analyst-form");
+      var input = document.getElementById("analyst-input");
+      if (!form || !input) return;
+      analystAddMessage("Sono Mosaic AI Analyst. Dopo lo sblocco indicizzo tutti i mercati, i report e le guide disponibili nel sito. Chiedimi posizioni, metriche, hedge, ribilanciamento o dove trovare un contenuto.", "", []);
+      form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        var question = input.value.trim();
+        if (!question) return;
+        analystAddMessage(question, "user", []);
+        input.value = "";
+        var answer = answerAnalystQuestion(question);
+        analystAddMessage(answer.text, "", answer.sources);
+      });
+      Array.prototype.slice.call(document.querySelectorAll(".analyst-prompt")).forEach(function(button) {
+        button.addEventListener("click", function() {
+          input.value = button.getAttribute("data-question") || "";
+          form.dispatchEvent(new Event("submit"));
+        });
+      });
+    }
+
     function loadData() {
       var cacheKey = String(Date.now());
       var indexPromise = fetch("reports/reports_index.json?v=" + cacheKey, { cache: "no-store" }).then(function(r) { return r.json(); }).catch(function() { return []; });
@@ -1870,6 +2271,7 @@
     }
 
     loadSubscriptions().then(function() {
+      setupAnalyst();
       setupAccessForm();
       restoreAccessSession();
     });
