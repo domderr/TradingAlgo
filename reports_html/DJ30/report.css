@@ -122,14 +122,11 @@ body {
 }
 .dashboard-chart {
   width: 100%;
-  max-height: 620px;
+  max-height: 760px;
   display: block;
   object-fit: contain;
   border: 1px solid #e2e8f0;
   background: #fff;
-}
-.exposure-chart {
-  max-height: 420px;
 }
 .performance-table td,
 .performance-table th {
