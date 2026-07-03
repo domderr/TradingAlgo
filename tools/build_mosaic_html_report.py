@@ -1890,7 +1890,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         <div class="chart-stack">
           <div class="chart-frame">
             <h3>Equity / Drawdown / Exposure</h3>
-            <img class="dashboard-chart" src="assets/summary_{safe_market}.png" alt="{html_text(market)} equity, drawdown and exposure" />
+            <img class="dashboard-chart" src="assets/summary_{safe_market}.png?v={REPORT_CSS_VERSION}" alt="{html_text(market)} equity, drawdown and exposure" />
           </div>
         </div>
       </section>
