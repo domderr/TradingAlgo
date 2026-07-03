@@ -325,7 +325,7 @@ def report_date_label():
     return last_available_friday().strftime("%d %b %Y")
 
 
-REPORT_CSS_VERSION = "20260624-tooltips-exposure"
+REPORT_CSS_VERSION = "20260703-uniform-equity-exposure"
 
 
 def read_tickers(tickers_xlsx, market):
@@ -815,14 +815,11 @@ body {
 }
 .dashboard-chart {
   width: 100%;
-  max-height: 620px;
+  max-height: 760px;
   display: block;
   object-fit: contain;
   border: 1px solid #e2e8f0;
   background: #fff;
-}
-.exposure-chart {
-  max-height: 420px;
 }
 .performance-table td,
 .performance-table th {
@@ -1540,8 +1537,6 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
     output_dir = dev_dir / "output"
     summary_src = output_dir / "_summary_charts" / safe_market / f"summary_{safe_market}.png"
     copy_if_exists(summary_src, asset_out_dir / summary_src.name)
-    exposure_src = output_dir / "_exposure_charts" / safe_market / f"exposure_long_net_{safe_market}.png"
-    exposure_asset_name = exposure_src.name if copy_if_exists(exposure_src, asset_out_dir / exposure_src.name) else ""
     shutil.copy2(data_path, out_dir / "report_data.json")
 
     asset_src_dir = output_dir / "_asset_detail_pages" / safe_market
@@ -1818,15 +1813,6 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         "loss of capital. Investors are solely responsible for their investment decisions and should independently assess the suitability of any "
         "investment strategy."
     )
-    exposure_chart_html = ""
-    if exposure_asset_name:
-        exposure_alt = html_attr(f"{market} long and net exposure")
-        exposure_chart_html = f"""
-          <div class="chart-frame">
-            <h3>Long / Net Exposure</h3>
-            <img class="dashboard-chart exposure-chart" src="assets/{html_attr(exposure_asset_name)}" alt="{exposure_alt}" />
-          </div>"""
-
     report_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1886,9 +1872,9 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         <h2>Equity, Drawdown &amp; Exposure</h2>
         <div class="chart-stack">
           <div class="chart-frame">
-            <h3>Equity / Drawdown</h3>
-            <img class="dashboard-chart" src="assets/summary_{safe_market}.png" alt="{html_text(market)} equity and drawdown" />
-          </div>{exposure_chart_html}
+            <h3>Equity / Drawdown / Exposure</h3>
+            <img class="dashboard-chart" src="assets/summary_{safe_market}.png" alt="{html_text(market)} equity, drawdown and exposure" />
+          </div>
         </div>
       </section>
 

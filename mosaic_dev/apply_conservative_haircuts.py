@@ -11,6 +11,7 @@ import pandas as pd
 
 matplotlib.use("Agg")
 import matplotlib.dates as mdates
+import matplotlib.ticker as mticker
 import matplotlib.pyplot as plt
 
 
@@ -49,6 +50,13 @@ def parse_return_map(value):
     series = pd.Series(data, dtype=float)
     series.index = pd.to_datetime(series.index)
     return series.sort_index()
+
+
+def raw_number(value):
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return np.nan
 
 
 def return_map(series):
@@ -211,7 +219,22 @@ def make_summary_chart(row, strategy_returns, hedged_returns, benchmark_returns,
     benchmark_dd = benchmark_equity / benchmark_equity.cummax() - 1.0
     hedged_dd = hedged_equity / hedged_equity.cummax() - 1.0 if not hedged_equity.empty else pd.Series(dtype=float)
 
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7.45, 5.30), sharex=True, gridspec_kw={"height_ratios": [3.0, 1.2]})
+    exposure_value = raw_number(row.get("Capital Invested"))
+    if not np.isfinite(exposure_value):
+        exposure_value = 1.0
+    hedge_value = raw_number(row.get("Benchmark Hedge Short"))
+    if not np.isfinite(hedge_value):
+        hedge_value = 0.0
+    exposure = pd.Series(exposure_value, index=index, dtype=float)
+    net_exposure = pd.Series(exposure_value - hedge_value, index=index, dtype=float)
+
+    fig, (ax1, ax2, ax3) = plt.subplots(
+        3,
+        1,
+        figsize=(7.45, 6.35),
+        sharex=True,
+        gridspec_kw={"height_ratios": [3.0, 1.25, 1.05]},
+    )
     ax1.set_title("Equity", color="black", fontsize=9.2, fontweight="bold", pad=2)
     ax1.plot(strategy_equity.index, strategy_equity, color="#123E73", lw=1.3, label="Long")
     if not hedged_equity.empty:
@@ -229,14 +252,23 @@ def make_summary_chart(row, strategy_returns, hedged_returns, benchmark_returns,
     ax2.grid(True, alpha=0.18)
     ax2.tick_params(labelsize=8)
 
+    ax3.set_title("Exposure", color="black", fontsize=9.2, fontweight="bold", pad=2)
+    ax3.plot(exposure.index, exposure * 100.0, color="#123E73", lw=1.0, label="Long")
+    ax3.plot(net_exposure.index, net_exposure * 100.0, color="#008C7A", lw=0.95, label="Net")
+    ax3.set_ylim(-5, 105)
+    ax3.yaxis.set_major_formatter(mticker.PercentFormatter(xmax=100))
+    ax3.grid(True, alpha=0.18)
+    ax3.tick_params(labelsize=8)
+    ax3.legend(loc="upper center", ncol=2, fontsize=8.4, frameon=False)
+
     if len(index) > 0:
         quarter_ticks = pd.date_range(index.min(), index.max(), freq="QS-DEC")
         quarter_ticks = quarter_ticks[(quarter_ticks >= index.min()) & (quarter_ticks <= index.max())]
         if len(quarter_ticks) > 6:
             tick_idx = np.linspace(0, len(quarter_ticks) - 1, 6).round().astype(int)
             quarter_ticks = quarter_ticks[tick_idx]
-        ax2.set_xticks(quarter_ticks.to_pydatetime())
-        ax2.xaxis.set_major_formatter(mdates.DateFormatter("%b %y"))
+        ax3.set_xticks(quarter_ticks.to_pydatetime())
+        ax3.xaxis.set_major_formatter(mdates.DateFormatter("%b %y"))
     fig.autofmt_xdate(rotation=0, ha="center")
     fig.tight_layout(pad=0.32, h_pad=0.55)
     fig.savefig(out, dpi=180, bbox_inches="tight")
