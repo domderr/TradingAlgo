@@ -1,6 +1,6 @@
 {
   "DJ30": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "CAT",
@@ -27,29 +27,19 @@
         "industry": "Capital Markets"
       },
       {
-        "ticker": "WMT",
-        "name": "Walmart Inc.",
-        "sector": "Consumer Defensive",
-        "industry": "Discount Stores"
+        "ticker": "CVX",
+        "name": "Chevron Corporation",
+        "sector": "Energy",
+        "industry": "Oil & Gas Integrated"
       }
     ],
     "changes": {
-      "in": [
-        {
-          "ticker": "WMT",
-          "name": "Walmart Inc."
-        }
-      ],
-      "out": [
-        {
-          "ticker": "CVX",
-          "name": "Chevron Corporation"
-        }
-      ]
+      "in": [],
+      "out": []
     }
   },
   "USA100": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -70,35 +60,25 @@
         "industry": "Integrated Freight & Logistics"
       },
       {
-        "ticker": "GEV",
-        "name": "GE Vernova Inc.",
-        "sector": "Industrials",
-        "industry": "Specialty Industrial Machinery"
-      },
-      {
         "ticker": "GOOGL",
         "name": "Alphabet Inc.",
         "sector": "Communication Services",
         "industry": "Internet Content & Information"
+      },
+      {
+        "ticker": "SLB",
+        "name": "SLB Limited",
+        "sector": "Energy",
+        "industry": "Oil & Gas Equipment & Services"
       }
     ],
     "changes": {
-      "in": [
-        {
-          "ticker": "GEV",
-          "name": "GE Vernova Inc."
-        }
-      ],
-      "out": [
-        {
-          "ticker": "SLB",
-          "name": "SLB Limited"
-        }
-      ]
+      "in": [],
+      "out": []
     }
   },
   "NASDAQ100": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -134,10 +114,6 @@
     "changes": {
       "in": [
         {
-          "ticker": "MRVL",
-          "name": "Marvell Technology, Inc."
-        },
-        {
           "ticker": "RKLB",
           "name": "Rocket Lab Corporation"
         }
@@ -145,115 +121,13 @@
       "out": [
         {
           "ticker": "WBD",
-          "name": "Warner Bros. Discovery, Inc. -<br/>ROST - Ross Stores, Inc."
-        },
-        {
-          "ticker": "ROST",
-          "name": "ROST"
-        }
-      ]
-    }
-  },
-  "Canada50": {
-    "week": "26 Jun 2026",
-    "positions": [
-      {
-        "ticker": "CVE.TO",
-        "name": "CENOVUS ENERGY INC.",
-        "sector": "Energy",
-        "industry": "Oil & Gas Integrated"
-      },
-      {
-        "ticker": "TECK-B.TO",
-        "name": "TECK RESOURCES LIMITED CL B",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "TD.TO",
-        "name": "TORONTO-DOMINION BANK",
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
-      },
-      {
-        "ticker": "GWO.TO",
-        "name": "GREAT-WEST LIFECO INC",
-        "sector": "Financial Services",
-        "industry": "Insurance - Life"
-      },
-      {
-        "ticker": "SAP.TO",
-        "name": "SAPUTO INC.",
-        "sector": "Consumer Defensive",
-        "industry": "Packaged Foods"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "TD.TO",
-          "name": "TORONTO-DOMINION BANK"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "CM.TO",
-          "name": "CANADIAN IMPERIAL BANK OF COMME"
-        }
-      ]
-    }
-  },
-  "Mexico30": {
-    "week": "26 Jun 2026",
-    "positions": [
-      {
-        "ticker": "GMEXICOB.MX",
-        "name": "GRUPO MEXICO SAB DE CV",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "FEMSAUBD.MX",
-        "name": "FOMENTO ECONOMICO MEXICANO SAB",
-        "sector": "Consumer Defensive",
-        "industry": "Beverages - Brewers"
-      },
-      {
-        "ticker": "AMXB.MX",
-        "name": "AMERICA MOVIL SAB DE CV",
-        "sector": "Communication Services",
-        "industry": "Telecom Services"
-      },
-      {
-        "ticker": "PINFRA.MX",
-        "name": "PROMOTORA Y OPERADORA DE INFRST",
-        "sector": "Industrials",
-        "industry": "Infrastructure Operations"
-      },
-      {
-        "ticker": "LIVEPOLC-1.MX",
-        "name": "EL PUERTO DE LIVERPOOL SAB DE C",
-        "sector": "Consumer Cyclical",
-        "industry": "Department Stores"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "LIVEPOLC-1.MX",
-          "name": "EL PUERTO DE LIVERPOOL SAB DE C"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "VOLARA.MX",
-          "name": "CONTROLADORA VUELA CIA DE AVIAC"
+          "name": "Warner Bros. Discovery, Inc."
         }
       ]
     }
   },
   "Europe50": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "NOKIA.HE",
@@ -268,16 +142,16 @@
         "industry": "Semiconductor Equipment & Materials"
       },
       {
-        "ticker": "ENI.MI",
-        "name": "ENI",
-        "sector": "Energy",
-        "industry": "Oil & Gas Integrated"
-      },
-      {
         "ticker": "IFX.DE",
         "name": "INFINEON TECHNOLOGIES AG      N",
         "sector": "Technology",
         "industry": "Semiconductors"
+      },
+      {
+        "ticker": "ENI.MI",
+        "name": "ENI",
+        "sector": "Energy",
+        "industry": "Oil & Gas Integrated"
       },
       {
         "ticker": "ENGI.PA",
@@ -291,8 +165,47 @@
       "out": []
     }
   },
+  "Italy40": {
+    "week": "3 Jul 2026",
+    "positions": [
+      {
+        "ticker": "SPM.MI",
+        "name": "SAIPEM",
+        "sector": "Energy",
+        "industry": "Oil & Gas Equipment & Services"
+      },
+      {
+        "ticker": "PRY.MI",
+        "name": "PRYSMIAN",
+        "sector": "Industrials",
+        "industry": "Electrical Equipment & Parts"
+      },
+      {
+        "ticker": "STMMI.MI",
+        "name": "STMICROELECTRONICS",
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      },
+      {
+        "ticker": "TIT.MI",
+        "name": "TELECOM ITALIA",
+        "sector": "Communication Services",
+        "industry": "Telecom Services"
+      },
+      {
+        "ticker": "SRG.MI",
+        "name": "SNAM",
+        "sector": "Utilities",
+        "industry": "Utilities - Regulated Gas"
+      }
+    ],
+    "changes": {
+      "in": [],
+      "out": []
+    }
+  },
   "UK30": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "GLEN.L",
@@ -301,37 +214,63 @@
         "industry": "Other Industrial Metals & Mining"
       },
       {
-        "ticker": "RIO.L",
-        "name": "RIO TINTO PLC ORD 10P",
+        "ticker": "AAL.L",
+        "name": "ANGLO AMERICAN PLC ORD USD0.623",
         "sector": "Basic Materials",
         "industry": "Other Industrial Metals & Mining"
       },
       {
-        "ticker": "HSBA.L",
-        "name": "HSBC HOLDINGS PLC ORD $0.50 (UK",
+        "ticker": "STAN.L",
+        "name": "STANDARD CHARTERED PLC ORD USD0",
         "sector": "Financial Services",
         "industry": "Banks - Diversified"
+      },
+      {
+        "ticker": "VOD.L",
+        "name": "VODAFONE GROUP PLC ORD USD0.20",
+        "sector": "Communication Services",
+        "industry": "Telecom Services"
       },
       {
         "ticker": "GSK.L",
         "name": "GSK PLC ORD 31 1/4P",
         "sector": "Healthcare",
         "industry": "Drug Manufacturers - General"
-      },
-      {
-        "ticker": "BP.L",
-        "name": "BP PLC $0.25",
-        "sector": "Energy",
-        "industry": "Oil & Gas Integrated"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "AAL.L",
+          "name": "ANGLO AMERICAN PLC ORD USD0.623"
+        },
+        {
+          "ticker": "STAN.L",
+          "name": "STANDARD CHARTERED PLC ORD USD0"
+        },
+        {
+          "ticker": "VOD.L",
+          "name": "VODAFONE GROUP PLC ORD USD0.20"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "RIO.L",
+          "name": "RIO TINTO PLC ORD 10P"
+        },
+        {
+          "ticker": "HSBA.L",
+          "name": "HSBC HOLDINGS PLC ORD $0.50 (UK"
+        },
+        {
+          "ticker": "BP.L",
+          "name": "BP PLC $0.25"
+        }
+      ]
     }
   },
   "France40": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "STMPA.PA",
@@ -370,7 +309,7 @@
     }
   },
   "Spain40": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "ACS.MC",
@@ -379,16 +318,16 @@
         "industry": "Engineering & Construction"
       },
       {
-        "ticker": "SLR.MC",
-        "name": "SOLARIA ENERGIA Y MEDIO AMBIENT",
-        "sector": "Utilities",
-        "industry": "Utilities - Renewable"
-      },
-      {
         "ticker": "MTS.MC",
         "name": "ARCELORMITTAL SA",
         "sector": "Basic Materials",
         "industry": "Steel"
+      },
+      {
+        "ticker": "SLR.MC",
+        "name": "SOLARIA ENERGIA Y MEDIO AMBIENT",
+        "sector": "Utilities",
+        "industry": "Utilities - Renewable"
       },
       {
         "ticker": "REP.MC",
@@ -408,38 +347,38 @@
       "out": []
     }
   },
-  "Japan50": {
-    "week": "26 Jun 2026",
+  "Germany40": {
+    "week": "3 Jul 2026",
     "positions": [
       {
-        "ticker": "6981.T",
-        "name": "MURATA MANUFACTURING CO",
-        "sector": "Technology",
-        "industry": "Electronic Components"
-      },
-      {
-        "ticker": "6857.T",
-        "name": "ADVANTEST CORP",
-        "sector": "Technology",
-        "industry": "Semiconductor Equipment & Materials"
-      },
-      {
-        "ticker": "6954.T",
-        "name": "FANUC CORPORATION",
+        "ticker": "ENR.DE",
+        "name": "Siemens Energy AG             N",
         "sector": "Industrials",
         "industry": "Specialty Industrial Machinery"
       },
       {
-        "ticker": "9983.T",
-        "name": "FAST RETAILING CO LTD",
-        "sector": "Consumer Cyclical",
-        "industry": "Apparel Retail"
+        "ticker": "IFX.DE",
+        "name": "INFINEON TECHNOLOGIES AG      N",
+        "sector": "Technology",
+        "industry": "Semiconductors"
       },
       {
-        "ticker": "8031.T",
-        "name": "MITSUI & CO",
+        "ticker": "RWE.DE",
+        "name": "RWE AG                        I",
+        "sector": "Utilities",
+        "industry": "Utilities - Diversified"
+      },
+      {
+        "ticker": "BAYN.DE",
+        "name": "Bayer AG                      N",
+        "sector": "Healthcare",
+        "industry": "Drug Manufacturers - General"
+      },
+      {
+        "ticker": "DHL.DE",
+        "name": "DEUTSCHE POST AG              N",
         "sector": "Industrials",
-        "industry": "Conglomerates"
+        "industry": "Integrated Freight & Logistics"
       }
     ],
     "changes": {
@@ -447,67 +386,12 @@
       "out": []
     }
   },
-  "SouthKorea30": {
-    "week": "26 Jun 2026",
-    "positions": [
-      {
-        "ticker": "000660.KS",
-        "name": "SK hynix",
-        "sector": "Technology",
-        "industry": "Semiconductors"
-      },
-      {
-        "ticker": "005380.KS",
-        "name": "HyundaiMtr",
-        "sector": "Consumer Cyclical",
-        "industry": "Auto Manufacturers"
-      },
-      {
-        "ticker": "017670.KS",
-        "name": "SKTelecom",
-        "sector": "Communication Services",
-        "industry": "Telecom Services"
-      },
-      {
-        "ticker": "034020.KS",
-        "name": "Doosan Enerbility",
-        "sector": "Industrials",
-        "industry": "Specialty Industrial Machinery"
-      },
-      {
-        "ticker": "055550.KS",
-        "name": "ShinhanGroup",
-        "sector": "Financial Services",
-        "industry": "Banks - Regional"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "055550.KS",
-          "name": "ShinhanGroup"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "006400.KS",
-          "name": "SAMSUNG SDI CO.,LTD."
-        }
-      ]
-    }
-  },
   "Australia50": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "RIO.AX",
         "name": "RIO TINTO FPO [RIO]",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "S32.AX",
-        "name": "SOUTH32 FPO [S32]",
         "sector": "Basic Materials",
         "industry": "Other Industrial Metals & Mining"
       },
@@ -524,6 +408,12 @@
         "industry": "Other Industrial Metals & Mining"
       },
       {
+        "ticker": "WOW.AX",
+        "name": "WOOLWORTHS FPO [WOW]",
+        "sector": "Consumer Defensive",
+        "industry": "Grocery Stores"
+      },
+      {
         "ticker": "WDS.AX",
         "name": "WOODSIDE FPO [WDS]",
         "sector": "Energy",
@@ -531,12 +421,224 @@
       }
     ],
     "changes": {
+      "in": [
+        {
+          "ticker": "WOW.AX",
+          "name": "WOOLWORTHS FPO [WOW]"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "S32.AX",
+          "name": "SOUTH32 FPO [S32]"
+        }
+      ]
+    }
+  },
+  "Japan50": {
+    "week": "3 Jul 2026",
+    "positions": [
+      {
+        "ticker": "6981.T",
+        "name": "MURATA MANUFACTURING CO",
+        "sector": "Technology",
+        "industry": "Electronic Components"
+      },
+      {
+        "ticker": "8035.T",
+        "name": "TOKYO ELECTRON",
+        "sector": "Technology",
+        "industry": "Semiconductor Equipment & Materials"
+      },
+      {
+        "ticker": "6954.T",
+        "name": "FANUC CORPORATION",
+        "sector": "Industrials",
+        "industry": "Specialty Industrial Machinery"
+      },
+      {
+        "ticker": "9983.T",
+        "name": "FAST RETAILING CO LTD",
+        "sector": "Consumer Cyclical",
+        "industry": "Apparel Retail"
+      },
+      {
+        "ticker": "8316.T",
+        "name": "SUMITOMO MITSUI FINANCIAL GROUP",
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "8035.T",
+          "name": "TOKYO ELECTRON"
+        },
+        {
+          "ticker": "8316.T",
+          "name": "SUMITOMO MITSUI FINANCIAL GROUP"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "6857.T",
+          "name": "ADVANTEST CORP"
+        },
+        {
+          "ticker": "8031.T",
+          "name": "MITSUI & CO"
+        }
+      ]
+    }
+  },
+  "Canada50": {
+    "week": "3 Jul 2026",
+    "positions": [
+      {
+        "ticker": "CVE.TO",
+        "name": "CENOVUS ENERGY INC.",
+        "sector": "Energy",
+        "industry": "Oil & Gas Integrated"
+      },
+      {
+        "ticker": "TECK-B.TO",
+        "name": "TECK RESOURCES LIMITED CL B",
+        "sector": "Basic Materials",
+        "industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "ticker": "TD.TO",
+        "name": "TORONTO-DOMINION BANK",
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      },
+      {
+        "ticker": "GWO.TO",
+        "name": "GREAT-WEST LIFECO INC",
+        "sector": "Financial Services",
+        "industry": "Insurance - Life"
+      },
+      {
+        "ticker": "CCO.TO",
+        "name": "CAMECO CORP",
+        "sector": "Energy",
+        "industry": "Uranium"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "CCO.TO",
+          "name": "CAMECO CORP"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "SAP.TO",
+          "name": "SAPUTO INC."
+        }
+      ]
+    }
+  },
+  "Mexico30": {
+    "week": "3 Jul 2026",
+    "positions": [
+      {
+        "ticker": "GMEXICOB.MX",
+        "name": "GRUPO MEXICO SAB DE CV",
+        "sector": "Basic Materials",
+        "industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "ticker": "FEMSAUBD.MX",
+        "name": "FOMENTO ECONOMICO MEXICANO SAB",
+        "sector": "Consumer Defensive",
+        "industry": "Beverages - Brewers"
+      },
+      {
+        "ticker": "AMXB.MX",
+        "name": "AMERICA MOVIL SAB DE CV",
+        "sector": "Communication Services",
+        "industry": "Telecom Services"
+      },
+      {
+        "ticker": "PINFRA.MX",
+        "name": "PROMOTORA Y OPERADORA DE INFRST",
+        "sector": "Industrials",
+        "industry": "Infrastructure Operations"
+      },
+      {
+        "ticker": "LIVEPOLC-1.MX",
+        "name": "EL PUERTO DE LIVERPOOL SAB DE C",
+        "sector": "Consumer Cyclical",
+        "industry": "Department Stores"
+      }
+    ],
+    "changes": {
       "in": [],
       "out": []
     }
   },
+  "SouthKorea30": {
+    "week": "3 Jul 2026",
+    "positions": [
+      {
+        "ticker": "009150.KS",
+        "name": "SamsungElecMech",
+        "sector": "Technology",
+        "industry": "Electronic Components"
+      },
+      {
+        "ticker": "005380.KS",
+        "name": "HyundaiMtr",
+        "sector": "Consumer Cyclical",
+        "industry": "Auto Manufacturers"
+      },
+      {
+        "ticker": "028260.KS",
+        "name": "SAMSUNG C&T",
+        "sector": "Industrials",
+        "industry": "Engineering & Construction"
+      },
+      {
+        "ticker": "017670.KS",
+        "name": "SKTelecom",
+        "sector": "Communication Services",
+        "industry": "Telecom Services"
+      },
+      {
+        "ticker": "055550.KS",
+        "name": "ShinhanGroup",
+        "sector": "Financial Services",
+        "industry": "Banks - Regional"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "009150.KS",
+          "name": "SamsungElecMech"
+        },
+        {
+          "ticker": "028260.KS",
+          "name": "SAMSUNG C&T"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "000660.KS",
+          "name": "SK hynix"
+        },
+        {
+          "ticker": "034020.KS",
+          "name": "Doosan Enerbility"
+        }
+      ]
+    }
+  },
   "SouthAfrica30": {
-    "week": "26 Jun 2026",
+    "week": "3 Jul 2026",
     "positions": [
       {
         "ticker": "SOL.JO",
@@ -561,104 +663,6 @@
         "name": "Remgro Ltd",
         "sector": "Financial Services",
         "industry": "Asset Management"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "AGL.JO",
-          "name": "Anglo American plc"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "ANG.JO",
-          "name": "AngloGold Ashanti plc"
-        }
-      ]
-    }
-  },
-  "Italy40": {
-    "week": "26 Jun 2026",
-    "positions": [
-      {
-        "ticker": "PRY.MI",
-        "name": "PRYSMIAN",
-        "sector": "Industrials",
-        "industry": "Electrical Equipment & Parts"
-      },
-      {
-        "ticker": "SPM.MI",
-        "name": "SAIPEM",
-        "sector": "Energy",
-        "industry": "Oil & Gas Equipment & Services"
-      },
-      {
-        "ticker": "TIT.MI",
-        "name": "TELECOM ITALIA",
-        "sector": "Communication Services",
-        "industry": "Telecom Services"
-      },
-      {
-        "ticker": "STMMI.MI",
-        "name": "STMICROELECTRONICS",
-        "sector": "Technology",
-        "industry": "Semiconductors"
-      },
-      {
-        "ticker": "SRG.MI",
-        "name": "SNAM",
-        "sector": "Utilities",
-        "industry": "Utilities - Regulated Gas"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "SRG.MI",
-          "name": "SNAM"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "BPE.MI",
-          "name": "BPER BANCA"
-        }
-      ]
-    }
-  },
-  "Germany40": {
-    "week": "26 Jun 2026",
-    "positions": [
-      {
-        "ticker": "ENR.DE",
-        "name": "Siemens Energy AG             N",
-        "sector": "Industrials",
-        "industry": "Specialty Industrial Machinery"
-      },
-      {
-        "ticker": "RWE.DE",
-        "name": "RWE AG                        I",
-        "sector": "Utilities",
-        "industry": "Utilities - Diversified"
-      },
-      {
-        "ticker": "IFX.DE",
-        "name": "INFINEON TECHNOLOGIES AG      N",
-        "sector": "Technology",
-        "industry": "Semiconductors"
-      },
-      {
-        "ticker": "BAYN.DE",
-        "name": "Bayer AG                      N",
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
-      },
-      {
-        "ticker": "DHL.DE",
-        "name": "DEUTSCHE POST AG              N",
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
       }
     ],
     "changes": {
