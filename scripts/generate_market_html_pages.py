@@ -1,237 +1,78 @@
-import html
-import json
 import subprocess
 import sys
 from pathlib import Path
 
+
 ROOT = Path(__file__).resolve().parents[1]
+BUILDER = ROOT / "tools" / "build_mosaic_html_report.py"
+DEV_DIR = ROOT / "mosaic_dev"
 HTML_DIR = ROOT / "reports_html"
 
 MARKETS = [
-    ("DJ30", "DJ30"),
-    ("USA100", "USA100"),
-    ("NASDAQ100", "Nasdaq100"),
-    ("Canada50", "Canada50"),
-    ("Mexico30", "Mexico30"),
-    ("Europe50", "Europe50"),
-    ("Italy40", "Italy40"),
-    ("UK30", "UK30"),
-    ("France40", "France40"),
-    ("Spain40", "Spain40"),
-    ("Germany40", "Germany40"),
-    ("Japan50", "Japan50"),
-    ("South Korea30", "S.Korea30"),
-    ("Australia50", "Australia50"),
-    ("South Africa30", "S.Africa30"),
+    "DJ30",
+    "USA100",
+    "NASDAQ100",
+    "Europe50",
+    "Italy40",
+    "UK30",
+    "France40",
+    "Spain40",
+    "Germany40",
+    "Australia50",
+    "Japan50",
+    "Canada50",
+    "Mexico30",
+    "South Korea30",
+    "South Africa30",
+]
+
+REQUIRED_REPORT_MARKERS = [
+    "Performance Table",
+    "Month / Year Performance",
+    "Top / Bottom Profit Contributors",
 ]
 
 
-def report_name(market):
-    market_slug = market.replace(" ", "_")
-    return f"Report_{market_slug}.html"
+def safe_market_name(value):
+    return str(value).replace(" ", "_").replace("/", "_")
 
 
-def fmt_pct(value):
-    try:
-        return f"{float(value) * 100:.2f}%"
-    except (TypeError, ValueError):
-        return "-"
+def build_market(market, choice):
+    command = [
+        sys.executable,
+        str(BUILDER),
+        "--dev-dir",
+        str(DEV_DIR),
+        "--site-dir",
+        str(ROOT),
+        "--market",
+        market,
+        "--market-choice",
+        str(choice),
+    ]
+    print(" ".join(command), flush=True)
+    subprocess.run(command, check=True)
 
 
-def read_json(path, fallback):
-    if not path.exists():
-        return fallback
-    return json.loads(path.read_text(encoding="utf-8"))
+def validate_market(market):
+    safe_market = safe_market_name(market)
+    report_path = HTML_DIR / safe_market / f"Report_{safe_market}.html"
+    if not report_path.exists():
+        raise FileNotFoundError(f"Missing generated report: {report_path}")
 
-
-def position_rows(positions):
-    if not positions:
-        return '<tr><td colspan="2">-</td></tr>'
-    return "\n".join(
-        f"<tr><td>{html.escape(item.get('ticker', ''))}</td><td>{html.escape(item.get('name', ''))}</td></tr>"
-        for item in positions
-    )
-
-
-def change_text(items):
-    if not items:
-        return "-"
-    return ", ".join(html.escape(item.get("ticker", "")) for item in items)
-
-
-def render_page(market, display_name, index_row, pos_row):
-    benchmark = html.escape(index_row.get("Benchmark") or "-")
-    status = html.escape(index_row.get("Status") or "-")
-    updated = html.escape(index_row.get("Updated_At") or "-")
-    hedge_ticker = html.escape(index_row.get("Benchmark_Hedge_Ticker") or index_row.get("Benchmark") or "-")
-    hedge = fmt_pct(index_row.get("Last_Hedge_Short"))
-    week = html.escape(pos_row.get("week") or "-")
-    positions = position_rows(pos_row.get("positions") or [])
-    changes = pos_row.get("changes") or {}
-    added = change_text(changes.get("in") or [])
-    removed = change_text(changes.get("out") or [])
-
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{html.escape(display_name)} Weekly Report | TradingAlgo Mosaic</title>
-  <style>
-    :root {{
-      color-scheme: dark;
-      --bg: #071014;
-      --panel: #101a20;
-      --panel-2: #152229;
-      --line: rgba(255,255,255,.12);
-      --text: #eaf2f6;
-      --muted: #8fa0aa;
-      --accent: #68d391;
-      --red: #ff6b6b;
-    }}
-    * {{ box-sizing: border-box; }}
-    body {{
-      margin: 0;
-      font-family: Inter, Segoe UI, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }}
-    a {{ color: inherit; }}
-    .shell {{ width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 22px 0 34px; }}
-    .top-actions {{ display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 18px; }}
-    .back-link {{
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      color: var(--muted);
-    }}
-    .hero {{
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 16px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-    }}
-    .brand {{ color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }}
-    h1 {{ margin: 6px 0 8px; font-size: clamp(28px, 4vw, 46px); letter-spacing: 0; }}
-    .subtitle {{ margin: 0; color: var(--muted); font-size: 15px; }}
-    .meta {{ text-align: right; color: var(--muted); line-height: 1.7; font-size: 14px; }}
-    .meta strong {{ color: var(--text); }}
-    .grid {{
-      display: grid;
-      grid-template-columns: minmax(280px, 380px) 1fr;
-      gap: 16px;
-      align-items: start;
-    }}
-    .panel {{
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 8px;
-      overflow: hidden;
-    }}
-    .panel h2 {{
-      margin: 0;
-      padding: 15px 16px;
-      font-size: 18px;
-      border-bottom: 1px solid var(--line);
-      background: var(--panel-2);
-    }}
-    .summary {{ padding: 16px; display: grid; gap: 14px; }}
-    .stat {{ display: grid; gap: 3px; }}
-    .label {{ color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }}
-    .value {{ font-size: 18px; }}
-    .value.hedge {{ color: var(--red); font-weight: 700; }}
-    table {{ width: 100%; border-collapse: collapse; font-size: 14px; }}
-    th, td {{ padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; vertical-align: top; }}
-    th {{ color: var(--muted); font-weight: 600; }}
-    th:first-child, td:first-child {{ min-width: 72px; white-space: nowrap; overflow-wrap: normal; }}
-    .changes {{ color: var(--muted); line-height: 1.5; }}
-    @media (max-width: 900px) {{
-      .shell {{ width: min(100% - 24px, 1440px); }}
-      .hero, .grid {{ grid-template-columns: 1fr; }}
-      .meta {{ text-align: left; }}
-    }}
-  </style>
-</head>
-<body>
-  <main class="shell">
-    <nav class="top-actions">
-      <a class="back-link" href="../../reserved-area.html">Back to Reserved Area</a>
-    </nav>
-
-    <section class="hero">
-      <div>
-        <div class="brand">TradingAlgo Mosaic</div>
-        <h1>{html.escape(display_name)} Weekly Report</h1>
-        <p class="subtitle">Benchmark: {benchmark}</p>
-      </div>
-      <div class="meta">
-        Week ending: <strong>{week}</strong><br />
-        Status: <strong>{status}</strong><br />
-        Updated: <strong>{updated}</strong>
-      </div>
-    </section>
-
-    <section class="grid">
-      <div class="panel">
-        <h2>Current Selection</h2>
-        <table>
-          <thead><tr><th>Ticker</th><th>Name</th></tr></thead>
-          <tbody>{positions}</tbody>
-        </table>
-        <div class="summary">
-          <div class="stat">
-            <div class="label">Hedge</div>
-            <div class="value hedge">Short {hedge_ticker}: {hedge}</div>
-          </div>
-          <div class="stat">
-            <div class="label">Weekly Changes</div>
-            <div class="changes">IN: {added}<br />OUT: {removed}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h2>Report</h2>
-        <div class="summary">
-          <a class="back-link" href="{html.escape(report_name(market))}">Open HTML report</a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <script defer src="../../assets/access-analytics.js"></script>
-</body>
-</html>
-"""
+    text = report_path.read_text(encoding="utf-8")
+    missing = [marker for marker in REQUIRED_REPORT_MARKERS if marker not in text]
+    if missing:
+        raise RuntimeError(
+            f"Incomplete weekly report generated for {market}: missing {', '.join(missing)}"
+        )
+    print(f"validated full report: {report_path}", flush=True)
 
 
 def main():
-    builder = ROOT / "tools" / "build_mosaic_html_report.py"
-    dev_dir = ROOT / "mosaic_dev"
-    for choice, (market, _display_name) in enumerate(MARKETS, start=1):
-        command = [
-            sys.executable,
-            str(builder),
-            "--dev-dir",
-            str(dev_dir),
-            "--site-dir",
-            str(ROOT),
-            "--market",
-            market,
-            "--market-choice",
-            str(choice),
-        ]
-        print(" ".join(command))
-        subprocess.run(command, check=True)
+    for choice, market in enumerate(MARKETS, start=1):
+        build_market(market, choice)
+        validate_market(market)
 
 
 if __name__ == "__main__":
