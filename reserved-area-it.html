@@ -1243,6 +1243,10 @@
       return aliases[key] || key;
     }
 
+    function marketIndexKey(row) {
+      return normalizeMarketName(row && (row.Market || row.Display_Name));
+    }
+
     function normalizeMarketList(markets) {
       if (!Array.isArray(markets)) return [];
       if (markets.indexOf("All") !== -1) return ["All"];
@@ -1597,8 +1601,8 @@
     function renderAll(indexArr, positions, previousIndexArr) {
       var indexMap = {};
       var previousIndexMap = {};
-      indexArr.forEach(function(r) { indexMap[r.Market || r.Display_Name] = r; });
-      (previousIndexArr || []).forEach(function(r) { previousIndexMap[r.Market || r.Display_Name] = r; });
+      indexArr.forEach(function(r) { indexMap[marketIndexKey(r)] = r; });
+      (previousIndexArr || []).forEach(function(r) { previousIndexMap[marketIndexKey(r)] = r; });
       var reportDataMap = positions && positions.__reportData || {};
       indexMap = enrichIndexWithReportData(indexMap, reportDataMap);
 
