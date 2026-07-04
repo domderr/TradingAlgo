@@ -23,10 +23,20 @@ python download_market_data.py --markets all
 python run_all_15_markets_from_csv.py
 ```
 
+Poi dalla root del repository aggiornare i dati pubblici del sito e rigenerare i report HTML completi:
+
+```powershell
+python scripts\update_site_data_from_pipeline.py
+python scripts\generate_market_html_pages.py
+python scripts\validate_weekly_reports.py
+```
+
+`scripts\generate_market_html_pages.py` deve usare `tools\build_mosaic_html_report.py`: non deve scrivere pagine summary/minimali al posto dei report completi.
+
 Per rigenerare un report HTML specifico:
 
 ```powershell
-python ..\tools\build_mosaic_html_report.py --dev-dir . --site-dir .. --market Italy30 --market-choice 5 --rerun
+python tools\build_mosaic_html_report.py --dev-dir mosaic_dev --site-dir . --market Italy40 --market-choice 5
 ```
 
 ## File chiave
