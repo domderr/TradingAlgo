@@ -3,142 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>USA100 Weekly Report | TradingAlgo Mosaic</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #071014;
-      --panel: #101a20;
-      --panel-2: #152229;
-      --line: rgba(255,255,255,.12);
-      --text: #eaf2f6;
-      --muted: #8fa0aa;
-      --accent: #68d391;
-      --red: #ff6b6b;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Inter, Segoe UI, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
-    a { color: inherit; }
-    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; padding: 22px 0 34px; }
-    .top-actions { display: flex; justify-content: space-between; gap: 14px; align-items: center; margin-bottom: 18px; }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      min-height: 38px;
-      padding: 0 14px;
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      color: var(--muted);
-    }
-    .hero {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 16px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-    }
-    .brand { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
-    h1 { margin: 6px 0 8px; font-size: clamp(28px, 4vw, 46px); letter-spacing: 0; }
-    .subtitle { margin: 0; color: var(--muted); font-size: 15px; }
-    .meta { text-align: right; color: var(--muted); line-height: 1.7; font-size: 14px; }
-    .meta strong { color: var(--text); }
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(280px, 380px) 1fr;
-      gap: 16px;
-      align-items: start;
-    }
-    .panel {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .panel h2 {
-      margin: 0;
-      padding: 15px 16px;
-      font-size: 18px;
-      border-bottom: 1px solid var(--line);
-      background: var(--panel-2);
-    }
-    .summary { padding: 16px; display: grid; gap: 14px; }
-    .stat { display: grid; gap: 3px; }
-    .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
-    .value { font-size: 18px; }
-    .value.hedge { color: var(--red); font-weight: 700; }
-    table { width: 100%; border-collapse: collapse; font-size: 14px; }
-    th, td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.08); text-align: left; vertical-align: top; }
-    th { color: var(--muted); font-weight: 600; }
-    th:first-child, td:first-child { min-width: 72px; white-space: nowrap; overflow-wrap: normal; }
-    .changes { color: var(--muted); line-height: 1.5; }
-    @media (max-width: 900px) {
-      .shell { width: min(100% - 24px, 1440px); }
-      .hero, .grid { grid-template-columns: 1fr; }
-      .meta { text-align: left; }
-    }
-  </style>
+  <title>Report USA100 | TradingAlgo Mosaic</title>
+  <link rel="stylesheet" href="report.css?v=20260703-scroll-historical-exposure" />
 </head>
 <body>
-  <main class="shell">
+  <main class="report-shell">
     <nav class="top-actions">
-      <a class="back-link" href="../../reserved-area.html">Back to Reserved Area</a>
+      <a href="../../reserved-area.html">Back to Reserved Area</a>
+      <a href="all-assets.html">View All Benchmark Assets</a>
+      <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
+      <span class="subscriber-id" data-subscriber-id>ID: User</span>
     </nav>
 
-    <section class="hero">
-      <div>
-        <div class="brand">TradingAlgo Mosaic</div>
-        <h1>USA100 Weekly Report</h1>
-        <p class="subtitle">Benchmark: SPY</p>
-      </div>
-      <div class="meta">
-        Week ending: <strong>3 Jul 2026</strong><br />
-        Status: <strong>OK</strong><br />
-        Updated: <strong>-</strong>
-      </div>
-    </section>
+    <section class="report-dashboard">
+      <header class="dashboard-header">
+        <div>
+          <div class="brand">TradingAlgo Mosaic</div>
+          <h1>USA100 Weekly Report</h1>
+          <p class="eyebrow">Benchmark: SPY</p>
+        </div>
+        <div class="dashboard-meta">
+          Week ending: 03 Jul 2026<br />
+          Universe: 99 assets<br />
+          Status: OK
+        </div>
+      </header>
 
-    <section class="grid">
-      <div class="panel">
-        <h2>Current Selection</h2>
-        <table>
-          <thead><tr><th>Ticker</th><th>Name</th></tr></thead>
-          <tbody><tr><td>MU</td><td>Micron Technology, Inc.</td></tr>
-<tr><td>CAT</td><td>Caterpillar, Inc.</td></tr>
-<tr><td>FDX</td><td>FedEx Corporation</td></tr>
-<tr><td>GOOGL</td><td>Alphabet Inc.</td></tr>
-<tr><td>SLB</td><td>SLB Limited</td></tr></tbody>
+      <div class="dashboard-grid">
+        <section class="dashboard-card">
+          <h2>Current Selection</h2>
+          <div class="table-scroll">
+            <table class="mini-table selection-table">
+              <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
+              <tbody><tr><td><a class="ticker-link" href="MU.html">MU</a></td><td>Micron Technology, Inc.</td><td>Technology</td><td>Semiconductors</td><td class="number-cell">724.66</td><td>2026-05-15</td><td class="number-cell positive-value">34.62%</td></tr><tr><td><a class="ticker-link" href="CAT.html">CAT</a></td><td>Caterpillar, Inc.</td><td>Industrials</td><td>Farm &amp; Heavy Construction Machinery</td><td class="number-cell">904.28</td><td>2026-06-05</td><td class="number-cell positive-value">6.55%</td></tr><tr><td><a class="ticker-link" href="FDX.html">FDX</a></td><td>FedEx Corporation</td><td>Industrials</td><td>Integrated Freight &amp; Logistics</td><td class="number-cell">316.46</td><td>2026-05-22</td><td class="number-cell negative-value">-1.09%</td></tr><tr><td><a class="ticker-link" href="GOOGL.html">GOOGL</a></td><td>Alphabet Inc.</td><td>Communication Services</td><td>Internet Content &amp; Information</td><td class="number-cell">359.68</td><td>2026-06-12</td><td class="number-cell positive-value">0.06%</td></tr><tr><td><a class="ticker-link" href="SLB.html">SLB</a></td><td>SLB Limited</td><td>Energy</td><td>Oil &amp; Gas Equipment &amp; Services</td><td class="number-cell">48.09</td><td>2026-06-19</td><td class="number-cell negative-value">-6.16%</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="dashboard-card">
+          <h2>Weekly Changes</h2>
+          <div class="table-scroll">
+            <table class="mini-table changes-table">
+              <tbody>
+                <tr><th>Capital Invested</th><td>100.00%</td></tr>
+                <tr><th><span class="in-label">IN</span></th><td>-</td></tr>
+                <tr><th><span class="out-label">OUT</span></th><td>-</td></tr>
+                <tr><th>Current Hedge Short ETF</th><td>SPY: 7.90%</td></tr>
+                <tr><th>Hedge Score</th><td>92.10</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <section class="chart-section">
+        <h2>Equity, Drawdown &amp; Exposure</h2>
+        <div class="chart-stack">
+          <div class="chart-frame">
+            <h3>Equity / Drawdown / Exposure</h3>
+            <img class="dashboard-chart" src="assets/summary_USA100.png?v=20260703-scroll-historical-exposure" alt="USA100 equity, drawdown and exposure" />
+          </div>
+        </div>
+      </section>
+
+      <section class="performance-section">
+        <h2>Performance Table</h2>
+        <table class="asset-table performance-table">
+          <thead><tr><th>Metric</th><th>Long</th><th>Long + Hedge</th><th>Benchmark</th></tr></thead>
+          <tbody>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Compound Annual Growth Rate: the annualized return that shows how fast the strategy grew per year.">CAGR</span></td><td>41.43%</td><td>39.61%</td><td>21.96%</td></tr>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Maximum Drawdown: the largest peak-to-trough decline during the period. Lower absolute drawdown means less downside stress.">MaxDD</span></td><td>-23.58%</td><td>-22.63%</td><td>-16.88%</td></tr>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Sharpe Ratio: return earned per unit of volatility. Higher values indicate better risk-adjusted performance.">Sharpe</span></td><td>1.44</td><td>1.42</td><td>1.43</td></tr>
+            <tr><td><span class="metric-tooltip" tabindex="0" data-tooltip="Information Ratio: excess return versus the benchmark divided by tracking error. Higher values show more consistent outperformance.">Information Ratio</span></td><td>0.94</td><td>0.87</td><td>-</td></tr>
+          </tbody>
         </table>
-        <div class="summary">
-          <div class="stat">
-            <div class="label">Hedge</div>
-            <div class="value hedge">Short SPY: 7.90%</div>
-          </div>
-          <div class="stat">
-            <div class="label">Weekly Changes</div>
-            <div class="changes">IN: -<br />OUT: -</div>
-          </div>
-        </div>
-      </div>
+      </section>
 
-      <div class="panel">
-        <h2>Report</h2>
-        <div class="summary">
-          <a class="back-link" href="Report_USA100.html">Open HTML report</a>
-        </div>
-      </div>
+      <section class="performance-section">
+        <h2>Month / Year Performance</h2>
+        <div class="table-scroll"><table class="asset-table monthly-performance-table"><thead><tr><th>Year</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Year Total</th><th>Benchmark</th><th>Excess</th></tr></thead><tbody><tr><th>2024</th><td class="positive-value">7.11%</td><td class="positive-value">8.81%</td><td class="negative-value">-0.91%</td><td class="negative-value">-9.31%</td><td class="positive-value">4.05%</td><td class="positive-value">3.06%</td><td class="negative-value">-5.34%</td><td class="positive-value">3.78%</td><td class="positive-value">3.85%</td><td class="positive-value">4.55%</td><td class="positive-value">9.69%</td><td class="negative-value">-0.33%</td><td class="positive-value">30.96%</td><td class="positive-value">28.79%</td><td class="positive-value">2.17%</td></tr><tr><th>2025</th><td class="positive-value">3.47%</td><td class="negative-value">-2.08%</td><td class="negative-value">-7.76%</td><td class="positive-value">6.16%</td><td class="positive-value">10.07%</td><td class="positive-value">2.47%</td><td class="positive-value">7.35%</td><td class="negative-value">-1.52%</td><td class="positive-value">1.21%</td><td class="positive-value">1.27%</td><td class="negative-value">-5.32%</td><td class="positive-value">7.61%</td><td class="positive-value">23.53%</td><td class="positive-value">17.38%</td><td class="positive-value">6.15%</td></tr><tr><th>2026</th><td class="positive-value">5.80%</td><td class="negative-value">-2.71%</td><td class="negative-value">-8.24%</td><td class="positive-value">30.30%</td><td class="positive-value">17.62%</td><td class="positive-value">5.00%</td><td class="negative-value">-3.26%</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td class="positive-value">47.05%</td><td class="positive-value">8.46%</td><td class="positive-value">38.58%</td></tr></tbody></table></div>
+      </section>
+
+      <section class="performance-section">
+        <h2>Top / Bottom Profit Contributors</h2>
+        <div class="contribution-chart" role="img" aria-label="Top and bottom profit contributors"><div class="contribution-bar-wrap"><div class="contribution-bar positive" style="height: 100.00%;" title="MU: 95.84%"></div><div class="contribution-value">95.84%</div><div class="contribution-label">MU</div></div><div class="contribution-bar-wrap"><div class="contribution-bar positive" style="height: 68.54%;" title="INTC: 65.69%"></div><div class="contribution-value">65.69%</div><div class="contribution-label">INTC</div></div><div class="contribution-bar-wrap"><div class="contribution-bar positive" style="height: 57.55%;" title="PLTR: 55.15%"></div><div class="contribution-value">55.15%</div><div class="contribution-label">PLTR</div></div><div class="contribution-bar-wrap"><div class="contribution-bar positive" style="height: 44.25%;" title="GEV: 42.40%"></div><div class="contribution-value">42.40%</div><div class="contribution-label">GEV</div></div><div class="contribution-bar-wrap"><div class="contribution-bar positive" style="height: 23.13%;" title="NVDA: 22.16%"></div><div class="contribution-value">22.16%</div><div class="contribution-label">NVDA</div></div><div class="contribution-bar-wrap"><div class="contribution-bar negative" style="height: 5.00%;" title="BNY: -3.22%"></div><div class="contribution-value">-3.22%</div><div class="contribution-label">BNY</div></div><div class="contribution-bar-wrap"><div class="contribution-bar negative" style="height: 5.00%;" title="DE: -3.40%"></div><div class="contribution-value">-3.40%</div><div class="contribution-label">DE</div></div><div class="contribution-bar-wrap"><div class="contribution-bar negative" style="height: 5.71%;" title="SLB: -5.47%"></div><div class="contribution-value">-5.47%</div><div class="contribution-label">SLB</div></div><div class="contribution-bar-wrap"><div class="contribution-bar negative" style="height: 5.90%;" title="UBER: -5.66%"></div><div class="contribution-value">-5.66%</div><div class="contribution-label">UBER</div></div><div class="contribution-bar-wrap"><div class="contribution-bar negative" style="height: 10.53%;" title="TSLA: -10.09%"></div><div class="contribution-value">-10.09%</div><div class="contribution-label">TSLA</div></div></div>
+      </section>
     </section>
   </main>
+  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
+  </script>
   <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>
