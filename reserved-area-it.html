@@ -388,7 +388,19 @@
     }
 
     .performance-table.dashboard-table {
-      min-width: 1120px;
+      min-width: 900px;
+      font-size: 12px;
+    }
+
+    .performance-table.dashboard-table th,
+    .performance-table.dashboard-table td {
+      padding: 7px 8px;
+      line-height: 1.25;
+    }
+
+    .performance-table.dashboard-table th {
+      font-size: 10px;
+      letter-spacing: 0.1px;
     }
 
     .performance-table th,
@@ -438,6 +450,11 @@
       max-width: 260px;
       white-space: normal;
       line-height: 1.45;
+    }
+
+    .dashboard-table .ticker-list {
+      max-width: 180px;
+      line-height: 1.25;
     }
 
     .ticker-change-in {
@@ -1047,7 +1064,7 @@
               <div>
                 <div class="eyebrow">Dashboard</div>
                 <h3 id="admin-dashboard-title">Dashboard Settimanale Mercati</h3>
-                <p>Vista operativa admin con posizioni correnti, variazioni settimanali, livelli di hedge e ultime variazioni nette settimanali.</p>
+                <p>Vista admin: posizioni, variazioni, hedge e ultime variazioni nette settimanali.</p>
               </div>
             </div>
             <div class="performance-table-wrap">
@@ -1055,13 +1072,13 @@
                 <thead>
                   <tr>
                     <th>Mercato</th>
-                    <th>Ticker Correnti</th>
+                    <th>Ticker</th>
                     <th>In</th>
                     <th>Out</th>
-                    <th>Hedge Corrente%</th>
-                    <th>Hedge Precedente%</th>
-                    <th>NetCh% Portafoglio vs venerdi precedente</th>
-                    <th>NetCh% Benchmark vs venerdi precedente</th>
+                    <th>Hedge%</th>
+                    <th>Hedge prec.%</th>
+                    <th>Portafoglio Chg%</th>
+                    <th>Benchmark Chg%</th>
                   </tr>
                 </thead>
                 <tbody id="admin-dashboard-body">
@@ -1707,7 +1724,7 @@
         var previousIndexRow = previousIndexMap[m.key] || {};
         var reportRow = reportDataMap[m.key] || {};
         var currentHedge = reportRow["Benchmark Hedge Short"] != null ? reportRow["Benchmark Hedge Short"] : extractHedgeValue(indexRow);
-        var lastHedge = previousIndexRow.Benchmark_Hedge_Short != null ? previousIndexRow.Benchmark_Hedge_Short : previousIndexRow.Last_Hedge_Short;
+        var lastHedge = extractHedgeValue(previousIndexRow);
         var portfolioNetChange = latestReturnValue(reportRow.Hedged_Strategy_Returns || reportRow.Strategy_Returns);
         var benchmarkNetChange = latestReturnValue(reportRow.Benchmark_Returns);
         return {
