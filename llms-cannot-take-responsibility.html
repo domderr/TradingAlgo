@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="llms-cannot-take-responsibility.html" />
+  <link rel="alternate" hreflang="it" href="llms-cannot-take-responsibility-it.html" />
+  <title>Is There Something LLMs Cannot Do? | TradingAlgo</title>
+  <meta name="description" content="Large language models can generate answers, analysis and code, but they cannot take responsibility for the consequences. Why human accountability still matters." />
+  <meta property="og:title" content="Is There Something LLMs Cannot Do? Yes: Take Responsibility" />
+  <meta property="og:description" content="LLMs generate outputs. Humans decide whether those outputs deserve trust." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/llms-cannot-take-responsibility.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/Home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Is There Something LLMs Cannot Do? Yes: Take Responsibility" />
+  <meta name="twitter:description" content="LLMs generate outputs. Humans decide whether those outputs deserve trust." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/Home.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 28px 8%;
+      background: #071a33;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+      }
+
+      header {
+        padding-top: 74px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index-en.html">TradingAlgo</a>
+    <div>
+      <a href="index-en.html">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="publications.html">Publications</a>
+      <a href="reserved-area.html">Reserved Area</a>
+      <a href="llms-cannot-take-responsibility-it.html">Italiano</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">AI, markets and accountability</p>
+    <h1>Is There Something LLMs Cannot Do? Yes: Take Responsibility</h1>
+    <p>Large language models can generate answers, analysis and code. But accountability still belongs to humans.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>The real limit of language models</h2>
+        <p>Large language models can write, summarize, translate, code, analyze information, generate ideas, and support complex decisions. In many cases, they do this quickly, convincingly, and at a scale no human team could easily match.</p>
+        <p>But there is one thing they cannot do: take responsibility for what they produce.</p>
+      </section>
+
+      <section>
+        <h2>Outputs are not accountability</h2>
+        <p>An LLM can suggest an investment strategy, write a legal paragraph, generate financial analysis, or produce code that ends up in production. It can sound confident, precise, and competent.</p>
+        <p>But if it is wrong, it does not face the consequences. It does not lose credibility. It does not answer to a client. It does not defend a decision. It does not put its reputation on the line.</p>
+        <p class="note">LLMs generate outputs. Humans decide whether those outputs deserve trust.</p>
+      </section>
+
+      <section>
+        <h2>Why humans still matter</h2>
+        <p>Responsibility is not just about producing an answer. It is about accepting the weight of the outcome. It means knowing when a result is good enough, when it needs to be challenged, when more evidence is required, and when the right answer is: "I don't know."</p>
+        <p>LLMs can imitate caution, but they do not experience accountability. They can help structure a decision, but they do not own the consequences of that decision.</p>
+        <p>This is why humans still matter. The role of people is changing, but it is not disappearing: less mechanical execution, more judgment; less blank-page production, more interpretation, validation, context, and accountability.</p>
+      </section>
+
+      <section>
+        <h2>TradingAlgo Mosaic: Humans Driving AI</h2>
+        <p>At TradingAlgo Mosaic, this is exactly what we want to do: use the most sophisticated AI tools to build and monitor model portfolios, while taking responsibility for the process and putting our face behind the results when those portfolios continue to do their job well.</p>
+        <p class="note">AI-powered. Human-led. Accountable by design.</p>
+        <a class="button" href="publications.html">Back to Publications</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <strong>TradingAlgo Mosaic</strong><br />
+    Research material only. Not personalized financial advice.
+  </footer>
+</body>
+</html>

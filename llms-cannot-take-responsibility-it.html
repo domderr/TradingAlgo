@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="alternate" hreflang="en" href="llms-cannot-take-responsibility.html" />
+  <link rel="alternate" hreflang="it" href="llms-cannot-take-responsibility-it.html" />
+  <title>C'e qualcosa che gli LLM non possono fare? | TradingAlgo</title>
+  <meta name="description" content="I large language model possono generare risposte, analisi e codice, ma non possono assumersi la responsabilita delle conseguenze. Perche la responsabilita umana conta ancora." />
+  <meta property="og:title" content="C'e qualcosa che gli LLM non possono fare? Si: prendersi la responsabilita" />
+  <meta property="og:description" content="Gli LLM generano output. Gli esseri umani decidono se quegli output meritano fiducia." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/llms-cannot-take-responsibility-it.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/Home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="C'e qualcosa che gli LLM non possono fare? Si: prendersi la responsabilita" />
+  <meta name="twitter:description" content="Gli LLM generano output. Gli esseri umani decidono se quegli output meritano fiducia." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/Home.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 28px 8%;
+      background: #071a33;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+      }
+
+      header {
+        padding-top: 74px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic-it.html">Mosaic</a>
+      <a href="publications-it.html">Pubblicazioni</a>
+      <a href="reserved-area-it.html">Area Riservata</a>
+      <a href="llms-cannot-take-responsibility.html">English</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">AI, mercati e responsabilit&agrave;</p>
+    <h1>C'&egrave; qualcosa che gli LLM non possono fare? S&igrave;: prendersi la responsabilit&agrave;</h1>
+    <p>I large language model possono generare risposte, analisi e codice. Ma la responsabilit&agrave; resta umana.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>Il vero limite dei modelli linguistici</h2>
+        <p>I large language model possono scrivere, riassumere, tradurre, programmare, analizzare informazioni, generare idee e supportare decisioni complesse. In molti casi lo fanno rapidamente, in modo convincente e su una scala che nessun team umano potrebbe facilmente eguagliare.</p>
+        <p>Ma c'&egrave; una cosa che non possono fare: prendersi la responsabilit&agrave; di ci&ograve; che producono.</p>
+      </section>
+
+      <section>
+        <h2>Gli output non sono responsabilit&agrave;</h2>
+        <p>Un LLM pu&ograve; suggerire una strategia di investimento, scrivere un paragrafo legale, generare un'analisi finanziaria o produrre codice che finisce in produzione. Pu&ograve; sembrare sicuro, preciso e competente.</p>
+        <p>Ma se sbaglia, non affronta le conseguenze. Non perde credibilit&agrave;. Non risponde davanti a un cliente. Non difende una decisione. Non mette in gioco la propria reputazione.</p>
+        <p class="note">Gli LLM generano output. Gli esseri umani decidono se quegli output meritano fiducia.</p>
+      </section>
+
+      <section>
+        <h2>Perch&eacute; gli esseri umani contano ancora</h2>
+        <p>La responsabilit&agrave; non consiste solo nel produrre una risposta. Significa accettare il peso del risultato. Significa capire quando un risultato &egrave; abbastanza solido, quando deve essere messo in discussione, quando servono pi&ugrave; prove e quando la risposta giusta &egrave;: "non lo so".</p>
+        <p>Gli LLM possono imitare la prudenza, ma non vivono l'accountability. Possono aiutare a strutturare una decisione, ma non possiedono le conseguenze di quella decisione.</p>
+        <p>Questo &egrave; il motivo per cui gli esseri umani contano ancora. Il ruolo delle persone sta cambiando, ma non sta scomparendo: meno esecuzione meccanica, pi&ugrave; giudizio; meno produzione da pagina bianca, pi&ugrave; interpretazione, validazione, contesto e responsabilit&agrave;.</p>
+      </section>
+
+      <section>
+        <h2>TradingAlgo Mosaic: Humans Driving AI</h2>
+        <p>Con TradingAlgo Mosaic, questo &egrave; esattamente ci&ograve; che vogliamo fare: usare i pi&ugrave; sofisticati strumenti AI per costruire e monitorare portafogli modello, assumendoci la responsabilit&agrave; del processo e mettendoci la faccia quando quei portafogli continuano a fare bene il proprio lavoro.</p>
+        <p class="note">AI-powered. Human-led. Accountable by design.</p>
+        <a class="button" href="publications-it.html">Torna alle Pubblicazioni</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <strong>TradingAlgo Mosaic</strong><br />
+    Materiale di ricerca. Non costituisce consulenza finanziaria personalizzata.
+  </footer>
+</body>
+</html>
