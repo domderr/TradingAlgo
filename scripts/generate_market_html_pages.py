@@ -12,6 +12,7 @@ MARKETS = [
     ("Canada50", "Canada50"),
     ("Mexico30", "Mexico30"),
     ("Europe50", "Europe50"),
+    ("Italy40", "Italy40"),
     ("UK30", "UK30"),
     ("France40", "France40"),
     ("Spain40", "Spain40"),
