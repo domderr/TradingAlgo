@@ -16,6 +16,14 @@ Root unica del progetto TradingAlgo: sito statico, pipeline Mosaic e output pubb
 
 ## Pipeline operativa
 
+Prima di scaricare nuovi dati, congelare l'ultima elaborazione pubblicata:
+
+```powershell
+python scripts\freeze_last_elaboration.py
+```
+
+Lo snapshot viene salvato in `mosaic_dev/output/elaborazioni_precedenti/<YYYY-MM-DD>/` e include report pubblicati, report data, indici sito e `mosaic_dev/market_data`.
+
 Da `mosaic_dev`:
 
 ```powershell
@@ -55,6 +63,12 @@ I file sotto `mosaic_dev/output`, `mosaic_dev/market_data` e `mosaic_dev/runs` s
 Prima di sovrascrivere gli indici del sito, il runner salva una fotografia locale degli output precedenti in:
 
 - `mosaic_dev/output/site_snapshots/<YYYYMMDD_HHMMSS>/`
+
+In aggiunta, prima del download settimanale va eseguito `scripts/freeze_last_elaboration.py`, che salva l'ultima elaborazione completa in:
+
+- `mosaic_dev/output/elaborazioni_precedenti/<YYYY-MM-DD>/`
+
+Questo freeze e' il riferimento principale per confrontare la settimana nuova con quella precedente, perche' include anche i dati prezzo locali (`mosaic_dev/market_data`) usati dalla run.
 
 Queste fotografie non sono pubblicate dal sito e non vengono cancellate automaticamente. Servono per verifiche future di coerenza tra elaborazioni.
 
