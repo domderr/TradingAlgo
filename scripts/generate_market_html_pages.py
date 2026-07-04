@@ -1,5 +1,7 @@
 import html
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -213,17 +215,23 @@ def render_page(market, display_name, index_row, pos_row):
 
 
 def main():
-    index = {row["Market"]: row for row in read_json(ROOT / "reports" / "reports_index.json", [])}
-    positions = read_json(ROOT / "reports" / "positions.json", {})
-
-    for market, display_name in MARKETS:
-        market_dir = HTML_DIR / market.replace(" ", "_")
-        market_dir.mkdir(parents=True, exist_ok=True)
-        pos_key = market.replace("South Korea30", "SouthKorea30").replace("South Africa30", "SouthAfrica30")
-        page = render_page(market, display_name, index.get(market, {}), positions.get(pos_key, {}))
-        out = market_dir / f"Report_{market.replace(' ', '_')}.html"
-        out.write_text(page, encoding="utf-8")
-        print(out)
+    builder = ROOT / "tools" / "build_mosaic_html_report.py"
+    dev_dir = ROOT / "mosaic_dev"
+    for choice, (market, _display_name) in enumerate(MARKETS, start=1):
+        command = [
+            sys.executable,
+            str(builder),
+            "--dev-dir",
+            str(dev_dir),
+            "--site-dir",
+            str(ROOT),
+            "--market",
+            market,
+            "--market-choice",
+            str(choice),
+        ]
+        print(" ".join(command))
+        subprocess.run(command, check=True)
 
 
 if __name__ == "__main__":
