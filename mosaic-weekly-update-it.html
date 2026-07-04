@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="alternate" hreflang="en" href="mosaic-weekly-update.html" />
   <link rel="alternate" hreflang="it" href="mosaic-weekly-update-it.html" />
-  <title>Aggiornamento Settimanale Portafoglio | TradingAlgo Mosaic</title>
-  <meta name="description" content="Aggiornamento settimanale TradingAlgo Mosaic con posizioni correnti, variazioni settimanali, livelli di hedge e ultima variazione netta rispetto al benchmark." />
+  <title>Dashboard Settimanale Mercati | TradingAlgo Mosaic</title>
+  <meta name="description" content="Commento settimanale TradingAlgo Mosaic con posizioni, variazioni, hedge e grafico di performance dei portafogli rispetto ai benchmark." />
   <script>
     (function () {
       var storageKey = "ta_reserved_authorized_markets";
@@ -15,7 +15,7 @@
         var markets = Array.isArray(stored.markets) ? stored.markets : stored;
         if (Array.isArray(markets) && markets.length) return;
       } catch (error) {}
-      window.location.replace("reserved-area.html?next=mosaic-weekly-update.html");
+      window.location.replace("reserved-area-it.html?next=mosaic-weekly-update-it.html");
     }());
   </script>
   <style>
@@ -27,11 +27,11 @@
     nav a { color: white; text-decoration: none; margin-left: 24px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
     header { padding: 78px 8% 58px; background: linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.72)), url("assets/reports/mosaic-weekly-report-layout.png"); background-size: cover; background-position: top center; color: white; }
     .kicker { margin: 0 0 14px; color: #7dd3fc; font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
-    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 60px); line-height: 1.06; }
+    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(38px, 6vw, 60px); line-height: 1.06; }
     header p { max-width: 820px; margin: 22px 0 0; color: #e5e7eb; font-size: 20px; line-height: 1.6; }
     main { padding: 58px 8%; }
-    .content { max-width: 1040px; margin: 0 auto; display: grid; gap: 24px; }
-    section { padding: 32px; background: white; border: 1px solid #dbe3ef; border-radius: 8px; }
+    .content { max-width: 1120px; margin: 0 auto; display: grid; gap: 24px; }
+    section, article { padding: 32px; background: white; border: 1px solid #dbe3ef; border-radius: 8px; }
     h2 { margin: 0 0 16px; color: #0b5fa5; font-family: Georgia, serif; font-size: 30px; }
     h3 { margin: 20px 0 8px; color: #071a33; }
     p, li { color: #26364a; line-height: 1.7; }
@@ -39,12 +39,25 @@
     li { margin-bottom: 8px; }
     .article-meta { margin: 0 0 18px; color: #5b6b80; font-size: 14px; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; }
     .lead { color: #17263a; font-size: 19px; line-height: 1.75; }
-    .summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
+    .summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }
     .summary-item { padding: 18px; border: 1px solid #dbe3ef; border-radius: 8px; background: #f8fbff; }
     .summary-item strong { display: block; color: #071a33; font-size: 22px; }
     .summary-item span { display: block; margin-top: 6px; color: #506176; font-size: 13px; line-height: 1.45; }
+    .chart-wrap { overflow-x: auto; border: 1px solid #dbe3ef; border-radius: 8px; background: #fbfdff; padding: 18px; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 0 0 14px; color: #40536b; font-size: 13px; font-weight: 800; }
+    .legend-dot { display: inline-block; width: 11px; height: 11px; margin-right: 7px; border-radius: 999px; vertical-align: -1px; }
+    .alpha-pos-dot { background: #0f766e; }
+    .alpha-neg-dot { background: #b42318; }
+    .chart { min-width: 820px; display: grid; gap: 8px; }
+    .chart-row { display: grid; grid-template-columns: 110px 1fr 82px; gap: 12px; align-items: center; min-height: 30px; }
+    .chart-label { color: #071a33; font-size: 13px; font-weight: 900; }
+    .axis { position: relative; height: 28px; background: linear-gradient(90deg, transparent 0 49.8%, #b8c5d6 49.8% 50.2%, transparent 50.2% 100%); border-radius: 4px; }
+    .bar { position: absolute; top: 8px; height: 12px; border-radius: 8px; }
+    .bar.pos-alpha { background: #0f766e; }
+    .bar.neg-alpha { background: #b42318; }
+    .chart-value { color: #26364a; font-size: 12px; font-weight: 800; text-align: right; }
     .table-wrap { overflow-x: auto; border: 1px solid #dbe3ef; border-radius: 8px; }
-    table { width: 100%; border-collapse: collapse; min-width: 980px; background: white; }
+    table { width: 100%; border-collapse: collapse; min-width: 1060px; background: white; }
     th, td { padding: 12px 14px; border-bottom: 1px solid #e5edf6; text-align: left; vertical-align: top; font-size: 13px; line-height: 1.45; }
     th { background: #071a33; color: white; font-size: 12px; letter-spacing: 0.6px; text-transform: uppercase; }
     tr:last-child td { border-bottom: 0; }
@@ -54,13 +67,20 @@
     .flat { color: #5b6b80; font-weight: 800; }
     .note { padding: 18px; border-left: 4px solid #168eea; background: #f8fbff; }
     footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
-    @media (max-width: 900px) { .summary-grid { grid-template-columns: 1fr; } }
-    @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } section { padding: 26px; } }
+    @media (max-width: 1000px) { .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 760px) {
+      nav { display: block; }
+      nav a { display: inline-block; margin: 10px 12px 0 0; }
+      main { padding: 34px 5%; }
+      section, article { padding: 24px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      header p { font-size: 18px; }
+    }
   </style>
 </head>
 <body>
   <nav>
-    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <a class="logo" href="index-it.html">TA | TradingAlgo</a>
     <div>
       <a href="reserved-area-it.html">Report</a>
       <a href="mosaic-start-here-it.html">Inizia Qui</a>
@@ -68,40 +88,117 @@
       <a href="mosaic-terminology-it.html">Terminologia</a>
       <a href="mosaic-charts-dashboards-it.html">Grafici</a>
     </div>
-        <a href="mosaic-weekly-update.html">&#x1F1EC;&#x1F1E7; English</a>
+    <a href="mosaic-weekly-update.html">English</a>
   </nav>
   <header>
     <p class="kicker">Area Membri Mosaic</p>
-    <h1>Aggiornamento Settimanale Portafoglio</h1>
-    <p>Posizioni correnti, rotazioni settimanali, livelli di hedge e ultime variazioni nette rispetto al benchmark.</p>
+    <h1>Dashboard Settimanale Mercati</h1>
+    <p>Vista admin su posizioni correnti, rotazioni, livelli di hedge e variazioni nette settimanali rispetto ai benchmark.</p>
   </header>
   <main>
     <div class="content">
       <article>
-        <p class="article-meta">Aggiornamento settimanale - lunedi 29 giugno 2026</p>
-        <h2>TradingAlgo Mosaic: forza selettiva verso la nuova settimana</h2>
-        <p class="lead">La nuova settimana si apre con un quadro selettivo. La dispersione tra mercati resta elevata: alcuni portafogli mostrano forza relativa rispetto ai benchmark, mentre altri risentono di mercati locali piu deboli o rotazioni settoriali meno favorevoli.</p>
-        <div class="summary-grid" aria-label="Highlight settimanali Mosaic">
-          <div class="summary-card"><strong>DJ30</strong><span>Portafoglio in forte vantaggio sul benchmark grazie alla selezione titoli.</span></div>
-          <div class="summary-card"><strong>Mexico30</strong><span>Uno dei migliori spread relativi della settimana rispetto al benchmark.</span></div>
-          <div class="summary-card"><strong>S.Korea30</strong><span>Mercato difficile, con hedge corrente salito al livello piu alto della dashboard.</span></div>
+        <p class="article-meta">Aggiornamento settimanale - 4 luglio 2026</p>
+        <h2>Mercati in recupero selettivo, ma con forte dispersione</h2>
+        <p class="lead">La settimana mostra un quadro molto disomogeneo. La media dei portafogli Mosaic e leggermente positiva, pari a <strong>+0.14%</strong>, mentre la media dei benchmark sale a <strong>+1.05%</strong>. Il dato aggregato nasconde pero movimenti molto ampi: la Corea del Sud e il miglior contributo relativo, mentre Nasdaq100 e USA100 sono i punti piu deboli della dashboard.</p>
+
+        <div class="summary-grid" aria-label="Sintesi settimanale Mosaic">
+          <div class="summary-item">
+            <strong>5 su 15</strong>
+            <span>Mercati in cui il portafoglio batte il benchmark nella settimana.</span>
+          </div>
+          <div class="summary-item">
+            <strong>+12.50 pp</strong>
+            <span>S.Korea30 e il miglior spread relativo: +3.81% contro -8.69% del benchmark.</span>
+          </div>
+          <div class="summary-item">
+            <strong>-10.73 pp</strong>
+            <span>Nasdaq100 e il peggior spread relativo: -9.87% contro +0.86% del benchmark.</span>
+          </div>
+          <div class="summary-item">
+            <strong>22%</strong>
+            <span>Mexico30 resta il mercato con hedge piu alto, stabile rispetto alla settimana precedente.</span>
+          </div>
         </div>
-        <p>I portafogli USA hanno fornito il contributo piu solido. DJ30 e USA100 hanno chiuso sopra i rispettivi benchmark, confermando l'importanza della selezione e della rotazione settimanale. Nasdaq100 ha avuto un progresso piu modesto in termini assoluti, ma resta nettamente migliore del benchmark.</p>
-        <p>Fuori dagli Stati Uniti, Mexico30 ha mostrato una forte resilienza relativa, mentre Canada50 e rimasto sotto pressione. In Europa il quadro e misto: Germany30 e l'eccezione positiva, mentre Europe50, UK30, France40, Spain40 e Italy30 richiedono una lettura piu prudente.</p>
-        <p>In Asia-Pacifico, Japan50 e rimasto leggermente migliore del benchmark, mentre South Korea30 ha avuto la settimana piu difficile e un aumento deciso dell'hedge. Australia50 e South Africa30 mostrano dinamiche piu difensive.</p>
-        <p>Il messaggio operativo e chiaro: la dispersione resta alta, la rotazione conta e la gestione dell'hedge e parte centrale del processo Mosaic.</p>
-        <h2>Dashboard Settimanale Mercati</h2>
-        <div class="table-wrap"><table><thead><tr><th>Mercato</th><th>Ticker Correnti</th><th>In</th><th>Uscite</th><th>Hedge Corrente</th><th>Hedge Precedente</th><th>NetCh Portafoglio vs venerdi precedente</th><th>NetCh Benchmark vs venerdi precedente</th></tr></thead><tbody>
-          <tr><td class="market">DJ30</td><td>CAT, MRK, CSCO, GS, WMT</td><td>WMT</td><td>CVX</td><td>13%</td><td>13%</td><td class="pos">2.52%</td><td class="pos">0.73%</td></tr>
-          <tr><td class="market">USA100</td><td>MU, CAT, FDX, GEV, GOOGL</td><td>GEV</td><td>SLB</td><td>7%</td><td>7%</td><td class="pos">1.28%</td><td class="neg">-1.67%</td></tr>
-          <tr><td class="market">Nasdaq100</td><td>MU, TER, NBIS, MRVL, RKLB</td><td>MRVL, RKLB</td><td>WBD, ROST</td><td>12%</td><td>10%</td><td class="pos">0.13%</td><td class="neg">-3.17%</td></tr>
-          <tr><td class="market">Mexico30</td><td>GMEXICOB.MX, FEMSAUBD.MX, AMXB.MX, PINFRA.MX, LIVEPOLC-1.MX</td><td>LIVEPOLC-1.MX</td><td>VOLARA.MX</td><td>22%</td><td>22%</td><td class="pos">2.03%</td><td class="neg">-2.33%</td></tr>
-          <tr><td class="market">Germany30</td><td>ENR.DE, RWE.DE, IFX.DE, BAYN.DE, DHL.DE</td><td class="flat">-</td><td class="flat">-</td><td>12%</td><td>13%</td><td class="pos">1.87%</td><td class="neg">-1.08%</td></tr>
-          <tr><td class="market">S.Korea30</td><td>000660.KS, 005380.KS, 017670.KS, 034020.KS, 055550.KS</td><td>055550.KS</td><td>006400.KS</td><td>20%</td><td>16%</td><td class="neg">-11.91%</td><td class="neg">-6.48%</td></tr>
-        </tbody></table></div>
-        <h2>Nota di Ribilanciamento del Lunedi</h2>
-        <p class="note">Alla prossima apertura del mercato, riporta ogni selezione Mosaic attiva verso l'equal-weight e aggiorna l'hedge secondo l'ultimo report del mercato abilitato.</p>
+
+        <p>Il blocco USA e stato il principale freno. DJ30, USA100 e Nasdaq100 hanno sottoperformato benchmark positivi, con Nasdaq100 particolarmente penalizzato da una variazione del portafoglio pari a <strong>-9.87%</strong>. La rotazione su Nasdaq100, con <strong>RKLB</strong> in ingresso e <strong>WBD</strong> in uscita, non e bastata a contenere la debolezza settimanale della selezione. Anche USA100 chiude a <strong>-3.42%</strong> contro <strong>+2.17%</strong> del benchmark, mentre DJ30 arretra a <strong>-1.17%</strong> contro <strong>+1.96%</strong>.</p>
+
+        <p>Fuori dagli Stati Uniti il quadro migliora. <strong>S.Korea30</strong> e la sorpresa positiva della settimana: il portafoglio avanza del <strong>+3.81%</strong> mentre il benchmark perde <strong>-8.69%</strong>. L'hedge scende dal <strong>20%</strong> al <strong>17%</strong>, segnalando una riduzione della copertura dopo il recupero relativo. <strong>Germany40</strong> conferma un profilo solido con <strong>+5.27%</strong> contro <strong>+4.13%</strong>, mentre <strong>Canada50</strong> e <strong>Australia50</strong> battono benchmark quasi piatti o moderatamente positivi.</p>
+
+        <p>In Europa continentale la lettura e mista. Europe50, France40 e Italy40 restano sotto i rispettivi benchmark, nonostante performance assolute positive per Europe50 e Italy40. Spain40 fa leggermente meglio del benchmark, con <strong>+2.04%</strong> contro <strong>+1.67%</strong>. UK30 rimane debole in relativo: portafoglio quasi piatto a <strong>-0.18%</strong>, ma benchmark a <strong>+3.06%</strong>, con rotazione piu intensa attraverso ingressi in <strong>AAL.L</strong>, <strong>STAN.L</strong> e <strong>VOD.L</strong>.</p>
+
+        <p>Il messaggio operativo e chiaro: la settimana e stata positiva per molti indici, ma non uniformemente favorevole alla selezione titoli. Le aree da monitorare sono USA100 e Nasdaq100, dove il differenziale negativo e ampio, mentre Corea del Sud, Germania, Canada e Australia mostrano i segnali relativi piu interessanti per la prossima verifica.</p>
       </article>
+
+      <section>
+        <h2>Alfa vs Benchmark</h2>
+        <p>Il grafico mostra solo l'alfa settimanale, calcolata come performance del portafoglio meno performance del benchmark. La linea centrale rappresenta lo zero; verde indica sovraperformance, rosso sottoperformance.</p>
+        <div class="chart-wrap">
+          <div class="chart-legend">
+            <span><span class="legend-dot alpha-pos-dot"></span>Alfa positivo</span>
+            <span><span class="legend-dot alpha-neg-dot"></span>Alfa negativo</span>
+          </div>
+          <div class="chart" role="img" aria-label="Grafico alfa settimanale del portafoglio rispetto al benchmark">
+            <div class="chart-row"><div class="chart-label">DJ30</div><div class="axis"><span class="bar alpha neg-alpha" style="left:37.48%;width:12.52%;"></span></div><div class="chart-value neg">-3.13 pp</div></div>
+            <div class="chart-row"><div class="chart-label">USA100</div><div class="axis"><span class="bar alpha neg-alpha" style="left:27.64%;width:22.36%;"></span></div><div class="chart-value neg">-5.59 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Nasdaq100</div><div class="axis"><span class="bar alpha neg-alpha" style="left:7.08%;width:42.92%;"></span></div><div class="chart-value neg">-10.73 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Canada50</div><div class="axis"><span class="bar alpha pos-alpha" style="left:50.00%;width:4.04%;"></span></div><div class="chart-value pos">+1.01 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Mexico30</div><div class="axis"><span class="bar alpha neg-alpha" style="left:48.28%;width:1.72%;"></span></div><div class="chart-value neg">-0.43 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Europe50</div><div class="axis"><span class="bar alpha neg-alpha" style="left:47.36%;width:2.64%;"></span></div><div class="chart-value neg">-0.66 pp</div></div>
+            <div class="chart-row"><div class="chart-label">UK30</div><div class="axis"><span class="bar alpha neg-alpha" style="left:37.04%;width:12.96%;"></span></div><div class="chart-value neg">-3.24 pp</div></div>
+            <div class="chart-row"><div class="chart-label">France40</div><div class="axis"><span class="bar alpha neg-alpha" style="left:38.88%;width:11.12%;"></span></div><div class="chart-value neg">-2.78 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Spain40</div><div class="axis"><span class="bar alpha pos-alpha" style="left:50.00%;width:1.48%;"></span></div><div class="chart-value pos">+0.37 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Germany40</div><div class="axis"><span class="bar alpha pos-alpha" style="left:50.00%;width:4.56%;"></span></div><div class="chart-value pos">+1.14 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Italy40</div><div class="axis"><span class="bar alpha neg-alpha" style="left:41.60%;width:8.40%;"></span></div><div class="chart-value neg">-2.10 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Japan50</div><div class="axis"><span class="bar alpha neg-alpha" style="left:49.40%;width:0.60%;"></span></div><div class="chart-value neg">-0.15 pp</div></div>
+            <div class="chart-row"><div class="chart-label">S.Korea30</div><div class="axis"><span class="bar alpha pos-alpha" style="left:50.00%;width:50.00%;"></span></div><div class="chart-value pos">+12.50 pp</div></div>
+            <div class="chart-row"><div class="chart-label">Australia50</div><div class="axis"><span class="bar alpha pos-alpha" style="left:50.00%;width:3.12%;"></span></div><div class="chart-value pos">+0.78 pp</div></div>
+            <div class="chart-row"><div class="chart-label">S.Africa30</div><div class="axis"><span class="bar alpha neg-alpha" style="left:47.56%;width:2.44%;"></span></div><div class="chart-value neg">-0.61 pp</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Dashboard Settimanale Mercati</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mercato</th>
+                <th>Ticker</th>
+                <th>In</th>
+                <th>Out</th>
+                <th>Hedge%</th>
+                <th>Hedge prec.%</th>
+                <th>Portafoglio Chg%</th>
+                <th>Benchmark Chg%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="market">DJ30</td><td>CAT, MRK, CSCO, GS, CVX</td><td class="flat">-</td><td class="flat">-</td><td>13%</td><td>13%</td><td class="neg">-1.17%</td><td class="pos">1.96%</td></tr>
+              <tr><td class="market">USA100</td><td>MU, CAT, FDX, GOOGL, SLB</td><td class="flat">-</td><td class="flat">-</td><td>8%</td><td>7%</td><td class="neg">-3.42%</td><td class="pos">2.17%</td></tr>
+              <tr><td class="market">Nasdaq100</td><td>MU, TER, NBIS, MRVL, RKLB</td><td>RKLB</td><td>WBD</td><td>12%</td><td>12%</td><td class="neg">-9.87%</td><td class="pos">0.86%</td></tr>
+              <tr><td class="market">Canada50</td><td>CVE.TO, TECK-B.TO, TD.TO, GWO.TO, CCO.TO</td><td>CCO.TO</td><td>SAP.TO</td><td>13%</td><td>15%</td><td class="pos">0.96%</td><td class="neg">-0.05%</td></tr>
+              <tr><td class="market">Mexico30</td><td>GMEXICOB.MX, FEMSAUBD.MX, AMXB.MX, PINFRA.MX, LIVEPOLC-1.MX</td><td class="flat">-</td><td class="flat">-</td><td>22%</td><td>22%</td><td class="neg">-0.26%</td><td class="pos">0.17%</td></tr>
+              <tr><td class="market">Europe50</td><td>NOKIA.HE, ASML.AS, IFX.DE, ENI.MI, ENGI.PA</td><td class="flat">-</td><td class="flat">-</td><td>9%</td><td>9%</td><td class="pos">1.52%</td><td class="pos">2.18%</td></tr>
+              <tr><td class="market">UK30</td><td>GLEN.L, AAL.L, STAN.L, VOD.L, GSK.L</td><td>AAL.L, STAN.L, VOD.L</td><td>RIO.L, HSBA.L, BP.L</td><td>14%</td><td>12%</td><td class="neg">-0.18%</td><td class="pos">3.06%</td></tr>
+              <tr><td class="market">France40</td><td>STMPA.PA, ENGI.PA, TTE.PA, GLE.PA, LR.PA</td><td class="flat">-</td><td class="flat">-</td><td>18%</td><td>18%</td><td class="neg">-0.33%</td><td class="pos">2.45%</td></tr>
+              <tr><td class="market">Spain40</td><td>ACS.MC, MTS.MC, SLR.MC, REP.MC, CABK.MC</td><td class="flat">-</td><td class="flat">-</td><td>7%</td><td>7%</td><td class="pos">2.04%</td><td class="pos">1.67%</td></tr>
+              <tr><td class="market">Germany40</td><td>ENR.DE, IFX.DE, RWE.DE, BAYN.DE, DHL.DE</td><td class="flat">-</td><td class="flat">-</td><td>12%</td><td>12%</td><td class="pos">5.27%</td><td class="pos">4.13%</td></tr>
+              <tr><td class="market">Italy40</td><td>SPM.MI, PRY.MI, STMMI.MI, TIT.MI, SRG.MI</td><td class="flat">-</td><td class="flat">-</td><td>12%</td><td>12%</td><td class="pos">1.31%</td><td class="pos">3.41%</td></tr>
+              <tr><td class="market">Japan50</td><td>6981.T, 8035.T, 6954.T, 9983.T, 8316.T</td><td>8035.T, 8316.T</td><td>6857.T, 8031.T</td><td>10%</td><td>10%</td><td class="pos">0.22%</td><td class="pos">0.37%</td></tr>
+              <tr><td class="market">S.Korea30</td><td>009150.KS, 005380.KS, 028260.KS, 017670.KS, 055550.KS</td><td>009150.KS, 028260.KS</td><td>000660.KS, 034020.KS</td><td>17%</td><td>20%</td><td class="pos">3.81%</td><td class="neg">-8.69%</td></tr>
+              <tr><td class="market">Australia50</td><td>RIO.AX, EVN.AX, LYC.AX, WOW.AX, WDS.AX</td><td>WOW.AX</td><td>S32.AX</td><td>21%</td><td>17%</td><td class="pos">1.21%</td><td class="pos">0.43%</td></tr>
+              <tr><td class="market">S.Africa30</td><td>SOL.JO, AGL.JO, MTN.JO, REM.JO</td><td class="flat">-</td><td class="flat">-</td><td>15%</td><td>14%</td><td class="pos">0.96%</td><td class="pos">1.57%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Nota operativa</h2>
+        <p class="note">Alla prossima apertura, il focus resta sulla verifica della tenuta delle rotazioni piu recenti e sull'aggiornamento degli hedge per i mercati con variazione di rischio piu evidente: USA100, UK30, S.Korea30 e Australia50.</p>
+      </section>
     </div>
   </main>
   <footer>TradingAlgo - Mosaic Trading Framework. Materiale di ricerca. Non costituisce consulenza finanziaria personalizzata.</footer>
