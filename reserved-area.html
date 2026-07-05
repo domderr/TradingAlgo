@@ -1038,7 +1038,7 @@
           <p>Open support pages for Mosaic workflow, weekly commentary, terminology and chart usage.</p>
           <nav class="member-nav" aria-label="Mosaic member pages">
             <a href="mosaic-start-here.html"><strong>Start Here</strong><span>Weekly operating workflow for Mosaic members.</span></a>
-            <a href="mosaic-weekly-update.html"><strong>Weekly Update</strong><span>Portfolio commentary template and Monday rebalance notes.</span></a>
+            <a href="mosaic-weekly-update.html?v=20260705"><strong>Weekly Update</strong><span>Portfolio commentary template and Monday rebalance notes.</span></a>
             <a href="mosaic-how-to-guides.html"><strong>How-To Guides</strong><span>Guide index for reports, tables, charts and rebalance.</span></a>
             <a href="mosaic-terminology.html"><strong>Terminology</strong><span>Definitions for CAGR, Sharpe, drawdown, hedge and scores.</span></a>
             <a href="reserved-area.html#reports"><strong>Reports</strong><span>Latest weekly reports for your enabled markets.</span></a>
@@ -1217,7 +1217,10 @@
       var params = new URLSearchParams(window.location.search);
       var next = String(params.get("next") || "").trim();
       var allowedNext = {
-        "mosaic-weekly-update.html": true
+        "mosaic-weekly-update.html": true,
+        "mosaic-weekly-update.html?v=20260705": true,
+        "mosaic-weekly-update-it.html": true,
+        "mosaic-weekly-update-it.html?v=20260705": true
       };
       return allowedNext[next] ? next : "";
     }

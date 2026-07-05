@@ -1038,7 +1038,7 @@
           <p>Apri le pagine di supporto per workflow Mosaic, commento settimanale, terminologia e uso dei grafici.</p>
           <nav class="member-nav" aria-label="Mosaic member pages">
             <a href="mosaic-start-here-it.html"><strong>Inizia Qui</strong><span>Workflow operativo settimanale per i membri Mosaic.</span></a>
-            <a href="mosaic-weekly-update-it.html"><strong>Aggiornamento Settimanale</strong><span>Template di commento al portafoglio e note di ribilanciamento del lunedi.</span></a>
+            <a href="mosaic-weekly-update-it.html?v=20260705"><strong>Aggiornamento Settimanale</strong><span>Template di commento al portafoglio e note di ribilanciamento del lunedi.</span></a>
             <a href="mosaic-how-to-guides-it.html"><strong>Guide Operative</strong><span>Indice delle guide per report, tabelle, grafici e ribilanciamento.</span></a>
             <a href="mosaic-terminology-it.html"><strong>Terminologia</strong><span>Definizioni di CAGR, Sharpe, drawdown, hedge e punteggi.</span></a>
             <a href="reserved-area-it.html#reports"><strong>Report</strong><span>Ultimi report settimanali per i mercati abilitati.</span></a>
@@ -1217,7 +1217,10 @@
       var params = new URLSearchParams(window.location.search);
       var next = String(params.get("next") || "").trim();
       var allowedNext = {
-        "mosaic-weekly-update.html": true
+        "mosaic-weekly-update.html": true,
+        "mosaic-weekly-update.html?v=20260705": true,
+        "mosaic-weekly-update-it.html": true,
+        "mosaic-weekly-update-it.html?v=20260705": true
       };
       return allowedNext[next] ? next : "";
     }
