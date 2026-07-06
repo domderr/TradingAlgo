@@ -11,6 +11,7 @@ import matplotlib
 import pandas as pd
 
 from apply_conservative_haircuts import DEFAULT_CONFIG, load_haircuts, update_rows
+from incremental_pipeline import markets_with_new_csv_data, merge_with_existing_history
 
 matplotlib.use("Agg")
 
@@ -31,6 +32,7 @@ namespace = {
     "__name__": "__main__",
     "traceback": traceback,
     "display": display,
+    "markets_with_new_csv_data": markets_with_new_csv_data,
 }
 
 
@@ -208,6 +210,7 @@ old_input = builtins.input
 old_cwd = Path.cwd()
 builtins.input = fake_input
 os.chdir(DEV_DIR)
+skip_pipeline_no_new_data = False
 
 try:
     data = json.loads(NOTEBOOK.read_text(encoding="utf-8"))
@@ -218,8 +221,30 @@ try:
         if not source.strip():
             continue
 
-        source = source.replace('MARKETS_TO_PROCESS = ""', 'MARKETS_TO_PROCESS = "all"')
-        source = source.replace("PROCESS_ALL_MARKETS = False", "PROCESS_ALL_MARKETS = True")
+        if idx == 3:
+            selection_hook = (
+                "available_markets, sheet_raw = read_markets_from_excel(TICKERS_XLSX_PATH)\n"
+                "selected_market_infos = choose_markets_for_batch(available_markets)"
+            )
+            if selection_hook not in source:
+                raise RuntimeError("Notebook market-selection hook not found; refusing to process all markets.")
+            source = source.replace(
+                selection_hook,
+                "available_markets, sheet_raw = read_markets_from_excel(TICKERS_XLSX_PATH)\n"
+                "RUNNER_PENDING_MARKETS, RUNNER_SKIP_SUMMARY = markets_with_new_csv_data(\n"
+                "    [item.get('Market') for item in available_markets],\n"
+                "    RUNNER_PREVIOUS_JSON,\n"
+                "    RUNNER_MARKET_DATA_DIR,\n"
+                ")\n"
+                "print('Runner incremental selection:', RUNNER_SKIP_SUMMARY)\n"
+                "if RUNNER_PENDING_MARKETS:\n"
+                "    MARKETS_TO_PROCESS = ','.join(RUNNER_PENDING_MARKETS)\n"
+                "    PROCESS_ALL_MARKETS = False\n"
+                "    selected_market_infos = choose_markets_for_batch(available_markets)\n"
+                "else:\n"
+                "    SKIP_PIPELINE_NO_NEW_DATA = True\n"
+                "    selected_market_infos = []",
+            )
         source = source.replace(
             'print(f"ERRORE su {selected_market}: {e}")',
             'print(f"ERRORE su {selected_market}: {e}")\n        traceback.print_exc()',
@@ -229,26 +254,45 @@ try:
         exec(compile(source, f"{NOTEBOOK}:cell-{idx}", "exec"), namespace)
 
         if idx == 2:
-            namespace["MARKETS_TO_PROCESS"] = "all"
-            namespace["PROCESS_ALL_MARKETS"] = True
+            namespace["MARKETS_TO_PROCESS"] = ""
+            namespace["PROCESS_ALL_MARKETS"] = False
             namespace["GENERATE_PDF_REPORTS"] = False
             namespace["UPDATE_SITE_REPORTS"] = True
             namespace["SITE_PROJECT_DIR"] = SITE_DIR
             namespace["SITE_REPORTS_DIR"] = SITE_DIR / "reports"
             namespace["SITE_REPORT_URLS"] = {}
-            print("Runner override: all markets, site reports ->", namespace["SITE_REPORTS_DIR"], flush=True)
+            namespace["RUNNER_PREVIOUS_JSON"] = DEV_DIR / "output" / "all_market_reports_data_from_csv.json"
+            namespace["RUNNER_MARKET_DATA_DIR"] = MARKET_DATA_DIR
+            print("Runner override: incremental market selection enabled", flush=True)
+            print("Runner override: site reports ->", namespace["SITE_REPORTS_DIR"], flush=True)
             print("Runner override: GENERATE_PDF_REPORTS ->", namespace["GENERATE_PDF_REPORTS"], flush=True)
+
+        if idx == 3 and namespace.get("SKIP_PIPELINE_NO_NEW_DATA"):
+            skip_pipeline_no_new_data = True
+            print("Runner incremental selection: no new CSV dates; pipeline output unchanged.", flush=True)
+            break
 
         if idx == 5:
             namespace["download_prices_yfinance"] = load_prices_from_csv
             print("Runner override: download_prices_yfinance -> market_data CSV", flush=True)
 
     market_reports_df = namespace.get("market_reports_df")
-    if market_reports_df is not None and not market_reports_df.empty:
+    if skip_pipeline_no_new_data:
+        print("Runner postprocess: skipped because no market has new CSV data.", flush=True)
+    elif market_reports_df is not None and not market_reports_df.empty:
         output_dir = DEV_DIR / "output"
         full_json = output_dir / "all_market_reports_data_from_csv.json"
         full_csv = output_dir / "all_market_reports_data_from_csv.csv"
         output_dir.mkdir(parents=True, exist_ok=True)
+        market_reports_df, merge_summary = merge_with_existing_history(market_reports_df, full_json)
+        print(
+            "Runner incremental merge: "
+            f"previous_markets={merge_summary['previous_markets']} "
+            f"current_markets={merge_summary['current_markets']} "
+            f"unchanged_markets={merge_summary['unchanged_markets']} "
+            f"appended_points={merge_summary['appended_points']}",
+            flush=True,
+        )
         archive_existing_pipeline_outputs()
         market_reports_df.to_json(
             output_dir / "all_market_reports_data_from_csv.pre_conservative_haircut.json",

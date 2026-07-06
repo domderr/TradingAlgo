@@ -12,6 +12,7 @@ import matplotlib
 import pandas as pd
 
 from apply_conservative_haircuts import DEFAULT_CONFIG, load_haircuts, update_rows
+from incremental_pipeline import merge_with_existing_history
 
 matplotlib.use("Agg")
 
@@ -176,9 +177,18 @@ try:
         reports_dir.mkdir(parents=True, exist_ok=True)
         output_dir = DEV_DIR / "output"
         output_dir.mkdir(parents=True, exist_ok=True)
-        archive_existing_pipeline_outputs()
         full_json = DEV_DIR / "output" / "all_market_reports_data.json"
         full_csv = DEV_DIR / "output" / "all_market_reports_data.csv"
+        market_reports_df, merge_summary = merge_with_existing_history(market_reports_df, full_json)
+        print(
+            "Runner incremental merge: "
+            f"previous_markets={merge_summary['previous_markets']} "
+            f"current_markets={merge_summary['current_markets']} "
+            f"unchanged_markets={merge_summary['unchanged_markets']} "
+            f"appended_points={merge_summary['appended_points']}",
+            flush=True,
+        )
+        archive_existing_pipeline_outputs()
         market_reports_df.to_json(
             output_dir / "all_market_reports_data.pre_conservative_haircut.json",
             orient="records",
