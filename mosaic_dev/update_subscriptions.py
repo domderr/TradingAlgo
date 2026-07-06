@@ -14,8 +14,12 @@ DEFAULT_EXCEL = BASE_DIR / "Subscriptions.xlsx"
 DEFAULT_OUTPUT = PROJECT_DIR / "assets" / "subscriptions.json"
 
 MARKET_ALIASES = {
-    "italy": "Italy30",
-    "italia": "Italy30",
+    "italy": "Italy40",
+    "italia": "Italy40",
+    "germany": "Germany40",
+    "deutschland": "Germany40",
+    "us100": "USA100",
+    "nasdaq100": "NASDAQ100",
     "all": "All",
 }
 

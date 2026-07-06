@@ -5,21 +5,12 @@ ROOT = Path(__file__).resolve().parents[1]
 HTML_DIR = ROOT / "reports_html"
 
 MARKETS = [
-    "DJ30",
     "USA100",
     "NASDAQ100",
     "Europe50",
     "Italy40",
-    "UK30",
-    "France40",
-    "Spain40",
     "Germany40",
-    "Australia50",
-    "Japan50",
-    "Canada50",
-    "Mexico30",
-    "South Korea30",
-    "South Africa30",
+    "UK30",
 ]
 
 REQUIRED_MARKERS = [

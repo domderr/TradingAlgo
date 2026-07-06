@@ -1134,32 +1134,18 @@
   <script defer src="assets/access-analytics.js"></script>
   <script>
     var MARKET_META = [
-      { key: "DJ30",         flag: "us", name: "DJ30",         html: "reports_html/DJ30/Report_DJ30.html" },
       { key: "USA100",       flag: "us", name: "USA100",       html: "reports_html/USA100/Report_USA100.html" },
       { key: "NASDAQ100",    flag: "us", name: "Nasdaq100",    html: "reports_html/NASDAQ100/Report_NASDAQ100.html" },
-      { key: "Canada50",     flag: "ca", name: "Canada50",     html: "reports_html/Canada50/Report_Canada50.html" },
-      { key: "Mexico30",     flag: "mx", name: "Mexico30",     html: "reports_html/Mexico30/Report_Mexico30.html" },
       { key: "Europe50",     flag: "eu", name: "Europe50",     html: "reports_html/Europe50/Report_Europe50.html" },
-      { key: "UK30",         flag: "gb", name: "UK30",         html: "reports_html/UK30/Report_UK30.html" },
-      { key: "France40",     flag: "fr", name: "France40",     html: "reports_html/France40/Report_France40.html" },
-      { key: "Spain40",      flag: "es", name: "Spain40",      html: "reports_html/Spain40/Report_Spain40.html" },
       { key: "Germany40",    flag: "de", name: "Germany40",    html: "reports_html/Germany40/Report_Germany40.html" },
       { key: "Italy40",      flag: "it", name: "Italy40",      html: "reports_html/Italy40/Report_Italy40.html" },
-      { key: "Japan50",      flag: "jp", name: "Japan50",      html: "reports_html/Japan50/Report_Japan50.html" },
-      { key: "South Korea30", flag: "kr", name: "S.Korea30",    html: "reports_html/South_Korea30/Report_South_Korea30.html" },
-      { key: "Australia50",  flag: "au", name: "Australia50",  html: "reports_html/Australia50/Report_Australia50.html" },
-      { key: "South Africa30",flag: "za", name: "S.Africa30",  html: "reports_html/South_Africa30/Report_South_Africa30.html" }
+      { key: "UK30",         flag: "gb", name: "UK30",         html: "reports_html/UK30/Report_UK30.html" }
     ];
 
     var MARKET_HAIRCUTS = {
-      "Australia50": 0.35,
       "Germany40": 0.65,
       "Italy40": 1.00,
-      "Japan50": 0.85,
-      "Mexico30": 1.00,
       "NASDAQ100": 0.35,
-      "South Africa30": 1.00,
-      "South Korea30": 1.00,
       "USA100": 0.38
     };
 
@@ -1230,13 +1216,9 @@
       var key = String(value || "").trim();
       var aliases = {
         "Italy": "Italy40",
-        "Italy30": "Italy40",
-        "Germany30": "Germany40",
         "US100": "USA100",
         "NQ100": "NASDAQ100",
-        "Nasdaq100": "NASDAQ100",
-        "South_Korea30": "South Korea30",
-        "South_Africa30": "South Africa30"
+        "Nasdaq100": "NASDAQ100"
       };
       return aliases[key] || key;
     }
@@ -1547,10 +1529,7 @@
       if (el) el.classList.toggle("open");
     }
 
-    var POS_KEY = {
-      "South Korea30": "SouthKorea30",
-      "South Africa30": "SouthAfrica30"
-    };
+    var POS_KEY = {};
 
     function latestDateKeyFromObject(values) {
       if (!values || typeof values !== "object") return "";

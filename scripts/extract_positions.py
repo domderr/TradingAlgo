@@ -8,21 +8,12 @@ REPORTS_DIR = Path(__file__).resolve().parents[1] / "reports"
 OUT = REPORTS_DIR / "positions.json"
 
 MARKETS = [
-    {"key": "DJ30", "file": "Report_DJ30.pdf", "code": "US"},
     {"key": "USA100", "file": "Report_USA100.pdf", "code": "US"},
     {"key": "NASDAQ100", "file": "Report_NASDAQ100.pdf", "code": "US"},
-    {"key": "Canada50", "file": "Report_Canada50.pdf", "code": "CA"},
-    {"key": "Mexico30", "file": "Report_Mexico30.pdf", "code": "MX"},
     {"key": "Europe50", "file": "Report_Europe50.pdf", "code": "EU"},
-    {"key": "UK30", "file": "Report_UK30.pdf", "code": "GB"},
-    {"key": "France40", "file": "Report_France40.pdf", "code": "FR"},
-    {"key": "Spain40", "file": "Report_Spain40.pdf", "code": "ES"},
     {"key": "Germany40", "file": "Report_Germany40.pdf", "code": "DE"},
     {"key": "Italy40", "file": "Report_Italy40.pdf", "code": "IT"},
-    {"key": "Japan50", "file": "Report_Japan50.pdf", "code": "JP"},
-    {"key": "SouthKorea30", "file": "Report_South_Korea30.pdf", "code": "KR"},
-    {"key": "Australia50", "file": "Report_Australia50.pdf", "code": "AU"},
-    {"key": "SouthAfrica30", "file": "Report_South_Africa30.pdf", "code": "ZA"},
+    {"key": "UK30", "file": "Report_UK30.pdf", "code": "GB"},
 ]
 
 SKIP_WORDS = {

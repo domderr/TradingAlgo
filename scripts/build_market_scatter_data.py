@@ -28,17 +28,11 @@ SNAPSHOT_COUNT = 52
 
 MARKETS = [
     {"market": "USA100", "code": "US", "flag": "ðŸ‡ºðŸ‡¸", "etf": "QQQ"},
+    {"market": "NASDAQ100", "code": "US", "flag": "ðŸ‡ºðŸ‡¸", "etf": "QQQ"},
     {"market": "Europe50", "code": "EU", "flag": "ðŸ‡ªðŸ‡º", "etf": "FEZ"},
     {"market": "Italy40", "code": "IT", "flag": "ðŸ‡®ðŸ‡¹", "etf": "EWI"},
-    {"market": "UK30", "code": "GB", "flag": "ðŸ‡¬ðŸ‡§", "etf": "EWU"},
-    {"market": "France40", "code": "FR", "flag": "ðŸ‡«ðŸ‡·", "etf": "EWQ"},
     {"market": "Germany40", "code": "DE", "flag": "ðŸ‡©ðŸ‡ª", "etf": "EWG"},
-    {"market": "Australia50", "code": "AU", "flag": "ðŸ‡¦ðŸ‡º", "etf": "EWA"},
-    {"market": "Japan50", "code": "JP", "flag": "ðŸ‡¯ðŸ‡µ", "etf": "EWJ"},
-    {"market": "Canada50", "code": "CA", "flag": "ðŸ‡¨ðŸ‡¦", "etf": "EWC"},
-    {"market": "Mexico30", "code": "MX", "flag": "ðŸ‡²ðŸ‡½", "etf": "EWW"},
-    {"market": "South Korea30", "code": "KR", "flag": "ðŸ‡°ðŸ‡·", "etf": "EWY"},
-    {"market": "South Africa30", "code": "ZA", "flag": "ðŸ‡¿ðŸ‡¦", "etf": "EZA"},
+    {"market": "UK30", "code": "GB", "flag": "ðŸ‡¬ðŸ‡§", "etf": "EWU"},
 ]
 
 

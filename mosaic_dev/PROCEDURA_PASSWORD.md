@@ -30,6 +30,6 @@ python update_subscriptions.py
 ## Note operative
 
 - Lo script calcola hash SHA-256 compatibili con `reserved-area.html`.
-- `Italy` e `Italia` vengono normalizzati in `Italy30`.
+- `Italy` e `Italia` vengono normalizzati in `Italy40`.
 - Una riga con `status` vuoto e' considerata attiva.
 - Valori `inactive`, `disabled`, `no`, `false`, `0`, `off`, `revoked` disattivano l'accesso.

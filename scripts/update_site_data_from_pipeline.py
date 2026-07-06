@@ -18,7 +18,7 @@ def safe_market_name(value):
 
 
 def positions_key(market):
-    return str(market).replace("South Korea30", "SouthKorea30").replace("South Africa30", "SouthAfrica30")
+    return str(market)
 
 
 def display_week(end_date_exclusive):
