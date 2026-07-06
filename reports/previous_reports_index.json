@@ -1,18 +1,5 @@
 [
   {
-    "Market": "DJ30",
-    "Benchmark": "DIA",
-    "Status": "OK",
-    "Report_File": "Report_DJ30.html",
-    "Report_Path": "reports_html/DJ30/Report_DJ30.html",
-    "Report_URL": "reports_html/DJ30/Report_DJ30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1252008992516989,
-    "Last_Hedge_Score": 87.4799100748301,
-    "Benchmark_Hedge_Short": 0.1252008992516989,
-    "Benchmark_Hedge_Ticker": "DIA"
-  },
-  {
     "Market": "USA100",
     "Benchmark": "SPY",
     "Status": "OK",
@@ -52,19 +39,6 @@
     "Benchmark_Hedge_Ticker": "EZU"
   },
   {
-    "Market": "Italy30",
-    "Benchmark": "EWI",
-    "Status": "OK",
-    "Report_File": "Report_Italy30.html",
-    "Report_Path": "reports_html/Italy30/Report_Italy30.html",
-    "Report_URL": "reports_html/Italy30/Report_Italy30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1181125465597332,
-    "Last_Hedge_Score": 88.18874534402667,
-    "Benchmark_Hedge_Short": 0.1181125465597332,
-    "Benchmark_Hedge_Ticker": "EWI"
-  },
-  {
     "Market": "UK30",
     "Benchmark": "EWU",
     "Status": "OK",
@@ -76,122 +50,5 @@
     "Last_Hedge_Score": 87.95986762088201,
     "Benchmark_Hedge_Short": 0.1204013237911799,
     "Benchmark_Hedge_Ticker": "EWU"
-  },
-  {
-    "Market": "France40",
-    "Benchmark": "EWQ",
-    "Status": "OK",
-    "Report_File": "Report_France40.html",
-    "Report_Path": "reports_html/France40/Report_France40.html",
-    "Report_URL": "reports_html/France40/Report_France40.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1835232422694468,
-    "Last_Hedge_Score": 81.64767577305531,
-    "Benchmark_Hedge_Short": 0.1835232422694468,
-    "Benchmark_Hedge_Ticker": "EWQ"
-  },
-  {
-    "Market": "Spain40",
-    "Benchmark": "EWP",
-    "Status": "OK",
-    "Report_File": "Report_Spain40.html",
-    "Report_Path": "reports_html/Spain40/Report_Spain40.html",
-    "Report_URL": "reports_html/Spain40/Report_Spain40.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.0694872276495978,
-    "Last_Hedge_Score": 93.05127723504022,
-    "Benchmark_Hedge_Short": 0.0694872276495978,
-    "Benchmark_Hedge_Ticker": "EWP"
-  },
-  {
-    "Market": "Germany30",
-    "Benchmark": "EWG",
-    "Status": "OK",
-    "Report_File": "Report_Germany30.html",
-    "Report_Path": "reports_html/Germany30/Report_Germany30.html",
-    "Report_URL": "reports_html/Germany30/Report_Germany30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1242206621395348,
-    "Last_Hedge_Score": 87.57793378604651,
-    "Benchmark_Hedge_Short": 0.1242206621395348,
-    "Benchmark_Hedge_Ticker": "EWG"
-  },
-  {
-    "Market": "Australia50",
-    "Benchmark": "EWA",
-    "Status": "OK",
-    "Report_File": "Report_Australia50.html",
-    "Report_Path": "reports_html/Australia50/Report_Australia50.html",
-    "Report_URL": "reports_html/Australia50/Report_Australia50.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1677453418860867,
-    "Last_Hedge_Score": 83.22546581139133,
-    "Benchmark_Hedge_Short": 0.1677453418860867,
-    "Benchmark_Hedge_Ticker": "EWA"
-  },
-  {
-    "Market": "Japan50",
-    "Benchmark": "EWJ",
-    "Status": "OK",
-    "Report_File": "Report_Japan50.html",
-    "Report_Path": "reports_html/Japan50/Report_Japan50.html",
-    "Report_URL": "reports_html/Japan50/Report_Japan50.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1035464993327869,
-    "Last_Hedge_Score": 89.6453500667213,
-    "Benchmark_Hedge_Short": 0.1035464993327869,
-    "Benchmark_Hedge_Ticker": "EWJ"
-  },
-  {
-    "Market": "Canada50",
-    "Benchmark": "EWC",
-    "Status": "OK",
-    "Report_File": "Report_Canada50.html",
-    "Report_Path": "reports_html/Canada50/Report_Canada50.html",
-    "Report_URL": "reports_html/Canada50/Report_Canada50.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1458194359558392,
-    "Last_Hedge_Score": 85.41805640441608,
-    "Benchmark_Hedge_Short": 0.1458194359558392,
-    "Benchmark_Hedge_Ticker": "EWC"
-  },
-  {
-    "Market": "Mexico30",
-    "Benchmark": "EWW",
-    "Status": "OK",
-    "Report_File": "Report_Mexico30.html",
-    "Report_Path": "reports_html/Mexico30/Report_Mexico30.html",
-    "Report_URL": "reports_html/Mexico30/Report_Mexico30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.2240969723315157,
-    "Last_Hedge_Score": 77.59030276684842,
-    "Benchmark_Hedge_Short": 0.2240969723315157,
-    "Benchmark_Hedge_Ticker": "EWW"
-  },
-  {
-    "Market": "South Korea30",
-    "Benchmark": "EWY",
-    "Status": "OK",
-    "Report_File": "Report_South_Korea30.html",
-    "Report_Path": "reports_html/South_Korea30/Report_South_Korea30.html",
-    "Report_URL": "reports_html/South_Korea30/Report_South_Korea30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1964583314307826,
-    "Last_Hedge_Score": 80.35416685692174,
-    "Benchmark_Hedge_Short": 0.1964583314307826,
-    "Benchmark_Hedge_Ticker": "EWY"
-  },
-  {
-    "Market": "South Africa30",
-    "Benchmark": "EZA",
-    "Status": "OK",
-    "Report_File": "Report_South_Africa30.html",
-    "Report_Path": "reports_html/South_Africa30/Report_South_Africa30.html",
-    "Report_URL": "reports_html/South_Africa30/Report_South_Africa30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1443812097553247,
-    "Last_Hedge_Score": 81.9523487805844,
-    "Benchmark_Hedge_Short": 0.1443812097553247,
-    "Benchmark_Hedge_Ticker": "EZA"
   }
 ]
