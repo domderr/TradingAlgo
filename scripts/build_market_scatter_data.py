@@ -27,12 +27,12 @@ LOOKBACK_WEEKS = 52
 SNAPSHOT_COUNT = 52
 
 MARKETS = [
-    {"market": "USA100", "code": "US", "flag": "ðŸ‡ºðŸ‡¸", "etf": "QQQ"},
-    {"market": "NASDAQ100", "code": "US", "flag": "ðŸ‡ºðŸ‡¸", "etf": "QQQ"},
-    {"market": "Europe50", "code": "EU", "flag": "ðŸ‡ªðŸ‡º", "etf": "FEZ"},
-    {"market": "Italy40", "code": "IT", "flag": "ðŸ‡®ðŸ‡¹", "etf": "EWI"},
-    {"market": "Germany40", "code": "DE", "flag": "ðŸ‡©ðŸ‡ª", "etf": "EWG"},
-    {"market": "UK30", "code": "GB", "flag": "ðŸ‡¬ðŸ‡§", "etf": "EWU"},
+    {"market": "USA100", "code": "US", "flag": "US", "etf": "SPY"},
+    {"market": "NASDAQ100", "code": "US", "flag": "US", "etf": "QQQ"},
+    {"market": "Europe50", "code": "EU", "flag": "EU", "etf": "FEZ"},
+    {"market": "Italy40", "code": "IT", "flag": "IT", "etf": "EWI"},
+    {"market": "Germany40", "code": "DE", "flag": "DE", "etf": "EWG"},
+    {"market": "UK30", "code": "GB", "flag": "GB", "etf": "EWU"},
 ]
 
 
