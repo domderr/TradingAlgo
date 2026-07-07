@@ -37,18 +37,5 @@
     "Last_Hedge_Score": 90.9065231768924,
     "Benchmark_Hedge_Short": 0.090934768231076,
     "Benchmark_Hedge_Ticker": "EZU"
-  },
-  {
-    "Market": "UK30",
-    "Benchmark": "EWU",
-    "Status": "OK",
-    "Report_File": "Report_UK30.html",
-    "Report_Path": "reports_html/UK30/Report_UK30.html",
-    "Report_URL": "reports_html/UK30/Report_UK30.html",
-    "Updated_At": null,
-    "Last_Hedge_Short": 0.1204013237911799,
-    "Last_Hedge_Score": 87.95986762088201,
-    "Benchmark_Hedge_Short": 0.1204013237911799,
-    "Benchmark_Hedge_Ticker": "EWU"
   }
 ]

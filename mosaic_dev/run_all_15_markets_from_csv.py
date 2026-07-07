@@ -284,7 +284,16 @@ try:
         full_json = output_dir / "all_market_reports_data_from_csv.json"
         full_csv = output_dir / "all_market_reports_data_from_csv.csv"
         output_dir.mkdir(parents=True, exist_ok=True)
-        market_reports_df, merge_summary = merge_with_existing_history(market_reports_df, full_json)
+        active_market_names = [
+            item.get("Market")
+            for item in namespace.get("available_markets", [])
+            if item.get("Market")
+        ]
+        market_reports_df, merge_summary = merge_with_existing_history(
+            market_reports_df,
+            full_json,
+            active_market_names,
+        )
         print(
             "Runner incremental merge: "
             f"previous_markets={merge_summary['previous_markets']} "

@@ -133,7 +133,7 @@ def markets_with_new_csv_data(markets, previous_json_path, market_data_dir):
     }
 
 
-def merge_with_existing_history(current_df, previous_json_path):
+def merge_with_existing_history(current_df, previous_json_path, active_markets=None):
     previous_rows = read_rows(previous_json_path)
     if not previous_rows:
         return current_df, {
@@ -143,7 +143,15 @@ def merge_with_existing_history(current_df, previous_json_path):
             "appended_points": 0,
         }
 
-    previous_by_market = {_market_key(row): row for row in previous_rows if _market_key(row)}
+    active_market_set = None
+    if active_markets is not None:
+        active_market_set = {str(market).strip() for market in active_markets if str(market).strip()}
+
+    previous_by_market = {
+        _market_key(row): row
+        for row in previous_rows
+        if _market_key(row) and (active_market_set is None or _market_key(row) in active_market_set)
+    }
     merged_rows = []
     appended_points = 0
     unchanged_markets = 0

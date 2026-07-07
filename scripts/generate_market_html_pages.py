@@ -13,8 +13,8 @@ MARKETS = [
     "NASDAQ100",
     "Europe50",
     "Italy40",
+    "UK100",
     "Germany40",
-    "UK30",
     "Australia50",
 ]
 

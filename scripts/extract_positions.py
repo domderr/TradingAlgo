@@ -13,7 +13,7 @@ MARKETS = [
     {"key": "Europe50", "file": "Report_Europe50.pdf", "code": "EU"},
     {"key": "Germany40", "file": "Report_Germany40.pdf", "code": "DE"},
     {"key": "Italy40", "file": "Report_Italy40.pdf", "code": "IT"},
-    {"key": "UK30", "file": "Report_UK30.pdf", "code": "GB"},
+    {"key": "UK100", "file": "Report_UK100.pdf", "code": "GB"},
 ]
 
 SKIP_WORDS = {
