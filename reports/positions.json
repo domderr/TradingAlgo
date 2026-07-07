@@ -268,5 +268,54 @@
       "in": [],
       "out": []
     }
+  },
+  "Australia50": {
+    "week": "3 Jul 2026",
+    "positions": [
+      {
+        "ticker": "RIO.AX",
+        "name": "RIO TINTO FPO [RIO]",
+        "sector": "Basic Materials",
+        "industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "ticker": "EVN.AX",
+        "name": "EVOLUTION FPO [EVN]",
+        "sector": "Basic Materials",
+        "industry": "Gold"
+      },
+      {
+        "ticker": "LYC.AX",
+        "name": "LYNAS FPO [LYC]",
+        "sector": "Basic Materials",
+        "industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "ticker": "WOW.AX",
+        "name": "WOOLWORTHS FPO [WOW]",
+        "sector": "Consumer Defensive",
+        "industry": "Grocery Stores"
+      },
+      {
+        "ticker": "WDS.AX",
+        "name": "WOODSIDE FPO [WDS]",
+        "sector": "Energy",
+        "industry": "Oil & Gas E&P"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "WOW.AX",
+          "name": "WOOLWORTHS FPO [WOW]"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "S32.AX",
+          "name": "SOUTH32 FPO [S32]"
+        }
+      ]
+    }
   }
 }
