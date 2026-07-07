@@ -1,4 +1,53 @@
 {
+  "UK100": {
+    "week": "3 Jul 2026",
+    "positions": [
+      {
+        "ticker": "GLEN.L",
+        "name": "GLENCORE PLC ORD USD0.01",
+        "sector": "Basic Materials",
+        "industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "ticker": "ANTO.L",
+        "name": "ANTOFAGASTA PLC ORD 5P",
+        "sector": "Basic Materials",
+        "industry": "Copper"
+      },
+      {
+        "ticker": "CCC.L",
+        "name": "COMPUTACENTER PLC ORD 7 5/9P",
+        "sector": "Technology",
+        "industry": "Information Technology Services"
+      },
+      {
+        "ticker": "AAF.L",
+        "name": "AIRTEL AFRICA PLC ORD USD0.50",
+        "sector": "Communication Services",
+        "industry": "Telecom Services"
+      },
+      {
+        "ticker": "IGG.L",
+        "name": "IG GROUP HOLDINGS PLC ORD 0.005",
+        "sector": "Financial Services",
+        "industry": "Capital Markets"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "IGG.L",
+          "name": "IG GROUP HOLDINGS PLC ORD 0.005"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "SDR.L",
+          "name": "SCHRODERS PLC ORD 20P"
+        }
+      ]
+    }
+  },
   "USA100": {
     "week": "3 Jul 2026",
     "positions": [
@@ -165,71 +214,6 @@
       "out": []
     }
   },
-  "UK30": {
-    "week": "3 Jul 2026",
-    "positions": [
-      {
-        "ticker": "GLEN.L",
-        "name": "GLENCORE PLC ORD USD0.01",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "AAL.L",
-        "name": "ANGLO AMERICAN PLC ORD USD0.623",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "STAN.L",
-        "name": "STANDARD CHARTERED PLC ORD USD0",
-        "sector": "Financial Services",
-        "industry": "Banks - Diversified"
-      },
-      {
-        "ticker": "VOD.L",
-        "name": "VODAFONE GROUP PLC ORD USD0.20",
-        "sector": "Communication Services",
-        "industry": "Telecom Services"
-      },
-      {
-        "ticker": "GSK.L",
-        "name": "GSK PLC ORD 31 1/4P",
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "AAL.L",
-          "name": "ANGLO AMERICAN PLC ORD USD0.623"
-        },
-        {
-          "ticker": "STAN.L",
-          "name": "STANDARD CHARTERED PLC ORD USD0"
-        },
-        {
-          "ticker": "VOD.L",
-          "name": "VODAFONE GROUP PLC ORD USD0.20"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "RIO.L",
-          "name": "RIO TINTO PLC ORD 10P"
-        },
-        {
-          "ticker": "HSBA.L",
-          "name": "HSBC HOLDINGS PLC ORD $0.50 (UK"
-        },
-        {
-          "ticker": "BP.L",
-          "name": "BP PLC $0.25"
-        }
-      ]
-    }
-  },
   "Germany40": {
     "week": "3 Jul 2026",
     "positions": [
@@ -267,55 +251,6 @@
     "changes": {
       "in": [],
       "out": []
-    }
-  },
-  "Australia50": {
-    "week": "3 Jul 2026",
-    "positions": [
-      {
-        "ticker": "RIO.AX",
-        "name": "RIO TINTO FPO [RIO]",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "EVN.AX",
-        "name": "EVOLUTION FPO [EVN]",
-        "sector": "Basic Materials",
-        "industry": "Gold"
-      },
-      {
-        "ticker": "LYC.AX",
-        "name": "LYNAS FPO [LYC]",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "WOW.AX",
-        "name": "WOOLWORTHS FPO [WOW]",
-        "sector": "Consumer Defensive",
-        "industry": "Grocery Stores"
-      },
-      {
-        "ticker": "WDS.AX",
-        "name": "WOODSIDE FPO [WDS]",
-        "sector": "Energy",
-        "industry": "Oil & Gas E&P"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "WOW.AX",
-          "name": "WOOLWORTHS FPO [WOW]"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "S32.AX",
-          "name": "SOUTH32 FPO [S32]"
-        }
-      ]
     }
   }
 }

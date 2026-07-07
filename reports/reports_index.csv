@@ -1,8 +1,7 @@
 Market,Benchmark,Status,Report_File,Report_Path,Report_URL,Updated_At,Last_Hedge_Short,Last_Hedge_Score,Benchmark_Hedge_Short,Benchmark_Hedge_Ticker
-USA100,SPY,OK,Report_USA100.html,reports_html/USA100/Report_USA100.html,reports_html/USA100/Report_USA100.html,,0.07900903431988027,92.09909656801197,0.07900903431988027,SPY
-NASDAQ100,QQQ,OK,Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,,0.11571233451860508,88.42876654813949,0.11571233451860508,QQQ
-Europe50,EZU,OK,Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,,0.08678955033842883,91.32104496615712,0.08678955033842883,EZU
-Italy40,EWI,OK,Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,,0.11905541251681573,88.09445874831843,0.11905541251681573,EWI
-UK30,EWU,OK,Report_UK30.html,reports_html/UK30/Report_UK30.html,reports_html/UK30/Report_UK30.html,,0.1441813972945286,85.58186027054714,0.1441813972945286,EWU
-Germany40,EWG,OK,Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,,0.120560697794039,87.9439302205961,0.120560697794039,EWG
-Australia50,EWA,OK,Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,,0.20758647203202818,79.24135279679719,0.20758647203202818,EWA
+UK100,EWU,OK,Report_UK100.html,reports_html/UK100/Report_UK100.html,reports_html/UK100/Report_UK100.html,,0.0911898055794268,90.88101944205732,0.0911898055794268,EWU
+USA100,SPY,OK,Report_USA100.html,reports_html/USA100/Report_USA100.html,reports_html/USA100/Report_USA100.html,,0.0790090343,92.099096568,0.0790090343,SPY
+NASDAQ100,QQQ,OK,Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,,0.1157123345,88.4287665481,0.1157123345,QQQ
+Europe50,EZU,OK,Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,,0.0867895503,91.3210449662,0.0867895503,EZU
+Italy40,EWI,OK,Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,,0.1190554125,88.0944587483,0.1190554125,EWI
+Germany40,EWG,OK,Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,,0.1205606978,87.9439302206,0.1205606978,EWG
