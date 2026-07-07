@@ -235,12 +235,19 @@
     }
 
     .philosophy-diagram {
-      max-width: 620px;
+      max-width: 920px;
       margin: 34px auto 4px;
-      padding: 28px;
+      padding: 0;
       border: 1px solid rgba(125,211,252,0.28);
       border-radius: 8px;
       background: rgba(5,11,20,0.36);
+      overflow: hidden;
+    }
+
+    .philosophy-diagram img {
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .diagram-note {
@@ -1751,29 +1758,12 @@
       <p>TradingAlgo Mosaic offers an alternative.</p>
       <p>Instead of holding every stock in the benchmark, it applies a transparent quantitative framework to identify a concentrated portfolio of stocks that best represents the market at that point in time. The portfolio is reviewed weekly using predefined selection rules based on trend, stability and portfolio construction principles.</p>
       <p>The objective is straightforward: to provide a systematic alternative to passive index investing, seeking to outperform the reference ETF while maintaining a transparent, disciplined and repeatable investment process.</p>
-      <p>Investment decisions always remain with the investor. TradingAlgo Mosaic provides standardized research and model portfolios, not personalized investment advice.</p>
+      <p><strong>Investment decisions always remain with the investor. TradingAlgo Mosaic provides standardized research and model portfolios, not personalized investment advice.</strong></p>
 
-      <div class="philosophy-diagram" aria-label="TradingAlgo Mosaic investment process">
-        <div class="flow-node">Strategic Asset Allocation</div>
-        <div class="flow-arrow" aria-hidden="true"></div>
-        <div class="flow-node">US Equities</div>
-        <div class="flow-arrow" aria-hidden="true"></div>
-        <div class="flow-choice">
-          <div class="flow-branch">
-            <div class="flow-node">Buy SPY ETF</div>
-          </div>
-          <div class="flow-branch">
-            <div class="flow-node">TradingAlgo Mosaic</div>
-            <div class="flow-arrow" aria-hidden="true"></div>
-            <div class="flow-node">Weekly Quantitative Selection</div>
-            <div class="flow-arrow" aria-hidden="true"></div>
-            <div class="flow-node">Concentrated Model Portfolio</div>
-            <div class="flow-arrow" aria-hidden="true"></div>
-            <div class="flow-node objective">Objective: outperform SPY over time</div>
-          </div>
-        </div>
-        <p class="diagram-note">Illustrative example based on US equities and SPY. The same framework can be applied to other supported markets and reference ETFs.</p>
-      </div>
+      <figure class="philosophy-diagram" aria-label="TradingAlgo Mosaic investment process">
+        <img src="assets/diagrams/investment-philosophy-mosaic-v12.png" alt="Illustrative example of strategic asset allocation branching into passive investment through SPY ETF and active investment through TradingAlgo Mosaic">
+      </figure>
+      <p class="diagram-note">Illustrative example based on US equities and SPY. The same framework can be applied to other supported markets and reference ETFs.</p>
     </div>
   </section>
 
