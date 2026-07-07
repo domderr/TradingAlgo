@@ -1,4 +1,306 @@
 window.MARKET_STOCKS_DATA = {
+  "Australia50": [
+    {
+      "ticker": "ALL.AX",
+      "name": "ARISTOCRAT FPO [ALL]",
+      "sector": "Consumer Cyclical",
+      "industry": "Gambling"
+    },
+    {
+      "ticker": "AMC.AX",
+      "name": "AMCOR PLC CDI 1:1 [AMC]",
+      "sector": "Consumer Cyclical",
+      "industry": "Packaging & Containers"
+    },
+    {
+      "ticker": "ANZ.AX",
+      "name": "ANZ GROUP FPO [ANZ]",
+      "sector": "Financial Services",
+      "industry": "Banks - Diversified"
+    },
+    {
+      "ticker": "ASX.AX",
+      "name": "ASX FPO [ASX]",
+      "sector": "Financial Services",
+      "industry": "Financial Data & Stock Exchanges"
+    },
+    {
+      "ticker": "BHP.AX",
+      "name": "BHP GROUP FPO [BHP]",
+      "sector": "Basic Materials",
+      "industry": "Other Industrial Metals & Mining"
+    },
+    {
+      "ticker": "BXB.AX",
+      "name": "BRAMB LTD FPO [BXB]",
+      "sector": "Industrials",
+      "industry": "Specialty Business Services"
+    },
+    {
+      "ticker": "CAR.AX",
+      "name": "CAR GROUP FPO [CAR]",
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information"
+    },
+    {
+      "ticker": "CBA.AX",
+      "name": "CWLTH BANK FPO [CBA]",
+      "sector": "Financial Services",
+      "industry": "Banks - Diversified"
+    },
+    {
+      "ticker": "COH.AX",
+      "name": "COCHLEAR FPO [COH]",
+      "sector": "Healthcare",
+      "industry": "Medical Devices"
+    },
+    {
+      "ticker": "COL.AX",
+      "name": "COLESGROUP FPO [COL]",
+      "sector": "Consumer Defensive",
+      "industry": "Grocery Stores"
+    },
+    {
+      "ticker": "CPU.AX",
+      "name": "CSHARE FPO [CPU]",
+      "sector": "Financial Services",
+      "industry": "Capital Markets"
+    },
+    {
+      "ticker": "CSL.AX",
+      "name": "CSL FPO [CSL]",
+      "sector": "Healthcare",
+      "industry": "Biotechnology"
+    },
+    {
+      "ticker": "EVN.AX",
+      "name": "EVOLUTION FPO [EVN]",
+      "sector": "Basic Materials",
+      "industry": "Gold"
+    },
+    {
+      "ticker": "FMG.AX",
+      "name": "FORTESCUE FPO [FMG]",
+      "sector": "Basic Materials",
+      "industry": "Other Industrial Metals & Mining"
+    },
+    {
+      "ticker": "FPH.AX",
+      "name": "F&P HEALTH FPO NZX [FPH]",
+      "sector": "Healthcare",
+      "industry": "Medical Instruments & Supplies"
+    },
+    {
+      "ticker": "GMG.AX",
+      "name": "GOOD GROUP STAPLED [GMG]",
+      "sector": "Real Estate",
+      "industry": "REIT - Diversified"
+    },
+    {
+      "ticker": "IAG.AX",
+      "name": "INSUR.AUST FPO [IAG]",
+      "sector": "Financial Services",
+      "industry": "Insurance - Property & Casualty"
+    },
+    {
+      "ticker": "JBH.AX",
+      "name": "JB HI-FI FPO [JBH]",
+      "sector": "Consumer Cyclical",
+      "industry": "Specialty Retail"
+    },
+    {
+      "ticker": "JHX.AX",
+      "name": "J HARDIE CDI 1:1 [JHX]",
+      "sector": "Basic Materials",
+      "industry": "Building Materials"
+    },
+    {
+      "ticker": "LYC.AX",
+      "name": "LYNAS FPO [LYC]",
+      "sector": "Basic Materials",
+      "industry": "Other Industrial Metals & Mining"
+    },
+    {
+      "ticker": "MPL.AX",
+      "name": "MEDIBANK FPO [MPL]",
+      "sector": "Financial Services",
+      "industry": "Insurance - Specialty"
+    },
+    {
+      "ticker": "MQG.AX",
+      "name": "MACQ GROUP FPO [MQG]",
+      "sector": "Financial Services",
+      "industry": "Capital Markets"
+    },
+    {
+      "ticker": "NAB.AX",
+      "name": "NAT. BANK FPO [NAB]",
+      "sector": "Financial Services",
+      "industry": "Banks - Diversified"
+    },
+    {
+      "ticker": "NEM.AX",
+      "name": "NEWMONT CDI 1:1 [NEM]",
+      "sector": "Basic Materials",
+      "industry": "Gold"
+    },
+    {
+      "ticker": "NST.AX",
+      "name": "NTH STAR FPO [NST]",
+      "sector": "Basic Materials",
+      "industry": "Gold"
+    },
+    {
+      "ticker": "NWS.AX",
+      "name": "NEWS CORP B VOTING [NWS]",
+      "sector": "Communication Services",
+      "industry": "Entertainment"
+    },
+    {
+      "ticker": "ORG.AX",
+      "name": "ORIGIN ENE FPO [ORG]",
+      "sector": "Utilities",
+      "industry": "Utilities - Diversified"
+    },
+    {
+      "ticker": "PME.AX",
+      "name": "PROMEDICUS FPO [PME]",
+      "sector": "Healthcare",
+      "industry": "Health Information Services"
+    },
+    {
+      "ticker": "QAN.AX",
+      "name": "QANTAS FPO [QAN]",
+      "sector": "Industrials",
+      "industry": "Airlines"
+    },
+    {
+      "ticker": "QBE.AX",
+      "name": "QBE INSUR. FPO [QBE]",
+      "sector": "Financial Services",
+      "industry": "Insurance - Property & Casualty"
+    },
+    {
+      "ticker": "REA.AX",
+      "name": "REA GROUP FPO [REA]",
+      "sector": "Communication Services",
+      "industry": "Internet Content & Information"
+    },
+    {
+      "ticker": "RIO.AX",
+      "name": "RIO TINTO FPO [RIO]",
+      "sector": "Basic Materials",
+      "industry": "Other Industrial Metals & Mining"
+    },
+    {
+      "ticker": "RMD.AX",
+      "name": "RESMED CDI 10:1 [RMD]",
+      "sector": "Healthcare",
+      "industry": "Medical Instruments & Supplies"
+    },
+    {
+      "ticker": "S32.AX",
+      "name": "SOUTH32 FPO [S32]",
+      "sector": "Basic Materials",
+      "industry": "Other Industrial Metals & Mining"
+    },
+    {
+      "ticker": "SCG.AX",
+      "name": "SCENTRE STAPLED [SCG]",
+      "sector": "Real Estate",
+      "industry": "REIT - Retail"
+    },
+    {
+      "ticker": "SGH.AX",
+      "name": "SGHLIMITED FPO [SGH]",
+      "sector": "-",
+      "industry": "-"
+    },
+    {
+      "ticker": "SGP.AX",
+      "name": "STOCKLAND. STAPLED [SGP]",
+      "sector": "Real Estate",
+      "industry": "REIT - Diversified"
+    },
+    {
+      "ticker": "SIG.AX",
+      "name": "SIGMAHEALT FPO [SIG]",
+      "sector": "Healthcare",
+      "industry": "Medical Distribution"
+    },
+    {
+      "ticker": "SOL.AX",
+      "name": "SOUL W.H. FPO [SOL]",
+      "sector": "Financial Services",
+      "industry": "Capital Markets"
+    },
+    {
+      "ticker": "STO.AX",
+      "name": "SANTOS FPO [STO]",
+      "sector": "Energy",
+      "industry": "Oil & Gas E&P"
+    },
+    {
+      "ticker": "SUN.AX",
+      "name": "SUNCORP FPO [SUN]",
+      "sector": "Financial Services",
+      "industry": "Insurance - Property & Casualty"
+    },
+    {
+      "ticker": "TCL.AX",
+      "name": "TRANSURBAN STAPLED [TCL]",
+      "sector": "Industrials",
+      "industry": "Infrastructure Operations"
+    },
+    {
+      "ticker": "TLS.AX",
+      "name": "TELSTRA FPO [TLS]",
+      "sector": "Communication Services",
+      "industry": "Telecom Services"
+    },
+    {
+      "ticker": "WBC.AX",
+      "name": "WESTPAC FPO [WBC]",
+      "sector": "Financial Services",
+      "industry": "Banks - Diversified"
+    },
+    {
+      "ticker": "WDS.AX",
+      "name": "WOODSIDE FPO [WDS]",
+      "sector": "Energy",
+      "industry": "Oil & Gas E&P"
+    },
+    {
+      "ticker": "WES.AX",
+      "name": "WESFARMER FPO [WES]",
+      "sector": "Consumer Cyclical",
+      "industry": "Home Improvement Retail"
+    },
+    {
+      "ticker": "WOW.AX",
+      "name": "WOOLWORTHS FPO [WOW]",
+      "sector": "Consumer Defensive",
+      "industry": "Grocery Stores"
+    },
+    {
+      "ticker": "WTC.AX",
+      "name": "WISETECH FPO [WTC]",
+      "sector": "Technology",
+      "industry": "Software - Application"
+    },
+    {
+      "ticker": "XRO.AX",
+      "name": "XERO FPO [XRO]",
+      "sector": "Technology",
+      "industry": "Software - Application"
+    },
+    {
+      "ticker": "XYZ.AX",
+      "name": "BLOCK INC CDI 1:1 [XYZ]",
+      "sector": "Technology",
+      "industry": "Software - Infrastructure"
+    }
+  ],
   "Europe50": [
     {
       "ticker": "ABI.BR",

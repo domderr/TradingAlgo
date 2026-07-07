@@ -33,6 +33,7 @@ MARKETS = [
     {"market": "Italy40", "code": "IT", "flag": "IT", "etf": "EWI"},
     {"market": "Germany40", "code": "DE", "flag": "DE", "etf": "EWG"},
     {"market": "UK30", "code": "GB", "flag": "GB", "etf": "EWU"},
+    {"market": "Australia50", "code": "AU", "flag": "AU", "etf": "EWA"},
 ]
 
 

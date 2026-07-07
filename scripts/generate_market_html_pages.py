@@ -15,6 +15,7 @@ MARKETS = [
     "Italy40",
     "Germany40",
     "UK30",
+    "Australia50",
 ]
 
 REQUIRED_REPORT_MARKERS = [

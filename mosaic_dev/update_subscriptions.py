@@ -20,6 +20,9 @@ MARKET_ALIASES = {
     "deutschland": "Germany40",
     "us100": "USA100",
     "nasdaq100": "NASDAQ100",
+    "australia": "Australia50",
+    "australia50": "Australia50",
+    "au50": "Australia50",
     "all": "All",
 }
 

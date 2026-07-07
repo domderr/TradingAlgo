@@ -1811,7 +1811,7 @@ def build_html(dev_dir, site_dir, market, market_choice, rerun):
         "TradingAlgo Mosaic automatically selects and monitors a weekly portfolio of five stocks from any analyzed market. "
         "The framework uses systematic trend, stability, and portfolio-contribution analysis to identify opportunities, "
         "track portfolio positions, and evaluate performance relative to the benchmark. Market currently monitored: "
-        "USA100, NASDAQ100, Europe50, Italy40, Germany40, UK30"
+        "USA100, NASDAQ100, Europe50, Italy40, Germany40, UK30, Australia50"
     )
     bio_text = (
         "Domenico D'Errico, after holding various managerial roles within multinational companies, has been working as a quant developer "
