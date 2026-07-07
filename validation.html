@@ -138,8 +138,17 @@
       border-bottom: 1px solid var(--panel-border);
     }
 
-    .equity-flag {
-      font-size: 20px;
+    .equity-market {
+      min-width: 38px;
+      padding: 4px 7px;
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      border-radius: 6px;
+      color: var(--blue);
+      background: rgba(125, 211, 252, 0.08);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+      text-align: center;
     }
 
     .equity-name {
@@ -230,29 +239,38 @@
   <div class="container">
     <div class="page-header">
       <div class="eyebrow">Portfolio Validation</div>
-      <p>Every TradingAlgo Mosaic portfolio is supported by a transparent validation process. Since 2024, each weekly portfolio has been archived and tracked, allowing investors to review both historical equity performance and the actual portfolios published over time.</p>
+      <h1>Validated Mosaic portfolios</h1>
+      <p>Every TradingAlgo Mosaic portfolio is supported by a transparent validation process. Since 2024, each weekly portfolio has been archived and tracked, allowing investors to review the same equity, drawdown, and exposure charts used in the Reserved Area.</p>
     </div>
 
     <div class="equity-grid">
       <div class="equity-card">
-        <div class="equity-card-header"><span class="equity-flag">????</span><span class="equity-name">USA100</span></div>
-        <img src="assets/equity/USA100.png" alt="USA100 equity line">
+        <div class="equity-card-header"><span class="equity-market">US</span><span class="equity-name">USA100</span></div>
+        <img src="reports_html/USA100/assets/summary_USA100.png" alt="USA100 equity drawdown exposure chart">
       </div>
       <div class="equity-card">
-        <div class="equity-card-header"><span class="equity-flag">????</span><span class="equity-name">Europe50</span></div>
-        <img src="assets/equity/Europe50.png" alt="Europe50 equity line">
+        <div class="equity-card-header"><span class="equity-market">US</span><span class="equity-name">Nasdaq100</span></div>
+        <img src="reports_html/NASDAQ100/assets/summary_NASDAQ100.png" alt="Nasdaq100 equity drawdown exposure chart">
       </div>
       <div class="equity-card">
-        <div class="equity-card-header"><span class="equity-flag">????</span><span class="equity-name">UK100</span></div>
-        <img src="assets/equity/UK100.png" alt="UK100 equity line">
+        <div class="equity-card-header"><span class="equity-market">EU</span><span class="equity-name">Europe50</span></div>
+        <img src="reports_html/Europe50/assets/summary_Europe50.png" alt="Europe50 equity drawdown exposure chart">
       </div>
       <div class="equity-card">
-        <div class="equity-card-header"><span class="equity-flag">????</span><span class="equity-name">Germany40</span></div>
-        <img src="assets/equity/Germany40.png" alt="Germany40 equity line">
+        <div class="equity-card-header"><span class="equity-market">DE</span><span class="equity-name">Germany40</span></div>
+        <img src="reports_html/Germany40/assets/summary_Germany40.png" alt="Germany40 equity drawdown exposure chart">
       </div>
       <div class="equity-card">
-        <div class="equity-card-header"><span class="equity-flag">????</span><span class="equity-name">Italy40</span></div>
-        <img src="assets/equity/Italy40.png" alt="Italy40 equity line">
+        <div class="equity-card-header"><span class="equity-market">IT</span><span class="equity-name">Italy40</span></div>
+        <img src="reports_html/Italy40/assets/summary_Italy40.png" alt="Italy40 equity drawdown exposure chart">
+      </div>
+      <div class="equity-card">
+        <div class="equity-card-header"><span class="equity-market">UK</span><span class="equity-name">UK100</span></div>
+        <img src="reports_html/UK100/assets/summary_UK100.png" alt="UK100 equity drawdown exposure chart">
+      </div>
+      <div class="equity-card">
+        <div class="equity-card-header"><span class="equity-market">AU</span><span class="equity-name">Australia50</span></div>
+        <img src="reports_html/Australia50/assets/summary_Australia50.png" alt="Australia50 equity drawdown exposure chart">
       </div>
     </div>
   </div>
