@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Market Update - July 3, 2026 | TradingAlgo Mosaic</title>
+  <meta name="description" content="TradingAlgo Mosaic weekly market update processed on July 3, 2026, with current positions, rotations, hedge levels and weekly portfolio performance versus benchmark." />
+  <meta property="og:title" content="Weekly Market Update - July 3, 2026" />
+  <meta property="og:description" content="A compact TradingAlgo Mosaic review of current positions, weekly rotations, hedge levels and performance versus benchmark." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/weekly-market-update-2026-07-03.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/reports/mosaic-weekly-report-layout.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Weekly Market Update - July 3, 2026" />
+  <meta name="twitter:description" content="Current Mosaic positions, rotations, hedge levels and weekly performance versus benchmark." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/reports/mosaic-weekly-report-layout.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 92px 8% 74px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.97), rgba(3,12,25,0.80) 54%, rgba(3,12,25,0.42)),
+        url("assets/reports/mosaic-weekly-report-layout.png");
+      background-size: cover;
+      background-position: top center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 64px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 38px;
+      margin: 0 0 38px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    .article-meta {
+      margin-bottom: 18px;
+      color: #5b6b80;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .lead {
+      color: #17263a;
+      font-size: 19px;
+      line-height: 1.72;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 22px 0;
+      border: 1px solid #dbe3ef;
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 820px;
+      border-collapse: collapse;
+      background: white;
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid #e5edf6;
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.45;
+    }
+
+    th {
+      background: #071a33;
+      color: white;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    .market { font-weight: 900; color: #071a33; }
+    .pos { color: #0f766e; font-weight: 900; }
+    .neg { color: #b42318; font-weight: 900; }
+    .flat { color: #5b6b80; font-weight: 900; }
+
+    .note {
+      margin-top: 20px;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    footer {
+      padding: 34px 8%;
+      background: #020817;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    footer p {
+      margin: 0 0 8px;
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: block;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 12px 0 0;
+      }
+
+      header {
+        padding: 74px 8% 58px;
+      }
+
+      main {
+        padding: 44px 7% 58px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="publications.html">Publications</a>
+      <a href="reserved-area.html">Reserved Area</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">TradingAlgo Mosaic Weekly Update</p>
+    <h1>Market Weekly Update</h1>
+    <p>Current positions, weekly rotations, hedge levels and latest portfolio changes versus benchmark.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <p class="article-meta">Last processing - July 3, 2026</p>
+        <h2>Europe Holds Firmer While Nasdaq Weakness Weighs</h2>
+        <p class="lead">The latest weekly dashboard shows a clear split across the monitored markets. European portfolios were generally more constructive, led by Germany40, while US technology exposure showed weaker relative behavior, especially in the Nasdaq100 portfolio.</p>
+        <p><strong>Germany40</strong> delivered the strongest result of the week, gaining <strong>5.27%</strong> against a benchmark advance of <strong>4.13%</strong>. <strong>Europe50</strong> also remained positive at <strong>1.52%</strong>, although it lagged its benchmark at <strong>2.18%</strong>. <strong>Italy40</strong> rose <strong>1.31%</strong>, below the benchmark gain of <strong>3.41%</strong>.</p>
+        <p>The most difficult reading came from <strong>Nasdaq100</strong>, where the portfolio declined <strong>9.87%</strong> while the benchmark rose <strong>0.86%</strong>. The portfolio added <strong>RKLB</strong> and removed <strong>WBD</strong>, with the hedge unchanged at <strong>12%</strong>. <strong>USA100</strong> also underperformed, falling <strong>3.42%</strong> versus a benchmark gain of <strong>2.17%</strong>, while hedge protection increased slightly from <strong>7%</strong> to <strong>8%</strong>.</p>
+        <p><strong>UK30</strong> saw the most visible rotation, with <strong>AAL.L</strong>, <strong>STAN.L</strong> and <strong>VOD.L</strong> entering the selection while <strong>RIO.L</strong>, <strong>HSBA.L</strong> and <strong>BP.L</strong> exited. The hedge increased from <strong>12%</strong> to <strong>14%</strong>, reflecting a more cautious stance after a slightly negative portfolio week.</p>
+      </section>
+
+      <section>
+        <h2>Compact Weekly Dashboard</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Market</th>
+                <th>Current Tickers</th>
+                <th>Rotation</th>
+                <th>Hedge</th>
+                <th>Portfolio</th>
+                <th>Benchmark</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="market">USA100</td>
+                <td>MU, CAT, FDX, GOOGL, SLB</td>
+                <td class="flat">No change</td>
+                <td>8% <span class="flat">(prev. 7%)</span></td>
+                <td class="neg">-3.42%</td>
+                <td class="pos">2.17%</td>
+              </tr>
+              <tr>
+                <td class="market">Nasdaq100</td>
+                <td>MU, TER, NBIS, MRVL, RKLB</td>
+                <td>In: RKLB<br />Out: WBD</td>
+                <td>12% <span class="flat">(prev. 12%)</span></td>
+                <td class="neg">-9.87%</td>
+                <td class="pos">0.86%</td>
+              </tr>
+              <tr>
+                <td class="market">Europe50</td>
+                <td>NOKIA.HE, ASML.AS, IFX.DE, ENI.MI, ENGI.PA</td>
+                <td class="flat">No change</td>
+                <td>9% <span class="flat">(prev. 9%)</span></td>
+                <td class="pos">1.52%</td>
+                <td class="pos">2.18%</td>
+              </tr>
+              <tr>
+                <td class="market">Germany40</td>
+                <td>ENR.DE, IFX.DE, RWE.DE, BAYN.DE, DHL.DE</td>
+                <td class="flat">No change</td>
+                <td>12% <span class="flat">(prev. n/a)</span></td>
+                <td class="pos">5.27%</td>
+                <td class="pos">4.13%</td>
+              </tr>
+              <tr>
+                <td class="market">Italy40</td>
+                <td>SPM.MI, PRY.MI, STMMI.MI, TIT.MI, SRG.MI</td>
+                <td class="flat">No change</td>
+                <td>12% <span class="flat">(prev. n/a)</span></td>
+                <td class="pos">1.31%</td>
+                <td class="pos">3.41%</td>
+              </tr>
+              <tr>
+                <td class="market">UK30</td>
+                <td>GLEN.L, AAL.L, STAN.L, VOD.L, GSK.L</td>
+                <td>In: AAL.L, STAN.L, VOD.L<br />Out: RIO.L, HSBA.L, BP.L</td>
+                <td>14% <span class="flat">(prev. 12%)</span></td>
+                <td class="neg">-0.18%</td>
+                <td class="pos">3.06%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">Overall, the week confirms stronger relative behavior in Europe, especially Germany, while Nasdaq100 remains the main area of portfolio underperformance. Hedge levels remain moderate, with increases on USA100 and UK30.</p>
+      </section>
+
+      <section>
+        <h2>Portfolio Message</h2>
+        <p>The current setup argues for selective exposure and continued risk control. Portfolio rotation remains important where leadership is changing, while benchmark-relative monitoring is essential after the sharp Nasdaq100 gap.</p>
+        <p>This weekly update is research material only and is not personalized financial advice.</p>
+        <a class="button" href="publications.html">Back to Publications</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>TradingAlgo Mosaic</strong></p>
+    <p>Research material only. Not personalized financial advice.</p>
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
