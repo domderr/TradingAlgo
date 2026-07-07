@@ -219,15 +219,97 @@
       line-height: 1.6;
     }
 
-    .mission-card {
-      max-width: 920px;
+    .philosophy-card {
+      max-width: 980px;
       margin: 0 auto;
+    }
+
+    .philosophy-card p {
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .philosophy-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .philosophy-diagram {
+      max-width: 620px;
+      margin: 34px auto 4px;
+      padding: 28px;
+      border: 1px solid rgba(125,211,252,0.28);
+      border-radius: 8px;
+      background: rgba(5,11,20,0.36);
+    }
+
+    .diagram-note {
+      margin: 16px 0 0;
+      color: var(--muted-2);
+      font-size: 14px;
+      line-height: 1.5;
       text-align: center;
     }
 
-    .mission-card p {
-      font-size: 20px;
-      line-height: 1.7;
+    .flow-node {
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 12px 18px;
+      border: 1px solid #2f4b6e;
+      border-radius: 8px;
+      background: #102641;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .flow-node.objective {
+      border-color: rgba(34,197,94,0.55);
+      background: rgba(34,197,94,0.14);
+      color: #dfffea;
+    }
+
+    .flow-arrow {
+      width: 2px;
+      height: 26px;
+      margin: 0 auto;
+      background: #7dd3fc;
+      position: relative;
+    }
+
+    .flow-arrow::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -1px;
+      width: 9px;
+      height: 9px;
+      border-right: 2px solid #7dd3fc;
+      border-bottom: 2px solid #7dd3fc;
+      transform: translateX(-50%) rotate(45deg);
+    }
+
+    .flow-choice {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .flow-branch {
+      display: grid;
+      gap: 14px;
+    }
+
+    .flow-branch .flow-node {
+      width: 100%;
+    }
+
+    @media (max-width: 640px) {
+      .flow-choice {
+        grid-template-columns: 1fr;
+      }
     }
 
     .market-card {
@@ -1456,7 +1538,7 @@
       <span></span><span></span><span></span>
     </button>
     <nav id="main-nav">
-      <a href="#mission">Mission</a>
+      <a href="#investment-philosophy">Investment Philosophy</a>
       <a href="faq.html">FAQ</a>
       <a href="#mosaic">Mosaic</a>
       <a href="#consulting">Consulting</a>
@@ -1660,14 +1742,38 @@
     </form>
   </section>
 
-  <section id="mission">
-    <h2 class="section-title">Mission</h2>
-    <div class="card mission-card">
-      <p>
-        Our mission is to provide professional investors with a clear and transparent framework for active portfolio management.
-        We combine cutting-edge technology with rigorous research and systematic analysis while preserving the personal relationships,
-        trust, and support that professional investors value most.
-      </p>
+  <section id="investment-philosophy">
+    <h2 class="section-title">Investment Philosophy</h2>
+    <div class="card philosophy-card">
+      <p>Every investment process begins with strategic asset allocation.</p>
+      <p>Once an investor has decided how to allocate capital across major asset classes, such as equities and bonds, and geographical regions, for example United States, Europe or Japan, the next decision is how to gain exposure to each market.</p>
+      <p>The most common solution is to invest in a broad market ETF, which provides transparent exposure to a well-defined benchmark.</p>
+      <p>TradingAlgo Mosaic offers an alternative.</p>
+      <p>Instead of holding every stock in the benchmark, it applies a transparent quantitative framework to identify a concentrated portfolio of stocks that best represents the market at that point in time. The portfolio is reviewed weekly using predefined selection rules based on trend, stability and portfolio construction principles.</p>
+      <p>The objective is straightforward: to provide a systematic alternative to passive index investing, seeking to outperform the reference ETF while maintaining a transparent, disciplined and repeatable investment process.</p>
+      <p>Investment decisions always remain with the investor. TradingAlgo Mosaic provides standardized research and model portfolios, not personalized investment advice.</p>
+
+      <div class="philosophy-diagram" aria-label="TradingAlgo Mosaic investment process">
+        <div class="flow-node">Strategic Asset Allocation</div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-node">US Equities</div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-choice">
+          <div class="flow-branch">
+            <div class="flow-node">Buy SPY ETF</div>
+          </div>
+          <div class="flow-branch">
+            <div class="flow-node">TradingAlgo Mosaic</div>
+            <div class="flow-arrow" aria-hidden="true"></div>
+            <div class="flow-node">Weekly Quantitative Selection</div>
+            <div class="flow-arrow" aria-hidden="true"></div>
+            <div class="flow-node">Concentrated Model Portfolio</div>
+            <div class="flow-arrow" aria-hidden="true"></div>
+            <div class="flow-node objective">Objective: outperform SPY over time</div>
+          </div>
+        </div>
+        <p class="diagram-note">Illustrative example based on US equities and SPY. The same framework can be applied to other supported markets and reference ETFs.</p>
+      </div>
     </div>
   </section>
 
