@@ -148,21 +148,39 @@
         "industry": "Electrical Equipment & Parts"
       },
       {
-        "ticker": "TIT.MI",
-        "name": "TELECOM ITALIA",
-        "sector": "Communication Services",
-        "industry": "Telecom Services"
+        "ticker": "BPE.MI",
+        "name": "BPER BANCA",
+        "sector": "Financial Services",
+        "industry": "Banks - Regional"
       },
       {
-        "ticker": "SRG.MI",
-        "name": "SNAM",
+        "ticker": "IG.MI",
+        "name": "ITALGAS",
         "sector": "Utilities",
         "industry": "Utilities - Regulated Gas"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "BPE.MI",
+          "name": "BPER BANCA"
+        },
+        {
+          "ticker": "IG.MI",
+          "name": "ITALGAS"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "TIT.MI",
+          "name": "TELECOM ITALIA"
+        },
+        {
+          "ticker": "SRG.MI",
+          "name": "SNAM"
+        }
+      ]
     }
   },
   "UK100": {

@@ -3,23 +3,23 @@
     "Market": "Europe50",
     "Benchmark": "EZU",
     "Number of Tickers": 47,
-    "Strategy CAGR": 0.26068968705004614,
-    "Hedged CAGR": 0.23090362116913332,
+    "Strategy CAGR": 0.252601382402726,
+    "Hedged CAGR": 0.2230132438396344,
     "Strategy MaxDD": -0.14384156251899016,
     "Hedged MaxDD": -0.13642924556630986,
-    "Strategy Sharpe Ratio": 1.318797248885453,
-    "Hedged Sharpe Ratio": 1.2448101046415667,
-    "Bench Cagr": 0.20464041186923243,
-    "Bench_MaxDD": -0.12361674751081553,
-    "Bench Sharpe": 1.1654685222850407,
-    "Information Ratio": 0.2911772439176557,
-    "Hedged Information Ratio": 0.12719230837512713,
+    "Strategy Sharpe Ratio": 1.2776596646064278,
+    "Hedged Sharpe Ratio": 1.2016527554588836,
+    "Bench Cagr": 0.2046404118692322,
+    "Bench_MaxDD": -0.12361674751081564,
+    "Bench Sharpe": 1.1654686750635082,
+    "Information Ratio": 0.25213053615914177,
+    "Hedged Information Ratio": 0.09070112462955991,
     "PDF_Output": "",
     "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Europe50\\summary_Europe50.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.08284616102194942,
+    "Benchmark Hedge Short": 0.08327520256866283,
     "Benchmark Hedge Ticker": "EZU",
-    "Hedge Portfolio Score": 91.71538389780505,
+    "Hedge Portfolio Score": 91.67247974313372,
     "Last Weekly Selection": [
       {
         "Ticker": "NOKIA.HE",
@@ -58,79 +58,79 @@
     "Profit_Contributors": [
       {
         "Ticker": "UCG.MI",
-        "Contribution": 0.15921525349971438
+        "Contribution": 0.1592153020207588
       },
       {
         "Ticker": "NOKIA.HE",
-        "Contribution": 0.15779740323199554
+        "Contribution": 0.14799813279650925
       },
       {
         "Ticker": "SAP.DE",
-        "Contribution": 0.14181439320780329
+        "Contribution": 0.14181438442589772
       },
       {
         "Ticker": "ENGI.PA",
-        "Contribution": 0.0889993287061987
-      },
-      {
-        "Ticker": "ASML.AS",
-        "Contribution": 0.07445779013790596
+        "Contribution": 0.08615209798785033
       },
       {
         "Ticker": "BAYN.DE",
-        "Contribution": 0.07278709312587178
+        "Contribution": 0.07278709103951991
+      },
+      {
+        "Ticker": "ASML.AS",
+        "Contribution": 0.06703604182677095
       },
       {
         "Ticker": "ENI.MI",
-        "Contribution": 0.070411709699145
+        "Contribution": 0.06602333739966085
       },
       {
         "Ticker": "ADYEN.AS",
-        "Contribution": 0.049667289462756475
+        "Contribution": 0.04966728638102224
       },
       {
         "Ticker": "BBVA.MC",
-        "Contribution": 0.0402665771798547
+        "Contribution": 0.04026657781436993
       },
       {
         "Ticker": "VNA.DE",
-        "Contribution": 0.034265471274263444
+        "Contribution": 0.03426551323153067
       },
       {
         "Ticker": "NOVO-B.CO",
-        "Contribution": 0.027333214210909434
+        "Contribution": 0.027333213138760033
       },
       {
         "Ticker": "ISP.MI",
-        "Contribution": 0.02460282959144025
+        "Contribution": 0.024602823150624446
       },
       {
         "Ticker": "MUV2.DE",
-        "Contribution": 0.020375982395378182
+        "Contribution": 0.02037594637997896
       },
       {
         "Ticker": "DTE.DE",
-        "Contribution": 0.016809385668626792
+        "Contribution": 0.016809386538830087
       },
       {
         "Ticker": "IBE.MC",
-        "Contribution": 0.016142541705471494
+        "Contribution": 0.016142591882177093
       },
       {
         "Ticker": "DB1.DE",
-        "Contribution": 0.014298982032705595
+        "Contribution": 0.014298981208602884
       },
       {
         "Ticker": "AIR.PA",
-        "Contribution": 0.012615148421314868
+        "Contribution": 0.012615147655443838
       },
       {
         "Ticker": "INGA.AS",
-        "Contribution": 0.01086753427887515
+        "Contribution": 0.010867480490570052
       },
       {
         "Ticker": "AD.AS",
-        "Contribution": 0.005392814113297107
+        "Contribution": 0.00539278149852465
       },
       {
         "Ticker": "ABI.BR",
@@ -202,47 +202,47 @@
       },
       {
         "Ticker": "SU.PA",
-        "Contribution": -0.0019940830488104806
+        "Contribution": -0.0019940827922098024
       },
       {
         "Ticker": "ALV.DE",
-        "Contribution": -0.004228638582800819
+        "Contribution": -0.004228638541225247
       },
       {
         "Ticker": "KER.PA",
-        "Contribution": -0.00525644488643149
+        "Contribution": -0.00525644470770751
       },
       {
         "Ticker": "ENEL.MI",
-        "Contribution": -0.0059309539421375556
+        "Contribution": -0.005930953863333112
       },
       {
         "Ticker": "STLAM.MI",
-        "Contribution": -0.009897569852943326
+        "Contribution": -0.00989756903199765
       },
       {
         "Ticker": "PHIA.AS",
-        "Contribution": -0.017896725155163128
+        "Contribution": -0.01789672421784306
       },
       {
         "Ticker": "OR.PA",
-        "Contribution": -0.019292680726598857
-      },
-      {
-        "Ticker": "IFX.DE",
-        "Contribution": -0.030403501060178327
+        "Contribution": -0.019292679636198407
       },
       {
         "Ticker": "VIV.PA",
-        "Contribution": -0.03368207627438239
+        "Contribution": -0.033682075014478174
+      },
+      {
+        "Ticker": "IFX.DE",
+        "Contribution": -0.034438420747388857
       },
       {
         "Ticker": "PRX.AS",
-        "Contribution": -0.04731451469980846
+        "Contribution": -0.04731451165875884
       },
       {
         "Ticker": "FLTR.L",
-        "Contribution": -0.04910464277733392
+        "Contribution": -0.04910463914580611
       }
     ],
     "Strategy_Returns": {
@@ -376,7 +376,7 @@
       "2026-06-19": -0.0255149691,
       "2026-06-26": -0.0379992954,
       "2026-07-03": 0.0172182408,
-      "2026-07-10": -0.012811539040511133
+      "2026-07-10": -0.028689618385064453
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0074505681,
@@ -509,7 +509,7 @@
       "2026-06-19": -0.0264103589,
       "2026-06-26": -0.0358459166,
       "2026-07-03": 0.0152273261,
-      "2026-07-10": -0.011988321897924092
+      "2026-07-10": -0.027865972189793586
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0066925127,
@@ -965,7 +965,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Rejected"
+            "Watchlist"
           ]
         },
         {

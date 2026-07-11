@@ -7,9 +7,9 @@
     "Report_Path": "reports_html/USA100/Report_USA100.html",
     "Report_URL": "reports_html/USA100/Report_USA100.html",
     "Updated_At": null,
-    "Last_Hedge_Short": 0.08033127860513023,
-    "Last_Hedge_Score": 91.96687213948698,
-    "Benchmark_Hedge_Short": 0.08033127860513023,
+    "Last_Hedge_Short": 0.08033127616779978,
+    "Last_Hedge_Score": 91.96687238322002,
+    "Benchmark_Hedge_Short": 0.08033127616779978,
     "Benchmark_Hedge_Ticker": "SPY"
   },
   {
@@ -20,9 +20,9 @@
     "Report_Path": "reports_html/NASDAQ100/Report_NASDAQ100.html",
     "Report_URL": "reports_html/NASDAQ100/Report_NASDAQ100.html",
     "Updated_At": null,
-    "Last_Hedge_Short": 0.1090980826521708,
-    "Last_Hedge_Score": 89.09019173478292,
-    "Benchmark_Hedge_Short": 0.1090980826521708,
+    "Last_Hedge_Short": 0.1090980815389403,
+    "Last_Hedge_Score": 89.09019184610597,
+    "Benchmark_Hedge_Short": 0.1090980815389403,
     "Benchmark_Hedge_Ticker": "QQQ"
   },
   {
@@ -33,9 +33,9 @@
     "Report_Path": "reports_html/Europe50/Report_Europe50.html",
     "Report_URL": "reports_html/Europe50/Report_Europe50.html",
     "Updated_At": null,
-    "Last_Hedge_Short": 0.08284616102194942,
-    "Last_Hedge_Score": 91.71538389780505,
-    "Benchmark_Hedge_Short": 0.08284616102194942,
+    "Last_Hedge_Short": 0.08327520256866283,
+    "Last_Hedge_Score": 91.67247974313372,
+    "Benchmark_Hedge_Short": 0.08327520256866283,
     "Benchmark_Hedge_Ticker": "EZU"
   },
   {
@@ -46,9 +46,9 @@
     "Report_Path": "reports_html/Italy40/Report_Italy40.html",
     "Report_URL": "reports_html/Italy40/Report_Italy40.html",
     "Updated_At": null,
-    "Last_Hedge_Short": 0.1173449052083455,
-    "Last_Hedge_Score": 88.26550947916544,
-    "Benchmark_Hedge_Short": 0.1173449052083455,
+    "Last_Hedge_Short": 0.12297865224503379,
+    "Last_Hedge_Score": 87.70213477549662,
+    "Benchmark_Hedge_Short": 0.12297865224503379,
     "Benchmark_Hedge_Ticker": "EWI"
   },
   {
@@ -59,9 +59,9 @@
     "Report_Path": "reports_html/UK100/Report_UK100.html",
     "Report_URL": "reports_html/UK100/Report_UK100.html",
     "Updated_At": null,
-    "Last_Hedge_Short": 0.09194454379401273,
-    "Last_Hedge_Score": 90.80554562059872,
-    "Benchmark_Hedge_Short": 0.09194454379401273,
+    "Last_Hedge_Short": 0.09064377886655994,
+    "Last_Hedge_Score": 90.93562211334401,
+    "Benchmark_Hedge_Short": 0.09064377886655994,
     "Benchmark_Hedge_Ticker": "EWU"
   },
   {
@@ -72,9 +72,9 @@
     "Report_Path": "reports_html/Germany40/Report_Germany40.html",
     "Report_URL": "reports_html/Germany40/Report_Germany40.html",
     "Updated_At": null,
-    "Last_Hedge_Short": 0.11761233512433567,
-    "Last_Hedge_Score": 88.23876648756644,
-    "Benchmark_Hedge_Short": 0.11761233512433567,
+    "Last_Hedge_Short": 0.11806650344873759,
+    "Last_Hedge_Score": 88.19334965512624,
+    "Benchmark_Hedge_Short": 0.11806650344873759,
     "Benchmark_Hedge_Ticker": "EWG"
   },
   {
@@ -85,9 +85,9 @@
     "Report_Path": "reports_html/Australia50/Report_Australia50.html",
     "Report_URL": "reports_html/Australia50/Report_Australia50.html",
     "Updated_At": null,
-    "Last_Hedge_Short": 0.22704891937027327,
-    "Last_Hedge_Score": 77.29510806297267,
-    "Benchmark_Hedge_Short": 0.22704891937027327,
+    "Last_Hedge_Short": 0.22704891464007038,
+    "Last_Hedge_Score": 77.29510853599297,
+    "Benchmark_Hedge_Short": 0.22704891464007038,
     "Benchmark_Hedge_Ticker": "EWA"
   }
 ]
