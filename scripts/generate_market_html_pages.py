@@ -1,5 +1,6 @@
 import subprocess
 import sys
+import json
 from pathlib import Path
 
 
@@ -7,16 +8,9 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILDER = ROOT / "tools" / "build_mosaic_html_report.py"
 DEV_DIR = ROOT / "mosaic_dev"
 HTML_DIR = ROOT / "reports_html"
+PIPELINE_DATA = ROOT / "mosaic_dev" / "output" / "all_market_reports_data_from_csv.json"
 
-MARKETS = [
-    "USA100",
-    "NASDAQ100",
-    "Europe50",
-    "Italy40",
-    "UK100",
-    "Germany40",
-    "Australia50",
-]
+DEFAULT_MARKETS = ["USA100", "NASDAQ100", "Europe50", "Italy40", "UK100", "Germany40", "Australia50"]
 
 REQUIRED_REPORT_MARKERS = [
     "Performance Table",
@@ -27,6 +21,22 @@ REQUIRED_REPORT_MARKERS = [
 
 def safe_market_name(value):
     return str(value).replace(" ", "_").replace("/", "_")
+
+
+def active_markets():
+    if not PIPELINE_DATA.exists():
+        return DEFAULT_MARKETS
+
+    rows = json.loads(PIPELINE_DATA.read_text(encoding="utf-8"))
+    markets = []
+    seen = set()
+    for row in rows if isinstance(rows, list) else []:
+        market = str(row.get("Market", "")).strip()
+        if not market or market in seen:
+            continue
+        seen.add(market)
+        markets.append(market)
+    return markets or DEFAULT_MARKETS
 
 
 def build_market(market, choice):
@@ -62,7 +72,7 @@ def validate_market(market):
 
 
 def main():
-    for choice, market in enumerate(MARKETS, start=1):
+    for choice, market in enumerate(active_markets(), start=1):
         build_market(market, choice)
         validate_market(market)
 

@@ -1,55 +1,6 @@
 {
-  "UK100": {
-    "week": "3 Jul 2026",
-    "positions": [
-      {
-        "ticker": "GLEN.L",
-        "name": "GLENCORE PLC ORD USD0.01",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
-      },
-      {
-        "ticker": "ANTO.L",
-        "name": "ANTOFAGASTA PLC ORD 5P",
-        "sector": "Basic Materials",
-        "industry": "Copper"
-      },
-      {
-        "ticker": "CCC.L",
-        "name": "COMPUTACENTER PLC ORD 7 5/9P",
-        "sector": "Technology",
-        "industry": "Information Technology Services"
-      },
-      {
-        "ticker": "AAF.L",
-        "name": "AIRTEL AFRICA PLC ORD USD0.50",
-        "sector": "Communication Services",
-        "industry": "Telecom Services"
-      },
-      {
-        "ticker": "IGG.L",
-        "name": "IG GROUP HOLDINGS PLC ORD 0.005",
-        "sector": "Financial Services",
-        "industry": "Capital Markets"
-      }
-    ],
-    "changes": {
-      "in": [
-        {
-          "ticker": "IGG.L",
-          "name": "IG GROUP HOLDINGS PLC ORD 0.005"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "SDR.L",
-          "name": "SCHRODERS PLC ORD 20P"
-        }
-      ]
-    }
-  },
   "USA100": {
-    "week": "3 Jul 2026",
+    "week": "10 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -88,7 +39,7 @@
     }
   },
   "NASDAQ100": {
-    "week": "3 Jul 2026",
+    "week": "10 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -103,41 +54,41 @@
         "industry": "Semiconductor Equipment & Materials"
       },
       {
-        "ticker": "NBIS",
-        "name": "Nebius Group N.V.",
-        "sector": "Communication Services",
-        "industry": "Internet Content & Information"
-      },
-      {
         "ticker": "MRVL",
         "name": "Marvell Technology, Inc.",
         "sector": "Technology",
         "industry": "Semiconductors"
       },
       {
-        "ticker": "RKLB",
-        "name": "Rocket Lab Corporation",
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "ticker": "NBIS",
+        "name": "Nebius Group N.V.",
+        "sector": "Communication Services",
+        "industry": "Internet Content & Information"
+      },
+      {
+        "ticker": "GFS",
+        "name": "GlobalFoundries Inc.",
+        "sector": "Technology",
+        "industry": "Semiconductors"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "RKLB",
-          "name": "Rocket Lab Corporation"
+          "ticker": "GFS",
+          "name": "GlobalFoundries Inc."
         }
       ],
       "out": [
         {
-          "ticker": "WBD",
-          "name": "Warner Bros. Discovery, Inc."
+          "ticker": "RKLB",
+          "name": "Rocket Lab Corporation"
         }
       ]
     }
   },
   "Europe50": {
-    "week": "3 Jul 2026",
+    "week": "10 Jul 2026",
     "positions": [
       {
         "ticker": "NOKIA.HE",
@@ -176,8 +127,14 @@
     }
   },
   "Italy40": {
-    "week": "3 Jul 2026",
+    "week": "10 Jul 2026",
     "positions": [
+      {
+        "ticker": "STMMI.MI",
+        "name": "STMICROELECTRONICS",
+        "sector": "Technology",
+        "industry": "Semiconductors"
+      },
       {
         "ticker": "SPM.MI",
         "name": "SAIPEM",
@@ -189,12 +146,6 @@
         "name": "PRYSMIAN",
         "sector": "Industrials",
         "industry": "Electrical Equipment & Parts"
-      },
-      {
-        "ticker": "STMMI.MI",
-        "name": "STMICROELECTRONICS",
-        "sector": "Technology",
-        "industry": "Semiconductors"
       },
       {
         "ticker": "TIT.MI",
@@ -214,8 +165,57 @@
       "out": []
     }
   },
+  "UK100": {
+    "week": "10 Jul 2026",
+    "positions": [
+      {
+        "ticker": "GLEN.L",
+        "name": "GLENCORE PLC ORD USD0.01",
+        "sector": "Basic Materials",
+        "industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "ticker": "ANTO.L",
+        "name": "ANTOFAGASTA PLC ORD 5P",
+        "sector": "Basic Materials",
+        "industry": "Copper"
+      },
+      {
+        "ticker": "CCC.L",
+        "name": "COMPUTACENTER PLC ORD 7 5/9P",
+        "sector": "Technology",
+        "industry": "Information Technology Services"
+      },
+      {
+        "ticker": "IGG.L",
+        "name": "IG GROUP HOLDINGS PLC ORD 0.005",
+        "sector": "Financial Services",
+        "industry": "Capital Markets"
+      },
+      {
+        "ticker": "SDR.L",
+        "name": "SCHRODERS PLC ORD 20P",
+        "sector": "Financial Services",
+        "industry": "Asset Management"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "SDR.L",
+          "name": "SCHRODERS PLC ORD 20P"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "AAF.L",
+          "name": "AIRTEL AFRICA PLC ORD USD0.50"
+        }
+      ]
+    }
+  },
   "Germany40": {
-    "week": "3 Jul 2026",
+    "week": "10 Jul 2026",
     "positions": [
       {
         "ticker": "ENR.DE",
@@ -251,6 +251,55 @@
     "changes": {
       "in": [],
       "out": []
+    }
+  },
+  "Australia50": {
+    "week": "10 Jul 2026",
+    "positions": [
+      {
+        "ticker": "RIO.AX",
+        "name": "RIO TINTO FPO [RIO]",
+        "sector": "Basic Materials",
+        "industry": "Other Industrial Metals & Mining"
+      },
+      {
+        "ticker": "EVN.AX",
+        "name": "EVOLUTION FPO [EVN]",
+        "sector": "Basic Materials",
+        "industry": "Gold"
+      },
+      {
+        "ticker": "WOW.AX",
+        "name": "WOOLWORTHS FPO [WOW]",
+        "sector": "Consumer Defensive",
+        "industry": "Grocery Stores"
+      },
+      {
+        "ticker": "WDS.AX",
+        "name": "WOODSIDE FPO [WDS]",
+        "sector": "Energy",
+        "industry": "Oil & Gas E&P"
+      },
+      {
+        "ticker": "ANZ.AX",
+        "name": "ANZ GROUP FPO [ANZ]",
+        "sector": "Financial Services",
+        "industry": "Banks - Diversified"
+      }
+    ],
+    "changes": {
+      "in": [
+        {
+          "ticker": "ANZ.AX",
+          "name": "ANZ GROUP FPO [ANZ]"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "LYC.AX",
+          "name": "LYNAS FPO [LYC]"
+        }
+      ]
     }
   }
 }
