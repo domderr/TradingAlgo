@@ -57,6 +57,69 @@ def _merge_series(previous, current):
     return dict(sorted(merged.items())), appended
 
 
+def _apply_positive_haircut_to_new_points(series, factor):
+    adjusted = {}
+    for key, value in series.items():
+        try:
+            number = float(value)
+        except (TypeError, ValueError):
+            adjusted[key] = value
+            continue
+        adjusted[key] = number * factor if number > 0.0 else number
+    return adjusted
+
+
+def _append_only_series(previous, current, positive_haircut=1.0):
+    previous_series = _as_ordered_series(previous)
+    current_series = _as_ordered_series(current)
+    previous_latest = _latest_date(previous_series)
+    if previous_latest is None:
+        return current_series, len(current_series)
+
+    new_points = {}
+    for key, value in current_series.items():
+        date_key = pd.to_datetime(key, errors="coerce")
+        if pd.isna(date_key) or date_key <= previous_latest:
+            continue
+        new_points[key] = value
+
+    if positive_haircut < 1.0:
+        new_points = _apply_positive_haircut_to_new_points(new_points, positive_haircut)
+
+    merged = dict(previous_series)
+    merged.update(new_points)
+    return dict(sorted(merged.items())), len(new_points)
+
+
+def _assert_historical_series_unchanged(previous_row, merged_row, market):
+    failures = []
+    for field in TIME_SERIES_FIELDS:
+        previous_series = _as_ordered_series(previous_row.get(field))
+        merged_series = _as_ordered_series(merged_row.get(field))
+        for key, previous_value in previous_series.items():
+            if key not in merged_series:
+                failures.append(f"{market} {field} {key}: missing historical point")
+                continue
+            try:
+                previous_number = float(previous_value)
+                merged_number = float(merged_series[key])
+                changed = abs(previous_number - merged_number) > 1e-12
+            except (TypeError, ValueError):
+                changed = str(previous_value) != str(merged_series[key])
+            if changed:
+                failures.append(
+                    f"{market} {field} {key}: historical value changed "
+                    f"from {previous_value} to {merged_series[key]}"
+                )
+    if failures:
+        preview = "\n".join(failures[:10])
+        extra = "" if len(failures) <= 10 else f"\n... {len(failures) - 10} more"
+        raise RuntimeError(
+            "Production incremental merge refused to alter published history:\n"
+            f"{preview}{extra}"
+        )
+
+
 def read_rows(path):
     path = Path(path)
     if not path.exists():
@@ -190,5 +253,81 @@ def merge_with_existing_history(current_df, previous_json_path, active_markets=N
         "current_markets": int(len(current_df)),
         "unchanged_markets": unchanged_markets,
         "appended_points": appended_points,
+    }
+    return pd.DataFrame(merged_rows), summary
+
+
+def merge_with_published_history(current_df, previous_json_path, haircuts=None, active_markets=None):
+    previous_rows = read_rows(previous_json_path)
+    if not previous_rows:
+        return current_df, {
+            "previous_markets": 0,
+            "current_markets": int(len(current_df)),
+            "unchanged_markets": 0,
+            "appended_points": 0,
+            "history_validated": 0,
+        }
+
+    haircuts = haircuts or {}
+    active_market_set = None
+    if active_markets is not None:
+        active_market_set = {str(market).strip() for market in active_markets if str(market).strip()}
+
+    previous_by_market = {
+        _market_key(row): row
+        for row in previous_rows
+        if _market_key(row) and (active_market_set is None or _market_key(row) in active_market_set)
+    }
+    merged_rows = []
+    appended_points = 0
+    unchanged_markets = 0
+    validated_markets = 0
+    seen_markets = set()
+
+    for current_row in current_df.to_dict(orient="records"):
+        market = _market_key(current_row)
+        if not market or market not in previous_by_market:
+            merged_rows.append(current_row)
+            continue
+
+        seen_markets.add(market)
+        previous_row = previous_by_market[market]
+        factor = float(haircuts.get(market, 1.0))
+        merged_row = dict(current_row)
+        row_appended = 0
+
+        for field in TIME_SERIES_FIELDS:
+            field_haircut = factor if field in {"Strategy_Returns", "Hedged_Strategy_Returns"} else 1.0
+            merged_series, appended = _append_only_series(
+                previous_row.get(field),
+                current_row.get(field),
+                positive_haircut=field_haircut,
+            )
+            merged_row[field] = merged_series
+            row_appended += appended
+
+        _assert_historical_series_unchanged(previous_row, merged_row, market)
+        validated_markets += 1
+
+        if row_appended == 0:
+            merged_rows.append(previous_row)
+            unchanged_markets += 1
+            continue
+
+        merged_row["Positive_Return_Haircut"] = factor
+        merged_row["Haircut_Applied"] = True
+        merged_rows.append(merged_row)
+        appended_points += row_appended
+
+    for market, previous_row in previous_by_market.items():
+        if market not in seen_markets:
+            merged_rows.append(previous_row)
+
+    summary = {
+        "previous_markets": len(previous_by_market),
+        "current_markets": int(len(current_df)),
+        "unchanged_markets": unchanged_markets,
+        "appended_points": appended_points,
+        "history_validated": validated_markets,
     }
     return pd.DataFrame(merged_rows), summary

@@ -10,8 +10,8 @@ from pathlib import Path
 import matplotlib
 import pandas as pd
 
-from apply_conservative_haircuts import DEFAULT_CONFIG, load_haircuts, update_rows
-from incremental_pipeline import markets_with_new_csv_data, merge_with_existing_history
+from apply_conservative_haircuts import update_rows
+from incremental_pipeline import markets_with_new_csv_data, merge_with_published_history
 
 matplotlib.use("Agg")
 
@@ -198,10 +198,10 @@ def write_site_index(market_reports_df):
     print("Runner postprocess: wrote enriched site reports_index", flush=True)
 
 
-def apply_configured_haircuts(market_reports_df):
-    haircuts = load_haircuts(DEFAULT_CONFIG)
-    adjusted_df, summary = update_rows(market_reports_df, haircuts, output_dir=DEV_DIR / "output")
-    print("Runner postprocess: applied conservative positive-return haircuts", flush=True)
+def recalculate_weekly_metrics(market_reports_df, active_markets):
+    weekly_haircuts = {str(market).strip(): 1.0 for market in active_markets if str(market).strip()}
+    adjusted_df, summary = update_rows(market_reports_df, weekly_haircuts, output_dir=DEV_DIR / "output")
+    print("Runner postprocess: recalculated weekly metrics with production haircuts=1.0", flush=True)
     print(summary.to_string(index=False), flush=True)
     return adjusted_df
 
@@ -289,9 +289,11 @@ try:
             for item in namespace.get("available_markets", [])
             if item.get("Market")
         ]
-        market_reports_df, merge_summary = merge_with_existing_history(
+        weekly_haircuts = {str(market).strip(): 1.0 for market in active_market_names if str(market).strip()}
+        market_reports_df, merge_summary = merge_with_published_history(
             market_reports_df,
             full_json,
+            weekly_haircuts,
             active_market_names,
         )
         print(
@@ -299,7 +301,8 @@ try:
             f"previous_markets={merge_summary['previous_markets']} "
             f"current_markets={merge_summary['current_markets']} "
             f"unchanged_markets={merge_summary['unchanged_markets']} "
-            f"appended_points={merge_summary['appended_points']}",
+            f"appended_points={merge_summary['appended_points']} "
+            f"history_validated={merge_summary['history_validated']}",
             flush=True,
         )
         archive_existing_pipeline_outputs()
@@ -311,7 +314,7 @@ try:
             default_handler=str,
         )
         market_reports_df.to_csv(output_dir / "all_market_reports_data_from_csv.pre_conservative_haircut.csv", index=False)
-        market_reports_df = apply_configured_haircuts(market_reports_df)
+        market_reports_df = recalculate_weekly_metrics(market_reports_df, active_market_names)
         full_json = DEV_DIR / "output" / "all_market_reports_data_from_csv.json"
         full_csv = DEV_DIR / "output" / "all_market_reports_data_from_csv.csv"
         market_reports_df.to_json(full_json, orient="records", indent=2, force_ascii=False, default_handler=str)
