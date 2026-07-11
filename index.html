@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TradingAlgo | Quantitative Trading Research</title>
-  <meta name="description" content="TradingAlgo Mosaic provides quantitative trading research, weekly model portfolios, transparent selection rules and risk-aware portfolio validation." />
+  <title>TradingAlgo | Under Maintenance</title>
+  <meta name="description" content="TradingAlgo is currently under maintenance. Please contact domderrico@gmail.com for any inquiry." />
   <meta name="application-name" content="TradingAlgo" />
   <meta name="apple-mobile-web-app-title" content="TradingAlgo" />
   <link rel="canonical" href="https://tradingalgo.it/" />
@@ -55,6 +55,43 @@
       font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
+    }
+
+    body > :not(.maintenance-page) {
+      display: none !important;
+    }
+
+    .maintenance-page {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      background: #07111f;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    .maintenance-card {
+      width: min(640px, 100%);
+    }
+
+    .maintenance-card h1 {
+      margin: 0 0 18px;
+      font-size: clamp(36px, 7vw, 72px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .maintenance-card p {
+      margin: 0;
+      color: #c9d6e8;
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: 1.45;
+    }
+
+    .maintenance-card a {
+      color: #7dd3fc;
+      font-weight: 700;
     }
 
     a { color: inherit; }
@@ -1560,6 +1597,13 @@
 </head>
 
 <body>
+  <main class="maintenance-page">
+    <section class="maintenance-card" aria-labelledby="maintenance-title">
+      <h1 id="maintenance-title">Under maintenance</h1>
+      <p>Please contact <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a> for any inquiry.</p>
+    </section>
+  </main>
+
   <header>
     <a href="index.html" class="brand">
       <span class="logo-grid" aria-hidden="true">
