@@ -3,35 +3,35 @@
     "Market": "Germany40",
     "Benchmark": "EWG",
     "Number of Tickers": 40,
-    "Strategy CAGR": 0.2554599158427677,
-    "Hedged CAGR": 0.24185840957831495,
+    "Strategy CAGR": 0.23598890801528216,
+    "Hedged CAGR": 0.2231672477140374,
     "Strategy MaxDD": -0.12653999113429804,
     "Hedged MaxDD": -0.12054395646965121,
-    "Strategy Sharpe Ratio": 1.221844236518025,
-    "Hedged Sharpe Ratio": 1.2260422859601405,
-    "Bench Cagr": 0.18096807084652644,
-    "Bench_MaxDD": -0.14118171855188477,
-    "Bench Sharpe": 1.0061708059381098,
-    "Information Ratio": 0.4158465591569336,
-    "Hedged Information Ratio": 0.3183123829609919,
+    "Strategy Sharpe Ratio": 1.136832278233592,
+    "Hedged Sharpe Ratio": 1.138043166864368,
+    "Bench Cagr": 0.17576354099408853,
+    "Bench_MaxDD": -0.14118171855188488,
+    "Bench Sharpe": 0.9842450510620733,
+    "Information Ratio": 0.3439826294371934,
+    "Hedged Information Ratio": 0.2526286362747681,
     "PDF_Output": "",
     "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Germany40\\summary_Germany40.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.11806650344873759,
+    "Benchmark Hedge Short": 0.1171937238987536,
     "Benchmark Hedge Ticker": "EWG",
-    "Hedge Portfolio Score": 88.19334965512624,
+    "Hedge Portfolio Score": 88.28062761012464,
     "Last Weekly Selection": [
-      {
-        "Ticker": "ENR.DE",
-        "Name": "Siemens Energy AG             N",
-        "Sector": "Industrials",
-        "Industry": "Specialty Industrial Machinery"
-      },
       {
         "Ticker": "IFX.DE",
         "Name": "INFINEON TECHNOLOGIES AG      N",
         "Sector": "Technology",
         "Industry": "Semiconductors"
+      },
+      {
+        "Ticker": "ENR.DE",
+        "Name": "Siemens Energy AG             N",
+        "Sector": "Industrials",
+        "Industry": "Specialty Industrial Machinery"
       },
       {
         "Ticker": "RWE.DE",
@@ -54,63 +54,63 @@
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
-    "Selection Drivers": "ENR.DE: trend slope 0.01, stability R2 0.87, score 0.01 and passed correlation filter<br/>IFX.DE: trend slope 0.02, stability R2 0.73, score 0.01 and passed correlation filter<br/>RWE.DE: trend slope 0.01, stability R2 0.91, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.66, score 0.01 and passed correlation filter<br/>DHL.DE: trend slope 0.01, stability R2 0.82, score 0.01 and passed correlation filter",
+    "Selection Drivers": "IFX.DE: trend slope 0.02, stability R2 0.75, score 0.01 and passed correlation filter<br/>ENR.DE: trend slope 0.01, stability R2 0.85, score 0.01 and passed correlation filter<br/>RWE.DE: trend slope 0.01, stability R2 0.90, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.67, score 0.01 and passed correlation filter<br/>DHL.DE: trend slope 0.01, stability R2 0.83, score 0.01 and passed correlation filter",
     "Profit_Contributors": [
       {
         "Ticker": "ENR.DE",
-        "Contribution": 0.7083130966344124
+        "Contribution": 0.6964654881858967
       },
       {
         "Ticker": "RHM.DE",
-        "Contribution": 0.37847509217846653
-      },
-      {
-        "Ticker": "BAYN.DE",
-        "Contribution": 0.15360977783542895
+        "Contribution": 0.37847512578962544
       },
       {
         "Ticker": "DHL.DE",
-        "Contribution": 0.1511148495973911
+        "Contribution": 0.1575551176933566
       },
       {
         "Ticker": "RWE.DE",
-        "Contribution": 0.13920201818133626
+        "Contribution": 0.13482669928013413
       },
       {
         "Ticker": "HEI.DE",
-        "Contribution": 0.13394292507057395
+        "Contribution": 0.1339429268626877
+      },
+      {
+        "Ticker": "BAYN.DE",
+        "Contribution": 0.1280767405307502
       },
       {
         "Ticker": "MUV2.DE",
-        "Contribution": 0.09715873838202095
+        "Contribution": 0.09715878846613903
       },
       {
         "Ticker": "SAP.DE",
-        "Contribution": 0.07682382161585864
+        "Contribution": 0.07682382143962116
       },
       {
         "Ticker": "CBK.DE",
-        "Contribution": 0.05233400923721575
+        "Contribution": 0.05233401137359277
       },
       {
         "Ticker": "ZAL.DE",
-        "Contribution": 0.02565983261462796
+        "Contribution": 0.025659836412310004
       },
       {
         "Ticker": "BAS.DE",
-        "Contribution": 0.02485197811375551
+        "Contribution": 0.02485197912826206
       },
       {
         "Ticker": "DBK.DE",
-        "Contribution": 0.016148325496930543
+        "Contribution": 0.016148326624341527
       },
       {
         "Ticker": "VNA.DE",
-        "Contribution": 0.014651615536230872
+        "Contribution": 0.014651630379045155
       },
       {
         "Ticker": "EOAN.DE",
-        "Contribution": 0.00388562516427749
+        "Contribution": 0.00388562543666912
       },
       {
         "Ticker": "SIE.DE",
@@ -186,35 +186,35 @@
       },
       {
         "Ticker": "DTE.DE",
-        "Contribution": -0.002114036171412384
+        "Contribution": -0.002114035475439164
       },
       {
         "Ticker": "DB1.DE",
-        "Contribution": -0.004823210122952108
+        "Contribution": -0.0048232523528195445
       },
       {
         "Ticker": "FRE.DE",
-        "Contribution": -0.007021904939047641
+        "Contribution": -0.00702190160512374
       },
       {
         "Ticker": "ADS.DE",
-        "Contribution": -0.01847567475855067
+        "Contribution": -0.018475670491595785
       },
       {
         "Ticker": "MTX.DE",
-        "Contribution": -0.026796120084371385
-      },
-      {
-        "Ticker": "IFX.DE",
-        "Contribution": -0.058462348484504725
+        "Contribution": -0.02679612596701242
       },
       {
         "Ticker": "AIR.DE",
-        "Contribution": -0.07201460468346312
+        "Contribution": -0.07201460762324072
       },
       {
         "Ticker": "CON.DE",
-        "Contribution": -0.07675462728392131
+        "Contribution": -0.07675463041719592
+      },
+      {
+        "Ticker": "IFX.DE",
+        "Contribution": -0.11562414674991389
       }
     ],
     "Strategy_Returns": {
@@ -348,7 +348,8 @@
       "2026-06-19": 0.0192223881,
       "2026-06-26": 0.0176460901,
       "2026-07-03": 0.0567833803,
-      "2026-07-10": -0.04885914124251112
+      "2026-07-10": -0.0488591412,
+      "2026-07-17": -0.034686738451047416
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0205649255,
@@ -481,7 +482,8 @@
       "2026-06-19": 0.0191167307,
       "2026-06-26": 0.0198272393,
       "2026-07-03": 0.0526713557,
-      "2026-07-10": -0.04652507830638786
+      "2026-07-10": -0.0465250783,
+      "2026-07-17": -0.033748537700876935
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0065449007,
@@ -614,22 +616,23 @@
       "2026-06-19": 0.0010125806,
       "2026-06-26": -0.0214354379,
       "2026-07-03": 0.0413487635,
-      "2026-07-10": -0.019380753207487667
+      "2026-07-10": -0.0193807532,
+      "2026-07-17": -0.007953767599531258
     },
     "Status_History": {
       "dates": [
-        "05-22",
         "05-29",
         "06-05",
         "06-12",
         "06-19",
         "06-26",
         "07-03",
-        "07-10"
+        "07-10",
+        "07-17"
       ],
       "rows": [
         {
-          "Ticker": "ENR.DE",
+          "Ticker": "IFX.DE",
           "Statuses": [
             "Selected",
             "Selected",
@@ -642,9 +645,9 @@
           ]
         },
         {
-          "Ticker": "IFX.DE",
+          "Ticker": "ENR.DE",
           "Statuses": [
-            "Watchlist",
+            "Selected",
             "Selected",
             "Selected",
             "Selected",
@@ -722,7 +725,7 @@
         {
           "Ticker": "BAS.DE",
           "Statuses": [
-            "Selected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -752,7 +755,7 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist"
@@ -779,7 +782,7 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist"
           ]
@@ -863,7 +866,7 @@
           ]
         },
         {
-          "Ticker": "P911.DE",
+          "Ticker": "HNR1.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -876,7 +879,7 @@
           ]
         },
         {
-          "Ticker": "HNR1.DE",
+          "Ticker": "P911.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -902,7 +905,7 @@
           ]
         },
         {
-          "Ticker": "DBK.DE",
+          "Ticker": "AIR.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -915,7 +918,7 @@
           ]
         },
         {
-          "Ticker": "AIR.DE",
+          "Ticker": "DBK.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -967,7 +970,7 @@
           ]
         },
         {
-          "Ticker": "FRE.DE",
+          "Ticker": "FME.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -993,32 +996,6 @@
           ]
         },
         {
-          "Ticker": "FME.DE",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "VOW3.DE",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "MUV2.DE",
           "Statuses": [
             "Rejected",
@@ -1032,7 +1009,33 @@
           ]
         },
         {
+          "Ticker": "FRE.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "MTX.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "VOW3.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1110,7 +1113,7 @@
           ]
         },
         {
-          "Ticker": "RHM.DE",
+          "Ticker": "SHL.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1123,7 +1126,7 @@
           ]
         },
         {
-          "Ticker": "SHL.DE",
+          "Ticker": "RHM.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
