@@ -58,10 +58,18 @@ def git_value(*args):
 
 def copy_source(source, destination):
     if source.is_dir():
-        shutil.copytree(source, destination)
+        # Google Drive for desktop can reject Windows metadata replication for
+        # some generated PNG files even though copying their contents works.
+        # Snapshot integrity depends on file contents, so avoid copy2/copystat.
+        shutil.copytree(
+            source,
+            destination,
+            copy_function=shutil.copyfile,
+            dirs_exist_ok=True,
+        )
     elif source.is_file():
         destination.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(source, destination)
+        shutil.copyfile(source, destination)
     else:
         return False
     return True
@@ -104,17 +112,27 @@ def main():
         action="store_true",
         help="Replace an existing archive with the same label.",
     )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="Resume an incomplete archive that does not yet have a freeze manifest.",
+    )
     args = parser.parse_args()
 
     archive_dir = ARCHIVE_ROOT / args.label
     if archive_dir.exists():
-        if not args.force:
+        manifest_path = archive_dir / "freeze_manifest.json"
+        if args.resume:
+            if manifest_path.exists():
+                raise SystemExit(f"Archive is already complete: {archive_dir}")
+        elif not args.force:
             raise SystemExit(
                 f"Archive already exists: {archive_dir}. Use --force only if you really want to replace it."
             )
-        remove_tree(archive_dir)
+        else:
+            remove_tree(archive_dir)
 
-    archive_dir.mkdir(parents=True)
+    archive_dir.mkdir(parents=True, exist_ok=args.resume)
     copied = []
     missing = []
 
