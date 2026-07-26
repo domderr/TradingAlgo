@@ -3,146 +3,146 @@
     "Market": "Australia50",
     "Benchmark": "EWA",
     "Number of Tickers": 50,
-    "Strategy CAGR": 0.12621199689346563,
-    "Hedged CAGR": 0.11959587378441472,
-    "Strategy MaxDD": -0.19936851409252132,
-    "Hedged MaxDD": -0.19925222928402964,
-    "Strategy Sharpe Ratio": 0.6976407466579084,
-    "Hedged Sharpe Ratio": 0.6819003116388047,
-    "Bench Cagr": 0.11302478741441169,
-    "Bench_MaxDD": -0.20493194546266547,
-    "Bench Sharpe": 0.7181455236713938,
-    "Information Ratio": 0.07679007407305567,
-    "Hedged Information Ratio": 0.03682517913234395,
+    "Strategy CAGR": 0.12339137931964594,
+    "Hedged CAGR": 0.1177483934587209,
+    "Strategy MaxDD": -0.20266675252840882,
+    "Hedged MaxDD": -0.2008933249371857,
+    "Strategy Sharpe Ratio": 0.6854024972157388,
+    "Hedged Sharpe Ratio": 0.6741802954041036,
+    "Bench Cagr": 0.10817232509934449,
+    "Bench_MaxDD": -0.20493194546266524,
+    "Bench Sharpe": 0.6937737779866883,
+    "Information Ratio": 0.08711204863231098,
+    "Hedged Information Ratio": 0.051158090398095594,
     "PDF_Output": "",
-    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Australia50\\summary_Australia50.png",
+    "Summary_Chart": "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Australia50\\summary_Australia50.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.23513321066265602,
+    "Benchmark Hedge Short": 0.17880162584066706,
     "Benchmark Hedge Ticker": "EWA",
-    "Hedge Portfolio Score": 76.4866789337344,
+    "Hedge Portfolio Score": 82.11983741593329,
     "Last Weekly Selection": [
       {
         "Ticker": "RIO.AX",
-        "Name": "RIO TINTO FPO [RIO]",
-        "Sector": "Basic Materials",
-        "Industry": "Other Industrial Metals & Mining"
+        "Name": "RIO.AX",
+        "Sector": "-",
+        "Industry": "-"
+      },
+      {
+        "Ticker": "S32.AX",
+        "Name": "S32.AX",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "WOW.AX",
-        "Name": "WOOLWORTHS FPO [WOW]",
-        "Sector": "Consumer Defensive",
-        "Industry": "Grocery Stores"
+        "Name": "WOW.AX",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "WDS.AX",
-        "Name": "WOODSIDE FPO [WDS]",
-        "Sector": "Energy",
-        "Industry": "Oil & Gas E&P"
-      },
-      {
-        "Ticker": "LYC.AX",
-        "Name": "LYNAS FPO [LYC]",
-        "Sector": "Basic Materials",
-        "Industry": "Other Industrial Metals & Mining"
+        "Name": "WDS.AX",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "QBE.AX",
-        "Name": "QBE INSUR. FPO [QBE]",
-        "Sector": "Financial Services",
-        "Industry": "Insurance - Property & Casualty"
+        "Name": "QBE.AX",
+        "Sector": "-",
+        "Industry": "-"
       }
     ],
-    "Added Tickers": "LYC.AX - LYNAS FPO [LYC]<br/>QBE.AX - QBE INSUR. FPO [QBE]",
-    "Removed Tickers": "EVN.AX - EVOLUTION FPO [EVN]<br/>ANZ.AX - ANZ GROUP FPO [ANZ]",
-    "Selection Drivers": "RIO.AX: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>WOW.AX: trend slope 0.01, stability R2 0.70, score 0.01 and passed correlation filter<br/>WDS.AX: trend slope 0.01, stability R2 0.52, score 0.00 and passed correlation filter<br/>LYC.AX: trend slope 0.01, stability R2 0.38, score 0.00 and passed correlation filter<br/>QBE.AX: trend slope 0.00, stability R2 0.45, score 0.00 and passed correlation filter",
+    "Added Tickers": "S32.AX - S32.AX",
+    "Removed Tickers": "LYC.AX - LYC.AX",
+    "Selection Drivers": "RIO.AX: trend slope 0.01, stability R2 0.89, score 0.01 and passed correlation filter<br/>S32.AX: trend slope 0.01, stability R2 0.74, score 0.01 and passed correlation filter<br/>WOW.AX: trend slope 0.01, stability R2 0.73, score 0.01 and passed correlation filter<br/>WDS.AX: trend slope 0.01, stability R2 0.55, score 0.00 and passed correlation filter<br/>QBE.AX: trend slope 0.00, stability R2 0.52, score 0.00 and passed correlation filter",
     "Profit_Contributors": [
       {
         "Ticker": "PME.AX",
-        "Contribution": 0.3874388567699719
+        "Contribution": 0.3874388172672123
       },
       {
         "Ticker": "SIG.AX",
-        "Contribution": 0.34094656902735804
+        "Contribution": 0.34094649580140435
       },
       {
         "Ticker": "EVN.AX",
-        "Contribution": 0.20587085359705765
-      },
-      {
-        "Ticker": "LYC.AX",
-        "Contribution": 0.13064731956807984
+        "Contribution": 0.20587081447478944
       },
       {
         "Ticker": "JBH.AX",
-        "Contribution": 0.12548661877824036
+        "Contribution": 0.12548656097543823
       },
       {
         "Ticker": "NEM.AX",
-        "Contribution": 0.102176221562465
+        "Contribution": 0.10217617726799207
+      },
+      {
+        "Ticker": "LYC.AX",
+        "Contribution": 0.0989966982895106
       },
       {
         "Ticker": "WTC.AX",
-        "Contribution": 0.07899185716121314
+        "Contribution": 0.0789918703202181
       },
       {
         "Ticker": "FPH.AX",
-        "Contribution": 0.03234889733117895
+        "Contribution": 0.03234889109148153
       },
       {
         "Ticker": "WOW.AX",
-        "Contribution": 0.030339390973636325
+        "Contribution": 0.03010611092704417
       },
       {
         "Ticker": "NAB.AX",
-        "Contribution": 0.02889852317466823
+        "Contribution": 0.028898517647237616
       },
       {
         "Ticker": "BHP.AX",
-        "Contribution": 0.02703064870606554
+        "Contribution": 0.027030643535903936
       },
       {
         "Ticker": "CAR.AX",
-        "Contribution": 0.026457827984120337
+        "Contribution": 0.026457841391923975
       },
       {
         "Ticker": "SGH.AX",
-        "Contribution": 0.026040121386960907
+        "Contribution": 0.02604014224721713
       },
       {
         "Ticker": "NWS.AX",
-        "Contribution": 0.024611202951248277
+        "Contribution": 0.024611180835827737
       },
       {
         "Ticker": "JHX.AX",
-        "Contribution": 0.024512039173601348
+        "Contribution": 0.024512038805428977
       },
       {
         "Ticker": "GMG.AX",
-        "Contribution": 0.022477001116463224
+        "Contribution": 0.022476976375605105
       },
       {
         "Ticker": "FMG.AX",
-        "Contribution": 0.0139943107191444
+        "Contribution": 0.013994343049910837
       },
       {
         "Ticker": "ANZ.AX",
-        "Contribution": 0.012594018877680533
+        "Contribution": 0.012594016723636163
       },
       {
         "Ticker": "WBC.AX",
-        "Contribution": 0.008673043380795761
+        "Contribution": 0.008673025529137224
       },
       {
         "Ticker": "RMD.AX",
-        "Contribution": 0.006995402269058537
+        "Contribution": 0.0069952427389952145
       },
       {
         "Ticker": "TLS.AX",
-        "Contribution": 0.004308561692935712
+        "Contribution": 0.004308560994467208
       },
       {
         "Ticker": "IAG.AX",
-        "Contribution": 0.002618025543455056
+        "Contribution": 0.0026180253037469963
       },
       {
         "Ticker": "XRO.AX",
@@ -197,7 +197,7 @@
         "Contribution": 0.0
       },
       {
-        "Ticker": "QBE.AX",
+        "Ticker": "ORG.AX",
         "Contribution": 0.0
       },
       {
@@ -209,52 +209,52 @@
         "Contribution": 0.0
       },
       {
-        "Ticker": "ORG.AX",
-        "Contribution": 0.0
+        "Ticker": "QBE.AX",
+        "Contribution": -0.0025613729555870875
       },
       {
         "Ticker": "COH.AX",
-        "Contribution": -0.005748490729561984
+        "Contribution": -0.005748494570443551
       },
       {
         "Ticker": "S32.AX",
-        "Contribution": -0.013354592306704601
+        "Contribution": -0.013354589752367089
       },
       {
         "Ticker": "SGP.AX",
-        "Contribution": -0.015407665705154443
+        "Contribution": -0.015407662294282691
       },
       {
         "Ticker": "CPU.AX",
-        "Contribution": -0.018179010453466475
+        "Contribution": -0.018179007403150524
       },
       {
         "Ticker": "ALL.AX",
-        "Contribution": -0.020220809237143686
+        "Contribution": -0.02022085024076932
       },
       {
         "Ticker": "MPL.AX",
-        "Contribution": -0.02147751572255296
+        "Contribution": -0.021477511837036663
       },
       {
         "Ticker": "QAN.AX",
-        "Contribution": -0.023700711044157018
+        "Contribution": -0.0237007107042524
       },
       {
         "Ticker": "BXB.AX",
-        "Contribution": -0.031125092767085777
-      },
-      {
-        "Ticker": "SCG.AX",
-        "Contribution": -0.04917582770752402
+        "Contribution": -0.03112508757300427
       },
       {
         "Ticker": "WDS.AX",
-        "Contribution": -0.06489029306805513
+        "Contribution": -0.03622102772693393
+      },
+      {
+        "Ticker": "SCG.AX",
+        "Contribution": -0.0491758179228717
       },
       {
         "Ticker": "RIO.AX",
-        "Contribution": -0.06619884815466537
+        "Contribution": -0.0689258617786352
       }
     ],
     "Strategy_Returns": {
@@ -389,7 +389,8 @@
       "2026-06-26": -0.0253508426,
       "2026-07-03": 0.0126428379,
       "2026-07-10": -0.0338335735,
-      "2026-07-17": -0.019038806015696408
+      "2026-07-17": -0.019038806,
+      "2026-07-24": -0.0041195462665415405
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0145023058,
@@ -523,7 +524,8 @@
       "2026-06-26": -0.0221106709,
       "2026-07-03": 0.0120883841,
       "2026-07-10": -0.036513458,
-      "2026-07-17": -0.021441073031657543
+      "2026-07-17": -0.021441073,
+      "2026-07-24": -0.002049453946703861
     },
     "Benchmark_Returns": {
       "2024-01-12": -0.0037815385,
@@ -657,18 +659,19 @@
       "2026-06-26": -0.020658269,
       "2026-07-03": 0.0042903412,
       "2026-07-10": 0.0128159704,
-      "2026-07-17": 0.010544788366098734
+      "2026-07-17": 0.0105447884,
+      "2026-07-24": -0.009043486221976926
     },
     "Status_History": {
       "dates": [
-        "05-29",
         "06-05",
         "06-12",
         "06-19",
         "06-26",
         "07-03",
         "07-10",
-        "07-17"
+        "07-17",
+        "07-24"
       ],
       "rows": [
         {
@@ -704,36 +707,23 @@
             "Selected",
             "Selected",
             "Selected",
-            "Selected",
             "Watchlist",
             "Watchlist",
-            "Watchlist"
+            "Watchlist",
+            "Selected"
           ]
         },
         {
           "Ticker": "WOW.AX",
           "Statuses": [
-            "Watchlist",
             "Selected",
             "Selected",
             "Watchlist",
             "Watchlist",
+            "Selected",
             "Selected",
             "Selected",
             "Selected"
-          ]
-        },
-        {
-          "Ticker": "EVN.AX",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Watchlist"
           ]
         },
         {
@@ -745,6 +735,32 @@
             "Selected",
             "Selected",
             "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "EVN.AX",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "QBE.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
             "Selected",
             "Selected"
           ]
@@ -770,13 +786,13 @@
             "Selected",
             "Selected",
             "Selected",
-            "Selected",
             "Watchlist",
-            "Selected"
+            "Selected",
+            "Watchlist"
           ]
         },
         {
-          "Ticker": "QBE.AX",
+          "Ticker": "MQG.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -785,7 +801,7 @@
             "Rejected",
             "Rejected",
             "Watchlist",
-            "Selected"
+            "Watchlist"
           ]
         },
         {
@@ -796,8 +812,8 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
             "Selected",
+            "Watchlist",
             "Watchlist"
           ]
         },
@@ -815,24 +831,11 @@
           ]
         },
         {
-          "Ticker": "MQG.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "TCL.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -874,7 +877,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
+            "Rejected",
             "Rejected",
             "Rejected"
           ]
@@ -885,19 +888,6 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "WBC.AX",
-          "Statuses": [
-            "Selected",
-            "Watchlist",
-            "Watchlist",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -919,10 +909,10 @@
           ]
         },
         {
-          "Ticker": "NST.AX",
+          "Ticker": "WBC.AX",
           "Statuses": [
-            "Rejected",
-            "Rejected",
+            "Watchlist",
+            "Watchlist",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -933,19 +923,6 @@
         },
         {
           "Ticker": "MPL.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "NAB.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -971,7 +948,7 @@
           ]
         },
         {
-          "Ticker": "SCG.AX",
+          "Ticker": "NST.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -984,20 +961,7 @@
           ]
         },
         {
-          "Ticker": "ORG.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "SIG.AX",
+          "Ticker": "NAB.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1023,20 +987,7 @@
           ]
         },
         {
-          "Ticker": "WES.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "FPH.AX",
+          "Ticker": "SCG.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1062,7 +1013,59 @@
           ]
         },
         {
+          "Ticker": "FPH.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "WES.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SIG.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "AMC.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ORG.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1088,32 +1091,6 @@
           ]
         },
         {
-          "Ticker": "QAN.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "GMG.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "ASX.AX",
           "Statuses": [
             "Rejected",
@@ -1127,7 +1104,33 @@
           ]
         },
         {
+          "Ticker": "QAN.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "SUN.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "GMG.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1166,19 +1169,6 @@
           ]
         },
         {
-          "Ticker": "BXB.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "ALL.AX",
           "Statuses": [
             "Rejected",
@@ -1192,7 +1182,7 @@
           ]
         },
         {
-          "Ticker": "SGP.AX",
+          "Ticker": "BXB.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1206,6 +1196,19 @@
         },
         {
           "Ticker": "CAR.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SGP.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1324,56 +1327,56 @@
       ]
     },
     "Asset_Detail_Pages": [
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ALL_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\AMC_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ANZ_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ASX_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\BHP_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\BXB_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CAR_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CBA_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\COH_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\COL_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CPU_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CSL_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\EVN_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\FMG_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\FPH_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\GMG_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\IAG_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\JBH_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\JHX_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\LYC_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\MPL_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\MQG_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NAB_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NEM_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NST_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NWS_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ORG_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\PME_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\QAN_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\QBE_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\REA_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\RIO_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\RMD_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\S32_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SCG_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SGH_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SGP_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SIG_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SOL_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\STO_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SUN_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\TCL_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\TLS_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WBC_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WES_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WDS_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WOW_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WTC_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\XRO_AX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\XYZ_AX_asset_dashboard.png"
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ALL_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\AMC_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ANZ_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ASX_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\BHP_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\BXB_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CAR_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CBA_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\COH_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\COL_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CPU_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\CSL_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\EVN_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\FMG_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\FPH_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\GMG_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\IAG_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\JBH_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\JHX_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\LYC_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\MPL_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\MQG_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NAB_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NEM_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NST_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\NWS_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\ORG_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\PME_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\QAN_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\QBE_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\REA_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\RIO_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\RMD_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\S32_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SCG_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SGH_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SGP_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SIG_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SOL_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\STO_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\SUN_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\TCL_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\TLS_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WBC_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WES_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WDS_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WOW_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\WTC_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\XRO_AX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Australia50\\XYZ_AX_asset_dashboard.png"
     ],
     "Report_PDF": "",
     "Summary_PDF_Temp": "",
