@@ -3,134 +3,134 @@
     "Market": "Europe50",
     "Benchmark": "EZU",
     "Number of Tickers": 47,
-    "Strategy CAGR": 0.22627509664138845,
-    "Hedged CAGR": 0.19787411617253858,
+    "Strategy CAGR": 0.22359090780879143,
+    "Hedged CAGR": 0.19570865309067442,
     "Strategy MaxDD": -0.14384156251899016,
     "Hedged MaxDD": -0.13642924556630986,
-    "Strategy Sharpe Ratio": 1.147969039551618,
-    "Hedged Sharpe Ratio": 1.0678592611071143,
-    "Bench Cagr": 0.19883975565578527,
-    "Bench_MaxDD": -0.12361674751081564,
-    "Bench Sharpe": 1.1401285319370442,
-    "Information Ratio": 0.15395228959326912,
-    "Hedged Information Ratio": 0.0015895881747216216,
+    "Strategy Sharpe Ratio": 1.1394551615436568,
+    "Hedged Sharpe Ratio": 1.0606682114977548,
+    "Bench Cagr": 0.1946452126152678,
+    "Bench_MaxDD": -0.12361674751081575,
+    "Bench Sharpe": 1.122788085111551,
+    "Information Ratio": 0.1622495438089476,
+    "Hedged Information Ratio": 0.011190643132001077,
     "PDF_Output": "",
-    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Europe50\\summary_Europe50.png",
+    "Summary_Chart": "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Europe50\\summary_Europe50.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.0968586027803312,
+    "Benchmark Hedge Short": 0.09764270059234337,
     "Benchmark Hedge Ticker": "EZU",
-    "Hedge Portfolio Score": 90.31413972196688,
+    "Hedge Portfolio Score": 90.23572994076567,
     "Last Weekly Selection": [
       {
         "Ticker": "NOKIA.HE",
-        "Name": "Nokia Corporation",
-        "Sector": "Technology",
-        "Industry": "Communication Equipment"
+        "Name": "NOKIA.HE",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "ASML.AS",
-        "Name": "ASML HOLDING",
-        "Sector": "Technology",
-        "Industry": "Semiconductor Equipment & Materials"
+        "Name": "ASML.AS",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "ENI.MI",
-        "Name": "ENI",
-        "Sector": "Energy",
-        "Industry": "Oil & Gas Integrated"
+        "Name": "ENI.MI",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "ENGI.PA",
-        "Name": "ENGIE",
-        "Sector": "Utilities",
-        "Industry": "Utilities - Diversified"
+        "Name": "ENGI.PA",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "BAYN.DE",
-        "Name": "Bayer AG                      N",
-        "Sector": "Healthcare",
-        "Industry": "Drug Manufacturers - General"
+        "Name": "BAYN.DE",
+        "Sector": "-",
+        "Industry": "-"
       }
     ],
-    "Added Tickers": "BAYN.DE - Bayer AG                      N",
-    "Removed Tickers": "IFX.DE - INFINEON TECHNOLOGIES AG      N",
-    "Selection Drivers": "NOKIA.HE: trend slope 0.03, stability R2 0.91, score 0.02 and passed correlation filter<br/>ASML.AS: trend slope 0.02, stability R2 0.94, score 0.02 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>ENGI.PA: trend slope 0.01, stability R2 0.90, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.67, score 0.01 and passed correlation filter",
+    "Added Tickers": "-",
+    "Removed Tickers": "-",
+    "Selection Drivers": "NOKIA.HE: trend slope 0.03, stability R2 0.88, score 0.02 and passed correlation filter<br/>ASML.AS: trend slope 0.02, stability R2 0.94, score 0.02 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>ENGI.PA: trend slope 0.01, stability R2 0.91, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.68, score 0.01 and passed correlation filter",
     "Profit_Contributors": [
       {
         "Ticker": "UCG.MI",
-        "Contribution": 0.15921530108060233
+        "Contribution": 0.159215316873847
       },
       {
         "Ticker": "SAP.DE",
-        "Contribution": 0.14181438794315593
-      },
-      {
-        "Ticker": "NOKIA.HE",
-        "Contribution": 0.09223144936641231
-      },
-      {
-        "Ticker": "ENGI.PA",
-        "Contribution": 0.08316945822941087
-      },
-      {
-        "Ticker": "ASML.AS",
-        "Contribution": 0.0735678764707467
-      },
-      {
-        "Ticker": "BAYN.DE",
-        "Contribution": 0.07278710368247518
+        "Contribution": 0.1418143961805879
       },
       {
         "Ticker": "ENI.MI",
-        "Contribution": 0.07198561068936776
+        "Contribution": 0.10092240447524993
+      },
+      {
+        "Ticker": "ENGI.PA",
+        "Contribution": 0.09726334709858642
+      },
+      {
+        "Ticker": "ASML.AS",
+        "Contribution": 0.06548198184665927
+      },
+      {
+        "Ticker": "NOKIA.HE",
+        "Contribution": 0.05926056947689122
+      },
+      {
+        "Ticker": "BAYN.DE",
+        "Contribution": 0.05652290000469673
       },
       {
         "Ticker": "ADYEN.AS",
-        "Contribution": 0.04966729110085688
+        "Contribution": 0.04966729357821571
       },
       {
         "Ticker": "BBVA.MC",
-        "Contribution": 0.04026659620862737
+        "Contribution": 0.04026665486018015
       },
       {
         "Ticker": "VNA.DE",
-        "Contribution": 0.03426552653906835
+        "Contribution": 0.03426551427631815
       },
       {
         "Ticker": "NOVO-B.CO",
-        "Contribution": 0.027333175905663476
+        "Contribution": 0.02733319743826118
       },
       {
         "Ticker": "ISP.MI",
-        "Contribution": 0.024602857946190042
+        "Contribution": 0.024602838237302867
       },
       {
         "Ticker": "MUV2.DE",
-        "Contribution": 0.020375945808564472
+        "Contribution": 0.020375944718064316
       },
       {
         "Ticker": "DTE.DE",
-        "Contribution": 0.016809383528323753
+        "Contribution": 0.01680938668923316
       },
       {
         "Ticker": "IBE.MC",
-        "Contribution": 0.016142610142645293
+        "Contribution": 0.016142583655455504
       },
       {
         "Ticker": "DB1.DE",
-        "Contribution": 0.014298982579131479
+        "Contribution": 0.014299015510224817
       },
       {
         "Ticker": "AIR.PA",
-        "Contribution": 0.012615149637624275
+        "Contribution": 0.012615150196955303
       },
       {
         "Ticker": "INGA.AS",
-        "Contribution": 0.010867509832532662
+        "Contribution": 0.010867554156990505
       },
       {
         "Ticker": "AD.AS",
-        "Contribution": 0.00539281367563582
+        "Contribution": 0.0053927818335141025
       },
       {
         "Ticker": "ABI.BR",
@@ -202,47 +202,47 @@
       },
       {
         "Ticker": "SU.PA",
-        "Contribution": -0.0019940827622659286
+        "Contribution": -0.0019940825925198226
       },
       {
         "Ticker": "ALV.DE",
-        "Contribution": -0.004228622270191639
+        "Contribution": -0.004228638387534981
       },
       {
         "Ticker": "KER.PA",
-        "Contribution": -0.005256445467303278
+        "Contribution": -0.005256445763211416
       },
       {
         "Ticker": "ENEL.MI",
-        "Contribution": -0.005930954720400511
+        "Contribution": -0.005930946605997411
       },
       {
         "Ticker": "STLAM.MI",
-        "Contribution": -0.009897572661590658
+        "Contribution": -0.009897576611538585
       },
       {
         "Ticker": "PHIA.AS",
-        "Contribution": -0.01789671159483501
+        "Contribution": -0.017896710439807423
       },
       {
         "Ticker": "OR.PA",
-        "Contribution": -0.019292682563861477
+        "Contribution": -0.01929268352299924
       },
       {
         "Ticker": "VIV.PA",
-        "Contribution": -0.03368207765497413
+        "Contribution": -0.033682078163610456
       },
       {
         "Ticker": "PRX.AS",
-        "Contribution": -0.047314519398535586
+        "Contribution": -0.04731451943538989
       },
       {
         "Ticker": "FLTR.L",
-        "Contribution": -0.04910464569182525
+        "Contribution": -0.049104647675740354
       },
       {
         "Ticker": "IFX.DE",
-        "Contribution": -0.07180713065874358
+        "Contribution": -0.07685695353056343
       }
     ],
     "Strategy_Returns": {
@@ -377,7 +377,8 @@
       "2026-06-26": -0.0379992954,
       "2026-07-03": 0.0172182408,
       "2026-07-10": -0.0286896184,
-      "2026-07-17": -0.04837955252119985
+      "2026-07-17": -0.0483795525,
+      "2026-07-24": -0.0016805300868683037
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0074505681,
@@ -511,7 +512,8 @@
       "2026-06-26": -0.0358459166,
       "2026-07-03": 0.0152273261,
       "2026-07-10": -0.0278659722,
-      "2026-07-17": -0.04767650718452343
+      "2026-07-17": -0.0476765072,
+      "2026-07-24": -0.0011551130887728078
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0066925127,
@@ -645,18 +647,19 @@
       "2026-06-26": -0.0226518504,
       "2026-07-03": 0.0218482935,
       "2026-07-10": -0.0095348693,
-      "2026-07-17": -0.008605547825266346
+      "2026-07-17": -0.0086055478,
+      "2026-07-24": -0.005443618360114533
     },
     "Status_History": {
       "dates": [
-        "05-29",
         "06-05",
         "06-12",
         "06-19",
         "06-26",
         "07-03",
         "07-10",
-        "07-17"
+        "07-17",
+        "07-24"
       ],
       "rows": [
         {
@@ -689,12 +692,12 @@
           "Ticker": "IFX.DE",
           "Statuses": [
             "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
             "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
             "Watchlist"
           ]
         },
@@ -741,12 +744,12 @@
           "Ticker": "BAYN.DE",
           "Statuses": [
             "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
             "Selected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
             "Selected"
           ]
         },
@@ -790,19 +793,6 @@
           ]
         },
         {
-          "Ticker": "BBVA.MC",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "ENEL.MI",
           "Statuses": [
             "Watchlist",
@@ -817,6 +807,19 @@
         },
         {
           "Ticker": "NDA-FI.HE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "BBVA.MC",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -907,11 +910,11 @@
           ]
         },
         {
-          "Ticker": "ISP.MI",
+          "Ticker": "LIN.DE",
           "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
+            "Rejected",
+            "Rejected",
+            "Rejected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -920,12 +923,12 @@
           ]
         },
         {
-          "Ticker": "LIN.DE",
+          "Ticker": "ISP.MI",
           "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -948,7 +951,7 @@
         {
           "Ticker": "DG.PA",
           "Statuses": [
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -956,19 +959,6 @@
             "Watchlist",
             "Watchlist",
             "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "AD.AS",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Rejected"
           ]
         },
         {
@@ -998,6 +988,19 @@
           ]
         },
         {
+          "Ticker": "AD.AS",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "DB1.DE",
           "Statuses": [
             "Rejected",
@@ -1013,19 +1016,6 @@
         {
           "Ticker": "PHIA.AS",
           "Statuses": [
-            "Watchlist",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "KER.PA",
-          "Statuses": [
             "Rejected",
             "Rejected",
             "Rejected",
@@ -1038,6 +1028,19 @@
         },
         {
           "Ticker": "OR.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "KER.PA",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1193,19 +1196,6 @@
           ]
         },
         {
-          "Ticker": "PRX.AS",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "RI.PA",
           "Statuses": [
             "Rejected",
@@ -1220,6 +1210,19 @@
         },
         {
           "Ticker": "VIV.PA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PRX.AS",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1273,53 +1276,53 @@
       ]
     },
     "Asset_Detail_Pages": [
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ADYEN_AS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\AD_AS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\AI_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\AIR_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ALV_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ASML_AS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ABI_BR_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BAS_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BAYN_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BBVA_MC_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BNP_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\CS_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\DTE_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\DB1_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\DG_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ENEL_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ENGI_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ENI_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\FLTR_L_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\IBE_MC_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\IFX_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\INGA_AS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ISP_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\KER_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\LIN_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\MC_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\MUV2_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BMW_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\NOKIA_HE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\NDA_FI_HE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\NOVO_B_CO_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\OR_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\PHIA_AS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\PRX_AS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\RI_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\RMS_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SAN_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SAP_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SIE_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\STLAM_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SU_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SHEL_L_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\TTE_PA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\UCG_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\VOW3_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\VNA_DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\VIV_PA_asset_dashboard.png"
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ADYEN_AS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\AD_AS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\AI_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\AIR_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ALV_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ASML_AS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ABI_BR_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BAS_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BAYN_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BBVA_MC_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BNP_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\CS_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\DTE_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\DB1_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\DG_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ENEL_MI_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ENGI_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ENI_MI_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\FLTR_L_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\IBE_MC_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\IFX_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\INGA_AS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\ISP_MI_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\KER_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\LIN_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\MC_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\MUV2_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\BMW_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\NOKIA_HE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\NDA_FI_HE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\NOVO_B_CO_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\OR_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\PHIA_AS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\PRX_AS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\RI_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\RMS_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SAN_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SAP_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SIE_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\STLAM_MI_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SU_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\SHEL_L_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\TTE_PA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\UCG_MI_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\VOW3_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\VNA_DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Europe50\\VIV_PA_asset_dashboard.png"
     ],
     "Report_PDF": "",
     "Summary_PDF_Temp": "",

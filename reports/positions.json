@@ -1,183 +1,173 @@
 {
   "USA100": {
-    "week": "17 Jul 2026",
+    "week": "24 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
-        "name": "Micron Technology, Inc.",
-        "sector": "Technology",
-        "industry": "Semiconductors"
+        "name": "MU",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "CAT",
-        "name": "Caterpillar, Inc.",
-        "sector": "Industrials",
-        "industry": "Farm & Heavy Construction Machinery"
+        "name": "CAT",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "FDX",
-        "name": "FedEx Corporation",
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
+        "name": "FDX",
+        "sector": "-",
+        "industry": "-"
+      },
+      {
+        "ticker": "GEV",
+        "name": "GEV",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "CSCO",
-        "name": "Cisco Systems, Inc.",
-        "sector": "Technology",
-        "industry": "Communication Equipment"
-      },
-      {
-        "ticker": "GOOGL",
-        "name": "Alphabet Inc.",
-        "sector": "Communication Services",
-        "industry": "Internet Content & Information"
+        "name": "CSCO",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "CSCO",
-          "name": "Cisco Systems, Inc."
+          "ticker": "GEV",
+          "name": "GEV"
         }
       ],
       "out": [
         {
-          "ticker": "SLB",
-          "name": "SLB Limited"
+          "ticker": "GOOGL",
+          "name": "GOOGL"
         }
       ]
     }
   },
   "NASDAQ100": {
-    "week": "17 Jul 2026",
+    "week": "24 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
-        "name": "Micron Technology, Inc.",
-        "sector": "Technology",
-        "industry": "Semiconductors"
+        "name": "MU",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "TER",
-        "name": "Teradyne, Inc.",
-        "sector": "Technology",
-        "industry": "Semiconductor Equipment & Materials"
+        "name": "TER",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "MRVL",
-        "name": "Marvell Technology, Inc.",
-        "sector": "Technology",
-        "industry": "Semiconductors"
+        "name": "MRVL",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "GFS",
-        "name": "GlobalFoundries Inc.",
-        "sector": "Technology",
-        "industry": "Semiconductors"
+        "name": "GFS",
+        "sector": "-",
+        "industry": "-"
       },
       {
-        "ticker": "RKLB",
-        "name": "Rocket Lab Corporation",
-        "sector": "Industrials",
-        "industry": "Aerospace & Defense"
+        "ticker": "ROST",
+        "name": "ROST",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "RKLB",
-          "name": "Rocket Lab Corporation"
+          "ticker": "ROST",
+          "name": "ROST"
         }
       ],
       "out": [
         {
-          "ticker": "NBIS",
-          "name": "Nebius Group N.V."
+          "ticker": "RKLB",
+          "name": "RKLB"
         }
       ]
     }
   },
   "Europe50": {
-    "week": "17 Jul 2026",
+    "week": "24 Jul 2026",
     "positions": [
       {
         "ticker": "NOKIA.HE",
-        "name": "Nokia Corporation",
-        "sector": "Technology",
-        "industry": "Communication Equipment"
+        "name": "NOKIA.HE",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "ASML.AS",
-        "name": "ASML HOLDING",
-        "sector": "Technology",
-        "industry": "Semiconductor Equipment & Materials"
+        "name": "ASML.AS",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "ENI.MI",
-        "name": "ENI",
-        "sector": "Energy",
-        "industry": "Oil & Gas Integrated"
+        "name": "ENI.MI",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "ENGI.PA",
-        "name": "ENGIE",
-        "sector": "Utilities",
-        "industry": "Utilities - Diversified"
+        "name": "ENGI.PA",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "BAYN.DE",
-        "name": "Bayer AG                      N",
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "name": "BAYN.DE",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
-      "in": [
-        {
-          "ticker": "BAYN.DE",
-          "name": "Bayer AG N"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "IFX.DE",
-          "name": "INFINEON TECHNOLOGIES AG N"
-        }
-      ]
+      "in": [],
+      "out": []
     }
   },
   "Italy40": {
-    "week": "17 Jul 2026",
+    "week": "24 Jul 2026",
     "positions": [
       {
         "ticker": "STMMI.MI",
-        "name": "STMICROELECTRONICS",
-        "sector": "Technology",
-        "industry": "Semiconductors"
+        "name": "STMMI.MI",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "SPM.MI",
-        "name": "SAIPEM",
-        "sector": "Energy",
-        "industry": "Oil & Gas Equipment & Services"
+        "name": "SPM.MI",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "PRY.MI",
-        "name": "PRYSMIAN",
-        "sector": "Industrials",
-        "industry": "Electrical Equipment & Parts"
+        "name": "PRY.MI",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "BPE.MI",
-        "name": "BPER BANCA",
-        "sector": "Financial Services",
-        "industry": "Banks - Regional"
+        "name": "BPE.MI",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "IG.MI",
-        "name": "ITALGAS",
-        "sector": "Utilities",
-        "industry": "Utilities - Regulated Gas"
+        "name": "IG.MI",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
@@ -186,37 +176,37 @@
     }
   },
   "UK100": {
-    "week": "17 Jul 2026",
+    "week": "24 Jul 2026",
     "positions": [
       {
         "ticker": "GLEN.L",
-        "name": "GLENCORE PLC ORD USD0.01",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
+        "name": "GLEN.L",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "CCC.L",
-        "name": "COMPUTACENTER PLC ORD 7 5/9P",
-        "sector": "Technology",
-        "industry": "Information Technology Services"
+        "name": "CCC.L",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "ANTO.L",
-        "name": "ANTOFAGASTA PLC ORD 5P",
-        "sector": "Basic Materials",
-        "industry": "Copper"
+        "name": "ANTO.L",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "IGG.L",
-        "name": "IG GROUP HOLDINGS PLC ORD 0.005",
-        "sector": "Financial Services",
-        "industry": "Capital Markets"
+        "name": "IGG.L",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "SDR.L",
-        "name": "SCHRODERS PLC ORD 20P",
-        "sector": "Financial Services",
-        "industry": "Asset Management"
+        "name": "SDR.L",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
@@ -225,37 +215,37 @@
     }
   },
   "Germany40": {
-    "week": "17 Jul 2026",
+    "week": "24 Jul 2026",
     "positions": [
       {
         "ticker": "IFX.DE",
-        "name": "INFINEON TECHNOLOGIES AG      N",
-        "sector": "Technology",
-        "industry": "Semiconductors"
+        "name": "IFX.DE",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "ENR.DE",
-        "name": "Siemens Energy AG             N",
-        "sector": "Industrials",
-        "industry": "Specialty Industrial Machinery"
+        "name": "ENR.DE",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "RWE.DE",
-        "name": "RWE AG                        I",
-        "sector": "Utilities",
-        "industry": "Utilities - Diversified"
+        "name": "RWE.DE",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "BAYN.DE",
-        "name": "Bayer AG                      N",
-        "sector": "Healthcare",
-        "industry": "Drug Manufacturers - General"
+        "name": "BAYN.DE",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "DHL.DE",
-        "name": "DEUTSCHE POST AG              N",
-        "sector": "Industrials",
-        "industry": "Integrated Freight & Logistics"
+        "name": "DHL.DE",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
@@ -264,58 +254,50 @@
     }
   },
   "Australia50": {
-    "week": "17 Jul 2026",
+    "week": "24 Jul 2026",
     "positions": [
       {
         "ticker": "RIO.AX",
-        "name": "RIO TINTO FPO [RIO]",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
+        "name": "RIO.AX",
+        "sector": "-",
+        "industry": "-"
+      },
+      {
+        "ticker": "S32.AX",
+        "name": "S32.AX",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "WOW.AX",
-        "name": "WOOLWORTHS FPO [WOW]",
-        "sector": "Consumer Defensive",
-        "industry": "Grocery Stores"
+        "name": "WOW.AX",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "WDS.AX",
-        "name": "WOODSIDE FPO [WDS]",
-        "sector": "Energy",
-        "industry": "Oil & Gas E&P"
-      },
-      {
-        "ticker": "LYC.AX",
-        "name": "LYNAS FPO [LYC]",
-        "sector": "Basic Materials",
-        "industry": "Other Industrial Metals & Mining"
+        "name": "WDS.AX",
+        "sector": "-",
+        "industry": "-"
       },
       {
         "ticker": "QBE.AX",
-        "name": "QBE INSUR. FPO [QBE]",
-        "sector": "Financial Services",
-        "industry": "Insurance - Property & Casualty"
+        "name": "QBE.AX",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "LYC.AX",
-          "name": "LYNAS FPO [LYC]"
-        },
-        {
-          "ticker": "QBE.AX",
-          "name": "QBE INSUR. FPO [QBE]"
+          "ticker": "S32.AX",
+          "name": "S32.AX"
         }
       ],
       "out": [
         {
-          "ticker": "EVN.AX",
-          "name": "EVOLUTION FPO [EVN]"
-        },
-        {
-          "ticker": "ANZ.AX",
-          "name": "ANZ GROUP FPO [ANZ]"
+          "ticker": "LYC.AX",
+          "name": "LYC.AX"
         }
       ]
     }

@@ -3,166 +3,166 @@
     "Market": "USA100",
     "Benchmark": "SPY",
     "Number of Tickers": 99,
-    "Strategy CAGR": 0.38271264743834976,
-    "Hedged CAGR": 0.365252642200401,
+    "Strategy CAGR": 0.3915997311819672,
+    "Hedged CAGR": 0.37446195853977526,
     "Strategy MaxDD": -0.23576994770582338,
     "Hedged MaxDD": -0.22627977275945077,
-    "Strategy Sharpe Ratio": 1.3474045010128906,
-    "Hedged Sharpe Ratio": 1.32910097497227,
-    "Bench Cagr": 0.2149284863958687,
-    "Bench_MaxDD": -0.16877155480289696,
-    "Bench Sharpe": 1.4075388128096764,
-    "Information Ratio": 0.8374616753048331,
-    "Hedged Information Ratio": 0.7654969879432285,
+    "Strategy Sharpe Ratio": 1.375806174749616,
+    "Hedged Sharpe Ratio": 1.3593339648130789,
+    "Bench Cagr": 0.20987245750744665,
+    "Bench_MaxDD": -0.16877167316503128,
+    "Bench Sharpe": 1.3822457288932462,
+    "Information Ratio": 0.894476441933891,
+    "Hedged Information Ratio": 0.8247290779741163,
     "PDF_Output": "",
-    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\USA100\\summary_USA100.png",
+    "Summary_Chart": "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\USA100\\summary_USA100.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.0852779100668768,
+    "Benchmark Hedge Short": 0.07628447261231641,
     "Benchmark Hedge Ticker": "SPY",
-    "Hedge Portfolio Score": 91.47220899331232,
+    "Hedge Portfolio Score": 92.37155273876836,
     "Last Weekly Selection": [
       {
         "Ticker": "MU",
-        "Name": "Micron Technology, Inc.",
-        "Sector": "Technology",
-        "Industry": "Semiconductors"
+        "Name": "MU",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "CAT",
-        "Name": "Caterpillar, Inc.",
-        "Sector": "Industrials",
-        "Industry": "Farm & Heavy Construction Machinery"
+        "Name": "CAT",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "FDX",
-        "Name": "FedEx Corporation",
-        "Sector": "Industrials",
-        "Industry": "Integrated Freight & Logistics"
-      },
-      {
-        "Ticker": "CSCO",
-        "Name": "Cisco Systems, Inc.",
-        "Sector": "Technology",
-        "Industry": "Communication Equipment"
-      },
-      {
-        "Ticker": "GOOGL",
-        "Name": "Alphabet Inc.",
-        "Sector": "Communication Services",
-        "Industry": "Internet Content & Information"
-      }
-    ],
-    "Added Tickers": "CSCO - Cisco Systems, Inc.",
-    "Removed Tickers": "SLB - SLB Limited",
-    "Selection Drivers": "MU: trend slope 0.04, stability R2 0.96, score 0.04 and passed correlation filter<br/>CAT: trend slope 0.02, stability R2 0.96, score 0.02 and passed correlation filter<br/>FDX: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>CSCO: trend slope 0.01, stability R2 0.80, score 0.01 and passed correlation filter<br/>GOOGL: trend slope 0.01, stability R2 0.78, score 0.01 and passed correlation filter",
-    "Profit_Contributors": [
-      {
-        "Ticker": "MU",
-        "Contribution": 0.8522624659664041
-      },
-      {
-        "Ticker": "INTC",
-        "Contribution": 0.6568952050630532
-      },
-      {
-        "Ticker": "PLTR",
-        "Contribution": 0.5515262382614297
+        "Name": "FDX",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "GEV",
-        "Contribution": 0.4240484760169959
-      },
-      {
-        "Ticker": "NVDA",
-        "Contribution": 0.22162556853433124
-      },
-      {
-        "Ticker": "GE",
-        "Contribution": 0.08235137270171358
-      },
-      {
-        "Ticker": "AMD",
-        "Contribution": 0.07757030697849084
-      },
-      {
-        "Ticker": "LRCX",
-        "Contribution": 0.07641227935160401
-      },
-      {
-        "Ticker": "CAT",
-        "Contribution": 0.07067999586311272
-      },
-      {
-        "Ticker": "MMM",
-        "Contribution": 0.044801397998774084
-      },
-      {
-        "Ticker": "LLY",
-        "Contribution": 0.044450246232866676
-      },
-      {
-        "Ticker": "META",
-        "Contribution": 0.039429885468801766
-      },
-      {
-        "Ticker": "AXP",
-        "Contribution": 0.03184854539613758
-      },
-      {
-        "Ticker": "COST",
-        "Contribution": 0.031575213343504625
-      },
-      {
-        "Ticker": "ISRG",
-        "Contribution": 0.028334359309018443
-      },
-      {
-        "Ticker": "MO",
-        "Contribution": 0.025082158456813268
-      },
-      {
-        "Ticker": "NOW",
-        "Contribution": 0.021425227178996364
+        "Name": "GEV",
+        "Sector": "-",
+        "Industry": "-"
       },
       {
         "Ticker": "CSCO",
-        "Contribution": 0.02004092983543804
+        "Name": "CSCO",
+        "Sector": "-",
+        "Industry": "-"
+      }
+    ],
+    "Added Tickers": "GEV - GEV",
+    "Removed Tickers": "GOOGL - GOOGL",
+    "Selection Drivers": "MU: trend slope 0.04, stability R2 0.96, score 0.04 and passed correlation filter<br/>CAT: trend slope 0.02, stability R2 0.96, score 0.02 and passed correlation filter<br/>FDX: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>GEV: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>CSCO: trend slope 0.01, stability R2 0.81, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "MU",
+        "Contribution": 0.9818047562213099
+      },
+      {
+        "Ticker": "INTC",
+        "Contribution": 0.6568954594414581
+      },
+      {
+        "Ticker": "PLTR",
+        "Contribution": 0.5515263754787463
+      },
+      {
+        "Ticker": "GEV",
+        "Contribution": 0.42404848155593633
+      },
+      {
+        "Ticker": "NVDA",
+        "Contribution": 0.22162570386605598
+      },
+      {
+        "Ticker": "CAT",
+        "Contribution": 0.08475934331895278
+      },
+      {
+        "Ticker": "GE",
+        "Contribution": 0.08235131232452356
+      },
+      {
+        "Ticker": "AMD",
+        "Contribution": 0.07757034272833237
+      },
+      {
+        "Ticker": "LRCX",
+        "Contribution": 0.076412309677162
+      },
+      {
+        "Ticker": "MMM",
+        "Contribution": 0.04480137338451857
+      },
+      {
+        "Ticker": "LLY",
+        "Contribution": 0.04445032754697782
+      },
+      {
+        "Ticker": "META",
+        "Contribution": 0.03942990305843637
+      },
+      {
+        "Ticker": "AXP",
+        "Contribution": 0.03184858399677396
+      },
+      {
+        "Ticker": "COST",
+        "Contribution": 0.03157521855066481
+      },
+      {
+        "Ticker": "ISRG",
+        "Contribution": 0.028334367557618464
+      },
+      {
+        "Ticker": "CSCO",
+        "Contribution": 0.025744005379359378
+      },
+      {
+        "Ticker": "MO",
+        "Contribution": 0.025082161838607266
+      },
+      {
+        "Ticker": "NOW",
+        "Contribution": 0.02142522790369495
       },
       {
         "Ticker": "NFLX",
-        "Contribution": 0.014055844834233652
+        "Contribution": 0.014055835181659995
       },
       {
         "Ticker": "V",
-        "Contribution": 0.01275975063698283
+        "Contribution": 0.01275978474317329
       },
       {
         "Ticker": "PM",
-        "Contribution": 0.011992947368323953
+        "Contribution": 0.011992993016311232
       },
       {
         "Ticker": "KMI",
-        "Contribution": 0.011242591913551786
+        "Contribution": 0.011242595960233753
       },
       {
         "Ticker": "GM",
-        "Contribution": 0.010254593890725971
+        "Contribution": 0.010254597872684436
       },
       {
         "Ticker": "JNJ",
-        "Contribution": 0.00739361258330818
+        "Contribution": 0.007393615648727585
       },
       {
         "Ticker": "CVS",
-        "Contribution": 0.004792720445919011
+        "Contribution": 0.0047927246793139835
       },
       {
         "Ticker": "COF",
-        "Contribution": 0.00425240786652455
+        "Contribution": 0.004252438624448653
       },
       {
         "Ticker": "IBM",
-        "Contribution": 0.00010298584830762542
+        "Contribution": 0.0001029864491408905
       },
       {
         "Ticker": "BLK",
@@ -390,67 +390,67 @@
       },
       {
         "Ticker": "CRM",
-        "Contribution": -0.0007105954939409403
+        "Contribution": -0.0007105954731076947
       },
       {
         "Ticker": "NEE",
-        "Contribution": -0.00244919561834351
+        "Contribution": -0.0024491327617277227
       },
       {
         "Ticker": "GOOG",
-        "Contribution": -0.0028930558455192747
+        "Contribution": -0.002893033202799697
       },
       {
         "Ticker": "WMT",
-        "Contribution": -0.004105253767354315
-      },
-      {
-        "Ticker": "ADBE",
-        "Contribution": -0.008389476683082975
-      },
-      {
-        "Ticker": "T",
-        "Contribution": -0.012512350935535824
+        "Contribution": -0.004105270399960465
       },
       {
         "Ticker": "FDX",
-        "Contribution": -0.014046496558972624
+        "Contribution": -0.007479635942829213
+      },
+      {
+        "Ticker": "ADBE",
+        "Contribution": -0.008389477728871098
+      },
+      {
+        "Ticker": "T",
+        "Contribution": -0.012512280520073709
       },
       {
         "Ticker": "ALL",
-        "Contribution": -0.01690402292155011
+        "Contribution": -0.016903928909155416
       },
       {
         "Ticker": "SLB",
-        "Contribution": -0.02050997067794199
+        "Contribution": -0.020509978184675745
       },
       {
         "Ticker": "C",
-        "Contribution": -0.024071466612694506
+        "Contribution": -0.024071429821906364
       },
       {
         "Ticker": "GILD",
-        "Contribution": -0.025797690982960014
+        "Contribution": -0.02579760238368023
       },
       {
         "Ticker": "BNY",
-        "Contribution": -0.032235898491136165
+        "Contribution": -0.032235906339085185
       },
       {
         "Ticker": "DE",
-        "Contribution": -0.03400914803831011
-      },
-      {
-        "Ticker": "GOOGL",
-        "Contribution": -0.046367471206283345
+        "Contribution": -0.034009156994266945
       },
       {
         "Ticker": "UBER",
-        "Contribution": -0.0565619305727844
+        "Contribution": -0.056561949880859094
       },
       {
         "Ticker": "TSLA",
-        "Contribution": -0.1009136639833906
+        "Contribution": -0.10091369332722913
+      },
+      {
+        "Ticker": "GOOGL",
+        "Contribution": -0.11165440160844536
       }
     ],
     "Strategy_Returns": {
@@ -585,7 +585,8 @@
       "2026-06-26": -0.0230827283,
       "2026-07-03": -0.03257512,
       "2026-07-10": 0.009707453,
-      "2026-07-17": -0.05230809386075608
+      "2026-07-17": -0.0523080939,
+      "2026-07-24": 0.02287581159271368
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0419194795,
@@ -719,7 +720,8 @@
       "2026-06-26": -0.0213660617,
       "2026-07-03": -0.0342353847,
       "2026-07-10": 0.0086272612,
-      "2026-07-17": -0.05107234190448706
+      "2026-07-17": -0.0510723419,
+      "2026-07-24": 0.02345308854296846
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0187211511,
@@ -853,18 +855,19 @@
       "2026-06-26": -0.0237699872,
       "2026-07-03": 0.021660159,
       "2026-07-10": 0.0136550156,
-      "2026-07-17": -0.015444776463544141
+      "2026-07-17": -0.0154447765,
+      "2026-07-24": -0.006874820732985176
     },
     "Status_History": {
       "dates": [
-        "05-29",
         "06-05",
         "06-12",
         "06-19",
         "06-26",
         "07-03",
         "07-10",
-        "07-17"
+        "07-17",
+        "07-24"
       ],
       "rows": [
         {
@@ -884,19 +887,6 @@
           "Ticker": "INTC",
           "Statuses": [
             "Selected",
-            "Selected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "LRCX",
-          "Statuses": [
-            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -920,9 +910,22 @@
           ]
         },
         {
-          "Ticker": "CAT",
+          "Ticker": "LRCX",
           "Statuses": [
             "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CAT",
+          "Statuses": [
+            "Selected",
             "Selected",
             "Selected",
             "Selected",
@@ -963,12 +966,12 @@
           "Statuses": [
             "Selected",
             "Selected",
-            "Selected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist"
+            "Watchlist",
+            "Selected"
           ]
         },
         {
@@ -980,34 +983,8 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
-            "Selected"
-          ]
-        },
-        {
-          "Ticker": "GOOGL",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
             "Selected",
             "Selected"
-          ]
-        },
-        {
-          "Ticker": "SLB",
-          "Statuses": [
-            "Selected",
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Watchlist"
           ]
         },
         {
@@ -1024,14 +1001,14 @@
           ]
         },
         {
-          "Ticker": "GOOG",
+          "Ticker": "SLB",
           "Statuses": [
             "Watchlist",
             "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
             "Watchlist",
             "Watchlist"
           ]
@@ -1050,7 +1027,20 @@
           ]
         },
         {
-          "Ticker": "JNJ",
+          "Ticker": "GOOGL",
+          "Statuses": [
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GOOG",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1064,6 +1054,19 @@
         },
         {
           "Ticker": "BNY",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "JNJ",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1167,19 +1170,6 @@
           ]
         },
         {
-          "Ticker": "CVS",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "USB",
           "Statuses": [
             "Watchlist",
@@ -1193,7 +1183,7 @@
           ]
         },
         {
-          "Ticker": "GM",
+          "Ticker": "UNP",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1206,7 +1196,20 @@
           ]
         },
         {
-          "Ticker": "UNP",
+          "Ticker": "UPS",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CVS",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1258,7 +1261,20 @@
           ]
         },
         {
-          "Ticker": "UPS",
+          "Ticker": "GM",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "DE",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1284,20 +1300,7 @@
           ]
         },
         {
-          "Ticker": "NEE",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "DE",
+          "Ticker": "SBUX",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1336,7 +1339,7 @@
           ]
         },
         {
-          "Ticker": "SBUX",
+          "Ticker": "NEE",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1375,19 +1378,6 @@
           ]
         },
         {
-          "Ticker": "LMT",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "GILD",
           "Statuses": [
             "Watchlist",
@@ -1401,7 +1391,7 @@
           ]
         },
         {
-          "Ticker": "GE",
+          "Ticker": "LMT",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1410,19 +1400,6 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "UNH",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
             "Watchlist"
           ]
         },
@@ -1431,7 +1408,7 @@
           "Statuses": [
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -1447,13 +1424,26 @@
             "Rejected",
             "Rejected",
             "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "UNH",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
             "Rejected",
             "Watchlist",
             "Watchlist"
           ]
         },
         {
-          "Ticker": "VZ",
+          "Ticker": "GE",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1479,7 +1469,20 @@
           ]
         },
         {
-          "Ticker": "NVDA",
+          "Ticker": "CL",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "VZ",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1492,13 +1495,13 @@
           ]
         },
         {
-          "Ticker": "CL",
+          "Ticker": "NVDA",
           "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist"
@@ -1518,6 +1521,19 @@
           ]
         },
         {
+          "Ticker": "BAC",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
           "Ticker": "PFE",
           "Statuses": [
             "Watchlist",
@@ -1526,19 +1542,6 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "BAC",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
             "Watchlist",
             "Watchlist"
           ]
@@ -1554,6 +1557,32 @@
             "Watchlist",
             "Watchlist",
             "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "EMR",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "JPM",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
           ]
         },
         {
@@ -1583,46 +1612,7 @@
           ]
         },
         {
-          "Ticker": "JPM",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "AMZN",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "EMR",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "COST",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1648,22 +1638,35 @@
           ]
         },
         {
-          "Ticker": "PEP",
+          "Ticker": "COST",
           "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected"
           ]
         },
         {
-          "Ticker": "TSLA",
+          "Ticker": "PEP",
           "Statuses": [
             "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "MDLZ",
+          "Statuses": [
+            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -1700,7 +1703,7 @@
           ]
         },
         {
-          "Ticker": "MDLZ",
+          "Ticker": "TSLA",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1726,19 +1729,6 @@
           ]
         },
         {
-          "Ticker": "AXP",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "SCHW",
           "Statuses": [
             "Rejected",
@@ -1752,7 +1742,7 @@
           ]
         },
         {
-          "Ticker": "PG",
+          "Ticker": "AXP",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1765,7 +1755,7 @@
           ]
         },
         {
-          "Ticker": "IBM",
+          "Ticker": "PG",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1804,46 +1794,20 @@
           ]
         },
         {
+          "Ticker": "IBM",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "MCD",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "LOW",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "DHR",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "BLK",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1869,7 +1833,7 @@
           ]
         },
         {
-          "Ticker": "T",
+          "Ticker": "BLK",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1882,7 +1846,33 @@
           ]
         },
         {
-          "Ticker": "ISRG",
+          "Ticker": "DHR",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "LOW",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "T",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1921,33 +1911,20 @@
           ]
         },
         {
+          "Ticker": "ISRG",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "MDT",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "HD",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "DIS",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1973,6 +1950,32 @@
           ]
         },
         {
+          "Ticker": "DIS",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "HD",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "META",
           "Statuses": [
             "Rejected",
@@ -1986,7 +1989,7 @@
           ]
         },
         {
-          "Ticker": "PLTR",
+          "Ticker": "BKNG",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1999,7 +2002,7 @@
           ]
         },
         {
-          "Ticker": "BKNG",
+          "Ticker": "PLTR",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -2051,7 +2054,7 @@
           ]
         },
         {
-          "Ticker": "NFLX",
+          "Ticker": "ABT",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -2064,7 +2067,7 @@
           ]
         },
         {
-          "Ticker": "ABT",
+          "Ticker": "NFLX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -2157,105 +2160,105 @@
       ]
     },
     "Asset_Detail_Pages": [
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AAPL_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ABBV_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ABT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ACN_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ADBE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ALL_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMAT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMD_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMGN_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMZN_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AXP_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BAC_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BKNG_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BLK_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BMY_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BNY_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\C_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CAT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CL_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CMCSA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\COF_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\COP_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\COST_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CRM_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CSCO_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CVS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CVX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DHR_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DIS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DUK_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\EMR_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\FDX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GD_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GEV_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GILD_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GM_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GOOG_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GOOGL_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\HD_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\HON_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\IBM_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\INTC_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\INTU_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ISRG_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\JNJ_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\JPM_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\KMI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\KO_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LLY_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LMT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LOW_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LRCX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MCD_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MDLZ_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MDT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\META_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MMM_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MO_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MRK_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MSFT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MU_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NEE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NFLX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NKE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NOW_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NVDA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ORCL_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PEP_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PFE_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PG_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PLTR_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PM_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\QCOM_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SBUX_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SCHW_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SLB_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SO_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SPG_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\T_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\TMO_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\TSLA_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\TXN_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UBER_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UNH_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UNP_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UPS_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\USB_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\V_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\VZ_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\WFC_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\WMT_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\XOM_asset_dashboard.png"
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AAPL_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ABBV_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ABT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ACN_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ADBE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ALL_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMAT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMD_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMGN_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AMZN_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\AXP_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BAC_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BKNG_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BLK_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BMY_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\BNY_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\C_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CAT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CL_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CMCSA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\COF_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\COP_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\COST_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CRM_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CSCO_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CVS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\CVX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DHR_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DIS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\DUK_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\EMR_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\FDX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GD_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GEV_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GILD_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GM_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GOOG_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GOOGL_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\GS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\HD_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\HON_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\IBM_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\INTC_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\INTU_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ISRG_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\JNJ_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\JPM_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\KMI_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\KO_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LLY_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LMT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LOW_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\LRCX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MCD_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MDLZ_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MDT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\META_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MMM_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MO_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MRK_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MSFT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\MU_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NEE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NFLX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NKE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NOW_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\NVDA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\ORCL_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PEP_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PFE_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PG_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PLTR_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\PM_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\QCOM_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SBUX_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SCHW_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SLB_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SO_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\SPG_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\T_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\TMO_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\TSLA_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\TXN_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UBER_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UNH_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UNP_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\UPS_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\USB_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\V_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\VZ_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\WFC_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\WMT_asset_dashboard.png",
+      "C:\\Users\\admin\\source\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\USA100\\XOM_asset_dashboard.png"
     ],
     "Report_PDF": "",
     "Summary_PDF_Temp": "",
