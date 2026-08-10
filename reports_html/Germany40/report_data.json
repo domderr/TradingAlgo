@@ -3,23 +3,23 @@
     "Market": "Germany40",
     "Benchmark": "EWG",
     "Number of Tickers": 40,
-    "Strategy CAGR": 0.22730602142269696,
-    "Hedged CAGR": 0.2131731041055247,
+    "Strategy CAGR": 0.23284069013486164,
+    "Hedged CAGR": 0.21725051425965902,
     "Strategy MaxDD": -0.12653999113429804,
     "Hedged MaxDD": -0.12054395646965121,
-    "Strategy Sharpe Ratio": 1.104983123520664,
-    "Hedged Sharpe Ratio": 1.0960607354835235,
-    "Bench Cagr": 0.19144840906256277,
+    "Strategy Sharpe Ratio": 1.1311732053987227,
+    "Hedged Sharpe Ratio": 1.1175935573555373,
+    "Bench Cagr": 0.2023573633298188,
     "Bench_MaxDD": -0.14118171855188488,
-    "Bench Sharpe": 1.056255533029423,
-    "Information Ratio": 0.23794256230321514,
-    "Hedged Information Ratio": 0.14577402404454623,
+    "Bench Sharpe": 1.1070499400528324,
+    "Information Ratio": 0.20882092602051577,
+    "Hedged Information Ratio": 0.11066578634181526,
     "PDF_Output": "",
     "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Germany40\\summary_Germany40.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.11854134991951004,
+    "Benchmark Hedge Short": 0.12006015233807188,
     "Benchmark Hedge Ticker": "EWG",
-    "Hedge Portfolio Score": 88.145865008049,
+    "Hedge Portfolio Score": 87.99398476619281,
     "Last Weekly Selection": [
       {
         "Ticker": "IFX.DE",
@@ -54,63 +54,63 @@
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
-    "Selection Drivers": "IFX.DE: trend slope 0.02, stability R2 0.77, score 0.01 and passed correlation filter<br/>ENR.DE: trend slope 0.01, stability R2 0.80, score 0.01 and passed correlation filter<br/>RWE.DE: trend slope 0.01, stability R2 0.88, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.69, score 0.01 and passed correlation filter<br/>DHL.DE: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter",
+    "Selection Drivers": "IFX.DE: trend slope 0.02, stability R2 0.78, score 0.01 and passed correlation filter<br/>ENR.DE: trend slope 0.01, stability R2 0.78, score 0.01 and passed correlation filter<br/>RWE.DE: trend slope 0.01, stability R2 0.87, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.69, score 0.01 and passed correlation filter<br/>DHL.DE: trend slope 0.01, stability R2 0.85, score 0.01 and passed correlation filter",
     "Profit_Contributors": [
       {
         "Ticker": "ENR.DE",
-        "Contribution": 0.6877516088552418
+        "Contribution": 0.7134761526505562
       },
       {
         "Ticker": "RHM.DE",
-        "Contribution": 0.37847515525239595
-      },
-      {
-        "Ticker": "DHL.DE",
-        "Contribution": 0.16515637415927484
-      },
-      {
-        "Ticker": "RWE.DE",
-        "Contribution": 0.14195577472042853
+        "Contribution": 0.37847510924261396
       },
       {
         "Ticker": "BAYN.DE",
-        "Contribution": 0.1372647278780505
+        "Contribution": 0.15167386276708839
+      },
+      {
+        "Ticker": "DHL.DE",
+        "Contribution": 0.14312799045136518
+      },
+      {
+        "Ticker": "RWE.DE",
+        "Contribution": 0.14159357161609226
       },
       {
         "Ticker": "HEI.DE",
-        "Contribution": 0.13394295255167218
+        "Contribution": 0.1339429287983675
       },
       {
         "Ticker": "MUV2.DE",
-        "Contribution": 0.097158743699361
+        "Contribution": 0.09715878909480416
       },
       {
         "Ticker": "SAP.DE",
-        "Contribution": 0.07682382171849479
+        "Contribution": 0.07682382015551537
       },
       {
         "Ticker": "CBK.DE",
-        "Contribution": 0.052334013257323425
+        "Contribution": 0.05233401242316936
       },
       {
         "Ticker": "ZAL.DE",
-        "Contribution": 0.025659835930341636
+        "Contribution": 0.02565983635357884
       },
       {
         "Ticker": "BAS.DE",
-        "Contribution": 0.024851980022793815
+        "Contribution": 0.024851979626677054
       },
       {
         "Ticker": "DBK.DE",
-        "Contribution": 0.016148345790819113
+        "Contribution": 0.016148345040368384
       },
       {
         "Ticker": "VNA.DE",
-        "Contribution": 0.01465162944519982
+        "Contribution": 0.014651629311320108
       },
       {
         "Ticker": "EOAN.DE",
-        "Contribution": 0.0038856255351380504
+        "Contribution": 0.00388562553095739
       },
       {
         "Ticker": "SIE.DE",
@@ -186,35 +186,35 @@
       },
       {
         "Ticker": "DTE.DE",
-        "Contribution": -0.0021140341235862635
+        "Contribution": -0.0021140337400302883
       },
       {
         "Ticker": "DB1.DE",
-        "Contribution": -0.004823210653339365
+        "Contribution": -0.00482321057503339
       },
       {
         "Ticker": "FRE.DE",
-        "Contribution": -0.007021903077335884
+        "Contribution": -0.007021902649635994
       },
       {
         "Ticker": "ADS.DE",
-        "Contribution": -0.018475669848693248
+        "Contribution": -0.01847567157097789
       },
       {
         "Ticker": "MTX.DE",
-        "Contribution": -0.026796125413057703
+        "Contribution": -0.026796125280716156
       },
       {
         "Ticker": "AIR.DE",
-        "Contribution": -0.0720146102153624
+        "Contribution": -0.07201460906751847
       },
       {
         "Ticker": "CON.DE",
-        "Contribution": -0.07675463317993186
+        "Contribution": -0.07675463195653649
       },
       {
         "Ticker": "IFX.DE",
-        "Contribution": -0.15706688240804054
+        "Contribution": -0.1347073165254455
       }
     ],
     "Strategy_Returns": {
@@ -350,8 +350,9 @@
       "2026-07-03": 0.0567833803,
       "2026-07-10": -0.0488591412,
       "2026-07-17": -0.0346867385,
-      "2026-07-24": 0.007927712706792045,
-      "2026-07-31": -0.01775494984807069
+      "2026-07-24": 0.0079277127,
+      "2026-07-31": -0.0177549498,
+      "2026-08-07": 0.015742824733292027
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0205649255,
@@ -486,8 +487,9 @@
       "2026-07-03": 0.0526713557,
       "2026-07-10": -0.0465250783,
       "2026-07-17": -0.0337485377,
-      "2026-07-24": 0.009549661542137766,
-      "2026-07-31": -0.022638122881377787
+      "2026-07-24": 0.0095496615,
+      "2026-07-31": -0.0226381229,
+      "2026-08-07": 0.012504582022160537
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0065449007,
@@ -622,19 +624,20 @@
       "2026-07-03": 0.0413487635,
       "2026-07-10": -0.0193807532,
       "2026-07-17": -0.0079537676,
-      "2026-07-24": -0.013848389138418904,
-      "2026-07-31": 0.04207197439625587
+      "2026-07-24": -0.0138483891,
+      "2026-07-31": 0.0420719744,
+      "2026-08-07": 0.0273045980234794
     },
     "Status_History": {
       "dates": [
-        "06-12",
         "06-19",
         "06-26",
         "07-03",
         "07-10",
         "07-17",
         "07-24",
-        "07-31"
+        "07-31",
+        "08-07"
       ],
       "rows": [
         {
@@ -729,24 +732,11 @@
           ]
         },
         {
-          "Ticker": "BAS.DE",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "DTG.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -755,10 +745,10 @@
           ]
         },
         {
-          "Ticker": "MRK.DE",
+          "Ticker": "BAS.DE",
           "Statuses": [
-            "Rejected",
-            "Rejected",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -788,7 +778,20 @@
             "Rejected",
             "Rejected",
             "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MRK.DE",
+          "Statuses": [
             "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist"
           ]
@@ -829,7 +832,7 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected"
+            "Watchlist"
           ]
         },
         {
@@ -924,7 +927,7 @@
           ]
         },
         {
-          "Ticker": "AIR.DE",
+          "Ticker": "DBK.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -937,7 +940,7 @@
           ]
         },
         {
-          "Ticker": "DBK.DE",
+          "Ticker": "AIR.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1015,19 +1018,6 @@
           ]
         },
         {
-          "Ticker": "HEI.DE",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "FRE.DE",
           "Statuses": [
             "Rejected",
@@ -1041,7 +1031,7 @@
           ]
         },
         {
-          "Ticker": "VOW3.DE",
+          "Ticker": "HEI.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1067,7 +1057,7 @@
           ]
         },
         {
-          "Ticker": "PAH3.DE",
+          "Ticker": "VOW3.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1080,7 +1070,7 @@
           ]
         },
         {
-          "Ticker": "BMW.DE",
+          "Ticker": "PAH3.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1107,6 +1097,19 @@
         },
         {
           "Ticker": "VNA.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "BMW.DE",
           "Statuses": [
             "Rejected",
             "Rejected",

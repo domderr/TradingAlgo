@@ -1,8 +1,8 @@
 Market,Benchmark,Status,Report_File,Report_Path,Report_URL,Updated_At,Last_Hedge_Short,Last_Hedge_Score,Benchmark_Hedge_Short,Benchmark_Hedge_Ticker
-USA100,SPY,OK,Report_USA100.html,reports_html/USA100/Report_USA100.html,reports_html/USA100/Report_USA100.html,,0.07756640902195466,92.24335909780453,0.07756640902195466,SPY
-NASDAQ100,QQQ,OK,Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,,0.12744991919078164,87.25500808092184,0.12744991919078164,QQQ
-Europe50,EZU,OK,Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,,0.1035720289156511,89.64279710843489,0.1035720289156511,EZU
-Italy40,EWI,OK,Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,,0.11569629556354044,88.43037044364596,0.11569629556354044,EWI
-UK100,EWU,OK,Report_UK100.html,reports_html/UK100/Report_UK100.html,reports_html/UK100/Report_UK100.html,,0.08151166976202862,91.84883302379714,0.08151166976202862,EWU
-Germany40,EWG,OK,Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,,0.11854134991951004,88.145865008049,0.11854134991951004,EWG
-Australia50,EWA,OK,Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,,0.20956307272163655,79.04369272783634,0.20956307272163655,EWA
+USA100,SPY,OK,Report_USA100.html,reports_html/USA100/Report_USA100.html,reports_html/USA100/Report_USA100.html,,0.07634196291881745,92.36580370811825,0.07634196291881745,SPY
+NASDAQ100,QQQ,OK,Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,reports_html/NASDAQ100/Report_NASDAQ100.html,,0.12556811418927527,87.44318858107248,0.12556811418927527,QQQ
+Europe50,EZU,OK,Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,reports_html/Europe50/Report_Europe50.html,,0.10780325774154131,89.21967422584586,0.10780325774154131,EZU
+Italy40,EWI,OK,Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,reports_html/Italy40/Report_Italy40.html,,0.13951395685229817,86.04860431477019,0.13951395685229817,EWI
+UK100,EWU,OK,Report_UK100.html,reports_html/UK100/Report_UK100.html,reports_html/UK100/Report_UK100.html,,0.08420302811760749,91.57969718823925,0.08420302811760749,EWU
+Germany40,EWG,OK,Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,reports_html/Germany40/Report_Germany40.html,,0.12006015233807188,87.99398476619281,0.12006015233807188,EWG
+Australia50,EWA,OK,Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,reports_html/Australia50/Report_Australia50.html,,0.19760608123590517,80.23939187640948,0.19760608123590517,EWA

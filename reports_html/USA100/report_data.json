@@ -3,23 +3,23 @@
     "Market": "USA100",
     "Benchmark": "SPY",
     "Number of Tickers": 99,
-    "Strategy CAGR": 0.3639582351153692,
-    "Hedged CAGR": 0.3468259498393871,
+    "Strategy CAGR": 0.37981293568691554,
+    "Hedged CAGR": 0.36122838514352207,
     "Strategy MaxDD": -0.23576994770582338,
     "Hedged MaxDD": -0.22627977275945077,
-    "Strategy Sharpe Ratio": 1.2933167464794986,
-    "Hedged Sharpe Ratio": 1.2729314539319778,
-    "Bench Cagr": 0.213773198301352,
-    "Bench_MaxDD": -0.16877150389255402,
-    "Bench Sharpe": 1.4088455360776264,
-    "Information Ratio": 0.7582525984368338,
-    "Hedged Information Ratio": 0.68655665554893,
+    "Strategy Sharpe Ratio": 1.3395603435113952,
+    "Hedged Sharpe Ratio": 1.3170642826848558,
+    "Bench Cagr": 0.22830745140109698,
+    "Bench_MaxDD": -0.16877158852880125,
+    "Bench Sharpe": 1.4841526542938115,
+    "Information Ratio": 0.7586102069115326,
+    "Hedged Information Ratio": 0.6814322998214721,
     "PDF_Output": "",
     "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\USA100\\summary_USA100.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.07756640902195466,
+    "Benchmark Hedge Short": 0.07634196291881745,
     "Benchmark Hedge Ticker": "SPY",
-    "Hedge Portfolio Score": 92.24335909780453,
+    "Hedge Portfolio Score": 92.36580370811825,
     "Last Weekly Selection": [
       {
         "Ticker": "MU",
@@ -34,14 +34,14 @@
         "Industry": "-"
       },
       {
-        "Ticker": "FDX",
-        "Name": "FDX",
+        "Ticker": "GEV",
+        "Name": "GEV",
         "Sector": "-",
         "Industry": "-"
       },
       {
-        "Ticker": "GEV",
-        "Name": "GEV",
+        "Ticker": "FDX",
+        "Name": "FDX",
         "Sector": "-",
         "Industry": "-"
       },
@@ -54,115 +54,115 @@
     ],
     "Added Tickers": "-",
     "Removed Tickers": "-",
-    "Selection Drivers": "MU: trend slope 0.04, stability R2 0.95, score 0.04 and passed correlation filter<br/>CAT: trend slope 0.02, stability R2 0.94, score 0.02 and passed correlation filter<br/>FDX: trend slope 0.01, stability R2 0.91, score 0.01 and passed correlation filter<br/>GEV: trend slope 0.01, stability R2 0.85, score 0.01 and passed correlation filter<br/>CSCO: trend slope 0.01, stability R2 0.82, score 0.01 and passed correlation filter",
+    "Selection Drivers": "MU: trend slope 0.04, stability R2 0.95, score 0.04 and passed correlation filter<br/>CAT: trend slope 0.02, stability R2 0.93, score 0.02 and passed correlation filter<br/>GEV: trend slope 0.01, stability R2 0.86, score 0.01 and passed correlation filter<br/>FDX: trend slope 0.01, stability R2 0.90, score 0.01 and passed correlation filter<br/>CSCO: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter",
     "Profit_Contributors": [
       {
         "Ticker": "MU",
-        "Contribution": 0.8348081834223063
+        "Contribution": 0.8845317325711864
       },
       {
         "Ticker": "INTC",
-        "Contribution": 0.6568952872050527
+        "Contribution": 0.6568952923793034
       },
       {
         "Ticker": "PLTR",
-        "Contribution": 0.5515263092684248
+        "Contribution": 0.551526261330949
       },
       {
         "Ticker": "GEV",
-        "Contribution": 0.40512269305518384
+        "Contribution": 0.4051453784207151
       },
       {
         "Ticker": "NVDA",
-        "Contribution": 0.22162580280011657
-      },
-      {
-        "Ticker": "GE",
-        "Contribution": 0.08235129260648634
-      },
-      {
-        "Ticker": "AMD",
-        "Contribution": 0.07757031367244052
-      },
-      {
-        "Ticker": "LRCX",
-        "Contribution": 0.07641229028399688
+        "Contribution": 0.22162563878837457
       },
       {
         "Ticker": "CSCO",
-        "Contribution": 0.048066586355645084
+        "Contribution": 0.08325828479658705
+      },
+      {
+        "Ticker": "GE",
+        "Contribution": 0.08235137257272215
+      },
+      {
+        "Ticker": "AMD",
+        "Contribution": 0.0775703205471713
+      },
+      {
+        "Ticker": "LRCX",
+        "Contribution": 0.07641228757851568
       },
       {
         "Ticker": "MMM",
-        "Contribution": 0.044801351491368484
+        "Contribution": 0.04480132936893317
       },
       {
         "Ticker": "LLY",
-        "Contribution": 0.04445029355651155
-      },
-      {
-        "Ticker": "META",
-        "Contribution": 0.03942994771435787
-      },
-      {
-        "Ticker": "AXP",
-        "Contribution": 0.03184854799661515
-      },
-      {
-        "Ticker": "COST",
-        "Contribution": 0.03157508449533302
-      },
-      {
-        "Ticker": "ISRG",
-        "Contribution": 0.02833436338436082
-      },
-      {
-        "Ticker": "MO",
-        "Contribution": 0.025082183242548392
-      },
-      {
-        "Ticker": "NOW",
-        "Contribution": 0.021425228299279148
+        "Contribution": 0.044450210744407206
       },
       {
         "Ticker": "CAT",
-        "Contribution": 0.014306147384218482
+        "Contribution": 0.039520043943653244
+      },
+      {
+        "Ticker": "META",
+        "Contribution": 0.03942989359060099
+      },
+      {
+        "Ticker": "AXP",
+        "Contribution": 0.031848590795517454
+      },
+      {
+        "Ticker": "COST",
+        "Contribution": 0.0315752067108864
+      },
+      {
+        "Ticker": "ISRG",
+        "Contribution": 0.028334361386913948
+      },
+      {
+        "Ticker": "MO",
+        "Contribution": 0.025082102221815922
+      },
+      {
+        "Ticker": "NOW",
+        "Contribution": 0.021425227342459906
       },
       {
         "Ticker": "NFLX",
-        "Contribution": 0.014055845301963549
+        "Contribution": 0.014055839255672956
       },
       {
         "Ticker": "V",
-        "Contribution": 0.012759843005895836
+        "Contribution": 0.01275984176869663
       },
       {
         "Ticker": "PM",
-        "Contribution": 0.011992860268858133
+        "Contribution": 0.011992906287674392
       },
       {
         "Ticker": "KMI",
-        "Contribution": 0.011242495039011011
+        "Contribution": 0.011242522788068147
       },
       {
         "Ticker": "GM",
-        "Contribution": 0.010254595432560267
+        "Contribution": 0.010254595252755478
       },
       {
         "Ticker": "JNJ",
-        "Contribution": 0.007393613907031336
+        "Contribution": 0.0073936137773912
       },
       {
         "Ticker": "CVS",
-        "Contribution": 0.004792767885328466
+        "Contribution": 0.004792723128128463
       },
       {
         "Ticker": "COF",
-        "Contribution": 0.004252378874536233
+        "Contribution": 0.004252437206427158
       },
       {
         "Ticker": "IBM",
-        "Contribution": 0.00010304463053439211
+        "Contribution": 0.00010296123290436804
       },
       {
         "Ticker": "BLK",
@@ -389,68 +389,68 @@
         "Contribution": 0.0
       },
       {
+        "Ticker": "FDX",
+        "Contribution": -0.0007020682818790203
+      },
+      {
         "Ticker": "CRM",
-        "Contribution": -0.000710572096914666
+        "Contribution": -0.0007106657346492855
       },
       {
         "Ticker": "NEE",
-        "Contribution": -0.0024491322860659415
+        "Contribution": -0.0024492272217832515
       },
       {
         "Ticker": "GOOG",
-        "Contribution": -0.0028930558832306434
+        "Contribution": -0.0028931051678404117
       },
       {
         "Ticker": "WMT",
-        "Contribution": -0.0041053329885762
+        "Contribution": -0.004105296109229547
       },
       {
         "Ticker": "ADBE",
-        "Contribution": -0.008389478022890683
+        "Contribution": -0.008389476315676396
       },
       {
         "Ticker": "T",
-        "Contribution": -0.012512331400992102
+        "Contribution": -0.01251226817596742
       },
       {
         "Ticker": "ALL",
-        "Contribution": -0.01690396140739507
+        "Contribution": -0.016903932367467005
       },
       {
         "Ticker": "SLB",
-        "Contribution": -0.020509973353189548
+        "Contribution": -0.02050997299356626
       },
       {
         "Ticker": "C",
-        "Contribution": -0.024071474475803618
+        "Contribution": -0.0240714159481428
       },
       {
         "Ticker": "GILD",
-        "Contribution": -0.02579764058892605
-      },
-      {
-        "Ticker": "FDX",
-        "Contribution": -0.027967517327969732
+        "Contribution": -0.025797642327505255
       },
       {
         "Ticker": "BNY",
-        "Contribution": -0.03223601616227213
+        "Contribution": -0.03223580107199995
       },
       {
         "Ticker": "DE",
-        "Contribution": -0.034009151534176246
+        "Contribution": -0.034009052502059156
       },
       {
         "Ticker": "UBER",
-        "Contribution": -0.05656193739070017
+        "Contribution": -0.05656193378489202
       },
       {
         "Ticker": "TSLA",
-        "Contribution": -0.10091368549638474
+        "Contribution": -0.10091366778694516
       },
       {
         "Ticker": "GOOGL",
-        "Contribution": -0.10705199002815927
+        "Contribution": -0.10705198815110231
       }
     ],
     "Strategy_Returns": {
@@ -586,8 +586,9 @@
       "2026-07-03": -0.03257512,
       "2026-07-10": 0.009707453,
       "2026-07-17": -0.0523080939,
-      "2026-07-24": 0.02287581159271368,
-      "2026-07-31": -0.04433324088739932
+      "2026-07-24": 0.0228758116,
+      "2026-07-31": -0.0443332409,
+      "2026-08-07": 0.03662764744719271
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0419194795,
@@ -722,8 +723,9 @@
       "2026-07-03": -0.0342353847,
       "2026-07-10": 0.0086272612,
       "2026-07-17": -0.0510723419,
-      "2026-07-24": 0.02345308854296846,
-      "2026-07-31": -0.04517293849084936
+      "2026-07-24": 0.0234530885,
+      "2026-07-31": -0.0451729385,
+      "2026-08-07": 0.03390288408290454
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0187211511,
@@ -858,19 +860,20 @@
       "2026-07-03": 0.021660159,
       "2026-07-10": 0.0136550156,
       "2026-07-17": -0.0154447765,
-      "2026-07-24": -0.006874820732985176,
-      "2026-07-31": 0.010961845778870494
+      "2026-07-24": -0.0068748207,
+      "2026-07-31": 0.0109618458,
+      "2026-08-07": 0.035112350829374694
     },
     "Status_History": {
       "dates": [
-        "06-12",
         "06-19",
         "06-26",
         "07-03",
         "07-10",
         "07-17",
         "07-24",
-        "07-31"
+        "07-31",
+        "08-07"
       ],
       "rows": [
         {
@@ -952,6 +955,19 @@
           ]
         },
         {
+          "Ticker": "GEV",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
           "Ticker": "FDX",
           "Statuses": [
             "Selected",
@@ -965,26 +981,13 @@
           ]
         },
         {
-          "Ticker": "GEV",
-          "Statuses": [
-            "Selected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Selected"
-          ]
-        },
-        {
           "Ticker": "CSCO",
           "Statuses": [
             "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
+            "Selected",
             "Selected",
             "Selected",
             "Selected"
@@ -1019,11 +1022,11 @@
         {
           "Ticker": "SLB",
           "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
             "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
             "Watchlist",
             "Watchlist",
             "Watchlist"
@@ -1031,32 +1034,6 @@
         },
         {
           "Ticker": "BNY",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "GOOGL",
-          "Statuses": [
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "GOOG",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1082,7 +1059,33 @@
           ]
         },
         {
+          "Ticker": "GOOGL",
+          "Statuses": [
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
           "Ticker": "C",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "GOOG",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1121,19 +1124,6 @@
           ]
         },
         {
-          "Ticker": "GS",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "BMY",
           "Statuses": [
             "Watchlist",
@@ -1147,20 +1137,7 @@
           ]
         },
         {
-          "Ticker": "LLY",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "SPG",
+          "Ticker": "GS",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1186,46 +1163,33 @@
           ]
         },
         {
+          "Ticker": "SPG",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "LLY",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
           "Ticker": "USB",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "CVS",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "COP",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "KMI",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1251,7 +1215,7 @@
           ]
         },
         {
-          "Ticker": "UPS",
+          "Ticker": "DE",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1264,7 +1228,20 @@
           ]
         },
         {
-          "Ticker": "DE",
+          "Ticker": "COP",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CVS",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1290,7 +1267,33 @@
           ]
         },
         {
-          "Ticker": "GM",
+          "Ticker": "KMI",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "UPS",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "AMGN",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1316,7 +1319,7 @@
           ]
         },
         {
-          "Ticker": "AMGN",
+          "Ticker": "GM",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1368,7 +1371,7 @@
           ]
         },
         {
-          "Ticker": "WMT",
+          "Ticker": "ALL",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1386,19 +1389,6 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "ALL",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -1409,7 +1399,7 @@
         {
           "Ticker": "HON",
           "Statuses": [
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -1421,6 +1411,58 @@
         },
         {
           "Ticker": "GE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "CL",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "VZ",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "WMT",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "NVDA",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1446,46 +1488,7 @@
           ]
         },
         {
-          "Ticker": "VZ",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "CL",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "GILD",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "NVDA",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -1516,19 +1519,6 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "PFE",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -1545,7 +1535,20 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "PFE",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
             "Watchlist"
           ]
         },
@@ -1569,27 +1572,14 @@
             "Rejected",
             "Rejected",
             "Rejected",
+            "Watchlist",
+            "Watchlist",
             "Rejected",
-            "Watchlist",
-            "Watchlist",
             "Rejected"
           ]
         },
         {
           "Ticker": "JPM",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "ABBV",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1615,7 +1605,7 @@
           ]
         },
         {
-          "Ticker": "SO",
+          "Ticker": "ABBV",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1628,7 +1618,7 @@
           ]
         },
         {
-          "Ticker": "QCOM",
+          "Ticker": "SO",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1654,33 +1644,20 @@
           ]
         },
         {
+          "Ticker": "QCOM",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "MDLZ",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "PEP",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "BA",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1706,10 +1683,23 @@
           ]
         },
         {
-          "Ticker": "WFC",
+          "Ticker": "BA",
           "Statuses": [
             "Rejected",
             "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PEP",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -1732,33 +1722,7 @@
           ]
         },
         {
-          "Ticker": "AXP",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "PG",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "TSLA",
+          "Ticker": "WFC",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1784,7 +1748,59 @@
           ]
         },
         {
+          "Ticker": "PG",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "TMO",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "AXP",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "TSLA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "BLK",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1811,19 +1827,6 @@
         },
         {
           "Ticker": "AMT",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "BLK",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1914,6 +1917,19 @@
           ]
         },
         {
+          "Ticker": "MA",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "MDT",
           "Statuses": [
             "Rejected",
@@ -1928,19 +1944,6 @@
         },
         {
           "Ticker": "ISRG",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "MA",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -2057,7 +2060,7 @@
           ]
         },
         {
-          "Ticker": "ORCL",
+          "Ticker": "CRM",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -2070,7 +2073,7 @@
           ]
         },
         {
-          "Ticker": "CRM",
+          "Ticker": "ORCL",
           "Statuses": [
             "Rejected",
             "Rejected",
