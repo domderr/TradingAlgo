@@ -1,6 +1,6 @@
 {
   "USA100": {
-    "week": "24 Jul 2026",
+    "week": "31 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -34,32 +34,16 @@
       }
     ],
     "changes": {
-      "in": [
-        {
-          "ticker": "GEV",
-          "name": "GEV"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "GOOGL",
-          "name": "GOOGL"
-        }
-      ]
+      "in": [],
+      "out": []
     }
   },
   "NASDAQ100": {
-    "week": "24 Jul 2026",
+    "week": "31 Jul 2026",
     "positions": [
       {
         "ticker": "MU",
         "name": "MU",
-        "sector": "-",
-        "industry": "-"
-      },
-      {
-        "ticker": "TER",
-        "name": "TER",
         "sector": "-",
         "industry": "-"
       },
@@ -80,25 +64,31 @@
         "name": "ROST",
         "sector": "-",
         "industry": "-"
+      },
+      {
+        "ticker": "CSCO",
+        "name": "CSCO",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "ROST",
-          "name": "ROST"
+          "ticker": "CSCO",
+          "name": "CSCO"
         }
       ],
       "out": [
         {
-          "ticker": "RKLB",
-          "name": "RKLB"
+          "ticker": "TER",
+          "name": "TER"
         }
       ]
     }
   },
   "Europe50": {
-    "week": "24 Jul 2026",
+    "week": "31 Jul 2026",
     "positions": [
       {
         "ticker": "NOKIA.HE",
@@ -137,7 +127,7 @@
     }
   },
   "Italy40": {
-    "week": "24 Jul 2026",
+    "week": "31 Jul 2026",
     "positions": [
       {
         "ticker": "STMMI.MI",
@@ -158,25 +148,35 @@
         "industry": "-"
       },
       {
-        "ticker": "BPE.MI",
-        "name": "BPE.MI",
+        "ticker": "ENI.MI",
+        "name": "ENI.MI",
         "sector": "-",
         "industry": "-"
       },
       {
-        "ticker": "IG.MI",
-        "name": "IG.MI",
+        "ticker": "BPE.MI",
+        "name": "BPE.MI",
         "sector": "-",
         "industry": "-"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "ENI.MI",
+          "name": "ENI.MI"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "IG.MI",
+          "name": "IG.MI"
+        }
+      ]
     }
   },
   "UK100": {
-    "week": "24 Jul 2026",
+    "week": "31 Jul 2026",
     "positions": [
       {
         "ticker": "GLEN.L",
@@ -191,14 +191,8 @@
         "industry": "-"
       },
       {
-        "ticker": "ANTO.L",
-        "name": "ANTO.L",
-        "sector": "-",
-        "industry": "-"
-      },
-      {
-        "ticker": "IGG.L",
-        "name": "IGG.L",
+        "ticker": "PCT.L",
+        "name": "PCT.L",
         "sector": "-",
         "industry": "-"
       },
@@ -207,15 +201,31 @@
         "name": "SDR.L",
         "sector": "-",
         "industry": "-"
+      },
+      {
+        "ticker": "IGG.L",
+        "name": "IGG.L",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "PCT.L",
+          "name": "PCT.L"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "ANTO.L",
+          "name": "ANTO.L"
+        }
+      ]
     }
   },
   "Germany40": {
-    "week": "24 Jul 2026",
+    "week": "31 Jul 2026",
     "positions": [
       {
         "ticker": "IFX.DE",
@@ -254,17 +264,11 @@
     }
   },
   "Australia50": {
-    "week": "24 Jul 2026",
+    "week": "31 Jul 2026",
     "positions": [
       {
-        "ticker": "RIO.AX",
-        "name": "RIO.AX",
-        "sector": "-",
-        "industry": "-"
-      },
-      {
-        "ticker": "S32.AX",
-        "name": "S32.AX",
+        "ticker": "BHP.AX",
+        "name": "BHP.AX",
         "sector": "-",
         "industry": "-"
       },
@@ -285,19 +289,33 @@
         "name": "QBE.AX",
         "sector": "-",
         "industry": "-"
+      },
+      {
+        "ticker": "MQG.AX",
+        "name": "MQG.AX",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "S32.AX",
-          "name": "S32.AX"
+          "ticker": "BHP.AX",
+          "name": "BHP.AX"
+        },
+        {
+          "ticker": "MQG.AX",
+          "name": "MQG.AX"
         }
       ],
       "out": [
         {
-          "ticker": "LYC.AX",
-          "name": "LYC.AX"
+          "ticker": "RIO.AX",
+          "name": "RIO.AX"
+        },
+        {
+          "ticker": "S32.AX",
+          "name": "S32.AX"
         }
       ]
     }
