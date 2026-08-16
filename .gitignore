@@ -1,8 +1,18 @@
-# Dati personali degli abbonati: mai versionati.
-# Subscriptions.xlsx contiene nome, cognome, email e password in chiaro.
-# Resta solo in locale; sul sito va pubblicato unicamente il derivato
-# assets/subscriptions.json, che contiene i soli hash.
-mosaic_dev/Subscriptions.xlsx
+# Rete di sicurezza: il backend vive in TradingAlgo-mosaic (privato).
+# Se uno di questi elementi ricompare qui, e' un errore di copia e non deve
+# finire in un commit: questo repository e' pubblico.
+mosaic_dev/
+tools/
+scripts/
+DJ_complete.csv
+DJ_components_asof.csv
+Rebalance Audit*.xlsx
+reports/*.xlsx
+
+# Weekly Rebalance Tool: contiene la logica di pesi e allocazioni e resta nel
+# repository privato. admin-tool.ps1 ne piazza una copia temporanea qui per
+# usarlo in locale, perche' carica reports/*.json con percorsi relativi.
+admin-rebalance-tool.html
 
 # Generated/local runtime artifacts.
 __pycache__/
@@ -11,15 +21,6 @@ __pycache__/
 *.pdf
 *.gsheet
 ~$*
-
-# Mosaic generated data and run archives.
-mosaic_dev/output/
-mosaic_dev/market_data/
-mosaic_dev/runs/
-mosaic_dev/TestStorico/
-mosaic_dev/To do list.backup*.xlsx
-mosaic_dev/*.out.log
-mosaic_dev/*.full.out.log
 
 # Old visual mockups kept out of the active pipeline.
 mockup-2026-06-19/

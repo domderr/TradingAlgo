@@ -1,16 +1,16 @@
 # Configurazione build GitHub Pages.
 #
-# Scopo principale: impedire che il know-how e i dati operativi finiscano
-# pubblicati su tradingalgo.it. Tutto ciò che è elencato in `exclude` resta
-# nel repository ma NON viene copiato nel sito generato, quindi non è
-# raggiungibile via URL pubblico.
+# Il backend (metodologia, pipeline, generatore) vive nel repository privato
+# TradingAlgo-mosaic e non e' piu' presente qui. Le esclusioni sotto restano
+# come seconda barriera: se un file del backend ricomparisse per errore in
+# questo albero, non verrebbe comunque pubblicato su tradingalgo.it.
 #
 # NON aggiungere qui `reports_html/`: quella cartella deve restare pubblicata
-# perché è ciò che l'area riservata mostra agli abbonati. La sua protezione
+# perche' e' cio' che l'area riservata mostra agli abbonati. La sua protezione
 # richiede un host con autenticazione lato server (vedi SECURITY_REMEDIATION.md).
 
 exclude:
-  # Default Jekyll: vanno ripetuti, perché `exclude` sostituisce la lista di default.
+  # Default Jekyll: vanno ripetuti, perche' `exclude` sostituisce la lista di default.
   - Gemfile
   - Gemfile.lock
   - node_modules
@@ -19,20 +19,13 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-  # Metodologia, pipeline e strumenti di elaborazione.
+  # Backend: non deve mai essere pubblicato, nemmeno se ricompare per sbaglio.
   - mosaic_dev/
   - tools/
   - scripts/
-
-  # Dati sorgente e file di lavoro non usati dal sito a runtime.
+  - admin-rebalance-tool.html
   - DJ_complete.csv
   - DJ_components_asof.csv
-  - Rebalance Audit.xlsx
-  - Rebalance Audit.backup-before-corrections.xlsx
-  - reports/Rebalance_Audit_DJ30_30tickers_trial.xlsx
-  - reports/Rebalance_Audit_DJ30_real.xlsx
-  - reports/Rebalance_Audit_Italy30_trial.xlsx
-  - reports/rebalance_audit_simulated.xlsx
   - reports/reports_index.csv
 
   # Documentazione interna.
@@ -40,7 +33,9 @@ exclude:
   - ACCESS_ANALYTICS.md
   - SECURITY_REMEDIATION.md
 
-  # Pattern di sicurezza: qualsiasi file di questi tipi non va mai pubblicato.
+  # Pattern di sicurezza: questi tipi di file non vanno mai pubblicati.
+  # I glob non attraversano le sottocartelle, quindi i percorsi che contano
+  # sono comunque elencati per esteso qui sopra.
   - "*.py"
   - "*.ipynb"
   - "*.xlsx"

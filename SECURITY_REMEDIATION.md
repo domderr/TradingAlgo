@@ -11,7 +11,7 @@ Questo file non viene pubblicato sul sito (escluso in `_config.yml`).
 
 | # | Problema | Dove |
 |---|---|---|
-| 1 | Autenticazione area riservata **interamente lato client** | `reserved-area.html:1288-1380` |
+| 1 | Autenticazione area riservata **interamente lato client** | `reserved-area.html` |
 | 2 | 487 URL di report a pagamento **dichiarati nel sitemap** | `sitemap.xml` |
 | 3 | Metodologia, pipeline e notebook nel repo e serviti dal sito | `mosaic_dev/`, `tools/` |
 | 4 | Dati abbonati con **password in chiaro** | `mosaic_dev/Subscriptions.xlsx` |
@@ -36,60 +36,83 @@ Il controllo accessi sui siti Pages esiste solo su GitHub Enterprise Cloud.
 
 ---
 
-## 2. Cosa è già stato fatto (commit su questo branch)
+## 2. Cosa è già stato fatto
 
-- **`_config.yml`** (nuovo) — esclude dalla build `mosaic_dev/`, `tools/`,
-  `scripts/`, i file `.py`/`.ipynb`/`.xlsx` e i CSV sorgente. Da qui in poi
-  la metodologia non esce più dal sito, nemmeno a repo pubblico.
-  Restano pubblicati i file che il sito carica a runtime: `haircuts.csv`,
-  `reports/*.json`, `assets/subscriptions.json`.
-- **`sitemap.xml`** — rimossi 488 URL (487 report + admin tool). Da 515 a 27,
-  che sono le sole pagine vetrina.
-- **490 file in `reports_html/` + `admin-rebalance-tool.html`** — aggiunto
+### 2.1 Separazione backend / frontend
+
+Il backend è stato spostato in **`domderr/TradingAlgo-mosaic`** (privato),
+con la sua storia: 68 commit, 41 file.
+
+| `TradingAlgo` — pubblico | `TradingAlgo-mosaic` — privato |
+|---|---|
+| pagine HTML, `assets/`, CNAME | `mosaic_dev/` (notebook, pipeline, Tickers.xlsx) |
+| `reports_html/` (output generato) | `tools/build_mosaic_html_report.py` |
+| `reports/*.json`, `haircuts.csv` | `scripts/` |
+| `sitemap.xml`, `robots.txt`, `_config.yml` | `admin-rebalance-tool.html`, audit `.xlsx`, `DJ_*.csv` |
+
+Il collegamento fra i due avviene tramite la variabile `MOSAIC_SITE_DIR`,
+che punta al checkout locale del sito. Senza la variabile gli script
+ricadono sul comportamento precedente, quindi un vecchio checkout unico
+continua a funzionare. Flusso operativo: `README.md` del repo privato.
+
+### 2.2 Interventi sul repository pubblico
+
+- **`_config.yml`** (nuovo) — esclude dalla build i percorsi del backend.
+  Ora è una seconda barriera, dato che quei file non sono più qui.
+- **`sitemap.xml`** — rimossi 488 URL (487 report + admin tool), da 515 a 27
+  voci, che sono le sole pagine vetrina.
+- **491 pagine** in `reports_html/` e l'admin tool — aggiunto
   `<meta name="robots" content="noindex, nofollow">`.
-- **`tools/build_mosaic_html_report.py`** — i 3 template emettono ora il
+- **`tools/build_mosaic_html_report.py`** — i 3 template emettono il
   `noindex`, così la rigenerazione settimanale non annulla la modifica.
-- **`robots.txt`** — `Disallow` su `/mosaic_dev/`, `/scripts/`, `/tools/`.
-  Volutamente **nessun** `Disallow` su `/reports_html/`: Google deve poter
-  scaricare quelle pagine per leggerne il `noindex`. Bloccarle ora
-  lascerebbe le URL già indicizzate nei risultati.
-- **`.gitignore` + untrack** — `mosaic_dev/Subscriptions.xlsx` non è più
-  versionato (resta in locale).
+  *(Il file ora vive nel repo privato.)*
+- **`robots.txt`** — `Disallow` sulle cartelle sorgente. Volutamente
+  **nessun** `Disallow` su `/reports_html/`: Google deve poter scaricare
+  quelle pagine per leggerne il `noindex`. Bloccarle ora lascerebbe nei
+  risultati le URL già indicizzate.
+- **`.gitignore`** — rete di sicurezza: se un file del backend ricompare in
+  questo albero, non entra in un commit.
 
 ---
 
 ## 3. Cosa resta da fare — richiede te
 
-### 3.1 Prima di rimettere pubblico il repo (bloccante)
+### 3.1 Purga della history (bloccante, prima di tornare pubblici)
 
-`Subscriptions.xlsx` è ancora nella **history** di git dal 2 luglio.
-Rimuoverlo dal tracking non lo toglie dai commit passati: a repo pubblico
-sarebbe di nuovo scaricabile. Va purgato prima del switch.
+Rimuovere i file dall'albero non li toglie dai commit passati: a repository
+pubblico sarebbero di nuovo scaricabili. Da eseguire **prima** del passaggio
+a Public.
 
 ```bash
 pip install git-filter-repo
 
 git clone --mirror https://github.com/domderr/TradingAlgo.git ta-mirror
 cd ta-mirror
-git filter-repo --path "mosaic_dev/Subscriptions.xlsx" --invert-paths
+git filter-repo \
+  --path mosaic_dev/ \
+  --path tools/ \
+  --path scripts/ \
+  --path admin-rebalance-tool.html \
+  --path DJ_complete.csv \
+  --path DJ_components_asof.csv \
+  --path "Rebalance Audit.xlsx" \
+  --path "Rebalance Audit.backup-before-corrections.xlsx" \
+  --path-glob "reports/*.xlsx" \
+  --invert-paths
 git push --force
 ```
 
-Dopo il force-push: ogni clone locale esistente va ricreato da zero, perché
-gli SHA cambiano.
-
-> Valuta se purgare nella stessa passata anche `mosaic_dev/` e `tools/`
-> (`--path mosaic_dev/ --path tools/ --invert-paths`), spostandoli in un
-> repository privato dedicato. È l'unico modo per togliere la metodologia
-> dalla history prima di tornare pubblici.
+Tutto ciò che viene rimosso è già conservato in `TradingAlgo-mosaic`, quindi
+non si perde nulla. Dopo il force-push ogni clone locale del repo pubblico va
+ricreato da zero, perché gli SHA cambiano.
 
 ### 3.2 Rotazione credenziali (bloccante, indipendente dal resto)
 
-Le password degli abbonati sono state in chiaro in un repo pubblico per
+Le password degli abbonati sono state in chiaro in un repository pubblico per
 sei settimane. Vanno considerate compromesse:
 
-1. genera nuove password in `Subscriptions.xlsx`
-2. esegui `python update_subscriptions.py` da `mosaic_dev`
+1. genera nuove password in `Subscriptions.xlsx` (ora nel repo privato)
+2. `python update_subscriptions.py` da `mosaic_dev`
 3. verifica che `assets/subscriptions.json` contenga solo `password_hash`
 4. comunica il cambio agli abbonati
 
@@ -98,18 +121,15 @@ Valuta con un consulente se ricorrono gli estremi di notifica al Garante
 
 ### 3.3 Rimettere il sito online
 
-Da `Settings` del repository:
+Da `Settings` del repository **pubblico**:
 
 1. `Settings → General → Danger Zone → Change visibility` → **Public**
-   *(in alternativa, per restare privati: GitHub Pro, ~4 $/mese, che abilita
-   Pages da repo privati — ma il sito pubblicato resta comunque pubblico)*
 2. `Settings → Pages` → Source: branch `main`, cartella `/ (root)`
 3. `Settings → Pages → Custom domain` → `tradingalgo.it`
    (il file `CNAME` è già corretto; il DNS punta già agli IP giusti)
 4. Attendi il certificato HTTPS, poi spunta **Enforce HTTPS**
 
-Perché le protezioni siano attive *prima* che il sito torni raggiungibile,
-questo branch va unito in `main` **prima** del passo 1.
+Il branch con le protezioni va unito in `main` **prima** del passo 1.
 
 ### 3.4 Deindicizzazione
 
@@ -123,10 +143,11 @@ In Google Search Console:
 
 ## 4. La protezione vera dei report
 
-Tutto quanto sopra riduce l'esposizione e ferma l'emorragia, ma **non rende
-i report inaccessibili**: chi conosce l'URL continua a leggerli. Per una
-protezione reale serve un host che esegua codice lato server e verifichi la
-sessione prima di servire il file.
+La separazione dei repository mette al sicuro la metodologia, ma **non rende
+i report inaccessibili**: chi conosce l'URL continua a leggerli, perché
+`reports_html/` deve restare pubblicato per funzionare. Per una protezione
+reale serve un host che esegua codice lato server e verifichi la sessione
+prima di servire il file.
 
 Opzione consigliata, incrementale e a costo quasi nullo:
 
