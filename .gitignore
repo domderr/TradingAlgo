@@ -1,3 +1,9 @@
+# Dati personali degli abbonati: mai versionati.
+# Subscriptions.xlsx contiene nome, cognome, email e password in chiaro.
+# Resta solo in locale; sul sito va pubblicato unicamente il derivato
+# assets/subscriptions.json, che contiene i soli hash.
+mosaic_dev/Subscriptions.xlsx
+
 # Generated/local runtime artifacts.
 __pycache__/
 *.pyc

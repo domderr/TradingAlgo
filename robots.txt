@@ -1,4 +1,19 @@
 User-agent: *
 Allow: /
 
+# Sorgenti della metodologia e strumenti interni: mai da scansionare.
+# (Sono già esclusi dalla build in _config.yml; questa è una seconda barriera.)
+Disallow: /mosaic_dev/
+Disallow: /scripts/
+Disallow: /tools/
+
+# NOTA su /reports_html/ e /admin-rebalance-tool.html
+# Volutamente NON messi in Disallow: quelle pagine portano un
+# <meta name="robots" content="noindex, nofollow">, e per rimuoverle
+# dall'indice Google deve poterle scaricare per leggere quel tag.
+# Un Disallow qui bloccherebbe la scansione e le URL già indicizzate
+# resterebbero nei risultati di ricerca.
+# Rimettere il Disallow solo dopo che Search Console conferma la
+# deindicizzazione completa.
+
 Sitemap: https://tradingalgo.it/sitemap.xml

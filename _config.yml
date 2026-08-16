@@ -1,0 +1,57 @@
+# Configurazione build GitHub Pages.
+#
+# Scopo principale: impedire che il know-how e i dati operativi finiscano
+# pubblicati su tradingalgo.it. Tutto ciò che è elencato in `exclude` resta
+# nel repository ma NON viene copiato nel sito generato, quindi non è
+# raggiungibile via URL pubblico.
+#
+# NON aggiungere qui `reports_html/`: quella cartella deve restare pubblicata
+# perché è ciò che l'area riservata mostra agli abbonati. La sua protezione
+# richiede un host con autenticazione lato server (vedi SECURITY_REMEDIATION.md).
+
+exclude:
+  # Default Jekyll: vanno ripetuti, perché `exclude` sostituisce la lista di default.
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+  # Metodologia, pipeline e strumenti di elaborazione.
+  - mosaic_dev/
+  - tools/
+  - scripts/
+
+  # Dati sorgente e file di lavoro non usati dal sito a runtime.
+  - DJ_complete.csv
+  - DJ_components_asof.csv
+  - Rebalance Audit.xlsx
+  - Rebalance Audit.backup-before-corrections.xlsx
+  - reports/Rebalance_Audit_DJ30_30tickers_trial.xlsx
+  - reports/Rebalance_Audit_DJ30_real.xlsx
+  - reports/Rebalance_Audit_Italy30_trial.xlsx
+  - reports/rebalance_audit_simulated.xlsx
+  - reports/reports_index.csv
+
+  # Documentazione interna.
+  - README.md
+  - ACCESS_ANALYTICS.md
+  - SECURITY_REMEDIATION.md
+
+  # Pattern di sicurezza: qualsiasi file di questi tipi non va mai pubblicato.
+  - "*.py"
+  - "*.ipynb"
+  - "*.xlsx"
+  - "*.xlsm"
+
+# File che il sito carica a runtime e che devono restare pubblicati:
+#   haircuts.csv                        (reserved-area.html)
+#   reports/latest_prices.json          (reserved-area.html)
+#   reports/positions.json              (reserved-area.html)
+#   reports/reports_index.json          (reserved-area.html)
+#   reports/market_scatter_history.json (explore-markets.html)
+#   assets/subscriptions.json           (reserved-area.html)
+include:
+  - haircuts.csv
