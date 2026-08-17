@@ -1,6 +1,6 @@
 {
   "USA100": {
-    "week": "7 Aug 2026",
+    "week": "14 Aug 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -39,7 +39,7 @@
     }
   },
   "NASDAQ100": {
-    "week": "7 Aug 2026",
+    "week": "14 Aug 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -73,22 +73,12 @@
       }
     ],
     "changes": {
-      "in": [
-        {
-          "ticker": "ON",
-          "name": "ON"
-        }
-      ],
-      "out": [
-        {
-          "ticker": "GFS",
-          "name": "GFS"
-        }
-      ]
+      "in": [],
+      "out": []
     }
   },
   "Europe50": {
-    "week": "7 Aug 2026",
+    "week": "14 Aug 2026",
     "positions": [
       {
         "ticker": "NOKIA.HE",
@@ -103,6 +93,12 @@
         "industry": "-"
       },
       {
+        "ticker": "IFX.DE",
+        "name": "IFX.DE",
+        "sector": "-",
+        "industry": "-"
+      },
+      {
         "ticker": "ENI.MI",
         "name": "ENI.MI",
         "sector": "-",
@@ -113,21 +109,25 @@
         "name": "ENGI.PA",
         "sector": "-",
         "industry": "-"
-      },
-      {
-        "ticker": "BAYN.DE",
-        "name": "BAYN.DE",
-        "sector": "-",
-        "industry": "-"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "IFX.DE",
+          "name": "IFX.DE"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "BAYN.DE",
+          "name": "BAYN.DE"
+        }
+      ]
     }
   },
   "Italy40": {
-    "week": "7 Aug 2026",
+    "week": "14 Aug 2026",
     "positions": [
       {
         "ticker": "STMMI.MI",
@@ -142,6 +142,12 @@
         "industry": "-"
       },
       {
+        "ticker": "PRY.MI",
+        "name": "PRY.MI",
+        "sector": "-",
+        "industry": "-"
+      },
+      {
         "ticker": "ENI.MI",
         "name": "ENI.MI",
         "sector": "-",
@@ -152,41 +158,35 @@
         "name": "BPE.MI",
         "sector": "-",
         "industry": "-"
-      },
-      {
-        "ticker": "PST.MI",
-        "name": "PST.MI",
-        "sector": "-",
-        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "PST.MI",
-          "name": "PST.MI"
+          "ticker": "PRY.MI",
+          "name": "PRY.MI"
         }
       ],
       "out": [
         {
-          "ticker": "PRY.MI",
-          "name": "PRY.MI"
+          "ticker": "PST.MI",
+          "name": "PST.MI"
         }
       ]
     }
   },
   "UK100": {
-    "week": "7 Aug 2026",
+    "week": "14 Aug 2026",
     "positions": [
       {
-        "ticker": "GLEN.L",
-        "name": "GLEN.L",
+        "ticker": "CCC.L",
+        "name": "CCC.L",
         "sector": "-",
         "industry": "-"
       },
       {
-        "ticker": "CCC.L",
-        "name": "CCC.L",
+        "ticker": "GLEN.L",
+        "name": "GLEN.L",
         "sector": "-",
         "industry": "-"
       },
@@ -203,8 +203,8 @@
         "industry": "-"
       },
       {
-        "ticker": "BEZ.L",
-        "name": "BEZ.L",
+        "ticker": "BGEO.L",
+        "name": "BGEO.L",
         "sector": "-",
         "industry": "-"
       }
@@ -212,20 +212,20 @@
     "changes": {
       "in": [
         {
-          "ticker": "BEZ.L",
-          "name": "BEZ.L"
+          "ticker": "BGEO.L",
+          "name": "BGEO.L"
         }
       ],
       "out": [
         {
-          "ticker": "IGG.L",
-          "name": "IGG.L"
+          "ticker": "BEZ.L",
+          "name": "BEZ.L"
         }
       ]
     }
   },
   "Germany40": {
-    "week": "7 Aug 2026",
+    "week": "14 Aug 2026",
     "positions": [
       {
         "ticker": "IFX.DE",
@@ -264,7 +264,7 @@
     }
   },
   "Australia50": {
-    "week": "7 Aug 2026",
+    "week": "14 Aug 2026",
     "positions": [
       {
         "ticker": "BHP.AX",

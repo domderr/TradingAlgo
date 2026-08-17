@@ -3,23 +3,23 @@
     "Market": "Italy40",
     "Benchmark": "EWI",
     "Number of Tickers": 40,
-    "Strategy CAGR": 0.41947978477333225,
-    "Hedged CAGR": 0.37350728052405535,
+    "Strategy CAGR": 0.4183809827978897,
+    "Hedged CAGR": 0.3728592750352171,
     "Strategy MaxDD": -0.1597194476921978,
     "Hedged MaxDD": -0.15926822552999798,
-    "Strategy Sharpe Ratio": 1.7277809901652361,
-    "Hedged Sharpe Ratio": 1.6592897795706003,
-    "Bench Cagr": 0.3223299277495504,
+    "Strategy Sharpe Ratio": 1.729680409796958,
+    "Hedged Sharpe Ratio": 1.6623107549004328,
+    "Bench Cagr": 0.3189764664733594,
     "Bench_MaxDD": -0.11564631112352342,
-    "Bench Sharpe": 1.606052425044144,
-    "Information Ratio": 0.45065390923764176,
-    "Hedged Information Ratio": 0.2381247139502807,
+    "Bench Sharpe": 1.5971152939325837,
+    "Information Ratio": 0.46188231810101243,
+    "Hedged Information Ratio": 0.2499021404074443,
     "PDF_Output": "",
-    "Summary_Chart": "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_summary_charts\\Italy40\\summary_Italy40.png",
+    "Summary_Chart": "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_summary_charts\\Italy40\\summary_Italy40.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.13951395685229817,
+    "Benchmark Hedge Short": 0.12208256083887659,
     "Benchmark Hedge Ticker": "EWI",
-    "Hedge Portfolio Score": 86.04860431477019,
+    "Hedge Portfolio Score": 87.79174391611234,
     "Last Weekly Selection": [
       {
         "Ticker": "STMMI.MI",
@@ -34,6 +34,12 @@
         "Industry": "-"
       },
       {
+        "Ticker": "PRY.MI",
+        "Name": "PRY.MI",
+        "Sector": "-",
+        "Industry": "-"
+      },
+      {
         "Ticker": "ENI.MI",
         "Name": "ENI.MI",
         "Sector": "-",
@@ -44,93 +50,87 @@
         "Name": "BPE.MI",
         "Sector": "-",
         "Industry": "-"
-      },
-      {
-        "Ticker": "PST.MI",
-        "Name": "PST.MI",
-        "Sector": "-",
-        "Industry": "-"
       }
     ],
-    "Added Tickers": "PST.MI - PST.MI",
-    "Removed Tickers": "PRY.MI - PRY.MI",
-    "Selection Drivers": "STMMI.MI: trend slope 0.02, stability R2 0.76, score 0.02 and passed correlation filter<br/>SPM.MI: trend slope 0.02, stability R2 0.88, score 0.02 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>BPE.MI: trend slope 0.01, stability R2 0.86, score 0.01 and passed correlation filter<br/>PST.MI: trend slope 0.01, stability R2 0.77, score 0.01 and passed correlation filter",
+    "Added Tickers": "PRY.MI - PRY.MI",
+    "Removed Tickers": "PST.MI - PST.MI",
+    "Selection Drivers": "STMMI.MI: trend slope 0.02, stability R2 0.76, score 0.02 and passed correlation filter<br/>SPM.MI: trend slope 0.02, stability R2 0.89, score 0.02 and passed correlation filter<br/>PRY.MI: trend slope 0.01, stability R2 0.81, score 0.01 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>BPE.MI: trend slope 0.01, stability R2 0.86, score 0.01 and passed correlation filter",
     "Profit_Contributors": [
       {
         "Ticker": "TIT.MI",
-        "Contribution": 0.4838455154829462
+        "Contribution": 0.48384545613968144
       },
       {
         "Ticker": "AVIO.MI",
-        "Contribution": 0.42422893804974515
+        "Contribution": 0.42422888357260435
       },
       {
         "Ticker": "FCT.MI",
-        "Contribution": 0.27950340708029253
+        "Contribution": 0.2795033735535954
       },
       {
         "Ticker": "UNI.MI",
-        "Contribution": 0.24850833883787454
+        "Contribution": 0.2485083134884204
       },
       {
         "Ticker": "BPE.MI",
-        "Contribution": 0.1878290543239914
+        "Contribution": 0.18058474247881348
       },
       {
         "Ticker": "PRY.MI",
-        "Contribution": 0.15770633694112296
+        "Contribution": 0.157706316909407
       },
       {
         "Ticker": "LDO.MI",
-        "Contribution": 0.1332147055118445
+        "Contribution": 0.13321458771977604
       },
       {
         "Ticker": "BMPS.MI",
-        "Contribution": 0.13116213895566403
+        "Contribution": 0.13116213153176032
       },
       {
         "Ticker": "BAMI.MI",
-        "Contribution": 0.11531570143171146
+        "Contribution": 0.11531568715256016
       },
       {
         "Ticker": "BZU.MI",
-        "Contribution": 0.077442762468383
+        "Contribution": 0.07744275765890962
       },
       {
         "Ticker": "IG.MI",
-        "Contribution": 0.05375210395735381
+        "Contribution": 0.05375209937827971
       },
       {
         "Ticker": "UCG.MI",
-        "Contribution": 0.03927552844797143
+        "Contribution": 0.039275477337366034
       },
       {
         "Ticker": "LTMC.MI",
-        "Contribution": 0.03541988723515586
+        "Contribution": 0.0354198868626736
       },
       {
         "Ticker": "PST.MI",
-        "Contribution": 0.026806534165013097
+        "Contribution": 0.029033653807423496
       },
       {
         "Ticker": "AZM.MI",
-        "Contribution": 0.017723715178765465
+        "Contribution": 0.017723712572314195
       },
       {
         "Ticker": "IVG.MI",
-        "Contribution": 0.014439246308747152
+        "Contribution": 0.014439244505211992
       },
       {
         "Ticker": "STLAM.MI",
-        "Contribution": 0.008621513888517566
+        "Contribution": 0.008621512625050913
       },
       {
         "Ticker": "A2A.MI",
-        "Contribution": 0.007273720936418426
+        "Contribution": 0.007273732101199398
       },
       {
         "Ticker": "RACE.MI",
-        "Contribution": 0.006642561642394407
+        "Contribution": 0.006642561274165772
       },
       {
         "Ticker": "AMP.MI",
@@ -181,40 +181,40 @@
         "Contribution": 0.0
       },
       {
+        "Ticker": "ENI.MI",
+        "Contribution": -0.002298465523209191
+      },
+      {
         "Ticker": "MB.MI",
-        "Contribution": -0.002493035868670589
+        "Contribution": -0.002493074549951486
       },
       {
         "Ticker": "ENEL.MI",
-        "Contribution": -0.0025544542289489517
+        "Contribution": -0.002554453550748347
       },
       {
         "Ticker": "FBK.MI",
-        "Contribution": -0.004343848763736695
-      },
-      {
-        "Ticker": "ENI.MI",
-        "Contribution": -0.013120981573890404
+        "Contribution": -0.004343848130439664
       },
       {
         "Ticker": "HER.MI",
-        "Contribution": -0.02243321929354688
+        "Contribution": -0.022433217446301997
       },
       {
         "Ticker": "SRG.MI",
-        "Contribution": -0.03720077142047903
-      },
-      {
-        "Ticker": "TEN.MI",
-        "Contribution": -0.043004926321342736
+        "Contribution": -0.03720076677391383
       },
       {
         "Ticker": "SPM.MI",
-        "Contribution": -0.0691315766073391
+        "Contribution": -0.039942448477789834
+      },
+      {
+        "Ticker": "TEN.MI",
+        "Contribution": -0.043004920949809136
       },
       {
         "Ticker": "STMMI.MI",
-        "Contribution": -0.15618629314558158
+        "Contribution": -0.17563229935689992
       }
     ],
     "Strategy_Returns": {
@@ -352,7 +352,8 @@
       "2026-07-17": -0.0344558555,
       "2026-07-24": -0.0121828617,
       "2026-07-31": -0.0499116538,
-      "2026-08-07": 0.03820995263819471
+      "2026-08-07": 0.0382099526,
+      "2026-08-14": 0.004722148023245776
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0195632812,
@@ -489,7 +490,8 @@
       "2026-07-17": -0.0337890352,
       "2026-07-24": -0.0111115644,
       "2026-07-31": -0.0529992605,
-      "2026-08-07": 0.03489930832758459
+      "2026-08-07": 0.0348993083,
+      "2026-08-14": 0.004880894055453666
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0083307724,
@@ -626,18 +628,19 @@
       "2026-07-17": -0.0054464735,
       "2026-07-24": -0.0089611204,
       "2026-07-31": 0.0242766728,
-      "2026-08-07": 0.028409091612805693
+      "2026-08-07": 0.0284090916,
+      "2026-08-14": -0.0012627942902018185
     },
     "Status_History": {
       "dates": [
-        "06-19",
         "06-26",
         "07-03",
         "07-10",
         "07-17",
         "07-24",
         "07-31",
-        "08-07"
+        "08-07",
+        "08-14"
       ],
       "rows": [
         {
@@ -667,10 +670,10 @@
           ]
         },
         {
-          "Ticker": "TEN.MI",
+          "Ticker": "TIT.MI",
           "Statuses": [
-            "Watchlist",
-            "Watchlist",
+            "Selected",
+            "Selected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -680,11 +683,11 @@
           ]
         },
         {
-          "Ticker": "TIT.MI",
+          "Ticker": "TEN.MI",
           "Statuses": [
-            "Selected",
-            "Selected",
-            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -701,8 +704,8 @@
             "Selected",
             "Selected",
             "Selected",
-            "Selected",
-            "Watchlist"
+            "Watchlist",
+            "Selected"
           ]
         },
         {
@@ -713,7 +716,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
+            "Selected",
             "Selected",
             "Selected"
           ]
@@ -721,9 +724,9 @@
         {
           "Ticker": "BPE.MI",
           "Statuses": [
+            "Watchlist",
+            "Watchlist",
             "Selected",
-            "Watchlist",
-            "Watchlist",
             "Selected",
             "Selected",
             "Selected",
@@ -753,20 +756,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
-            "Selected"
-          ]
-        },
-        {
-          "Ticker": "ENEL.MI",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
+            "Selected",
             "Watchlist"
           ]
         },
@@ -797,11 +787,24 @@
           ]
         },
         {
-          "Ticker": "SRG.MI",
+          "Ticker": "MB.MI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "ENEL.MI",
           "Statuses": [
             "Watchlist",
-            "Selected",
-            "Selected",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -836,36 +839,23 @@
           ]
         },
         {
-          "Ticker": "IG.MI",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
-          "Ticker": "MB.MI",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "BAMI.MI",
           "Statuses": [
             "Watchlist",
             "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "SRG.MI",
+          "Statuses": [
+            "Selected",
+            "Selected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -882,6 +872,19 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "IG.MI",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
             "Watchlist",
             "Watchlist",
             "Watchlist"
@@ -927,6 +930,19 @@
           ]
         },
         {
+          "Ticker": "LTMC.MI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
           "Ticker": "IVG.MI",
           "Statuses": [
             "Watchlist",
@@ -940,16 +956,16 @@
           ]
         },
         {
-          "Ticker": "LTMC.MI",
+          "Ticker": "LDO.MI",
           "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
             "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
           ]
         },
         {
@@ -960,19 +976,6 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "LDO.MI",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Rejected",
-            "Rejected",
-            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected"
@@ -1031,7 +1034,7 @@
           ]
         },
         {
-          "Ticker": "BZU.MI",
+          "Ticker": "DIA.MI",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1057,7 +1060,7 @@
           ]
         },
         {
-          "Ticker": "DIA.MI",
+          "Ticker": "BZU.MI",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1109,7 +1112,7 @@
           ]
         },
         {
-          "Ticker": "INW.MI",
+          "Ticker": "AMP.MI",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1122,7 +1125,7 @@
           ]
         },
         {
-          "Ticker": "AMP.MI",
+          "Ticker": "INW.MI",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1163,46 +1166,46 @@
       ]
     },
     "Asset_Detail_Pages": [
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\A2A_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\AMP_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\AVIO_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\AZM_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BMED_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BMPS_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BAMI_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BPE_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BC_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BZU_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\CPR_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\DIA_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\ENEL_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\ENI_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\RACE_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\FCT_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\FBK_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\G_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\HER_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\ISP_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\INW_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\IG_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\IVG_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\LDO_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\LTMC_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\MB_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\MONC_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\NEXI_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\PST_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\PRY_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\REC_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\SPM_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\SRG_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\STLAM_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\STMMI_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\TIT_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\TEN_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\TRN_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\UCG_MI_asset_dashboard.png",
-      "G:\\Il mio Drive\\TradingAlgo\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\UNI_MI_asset_dashboard.png"
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\A2A_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\AMP_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\AVIO_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\AZM_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BMED_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BMPS_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BAMI_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BPE_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BC_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\BZU_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\CPR_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\DIA_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\ENEL_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\ENI_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\RACE_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\FCT_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\FBK_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\G_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\HER_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\ISP_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\INW_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\IG_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\IVG_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\LDO_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\LTMC_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\MB_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\MONC_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\NEXI_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\PST_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\PRY_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\REC_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\SPM_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\SRG_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\STLAM_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\STMMI_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\TIT_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\TEN_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\TRN_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\UCG_MI_asset_dashboard.png",
+      "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_asset_detail_pages\\Italy40\\UNI_MI_asset_dashboard.png"
     ],
     "Report_PDF": "",
     "Summary_PDF_Temp": "",
