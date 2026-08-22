@@ -1,6 +1,6 @@
 {
   "USA100": {
-    "week": "14 Aug 2026",
+    "week": "21 Aug 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -15,12 +15,6 @@
         "industry": "-"
       },
       {
-        "ticker": "GEV",
-        "name": "GEV",
-        "sector": "-",
-        "industry": "-"
-      },
-      {
         "ticker": "FDX",
         "name": "FDX",
         "sector": "-",
@@ -31,15 +25,31 @@
         "name": "CSCO",
         "sector": "-",
         "industry": "-"
+      },
+      {
+        "ticker": "MRK",
+        "name": "MRK",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "MRK",
+          "name": "MRK"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "GEV",
+          "name": "GEV"
+        }
+      ]
     }
   },
   "NASDAQ100": {
-    "week": "14 Aug 2026",
+    "week": "21 Aug 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -78,7 +88,7 @@
     }
   },
   "Europe50": {
-    "week": "14 Aug 2026",
+    "week": "21 Aug 2026",
     "positions": [
       {
         "ticker": "NOKIA.HE",
@@ -93,12 +103,6 @@
         "industry": "-"
       },
       {
-        "ticker": "IFX.DE",
-        "name": "IFX.DE",
-        "sector": "-",
-        "industry": "-"
-      },
-      {
         "ticker": "ENI.MI",
         "name": "ENI.MI",
         "sector": "-",
@@ -109,25 +113,31 @@
         "name": "ENGI.PA",
         "sector": "-",
         "industry": "-"
+      },
+      {
+        "ticker": "BAYN.DE",
+        "name": "BAYN.DE",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "IFX.DE",
-          "name": "IFX.DE"
+          "ticker": "BAYN.DE",
+          "name": "BAYN.DE"
         }
       ],
       "out": [
         {
-          "ticker": "BAYN.DE",
-          "name": "BAYN.DE"
+          "ticker": "IFX.DE",
+          "name": "IFX.DE"
         }
       ]
     }
   },
   "Italy40": {
-    "week": "14 Aug 2026",
+    "week": "21 Aug 2026",
     "positions": [
       {
         "ticker": "STMMI.MI",
@@ -142,12 +152,6 @@
         "industry": "-"
       },
       {
-        "ticker": "PRY.MI",
-        "name": "PRY.MI",
-        "sector": "-",
-        "industry": "-"
-      },
-      {
         "ticker": "ENI.MI",
         "name": "ENI.MI",
         "sector": "-",
@@ -158,25 +162,31 @@
         "name": "BPE.MI",
         "sector": "-",
         "industry": "-"
+      },
+      {
+        "ticker": "PST.MI",
+        "name": "PST.MI",
+        "sector": "-",
+        "industry": "-"
       }
     ],
     "changes": {
       "in": [
         {
-          "ticker": "PRY.MI",
-          "name": "PRY.MI"
+          "ticker": "PST.MI",
+          "name": "PST.MI"
         }
       ],
       "out": [
         {
-          "ticker": "PST.MI",
-          "name": "PST.MI"
+          "ticker": "PRY.MI",
+          "name": "PRY.MI"
         }
       ]
     }
   },
   "UK100": {
-    "week": "14 Aug 2026",
+    "week": "21 Aug 2026",
     "positions": [
       {
         "ticker": "CCC.L",
@@ -203,8 +213,8 @@
         "industry": "-"
       },
       {
-        "ticker": "BGEO.L",
-        "name": "BGEO.L",
+        "ticker": "BEZ.L",
+        "name": "BEZ.L",
         "sector": "-",
         "industry": "-"
       }
@@ -212,20 +222,20 @@
     "changes": {
       "in": [
         {
-          "ticker": "BGEO.L",
-          "name": "BGEO.L"
+          "ticker": "BEZ.L",
+          "name": "BEZ.L"
         }
       ],
       "out": [
         {
-          "ticker": "BEZ.L",
-          "name": "BEZ.L"
+          "ticker": "BGEO.L",
+          "name": "BGEO.L"
         }
       ]
     }
   },
   "Germany40": {
-    "week": "14 Aug 2026",
+    "week": "21 Aug 2026",
     "positions": [
       {
         "ticker": "IFX.DE",
@@ -264,7 +274,7 @@
     }
   },
   "Australia50": {
-    "week": "14 Aug 2026",
+    "week": "21 Aug 2026",
     "positions": [
       {
         "ticker": "BHP.AX",
@@ -291,15 +301,25 @@
         "industry": "-"
       },
       {
-        "ticker": "MQG.AX",
-        "name": "MQG.AX",
+        "ticker": "SOL.AX",
+        "name": "SOL.AX",
         "sector": "-",
         "industry": "-"
       }
     ],
     "changes": {
-      "in": [],
-      "out": []
+      "in": [
+        {
+          "ticker": "SOL.AX",
+          "name": "SOL.AX"
+        }
+      ],
+      "out": [
+        {
+          "ticker": "MQG.AX",
+          "name": "MQG.AX"
+        }
+      ]
     }
   }
 }

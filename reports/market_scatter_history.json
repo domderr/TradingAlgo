@@ -1,76 +1,8 @@
 {
   "source": "yfinance",
   "lookback_weeks": 52,
-  "generated_at": "2026-08-17T12:47:24",
+  "generated_at": "2026-08-22T11:30:15",
   "snapshots": [
-    {
-      "date": "2025-08-22",
-      "points": [
-        {
-          "market": "USA100",
-          "code": "US",
-          "flag": "US",
-          "etf": "SPY",
-          "trend": 29,
-          "stability": 21,
-          "price": 638.24
-        },
-        {
-          "market": "NASDAQ100",
-          "code": "US",
-          "flag": "US",
-          "etf": "QQQ",
-          "trend": 43,
-          "stability": 28,
-          "price": 569.23
-        },
-        {
-          "market": "Europe50",
-          "code": "EU",
-          "flag": "EU",
-          "etf": "FEZ",
-          "trend": 71,
-          "stability": 72,
-          "price": 59.76
-        },
-        {
-          "market": "Italy40",
-          "code": "IT",
-          "flag": "IT",
-          "etf": "EWI",
-          "trend": 100,
-          "stability": 83,
-          "price": 50.66
-        },
-        {
-          "market": "Germany40",
-          "code": "DE",
-          "flag": "DE",
-          "etf": "EWG",
-          "trend": 86,
-          "stability": 86,
-          "price": 41.82
-        },
-        {
-          "market": "UK100",
-          "code": "GB",
-          "flag": "GB",
-          "etf": "EWU",
-          "trend": 57,
-          "stability": 66,
-          "price": 40.7
-        },
-        {
-          "market": "Australia50",
-          "code": "AU",
-          "flag": "AU",
-          "etf": "EWA",
-          "trend": 14,
-          "stability": 6,
-          "price": 26.43
-        }
-      ]
-    },
     {
       "date": "2025-08-29",
       "points": [
@@ -3536,6 +3468,74 @@
           "trend": 29,
           "stability": 65,
           "price": 29.65
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "US",
+          "etf": "SPY",
+          "trend": 57,
+          "stability": 73,
+          "price": 765.72
+        },
+        {
+          "market": "NASDAQ100",
+          "code": "US",
+          "flag": "US",
+          "etf": "QQQ",
+          "trend": 86,
+          "stability": 66,
+          "price": 713.44
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "EU",
+          "etf": "FEZ",
+          "trend": 43,
+          "stability": 68,
+          "price": 71.76
+        },
+        {
+          "market": "Italy40",
+          "code": "IT",
+          "flag": "IT",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 84,
+          "price": 62.91
+        },
+        {
+          "market": "Germany40",
+          "code": "DE",
+          "flag": "DE",
+          "etf": "EWG",
+          "trend": 14,
+          "stability": 13,
+          "price": 44.2
+        },
+        {
+          "market": "UK100",
+          "code": "GB",
+          "flag": "GB",
+          "etf": "EWU",
+          "trend": 71,
+          "stability": 82,
+          "price": 48.94
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "AU",
+          "etf": "EWA",
+          "trend": 29,
+          "stability": 68,
+          "price": 30.14
         }
       ]
     }
