@@ -3,23 +3,23 @@
     "Market": "Europe50",
     "Benchmark": "EZU",
     "Number of Tickers": 47,
-    "Strategy CAGR": 0.21331673522342842,
-    "Hedged CAGR": 0.1840772201853591,
+    "Strategy CAGR": 0.20410806903024903,
+    "Hedged CAGR": 0.17578277593487668,
     "Strategy MaxDD": -0.14384156251899016,
-    "Hedged MaxDD": -0.13642924556630986,
-    "Strategy Sharpe Ratio": 1.0938601580981948,
-    "Hedged Sharpe Ratio": 1.0037412713162335,
-    "Bench Cagr": 0.2140547241583597,
-    "Bench_MaxDD": -0.12361674751081564,
-    "Bench Sharpe": 1.2250579697395252,
-    "Information Ratio": 0.026031624716481874,
-    "Hedged Information Ratio": -0.12498839196880437,
+    "Hedged MaxDD": -0.14258741742061543,
+    "Strategy Sharpe Ratio": 1.0532990479351718,
+    "Hedged Sharpe Ratio": 0.9642755826542132,
+    "Bench Cagr": 0.20816983748178175,
+    "Bench_MaxDD": -0.12361674751081553,
+    "Bench Sharpe": 1.199044542692885,
+    "Information Ratio": 0.009402344619731454,
+    "Hedged Information Ratio": -0.1378878732282211,
     "PDF_Output": "",
     "Summary_Chart": "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_summary_charts\\Europe50\\summary_Europe50.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.1187325833960362,
+    "Benchmark Hedge Short": 0.1267588421733441,
     "Benchmark Hedge Ticker": "EZU",
-    "Hedge Portfolio Score": 88.12674166039638,
+    "Hedge Portfolio Score": 87.32411578266559,
     "Last Weekly Selection": [
       {
         "Ticker": "NOKIA.HE",
@@ -40,97 +40,97 @@
         "Industry": "-"
       },
       {
-        "Ticker": "ENGI.PA",
-        "Name": "ENGI.PA",
-        "Sector": "-",
-        "Industry": "-"
-      },
-      {
         "Ticker": "BAYN.DE",
         "Name": "BAYN.DE",
         "Sector": "-",
         "Industry": "-"
-      }
-    ],
-    "Added Tickers": "BAYN.DE - BAYN.DE",
-    "Removed Tickers": "IFX.DE - IFX.DE",
-    "Selection Drivers": "NOKIA.HE: trend slope 0.02, stability R2 0.79, score 0.02 and passed correlation filter<br/>ASML.AS: trend slope 0.02, stability R2 0.92, score 0.01 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>ENGI.PA: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.69, score 0.01 and passed correlation filter",
-    "Profit_Contributors": [
-      {
-        "Ticker": "UCG.MI",
-        "Contribution": 0.16157289552096382
-      },
-      {
-        "Ticker": "SAP.DE",
-        "Contribution": 0.14150986054128295
-      },
-      {
-        "Ticker": "ENI.MI",
-        "Contribution": 0.1305439260710638
-      },
-      {
-        "Ticker": "NOKIA.HE",
-        "Contribution": 0.08671562676692555
       },
       {
         "Ticker": "ENGI.PA",
-        "Contribution": 0.07391647121667357
+        "Name": "ENGI.PA",
+        "Sector": "-",
+        "Industry": "-"
+      }
+    ],
+    "Added Tickers": "-",
+    "Removed Tickers": "-",
+    "Selection Drivers": "NOKIA.HE: trend slope 0.02, stability R2 0.77, score 0.02 and passed correlation filter<br/>ASML.AS: trend slope 0.02, stability R2 0.91, score 0.01 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.83, score 0.01 and passed correlation filter<br/>BAYN.DE: trend slope 0.01, stability R2 0.69, score 0.01 and passed correlation filter<br/>ENGI.PA: trend slope 0.01, stability R2 0.79, score 0.01 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "UCG.MI",
+        "Contribution": 0.16157291662033935
+      },
+      {
+        "Ticker": "SAP.DE",
+        "Contribution": 0.1415098942823888
+      },
+      {
+        "Ticker": "ENI.MI",
+        "Contribution": 0.10421551237684294
+      },
+      {
+        "Ticker": "NOKIA.HE",
+        "Contribution": 0.09544972901848267
       },
       {
         "Ticker": "BAYN.DE",
-        "Contribution": 0.07281830429590849
+        "Contribution": 0.07594073598492913
       },
       {
         "Ticker": "ASML.AS",
-        "Contribution": 0.06068000407233616
+        "Contribution": 0.056377758177841464
+      },
+      {
+        "Ticker": "ENGI.PA",
+        "Contribution": 0.054016176516275986
       },
       {
         "Ticker": "ADYEN.AS",
-        "Contribution": 0.04966728812790521
+        "Contribution": 0.049667286540014954
       },
       {
         "Ticker": "BBVA.MC",
-        "Contribution": 0.04184889492858207
+        "Contribution": 0.041848891382714866
       },
       {
         "Ticker": "DB1.DE",
-        "Contribution": 0.03596073033630168
+        "Contribution": 0.03596072995652322
       },
       {
         "Ticker": "VNA.DE",
-        "Contribution": 0.034265526349830044
+        "Contribution": 0.03426551399481005
       },
       {
         "Ticker": "NOVO-B.CO",
-        "Contribution": 0.02733319089190945
+        "Contribution": 0.027333186048679105
       },
       {
         "Ticker": "ISP.MI",
-        "Contribution": 0.02243633960452468
+        "Contribution": 0.022436370791483383
       },
       {
         "Ticker": "MUV2.DE",
-        "Contribution": 0.01940254549263159
+        "Contribution": 0.019402541478285677
       },
       {
         "Ticker": "IBE.MC",
-        "Contribution": 0.016725505870337717
+        "Contribution": 0.016725577475731813
       },
       {
         "Ticker": "DTE.DE",
-        "Contribution": 0.015144841538706606
+        "Contribution": 0.015144836209939283
       },
       {
         "Ticker": "AIR.PA",
-        "Contribution": 0.013265967058990764
+        "Contribution": 0.013265967168648687
       },
       {
         "Ticker": "INGA.AS",
-        "Contribution": 0.012250105425390692
+        "Contribution": 0.012250075049179961
       },
       {
         "Ticker": "AD.AS",
-        "Contribution": 0.005671019228433076
+        "Contribution": 0.005671051687338103
       },
       {
         "Ticker": "ABI.BR",
@@ -206,43 +206,43 @@
       },
       {
         "Ticker": "SU.PA",
-        "Contribution": -0.0019940826956264465
+        "Contribution": -0.0019940831940743475
       },
       {
         "Ticker": "ALV.DE",
-        "Contribution": -0.004077977039403551
+        "Contribution": -0.004077993128959649
       },
       {
         "Ticker": "KER.PA",
-        "Contribution": -0.005527625910458807
+        "Contribution": -0.005527626340625515
       },
       {
         "Ticker": "ENEL.MI",
-        "Contribution": -0.006236924550705547
+        "Contribution": -0.00623692498520817
       },
       {
         "Ticker": "STLAM.MI",
-        "Contribution": -0.009897569359411627
+        "Contribution": -0.009897573114572289
       },
       {
         "Ticker": "PHIA.AS",
-        "Contribution": -0.017896725653495933
+        "Contribution": -0.01789672400564029
       },
       {
         "Ticker": "OR.PA",
-        "Contribution": -0.020287995427043452
+        "Contribution": -0.020287995570694703
       },
       {
         "Ticker": "VIV.PA",
-        "Contribution": -0.03368207518902242
+        "Contribution": -0.03368207436293689
       },
       {
         "Ticker": "PRX.AS",
-        "Contribution": -0.048969081351577334
+        "Contribution": -0.04896908305937961
       },
       {
         "Ticker": "IFX.DE",
-        "Contribution": -0.11711292135156007
+        "Contribution": -0.11389726443761508
       }
     ],
     "Strategy_Returns": {
@@ -382,7 +382,8 @@
       "2026-07-31": -0.0154841085,
       "2026-08-07": 0.0192972416,
       "2026-08-14": 0.0246596876,
-      "2026-08-21": -0.03397154906496391
+      "2026-08-21": -0.0339715491,
+      "2026-08-28": -0.016364823621287217
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0074505681,
@@ -521,7 +522,8 @@
       "2026-07-31": -0.0178473758,
       "2026-08-07": 0.0163155193,
       "2026-08-14": 0.0240058809,
-      "2026-08-21": -0.033334233547095415
+      "2026-08-21": -0.0333342335,
+      "2026-08-28": -0.015288200123836249
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0066925127,
@@ -660,18 +662,19 @@
       "2026-07-31": 0.0241424905,
       "2026-08-07": 0.0287480237,
       "2026-08-14": 0.005868355,
-      "2026-08-21": -0.006945409290693094
+      "2026-08-21": -0.0069454093,
+      "2026-08-28": -0.009092202340214683
     },
     "Status_History": {
       "dates": [
-        "07-03",
         "07-10",
         "07-17",
         "07-24",
         "07-31",
         "08-07",
         "08-14",
-        "08-21"
+        "08-21",
+        "08-28"
       ],
       "rows": [
         {
@@ -688,6 +691,19 @@
           ]
         },
         {
+          "Ticker": "IFX.DE",
+          "Statuses": [
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
           "Ticker": "ASML.AS",
           "Statuses": [
             "Selected",
@@ -698,19 +714,6 @@
             "Selected",
             "Selected",
             "Selected"
-          ]
-        },
-        {
-          "Ticker": "IFX.DE",
-          "Statuses": [
-            "Selected",
-            "Selected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Watchlist"
           ]
         },
         {
@@ -740,6 +743,19 @@
           ]
         },
         {
+          "Ticker": "BAYN.DE",
+          "Statuses": [
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Selected",
+            "Watchlist",
+            "Selected",
+            "Selected"
+          ]
+        },
+        {
           "Ticker": "ENGI.PA",
           "Statuses": [
             "Selected",
@@ -753,20 +769,7 @@
           ]
         },
         {
-          "Ticker": "BAYN.DE",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Watchlist",
-            "Selected"
-          ]
-        },
-        {
-          "Ticker": "ABI.BR",
+          "Ticker": "BNP.PA",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -779,7 +782,7 @@
           ]
         },
         {
-          "Ticker": "BNP.PA",
+          "Ticker": "ABI.BR",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -818,7 +821,7 @@
           ]
         },
         {
-          "Ticker": "IBE.MC",
+          "Ticker": "NDA-FI.HE",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -831,7 +834,7 @@
           ]
         },
         {
-          "Ticker": "NDA-FI.HE",
+          "Ticker": "IBE.MC",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -922,6 +925,19 @@
           ]
         },
         {
+          "Ticker": "DB1.DE",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
           "Ticker": "ISP.MI",
           "Statuses": [
             "Watchlist",
@@ -961,25 +977,12 @@
           ]
         },
         {
-          "Ticker": "DB1.DE",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "CS.PA",
           "Statuses": [
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -992,7 +995,7 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -1009,14 +1012,14 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist"
+            "Rejected"
           ]
         },
         {
-          "Ticker": "AD.AS",
+          "Ticker": "OR.PA",
           "Statuses": [
-            "Watchlist",
-            "Watchlist",
+            "Rejected",
+            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -1026,9 +1029,9 @@
           ]
         },
         {
-          "Ticker": "OR.PA",
+          "Ticker": "AD.AS",
           "Statuses": [
-            "Rejected",
+            "Watchlist",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -1104,7 +1107,7 @@
           ]
         },
         {
-          "Ticker": "KER.PA",
+          "Ticker": "NOVO-B.CO",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1117,7 +1120,7 @@
           ]
         },
         {
-          "Ticker": "NOVO-B.CO",
+          "Ticker": "KER.PA",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1169,7 +1172,7 @@
           ]
         },
         {
-          "Ticker": "BMW.DE",
+          "Ticker": "RI.PA",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1182,7 +1185,7 @@
           ]
         },
         {
-          "Ticker": "RI.PA",
+          "Ticker": "BMW.DE",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1208,19 +1211,6 @@
           ]
         },
         {
-          "Ticker": "VIV.PA",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "SAP.DE",
           "Statuses": [
             "Rejected",
@@ -1234,7 +1224,7 @@
           ]
         },
         {
-          "Ticker": "PRX.AS",
+          "Ticker": "VIV.PA",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1248,6 +1238,19 @@
         },
         {
           "Ticker": "ADYEN.AS",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "PRX.AS",
           "Statuses": [
             "Rejected",
             "Rejected",

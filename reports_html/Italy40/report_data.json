@@ -3,23 +3,23 @@
     "Market": "Italy40",
     "Benchmark": "EWI",
     "Number of Tickers": 40,
-    "Strategy CAGR": 0.4015436348014678,
-    "Hedged CAGR": 0.35724078454637165,
+    "Strategy CAGR": 0.3941541144723266,
+    "Hedged CAGR": 0.35116807557109575,
     "Strategy MaxDD": -0.1597194476921978,
     "Hedged MaxDD": -0.15926822552999798,
-    "Strategy Sharpe Ratio": 1.6714151716224497,
-    "Hedged Sharpe Ratio": 1.6027000107867693,
-    "Bench Cagr": 0.31345612860045025,
-    "Bench_MaxDD": -0.1156463111235233,
-    "Bench Sharpe": 1.578379627364406,
-    "Information Ratio": 0.4187964865913959,
-    "Hedged Information Ratio": 0.21138963831157406,
+    "Strategy Sharpe Ratio": 1.6500297643352977,
+    "Hedged Sharpe Ratio": 1.5838576212017434,
+    "Bench Cagr": 0.3054879635107626,
+    "Bench_MaxDD": -0.11564631112352342,
+    "Bench Sharpe": 1.5480432660207573,
+    "Information Ratio": 0.4243387165639713,
+    "Hedged Information Ratio": 0.2204285307411418,
     "PDF_Output": "",
     "Summary_Chart": "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_summary_charts\\Italy40\\summary_Italy40.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.1415182415605727,
+    "Benchmark Hedge Short": 0.17220619992942088,
     "Benchmark Hedge Ticker": "EWI",
-    "Hedge Portfolio Score": 85.84817584394273,
+    "Hedge Portfolio Score": 82.77938000705791,
     "Last Weekly Selection": [
       {
         "Ticker": "STMMI.MI",
@@ -34,12 +34,6 @@
         "Industry": "-"
       },
       {
-        "Ticker": "ENI.MI",
-        "Name": "ENI.MI",
-        "Sector": "-",
-        "Industry": "-"
-      },
-      {
         "Ticker": "BPE.MI",
         "Name": "BPE.MI",
         "Sector": "-",
@@ -50,106 +44,112 @@
         "Name": "PST.MI",
         "Sector": "-",
         "Industry": "-"
-      }
-    ],
-    "Added Tickers": "PST.MI - PST.MI",
-    "Removed Tickers": "PRY.MI - PRY.MI",
-    "Selection Drivers": "STMMI.MI: trend slope 0.02, stability R2 0.76, score 0.02 and passed correlation filter<br/>SPM.MI: trend slope 0.02, stability R2 0.90, score 0.02 and passed correlation filter<br/>ENI.MI: trend slope 0.01, stability R2 0.84, score 0.01 and passed correlation filter<br/>BPE.MI: trend slope 0.01, stability R2 0.86, score 0.01 and passed correlation filter<br/>PST.MI: trend slope 0.01, stability R2 0.80, score 0.01 and passed correlation filter",
-    "Profit_Contributors": [
-      {
-        "Ticker": "TIT.MI",
-        "Contribution": 0.4838454954950442
-      },
-      {
-        "Ticker": "AVIO.MI",
-        "Contribution": 0.4242289246156602
-      },
-      {
-        "Ticker": "FCT.MI",
-        "Contribution": 0.279503400815678
-      },
-      {
-        "Ticker": "UNI.MI",
-        "Contribution": 0.24850833157064384
-      },
-      {
-        "Ticker": "BPE.MI",
-        "Contribution": 0.16394641539511937
-      },
-      {
-        "Ticker": "LDO.MI",
-        "Contribution": 0.13321459004177907
-      },
-      {
-        "Ticker": "PRY.MI",
-        "Contribution": 0.13183991356763405
-      },
-      {
-        "Ticker": "BMPS.MI",
-        "Contribution": 0.13116213797255366
-      },
-      {
-        "Ticker": "BAMI.MI",
-        "Contribution": 0.1153156961702471
-      },
-      {
-        "Ticker": "BZU.MI",
-        "Contribution": 0.07744275807545417
-      },
-      {
-        "Ticker": "IG.MI",
-        "Contribution": 0.04493764748201563
-      },
-      {
-        "Ticker": "UCG.MI",
-        "Contribution": 0.03927552834113542
-      },
-      {
-        "Ticker": "LTMC.MI",
-        "Contribution": 0.03541989009652665
-      },
-      {
-        "Ticker": "ENI.MI",
-        "Contribution": 0.03509010114875903
-      },
-      {
-        "Ticker": "PST.MI",
-        "Contribution": 0.02904779039189022
-      },
-      {
-        "Ticker": "AZM.MI",
-        "Contribution": 0.017723692574624153
-      },
-      {
-        "Ticker": "IVG.MI",
-        "Contribution": 0.014439245609369135
       },
       {
         "Ticker": "ENEL.MI",
-        "Contribution": 0.012135144539076319
+        "Name": "ENEL.MI",
+        "Sector": "-",
+        "Industry": "-"
+      }
+    ],
+    "Added Tickers": "ENEL.MI - ENEL.MI",
+    "Removed Tickers": "ENI.MI - ENI.MI",
+    "Selection Drivers": "STMMI.MI: trend slope 0.02, stability R2 0.76, score 0.02 and passed correlation filter<br/>SPM.MI: trend slope 0.02, stability R2 0.90, score 0.02 and passed correlation filter<br/>BPE.MI: trend slope 0.01, stability R2 0.86, score 0.01 and passed correlation filter<br/>PST.MI: trend slope 0.01, stability R2 0.81, score 0.01 and passed correlation filter<br/>ENEL.MI: trend slope 0.01, stability R2 0.83, score 0.00 and passed correlation filter",
+    "Profit_Contributors": [
+      {
+        "Ticker": "TIT.MI",
+        "Contribution": 0.4838455240577375
+      },
+      {
+        "Ticker": "AVIO.MI",
+        "Contribution": 0.42422894589777066
+      },
+      {
+        "Ticker": "FCT.MI",
+        "Contribution": 0.2795034091286741
+      },
+      {
+        "Ticker": "UNI.MI",
+        "Contribution": 0.2485083172827419
+      },
+      {
+        "Ticker": "BPE.MI",
+        "Contribution": 0.16189945877826306
+      },
+      {
+        "Ticker": "PRY.MI",
+        "Contribution": 0.13879647352389135
+      },
+      {
+        "Ticker": "LDO.MI",
+        "Contribution": 0.13321460346370964
+      },
+      {
+        "Ticker": "BMPS.MI",
+        "Contribution": 0.13116213790866527
+      },
+      {
+        "Ticker": "BAMI.MI",
+        "Contribution": 0.11531575104395322
+      },
+      {
+        "Ticker": "BZU.MI",
+        "Contribution": 0.07744274574071164
+      },
+      {
+        "Ticker": "IG.MI",
+        "Contribution": 0.04493765005745219
+      },
+      {
+        "Ticker": "UCG.MI",
+        "Contribution": 0.039275510678200565
+      },
+      {
+        "Ticker": "PST.MI",
+        "Contribution": 0.038928880566733735
+      },
+      {
+        "Ticker": "LTMC.MI",
+        "Contribution": 0.03541988684467233
+      },
+      {
+        "Ticker": "AZM.MI",
+        "Contribution": 0.017723694049030122
+      },
+      {
+        "Ticker": "IVG.MI",
+        "Contribution": 0.014439246549009414
+      },
+      {
+        "Ticker": "ENEL.MI",
+        "Contribution": 0.01213514630447319
       },
       {
         "Ticker": "STLAM.MI",
-        "Contribution": 0.008621515244270196
+        "Contribution": 0.008621512396089824
       },
       {
         "Ticker": "A2A.MI",
-        "Contribution": 0.007273713350736434
+        "Contribution": 0.007273714470770527
       },
       {
         "Ticker": "RACE.MI",
-        "Contribution": 0.006642603525553771
-      },
-      {
-        "Ticker": "AMP.MI",
-        "Contribution": 0.0
+        "Contribution": 0.006642604297482622
       },
       {
         "Ticker": "BMED.MI",
         "Contribution": 0.0
       },
       {
-        "Ticker": "CPR.MI",
+        "Ticker": "AMP.MI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "ISP.MI",
+        "Contribution": 0.0
+      },
+      {
+        "Ticker": "DIA.MI",
         "Contribution": 0.0
       },
       {
@@ -161,11 +161,11 @@
         "Contribution": 0.0
       },
       {
-        "Ticker": "INW.MI",
+        "Ticker": "NEXI.MI",
         "Contribution": 0.0
       },
       {
-        "Ticker": "ISP.MI",
+        "Ticker": "INW.MI",
         "Contribution": 0.0
       },
       {
@@ -173,7 +173,7 @@
         "Contribution": 0.0
       },
       {
-        "Ticker": "DIA.MI",
+        "Ticker": "CPR.MI",
         "Contribution": 0.0
       },
       {
@@ -185,36 +185,36 @@
         "Contribution": 0.0
       },
       {
-        "Ticker": "NEXI.MI",
-        "Contribution": 0.0
-      },
-      {
         "Ticker": "MB.MI",
-        "Contribution": -0.0024930545222743372
+        "Contribution": -0.0024930356440497517
       },
       {
         "Ticker": "FBK.MI",
-        "Contribution": -0.00434381379690808
+        "Contribution": -0.004343814109672086
+      },
+      {
+        "Ticker": "ENI.MI",
+        "Contribution": -0.010911774851710722
       },
       {
         "Ticker": "HER.MI",
-        "Contribution": -0.022433199909561753
+        "Contribution": -0.022433218949321133
       },
       {
         "Ticker": "SRG.MI",
-        "Contribution": -0.037200769618625854
+        "Contribution": -0.03720077217089518
       },
       {
         "Ticker": "TEN.MI",
-        "Contribution": -0.04300492423836006
+        "Contribution": -0.04300492718884065
       },
       {
         "Ticker": "SPM.MI",
-        "Contribution": -0.045515318912901545
+        "Contribution": -0.05129806632185539
       },
       {
         "Ticker": "STMMI.MI",
-        "Contribution": -0.22399937076573487
+        "Contribution": -0.21622946073968966
       }
     ],
     "Strategy_Returns": {
@@ -354,7 +354,8 @@
       "2026-07-31": -0.0499116538,
       "2026-08-07": 0.0382099526,
       "2026-08-14": 0.004722148,
-      "2026-08-21": -0.024437156928980075
+      "2026-08-21": -0.0244371569,
+      "2026-08-28": -0.007509049109434507
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0195632812,
@@ -493,7 +494,8 @@
       "2026-07-31": -0.0529992605,
       "2026-08-07": 0.0348993083,
       "2026-08-14": 0.0048808941,
-      "2026-08-21": -0.023763744086644056
+      "2026-08-21": -0.0237637441,
+      "2026-08-28": -0.006008524884141164
     },
     "Benchmark_Returns": {
       "2024-01-12": 0.0083307724,
@@ -632,18 +634,19 @@
       "2026-07-31": 0.0242766728,
       "2026-08-07": 0.0284090916,
       "2026-08-14": -0.0012627943,
-      "2026-08-21": -0.005689910032352197
+      "2026-08-21": -0.00568991,
+      "2026-08-28": -0.010809097231364029
     },
     "Status_History": {
       "dates": [
-        "07-03",
         "07-10",
         "07-17",
         "07-24",
         "07-31",
         "08-07",
         "08-14",
-        "08-21"
+        "08-21",
+        "08-28"
       ],
       "rows": [
         {
@@ -675,7 +678,7 @@
         {
           "Ticker": "TIT.MI",
           "Statuses": [
-            "Selected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -705,9 +708,9 @@
             "Selected",
             "Selected",
             "Selected",
-            "Selected",
             "Watchlist",
             "Selected",
+            "Watchlist",
             "Watchlist"
           ]
         },
@@ -718,16 +721,16 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
             "Selected",
             "Selected",
-            "Selected"
+            "Selected",
+            "Watchlist"
           ]
         },
         {
           "Ticker": "BPE.MI",
           "Statuses": [
-            "Watchlist",
+            "Selected",
             "Selected",
             "Selected",
             "Selected",
@@ -742,6 +745,19 @@
           "Statuses": [
             "Watchlist",
             "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MB.MI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -770,23 +786,10 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
             "Selected",
             "Watchlist",
+            "Selected",
             "Selected"
-          ]
-        },
-        {
-          "Ticker": "MB.MI",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
           ]
         },
         {
@@ -816,20 +819,33 @@
           ]
         },
         {
-          "Ticker": "ENEL.MI",
+          "Ticker": "BAMI.MI",
           "Statuses": [
             "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Selected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist"
           ]
         },
         {
-          "Ticker": "BAMI.MI",
+          "Ticker": "ENEL.MI",
+          "Statuses": [
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Selected"
+          ]
+        },
+        {
+          "Ticker": "UCG.MI",
           "Statuses": [
             "Watchlist",
             "Watchlist",
@@ -855,22 +871,9 @@
           ]
         },
         {
-          "Ticker": "UCG.MI",
-          "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "SRG.MI",
           "Statuses": [
-            "Selected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -907,12 +910,12 @@
           ]
         },
         {
-          "Ticker": "IG.MI",
+          "Ticker": "LTMC.MI",
           "Statuses": [
+            "Rejected",
             "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -933,10 +936,10 @@
           ]
         },
         {
-          "Ticker": "LTMC.MI",
+          "Ticker": "IVG.MI",
           "Statuses": [
-            "Rejected",
-            "Rejected",
+            "Watchlist",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -946,11 +949,11 @@
           ]
         },
         {
-          "Ticker": "IVG.MI",
+          "Ticker": "IG.MI",
           "Statuses": [
-            "Watchlist",
-            "Watchlist",
-            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -977,19 +980,6 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "HER.MI",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -1012,6 +1002,19 @@
         },
         {
           "Ticker": "CPR.MI",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "HER.MI",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1063,7 +1066,7 @@
           ]
         },
         {
-          "Ticker": "AVIO.MI",
+          "Ticker": "RACE.MI",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1089,7 +1092,7 @@
           ]
         },
         {
-          "Ticker": "RACE.MI",
+          "Ticker": "AVIO.MI",
           "Statuses": [
             "Rejected",
             "Rejected",

@@ -3,23 +3,23 @@
     "Market": "Australia50",
     "Benchmark": "EWA",
     "Number of Tickers": 50,
-    "Strategy CAGR": 0.1259857657639254,
-    "Hedged CAGR": 0.11651627583322743,
+    "Strategy CAGR": 0.12510283881332263,
+    "Hedged CAGR": 0.1160391095438651,
     "Strategy MaxDD": -0.20266675255519684,
     "Hedged MaxDD": -0.20089332489978773,
-    "Strategy Sharpe Ratio": 0.703706341484192,
-    "Hedged Sharpe Ratio": 0.673756611316635,
-    "Bench Cagr": 0.12880097244183597,
-    "Bench_MaxDD": -0.20493194546266535,
-    "Bench Sharpe": 0.8026184783773277,
-    "Information Ratio": 0.013171624771476015,
-    "Hedged Information Ratio": -0.03837374828114816,
+    "Strategy Sharpe Ratio": 0.7011652653337151,
+    "Hedged Sharpe Ratio": 0.673082692133034,
+    "Bench Cagr": 0.12582675650158426,
+    "Bench_MaxDD": -0.20493202054655657,
+    "Bench Sharpe": 0.7890054841671817,
+    "Information Ratio": 0.02331233573108593,
+    "Hedged Information Ratio": -0.026897738261045148,
     "PDF_Output": "",
     "Summary_Chart": "C:\\dev\\TradingAlgo-mosaic\\mosaic_dev\\output\\_summary_charts\\Australia50\\summary_Australia50.png",
     "Capital Invested": 1.0,
-    "Benchmark Hedge Short": 0.17283379392237863,
+    "Benchmark Hedge Short": 0.15545406999655842,
     "Benchmark Hedge Ticker": "EWA",
-    "Hedge Portfolio Score": 82.71662060776214,
+    "Hedge Portfolio Score": 84.45459300034416,
     "Last Weekly Selection": [
       {
         "Ticker": "BHP.AX",
@@ -52,97 +52,97 @@
         "Industry": "-"
       }
     ],
-    "Added Tickers": "SOL.AX - SOL.AX",
-    "Removed Tickers": "MQG.AX - MQG.AX",
-    "Selection Drivers": "BHP.AX: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>WOW.AX: trend slope 0.01, stability R2 0.90, score 0.01 and passed correlation filter<br/>WDS.AX: trend slope 0.01, stability R2 0.65, score 0.01 and passed correlation filter<br/>QBE.AX: trend slope 0.01, stability R2 0.68, score 0.00 and passed correlation filter<br/>SOL.AX: trend slope 0.00, stability R2 0.50, score 0.00 and passed correlation filter",
+    "Added Tickers": "-",
+    "Removed Tickers": "-",
+    "Selection Drivers": "BHP.AX: trend slope 0.01, stability R2 0.92, score 0.01 and passed correlation filter<br/>WOW.AX: trend slope 0.01, stability R2 0.90, score 0.01 and passed correlation filter<br/>WDS.AX: trend slope 0.01, stability R2 0.67, score 0.01 and passed correlation filter<br/>QBE.AX: trend slope 0.01, stability R2 0.70, score 0.00 and passed correlation filter<br/>SOL.AX: trend slope 0.00, stability R2 0.59, score 0.00 and passed correlation filter",
     "Profit_Contributors": [
       {
         "Ticker": "PME.AX",
-        "Contribution": 0.3874387860122237
+        "Contribution": 0.38743880635283395
       },
       {
         "Ticker": "SIG.AX",
-        "Contribution": 0.34094651593125813
+        "Contribution": 0.3409465016899463
       },
       {
         "Ticker": "EVN.AX",
-        "Contribution": 0.20587081767718568
+        "Contribution": 0.20587080395502305
       },
       {
         "Ticker": "JBH.AX",
-        "Contribution": 0.1254865688528118
+        "Contribution": 0.12548660685117508
       },
       {
         "Ticker": "NEM.AX",
-        "Contribution": 0.10217620439204962
+        "Contribution": 0.10217620101207138
       },
       {
         "Ticker": "LYC.AX",
-        "Contribution": 0.09899669348103707
-      },
-      {
-        "Ticker": "WTC.AX",
-        "Contribution": 0.07899185671039906
+        "Contribution": 0.09899669256282811
       },
       {
         "Ticker": "BHP.AX",
-        "Contribution": 0.06422673296108938
+        "Contribution": 0.0794069856099674
       },
       {
-        "Ticker": "FPH.AX",
-        "Contribution": 0.03234884581586303
-      },
-      {
-        "Ticker": "NAB.AX",
-        "Contribution": 0.028898516501590334
-      },
-      {
-        "Ticker": "CAR.AX",
-        "Contribution": 0.02645778197174831
+        "Ticker": "WTC.AX",
+        "Contribution": 0.07899180112592466
       },
       {
         "Ticker": "WOW.AX",
-        "Contribution": 0.026448696147259122
+        "Contribution": 0.03584530722687705
+      },
+      {
+        "Ticker": "FPH.AX",
+        "Contribution": 0.03234881763487218
+      },
+      {
+        "Ticker": "NAB.AX",
+        "Contribution": 0.028898515363703876
+      },
+      {
+        "Ticker": "CAR.AX",
+        "Contribution": 0.026457828463111045
       },
       {
         "Ticker": "SGH.AX",
-        "Contribution": 0.026040118197137377
+        "Contribution": 0.026040109766998103
       },
       {
         "Ticker": "NWS.AX",
-        "Contribution": 0.02461120081123721
+        "Contribution": 0.024611202142464175
       },
       {
         "Ticker": "JHX.AX",
-        "Contribution": 0.024512038258661682
+        "Contribution": 0.02451203800331942
       },
       {
         "Ticker": "GMG.AX",
-        "Contribution": 0.02247694337143394
+        "Contribution": 0.02247693310264426
       },
       {
         "Ticker": "FMG.AX",
-        "Contribution": 0.013994309329460573
+        "Contribution": 0.013994362972317603
       },
       {
         "Ticker": "ANZ.AX",
-        "Contribution": 0.012594016370416128
+        "Contribution": 0.012594015619705537
       },
       {
         "Ticker": "WBC.AX",
-        "Contribution": 0.008673022047984508
+        "Contribution": 0.008673027252178816
       },
       {
         "Ticker": "RMD.AX",
-        "Contribution": 0.0069952941007213176
+        "Contribution": 0.006995293568743661
       },
       {
         "Ticker": "TLS.AX",
-        "Contribution": 0.004308560728127386
+        "Contribution": 0.004308540430453031
       },
       {
         "Ticker": "IAG.AX",
-        "Contribution": 0.0026180253946076685
+        "Contribution": 0.002618001590818385
       },
       {
         "Ticker": "XRO.AX",
@@ -169,11 +169,11 @@
         "Contribution": 0.0
       },
       {
-        "Ticker": "TCL.AX",
+        "Ticker": "XYZ.AX",
         "Contribution": 0.0
       },
       {
-        "Ticker": "SUN.AX",
+        "Ticker": "TCL.AX",
         "Contribution": 0.0
       },
       {
@@ -193,11 +193,7 @@
         "Contribution": 0.0
       },
       {
-        "Ticker": "XYZ.AX",
-        "Contribution": 0.0
-      },
-      {
-        "Ticker": "SOL.AX",
+        "Ticker": "SUN.AX",
         "Contribution": 0.0
       },
       {
@@ -205,56 +201,60 @@
         "Contribution": 0.0
       },
       {
+        "Ticker": "SOL.AX",
+        "Contribution": -0.0005207419659027275
+      },
+      {
         "Ticker": "S32.AX",
-        "Contribution": -0.0052418791867901715
+        "Contribution": -0.005241878897069369
       },
       {
         "Ticker": "COH.AX",
-        "Contribution": -0.005748492939059097
+        "Contribution": -0.005748492952414287
       },
       {
         "Ticker": "MQG.AX",
-        "Contribution": -0.00749442478449833
+        "Contribution": -0.007494424504420349
       },
       {
         "Ticker": "SGP.AX",
-        "Contribution": -0.015407701401130767
-      },
-      {
-        "Ticker": "WDS.AX",
-        "Contribution": -0.015767260650656416
+        "Contribution": -0.015407701258288777
       },
       {
         "Ticker": "CPU.AX",
-        "Contribution": -0.01817898775817959
+        "Contribution": -0.018179022507549852
       },
       {
         "Ticker": "ALL.AX",
-        "Contribution": -0.020220804165591504
+        "Contribution": -0.02022084910858555
       },
       {
         "Ticker": "MPL.AX",
-        "Contribution": -0.02147751165527465
+        "Contribution": -0.02147751105724551
       },
       {
         "Ticker": "QAN.AX",
-        "Contribution": -0.02370070607748825
+        "Contribution": -0.02370070598633351
       },
       {
         "Ticker": "BXB.AX",
-        "Contribution": -0.031125086786453978
+        "Contribution": -0.03112508554612152
+      },
+      {
+        "Ticker": "WDS.AX",
+        "Contribution": -0.03642883109479116
       },
       {
         "Ticker": "RIO.AX",
-        "Contribution": -0.038815694769822204
+        "Contribution": -0.03881569293220195
       },
       {
         "Ticker": "SCG.AX",
-        "Contribution": -0.04917580940843848
+        "Contribution": -0.049175807850903336
       },
       {
         "Ticker": "QBE.AX",
-        "Contribution": -0.05006358505825374
+        "Contribution": -0.05299562166961156
       }
     ],
     "Strategy_Returns": {
@@ -394,7 +394,8 @@
       "2026-07-31": 0.0216188373,
       "2026-08-07": 0.0113611149,
       "2026-08-14": -0.0148398986,
-      "2026-08-21": -0.002703163668341002
+      "2026-08-21": -0.0027031637,
+      "2026-08-28": 0.00020012682974379636
     },
     "Hedged_Strategy_Returns": {
       "2024-01-12": 0.0145023058,
@@ -533,7 +534,8 @@
       "2026-07-31": 0.0177281468,
       "2026-08-07": 0.0037066077,
       "2026-08-14": -0.009922235,
-      "2026-08-21": -0.00562790825833559
+      "2026-08-21": -0.0056279083,
+      "2026-08-28": 0.000985554873556449
     },
     "Benchmark_Returns": {
       "2024-01-12": -0.0037815385,
@@ -672,18 +674,19 @@
       "2026-07-31": 0.0215877735,
       "2026-08-07": 0.0364689737,
       "2026-08-14": -0.0249917867,
-      "2026-08-21": 0.016526130773098835
+      "2026-08-21": 0.0165261308,
+      "2026-08-28": -0.004644969889963768
     },
     "Status_History": {
       "dates": [
-        "07-03",
         "07-10",
         "07-17",
         "07-24",
         "07-31",
         "08-07",
         "08-14",
-        "08-21"
+        "08-21",
+        "08-28"
       ],
       "rows": [
         {
@@ -692,7 +695,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
+            "Selected",
             "Selected",
             "Selected",
             "Selected",
@@ -717,8 +720,8 @@
           "Statuses": [
             "Watchlist",
             "Watchlist",
-            "Watchlist",
             "Selected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -731,7 +734,7 @@
             "Selected",
             "Selected",
             "Selected",
-            "Selected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -754,8 +757,8 @@
         {
           "Ticker": "QBE.AX",
           "Statuses": [
-            "Rejected",
             "Watchlist",
+            "Selected",
             "Selected",
             "Selected",
             "Selected",
@@ -765,27 +768,27 @@
           ]
         },
         {
-          "Ticker": "MQG.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Watchlist",
-            "Watchlist",
-            "Selected",
-            "Selected",
-            "Selected",
-            "Watchlist"
-          ]
-        },
-        {
           "Ticker": "STO.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
             "Rejected",
             "Rejected",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist",
+            "Watchlist"
+          ]
+        },
+        {
+          "Ticker": "MQG.AX",
+          "Statuses": [
             "Rejected",
             "Watchlist",
+            "Watchlist",
+            "Selected",
+            "Selected",
+            "Selected",
             "Watchlist",
             "Watchlist"
           ]
@@ -796,18 +799,18 @@
             "Rejected",
             "Rejected",
             "Rejected",
-            "Rejected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
+            "Selected",
             "Selected"
           ]
         },
         {
           "Ticker": "ANZ.AX",
           "Statuses": [
-            "Watchlist",
             "Selected",
+            "Watchlist",
             "Watchlist",
             "Watchlist",
             "Watchlist",
@@ -833,10 +836,10 @@
           "Ticker": "EVN.AX",
           "Statuses": [
             "Selected",
-            "Selected",
             "Watchlist",
             "Watchlist",
             "Watchlist",
+            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected"
@@ -848,7 +851,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
+            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -858,10 +861,10 @@
         {
           "Ticker": "LYC.AX",
           "Statuses": [
-            "Selected",
             "Watchlist",
             "Selected",
             "Watchlist",
+            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected",
@@ -877,7 +880,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
+            "Rejected",
             "Rejected"
           ]
         },
@@ -888,7 +891,7 @@
             "Watchlist",
             "Watchlist",
             "Watchlist",
-            "Watchlist",
+            "Rejected",
             "Rejected",
             "Rejected",
             "Rejected"
@@ -908,7 +911,7 @@
           ]
         },
         {
-          "Ticker": "CBA.AX",
+          "Ticker": "COL.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -921,7 +924,7 @@
           ]
         },
         {
-          "Ticker": "COL.AX",
+          "Ticker": "CBA.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -960,6 +963,19 @@
           ]
         },
         {
+          "Ticker": "XYZ.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
           "Ticker": "FPH.AX",
           "Statuses": [
             "Rejected",
@@ -986,32 +1002,6 @@
           ]
         },
         {
-          "Ticker": "FMG.AX",
-          "Statuses": [
-            "Watchlist",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "XYZ.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "WES.AX",
           "Statuses": [
             "Rejected",
@@ -1025,7 +1015,7 @@
           ]
         },
         {
-          "Ticker": "WBC.AX",
+          "Ticker": "FMG.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1064,46 +1054,7 @@
           ]
         },
         {
-          "Ticker": "NAB.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "ORG.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "QAN.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
-          "Ticker": "SIG.AX",
+          "Ticker": "WBC.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1129,19 +1080,6 @@
           ]
         },
         {
-          "Ticker": "SCG.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "ALL.AX",
           "Statuses": [
             "Rejected",
@@ -1155,7 +1093,46 @@
           ]
         },
         {
-          "Ticker": "NST.AX",
+          "Ticker": "QAN.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "ORG.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "NAB.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SIG.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1169,6 +1146,32 @@
         },
         {
           "Ticker": "GMG.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "SCG.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "NST.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
@@ -1220,19 +1223,6 @@
           ]
         },
         {
-          "Ticker": "JBH.AX",
-          "Statuses": [
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected",
-            "Rejected"
-          ]
-        },
-        {
           "Ticker": "REA.AX",
           "Statuses": [
             "Rejected",
@@ -1247,6 +1237,19 @@
         },
         {
           "Ticker": "PME.AX",
+          "Statuses": [
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected",
+            "Rejected"
+          ]
+        },
+        {
+          "Ticker": "JBH.AX",
           "Statuses": [
             "Rejected",
             "Rejected",
