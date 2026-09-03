@@ -47,7 +47,7 @@ con la sua storia: 68 commit, 41 file.
 |---|---|
 | pagine HTML, `assets/`, CNAME | `mosaic_dev/` (notebook, pipeline, Tickers.xlsx) |
 | `reports_html/` (output generato) | `tools/build_mosaic_html_report.py` |
-| `reports/*.json`, `haircuts.csv` | `scripts/` |
+| `reports/*.json` | `scripts/`, `mosaic_dev/haircuts.csv` |
 | `sitemap.xml`, `robots.txt`, `_config.yml` | `admin-rebalance-tool.html`, audit `.xlsx`, `DJ_*.csv` |
 
 Il collegamento fra i due avviene tramite la variabile `MOSAIC_SITE_DIR`,

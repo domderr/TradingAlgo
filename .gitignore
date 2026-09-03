@@ -6,6 +6,7 @@ tools/
 scripts/
 DJ_complete.csv
 DJ_components_asof.csv
+haircuts.csv
 Rebalance Audit*.xlsx
 reports/*.xlsx
 
