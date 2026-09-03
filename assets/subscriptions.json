@@ -63,6 +63,14 @@
         "All"
       ],
       "active": true
+    },
+    {
+      "password_hash": "c51e0f8f0393391e8acb8cabab4e756daf0a428c1532933ec21f4f3b9008cdd0",
+      "first_name": "Max",
+      "markets": [
+        "All"
+      ],
+      "active": true
     }
   ]
 }
