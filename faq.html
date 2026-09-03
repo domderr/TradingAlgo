@@ -313,15 +313,16 @@
           </article>
 
           <article class="faq-item">
-            <h2>How is hedging represented in the model?</h2>
-            <p>For every published portfolio, TradingAlgo Mosaic provides a model hedge allocation to illustrate how overall market exposure can be represented in the research framework.</p>
+            <h2>How is hedging handled?</h2>
+            <p>Until August 2026 the hedge was tracked systematically by the model, which published a hedge allocation alongside each portfolio. From September 2026 it is derived from dynamic algorithmic monitoring tools instead, and reaches subscribers through hedge alerts rather than the monthly report.</p>
+            <p>In both cases the hedge allocation illustrates how overall market exposure can be represented in the research framework.</p>
             <p class="example">Example: If the model portfolio is applied to USD 100,000 of capital and the model hedge allocation is 10%, the model would allocate USD 90,000 equally across the five selected stocks (USD 18,000 per stock) and USD 10,000 to a hedge using the QQQ ETF.</p>
           </article>
 
           <article class="faq-item">
             <h2>What happens between monthly updates?</h2>
-            <p>The selected stocks are not changed between one monthly rebalance and the next, but the model hedge allocation is reviewed every week on the same weekly data.</p>
-            <p>When market conditions move it, subscribers receive a hedge alert by email. Hedge alerts are the only exception to the monthly cycle, so the level of protection stays current between updates.</p>
+            <p>The selected stocks are not changed between one monthly rebalance and the next, but the hedge is monitored continuously.</p>
+            <p>When market conditions change it, subscribers receive a hedge alert by email. Hedge alerts are the only exception to the monthly cycle, so the level of protection stays current between updates.</p>
           </article>
 
           <article class="faq-item">
