@@ -1502,7 +1502,7 @@
         : (pos ? (pos.positions || []) : []);
       var cin = pos ? (pos.changes && pos.changes.in || []) : [];
       var cout = pos ? (pos.changes && pos.changes.out || []) : [];
-      var hedgeText = formatPercent(extractHedgeValue(d));
+      var hedgeText = formatHedge(d, extractHedgeValue(d));
 
       var posList = positions.map(function(p) {
         var ticker = displayText(p.ticker, "-");
@@ -1749,8 +1749,8 @@
           + '<td class="ticker-list">' + escapeHtml(row.tickers) + '</td>'
           + '<td class="ticker-change-in">' + escapeHtml(row.inTickers) + '</td>'
           + '<td class="ticker-change-out">' + escapeHtml(row.outTickers) + '</td>'
-          + '<td>' + formatPercent(row.currentHedge) + '</td>'
-          + '<td>' + formatPercent(row.lastHedge) + '</td>'
+          + '<td>' + formatHedge(null, row.currentHedge) + '</td>'
+          + '<td>' + formatHedge(null, row.lastHedge) + '</td>'
           + '<td class="' + metricClass(row.portfolioNetChange) + '">' + formatMetricPercent(row.portfolioNetChange) + '</td>'
           + '<td class="' + metricClass(row.benchmarkNetChange) + '">' + formatMetricPercent(row.benchmarkNetChange) + '</td>'
           + '</tr>';
@@ -1829,6 +1829,15 @@
       grid.innerHTML = cards.length ? cards.join("") : '<p>No summary charts available for the enabled markets.</p>';
     }
 
+    function formatHedge(row, value) {
+      // Da settembre 2026 la copertura non e' piu' tracciata dal modello e
+      // arriva agli abbonati con gli hedge alert. Number(null) vale 0, quindi
+      // senza questo controllo un campo vuoto si leggerebbe come "Hedge: 0%".
+      if (row && row["Hedge Tracked By Model"] === false) return "via alert";
+      if (value === null || value === undefined || value === "") return "via alert";
+      return formatPercent(value);
+    }
+
     function extractHedgeValue(d) {
       if (!d) return null;
       return d.Last_Hedge_Short != null ? d.Last_Hedge_Short :
@@ -1849,7 +1858,7 @@
           })
           .then(function(rows) {
             var row = Array.isArray(rows) ? rows[0] : rows;
-            target.textContent = "Hedge: " + formatPercent(row && row["Benchmark Hedge Short"]);
+            target.textContent = "Hedge: " + formatHedge(row, row && row["Benchmark Hedge Short"]);
           })
           .catch(function() {});
       });
