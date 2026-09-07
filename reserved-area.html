@@ -1860,22 +1860,25 @@
     }
 
     function loadHedgePercentages() {
-      activeMarkets().forEach(function(m) {
-        var target = document.getElementById("hedge-" + m.key);
-        if (!target || !m.html) return;
-
-        var dataUrl = m.html.replace(/[^\/]+$/, "report_data.json");
-        fetch(dataUrl, { cache: "no-store" })
-          .then(function(response) {
-            if (!response.ok) throw new Error("Report data unavailable");
-            return response.json();
-          })
-          .then(function(rows) {
-            var row = Array.isArray(rows) ? rows[0] : rows;
-            target.textContent = "Hedge: " + formatHedge(row, row && row["Benchmark Hedge Short"]);
-          })
-          .catch(function() {});
-      });
+      // Da settembre 2026 l'hedge non e' piu' tracciato dal modello Mosaic
+      // (vedi formatHedge sopra): questi riquadri leggono ora il livello di
+      // copertura suggerito dal nuovo Hedge Gauge (histo-r, aggiornato
+      // giornalmente), non piu' "Benchmark Hedge Short" da report_data.json.
+      fetch("hedge-gauge-data.json", { cache: "no-store" })
+        .then(function(response) {
+          if (!response.ok) throw new Error("Hedge Gauge data unavailable");
+          return response.json();
+        })
+        .then(function(gauge) {
+          activeMarkets().forEach(function(m) {
+            var target = document.getElementById("hedge-" + m.key);
+            if (!target) return;
+            var value = gauge[m.key];
+            var text = Number.isFinite(value) ? Math.round(value) + "%" : "via alert";
+            target.innerHTML = 'Hedge: <a href="hedge-gauge.html" title="TradingAlgo Hedge Gauge">' + text + '</a>';
+          });
+        })
+        .catch(function() {});
     }
 
     function loadReportData() {
