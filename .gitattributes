@@ -1,1 +1,21 @@
+# Nel repository i file di testo stanno sempre con fine riga LF. Nel working
+# tree ognuno usa quelli della propria piattaforma, tramite core.autocrlf.
+#
+# Senza questa regola il repository conteneva un misto: 547 file in LF e 7 in
+# CRLF, finiti li' perche' scritti da script su Windows. Il risultato e' che
+# togliere una riga da una pagina poteva produrre un diff di quattromila,
+# rendendo illeggibile la storia proprio quando serve leggerla.
+* text=auto
+
+# Binari: nessuna conversione, altrimenti si corrompono.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
 *.pdf binary
+*.xlsx binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
