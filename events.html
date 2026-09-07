@@ -294,6 +294,16 @@
 
     }
     .event-list { display: grid; gap: 22px; margin-bottom: 40px; }
+    .event-section {
+      margin: 0 0 16px;
+      color: #5b6b80;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+    .event-card.is-past { background: #f7f9fc; border-style: dashed; }
+    .event-card.is-past .event-when { color: #5b6b80; }
     .event-card {
       border: 1px solid #dbe3ef;
       border-radius: 10px;
@@ -312,7 +322,7 @@
       letter-spacing: 0.6px;
       text-transform: uppercase;
     }
-    .event-card h2 { margin: 0 0 6px; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.25; color: #071a33; }
+    .event-card h3 { margin: 0 0 6px; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.25; color: #071a33; }
     .event-card .event-role { margin: 0 0 16px; color: #5b6b80; font-size: 15px; }
     .event-card p { line-height: 1.7; color: #26364a; }
     .event-meta { margin: 18px 0 0; padding: 0; list-style: none; border-top: 1px solid #e5edf6; }
@@ -393,6 +403,7 @@
       <p>Conference talks and public appearances. Details are confirmed by the organiser, so times and rooms can change until the programme is final.</p>
     </div>
 
+    <h2 class="event-section">Upcoming</h2>
     <div class="event-list">
       <article class="event-card">
         <div class="event-when">
@@ -400,7 +411,7 @@
           <span>16 October 2026</span>
           <span>Rome</span>
         </div>
-        <h2>Analisi Tecnica e Linguaggi di Programmazione nell'Era degli Agenti AI</h2>
+        <h3>Analisi Tecnica e Linguaggi di Programmazione nell'Era degli Agenti AI</h3>
         <p class="event-role">Talk by Domenico D'Errico, in Italian</p>
         <p>How to build an algorithmic trading strategy while keeping control of the development process. AI agents have lowered the barrier to designing and deploying trading strategies, which makes solid technical competence more important rather than less: the risk is producing solutions so clever that nobody who commissioned them can understand what they do.</p>
         <p>The talk draws on the article published in <em>Technical Analysis of Stocks &amp; Commodities</em> on reproducing, validating and monitoring trading ideas with AI agents.</p>
@@ -418,9 +429,31 @@
       </article>
     </div>
 
-    <p class="event-note">Time, room and location are shown as published by Investing Roma and are marked there as awaiting confirmation. Check the official programme before travelling.</p>
-  </div>
+    <h2 class="event-section">Past</h2>
+    <div class="event-list">
+      <article class="event-card is-past">
+        <div class="event-when">
+          <span>Gandalf Symposium 2026</span>
+          <span>27 - 28 June 2026</span>
+          <span>Giulianova</span>
+        </div>
+        <h3>Dall'Analisi Tecnica all'Asset Allocation: Costruire Portafogli con il Trend Regime</h3>
+        <p class="event-role">Talk by Domenico D'Errico, in Italian</p>
+        <p>From reading a single instrument to allocating across several: how a trend regime can be turned into a portfolio construction rule rather than a directional call on one market.</p>
+        <ul class="event-meta">
+          <li><span>Event</span> Gandalf Symposium 2026</li>
+          <li><span>Date</span> 27 and 28 June 2026</li>
+          <li><span>Venue</span> Hotel Europa Beach Village, Giulianova</li>
+          <li><span>Language</span> Italian, in a bilingual programme</li>
+        </ul>
+        <div class="event-actions">
+          <a href="https://gandalfproject.com/gandalf-symposium-2026-html/" target="_blank" rel="noopener">Symposium programme</a>
+        </div>
+      </article>
+    </div>
 
+    <p class="event-note">Time, room and location of upcoming events are shown as published by the organiser and may still change. Check the official programme before travelling.</p>
+  </div>
 
   <footer>
 
