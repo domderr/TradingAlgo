@@ -325,12 +325,13 @@
     .event-cover {
       display: block;
       width: 100%;
-      aspect-ratio: 1000 / 562;
-      object-fit: cover;
+      height: auto;
       border-radius: 8px;
       margin: 0 0 22px;
-      background: #07111f;
     }
+    /* I banner arrivano dagli organizzatori e hanno proporzioni diverse:
+       ognuno resta nelle sue, quello quadrato non prende tutta la scheda. */
+    .event-cover.is-square { max-width: 400px; margin: 0 auto 22px; }
     .event-card.is-past .event-cover { opacity: 0.88; }
     .event-card h3 { margin: 0 0 6px; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.25; color: #071a33; }
     .event-card .event-role { margin: 0 0 16px; color: #5b6b80; font-size: 15px; }
@@ -414,8 +415,8 @@
     <h2 class="event-section">Upcoming</h2>
     <div class="event-list">
       <article class="event-card">
-        <img class="event-cover" src="assets/events/edu-fin-2026.png" width="1000" height="562"
-             loading="lazy" alt="Edu-Fin 2026, Bari, 25 September 2026: Dall'Algoritmo al Mercato Reale">
+        <img class="event-cover" src="assets/events/edu-fin-2026-banner.png" width="1600" height="320"
+             loading="lazy" alt="Edu-Fin 2026, educazione finanziaria e trading di borsa, 25 September 2026, Bari">
         <div class="event-when">
           <span>Edu-Fin 2026</span>
           <span>25 September 2026</span>
@@ -438,8 +439,8 @@
         </div>
       </article>
       <article class="event-card">
-        <img class="event-cover" src="assets/events/investing-roma-2026.png" width="1000" height="562"
-             loading="lazy" alt="Investing Roma 2026, Rome, 16 October 2026: Analisi Tecnica e Linguaggi di Programmazione">
+        <img class="event-cover is-square" src="assets/events/investing-roma-2026-speaker.jpg" width="800" height="800"
+             loading="lazy" alt="Investing Roma 2026: Domenico D'Errico speaker, 16 October 2026, Piazza della Pilotta, Rome">
         <div class="event-when">
           <span>Investing Roma 2026</span>
           <span>16 October 2026</span>
