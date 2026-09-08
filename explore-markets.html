@@ -196,18 +196,11 @@
       table { min-width: 1080px; }
     }
   
-    /* Eventi e' la voce nuova del menu: deve staccare dalle altre.
-       width fit-content serve al menu mobile, dove la nav e' in colonna
-       e senza quella la pillola si allargherebbe per tutta la riga. */
-    nav a.nav-highlight {
-      width: fit-content;
-      padding: 4px 13px;
-      border-radius: 999px;
-      background: #22c55e;
-      color: #06210f;
-    }
+    /* Eventi resta la voce in evidenza, ma senza sfondo pieno:
+       il solo colore basta a staccarla dalle altre. */
+    nav a.nav-highlight { color: #22c55e; }
 
-    nav a.nav-highlight:hover { background: #4ade80; color: #06210f; }
+    nav a.nav-highlight:hover { color: #4ade80; }
 </style>
 </head>
 <body>
