@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introducing the Hedge Gauge | TradingAlgo Mosaic</title>
+  <meta name="description" content="How hedging is now managed for TradingAlgo Mosaic subscribers: an always-on suggested hedge level per market, in the Reserved Area, updated daily." />
+  <meta property="og:title" content="Introducing the Hedge Gauge" />
+  <meta property="og:description" content="How hedging is now managed for Mosaic subscribers, in plain terms." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/hedge-gauge-service-update.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/reports/mosaic-weekly-report-layout.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Introducing the Hedge Gauge" />
+  <meta name="twitter:description" content="How hedging is now managed for Mosaic subscribers, in plain terms." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/reports/mosaic-weekly-report-layout.png" />
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #fff; color: #071a33; }
+    a { color: inherit; }
+    nav { position: sticky; top: 0; z-index: 10; padding: 18px 8%; background: rgba(3,12,25,.94); display: flex; justify-content: space-between; align-items: center; gap: 22px; backdrop-filter: blur(8px); }
+    nav .logo { color: #fff; font-size: 24px; font-weight: bold; letter-spacing: 1px; text-decoration: none; }
+    nav a { color: #fff; text-decoration: none; margin-left: 24px; font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+    header { padding: 92px 8% 74px; background: linear-gradient(90deg, rgba(3,12,25,.97), rgba(3,12,25,.80) 54%, rgba(3,12,25,.42)), url("assets/reports/mosaic-weekly-report-layout.png"); background-size: cover; background-position: top center; color: #fff; }
+    .kicker { margin: 0 0 16px; color: #7dd3fc; font-size: 13px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    header h1 { max-width: 980px; margin: 0; font-family: Georgia, serif; font-size: clamp(42px, 6vw, 62px); line-height: 1.06; }
+    header p { max-width: 820px; margin: 24px 0 0; color: #e5e7eb; font-size: 20px; line-height: 1.6; }
+    main { padding: 64px 8% 78px; }
+    .content { max-width: 980px; margin: 0 auto; }
+    section { padding: 0 0 38px; margin: 0 0 38px; border-bottom: 1px solid #dbe3ef; }
+    section:last-child { border-bottom: 0; }
+    h2 { margin: 0 0 18px; color: #0b5fa5; font-family: Georgia, serif; font-size: clamp(28px, 3vw, 34px); line-height: 1.18; }
+    p { margin: 0 0 16px; line-height: 1.76; color: #26364a; font-size: 17px; }
+    .article-meta { margin-bottom: 18px; color: #5b6b80; font-size: 14px; font-weight: 900; letter-spacing: .5px; text-transform: uppercase; }
+    .lead { color: #17263a; font-size: 19px; line-height: 1.72; }
+    .callout { margin: 22px 0; padding: 18px 20px; border-left: 4px solid #0b5fa5; background: #f2f7fc; border-radius: 0 8px 8px 0; }
+    .callout p:last-child { margin-bottom: 0; }
+    ul { margin: 0 0 16px; padding-left: 22px; }
+    li { margin-bottom: 10px; line-height: 1.7; color: #26364a; font-size: 17px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; margin-top: 10px; padding: 13px 22px; border-radius: 8px; background: #0b5fa5; color: #fff; text-decoration: none; font-weight: 800; }
+    footer { padding: 34px 8%; background: #020817; text-align: center; color: #9ca3af; }
+    footer p { margin: 0 0 8px; color: #9ca3af; font-size: 14px; }
+    @media (max-width: 800px) { nav { display: block; } nav a { display: inline-block; margin: 10px 12px 0 0; } header { padding: 74px 8% 58px; } main { padding: 44px 7% 58px; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TA | TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="publications.html">Publications</a>
+      <a href="reserved-area.html">Reserved Area</a>
+    </div>
+  </nav>
+  <header>
+    <p class="kicker">TradingAlgo Mosaic Service Update</p>
+    <h1>Introducing the Hedge Gauge</h1>
+    <p>How hedging is managed for Mosaic subscribers, from now on — explained without any technical detail.</p>
+  </header>
+  <main>
+    <div class="content">
+      <section>
+        <p class="article-meta">Service update</p>
+        <h2>From Hedge Alerts to an Always-On Reading</h2>
+        <p class="lead">Since September 2026, hedging is no longer produced automatically as part of the monthly portfolio cycle: it is derived from dynamic monitoring tools and reaches subscribers separately, as conditions change. Until now that meant an email alert whenever the picture shifted. From today, subscribers also have a live view they can check whenever they want, for every one of the seven Mosaic markets.</p>
+        <p>We call it the <strong>Hedge Gauge</strong>. It replaces the idea of waiting for an alert with an always-on reading: open it, and see where each market stands right now.</p>
+      </section>
+      <section>
+        <h2>What You'll See</h2>
+        <p>For each of the seven Mosaic markets, the Hedge Gauge shows:</p>
+        <ul>
+          <li><strong>A suggested hedge level, from 0% to 100%.</strong> Higher means more caution is warranted; lower means less. It is grouped into four plain bands, from limited hedge to crash risk, so the reading is clear at a glance without needing to interpret a raw number.</li>
+          <li><strong>A short recent price history</strong> for context, alongside how the suggested level itself has moved over the past few months.</li>
+          <li><strong>A plain-language note on what changed</strong> since the last update, so a subscriber checking in after a few days can see immediately whether anything material happened, rather than having to compare numbers themselves.</li>
+        </ul>
+        <div class="callout">
+          <p>The Hedge Gauge updates on its own, daily. There is nothing to configure and nothing to calculate — you only need to look.</p>
+        </div>
+      </section>
+      <section>
+        <h2>Access</h2>
+        <p>The Hedge Gauge is reserved for TradingAlgo Mosaic subscribers. It is available from the Mosaic Member Menu inside the Reserved Area, alongside the other member pages.</p>
+        <p>This publication is research material only and is not personalized financial advice.</p>
+        <a class="button" href="reserved-area.html">Go to the Reserved Area</a>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p><strong>TradingAlgo Mosaic</strong></p>
+    <p><strong>Disclaimer:</strong> this publication is provided for research and educational purposes only. It does not constitute investment advice, financial advice, a solicitation, or a recommendation to buy or sell any financial instrument. Past performance is not indicative of future results. Any investment decision remains the sole responsibility of the reader.</p>
+    <p>Copyright &copy; 2026 TradingAlgo. All rights reserved.</p>
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
