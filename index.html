@@ -1576,6 +1576,142 @@
       text-transform: uppercase;
       vertical-align: 2px;
     }
+
+    /* Avviso di copertura elevata. Compare solo se un mercato sta a 50% o
+       oltre: i valori arrivano da hedge-gauge-data.json, non sono scritti
+       qui, cosi' l'avviso non resta indietro rispetto al dato. */
+    .hedge-alert[hidden] { display: none; }
+
+    .hedge-alert {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .hedge-alert-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(3, 8, 16, 0.72);
+    }
+
+    .hedge-alert-panel {
+      position: relative;
+      width: min(520px, 100%);
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
+      padding: 30px 32px 26px;
+      border: 1px solid #2b4a6f;
+      border-radius: 14px;
+      background: #0d1f36;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+    }
+
+    .hedge-alert-eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(245, 197, 66, 0.16);
+      color: #f5c542;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .hedge-alert-panel h2 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      line-height: 1.2;
+      color: #ffffff;
+    }
+
+    .hedge-alert-panel p {
+      margin: 0 0 18px;
+      color: #c9d6e8;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .hedge-alert-list {
+      margin: 0 0 18px;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid #203854;
+    }
+
+    .hedge-alert-list li {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 11px 0;
+      border-bottom: 1px solid #203854;
+    }
+
+    .hedge-alert-market { color: #ffffff; font-weight: 700; font-size: 16px; }
+    .hedge-alert-value { color: #f5c542; font-weight: 800; font-size: 20px; }
+
+    .hedge-alert-note { font-size: 13px !important; color: #b7c7da !important; }
+
+    .hedge-alert-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    .hedge-alert-cta {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      background: #22c55e;
+      color: #06210f;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .hedge-alert-cta:hover { background: #4ade80; }
+
+    .hedge-alert-dismiss {
+      min-height: 44px;
+      padding: 12px 18px;
+      border: 1px solid #203854;
+      border-radius: 8px;
+      background: transparent;
+      color: #c9d6e8;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .hedge-alert-dismiss:hover { color: #ffffff; border-color: #2f4d70; }
+
+    .hedge-alert-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 40px;
+      height: 40px;
+      border: 0;
+      border-radius: 8px;
+      background: transparent;
+      color: #b7c7da;
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .hedge-alert-close:hover { color: #ffffff; }
+
+    @media (max-width: 520px) {
+      .hedge-alert-panel { padding: 26px 20px 22px; }
+      .hedge-alert-panel h2 { font-size: 21px; }
+      .hedge-alert-actions { flex-direction: column; align-items: stretch; }
+      .hedge-alert-cta { justify-content: center; }
+    }
 </style>
 </head>
 
@@ -2311,6 +2447,126 @@
           });
       });
   </script>
+  <div class="hedge-alert" id="hedge-alert" hidden>
+    <div class="hedge-alert-backdrop" data-hedge-close></div>
+    <div class="hedge-alert-panel" role="dialog" aria-modal="true" aria-labelledby="hedge-alert-title">
+      <button type="button" class="hedge-alert-close" data-hedge-close aria-label="Close this alert">&times;</button>
+      <div class="hedge-alert-eyebrow">Hedge alert</div>
+      <h2 id="hedge-alert-title">Elevated hedge on two markets</h2>
+      <p>The Hedge Gauge suggests an elevated hedge, at or above 50%, for the next five trading days on:</p>
+      <ul class="hedge-alert-list" id="hedge-alert-list"></ul>
+      <p class="hedge-alert-note">Suggested hedge as of <span id="hedge-alert-date"></span>. The other markets stay in the low or moderate band.</p>
+      <div class="hedge-alert-actions">
+        <a class="hedge-alert-cta" href="hedge-gauge.html">Open the Hedge Gauge</a>
+        <button type="button" class="hedge-alert-dismiss" data-hedge-close>Not now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Avviso di copertura elevata sulla home. Legge il dato del Hedge Gauge
+    // e si mostra solo se almeno un mercato e' a 50% o oltre: nessuna soglia
+    // ne' percentuale scritta a mano, cosi' non puo' restare indietro.
+    (function () {
+      var SOGLIA = 50;
+      var NOMI = {
+        USA100: "S&P 500",
+        NASDAQ100: "Nasdaq 100",
+        UK100: "FTSE 100",
+        Germany40: "DAX 40",
+        Europe50: "EURO STOXX 50",
+        Italy40: "FTSE MIB",
+        Australia50: "S&P/ASX 200"
+      };
+      var MESI = ["January", "February", "March", "April", "May", "June",
+                  "July", "August", "September", "October", "November", "December"];
+
+      var avviso = document.getElementById("hedge-alert");
+      if (!avviso || !window.fetch) return;
+
+      var elenco = document.getElementById("hedge-alert-list");
+      var titolo = document.getElementById("hedge-alert-title");
+      var quando = document.getElementById("hedge-alert-date");
+      var ultimoFuoco = null;
+
+      function dataLeggibile(iso) {
+        var pezzi = String(iso || "").split("-");
+        if (pezzi.length !== 3) return String(iso || "");
+        var mese = MESI[Number(pezzi[1]) - 1];
+        return mese ? Number(pezzi[2]) + " " + mese + " " + pezzi[0] : iso;
+      }
+
+      function ricorda(chiave, valore) {
+        try { window.localStorage.setItem(chiave, valore); } catch (e) {}
+      }
+
+      function ricordato(chiave) {
+        try { return window.localStorage.getItem(chiave); } catch (e) { return null; }
+      }
+
+      function chiudi() {
+        avviso.hidden = true;
+        document.body.style.overflow = "";
+        if (ultimoFuoco && ultimoFuoco.focus) ultimoFuoco.focus();
+      }
+
+      function apri(firma) {
+        ultimoFuoco = document.activeElement;
+        avviso.hidden = false;
+        document.body.style.overflow = "hidden";
+        ricorda("ta-hedge-alert", firma);
+        var chiusura = avviso.querySelector(".hedge-alert-close");
+        if (chiusura) chiusura.focus();
+      }
+
+      avviso.addEventListener("click", function (evento) {
+        if (evento.target.hasAttribute("data-hedge-close")) chiudi();
+      });
+
+      document.addEventListener("keydown", function (evento) {
+        if (evento.key === "Escape" && !avviso.hidden) chiudi();
+      });
+
+      fetch("hedge-gauge-data.json", { cache: "no-store" })
+        .then(function (risposta) { return risposta.json(); })
+        .then(function (dati) {
+          var elevati = Object.keys(NOMI)
+            .filter(function (codice) { return Number(dati[codice]) >= SOGLIA; })
+            .map(function (codice) { return { nome: NOMI[codice], valore: Number(dati[codice]) }; })
+            .sort(function (a, b) { return b.valore - a.valore; });
+
+          if (!elevati.length) return;
+
+          var firma = String(dati.asOf) + "|" + elevati.map(function (m) {
+            return m.nome + m.valore;
+          }).join(",");
+          if (ricordato("ta-hedge-alert") === firma) return;
+
+          titolo.textContent = elevati.length === 1
+            ? "Elevated hedge on one market"
+            : "Elevated hedge on " + elevati.length + " markets";
+
+          elenco.innerHTML = "";
+          elevati.forEach(function (mercato) {
+            var riga = document.createElement("li");
+            var nome = document.createElement("span");
+            var valore = document.createElement("span");
+            nome.className = "hedge-alert-market";
+            nome.textContent = mercato.nome;
+            valore.className = "hedge-alert-value";
+            valore.textContent = mercato.valore.toFixed(1) + "%";
+            riga.appendChild(nome);
+            riga.appendChild(valore);
+            elenco.appendChild(riga);
+          });
+
+          quando.textContent = dataLeggibile(dati.asOf);
+          window.setTimeout(function () { apri(firma); }, 900);
+        })
+        .catch(function () { /* senza dato non si mostra nulla */ });
+    })();
+  </script>
+
   <script defer src="assets/access-analytics.js"></script>
 </body>
 </html>
