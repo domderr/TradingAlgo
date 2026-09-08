@@ -251,6 +251,36 @@ body {
 .legend .lk { display: inline-flex; align-items: center; gap: 6px; }
 .legend .dot { width: 9px; height: 9px; border-radius: 999px; display: inline-block; }
 
+.changelog {
+  margin-top: 34px; padding: 22px 24px; background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.changelog h2 {
+  margin: 0 0 10px; font-family: "IBM Plex Mono", monospace; font-size: 1rem; font-weight: 700;
+}
+.changelog-comment { margin: 0 0 16px; color: var(--ink-soft); font-size: 0.88rem; line-height: 1.55; max-width: 84ch; }
+.changelog-rows { display: flex; flex-direction: column; gap: 6px; }
+.change-row {
+  display: grid; grid-template-columns: 1fr auto auto auto; align-items: center; gap: 12px;
+  padding: 7px 10px; border-radius: 8px; background: var(--surface-2); font-size: 0.85rem;
+}
+.change-row .cr-name { font-weight: 600; }
+.change-row .cr-vals {
+  font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; color: var(--ink-faint); white-space: nowrap;
+}
+.change-row .cr-arrow { color: var(--ink-faint); }
+.change-row .cr-delta {
+  font-family: "IBM Plex Mono", monospace; font-weight: 700; font-variant-numeric: tabular-nums;
+  padding: 2px 8px; border-radius: 999px; white-space: nowrap; text-align: center; min-width: 5.5ch;
+}
+.cr-delta.cr-up { color: var(--crash); background: var(--crash-soft); }
+.cr-delta.cr-down { color: var(--low); background: var(--low-soft); }
+.cr-delta.cr-flat { color: var(--ink-faint); background: var(--track); }
+@media (max-width: 560px) {
+  .change-row { grid-template-columns: 1fr auto; row-gap: 4px; }
+  .change-row .cr-vals { grid-column: 1 / -1; }
+}
+
 .methodology {
   margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--border);
   color: var(--ink-soft); font-size: 0.82rem; line-height: 1.6; max-width: 84ch;
@@ -657,11 +687,11 @@ body {
       <div class="gauge-block">
         <div class="gauge-top">
           <span class="gauge-label">Suggested hedge</span>
-          <span class="gauge-value">53<span class="pct">%</span></span>
+          <span class="gauge-value">55<span class="pct">%</span></span>
         </div>
         <div class="gauge-track">
           <span class="tick-70"></span>
-          <div class="gauge-marker" style="left:52.6%; background: var(--high);"></div>
+          <div class="gauge-marker" style="left:55.0%; background: var(--high);"></div>
         </div>
         <div class="gauge-scale">
           <span style="left:0%">0</span>
@@ -678,9 +708,9 @@ body {
           <div class="spark-yaxis"><span>100</span><span>50</span><span>0</span></div>
           <svg class="spark" viewBox="0 0 280 48" preserveAspectRatio="none" role="img" aria-label="Suggested hedge trend, last 90 days, May 5 to Sep 8">
             <line class="spark-grid" x1="0" y1="24.0" x2="280" y2="24.0"></line>
-            <path class="spark-area" d="M4.0,44.0 L4.0,23.8 L7.1,21.8 L10.1,25.8 L13.2,30.7 L16.2,25.7 L19.3,17.2 L22.3,25.4 L25.4,18.0 L28.4,31.0 L31.5,21.7 L34.6,15.0 L37.6,32.6 L40.7,13.0 L43.7,20.6 L46.8,28.6 L49.8,24.7 L52.9,15.2 L56.0,13.4 L59.0,12.4 L62.1,22.7 L65.1,28.0 L68.2,17.2 L71.2,25.4 L74.3,22.0 L77.3,29.1 L80.4,31.5 L83.5,25.7 L86.5,12.8 L89.6,30.2 L92.6,24.7 L95.7,17.5 L98.7,14.4 L101.8,25.5 L104.9,31.2 L107.9,14.2 L111.0,27.0 L114.0,26.7 L117.1,23.4 L120.1,18.0 L123.2,33.0 L126.2,33.5 L129.3,34.8 L132.4,31.5 L135.4,25.0 L138.5,23.0 L141.5,31.2 L144.6,33.8 L147.6,39.9 L150.7,42.2 L153.8,32.2 L156.8,35.4 L159.9,30.0 L162.9,31.0 L166.0,32.0 L169.0,30.9 L172.1,34.2 L175.1,33.0 L178.2,41.5 L181.3,24.0 L184.3,26.7 L187.4,24.7 L190.4,18.8 L193.5,25.4 L196.5,20.8 L199.6,20.0 L202.7,18.2 L205.7,16.6 L208.8,27.0 L211.8,29.5 L214.9,25.0 L217.9,18.3 L221.0,23.0 L224.0,31.8 L227.1,30.3 L230.2,31.6 L233.2,26.4 L236.3,34.2 L239.3,31.2 L242.4,32.1 L245.4,30.0 L248.5,29.4 L251.6,20.4 L254.6,27.2 L257.7,30.6 L260.7,27.0 L263.8,19.2 L266.8,26.3 L269.9,35.4 L272.9,37.8 L276.0,23.0 L276.0,44.0 Z"></path>
-            <path class="spark-line" d="M4.0,23.8 L7.1,21.8 L10.1,25.8 L13.2,30.7 L16.2,25.7 L19.3,17.2 L22.3,25.4 L25.4,18.0 L28.4,31.0 L31.5,21.7 L34.6,15.0 L37.6,32.6 L40.7,13.0 L43.7,20.6 L46.8,28.6 L49.8,24.7 L52.9,15.2 L56.0,13.4 L59.0,12.4 L62.1,22.7 L65.1,28.0 L68.2,17.2 L71.2,25.4 L74.3,22.0 L77.3,29.1 L80.4,31.5 L83.5,25.7 L86.5,12.8 L89.6,30.2 L92.6,24.7 L95.7,17.5 L98.7,14.4 L101.8,25.5 L104.9,31.2 L107.9,14.2 L111.0,27.0 L114.0,26.7 L117.1,23.4 L120.1,18.0 L123.2,33.0 L126.2,33.5 L129.3,34.8 L132.4,31.5 L135.4,25.0 L138.5,23.0 L141.5,31.2 L144.6,33.8 L147.6,39.9 L150.7,42.2 L153.8,32.2 L156.8,35.4 L159.9,30.0 L162.9,31.0 L166.0,32.0 L169.0,30.9 L172.1,34.2 L175.1,33.0 L178.2,41.5 L181.3,24.0 L184.3,26.7 L187.4,24.7 L190.4,18.8 L193.5,25.4 L196.5,20.8 L199.6,20.0 L202.7,18.2 L205.7,16.6 L208.8,27.0 L211.8,29.5 L214.9,25.0 L217.9,18.3 L221.0,23.0 L224.0,31.8 L227.1,30.3 L230.2,31.6 L233.2,26.4 L236.3,34.2 L239.3,31.2 L242.4,32.1 L245.4,30.0 L248.5,29.4 L251.6,20.4 L254.6,27.2 L257.7,30.6 L260.7,27.0 L263.8,19.2 L266.8,26.3 L269.9,35.4 L272.9,37.8 L276.0,23.0"></path>
-            <circle class="spark-dot" cx="276.0" cy="23.0" r="2.4"></circle>
+            <path class="spark-area" d="M4.0,44.0 L4.0,23.8 L7.1,21.8 L10.1,25.8 L13.2,30.7 L16.2,25.7 L19.3,17.2 L22.3,25.4 L25.4,18.0 L28.4,31.0 L31.5,21.7 L34.6,15.0 L37.6,32.6 L40.7,13.0 L43.7,20.6 L46.8,28.6 L49.8,24.7 L52.9,15.2 L56.0,13.4 L59.0,12.4 L62.1,22.7 L65.1,28.0 L68.2,17.2 L71.2,25.4 L74.3,22.0 L77.3,29.1 L80.4,31.5 L83.5,25.7 L86.5,12.8 L89.6,30.2 L92.6,24.7 L95.7,17.5 L98.7,14.4 L101.8,25.5 L104.9,31.2 L107.9,14.2 L111.0,27.0 L114.0,26.7 L117.1,23.4 L120.1,18.0 L123.2,33.0 L126.2,33.5 L129.3,34.8 L132.4,31.5 L135.4,25.0 L138.5,23.0 L141.5,31.2 L144.6,33.8 L147.6,39.9 L150.7,42.2 L153.8,32.2 L156.8,35.4 L159.9,30.0 L162.9,31.0 L166.0,32.0 L169.0,30.9 L172.1,34.2 L175.1,33.0 L178.2,41.5 L181.3,24.0 L184.3,26.7 L187.4,24.7 L190.4,18.8 L193.5,25.4 L196.5,20.8 L199.6,20.0 L202.7,18.2 L205.7,16.6 L208.8,27.0 L211.8,29.5 L214.9,25.0 L217.9,18.3 L221.0,23.0 L224.0,31.8 L227.1,30.3 L230.2,31.6 L233.2,26.4 L236.3,34.2 L239.3,31.2 L242.4,32.1 L245.4,30.0 L248.5,29.4 L251.6,20.4 L254.6,27.2 L257.7,30.6 L260.7,27.0 L263.8,19.2 L266.8,26.3 L269.9,35.4 L272.9,37.8 L276.0,22.0 L276.0,44.0 Z"></path>
+            <path class="spark-line" d="M4.0,23.8 L7.1,21.8 L10.1,25.8 L13.2,30.7 L16.2,25.7 L19.3,17.2 L22.3,25.4 L25.4,18.0 L28.4,31.0 L31.5,21.7 L34.6,15.0 L37.6,32.6 L40.7,13.0 L43.7,20.6 L46.8,28.6 L49.8,24.7 L52.9,15.2 L56.0,13.4 L59.0,12.4 L62.1,22.7 L65.1,28.0 L68.2,17.2 L71.2,25.4 L74.3,22.0 L77.3,29.1 L80.4,31.5 L83.5,25.7 L86.5,12.8 L89.6,30.2 L92.6,24.7 L95.7,17.5 L98.7,14.4 L101.8,25.5 L104.9,31.2 L107.9,14.2 L111.0,27.0 L114.0,26.7 L117.1,23.4 L120.1,18.0 L123.2,33.0 L126.2,33.5 L129.3,34.8 L132.4,31.5 L135.4,25.0 L138.5,23.0 L141.5,31.2 L144.6,33.8 L147.6,39.9 L150.7,42.2 L153.8,32.2 L156.8,35.4 L159.9,30.0 L162.9,31.0 L166.0,32.0 L169.0,30.9 L172.1,34.2 L175.1,33.0 L178.2,41.5 L181.3,24.0 L184.3,26.7 L187.4,24.7 L190.4,18.8 L193.5,25.4 L196.5,20.8 L199.6,20.0 L202.7,18.2 L205.7,16.6 L208.8,27.0 L211.8,29.5 L214.9,25.0 L217.9,18.3 L221.0,23.0 L224.0,31.8 L227.1,30.3 L230.2,31.6 L233.2,26.4 L236.3,34.2 L239.3,31.2 L242.4,32.1 L245.4,30.0 L248.5,29.4 L251.6,20.4 L254.6,27.2 L257.7,30.6 L260.7,27.0 L263.8,19.2 L266.8,26.3 L269.9,35.4 L272.9,37.8 L276.0,22.0"></path>
+            <circle class="spark-dot" cx="276.0" cy="22.0" r="2.4"></circle>
           </svg>
         </div>
         <div class="spark-xaxis"><span>May 5</span><span>Sep 8</span></div>
@@ -692,6 +722,20 @@ body {
     </article>
   </div>
 
+  <div class="changelog">
+    <h2>Change since last update</h2>
+    <p class="changelog-comment">The largest move is <b>S&P/ASX 200</b>, up 33.4 points to 55.0% (crossing from Moderate Hedge to Elevated Hedge), on new data through 2026-09-08 (previous reading: 21.6% as of 2026-09-04); the other six markets are essentially unchanged.</p>
+    <div class="changelog-rows">
+      <div class="change-row"><span class="cr-name">S&P 500</span><span class="cr-vals">22.6% (2026-09-04)</span><span class="cr-arrow">&rarr;</span><span class="cr-vals">22.6% (2026-09-04)</span><span class="cr-delta cr-flat">0.0</span></div>
+      <div class="change-row"><span class="cr-name">Nasdaq 100</span><span class="cr-vals">39.1% (2026-09-04)</span><span class="cr-arrow">&rarr;</span><span class="cr-vals">39.1% (2026-09-04)</span><span class="cr-delta cr-flat">0.0</span></div>
+      <div class="change-row"><span class="cr-name">FTSE 100</span><span class="cr-vals">16.9% (2026-09-04)</span><span class="cr-arrow">&rarr;</span><span class="cr-vals">16.9% (2026-09-04)</span><span class="cr-delta cr-flat">0.0</span></div>
+      <div class="change-row"><span class="cr-name">DAX 40</span><span class="cr-vals">13.1% (2026-09-04)</span><span class="cr-arrow">&rarr;</span><span class="cr-vals">13.1% (2026-09-04)</span><span class="cr-delta cr-flat">0.0</span></div>
+      <div class="change-row"><span class="cr-name">EURO STOXX 50</span><span class="cr-vals">10.5% (2026-09-04)</span><span class="cr-arrow">&rarr;</span><span class="cr-vals">10.5% (2026-09-04)</span><span class="cr-delta cr-flat">0.0</span></div>
+      <div class="change-row"><span class="cr-name">FTSE MIB</span><span class="cr-vals">53.2% (2026-09-04)</span><span class="cr-arrow">&rarr;</span><span class="cr-vals">53.2% (2026-09-04)</span><span class="cr-delta cr-flat">0.0</span></div>
+      <div class="change-row"><span class="cr-name">S&P/ASX 200</span><span class="cr-vals">21.6% (2026-09-04)</span><span class="cr-arrow">&rarr;</span><span class="cr-vals">55.0% (2026-09-08)</span><span class="cr-delta cr-up">+33.4</span></div>
+    </div>
+  </div>
+
   <div class="legend">
     <span class="lk"><span class="dot" style="background:var(--low)"></span> 0&ndash;20% limited hedge</span>
     <span class="lk"><span class="dot" style="background:var(--mid)"></span> 20&ndash;50% moderate hedge</span>
@@ -700,7 +744,7 @@ body {
   </div>
 
   <div class="methodology">
-    <b>How it's calculated.</b> A proprietary algorithm based on momentum and pairwise correlation.
+    <b>How it's calculated.</b> A proprietary algorithm based on momentum and pairwise correlation. Write to <a href="mailto:domderrico@gmail.com" style="color:var(--accent);">domderrico@gmail.com</a> to learn more about the Hedge Gauge.
   </div>
 </div>
 
