@@ -299,6 +299,19 @@ body {
   .masthead { flex-direction: column; align-items: flex-start; }
   .asof { text-align: left; }
 }
+
+.research-section { margin: 40px 0 0; padding: 22px 24px; border: 1px dashed var(--border); border-radius: 10px; background: var(--surface-2); }
+.research-section .rs-tag { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); background: var(--track); padding: 3px 8px; border-radius: 4px; }
+.research-section h2 { margin: 10px 0 6px; font-size: 1.05rem; color: var(--ink); }
+.research-section p { margin: 0 0 14px; color: var(--ink-soft); font-size: 0.85rem; line-height: 1.6; max-width: 84ch; }
+.rs-legend { display: flex; gap: 18px; margin: 4px 0 14px; font-size: 0.72rem; color: var(--ink-soft); }
+.rs-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.rs-legend i { width: 14px; height: 3px; display: inline-block; border-radius: 2px; }
+.rs-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.78rem; }
+.rs-table th, .rs-table td { padding: 6px 10px; text-align: right; border-bottom: 1px solid var(--border); }
+.rs-table th:first-child, .rs-table td:first-child { text-align: left; }
+.rs-table thead th { color: var(--ink-faint); font-weight: 600; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.rs-table .rs-best { color: var(--accent); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -327,7 +340,7 @@ body {
     <div>
       <h1>TradingAlgo Hedge Gauge</h1>
     </div>
-    <div class="asof">Updated as of<span class="big">2026-09-10</span><span class="processed">Processed 11 Sep 2026, 12:39 (CET/CEST)</span></div>
+    <div class="asof">Updated as of<span class="big">2026-09-10</span><span class="processed">Processed 11 Sep 2026, 12:45 (CET/CEST)</span></div>
   </div>
   <div class="validity">Reading valid for the next <b>5 trading days</b> &mdash; refreshes with each daily update of the panel. Research material only &mdash; not personalized financial advice.</div>
 
@@ -728,7 +741,7 @@ body {
 
   <div class="changelog">
     <h2>Change since last update</h2>
-    <p class="changelog-comment">The largest move is <b>Nasdaq 100</b>, down 1.8 points to 53.2%, on new data through 2026-09-10 (previous reading: 55.0% as of 2026-09-10); other markets moved less. Currently at or above 50% suggested hedge: <b>Nasdaq 100</b> (53.2%), <b>FTSE 100</b> (51.2%), <b>FTSE MIB</b> (53.4%), <b>S&P/ASX 200</b> (58.5%).</p>
+    <p class="changelog-comment">No material change since the last update: every market's suggested hedge level moved by less than a point. Currently at or above 50% suggested hedge: <b>Nasdaq 100</b> (53.2%), <b>FTSE 100</b> (51.2%), <b>FTSE MIB</b> (53.4%), <b>S&P/ASX 200</b> (58.5%).</p>
   </div>
 
   <div class="legend">
@@ -741,7 +754,8 @@ body {
   <div class="methodology">
     <b>How it's calculated.</b> A proprietary algorithm based on momentum and pairwise correlation. Write to <a href="mailto:domderrico@gmail.com" style="color:var(--accent);">domderrico@gmail.com</a> to learn more about the Hedge Gauge.
   </div>
-</div>
+
+  </div>
 
 
   <footer class="site-footer">
