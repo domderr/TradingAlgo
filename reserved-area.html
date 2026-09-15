@@ -1119,7 +1119,6 @@
                   <tr>
                     <th>Market</th>
                     <th>ETF</th>
-                    <th>Haircut</th>
                     <th>CAGR Mosaic</th>
                     <th>CAGR Bench</th>
                     <th>CAGR Diff</th>
@@ -1129,7 +1128,7 @@
                   </tr>
                 </thead>
                 <tbody id="performance-summary-body">
-                  <tr><td colspan="9">Loading performance data...</td></tr>
+                  <tr><td colspan="8">Loading performance data...</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1164,12 +1163,11 @@
       { key: "Australia50",  flag: "au", name: "Australia50",  html: "reports_html/Australia50/Report_Australia50.html" }
     ];
 
-    var MARKET_HAIRCUTS = {
-      "Germany40": 0.65,
-      "Italy40": 1.00,
-      "NASDAQ100": 0.35,
-      "USA100": 0.38
-    };
+    // Vuota: in paper trading le metriche si mostrano senza riduzione. Se con
+    // il trading reale gli haircut tornano, vanno applicati nella pipeline e
+    // non qui: questa pagina e' pubblica e qualunque valore scritto in questo
+    // file e' leggibile da chiunque apra il sorgente.
+    var MARKET_HAIRCUTS = {};
 
     var subscriptions = [];
     var authorizedMarkets = [];
@@ -1649,11 +1647,6 @@
       return Number.isFinite(number) ? number.toFixed(2) : "-";
     }
 
-    function formatHaircut(value) {
-      var number = Number(value);
-      return Number.isFinite(number) ? number.toFixed(2) : "1.00";
-    }
-
     function applyMetricHaircut(mosaic, benchmark, haircut) {
       var mosaicNumber = Number(mosaic);
       var benchmarkNumber = Number(benchmark);
@@ -1790,7 +1783,7 @@
       });
 
       if (!rows.length) {
-        tbody.innerHTML = '<tr><td colspan="9">Performance data unavailable for the enabled markets.</td></tr>';
+        tbody.innerHTML = '<tr><td colspan="8">Performance data unavailable for the enabled markets.</td></tr>';
         return;
       }
 
@@ -1798,7 +1791,6 @@
         return '<tr>'
           + '<td>' + row.market + '</td>'
           + '<td>' + row.benchmark + '</td>'
-          + '<td>' + formatHaircut(row.haircut) + '</td>'
           + '<td>' + formatMetricPercent(row.cagrMosaic) + '</td>'
           + '<td>' + formatMetricPercent(row.cagrBench) + '</td>'
           + '<td class="' + metricClass(row.cagrDiff) + '">' + formatMetricPercent(row.cagrDiff) + '</td>'
@@ -1893,10 +1885,9 @@
       });
     }
 
-    // I fattori di haircut non vengono piu' pubblicati: su un host statico
-    // qualunque file leggibile dal browser lo e' per chiunque, e haircuts.csv
-    // esponeva i parametri del modello. MARKET_HAIRCUTS resta vuoto, quindi la
-    // vista admin mostra le metriche senza riduzione.
+    // I fattori di haircut non vengono pubblicati: su un host statico qualunque
+    // file leggibile dal browser lo e' per chiunque. Con MARKET_HAIRCUTS vuoto
+    // applyMetricHaircut restituisce le metriche cosi' come sono.
     function loadHaircuts() {
       return Promise.resolve();
     }
