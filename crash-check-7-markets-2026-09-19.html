@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="The Crash Check applied to the seven Hedge Gauge markets: how close each one is to the phases in the Crash Clusters study, and the odds for the week of 21 to 25 September 2026.">
+<title>Seven-Market Crash Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#071423; --bg-deep:#050b14;
+    --panel:#0c1c30; --panel-2:#112640;
+    --text:#f4f7fb; --muted:#aebbd0; --faint:#7f8ea6;
+    --line:rgba(255,255,255,.14); --line-soft:rgba(255,255,255,.07);
+    --shock:#ff6b6b; --fast:#f5c542; --long:#4aa3ff; --ctl:#93a4bb; --now:#42d392;
+    --font:Inter,"Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background-color:var(--bg);
+    background:
+      radial-gradient(circle at 16% 0%,rgba(74,163,255,.20),transparent 30%),
+      radial-gradient(circle at 86% 6%,rgba(66,211,146,.12),transparent 30%),
+      linear-gradient(180deg,var(--bg),var(--bg-deep) 74%);
+    background-color:var(--bg);
+    color:var(--text);
+    font:16px/1.6 var(--font);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{width:min(1080px,100%);margin:0 auto;padding-inline:20px;padding-block:44px 72px}
+  .backlink{display:inline-flex;align-items:center;gap:8px;margin:0 10px 26px 0;padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--panel);color:var(--muted);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .15s,border-color .15s,background .15s}
+  .backlink:hover,.backlink:focus-visible{color:var(--text);border-color:var(--long);background:var(--panel-2)}
+  .backlink:focus-visible{outline:2px solid var(--long);outline-offset:2px}
+  .eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:0 0 22px;
+    font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .dot{width:9px;height:9px;background:var(--long);display:inline-block;margin-right:8px;border-radius:2px}
+  h1{margin:0 0 16px;font-size:clamp(34px,6vw,58px);line-height:1.03;font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+  .deck{margin:0 0 22px;max-width:64ch;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--muted);text-wrap:pretty}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .facts b{color:var(--text);font-weight:700}
+  main{display:grid;grid-template-columns:minmax(0,1fr);gap:60px;margin-top:48px}
+  main>section,figure{min-width:0}
+  h2{margin:0 0 8px;font-size:clamp(22px,3.2vw,30px);line-height:1.15;font-weight:750;letter-spacing:-.015em;text-wrap:balance}
+  h3.sub{margin:34px 0 12px;font-size:19px;font-weight:700}
+  .lede{margin:0 0 20px;max-width:68ch;color:var(--muted);font-size:16px}
+  .finding{margin:0;max-width:72ch;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:17px;line-height:1.55}
+  .finding b{font-weight:700}
+  figure{margin:0}
+  figcaption{margin-top:10px;max-width:76ch;font-size:13.5px;color:var(--faint)}
+  .chart{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:10px}
+  .chart svg{display:block;width:100%;min-width:640px;height:auto}
+  .bars{display:grid;gap:7px;padding:16px 16px 14px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  .brow{display:grid;grid-template-columns:130px minmax(0,1fr) 62px;align-items:center;gap:12px;font-size:14px;font-variant-numeric:tabular-nums}
+  .brow .nm{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .brow .tr{position:relative;height:16px;background:rgba(255,255,255,.04);border-radius:3px}
+  .brow .fl{position:absolute;left:0;top:0;bottom:0;border-radius:3px}
+  .brow .vl{text-align:right;color:var(--text);font-weight:600}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  table{width:100%;min-width:640px;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+  th,td{padding:11px 14px;text-align:left;vertical-align:top}
+  th{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line);white-space:nowrap}
+  td{border-bottom:1px solid var(--line-soft)}
+  tr:last-child td{border-bottom:0}
+  th.num,td.num{text-align:right;white-space:nowrap}
+  td b{font-weight:650}
+  td.sub{color:var(--muted)}
+  td.hl{color:var(--now);font-weight:700}
+  td.neg,.neg{color:var(--shock);font-weight:650}
+  .tnote{margin:10px 0 0;max-width:80ch;font-size:13px;color:var(--faint)}
+  .bul{display:grid;gap:12px;margin:0;padding:0;list-style:none;max-width:76ch}
+  .bul li{padding-left:18px;position:relative;color:var(--muted);font-size:15.5px}
+  .bul li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--faint);border-radius:2px}
+  .bul b{color:var(--text);font-weight:650}
+  .close{margin:0;max-width:72ch;font-size:18px;line-height:1.55;color:var(--text);text-wrap:pretty}
+  .src{margin:18px 0 0;max-width:80ch;font-size:13px;color:var(--faint)}
+  .disclaimer{margin-top:8px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--faint);max-width:80ch}
+  .disclaimer a{color:var(--muted)}
+  @media (max-width:560px){ .page{padding-block:32px 56px} main{gap:48px} th,td{padding:10px 11px} .brow{grid-template-columns:96px minmax(0,1fr) 54px;gap:8px;font-size:13px} }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <a class="backlink" href="reserved-area.html" aria-label="Back to the Reserved Area"><span aria-hidden="true">←</span> Reserved Area</a><a class="backlink" href="sp500-crash-check-2026-09-19.html">S&amp;P 500 Crash Check</a><a class="backlink" href="sp500-crash-clusters.html">Crash Clusters study</a>
+  <p class="eyebrow"><span><i class="dot"></i>TradingAlgo · Member research</span><span>Snapshot: close of 18 Sep 2026</span><span>Horizon: 21–25 Sep</span></p>
+  <h1>Crash check on seven markets</h1>
+  <p class="deck">The test we ran on the S&amp;P 500, applied to the seven Hedge Gauge markets: how close each one is to the phases in the Crash Clusters study, and the odds for the week of 21–25 September.</p>
+  <ul class="facts">
+    <li><b>7</b> markets</li>
+    <li><b>13</b> reference episodes</li>
+    <li><b>1990–2026</b> history</li>
+    <li>Closes to 18 Sep 2026</li>
+  </ul>
+
+  <main>
+    <section>
+      <p class="finding"><b>None of the seven markets is inside one of the four groups today.</b> Weekly risk is highest in Italy, the Nasdaq 100 and Europe, where a 3% fall at some close during the week is 14–16% likely, and lowest in the S&amp;P 500, the UK and Australia, at 7–8%. Much of that gap is volatility, not a worse setup: the macro backdrop of rising yields and $100 oil is common to all seven.</p>
+    </section>
+
+    <section>
+      <h2>Where each market stands</h2>
+      <p class="lede">Since March the Nasdaq 100, the S&amp;P 500 and the FTSE MIB are up 11–19%, the UK and Australia are below where they started, and the continental European indices have rolled over in the last three weeks.</p>
+      <figure>
+        <div class="chart"><div id="px"></div></div>
+        <figcaption>Local-currency index closes rebased to 100 on 2 March 2026. Yahoo Finance index data. The DAX is a total-return index; the others are price indices.</figcaption>
+      </figure>
+      <div class="tablewrap" style="margin-top:18px">
+        <table>
+          <thead><tr><th>Market</th><th class="num">Close</th><th class="num">From high (sessions since)</th><th class="num">vs 50-day</th><th class="num">vs 200-day</th><th class="num">RSI</th><th class="num">Vol, 21 days</th><th class="num">Hedge Gauge</th></tr></thead>
+          <tbody>
+            <tr><td><b>USA100</b> <span style="color:var(--faint)">S&amp;P 500</span></td><td class="num">7,650</td><td class="num">−1.9% (25)</td><td class="num">+0.4%</td><td class="num">+6.5%</td><td class="num">51</td><td class="num">9.6%</td><td class="num">52%</td></tr>
+            <tr><td><b>NASDAQ100</b></td><td class="num">29,644</td><td class="num">−3.3% (75)</td><td class="num">+1.6%</td><td class="num">+8.9%</td><td class="num">56</td><td class="num">13.4%</td><td class="num">35%</td></tr>
+            <tr><td><b>UK100</b> <span style="color:var(--faint)">FTSE 100</span></td><td class="num">10,659</td><td class="num">−2.3% (140)</td><td class="num">−0.8%</td><td class="num">+2.4%</td><td class="num">44</td><td class="num">10.1%</td><td class="num">76%</td></tr>
+            <tr><td><b>Germany40</b> <span style="color:var(--faint)">DAX</span></td><td class="num">25,304</td><td class="num">−4.8% (15)</td><td class="num">−1.8%</td><td class="num">+2.1%</td><td class="num">39</td><td class="num">12.4%</td><td class="num">47%</td></tr>
+            <tr><td><b>Europe50</b> <span style="color:var(--faint)">Euro Stoxx 50</span></td><td class="num">6,236</td><td class="num">−4.8% (28)</td><td class="num">−2.2%</td><td class="num">+3.1%</td><td class="num">39</td><td class="num">11.9%</td><td class="num">45%</td></tr>
+            <tr><td><b>Italy40</b> <span style="color:var(--faint)">FTSE MIB</span></td><td class="num">51,545</td><td class="num">−4.0% (30)</td><td class="num">−1.8%</td><td class="num">+6.2%</td><td class="num">42</td><td class="num">13.1%</td><td class="num">76%</td></tr>
+            <tr><td><b>Australia50</b> <span style="color:var(--faint)">ASX 200</span></td><td class="num">8,731</td><td class="num">−5.8% (31)</td><td class="num">−2.7%</td><td class="num neg">−0.9%</td><td class="num">33</td><td class="num">9.2%</td><td class="num">22%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tnote">On Friday the European indices closed 1.4–1.6% lower (FTSE 100 −1.45%, DAX −1.60%, Euro Stoxx 50 −1.37%, FTSE MIB −1.61%) while the S&amp;P 500 ended +0.17% and the Nasdaq 100 +0.67%. Australia was flat. Australia is the only market below its 200-day average, which sits at 8,812. Hedge Gauge values are those published on 18 September.</p>
+    </section>
+
+    <section>
+      <h2>Odds for 21–25 September</h2>
+      <p class="lede">Chance that the market closes at least 3% below Friday’s close on some day of the week, on each market’s own index.</p>
+      <figure>
+        <div class="bars" id="odds"></div>
+        <figcaption>Estimate for a close at −3% or lower during the week. Long-run share of weeks with such a close, 1990–2026: S&amp;P 500 10.5%, Nasdaq 100 20.4%, FTSE 100 10.3%, DAX 16.5%, Euro Stoxx 50 16.7% (since 2007), FTSE MIB 19.0%, ASX 200 9.0%.</figcaption>
+      </figure>
+      <div class="tablewrap" style="margin-top:18px">
+        <table>
+          <thead><tr><th>Market</th><th class="num">Close at −3% or lower</th><th class="num">Close at −5% or lower</th><th class="num">Close at −10% or lower</th><th class="num">A ≥15% episode starts this week</th><th class="num">1-week range, 1 sigma</th></tr></thead>
+          <tbody>
+            <tr><td><b>USA100</b></td><td class="num hl">7%</td><td class="num hl">1.5%</td><td class="num hl">0.1%</td><td class="num hl">~1%</td><td class="num">±1.3%</td></tr>
+            <tr><td><b>NASDAQ100</b></td><td class="num hl">16%</td><td class="num hl">5%</td><td class="num hl">0.3%</td><td class="num hl">~1.7%</td><td class="num">±1.9%</td></tr>
+            <tr><td><b>UK100</b></td><td class="num hl">8%</td><td class="num hl">2%</td><td class="num hl">0.2%</td><td class="num hl">~0.9%</td><td class="num">±1.4%</td></tr>
+            <tr><td><b>Germany40</b></td><td class="num hl">12%</td><td class="num hl">4%</td><td class="num hl">0.3%</td><td class="num hl">~1.3%</td><td class="num">±1.7%</td></tr>
+            <tr><td><b>Europe50</b></td><td class="num hl">14%</td><td class="num hl">4.5%</td><td class="num hl">0.3%</td><td class="num hl">~1.5%</td><td class="num">±1.7%</td></tr>
+            <tr><td><b>Italy40</b></td><td class="num hl">16%</td><td class="num hl">6%</td><td class="num hl">0.3%</td><td class="num hl">~1.9%</td><td class="num">±1.8%</td></tr>
+            <tr><td><b>Australia50</b></td><td class="num hl">7%</td><td class="num hl">1.5%</td><td class="num hl">0.2%</td><td class="num hl">~0.8%</td><td class="num">±1.3%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tnote">How the numbers are built. For each market, three estimates of the chance of a −3%, −5% and −10% close within five sessions: a model on 21-day realised volatility alone, a model that adds distance from the high, the 200-day average, 21-day return and the 10-year yield change, and the historical frequency in days with similar volatility above the 200-day. The three are averaged, then scaled by 1.4 for the −3% column and 2 for the −5% and −10% columns to reflect the unusual macro backdrop (yields and oil rising faster than at past tops). The S&amp;P 500 row is the same as in the S&amp;P 500 Crash Check. The “episode starts” column is the market’s own weekly base rate, the average of its 1990–2026 and 2003–2026 rates, multiplied by 1.7. Both multipliers are judgements, not fitted values. The VIX-implied one-week move for the S&amp;P 500 is ±2.05%; the Nasdaq 100 VXN, at 19.3, implies ±2.7%. No implied-volatility index was available for the European and Australian markets.</p>
+    </section>
+
+    <section>
+      <h2>Which phase each market resembles</h2>
+      <p class="lede">Distance between each market’s current state and its state in the two weeks before the peak of each of the thirteen S&amp;P 500 episodes, on technical and macro measures. Lower means closer.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Market</th><th>Closest phases (distance)</th><th>Furthest</th></tr></thead>
+          <tbody>
+            <tr><td><b>USA100</b></td><td class="sub">Gulf War 1990 (0.59) · China and oil 2015 (0.61) · Q4 2018 (0.61)</td><td class="sub">Financial crisis, Covid</td></tr>
+            <tr><td><b>NASDAQ100</b></td><td class="sub">Volmageddon 2018 (0.50) · Gulf War (0.57) · Q4 2018 (0.57)</td><td class="sub">LTCM, dot-com</td></tr>
+            <tr><td><b>UK100</b></td><td class="sub">Volmageddon (0.47) · Gulf War (0.57) · China and oil (0.60)</td><td class="sub">Covid, financial crisis</td></tr>
+            <tr><td><b>Germany40</b></td><td class="sub">Volmageddon (0.49) · Q4 2018 (0.67) · 2010 slide (0.77)</td><td class="sub">Covid, LTCM</td></tr>
+            <tr><td><b>Europe50</b></td><td class="sub">Volmageddon (0.51) · 2010 slide (0.67) · Q4 2018 (0.67)</td><td class="sub">Euro debt, Covid</td></tr>
+            <tr><td><b>Italy40</b></td><td class="sub">Volmageddon (0.61) · 2010 slide (0.64) · China and oil (0.77)</td><td class="sub">Euro debt, Covid</td></tr>
+            <tr><td><b>Australia50</b></td><td class="sub">Q4 2018 (0.63) · Volmageddon (0.66) · China and oil (0.72)</td><td class="sub">Financial crisis, Covid</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ul class="bul" style="margin-top:20px">
+        <li><b>The closest matches are fast corrections or controls</b> (Volmageddon 2018 was a sharp fall that stayed under 15%). No market resembles Covid, the financial crisis or the dot-com bust, and none looks like an extended bear.</li>
+        <li><b>The macro half of the comparison is identical for all seven,</b> since it uses US yields and oil. The differences between markets come from their technical state, which is why the European indices, which have fallen more in three weeks, line up with Volmageddon.</li>
+        <li><b>Europe50 has no data before 2007,</b> so it cannot be compared with Gulf War, LTCM or dot-com. Italy40 and Australia50 start in 1997 and 1992 and miss some early episodes as well.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Are the falls so far the start of a real episode?</h2>
+      <p class="lede">The same test used on the S&amp;P 500. At the same number of sessions after its own high, how many of the ten real episodes had already fallen further than the market has today?</p>
+      <figure>
+        <div class="bars" id="age"></div>
+        <figcaption>Share of the real ≥15% episodes (excluding the three controls) whose drawdown at the same age was deeper than today’s. The peak of each episode is the highest close of that market within about six weeks of the S&amp;P 500 peak. Sample: 10 episodes for the S&amp;P 500, Nasdaq 100, FTSE 100 and DAX; 9 for the ASX 200; 8 for the FTSE MIB; 6 for the Euro Stoxx 50.</figcaption>
+      </figure>
+      <p class="tnote">The higher the bar, the less today’s fall looks like the opening weeks of a real episode. The S&amp;P 500 sits at the top: all ten real episodes were already deeper at this age. Germany is the exception, at 4 of 10: its 4.8% fall in 15 sessions is typical of an episode’s first weeks, but it is also what ordinary pullbacks look like, so it is not conclusive. For the FTSE 100 and Nasdaq 100 the high is 140 and 75 sessions old, and the test is weaker.</p>
+    </section>
+
+    <section>
+      <h2>What moves each market</h2>
+      <p class="lede">Sensitivity of weekly returns to the US 10-year yield and to oil over the last 156 weeks, and the moving-average levels to watch.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Market</th><th class="num">Per +10 bp on the US 10-year</th><th class="num">Per +10% on oil</th><th class="num">R²</th><th class="num">50-day</th><th class="num">200-day</th><th>Below</th></tr></thead>
+          <tbody>
+            <tr><td><b>USA100</b></td><td class="num">−0.06% (n.s.)</td><td class="num">−0.29% (n.s.)</td><td class="num">0.01</td><td class="num">7,617</td><td class="num">7,183</td><td class="sub">20-day</td></tr>
+            <tr><td><b>NASDAQ100</b></td><td class="num">0.00% (n.s.)</td><td class="num">−0.40% (n.s.)</td><td class="num">0.01</td><td class="num">29,176</td><td class="num">27,230</td><td class="sub">none</td></tr>
+            <tr><td><b>UK100</b></td><td class="num neg">−0.26%</td><td class="num">0.00% (n.s.)</td><td class="num">0.04</td><td class="num">10,750</td><td class="num">10,408</td><td class="sub">20, 50-day</td></tr>
+            <tr><td><b>Germany40</b></td><td class="num">−0.08% (n.s.)</td><td class="num neg">−0.90%</td><td class="num">0.07</td><td class="num">25,766</td><td class="num">24,771</td><td class="sub">20, 50-day</td></tr>
+            <tr><td><b>Europe50</b></td><td class="num">−0.04% (n.s.)</td><td class="num neg">−0.69%</td><td class="num">0.04</td><td class="num">6,378</td><td class="num">6,049</td><td class="sub">20, 50, 100-day</td></tr>
+            <tr><td><b>Italy40</b></td><td class="num">0.00% (n.s.)</td><td class="num">−0.62% (weak)</td><td class="num">0.03</td><td class="num">52,508</td><td class="num">48,557</td><td class="sub">20, 50, 100-day</td></tr>
+            <tr><td><b>Australia50</b></td><td class="num neg">−0.33%</td><td class="num neg">−0.42%</td><td class="num">0.13</td><td class="num">8,977</td><td class="num">8,812</td><td class="neg">20, 50, 100, 200-day</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tnote">Weekly return regressed on the weekly change in the US 10-year yield and in WTI. n.s. = not statistically significant (|t| below 2). Fit is weak everywhere (R² between 1% and 13%), so read the table as a hint of where each market is exposed, not as a forecasting tool. Yield sensitivity stands out in Australia and the UK, oil sensitivity in Germany and the euro area; the S&amp;P 500 and Nasdaq 100 show none that is significant over the period.</p>
+
+      <h3 class="sub">Hedge Gauge alongside this check</h3>
+      <ul class="bul">
+        <li><b>Italy40 scores highest on both</b>: 76% on Hedge Gauge and the highest weekly odds here.</li>
+        <li><b>UK100 is 76% on Hedge Gauge but has one of the lowest weekly odds</b> and the lowest volatility of the European markets.</li>
+        <li><b>Australia50 is the lowest on Hedge Gauge, 22%,</b> and the weakest chart of the seven, the only one below its 200-day average.</li>
+      </ul>
+      <p class="tnote">Hedge Gauge is a proprietary algorithm based on momentum and pairwise correlation, on a longer horizon than this one-week check, so the two need not agree. UK100 and Australia50 are the two markets where the readings diverge most.</p>
+    </section>
+
+    <section>
+      <h2>Method and limits</h2>
+      <ul class="bul">
+        <li><b>Episodes are defined as in the S&amp;P 500 study:</b> a fall of at least 15% from a peak, which ends when the market regains the peak or rebounds 25% from the low. On S&amp;P 500 data since 1990 this rule reproduces exactly the ten episodes of the study. Groups follow the study: under 25 sessions and over 1% a day, flash shock; under 120 sessions, fast correction; longer, extended bear.</li>
+        <li><b>Base rates differ a lot by market.</b> Weekly base rates for a new ≥15% episode range from 0.5% (S&amp;P 500, FTSE 100) to 1.2% (FTSE MIB). The Nasdaq 100 rate is inflated by the 1990s: 22 episodes since 1990, of which 10 since 2003.</li>
+        <li><b>The seven markets are not independent.</b> They tend to fall together, so the odds above cannot be combined as if they were separate bets.</li>
+        <li><b>Indices are in local currency,</b> not in the USD ETFs used by Hedge Gauge, so currency moves are not included. Data are Yahoo Finance index closes to 18 September 2026; Europe50 starts in 2007, Italy40 in 1997 and Australia50 in 1992.</li>
+        <li><b>The macro backdrop is the one described in the S&amp;P 500 Crash Check,</b> taken from news reports and not checked against primary releases: Fed hike on 16 September, US 10-year at 5.00%, WTI around $100 and the US–Iran conflict. The economic calendar for 21–25 September was not verified.</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="close">Rising yields and oil affect all seven markets, but the setup differs: the US indices are calm and near their highs, the European ones have already slipped under their 50-day averages, and Australia has broken its 200-day. None of them has yet fallen the way a real episode typically has by this point. Italy, the Nasdaq 100 and the euro area carry the most weekly risk, mostly because they are the most volatile.</p>
+      <p class="disclaimer">Research material only — not personalized financial advice. Not a recommendation to buy or sell any security. Past drawdowns do not predict future ones. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a>.</p>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  var css=getComputedStyle(document.documentElement);
+  function col(k){return css.getPropertyValue('--'+k).trim();}
+  var NS='http://www.w3.org/2000/svg';
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+  function tx(p,x,y,t,a){var e=el('text',Object.assign({x:x,y:y,fill:col('muted'),'font-size':12,'font-family':'Inter,Arial,sans-serif'},a||{}),p);e.textContent=t;return e;}
+
+  /* ---------- rebased price chart ---------- */
+  var PX={"d":["2026-03-02","2026-03-03","2026-03-04","2026-03-05","2026-03-06","2026-03-09","2026-03-10","2026-03-11","2026-03-12","2026-03-13","2026-03-16","2026-03-17","2026-03-18","2026-03-19","2026-03-20","2026-03-23","2026-03-24","2026-03-25","2026-03-26","2026-03-27","2026-03-30","2026-03-31","2026-04-01","2026-04-02","2026-04-06","2026-04-07","2026-04-08","2026-04-09","2026-04-10","2026-04-13","2026-04-14","2026-04-15","2026-04-16","2026-04-17","2026-04-20","2026-04-21","2026-04-22","2026-04-23","2026-04-24","2026-04-27","2026-04-28","2026-04-29","2026-04-30","2026-05-01","2026-05-04","2026-05-05","2026-05-06","2026-05-07","2026-05-08","2026-05-11","2026-05-12","2026-05-13","2026-05-14","2026-05-15","2026-05-18","2026-05-19","2026-05-20","2026-05-21","2026-05-22","2026-05-25","2026-05-26","2026-05-27","2026-05-28","2026-05-29","2026-06-01","2026-06-02","2026-06-03","2026-06-04","2026-06-05","2026-06-08","2026-06-09","2026-06-10","2026-06-11","2026-06-12","2026-06-15","2026-06-16","2026-06-17","2026-06-18","2026-06-19","2026-06-22","2026-06-23","2026-06-24","2026-06-25","2026-06-26","2026-06-29","2026-06-30","2026-07-01","2026-07-02","2026-07-03","2026-07-06","2026-07-07","2026-07-08","2026-07-09","2026-07-10","2026-07-13","2026-07-14","2026-07-15","2026-07-16","2026-07-17","2026-07-20","2026-07-21","2026-07-22","2026-07-23","2026-07-24","2026-07-27","2026-07-28","2026-07-29","2026-07-30","2026-07-31","2026-08-03","2026-08-04","2026-08-05","2026-08-06","2026-08-07","2026-08-10","2026-08-11","2026-08-12","2026-08-13","2026-08-14","2026-08-17","2026-08-18","2026-08-19","2026-08-20","2026-08-21","2026-08-24","2026-08-25","2026-08-26","2026-08-27","2026-08-28","2026-08-31","2026-09-01","2026-09-02","2026-09-03","2026-09-04","2026-09-07","2026-09-08","2026-09-09","2026-09-10","2026-09-11","2026-09-14","2026-09-15","2026-09-16","2026-09-17","2026-09-18"],"USA100":[100.0,99.06,99.82,99.26,97.94,98.76,98.54,98.46,96.96,96.38,97.35,97.59,96.27,96.0,94.55,95.63,95.27,95.79,94.12,92.55,92.18,94.87,95.55,95.66,96.08,96.15,98.56,99.17,99.06,100.07,101.25,102.05,102.32,103.55,103.31,102.65,103.72,103.3,104.12,104.25,103.74,103.7,104.76,105.06,104.64,105.49,107.03,106.62,107.52,107.72,107.55,108.18,109.0,107.66,107.58,106.86,108.01,108.2,108.6,108.6,109.26,109.28,109.91,110.15,110.44,110.58,109.77,110.21,107.3,107.62,107.34,105.6,107.45,107.99,109.77,109.15,107.82,108.99,108.99,108.59,107.03,106.93,106.92,106.86,108.12,108.98,108.74,108.74,108.74,109.53,109.04,108.73,109.62,110.08,109.21,109.62,110.04,109.48,108.37,108.16,109.12,108.97,107.65,107.71,107.72,107.95,106.31,108.08,108.84,110.45,112.42,112.23,112.04,112.73,112.66,112.3,112.6,113.33,113.14,112.55,111.77,112.01,111.04,111.52,111.21,111.56,111.54,112.34,112.06,111.69,110.9,111.41,112.59,112.16,112.16,111.51,110.97,110.32,111.27,110.73,110.23,109.74,110.99,111.17],"NASDAQ100":[100.0,98.91,100.4,100.11,98.6,99.9,99.86,99.89,98.16,97.55,98.65,99.15,97.73,97.45,95.62,96.78,96.04,96.68,94.38,92.56,91.84,94.99,96.11,96.21,96.8,96.84,99.64,100.36,100.5,101.56,103.4,104.85,105.36,106.72,106.39,105.95,107.78,107.16,109.25,109.26,108.15,108.78,109.84,110.87,110.64,112.09,114.43,114.29,116.97,117.32,116.29,117.5,118.36,116.54,116.01,115.31,117.23,117.46,117.96,117.96,120.04,119.93,120.93,121.37,122.09,122.68,122.32,121.67,115.86,117.69,116.37,114.07,117.82,118.58,122.21,119.91,118.72,121.66,121.66,121.42,117.42,116.91,117.8,116.51,119.13,121.14,119.27,117.35,117.35,118.83,116.73,117.04,118.94,119.34,117.09,118.38,118.05,116.14,114.4,114.45,116.66,116.03,113.85,112.55,112.19,111.09,108.8,112.46,113.13,115.14,118.97,117.99,117.53,118.92,118.52,118.14,119.01,120.37,120.22,120.02,118.0,117.74,116.89,117.27,116.13,116.87,116.93,118.6,117.77,117.86,116.34,116.61,117.96,118.21,118.21,118.07,117.72,116.45,117.51,116.54,115.79,115.81,117.82,118.61],"UK100":[100.0,97.25,98.03,96.6,95.41,95.08,96.59,96.05,95.59,95.19,95.71,96.51,95.6,93.35,92.01,91.78,92.44,93.75,92.51,92.46,93.95,94.4,96.15,96.81,96.81,96.0,98.41,98.36,98.33,98.17,98.41,97.95,98.24,98.96,98.41,97.38,97.18,97.0,96.28,95.74,95.85,94.74,96.28,96.14,96.14,94.8,96.83,95.33,94.93,95.26,95.22,95.78,96.22,94.58,95.77,95.83,96.77,96.88,97.09,97.09,97.32,97.45,96.72,96.56,95.91,96.23,95.85,96.11,96.18,96.23,94.87,95.13,95.58,97.14,96.76,97.35,97.48,96.47,96.13,96.83,96.74,97.05,97.68,97.48,97.26,97.37,97.2,98.82,99.06,98.81,98.94,97.3,97.15,97.38,97.39,97.67,97.55,98.07,98.33,97.63,98.2,99.41,98.69,99.59,100.02,100.84,101.19,101.09,100.82,100.72,100.92,101.0,100.81,101.12,100.76,100.59,100.49,99.93,99.72,99.45,99.52,99.66,99.7,100.34,100.69,100.98,100.91,100.12,100.41,100.41,100.09,99.78,100.48,100.47,100.39,100.29,98.98,98.41,98.8,99.23,98.87,99.15,100.33,98.88],"Germany40":[100.0,96.56,98.24,96.66,95.75,95.01,97.28,95.95,95.74,95.17,95.64,96.32,95.39,92.7,90.84,91.95,91.88,93.18,91.78,90.51,91.58,92.05,94.56,94.03,94.03,93.03,97.74,96.63,96.61,96.37,97.59,97.68,98.04,100.26,99.11,98.51,98.2,98.04,97.93,97.75,97.48,97.23,98.6,98.6,97.38,99.04,101.14,100.1,98.78,98.83,97.23,97.97,99.26,97.21,98.66,99.04,100.4,99.87,101.02,103.05,102.22,102.19,101.84,101.89,101.48,101.97,100.64,101.25,100.49,99.91,99.17,98.2,98.26,99.99,101.04,101.11,101.2,101.58,101.41,102.04,101.04,100.42,101.45,100.13,99.95,101.45,101.63,103.83,104.63,104.79,103.36,101.05,101.95,101.74,101.93,102.07,101.47,101.13,100.78,100.85,101.52,102.1,100.51,101.87,102.93,103.35,103.34,103.95,104.02,105.53,106.35,106.04,106.1,106.82,106.84,107.12,106.87,106.74,107.32,106.9,106.05,105.9,105.46,106.08,105.96,106.61,106.69,107.02,107.84,106.58,105.41,104.88,105.54,105.72,105.55,105.56,103.81,102.94,103.78,103.26,103.1,103.65,104.38,102.7],"Europe50":[100.0,96.41,98.06,96.59,95.54,94.96,97.5,96.79,96.02,95.48,95.86,96.36,95.82,93.77,91.89,93.11,93.22,94.36,92.97,91.96,92.56,93.03,95.75,95.09,95.09,94.09,98.77,98.49,98.98,98.63,99.96,99.22,99.1,101.18,99.93,99.05,98.65,98.46,98.27,97.89,97.48,97.15,98.24,98.24,96.27,98.04,100.67,99.76,98.74,98.47,97.02,97.9,97.9,97.34,97.7,97.73,99.82,99.56,100.54,100.54,101.29,101.4,101.14,101.06,100.8,102.02,101.11,101.94,101.26,101.26,101.05,100.38,101.17,103.35,104.05,104.52,105.23,105.62,105.11,105.42,104.07,103.8,104.69,103.92,104.09,105.7,104.94,106.24,107.11,106.87,105.56,103.64,104.97,104.73,104.75,104.9,104.65,104.96,104.07,104.02,104.99,105.51,103.73,104.91,104.93,105.05,104.37,105.97,106.2,107.34,108.35,108.19,108.61,108.97,109.16,109.43,109.14,109.33,109.23,109.08,108.04,107.64,107.27,107.94,107.7,107.83,108.08,107.31,108.33,107.24,106.38,106.27,106.61,106.78,106.97,107.12,105.42,104.71,105.65,104.57,104.17,104.67,105.61,104.16],"Italy40":[100.0,96.08,97.96,96.39,95.4,95.13,97.67,96.74,96.06,95.76,95.83,96.99,96.67,94.43,92.57,93.32,93.71,95.1,94.43,93.73,94.69,95.74,98.78,98.58,98.58,98.12,101.75,102.26,102.87,102.69,104.1,104.05,103.77,105.59,104.16,103.51,103.25,103.52,102.97,103.01,103.8,103.28,104.25,104.25,102.59,104.92,107.38,106.51,106.5,107.31,105.86,106.92,108.15,106.13,105.16,104.48,106.27,106.24,106.98,108.51,107.82,107.13,107.66,108.12,107.55,109.29,108.12,108.41,107.81,108.49,108.61,108.1,109.13,111.27,112.01,113.3,113.65,113.85,114.19,114.08,112.41,111.58,111.89,110.77,110.55,111.67,111.51,113.28,114.13,114.43,113.34,111.96,113.18,113.69,114.11,114.22,113.25,113.17,112.1,112.06,112.98,114.07,110.88,111.93,112.48,111.71,111.16,112.58,112.73,114.24,115.69,115.49,116.0,116.07,115.96,116.05,116.03,116.02,115.78,115.79,114.56,113.69,113.8,113.8,113.53,113.92,114.27,112.93,113.69,113.68,112.18,111.91,112.89,112.58,112.86,112.74,112.09,111.94,113.47,111.56,111.4,112.29,113.19,111.38],"Australia50":[100.0,98.06,98.49,97.51,97.51,95.76,96.32,95.06,94.93,94.93,94.9,95.19,93.62,92.85,92.85,92.31,94.27,93.92,93.82,93.82,93.44,95.53,94.52,94.52,94.52,96.16,98.62,98.85,98.71,98.33,98.83,98.91,98.65,98.56,98.63,98.59,97.43,96.87,96.8,96.57,95.96,95.7,95.47,96.17,95.81,95.63,96.87,97.81,96.33,95.86,95.52,95.08,95.19,95.08,93.7,94.79,93.6,94.98,95.37,95.76,95.38,96.04,94.66,96.19,96.17,96.11,96.79,95.69,95.02,95.02,94.79,95.33,95.11,96.99,98.2,98.24,98.78,98.17,97.26,97.12,96.8,97.04,96.38,96.55,97.2,96.71,96.1,96.11,97.43,97.29,96.99,96.78,96.53,97.01,97.04,97.04,97.4,97.39,96.91,96.85,96.87,97.2,97.37,96.64,97.98,98.57,99.57,98.79,98.89,99.36,100.75,101.66,102.14,102.05,101.71,101.91,101.46,101.23,100.42,99.95,99.92,99.74,100.07,99.8,100.28,100.96,100.56,99.57,100.17,99.99,99.88,98.91,99.37,99.21,99.27,98.28,98.17,97.16,96.3,96.39,95.54,95.8,96.2,96.19]};
+  var MK=[['USA100','S&P 500','#f4f7fb'],['NASDAQ100','Nasdaq 100','#42d392'],['UK100','FTSE 100','#4aa3ff'],['Germany40','DAX','#f5c542'],['Europe50','Euro Stoxx 50','#ff9f5a'],['Italy40','FTSE MIB','#c792ff'],['Australia50','ASX 200','#ff6b6b']];
+  (function(){
+    var W=900,H=340,L=52,R=110,T=14,B=30,n=PX.d.length;
+    var lo=Infinity,hi=-Infinity;MK.forEach(function(m){PX[m[0]].forEach(function(v){lo=Math.min(lo,v);hi=Math.max(hi,v);});});
+    lo=Math.floor(lo/5)*5-2;hi=Math.ceil(hi/5)*5+2;
+    function X(i){return L+(W-L-R)*i/(n-1);} function Y(v){return T+(H-T-B)*(1-(v-lo)/(hi-lo));}
+    var s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Seven equity indices rebased to 100 on 2 March 2026'});
+    for(var g=Math.ceil(lo/10)*10;g<=hi;g+=10){el('line',{x1:L,x2:W-R,y1:Y(g),y2:Y(g),stroke:g===100?'rgba(255,255,255,.28)':'rgba(255,255,255,.08)','stroke-dasharray':g===100?'4 4':'none'},s);tx(s,L-8,Y(g)+4,g,{'text-anchor':'end'});}
+    var mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],seen={};
+    PX.d.forEach(function(d,i){var m=d.slice(0,7);if(!seen[m]){seen[m]=1;tx(s,X(i),H-8,mn[parseInt(m.slice(5),10)-1],{});}});
+    MK.forEach(function(m){var a=PX[m[0]],d='';a.forEach(function(v,i){d+=(i?'L':'M')+X(i).toFixed(1)+' '+Y(v).toFixed(1);});
+      el('path',{d:d,fill:'none',stroke:m[2],'stroke-width':m[0]==='USA100'?2.2:1.6,'stroke-linejoin':'round',opacity:m[0]==='USA100'?1:.92},s);});
+    /* end labels with simple collision avoidance */
+    var labs=MK.map(function(m){var a=PX[m[0]];return {n:m[1],c:m[2],v:a[a.length-1],y:Y(a[a.length-1])};}).sort(function(a,b){return a.y-b.y;});
+    for(var i=1;i<labs.length;i++){if(labs[i].y-labs[i-1].y<14)labs[i].y=labs[i-1].y+14;}
+    labs.forEach(function(l){tx(s,W-R+8,l.y+4,l.n+' '+l.v.toFixed(0),{fill:l.c,'font-weight':600});});
+    document.getElementById('px').appendChild(s);
+  })();
+
+  /* ---------- bars ---------- */
+  function bars(id,rows,max,fmt,color){
+    var box=document.getElementById(id);
+    rows.forEach(function(r){
+      var d=document.createElement('div');d.className='brow';
+      var w=Math.max(1.5,100*r.v/max);
+      d.innerHTML='<span class="nm">'+r.n+'</span><span class="tr"><span class="fl" style="width:'+w+'%;background:'+(r.c||color)+'"></span></span><span class="vl">'+fmt(r)+'</span>';
+      box.appendChild(d);
+    });
+  }
+  bars('odds',[{n:'Italy40',v:16},{n:'Nasdaq 100',v:16},{n:'Europe50',v:14},{n:'Germany40',v:12},{n:'UK100',v:8},{n:'USA100',v:7},{n:'Australia50',v:7}],20,function(r){return '~'+r.v+'%';},col('long'));
+  bars('age',[{n:'USA100',v:100,k:'10/10'},{n:'Australia50',v:89,k:'8/9'},{n:'UK100',v:80,k:'8/10'},{n:'Nasdaq 100',v:70,k:'7/10'},{n:'Italy40',v:75,k:'6/8'},{n:'Europe50',v:83,k:'5/6'},{n:'Germany40',v:40,k:'4/10',c:col('fast')}].sort(function(a,b){return b.v-a.v;}),100,function(r){return r.k;},col('now'));
+})();
+</script>
+</body>
+</html>
