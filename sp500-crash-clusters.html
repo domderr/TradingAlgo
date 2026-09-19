@@ -33,6 +33,10 @@
     -webkit-font-smoothing:antialiased;
   }
   .page{width:min(1080px,100%);margin:0 auto;padding-inline:20px;padding-block:44px 72px}
+  .backlink{display:inline-flex;align-items:center;gap:8px;margin:0 0 26px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--panel);color:var(--muted);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .15s,border-color .15s,background .15s}
+  .backlink:hover,.backlink:focus-visible{color:var(--text);border-color:var(--long);background:var(--panel-2)}
+  .backlink:focus-visible{outline:2px solid var(--long);outline-offset:2px}
   .eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:0 0 22px;
     font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
   .eyebrow .dot{width:9px;height:9px;background:var(--long);display:inline-block;margin-right:8px;border-radius:2px}
@@ -89,6 +93,7 @@
 <body>
 
 <div class="page">
+  <a class="backlink" href="reserved-area.html" aria-label="Back to the Reserved Area"><span aria-hidden="true">←</span> Reserved Area</a>
   <p class="eyebrow"><span><i class="dot"></i>TradingAlgo · Member research</span><span>Updated September 2026</span></p>
   <h1>S&amp;P 500 crash clusters</h1>
   <p class="deck">Thirteen drawdowns since 1990, grouped by how fast and how long they fall. The group decides which family of hedge trigger can arrive in time, and which will always be late.</p>
