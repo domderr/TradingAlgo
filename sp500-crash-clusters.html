@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Thirteen S&amp;P 500 drawdowns since 1990, grouped by speed and length of the fall, and what each group means for the timing of a hedge.">
+<title>S&amp;P 500 Crash Clusters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#071423; --bg-deep:#050b14;
+    --panel:#0c1c30; --panel-2:#112640;
+    --text:#f4f7fb; --muted:#aebbd0; --faint:#7f8ea6;
+    --line:rgba(255,255,255,.14); --line-soft:rgba(255,255,255,.07);
+    --shock:#ff6b6b; --fast:#f5c542; --long:#4aa3ff; --ctl:#93a4bb;
+    --font:Inter,"Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background-color:var(--bg);
+    background:
+      radial-gradient(circle at 16% 0%,rgba(74,163,255,.20),transparent 30%),
+      radial-gradient(circle at 86% 6%,rgba(66,211,146,.12),transparent 30%),
+      linear-gradient(180deg,var(--bg),var(--bg-deep) 74%);
+    background-color:var(--bg);
+    color:var(--text);
+    font:16px/1.6 var(--font);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{width:min(1080px,100%);margin:0 auto;padding-inline:20px;padding-block:44px 72px}
+  .eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:0 0 22px;
+    font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .dot{width:9px;height:9px;background:var(--long);display:inline-block;margin-right:8px;border-radius:2px}
+  h1{margin:0 0 16px;font-size:clamp(34px,6vw,58px);line-height:1.03;font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+  .deck{margin:0 0 22px;max-width:62ch;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--muted);text-wrap:pretty}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted);
+    font-variant-numeric:tabular-nums}
+  .facts b{color:var(--text);font-weight:700}
+  main{display:grid;grid-template-columns:minmax(0,1fr);gap:60px;margin-top:48px}
+  main>section,figure{min-width:0}
+  h2{margin:0 0 8px;font-size:clamp(22px,3.2vw,30px);line-height:1.15;font-weight:750;letter-spacing:-.015em;text-wrap:balance}
+  .lede{margin:0 0 20px;max-width:66ch;color:var(--muted);font-size:16px}
+  .finding{margin:0;max-width:70ch;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);
+    font-size:17px;line-height:1.55}
+  .finding b{font-weight:700}
+  .key{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+  .key span{display:inline-flex;align-items:center;gap:8px}
+  .sw{width:14px;height:10px;border-radius:2px;display:inline-block}
+  .chart{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:10px}
+  .chart svg{display:block;width:100%;min-width:720px;height:auto}
+  figcaption{margin-top:10px;max-width:74ch;font-size:13.5px;color:var(--faint)}
+  figure{margin:0}
+  .groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .group{padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);display:flex;flex-direction:column;gap:10px}
+  .group h3{margin:0;display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;letter-spacing:-.01em}
+  .group h3 i{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
+  .rule{margin:0;font-size:13.5px;color:var(--muted)}
+  .eps{margin:0;font-size:14.5px;color:var(--text)}
+  .rec{margin:0;font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .rec b{color:var(--text);font-weight:600}
+  .verdict{margin:auto 0 0;padding-top:12px;border-top:1px solid var(--line-soft);font-size:14.5px;color:var(--text)}
+  .verdict b{font-weight:700}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  table{width:100%;min-width:640px;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+  th,td{padding:11px 14px;text-align:left;white-space:nowrap}
+  th{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line)}
+  td{border-bottom:1px solid var(--line-soft)}
+  tr:last-child td{border-bottom:0}
+  th.num,td.num{text-align:right}
+  td .tag{display:inline-flex;align-items:center;gap:8px;color:var(--muted)}
+  td .tag i{width:10px;height:10px;border-radius:2px;display:inline-block}
+  td.ep b{font-weight:600}
+  td.ep span{color:var(--faint);margin-left:8px}
+  .tnote{margin:10px 0 0;max-width:78ch;font-size:13px;color:var(--faint)}
+  .limits{display:grid;gap:12px;margin:0;padding:0;list-style:none;max-width:72ch}
+  .limits li{padding-left:18px;position:relative;color:var(--muted);font-size:15.5px}
+  .limits li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--faint);border-radius:2px}
+  .limits b{color:var(--text);font-weight:650}
+  .close{margin:0;max-width:70ch;font-size:18px;line-height:1.55;color:var(--text);text-wrap:pretty}
+  .disclaimer{margin-top:8px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--faint);max-width:78ch}
+  @media (max-width:520px){ .page{padding-block:32px 56px} main{gap:48px} th,td{padding:10px 11px} }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <p class="eyebrow"><span><i class="dot"></i>TradingAlgo · Member research</span><span>Updated September 2026</span></p>
+  <h1>S&amp;P 500 crash clusters</h1>
+  <p class="deck">Thirteen drawdowns since 1990, grouped by how fast and how long they fall. The group decides which family of hedge trigger can arrive in time, and which will always be late.</p>
+  <ul class="facts">
+    <li><b>13</b> episodes</li>
+    <li><b>1990–2026</b> window</li>
+    <li><b>15%</b> depth threshold</li>
+    <li><b>4</b> groups</li>
+    <li>Daily closes to 15 Sep 2026</li>
+  </ul>
+
+  <main>
+    <section>
+      <p class="finding"><b>No single rule fits every crash.</b> A hedge tuned on extended bear markets loses money in fast corrections, and neither reaches a flash shock before it is over. The useful question is not which trigger is best, but which group you want to hedge, and what that costs each year.</p>
+    </section>
+
+    <section>
+      <h2>Thirteen episodes in thirty-six years</h2>
+      <p class="lede">Log scale. The solid band is the fall from peak to low; the pale band is the time it took to make a new high.</p>
+      <div class="key" id="key1"></div>
+      <figure>
+        <div class="chart"><div id="hist"></div></div>
+        <figcaption>Month-end closes plus the peak, low and new high of each episode. From 1993 the level is the SPY closing price times ten, a close proxy for the S&amp;P 500; 1990–92 uses index closes at quarter-ends.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>The same episodes, without the time axis</h2>
+      <p class="lede">Length of the decline against speed of the fall. Both axes are logarithmic, so the dashed diagonals are lines of equal depth, and marker size also shows depth. This is where the groups separate.</p>
+      <figure>
+        <div class="chart"><div id="map"></div></div>
+        <figcaption>Speed is peak-to-low depth divided by sessions down, so it averages out any acceleration near the low. Shaded areas show the rule that defines each group; hollow markers are controls that stayed under the 15% threshold.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Three shapes, three different problems</h2>
+      <p class="lede">Peak set to 100, months on the horizontal axis. One archetype per group: the shape of the decline and of the recovery is what makes the matching triggers incompatible.</p>
+      <figure>
+        <div class="chart"><div id="shapes"></div></div>
+        <figcaption>Illustrative profiles drawn from monthly closes; the depth of each low is indicative.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Four groups</h2>
+      <p class="lede">Time to a new high is measured from the low of each episode.</p>
+      <div class="groups">
+        <article class="group">
+          <h3><i style="background:var(--shock)"></i>Flash shocks</h3>
+          <p class="rule">Under 25 sessions, over 1% a day</p>
+          <p class="eps">Covid, February–March 2020</p>
+          <p class="rec">New high after <b>5 months</b></p>
+          <p class="verdict"><b>No price-based trigger arrives in time.</b> The trend breaks its moving average when most of the move has already happened. Either the hedge is already in the portfolio, or you accept not hedging.</p>
+        </article>
+        <article class="group">
+          <h3><i style="background:var(--fast)"></i>Fast corrections</h3>
+          <p class="rule">About 30–65 sessions, 0.3–0.6% a day</p>
+          <p class="eps">Gulf War 1990 · LTCM 1998 · 2010 · Euro debt 2011 · Q4 2018 · Tariffs 2025</p>
+          <p class="rec">New high after <b>3–5 months</b></p>
+          <p class="verdict"><b>The hardest ground.</b> The trigger enters mid-decline, and the sharp recovery hands back the gain on the hedge. What matters here is the exit rule, not the entry.</p>
+        </article>
+        <article class="group">
+          <h3><i style="background:var(--long)"></i>Extended bears</h3>
+          <p class="rule">Over 190 sessions, under 0.2% a day</p>
+          <p class="eps">Dot-com 2000–02 · Financial crisis 2007–09 · Rates and inflation 2022</p>
+          <p class="rec">New high after <b>15–56 months</b></p>
+          <p class="verdict"><b>Trend following’s territory.</b> Months below the moving average repay the false signals many times over. It is the only group where a full 100% hedge makes sense.</p>
+        </article>
+        <article class="group">
+          <h3><i style="background:var(--ctl)"></i>Controls</h3>
+          <p class="rule">Under the 15% threshold, kept out of the sample</p>
+          <p class="eps">Volmageddon 2018 · Carry-trade unwind 2024 · China and oil 2015–16</p>
+          <p class="rec">New high after <b>2–6 months</b></p>
+          <p class="verdict"><b>They measure false positives.</b> These are the cases where a hedge switches on, pays its cost and never finds the crisis it was waiting for.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>The thirteen episodes</h2>
+      <p class="lede">Recomputed on daily closes from 1993 onward. Depth is peak to low; speed is depth divided by sessions down; the last column runs from the low to a close above the old peak.</p>
+      <div class="tablewrap">
+        <table>
+          <thead><tr><th>Episode</th><th>Group</th><th class="num">Depth</th><th class="num">Sessions down</th><th class="num">Speed, % a day</th><th class="num">Low to new high</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <p class="tnote">† Before the price series starts in January 1993: public index closes, not recomputed. ‡ Measured from the July 2011 high; from the April high the decline was 19% over 108 sessions.</p>
+    </section>
+
+    <section>
+      <h2>What the study does not show</h2>
+      <ul class="limits">
+        <li><b>The window starts in 1990.</b> Black Monday, 1987, is left out. It is the fastest crash on record and would sit with the flash shocks.</li>
+        <li><b>The flash-shock group is one case.</b> Covid is the only drawdown over 15% that falls that fast in the window, so read the group as an example, not a statistic.</li>
+        <li><b>Thirteen episodes is a small sample,</b> and the group boundaries are set by hand on speed and length, not found by an algorithm.</li>
+        <li><b>The controls are hand-picked.</b> Three sub-threshold episodes are shown; other declines of 10–12% (1997, 1999, 2023) are not included, so the false-positive count is a sample, not a census.</li>
+        <li><b>Numbers are recomputed on SPY closing prices,</b> used as a proxy for the index from 1993. Depths can differ from the index itself by a few tenths of a point, mostly because of dividends. The 1990 Gulf War episode predates the series and was not recomputed.</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="close">The distance between the groups is the result that matters. A rule calibrated on the extended bears loses systematically in the fast corrections, and neither touches the flash shocks. The practical conclusion is not to pick the best trigger, but to decide which group to hedge and at what annual cost.</p>
+      <p class="disclaimer">For information and research purposes only. This is not investment advice or a recommendation to buy or sell any security. Past drawdowns do not predict future ones.</p>
+    </section>
+  </main>
+</div>
+
+<script>
+(function(){
+  var css=getComputedStyle(document.documentElement);
+  function col(k){return css.getPropertyValue('--'+k).trim();}
+  var NS='http://www.w3.org/2000/svg';
+  function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
+  function tx(p,x,y,s,a){var o={x:x,y:y,fill:col('muted'),'font-size':13,'font-family':'Inter,Segoe UI,Arial,sans-serif'};
+    for(var k in (a||{}))o[k]=a[k];var e=el('text',o,p);e.textContent=s;return e;}
+  function fmt(n){return n.toLocaleString('en-US');}
+
+  var G={shock:'Flash shock',fast:'Fast correction',long:'Extended bear',ctl:'Control'};
+  var KEYNAME={shock:'Flash shocks',fast:'Fast corrections',long:'Extended bears',ctl:'Controls (under 15%)'};
+
+  /* episodes: d = peak-to-low depth %, s = sessions down, a = approximate, p/t/r = peak, low, new high (decimal years) */
+  var EP=[
+    {n:'Gulf War',short:'Gulf',y:'1990',g:'fast',d:20,s:61,a:1,p:1990.54,t:1990.78,r:1991.13},
+    {n:'LTCM and Russia',short:'LTCM',y:'1998',g:'fast',d:19.0,s:31,a:0,p:1998.54,t:1998.66,r:1998.89},
+    {n:'Dot-com bust',short:'Dot-com',y:'2000–02',g:'long',d:49.1,s:637,a:0,p:2000.23,t:2002.77,r:2007.41},
+    {n:'Financial crisis',short:'Financial crisis',y:'2007–09',g:'long',d:56.5,s:355,a:0,p:2007.77,t:2009.18,r:2013.20},
+    {n:'Flash crash and slide',short:'2010 slide',y:'2010',g:'fast',d:16.1,s:49,a:0,p:2010.31,t:2010.50,r:2010.84},
+    {n:'Euro sovereign debt',short:'Euro debt',y:'2011',g:'fast',d:18.8,s:61,a:0,p:2011.51,t:2011.75,r:2012.14},
+    {n:'China and oil',short:'China',y:'2015–16',g:'ctl',d:14.4,s:183,a:0,p:2015.38,t:2016.11,r:2016.53},
+    {n:'Volmageddon',short:'Volmageddon',y:'2018',g:'ctl',d:10.1,s:9,a:0,p:2018.07,t:2018.10,r:2018.64},
+    {n:'Q4 2018 selloff',short:'Q4 2018',y:'2018',g:'fast',d:20.2,s:65,a:0,p:2018.72,t:2018.98,r:2019.32},
+    {n:'Covid',short:'Covid',y:'2020',g:'shock',d:34.1,s:23,a:0,p:2020.13,t:2020.22,r:2020.63},
+    {n:'Rates and inflation',short:'Rate shock',y:'2022',g:'long',d:25.4,s:195,a:0,p:2022.01,t:2022.78,r:2024.05},
+    {n:'Carry-trade unwind',short:'Carry unwind',y:'2024',g:'ctl',d:8.4,s:14,a:0,p:2024.54,t:2024.59,r:2024.72},
+    {n:'Tariff shock',short:'Tariffs',y:'2025',g:'fast',d:19.0,s:34,a:0,p:2025.13,t:2025.27,r:2025.48}
+  ];
+  EP.forEach(function(e){e.v=e.d/e.s;e.rec=Math.round((e.r-e.t)*12);});
+  function byName(s){return EP.filter(function(e){return e.short===s;})[0];}
+  function pct(d){return '−'+Math.round(d)+'%';}
+
+  /* legend for the timeline */
+  var key=document.getElementById('key1');
+  ['shock','fast','long','ctl'].forEach(function(k){
+    var s=document.createElement('span');
+    s.innerHTML='<i class="sw" style="background:'+col(k)+'"></i>'+KEYNAME[k];key.appendChild(s);
+  });
+
+  /* ---------- table ---------- */
+  var rows=document.getElementById('rows');
+  EP.forEach(function(e){
+    var tr=document.createElement('tr');
+    tr.innerHTML=
+      '<td class="ep"><b>'+e.n+'</b><span>'+e.y+(e.a?' †':'')+(e.short==='Euro debt'?' ‡':'')+'</span></td>'+
+      '<td><span class="tag"><i style="background:'+col(e.g)+(e.g==='ctl'?';opacity:.85':'')+'"></i>'+G[e.g]+'</span></td>'+
+      '<td class="num">'+pct(e.d)+'</td>'+
+      '<td class="num">'+(e.a?'~':'')+fmt(e.s)+'</td>'+
+      '<td class="num">'+e.v.toFixed(2)+'</td>'+
+      '<td class="num">'+e.rec+' mo</td>';
+    rows.appendChild(tr);
+  });
+
+  /* ---------- timeline ---------- */
+  /* S&P 500 proxy: SPY closes x10 from 1993 (month-ends plus each episode's peak, low and new high); 1990-92 index closes at quarter-ends */
+  var S=[[1990.00,353],[1990.25,340],[1990.50,358],[1990.54,369],[1990.78,295],[1990.99,330],[1991.25,375],[1991.50,371],[1991.75,388],[1992.00,417],[1992.25,404],[1992.50,408],[1992.75,418],[1992.99,436],
+  [1993.08,439],[1993.15,444],[1993.24,452],[1993.33,440],[1993.4,452],[1993.49,451],[1993.57,448],[1993.66,466],[1993.74,459],[1993.82,468],[1993.91,463],[1994.0,466],[1994.08,482],[1994.16,468],[1994.24,446],[1994.32,451],[1994.41,458],[1994.49,445],[1994.57,459],[1994.66,477],[1994.74,462],[1994.83,475],[1994.91,456],[1994.99,456],[1995.08,471],[1995.16,490],[1995.24,501],[1995.32,516],[1995.41,536],[1995.49,544],[1995.58,562],[1995.66,564],[1995.74,585],[1995.83,583],[1995.91,609],[1995.99,615],[1996.08,637],[1996.16,639],[1996.24,647],[1996.33,654],[1996.41,669],[1996.49,671],[1996.58,641],[1996.66,653],[1996.75,686],[1996.83,708],[1996.91,760],[1997.0,738],[1997.08,784],[1997.16,792],[1997.24,754],[1997.33,801],[1997.41,852],[1997.49,883],[1997.58,953],[1997.66,904],[1997.74,944],[1997.83,921],[1997.91,956],[1998.0,971],[1998.08,983],[1998.16,1051],[1998.24,1099],[1998.33,1113],[1998.41,1090],[1998.49,1133],[1998.54,1186],[1998.58,1118],[1998.66,960],[1998.74,1018],[1998.83,1100],[1998.89,1194],[1998.91,1161],[1999.0,1233],[1999.08,1277],[1999.15,1236],[1999.24,1284],[1999.33,1332],[1999.4,1302],[1999.49,1370],[1999.57,1328],[1999.66,1321],[1999.74,1288],[1999.82,1370],[1999.91,1393],[2000.0,1469],[2000.08,1396],[2000.16,1374],[2000.23,1536],[2000.25,1504],[2000.32,1451],[2000.41,1428],[2000.5,1453],[2000.58,1430],[2000.67,1523],[2000.74,1436],[2000.83,1430],[2000.91,1323],[2000.99,1312],[2001.08,1370],[2001.16,1239],[2001.24,1167],[2001.33,1267],[2001.41,1259],[2001.49,1226],[2001.58,1213],[2001.66,1142],[2001.74,1044],[2001.83,1058],[2001.91,1141],[2002.0,1143],[2002.08,1132],[2002.16,1112],[2002.24,1145],[2002.33,1079],[2002.41,1072],[2002.49,990],[2002.58,912],[2002.66,918],[2002.74,818],[2002.77,781],[2002.83,885],[2002.91,940],[2003.0,882],[2003.08,861],[2003.16,849],[2003.24,847],[2003.33,919],[2003.41,969],[2003.49,976],[2003.58,994],[2003.66,1014],[2003.74,999],[2003.83,1053],[2003.91,1064],[2004.0,1113],[2004.08,1135],[2004.16,1150],[2004.25,1131],[2004.33,1110],[2004.41,1129],[2004.5,1145],[2004.58,1108],[2004.67,1111],[2004.75,1118],[2004.83,1132],[2004.91,1179],[2005.0,1209],[2005.08,1182],[2005.16,1206],[2005.24,1180],[2005.32,1158],[2005.41,1195],[2005.49,1192],[2005.57,1237],[2005.66,1226],[2005.74,1230],[2005.83,1201],[2005.91,1254],[2005.99,1245],[2006.08,1275],[2006.16,1282],[2006.24,1298],[2006.32,1315],[2006.41,1275],[2006.49,1273],[2006.58,1278],[2006.66,1306],[2006.74,1336],[2006.83,1378],[2006.91,1405],[2006.99,1416],[2007.08,1438],[2007.16,1409],[2007.24,1420],[2007.33,1483],[2007.41,1541],[2007.49,1504],[2007.58,1457],[2007.66,1476],[2007.74,1526],[2007.77,1565],[2007.83,1546],[2007.91,1487],[2008.0,1462],[2008.08,1374],[2008.16,1338],[2008.25,1320],[2008.33,1383],[2008.41,1404],[2008.5,1280],[2008.58,1268],[2008.66,1288],[2008.75,1160],[2008.83,968],[2008.91,901],[2009.0,902],[2009.08,828],[2009.16,739],[2009.18,681],[2009.24,795],[2009.33,874],[2009.41,925],[2009.49,919],[2009.58,988],[2009.66,1025],[2009.74,1056],[2009.83,1036],[2009.91,1099],[2010.0,1114],[2010.08,1074],[2010.15,1107],[2010.24,1170],[2010.31,1218],[2010.33,1188],[2010.4,1094],[2010.49,1032],[2010.5,1022],[2010.57,1103],[2010.66,1053],[2010.74,1141],[2010.82,1185],[2010.84,1223],[2010.91,1185],[2011.0,1258],[2011.08,1287],[2011.16,1331],[2011.24,1326],[2011.32,1364],[2011.41,1349],[2011.49,1320],[2011.51,1354],[2011.57,1293],[2011.66,1222],[2011.74,1132],[2011.75,1099],[2011.83,1255],[2011.91,1250],[2011.99,1255],[2012.08,1313],[2012.14,1364],[2012.16,1370],[2012.24,1408],[2012.33,1399],[2012.41,1315],[2012.49,1361],[2012.58,1377],[2012.67,1412],[2012.74,1440],[2012.83,1414],[2012.91,1421],[2013.0,1424],[2013.08,1497],[2013.16,1516],[2013.2,1567],[2013.24,1567],[2013.33,1597],[2013.41,1634],[2013.49,1604],[2013.58,1687],[2013.66,1636],[2013.74,1680],[2013.83,1758],[2013.91,1810],[2014.0,1847],[2014.08,1782],[2014.16,1863],[2014.24,1870],[2014.33,1883],[2014.41,1927],[2014.49,1957],[2014.58,1931],[2014.66,2007],[2014.74,1970],[2014.83,2017],[2014.91,2072],[2015.0,2055],[2015.08,1994],[2015.16,2107],[2015.24,2064],[2015.33,2085],[2015.38,2135],[2015.41,2111],[2015.49,2059],[2015.58,2105],[2015.66,1977],[2015.74,1916],[2015.83,2079],[2015.91,2087],[2016.0,2039],[2016.08,1937],[2016.11,1829],[2016.16,1936],[2016.25,2055],[2016.33,2063],[2016.41,2098],[2016.5,2095],[2016.53,2149],[2016.57,2171],[2016.67,2174],[2016.75,2163],[2016.83,2126],[2016.91,2204],[2017.0,2235],[2017.08,2275],[2017.16,2365],[2017.24,2357],[2017.32,2381],[2017.41,2414],[2017.49,2418],[2017.58,2468],[2017.66,2475],[2017.74,2512],[2017.83,2571],[2017.91,2650],[2017.99,2669],[2018.07,2866],[2018.08,2819],[2018.1,2576],[2018.16,2716],[2018.24,2631],[2018.33,2645],[2018.41,2709],[2018.49,2713],[2018.58,2813],[2018.64,2875],[2018.66,2903],[2018.72,2936],[2018.74,2907],[2018.83,2706],[2018.91,2756],[2018.98,2343],[2019.0,2499],[2019.08,2699],[2019.16,2787],[2019.24,2825],[2019.32,2939],[2019.33,2940],[2019.41,2753],[2019.49,2930],[2019.58,2974],[2019.66,2925],[2019.74,2968],[2019.83,3033],[2019.91,3143],[2020.0,3219],[2020.08,3217],[2020.13,3383],[2020.16,2963],[2020.22,2229],[2020.25,2578],[2020.33,2905],[2020.41,3043],[2020.5,3084],[2020.58,3265],[2020.63,3386],[2020.67,3493],[2020.75,3349],[2020.83,3265],[2020.91,3621],[2021.0,3739],[2021.08,3701],[2021.15,3804],[2021.24,3963],[2021.33,4173],[2021.4,4200],[2021.49,4281],[2021.57,4385],[2021.66,4516],[2021.74,4291],[2021.82,4592],[2021.91,4556],[2022.0,4750],[2022.01,4777],[2022.08,4499],[2022.16,4366],[2022.24,4516],[2022.32,4120],[2022.41,4129],[2022.49,3772],[2022.57,4120],[2022.66,3952],[2022.74,3572],[2022.78,3566],[2022.83,3862],[2022.91,4077],[2022.99,3824],[2023.08,4065],[2023.16,3963],[2023.24,4094],[2023.32,4159],[2023.41,4179],[2023.49,4433],[2023.58,4578],[2023.66,4504],[2023.74,4275],[2023.83,4182],[2023.91,4564],[2023.99,4753],[2024.05,4824],[2024.08,4829],[2024.16,5081],[2024.24,5231],[2024.33,5020],[2024.41,5274],[2024.49,5442],[2024.54,5649],[2024.58,5508],[2024.59,5174],[2024.66,5637],[2024.72,5710],[2024.75,5738],[2024.83,5686],[2024.91,6025],[2025.0,5861],[2025.08,6018],[2025.13,6129],[2025.16,5942],[2025.24,5594],[2025.27,4965],[2025.33,5545],[2025.41,5894],[2025.48,6149],[2025.49,6178],[2025.58,6321],[2025.66,6450],[2025.74,6662],[2025.83,6821],[2025.91,6834],[2026.0,6819],[2026.08,6920],[2026.16,6860],[2026.24,6503],[2026.33,7187],[2026.41,7565],[2026.49,7468],[2026.58,7470],[2026.66,7670],[2026.7,7574]];
+
+  (function(){
+    var W=940,H=470,L=58,R=922,T=118,B=416;
+    var x=function(d){return L+(d-1990)/(2026.8-1990)*(R-L);};
+    var lo=Math.log10(250),hi=Math.log10(9000);
+    var y=function(v){return B-(Math.log10(v)-lo)/(hi-lo)*(B-T);};
+    var s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'S&P 500 since 1990 with the thirteen drawdown phases shaded by group'});
+    EP.forEach(function(k){
+      var c=col(k.g);
+      el('rect',{x:x(k.t),y:T,width:Math.max(1.5,x(k.r)-x(k.t)),height:B-T,fill:c,opacity:.10},s);
+      el('rect',{x:x(k.p),y:T,width:Math.max(2.2,x(k.t)-x(k.p)),height:B-T,fill:c,opacity:.30},s);
+      var mid=(x(k.p)+x(k.t))/2;
+      var lab=tx(s,mid+4,T-8,k.short+(k.short==='Rate shock'?' 2022':''),{fill:c,'font-size':12});
+      lab.setAttribute('transform','rotate(-90 '+(mid+4)+' '+(T-8)+')');
+    });
+    [250,500,1000,2000,4000,8000].forEach(function(v){
+      el('line',{x1:L,y1:y(v),x2:R,y2:y(v),stroke:col('line'),'stroke-dasharray':'2 5','stroke-width':1},s);
+      tx(s,L-10,y(v)+4,fmt(v),{'text-anchor':'end'});
+    });
+    el('line',{x1:L,y1:B,x2:R,y2:B,stroke:col('faint'),'stroke-width':1},s);
+    for(var yr=1990;yr<=2026;yr+=4){
+      el('line',{x1:x(yr),y1:B,x2:x(yr),y2:B+5,stroke:col('faint'),'stroke-width':1},s);
+      tx(s,x(yr),B+22,String(yr),{'text-anchor':'middle'});
+    }
+    var yl=tx(s,14,(T+B)/2,'S&P 500 (log scale)',{'text-anchor':'middle','font-size':12,fill:col('faint')});
+    yl.setAttribute('transform','rotate(-90 14 '+((T+B)/2)+')');
+    el('path',{d:S.map(function(p,i){return (i?'L':'M')+x(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1);}).join(' '),
+      fill:'none',stroke:col('text'),'stroke-width':1.8,'stroke-linejoin':'round'},s);
+    document.getElementById('hist').appendChild(s);
+  })();
+
+  /* ---------- map: duration vs speed ---------- */
+  (function(){
+    var W=940,H=560,L=72,R=30,T=44,B=84;
+    var pw=W-L-R, ph=H-T-B;
+    var x0=Math.log10(2.5),x1=Math.log10(900),y0=Math.log10(0.05),y1=Math.log10(2);
+    var x=function(v){return L+(Math.log10(v)-x0)/(x1-x0)*pw;};
+    var y=function(v){return T+ph-(Math.log10(v)-y0)/(y1-y0)*ph;};
+    var s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Scatter of the thirteen episodes by sessions down and speed of fall'});
+    var defs=el('defs',{},s);
+    var cp=el('clipPath',{id:'plotclip'},defs);
+    el('rect',{x:L,y:T,width:pw,height:ph},cp);
+
+    /* zones defined by the group rules */
+    function zone(xa,xb,ya,yb,k){
+      el('rect',{x:x(xa),y:y(yb),width:x(xb)-x(xa),height:y(ya)-y(yb),rx:8,fill:col(k),opacity:.10,stroke:col(k),'stroke-opacity':.35,'stroke-dasharray':'4 4'},s);
+    }
+    zone(2.5,25,1,2,'shock');
+    zone(28,70,0.25,0.68,'fast');
+    zone(190,900,0.05,0.2,'long');
+
+    /* grid */
+    [3,10,30,100,300].forEach(function(v){
+      el('line',{x1:x(v),y1:T,x2:x(v),y2:T+ph,stroke:col('line-soft'),'stroke-width':1},s);
+      tx(s,x(v),T+ph+22,String(v),{'text-anchor':'middle'});
+    });
+    [0.05,0.1,0.2,0.5,1,2].forEach(function(v){
+      el('line',{x1:L,y1:y(v),x2:L+pw,y2:y(v),stroke:col('line-soft'),'stroke-width':1},s);
+      tx(s,L-10,y(v)+4,v+'%',{'text-anchor':'end'});
+    });
+    el('rect',{x:L,y:T,width:pw,height:ph,fill:'none',stroke:col('line'),'stroke-width':1},s);
+    tx(s,L+pw/2,T+ph+52,'sessions down (log scale)',{'text-anchor':'middle'});
+    var yl=tx(s,20,T+ph/2,'speed of fall, % a day (log scale)',{'text-anchor':'middle'});
+    yl.setAttribute('transform','rotate(-90 20 '+(T+ph/2)+')');
+
+    /* iso-depth diagonals: speed = depth / sessions */
+    var g=el('g',{'clip-path':'url(#plotclip)'},s);
+    [10,25,50].forEach(function(D){
+      el('line',{x1:x(D/2),y1:y(2),x2:x(D/0.05),y2:y(0.05),stroke:col('muted'),'stroke-opacity':.45,'stroke-dasharray':'2 6','stroke-width':1.2},g);
+      tx(s,x(D/2),T-10,'−'+D+'%',{'text-anchor':'middle','font-size':12,fill:col('faint')});
+    });
+    tx(s,L,T-28,'equal depth',{'font-size':11,fill:col('faint')});
+
+    /* zone labels */
+    tx(s,x(2.5)+10,y(2)+22,'Flash shocks',{fill:col('shock'),'font-size':14,'font-weight':650});
+    tx(s,x(190)+10,y(0.05)-10,'Extended bears',{fill:col('long'),'font-size':14,'font-weight':650});
+
+    /* markers */
+    function mark(e){
+      var r=4+e.d/8, c=col(e.g), cx=x(e.s), cy=y(e.v);
+      if(e.g==='ctl'){
+        el('circle',{cx:cx,cy:cy,r:r,fill:col('panel'),'fill-opacity':.6,stroke:c,'stroke-width':2,'stroke-dasharray':'3 3'},s);
+      }else{
+        el('circle',{cx:cx,cy:cy,r:r,fill:c,'fill-opacity':.92,stroke:col('panel'),'stroke-width':1.5},s);
+      }
+    }
+    EP.forEach(mark);
+
+    /* labels: two lines, name then depth and length */
+    function label(e,dx,dy,anchor,name){
+      var cx=x(e.s)+dx, cy=y(e.v)+dy;
+      tx(s,cx,cy-15,name||(e.short+' '+e.y.slice(0,4)),{fill:col('text'),'font-size':13,'font-weight':600,'text-anchor':anchor});
+      tx(s,cx,cy,pct(e.d)+' in '+(e.a?'~':'')+e.s+' sessions',{fill:col('muted'),'font-size':12,'text-anchor':anchor});
+    }
+    label(byName('Covid'),16,4,'start','Covid 2020');
+    label(byName('Volmageddon'),-16,4,'end','Volmageddon 2018');
+    label(byName('Carry unwind'),-16,4,'end','Carry unwind 2024');
+    (function(){var e=byName('Tariffs'),cx=x(e.s)+16,cy=y(e.v)+4;
+      tx(s,cx,cy-15,'LTCM 1998 · Tariffs 2025',{fill:col('text'),'font-size':13,'font-weight':600});
+      tx(s,cx,cy,'−19% in 31–34 sessions',{fill:col('muted'),'font-size':12});})();
+    label(byName('China'),-16,4,'end','China and oil 2015–16');
+    label(byName('Rate shock'),-16,4,'end','Rates 2022');
+    label(byName('Financial crisis'),0,-24,'middle','Financial crisis 2007–09');
+    label(byName('Dot-com'),12,-22,'end','Dot-com 2000–02');
+
+    /* fast-correction cluster: one shared label */
+    var cx=(x(49)+x(65))/2;
+    tx(s,cx,y(0.25)+22,'Fast corrections · −16% to −20% in 49–65 sessions',{fill:col('fast'),'font-size':14,'font-weight':650,'text-anchor':'middle'});
+    tx(s,cx,y(0.25)+40,'Gulf 1990 · 2010 · Euro debt 2011 · Q4 2018',{fill:col('muted'),'font-size':12.5,'text-anchor':'middle'});
+
+    /* key for marker types */
+    el('circle',{cx:L+8,cy:H-14,r:6,fill:col('muted'),'fill-opacity':.9},s);
+    tx(s,L+22,H-10,'over 15% drawdown',{'font-size':12});
+    el('circle',{cx:L+186,cy:H-14,r:6,fill:'none',stroke:col('ctl'),'stroke-width':2,'stroke-dasharray':'3 3'},s);
+    tx(s,L+200,H-10,'control, under 15%',{'font-size':12});
+    tx(s,L+372,H-10,'marker size = depth',{'font-size':12});
+    document.getElementById('map').appendChild(s);
+  })();
+
+  /* ---------- three archetypal profiles ---------- */
+  (function(){
+    var W=940,H=400,L=60,R=730,T=24,B=318;
+    var x=function(m){return L+m/30*(R-L);};
+    var y=function(v){return B-(v-40)/100*(B-T);};
+    var s=el('svg',{viewBox:'0 0 '+W+' '+H,role:'img','aria-label':'Three archetypal crash profiles, peak set to 100'});
+    [40,60,80,100,120,140].forEach(function(v){
+      el('line',{x1:L,y1:y(v),x2:R,y2:y(v),stroke:v===100?col('faint'):col('line'),'stroke-dasharray':v===100?'':'2 5','stroke-width':1},s);
+      tx(s,L-10,y(v)+4,String(v),{'text-anchor':'end'});
+    });
+    for(var m=0;m<=30;m+=6){
+      el('line',{x1:x(m),y1:B,x2:x(m),y2:B+5,stroke:col('faint'),'stroke-width':1},s);
+      tx(s,x(m),B+24,String(m),{'text-anchor':'middle'});
+    }
+    tx(s,(L+R)/2,B+50,'months from the peak',{'text-anchor':'middle'});
+    el('line',{x1:L,y1:T,x2:L,y2:B,stroke:col('line'),'stroke-width':1},s);
+    var P={
+      shock:[[0,100],[.6,84],[1.1,66],[1.6,78],[2,85],[3,90],[4,95],[5,99],[6,101],[9,106],[12,113],[18,122],[24,130],[30,133]],
+      fast:[[0,100],[1,97],[2,96],[3,80],[3.6,88],[4,90],[5,94],[6,98],[7,101],[9,100],[12,103],[15,112],[18,116],[24,122],[30,128]],
+      long:[[0,100],[3,90],[6,86],[9,80],[12,76],[13,66],[14,52],[17,43],[18,53],[20,58],[24,64],[27,67],[30,71]]};
+    var N={shock:'Covid 2020 · flash shock',fast:'Q4 2018 · fast correction',long:'2007–09 · extended bear'};
+    var LOW={shock:[1.1,66,'−34%'],fast:[3,80,'−20%'],long:[17,43,'−57%']};
+    ['long','fast','shock'].forEach(function(k){
+      el('path',{d:P[k].map(function(p,i){return (i?'L':'M')+x(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1);}).join(' '),
+        fill:'none',stroke:col(k),'stroke-width':2.4,'stroke-linejoin':'round','stroke-linecap':'round'},s);
+      var lw=LOW[k];
+      el('circle',{cx:x(lw[0]),cy:y(lw[1]),r:4,fill:col(k),stroke:col('panel'),'stroke-width':1.5},s);
+      var below=k!=='long';
+      tx(s,below?x(lw[0]):x(lw[0])-10,below?y(lw[1])+20:y(lw[1])+5,lw[2],{fill:col(k),'font-size':13,'font-weight':650,'text-anchor':below?'middle':'end'});
+    });
+    var lastShock=P.shock[P.shock.length-1], lastFast=P.fast[P.fast.length-1], lastLong=P.long[P.long.length-1];
+    tx(s,x(30)+10,y(lastShock[1])-5,N.shock,{fill:col('shock'),'font-size':13,'font-weight':600});
+    tx(s,x(30)+10,y(lastFast[1])+11,N.fast,{fill:col('fast'),'font-size':13,'font-weight':600});
+    tx(s,x(30)+10,y(lastLong[1])+4,N.long,{fill:col('long'),'font-size':13,'font-weight':600});
+    document.getElementById('shapes').appendChild(s);
+  })();
+})();
+</script>
+</body>
+</html>
