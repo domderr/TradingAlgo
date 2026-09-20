@@ -295,7 +295,7 @@
       display: block;
       aspect-ratio: 2 / 1;
       overflow: hidden;
-      background: #fff;
+      background: var(--bg);
     }
 
     .area-tile-img img {
@@ -305,8 +305,8 @@
       object-fit: cover;
     }
 
-    .area-tile-img.crop-top img { object-position: top; }
-    .area-tile-img.crop-chart img { object-position: center 65%; }
+    /* Home.png is 3:2 with empty margins above and below the panels. */
+    .area-tile-img.crop-home img { object-position: center 48%; }
 
     .area-tile-body {
       display: block;
@@ -1153,14 +1153,14 @@
            #hedging opens Hedging, #portfolios and #reports open Portfolios. -->
       <div class="area-choice" role="group" aria-label="Reserved area sections">
         <button class="area-tile" id="tile-portfolios" type="button" aria-expanded="false" aria-controls="panel-portfolios" data-area="portfolios">
-          <span class="area-tile-img crop-top"><img src="assets/previews/USA100.jpg" alt="" width="1684" height="1190" loading="lazy"></span>
+          <span class="area-tile-img crop-home"><img src="assets/Home.png" alt="" width="1535" height="1024" loading="lazy"></span>
           <span class="area-tile-body">
             <span class="area-tile-title">Portfolios</span>
             <span class="area-tile-text">Monthly reports, positions and changes for your markets, plus the Mosaic member menu.</span>
           </span>
         </button>
         <button class="area-tile" id="tile-hedging" type="button" aria-expanded="false" aria-controls="panel-hedging" data-area="hedging">
-          <span class="area-tile-img crop-chart"><img src="assets/medium/crash-check-drawdown-25.png" alt="" width="1600" height="960" loading="lazy"></span>
+          <span class="area-tile-img"><img src="assets/previews/crash-clusters-sp500.svg" alt="" width="940" height="470" loading="lazy"></span>
           <span class="area-tile-body">
             <span class="area-tile-title">Hedging</span>
             <span class="area-tile-text">Hedge Gauge, Crash Clusters and the Crash Check reports.</span>
