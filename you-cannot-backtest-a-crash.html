@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07111f" />
+  <title>You Cannot Backtest a Crash | TradingAlgo</title>
+  <meta name="description" content="Market crashes are too rare for any algorithm to be validated on them. The alternative is to stop forecasting and track, in real time, how much of each crash scenario is already covered." />
+  <link rel="canonical" href="https://tradingalgo.it/you-cannot-backtest-a-crash.html" />
+  <meta property="og:title" content="You Cannot Backtest a Crash. You Can Insure Against One." />
+  <meta property="og:site_name" content="TradingAlgo" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:description" content="Ten crashes in thirty-six years are not a sample. Why hedging should be sized as per-event coverage and tracked in real time." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/you-cannot-backtest-a-crash.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/Home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="You Cannot Backtest a Crash. You Can Insure Against One." />
+  <meta name="twitter:description" content="Ten crashes in thirty-six years are not a sample. Why hedging should be sized as per-event coverage and tracked in real time." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/Home.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    p strong { color: #071a33; }
+
+    ol.steps {
+      margin: 0 0 16px;
+      padding-left: 22px;
+      color: #26364a;
+      font-size: 17px;
+      line-height: 1.76;
+    }
+
+    ol.steps li { margin: 0 0 8px; padding-left: 4px; }
+    ol.steps strong { color: #071a33; }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    figure { margin: 26px 0 8px; }
+
+    figure svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      background: #f7faff;
+    }
+
+    figcaption {
+      margin-top: 10px;
+      color: #5a6b82;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .tablewrap {
+      overflow-x: auto;
+      margin: 26px 0 8px;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 0;
+      border-collapse: collapse;
+      font-size: 14px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    th, td {
+      padding: 10px 9px;
+      text-align: left;
+      border-bottom: 1px solid #e6ecf5;
+      color: #26364a;
+      line-height: 1.4;
+    }
+
+    th {
+      background: #f1f6fc;
+      color: #0b5fa5;
+      font-size: 12px;
+      letter-spacing: .03em;
+      text-transform: uppercase;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    th.num, td.num { text-align: right; white-space: nowrap; }
+    td.gap { font-weight: bold; color: #b42318; }
+    td.ok { font-weight: bold; color: #067647; }
+
+    .tnote {
+      margin: 10px 0 0;
+      color: #5a6b82;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 28px 8%;
+      background: #071a33;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+      }
+
+      header {
+        padding-top: 74px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"You Cannot Backtest a Crash. You Can Insure Against One.","description":"Market crashes are too rare for any algorithm to be validated on them. The alternative is to stop forecasting and track, in real time, how much of each crash scenario is already covered.","image":["https://tradingalgo.it/assets/Home.png"],"datePublished":"2026-09-20","dateModified":"2026-09-20","author":{"@type":"Person","name":"Domenico D'Errico","url":"https://tradingalgo.it/#about"},"publisher":{"@type":"Organization","name":"TradingAlgo","url":"https://tradingalgo.it/","logo":{"@type":"ImageObject","url":"https://tradingalgo.it/assets/favicon-192.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tradingalgo.it/you-cannot-backtest-a-crash.html"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradingalgo.it/"},{"@type":"ListItem","position":2,"name":"Publications","item":"https://tradingalgo.it/publications.html"},{"@type":"ListItem","position":3,"name":"You Cannot Backtest a Crash","item":"https://tradingalgo.it/you-cannot-backtest-a-crash.html"}]}]}
+  </script>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="index.html">TradingAlgo</a>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="publications.html">Publications</a>
+      <a href="reserved-area.html">Reserved Area</a>
+    </div>
+  </nav>
+  <header>
+    <p class="kicker">Risk management</p>
+    <h1>You Cannot Backtest a Crash. You Can Insure Against One.</h1>
+    <p>Market crashes are too rare for any algorithm to be validated on them. The alternative is to stop forecasting, and to track in real time how much of each crash is already covered.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>Ten crashes in thirty-six years</h2>
+        <p>Our Crash Clusters study lists the S&amp;P 500 drawdowns deeper than 15% since 1990. There are ten. Sorted by the speed and length of the fall, they make three groups: one flash shock (Covid, 2020), six fast corrections (the Gulf War, LTCM, 2010, the euro debt crisis, Q4 2018 and the 2025 tariff shock) and three extended bears (dot-com, 2007&ndash;09 and 2022). Three shallower episodes are kept aside as controls.</p>
+        <p>Each of those events is vivid, so ten feels like a lot. As a statistical sample it is almost nothing, and the rest of this article is about what follows from that: not that hedging is pointless, but that the way we usually justify a hedge cannot be applied to crashes.</p>
+      </section>
+
+      <section>
+        <h2>What ten events can and cannot tell you</h2>
+        <p><strong>Even the frequency is barely known.</strong> Ten events in 36.7 years is 0.27 a year, or one every 3.7 years. The exact 95% interval on a count of ten runs from 0.13 to 0.50 a year: somewhere between one crash every 2.0 years and one every 7.7 years. The base rate itself is uncertain by a factor of four.</p>
+        <p><strong>A hit rate needs many trials.</strong> Suppose a trigger rule "worked" in all three extended bears. The true hit rate that is consistent with 3 out of 3 starts at 29%. If it worked in 7 of the 10 crashes, the plausible range is 35% to 93%. For the flash-shock group, which contains a single event, the range is 3% to 100%: no information at all.</p>
+
+        <figure>
+          <svg viewBox="0 0 720 270" role="img" aria-label="95% confidence intervals for the true hit rate of a hedge trigger, given the number of crashes it caught out of the number tested">
+            <text x="24" y="26" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5a6b82">Observed result</text>
+            <text x="250" y="26" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#5a6b82">95% interval for the true hit rate</text>
+
+            <line x1="250" y1="222" x2="690" y2="222" stroke="#9fb0c6" stroke-width="1" />
+            <g font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#5a6b82" text-anchor="middle">
+              <text x="250" y="244">0%</text>
+              <text x="360" y="244">25%</text>
+              <text x="470" y="244">50%</text>
+              <text x="580" y="244">75%</text>
+              <text x="690" y="244">100%</text>
+            </g>
+            <g stroke="#9fb0c6" stroke-width="1">
+              <line x1="250" y1="222" x2="250" y2="227" />
+              <line x1="360" y1="222" x2="360" y2="227" />
+              <line x1="470" y1="222" x2="470" y2="227" />
+              <line x1="580" y1="222" x2="580" y2="227" />
+              <line x1="690" y1="222" x2="690" y2="227" />
+            </g>
+            <line x1="470" y1="38" x2="470" y2="222" stroke="#b42318" stroke-width="1.5" stroke-dasharray="5 5" />
+            <text x="476" y="52" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#b42318">coin flip (50%)</text>
+
+            <g font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#071a33">
+              <text x="24" y="96">Flash shocks: 1 of 1</text>
+              <text x="24" y="136">Extended bears: 3 of 3</text>
+              <text x="24" y="176">All ten crashes: 7 of 10</text>
+              <text x="24" y="211">All ten crashes: 8 of 10</text>
+            </g>
+
+            <g stroke="#168eea" stroke-width="8" stroke-linecap="round">
+              <line x1="261" y1="92" x2="690" y2="92" />
+              <line x1="378.5" y1="132" x2="690" y2="132" />
+              <line x1="403" y1="172" x2="660.5" y2="172" />
+              <line x1="445.5" y1="207" x2="679" y2="207" />
+            </g>
+            <g fill="#071a33" stroke="#ffffff" stroke-width="2">
+              <circle cx="690" cy="92" r="6" />
+              <circle cx="690" cy="132" r="6" />
+              <circle cx="558" cy="172" r="6" />
+              <circle cx="602" cy="207" r="6" />
+            </g>
+          </svg>
+          <figcaption>Exact (Clopper&ndash;Pearson) 95% intervals. Dots are the observed hit rates. Every interval, even 8 out of 10, still contains 50%: none of these results can be told apart from a coin flip.</figcaption>
+        </figure>
+
+        <p><strong>Telling a good rule from luck takes about 47 crashes.</strong> To distinguish a rule that catches 70% of crashes from one that catches 50%, with the usual 5% significance and 80% power, you need about 47 events. At one crash every 3.7 years, that is roughly 170 years of history. With ten events the power of the test is 15%: most of the time, a genuinely useful rule would not stand out from noise.</p>
+        <p><strong>Searching makes it worse.</strong> Every variant you try is another draw. Take twenty rules with no skill at all, each catching any given crash with probability one half. The chance that at least one of them catches 8 or more of the ten is 67%. In practice, moving-average lengths, thresholds, hedge ratios and exit rules give dozens of variants. The one that survives will look like insight.</p>
+        <p><strong>The events are not repeats of one experiment.</strong> Covid was a pandemic, 2007&ndash;09 a credit crisis, Q4 2018 a Fed tightening, 2025 a tariff shock. Statistics assumes repeated draws from one process; here every mechanism appears once. And the boundaries of the sample matter. The Crash Clusters window starts in 1990, so Black Monday, 1987 is left out. It would sit with the flash shocks, and adding that single date would double the size of the group.</p>
+        <p>The Crash Clusters study was built with these limits in plain view. It does not estimate probabilities or claim an edge for any trigger. It is a catalogue of what a crash can look like, and it should be read that way.</p>
+      </section>
+
+      <section>
+        <h2>A better forecast would not fix it</h2>
+        <p>Suppose we had a warning signal we could trust. The arithmetic is still unforgiving. Ten crashes over about 1,900 weeks is a base rate near 0.5% a week. A signal that doubled the odds would put the chance of a crash starting next week at 1%, which means that 99 times out of 100 the alarm is followed by no crash. A hedge that switches on at every alarm pays its cost each time, and that is exactly what the control episodes in the study measure: hedges that fire, pay their cost and never meet the crisis they were waiting for.</p>
+        <p>So the two possible answers to "when will the next crash come?" both fail. A precise answer cannot be validated, and an imprecise one is too costly to act on.</p>
+      </section>
+
+      <section>
+        <h2>Think like an underwriter, one event at a time</h2>
+        <p>Insurance changes the question. A homeowner does not need a model of the probability of a fire to decide that the house should be covered. They decide how much loss they can bear, protect the rest, and pay the premium in the years when nothing burns.</p>
+        <p>A portfolio has one house and no pool of independent policies to diversify across, so the decision cannot rest on expected frequency. It has to be made event by event:</p>
+        <ol class="steps">
+          <li><strong>Fix the maximum loss per event.</strong> This is the retention: the drawdown you can absorb without being forced to sell or to abandon the strategy. It is a fact about the investor, not a statistic.</li>
+          <li><strong>Take each crash type as a scenario.</strong> Use the catalogue as it stands, with no probability attached.</li>
+          <li><strong>Compute the cover each scenario requires.</strong> If a scenario would cost a fully invested portfolio a loss L and the tolerance is R, the hedge in force must be at least 1 &minus; R/L.</li>
+          <li><strong>Check that the cover can arrive in time.</strong> A flash shock ends before any price-based trigger reacts, so its cover has to be in the portfolio beforehand. In fast corrections a trigger enters mid-decline and the sharp rebound gives back the hedge gain, so cover there should be modest and the exit rule matters more than the entry. Only in extended bears is a full hedge switched on by a trend rule likely to repay itself.</li>
+          <li><strong>Price it.</strong> Each unit of cover has an annual cost. The decision is which scenarios to cover, and how much of that cost to accept.</li>
+        </ol>
+
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Scenario</th>
+                <th>Reference event</th>
+                <th class="num">Loss</th>
+                <th class="num">Cover for 15% cap</th>
+                <th class="num">Loss, 30% hedged</th>
+                <th class="num">Gap</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Flash shock</td><td>Covid 2020</td><td class="num">&minus;34.1%</td><td class="num">56%</td><td class="num">&minus;23.9%</td><td class="num gap">8.9 pt</td></tr>
+              <tr><td>Fast correction</td><td>Q4 2018</td><td class="num">&minus;20.2%</td><td class="num">26%</td><td class="num">&minus;14.1%</td><td class="num ok">none</td></tr>
+              <tr><td>Extended bear, moderate</td><td>Rates and inflation 2022</td><td class="num">&minus;25.4%</td><td class="num">41%</td><td class="num">&minus;17.8%</td><td class="num gap">2.8 pt</td></tr>
+              <tr><td>Extended bear, severe</td><td>Financial crisis 2007&ndash;09</td><td class="num">&minus;56.5%</td><td class="num">73%</td><td class="num">&minus;39.6%</td><td class="num gap">24.6 pt</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tnote">Illustrative. Assumes a portfolio that moves one-for-one with the S&amp;P 500, a 15% tolerance and a hedge that is fully in force before the fall begins. The losses are the worst observed in each group, from the Crash Clusters study; they are reference points, not ceilings.</p>
+        <p>Nothing in the table needed a probability. It says that a 30% hedge is enough for a Q4 2018, falls short of a Covid, and leaves a wide gap in a 2008. Whether to close a gap is then a question of cost and conviction, and it can be answered scenario by scenario.</p>
+      </section>
+
+      <section>
+        <h2>Keep the ledger in real time</h2>
+        <p>Cover is not a decision you take once. It changes every day: triggers switch hedges on and off, option protection expires and has to be rolled, the size of the portfolio moves, and a hedge that was 50% last month can be 0% today. A policy you cannot see is a policy you may not have.</p>
+        <p>So the table above should not be a slide, but a ledger that is recalculated daily, with one row per scenario:</p>
+        <ol class="steps">
+          <li><strong>Exposure and hedge in force today,</strong> for each market.</li>
+          <li><strong>Loss if the scenario started today,</strong> after the hedge.</li>
+          <li><strong>Gap to the retention,</strong> with an alert when it opens.</li>
+          <li><strong>Contingent cover, shown separately and not counted.</strong> A hedge that would arrive only after a 10% fall is not protection against a flash shock. Only what is in force counts.</li>
+          <li><strong>Premium spent against budget,</strong> so that cover is never bought without knowing its price.</li>
+        </ol>
+        <p>The ledger does not forecast anything. Its numbers move because exposure and hedge levels move, not because a model changed its mind. That is what makes it reliable in a domain where models cannot be validated. A tool like the Hedge Gauge, which publishes a suggested hedge level for each market every day, supplies the input on how much cover the rules call for; the ledger measures how much cover the portfolio actually holds against each scenario.</p>
+      </section>
+
+      <section>
+        <h2>What this does not solve</h2>
+        <p><strong>Cover has a cost.</strong> The premium is a drag in every year without a crash, and this article does not price it. That is the number the whole approach depends on, and the Crash Clusters study frames the choice in the same terms: which group you want to hedge, and what it costs each year.</p>
+        <p><strong>The scenario library is small too.</strong> Ten observations are a good set of shapes, not a bound on what can happen. Black Monday and the 1930s sit outside the window. Use the catalogue to build scenarios, and stress it, rather than treating its worst case as a limit.</p>
+        <p><strong>Retention is a judgement.</strong> The 15% in the example is not derived from data. It comes from the investor, and different investors will rightly choose different numbers.</p>
+        <p class="note">Rare events cannot be validated, but they can be covered, and coverage can be measured every day.</p>
+        <a class="button" href="publications.html">Back to Publications</a>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <strong>TradingAlgo Mosaic</strong><br />
+    Research material only. Not personalized financial advice. Past drawdowns do not predict future ones.
+  </footer>
+  <script defer src="assets/access-analytics.js"></script>
+</body>
+</html>
