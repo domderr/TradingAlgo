@@ -253,41 +253,81 @@
       display: none;
     }
 
-    .area-tabs {
+    .area-choice {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin: 0 0 32px;
+    }
+
+    .area-tile {
       display: flex;
-      gap: 6px;
-      width: fit-content;
-      max-width: 100%;
-      margin: 0 0 28px;
-      padding: 6px;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-    }
-
-    .area-tab {
-      padding: 11px 24px;
-      border: 0;
-      border-radius: 999px;
-      background: transparent;
-      color: var(--muted);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.07);
+      box-shadow: var(--shadow);
+      color: var(--text);
       font: inherit;
-      font-size: 15px;
-      font-weight: 850;
+      text-align: left;
       cursor: pointer;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: border-color 0.2s ease, transform 0.2s ease;
     }
 
-    .area-tab:hover { color: var(--text); }
+    .area-tile:hover {
+      border-color: rgba(74,163,255,0.5);
+      transform: translateY(-2px);
+    }
 
-    .area-tab:focus-visible {
+    .area-tile:focus-visible {
       outline: 2px solid rgba(74,163,255,0.72);
-      outline-offset: 2px;
+      outline-offset: 3px;
     }
 
-    .area-tab[aria-selected="true"] {
-      background: var(--blue);
-      color: #04101c;
+    .area-tile[aria-expanded="true"] {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 1px var(--blue), var(--shadow);
+    }
+
+    .area-tile-img {
+      display: block;
+      aspect-ratio: 2 / 1;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .area-tile-img img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .area-tile-img.crop-top img { object-position: top; }
+    .area-tile-img.crop-chart img { object-position: center 65%; }
+
+    .area-tile-body {
+      display: block;
+      padding: 18px 22px 22px;
+    }
+
+    .area-tile-title {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 26px;
+      font-weight: 850;
+      line-height: 1.1;
+    }
+
+    .area-tile[aria-expanded="true"] .area-tile-title { color: var(--blue); }
+
+    .area-tile-text {
+      display: block;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.45;
     }
 
     .hedging-intro {
@@ -1010,8 +1050,7 @@
       .semaforo { grid-template-columns: repeat(3, 1fr); }
       .reports-grid { grid-template-columns: 1fr; }
       .member-nav { grid-template-columns: 1fr; }
-      .area-tabs { width: 100%; }
-      .area-tab { flex: 1; padding: 11px 12px; }
+      .area-choice { grid-template-columns: 1fr; }
       .performance-summary-head { display: block; }
       .report-card-head {
         grid-template-columns: 22px minmax(0, 1fr) auto;
@@ -1109,14 +1148,27 @@
 
     <div class="restricted-content" id="restricted-content" hidden>
       <!-- Two areas in one page, so the unlocked session and the deep links
-           (?market=, ?next=, #reports) keep working. The active area follows
-           the URL hash: #hedging opens Hedging, anything else opens Portfolios. -->
-      <div class="area-tabs" role="tablist" aria-label="Reserved area sections">
-        <button class="area-tab" id="tab-portfolios" type="button" role="tab" aria-selected="true" aria-controls="panel-portfolios" data-area="portfolios">Portfolios</button>
-        <button class="area-tab" id="tab-hedging" type="button" role="tab" aria-selected="false" aria-controls="panel-hedging" tabindex="-1" data-area="hedging">Hedging</button>
+           (?market=, ?next=, #reports) keep working. Both start closed: the
+           tiles open one area below them. The URL hash can open one directly:
+           #hedging opens Hedging, #portfolios and #reports open Portfolios. -->
+      <div class="area-choice" role="group" aria-label="Reserved area sections">
+        <button class="area-tile" id="tile-portfolios" type="button" aria-expanded="false" aria-controls="panel-portfolios" data-area="portfolios">
+          <span class="area-tile-img crop-top"><img src="assets/previews/USA100.jpg" alt="" width="1684" height="1190" loading="lazy"></span>
+          <span class="area-tile-body">
+            <span class="area-tile-title">Portfolios</span>
+            <span class="area-tile-text">Monthly reports, positions and changes for your markets, plus the Mosaic member menu.</span>
+          </span>
+        </button>
+        <button class="area-tile" id="tile-hedging" type="button" aria-expanded="false" aria-controls="panel-hedging" data-area="hedging">
+          <span class="area-tile-img crop-chart"><img src="assets/medium/crash-check-drawdown-25.png" alt="" width="1600" height="960" loading="lazy"></span>
+          <span class="area-tile-body">
+            <span class="area-tile-title">Hedging</span>
+            <span class="area-tile-text">Hedge Gauge, Crash Clusters and the Crash Check reports.</span>
+          </span>
+        </button>
       </div>
 
-      <div class="area-panel" id="panel-portfolios" role="tabpanel" aria-labelledby="tab-portfolios">
+      <div class="area-panel" id="panel-portfolios" role="region" aria-label="Portfolios" hidden>
       <!-- Collapsible member menu: the Portfolios landing remains focused on monthly reports. -->
       <details class="member-menu">
         <summary>Mosaic Member Menu</summary>
@@ -1215,7 +1267,7 @@
       </section>
       </div>
 
-      <div class="area-panel" id="panel-hedging" role="tabpanel" aria-labelledby="tab-hedging" hidden>
+      <div class="area-panel" id="panel-hedging" role="region" aria-label="Hedging" hidden>
         <section>
           <div class="eyebrow">TradingAlgo Hedging</div>
           <div class="reports-section-head">
@@ -1381,46 +1433,40 @@
 
     var AREAS = ["portfolios", "hedging"];
 
+    // Nessuna area e' aperta di default: senza hash restano visibili solo i
+    // due riquadri. #reports e' l'ancora interna della lista dei report.
     function areaFromHash() {
-      return window.location.hash === "#hedging" ? "hedging" : "portfolios";
+      var hash = window.location.hash;
+      if (hash === "#hedging") return "hedging";
+      if (hash === "#portfolios" || hash === "#reports") return "portfolios";
+      return "";
     }
 
-    // Anche i link interni (#reports) atterrano su Portfolios, quindi qualunque
-    // hash diverso da #hedging apre Portfolios.
     function showArea(area, options) {
-      if (AREAS.indexOf(area) === -1) area = "portfolios";
+      if (AREAS.indexOf(area) === -1) area = "";
       AREAS.forEach(function(name) {
-        var tab = document.getElementById("tab-" + name);
+        var tile = document.getElementById("tile-" + name);
         var panel = document.getElementById("panel-" + name);
         var active = name === area;
-        if (tab) {
-          tab.setAttribute("aria-selected", active ? "true" : "false");
-          tab.tabIndex = active ? 0 : -1;
-        }
+        if (tile) tile.setAttribute("aria-expanded", active ? "true" : "false");
         if (panel) panel.hidden = !active;
       });
       if (options && options.updateHash && areaFromHash() !== area) {
         // replaceState: nessuno scroll al panel e nessuna voce in piu' nella cronologia.
-        history.replaceState(null, "", window.location.pathname + window.location.search + (area === "hedging" ? "#hedging" : ""));
+        history.replaceState(null, "", window.location.pathname + window.location.search + (area ? "#" + area : ""));
       }
-      if (options && options.focus) {
-        var target = document.getElementById("tab-" + area);
-        if (target) target.focus();
+      if (options && options.scroll && area) {
+        document.getElementById("panel-" + area).scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
 
-    function setupAreaTabs() {
-      var tabs = document.querySelectorAll(".area-tab");
-      Array.prototype.forEach.call(tabs, function(tab) {
-        tab.addEventListener("click", function() {
-          showArea(tab.getAttribute("data-area"), { updateHash: true });
-        });
-        tab.addEventListener("keydown", function(event) {
-          var step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
-          if (!step) return;
-          event.preventDefault();
-          var next = AREAS[(AREAS.indexOf(tab.getAttribute("data-area")) + step + AREAS.length) % AREAS.length];
-          showArea(next, { updateHash: true, focus: true });
+    function setupAreaTiles() {
+      Array.prototype.forEach.call(document.querySelectorAll(".area-tile"), function(tile) {
+        tile.addEventListener("click", function() {
+          var area = tile.getAttribute("data-area");
+          // Un secondo clic sul riquadro aperto richiude l'area.
+          var next = tile.getAttribute("aria-expanded") === "true" ? "" : area;
+          showArea(next, { updateHash: true, scroll: true });
         });
       });
       window.addEventListener("hashchange", function() {
@@ -2059,7 +2105,7 @@
       });
     }
 
-    setupAreaTabs();
+    setupAreaTiles();
 
     loadSubscriptions().then(function() {
       setupAccessForm();
