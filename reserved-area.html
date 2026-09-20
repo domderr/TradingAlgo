@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TradingAlgo | Reserved Area</title>
-  <meta name="description" content="TradingAlgo Mosaic reserved area for weekly market reports, monthly tables, equity charts, stock dashboards and member research materials." />
+  <meta name="description" content="TradingAlgo Mosaic reserved area for weekly market reports, monthly tables, equity charts, stock dashboards, hedging research and member materials." />
   <link rel="canonical" href="https://tradingalgo.it/reserved-area.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="TradingAlgo" />
@@ -247,6 +247,68 @@
 
     .admin-only[hidden] {
       display: none;
+    }
+
+    .area-panel[hidden] {
+      display: none;
+    }
+
+    .area-tabs {
+      display: flex;
+      gap: 6px;
+      width: fit-content;
+      max-width: 100%;
+      margin: 0 0 28px;
+      padding: 6px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .area-tab {
+      padding: 11px 24px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .area-tab:hover { color: var(--text); }
+
+    .area-tab:focus-visible {
+      outline: 2px solid rgba(74,163,255,0.72);
+      outline-offset: 2px;
+    }
+
+    .area-tab[aria-selected="true"] {
+      background: var(--blue);
+      color: #04101c;
+    }
+
+    .hedging-intro {
+      max-width: 760px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .member-group {
+      margin-top: 30px;
+    }
+
+    .member-group-title {
+      margin: 0 0 14px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
     }
 
     .performance-summary {
@@ -948,6 +1010,8 @@
       .semaforo { grid-template-columns: repeat(3, 1fr); }
       .reports-grid { grid-template-columns: 1fr; }
       .member-nav { grid-template-columns: 1fr; }
+      .area-tabs { width: 100%; }
+      .area-tab { flex: 1; padding: 11px 12px; }
       .performance-summary-head { display: block; }
       .report-card-head {
         grid-template-columns: 22px minmax(0, 1fr) auto;
@@ -1044,7 +1108,16 @@
     <div class="user-access-bar" id="user-access-bar"></div>
 
     <div class="restricted-content" id="restricted-content" hidden>
-      <!-- Collapsible member menu: the reserved-area landing remains focused on monthly reports. -->
+      <!-- Two areas in one page, so the unlocked session and the deep links
+           (?market=, ?next=, #reports) keep working. The active area follows
+           the URL hash: #hedging opens Hedging, anything else opens Portfolios. -->
+      <div class="area-tabs" role="tablist" aria-label="Reserved area sections">
+        <button class="area-tab" id="tab-portfolios" type="button" role="tab" aria-selected="true" aria-controls="panel-portfolios" data-area="portfolios">Portfolios</button>
+        <button class="area-tab" id="tab-hedging" type="button" role="tab" aria-selected="false" aria-controls="panel-hedging" tabindex="-1" data-area="hedging">Hedging</button>
+      </div>
+
+      <div class="area-panel" id="panel-portfolios" role="tabpanel" aria-labelledby="tab-portfolios">
+      <!-- Collapsible member menu: the Portfolios landing remains focused on monthly reports. -->
       <details class="member-menu">
         <summary>Mosaic Member Menu</summary>
         <div class="member-menu-body">
@@ -1056,10 +1129,6 @@
             <a href="mosaic-terminology.html"><strong>Terminology</strong><span>Definitions for CAGR, Sharpe, drawdown, hedge and scores.</span></a>
             <a href="reserved-area.html#reports"><strong>Reports</strong><span>Latest monthly reports for your enabled markets.</span></a>
             <a href="mosaic-charts-dashboards.html"><strong>Charts</strong><span>How to inspect equity charts and stock dashboards.</span></a>
-            <a href="hedge-gauge.html"><strong>Hedge Gauge</strong><span>Suggested hedge level for each market, updated daily.</span></a>
-            <a href="sp500-crash-clusters.html"><strong>Crash Clusters</strong><span>Thirteen S&amp;P 500 drawdowns since 1990, grouped by speed and length.</span></a>
-            <a href="sp500-crash-check-2026-09-19.html"><strong>Crash Check</strong><span>Are we near one of the 13 phases? Odds for 21&ndash;25 Sep 2026.</span></a>
-            <a href="crash-check-7-markets-2026-09-19.html"><strong>Crash Check: 7 Markets</strong><span>The same test on the seven Hedge Gauge markets, 21&ndash;25 Sep 2026.</span></a>
           </nav>
         </div>
       </details>
@@ -1144,6 +1213,39 @@
           </section>
         </div>
       </section>
+      </div>
+
+      <div class="area-panel" id="panel-hedging" role="tabpanel" aria-labelledby="tab-hedging" hidden>
+        <section>
+          <div class="eyebrow">TradingAlgo Hedging</div>
+          <div class="reports-section-head">
+            <h2>Hedging</h2>
+          </div>
+          <p class="hedging-intro">Tools, studies and reports on hedging an equity portfolio against drawdowns.</p>
+
+          <div class="member-group">
+            <h3 class="member-group-title">Tools</h3>
+            <nav class="member-nav" aria-label="Hedging tools">
+              <a href="hedge-gauge.html"><strong>Hedge Gauge</strong><span>Suggested hedge level for each market, updated daily.</span></a>
+            </nav>
+          </div>
+
+          <div class="member-group">
+            <h3 class="member-group-title">Studies</h3>
+            <nav class="member-nav" aria-label="Hedging studies">
+              <a href="sp500-crash-clusters.html"><strong>Crash Clusters</strong><span>Thirteen S&amp;P 500 drawdowns since 1990, grouped by speed and length.</span></a>
+            </nav>
+          </div>
+
+          <div class="member-group">
+            <h3 class="member-group-title">Reports</h3>
+            <nav class="member-nav" aria-label="Hedging reports">
+              <a href="sp500-crash-check-2026-09-19.html"><strong>Crash Check</strong><span>Are we near one of the 13 phases? Odds for 21&ndash;25 Sep 2026.</span></a>
+              <a href="crash-check-7-markets-2026-09-19.html"><strong>Crash Check: 7 Markets</strong><span>The same test on the seven Hedge Gauge markets, 21&ndash;25 Sep 2026.</span></a>
+            </nav>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -1275,6 +1377,56 @@
     function welcomeMessage(match, prefix) {
       var name = match && match.first_name ? " " + match.first_name : "";
       return prefix + name + ". Your account is enabled for " + marketsLabel(authorizedMarkets) + ".";
+    }
+
+    var AREAS = ["portfolios", "hedging"];
+
+    function areaFromHash() {
+      return window.location.hash === "#hedging" ? "hedging" : "portfolios";
+    }
+
+    // Anche i link interni (#reports) atterrano su Portfolios, quindi qualunque
+    // hash diverso da #hedging apre Portfolios.
+    function showArea(area, options) {
+      if (AREAS.indexOf(area) === -1) area = "portfolios";
+      AREAS.forEach(function(name) {
+        var tab = document.getElementById("tab-" + name);
+        var panel = document.getElementById("panel-" + name);
+        var active = name === area;
+        if (tab) {
+          tab.setAttribute("aria-selected", active ? "true" : "false");
+          tab.tabIndex = active ? 0 : -1;
+        }
+        if (panel) panel.hidden = !active;
+      });
+      if (options && options.updateHash && areaFromHash() !== area) {
+        // replaceState: nessuno scroll al panel e nessuna voce in piu' nella cronologia.
+        history.replaceState(null, "", window.location.pathname + window.location.search + (area === "hedging" ? "#hedging" : ""));
+      }
+      if (options && options.focus) {
+        var target = document.getElementById("tab-" + area);
+        if (target) target.focus();
+      }
+    }
+
+    function setupAreaTabs() {
+      var tabs = document.querySelectorAll(".area-tab");
+      Array.prototype.forEach.call(tabs, function(tab) {
+        tab.addEventListener("click", function() {
+          showArea(tab.getAttribute("data-area"), { updateHash: true });
+        });
+        tab.addEventListener("keydown", function(event) {
+          var step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
+          if (!step) return;
+          event.preventDefault();
+          var next = AREAS[(AREAS.indexOf(tab.getAttribute("data-area")) + step + AREAS.length) % AREAS.length];
+          showArea(next, { updateHash: true, focus: true });
+        });
+      });
+      window.addEventListener("hashchange", function() {
+        showArea(areaFromHash());
+      });
+      showArea(areaFromHash());
     }
 
     function showAuthorizedArea(match) {
@@ -1906,6 +2058,8 @@
         renderAll(results[0], results[2], results[1]);
       });
     }
+
+    setupAreaTabs();
 
     loadSubscriptions().then(function() {
       setupAccessForm();
