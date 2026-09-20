@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="A rule-based weekly rotation across US Technology, Energy and Financials, with cash as the alternative and SPY as the benchmark.">
+<title>Sectors Allocation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#071423; --bg-deep:#050b14;
+    --panel:#0c1c30; --panel-2:#112640;
+    --text:#f4f7fb; --muted:#aebbd0; --faint:#7f8ea6;
+    --line:rgba(255,255,255,.14); --line-soft:rgba(255,255,255,.07);
+    --tech:#4aa3ff; --energy:#f5c542; --fin:#42d392; --cash:#93a4bb;
+    --font:Inter,"Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background-color:var(--bg);
+    background:
+      radial-gradient(circle at 16% 0%,rgba(74,163,255,.20),transparent 30%),
+      radial-gradient(circle at 86% 6%,rgba(66,211,146,.12),transparent 30%),
+      linear-gradient(180deg,var(--bg),var(--bg-deep) 74%);
+    background-color:var(--bg);
+    color:var(--text);
+    font:16px/1.6 var(--font);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{width:min(1080px,100%);margin:0 auto;padding-inline:20px;padding-block:44px 72px}
+  .backlink{display:inline-flex;align-items:center;gap:8px;margin:0 0 26px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--panel);color:var(--muted);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .15s,border-color .15s,background .15s}
+  .backlink:hover,.backlink:focus-visible{color:var(--text);border-color:var(--tech);background:var(--panel-2)}
+  .backlink:focus-visible{outline:2px solid var(--tech);outline-offset:2px}
+  .eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:0 0 22px;
+    font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .dot{width:9px;height:9px;background:var(--tech);display:inline-block;margin-right:8px;border-radius:2px}
+  h1{margin:0 0 16px;font-size:clamp(34px,6vw,58px);line-height:1.03;font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+  .deck{margin:0 0 22px;max-width:62ch;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--muted);text-wrap:pretty}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted);
+    font-variant-numeric:tabular-nums}
+  .facts b{color:var(--text);font-weight:700}
+  main{display:grid;grid-template-columns:minmax(0,1fr);gap:60px;margin-top:48px}
+  main>section,figure{min-width:0}
+  h2{margin:0 0 8px;font-size:clamp(22px,3.2vw,30px);line-height:1.15;font-weight:750;letter-spacing:-.015em;text-wrap:balance}
+  .lede{margin:0 0 20px;max-width:66ch;color:var(--muted);font-size:16px}
+  .finding{margin:0;max-width:70ch;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);
+    font-size:17px;line-height:1.55}
+  .finding b{font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .card{padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);display:flex;flex-direction:column;gap:8px}
+  .card h3{margin:0;display:flex;align-items:center;gap:10px;font-size:19px;font-weight:700;letter-spacing:-.01em}
+  .card h3 i{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}
+  .card .step{font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+  .card p{margin:0;font-size:14.5px;color:var(--muted)}
+  .card .tk{font-weight:600;color:var(--faint);font-size:14px;letter-spacing:.02em}
+  .key{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+  .key span{display:inline-flex;align-items:center;gap:8px}
+  .sw{width:14px;height:10px;border-radius:2px;display:inline-block}
+  .chart{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:10px}
+  .chart img{display:block;width:100%;min-width:640px;height:auto}
+  figure{margin:0}
+  figcaption{margin-top:10px;max-width:74ch;font-size:13.5px;color:var(--faint)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:18px 0 0}
+  .stat{padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .stat b{display:block;font-size:clamp(24px,3.4vw,32px);line-height:1.1;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat span{display:block;margin-top:6px;font-size:13.5px;color:var(--muted)}
+  .stat em{display:block;margin-top:2px;font-size:13px;font-style:normal;color:var(--faint);font-variant-numeric:tabular-nums}
+  .limits{display:grid;gap:12px;margin:0;padding:0;list-style:none;max-width:72ch}
+  .limits li{padding-left:18px;position:relative;color:var(--muted);font-size:15.5px}
+  .limits li::before{content:"";position:absolute;left:0;top:.62em;width:7px;height:7px;background:var(--faint);border-radius:2px}
+  .limits b{color:var(--text);font-weight:650}
+  .close{margin:0;max-width:70ch;font-size:18px;line-height:1.55;color:var(--text);text-wrap:pretty}
+  .disclaimer{margin-top:8px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--faint);max-width:78ch}
+  @media (max-width:520px){ .page{padding-block:32px 56px} main{gap:48px} }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <a class="backlink" href="reserved-area.html#sectors" aria-label="Back to Sectors Allocation in the Reserved Area"><span aria-hidden="true">←</span> Reserved Area</a>
+  <p class="eyebrow"><span><i class="dot"></i>TradingAlgo · Member research</span><span>Updated September 2026</span></p>
+  <h1>Sectors Allocation</h1>
+  <p class="deck">A simple rotation across three US sectors, Technology, Energy and Financials, with cash as the alternative. Each week the model reviews the past year, holds the mix that has paid best for the risk taken, and trades only when the case for change is strong.</p>
+  <ul class="facts">
+    <li><b>3</b> US sectors + cash</li>
+    <li>Benchmark <b>SPY</b></li>
+    <li>Reviewed <b>weekly</b></li>
+    <li>Simulated <b>2000–2026</b></li>
+  </ul>
+
+  <main>
+    <section>
+      <p class="finding"><b>The aim is not to forecast sectors.</b> It is to lean, by rule, on what has recently paid best for its risk, and to step back to cash when no mix has paid at all.</p>
+    </section>
+
+    <section>
+      <h2>The building blocks</h2>
+      <p class="lede">Three sector funds and cash. Nothing else is held.</p>
+      <div class="cards">
+        <article class="card">
+          <h3><i style="background:var(--tech)"></i>Technology</h3>
+          <p class="tk">XLK</p>
+          <p>US large-cap technology companies.</p>
+        </article>
+        <article class="card">
+          <h3><i style="background:var(--energy)"></i>Energy</h3>
+          <p class="tk">XLE</p>
+          <p>US oil, gas and energy services companies.</p>
+        </article>
+        <article class="card">
+          <h3><i style="background:var(--fin)"></i>Financials</h3>
+          <p class="tk">XLF</p>
+          <p>US banks, insurers and other financial companies.</p>
+        </article>
+        <article class="card">
+          <h3><i style="background:var(--cash)"></i>Cash</h3>
+          <p class="tk">Treasury bills</p>
+          <p>Held when no mix of the three sectors looks attractive.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>How it works</h2>
+      <p class="lede">The same three steps every week.</p>
+      <div class="cards">
+        <article class="card">
+          <span class="step">Step 1</span>
+          <h3>Look back</h3>
+          <p>Review the past year of returns of the three sectors, measured against what cash would have earned.</p>
+        </article>
+        <article class="card">
+          <span class="step">Step 2</span>
+          <h3>Choose the mix</h3>
+          <p>Pick the combination of Technology, Energy and Financials with the best return for the risk taken. If none has beaten cash, the answer is cash.</p>
+        </article>
+        <article class="card">
+          <span class="step">Step 3</span>
+          <h3>Change only when it matters</h3>
+          <p>Ignore small shifts. The portfolio is rebalanced only when the new mix is far enough from the current one, which keeps trading low.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>What the history shows</h2>
+      <p class="lede">Simulated from January 2000 to September 2026 on daily closes with dividends reinvested, after assumed trading costs. Log scale, both lines start at 100.</p>
+      <div class="key"><span><i class="sw" style="background:var(--tech)"></i>Sectors Allocation model</span><span><i class="sw" style="background:var(--cash)"></i>SPY</span></div>
+      <figure>
+        <div class="chart"><img src="assets/sectors/sectors-equity.svg" width="998" height="442" alt="Simulated growth of 100 for the Sectors Allocation model and for SPY, January 2000 to September 2026, on a log scale. The model ends far above SPY."></div>
+        <figcaption>A simulation, not a record of live trading. Costs are assumed at 0.10% of each amount traded.</figcaption>
+      </figure>
+      <div class="stats">
+        <div class="stat"><b>13–14%</b><span>Return per year</span><em>SPY: about 8%</em></div>
+        <div class="stat"><b>About 0.6</b><span>Return per unit of risk (Sharpe)</span><em>SPY: about 0.4</em></div>
+        <div class="stat"><b>−31%</b><span>Worst fall from a peak</span><em>SPY: −55%</em></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Where the money sat</h2>
+      <p class="lede">Share of the portfolio in each block over time. It is either fully invested or fully in cash; the mix between sectors changes when the evidence does.</p>
+      <div class="key">
+        <span><i class="sw" style="background:var(--tech)"></i>Technology</span>
+        <span><i class="sw" style="background:var(--energy)"></i>Energy</span>
+        <span><i class="sw" style="background:var(--fin)"></i>Financials</span>
+        <span><i class="sw" style="background:var(--cash)"></i>Cash</span>
+      </div>
+      <figure>
+        <div class="chart"><img src="assets/sectors/sectors-weights.svg" width="998" height="384" alt="Weights of Technology, Energy, Financials and cash in the portfolio over time, January 2000 to September 2026."></div>
+        <figcaption>The model spent about a tenth of the time in cash, mainly in 2001–03 and 2008–09, and rotated between the three sectors the rest of the time.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>What to keep in mind</h2>
+      <ul class="limits">
+        <li><b>The three sectors were chosen with hindsight.</b> A different set, or a longer list to choose from, could look better or worse.</li>
+        <li><b>A few episodes carry much of the result.</b> The gap to SPY comes largely from the bear markets of 2001–02 and 2008, from 2020, and from the energy rally of 2022.</li>
+        <li><b>Cash is a blunt tool.</b> It kept the model out of the 2008 fall, but it also came back late in 2009 and missed part of the rebound.</li>
+        <li><b>The settings matter.</b> Shorter look-backs tested in the same way did not beat SPY once costs were counted.</li>
+        <li><b>It is a simulation.</b> Real trading brings different prices, taxes and delays, and the rule’s exact settings shape the numbers shown here.</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="close">Sectors Allocation treats rotation as a rule rather than a view: a small set of building blocks, a simple test of what has worked lately, and a bias toward doing nothing unless the evidence changes.</p>
+      <p class="disclaimer">For information and research purposes only. This is a hypothetical, back-tested simulation, not investment advice or a recommendation to buy or sell any security. Past performance does not predict future results.</p>
+    </section>
+  </main>
+</div>
+
+</body>
+</html>

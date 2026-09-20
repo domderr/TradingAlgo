@@ -241,7 +241,7 @@
       align-items: center;
     }
 
-    /* La home dell'area riservata mostra solo i due riquadri: la barra con
+    /* La home dell'area riservata mostra solo i tre riquadri: la barra con
        ID e mercati abilitati compare quando un'area e' aperta. */
     body:not(.area-open) .user-access-bar.is-visible {
       display: none;
@@ -261,7 +261,7 @@
 
     .area-choice {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
       margin: 0 0 32px;
     }
@@ -1046,6 +1046,10 @@
 
     .report-pdf-link:hover { text-decoration: underline; }
 
+    @media (max-width: 860px) {
+      .area-choice { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 900px) {
       .semaforo { grid-template-columns: repeat(4, 1fr); }
       .summary-chart-grid { grid-template-columns: 1fr; }
@@ -1153,10 +1157,11 @@
     <div class="user-access-bar" id="user-access-bar"></div>
 
     <div class="restricted-content" id="restricted-content" hidden>
-      <!-- Two areas in one page, so the unlocked session and the deep links
-           (?market=, ?next=, #reports) keep working. Both start closed: the
+      <!-- Three areas in one page, so the unlocked session and the deep links
+           (?market=, ?next=, #reports) keep working. All start closed: the
            tiles open one area below them. The URL hash can open one directly:
-           #hedging opens Hedging, #portfolios and #reports open Portfolios. -->
+           #hedging opens Hedging, #sectors opens Sectors Allocation,
+           #portfolios and #reports open Portfolios. -->
       <div class="area-choice" role="group" aria-label="Reserved area sections">
         <button class="area-tile" id="tile-portfolios" type="button" aria-expanded="false" aria-controls="panel-portfolios" data-area="portfolios">
           <span class="area-tile-img crop-home"><img src="assets/Home.png" alt="" width="1535" height="1024" loading="lazy"></span>
@@ -1170,6 +1175,13 @@
           <span class="area-tile-body">
             <span class="area-tile-title">Hedging</span>
             <span class="area-tile-text">Hedge Gauge, Crash Clusters and the Crash Check reports.</span>
+          </span>
+        </button>
+        <button class="area-tile" id="tile-sectors" type="button" aria-expanded="false" aria-controls="panel-sectors" data-area="sectors">
+          <span class="area-tile-img"><img src="assets/previews/sectors-allocation.svg" alt="" width="940" height="470" loading="lazy"></span>
+          <span class="area-tile-body">
+            <span class="area-tile-title">Sectors Allocation</span>
+            <span class="area-tile-text">A weekly rotation across Technology, Energy and Financials, with cash as the alternative.</span>
           </span>
         </button>
       </div>
@@ -1311,6 +1323,23 @@
           </div>
         </section>
       </div>
+
+      <div class="area-panel" id="panel-sectors" role="region" aria-label="Sectors Allocation" hidden>
+        <section>
+          <div class="eyebrow">TradingAlgo Sectors Allocation</div>
+          <div class="reports-section-head">
+            <h2>Sectors Allocation</h2>
+          </div>
+          <p class="hedging-intro">A rule-based rotation across US Technology, Energy and Financials, with cash as the alternative and SPY as the benchmark.</p>
+
+          <div class="member-group">
+            <h3 class="member-group-title">Model</h3>
+            <nav class="member-nav" aria-label="Sectors Allocation model">
+              <a href="sectors-allocation.html"><strong>Sectors Allocation</strong><span>How the weekly rotation works and what its history shows.</span></a>
+            </nav>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -1444,13 +1473,14 @@
       return prefix + name + ". Your account is enabled for " + marketsLabel(authorizedMarkets) + ".";
     }
 
-    var AREAS = ["portfolios", "hedging"];
+    var AREAS = ["portfolios", "hedging", "sectors"];
 
     // Nessuna area e' aperta di default: senza hash restano visibili solo i
-    // due riquadri. #reports e' l'ancora interna della lista dei report.
+    // tre riquadri. #reports e' l'ancora interna della lista dei report.
     function areaFromHash() {
       var hash = window.location.hash;
       if (hash === "#hedging") return "hedging";
+      if (hash === "#sectors") return "sectors";
       if (hash === "#portfolios" || hash === "#reports") return "portfolios";
       return "";
     }
