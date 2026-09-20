@@ -241,6 +241,12 @@
       align-items: center;
     }
 
+    /* La home dell'area riservata mostra solo i due riquadri: la barra con
+       ID e mercati abilitati compare quando un'area e' aperta. */
+    body:not(.area-open) .user-access-bar.is-visible {
+      display: none;
+    }
+
     .restricted-content[hidden] {
       display: none;
     }
@@ -1444,6 +1450,7 @@
 
     function showArea(area, options) {
       if (AREAS.indexOf(area) === -1) area = "";
+      document.body.classList.toggle("area-open", !!area);
       AREAS.forEach(function(name) {
         var tile = document.getElementById("tile-" + name);
         var panel = document.getElementById("panel-" + name);
