@@ -1016,15 +1016,6 @@
       overflow-wrap: anywhere;
     }
 
-    .market-hedging {
-      display: block;
-      margin-top: 5px;
-      color: var(--red);
-      font-size: 18px;
-      font-weight: 850;
-      line-height: 1.2;
-    }
-
     .report-footer {
       border-top: 1px solid rgba(255,255,255,0.08);
       padding: 7px 14px;
@@ -1760,7 +1751,6 @@
         : (pos ? (pos.positions || []) : []);
       var cin = pos ? (pos.changes && pos.changes.in || []) : [];
       var cout = pos ? (pos.changes && pos.changes.out || []) : [];
-      var hedgeText = formatHedge(d, extractHedgeValue(d));
 
       var posList = positions.map(function(p) {
         var ticker = displayText(p.ticker, "-");
@@ -1782,7 +1772,7 @@
       return '<a class="report-card open" id="rc-' + m.key + '" href="' + reportUrl + '">'
         + '<div class="report-card-head">'
         + '<img src="https://flagcdn.com/' + m.flag + '.svg" width="22" height="14" alt="' + m.flag + '" style="border-radius:2px;flex-shrink:0">'
-        + '<span class="report-card-name">' + m.name + '<span class="market-hedging" id="hedge-' + m.key + '">Hedge: ' + hedgeText + '</span></span>'
+        + '<span class="report-card-name">' + m.name + '</span>'
         + '</div>'
         + '<div class="report-divider"></div>'
         + '<div class="report-body">'
@@ -1882,7 +1872,6 @@
         renderPerformanceSummary(positions && positions.__reportData || {});
         renderSummaryCharts();
       }
-      loadHedgePercentages();
     }
 
     function formatPercent(value) {
@@ -2091,28 +2080,6 @@
       return d.Last_Hedge_Short != null ? d.Last_Hedge_Short :
         d.Benchmark_Hedge_Short != null ? d.Benchmark_Hedge_Short :
         d["Benchmark Hedge Short"];
-    }
-
-    function loadHedgePercentages() {
-      // Da settembre 2026 l'hedge non e' piu' tracciato dal modello Mosaic
-      // (vedi formatHedge sopra): questi riquadri leggono ora il livello di
-      // copertura suggerito dal nuovo Hedge Gauge (histo-r, aggiornato
-      // giornalmente), non piu' "Benchmark Hedge Short" da report_data.json.
-      fetch("hedge-gauge-data.json", { cache: "no-store" })
-        .then(function(response) {
-          if (!response.ok) throw new Error("Hedge Gauge data unavailable");
-          return response.json();
-        })
-        .then(function(gauge) {
-          activeMarkets().forEach(function(m) {
-            var target = document.getElementById("hedge-" + m.key);
-            if (!target) return;
-            var value = gauge[m.key];
-            var text = Number.isFinite(value) ? Math.round(value) + "%" : "via alert";
-            target.innerHTML = 'Hedge: <a href="hedge-gauge.html" title="TradingAlgo Hedge Gauge">' + text + '</a>';
-          });
-        })
-        .catch(function() {});
     }
 
     function loadReportData() {
