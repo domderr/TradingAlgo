@@ -23,6 +23,10 @@
 - [Why a 5 stocks portfolio can beat its benchmark](https://tradingalgo.it/why-a-5-stocks-portfolio-can-beat-its-benchmark.html)
 - [Portfolio changes from September 2026](https://tradingalgo.it/mosaic-portfolio-changes-september-2026.html)
 - [Events](https://tradingalgo.it/events.html): talks and conference appearances
+- [Prenota una call in italiano](https://tradingalgo.it/prenota-call-italiano.html): pagina in italiano per prenotare una call di onboarding
+- [Market stocks](https://tradingalgo.it/market-stocks.html): stocks tracked in each of the seven markets
+- [Mosaic start here](https://tradingalgo.it/mosaic-start-here.html): orientation for new readers
+- [Monthly portfolio update](https://tradingalgo.it/mosaic-weekly-update.html): latest portfolio composition and changes
 
 ## Optional
 - Weekly market updates are published as weekly-market-update-YYYY-MM-DD.html and listed in the [Publications](https://tradingalgo.it/publications.html) page.
