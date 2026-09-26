@@ -195,6 +195,21 @@
       line-height: 1.5;
     }
 
+    /* Il banner Edu-Fin e' un PNG trasparente con testo scuro: serve uno sfondo chiaro. */
+    .event-banner {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      margin: 40px auto 0;
+      padding: 8px 12px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .event-banner + .event-image { margin-top: 24px; }
+
     .event-image {
       display: block;
       width: 100%;
@@ -272,6 +287,8 @@
 
       <a class="cta" href="mailto:domderrico@gmail.com?subject=Call%20di%20onboarding%20-%20Edu-Fin%202026%20e%20Investing%20Roma%202026">Scrivi per prenotare la call</a>
       <p class="note">La call presenta i contenuti del sito ed è materiale di ricerca: non costituisce consulenza finanziaria personalizzata.</p>
+      <img class="event-banner" src="assets/events/edu-fin-2026-banner.png" width="1600" height="320"
+           alt="Edu-Fin 2026, educazione finanziaria e trading di borsa, 25 settembre 2026, Bari">
       <img class="event-image" src="assets/events/investing-roma-2026-speaker.jpg" width="800" height="800"
            alt="Investing Roma 2026: Domenico D'Errico speaker, 16 ottobre 2026, Piazza della Pilotta, Roma">
     </div>

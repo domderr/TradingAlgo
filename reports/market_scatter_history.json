@@ -1,280 +1,8 @@
 {
   "source": "yfinance",
   "lookback_weeks": 52,
-  "generated_at": "2026-08-31T11:45:48",
+  "generated_at": "2026-09-26T08:03:46",
   "snapshots": [
-    {
-      "date": "2025-09-05",
-      "points": [
-        {
-          "market": "USA100",
-          "code": "US",
-          "flag": "US",
-          "etf": "SPY",
-          "trend": 29,
-          "stability": 23,
-          "price": 640.15
-        },
-        {
-          "market": "NASDAQ100",
-          "code": "US",
-          "flag": "US",
-          "etf": "QQQ",
-          "trend": 43,
-          "stability": 29,
-          "price": 573.3
-        },
-        {
-          "market": "Europe50",
-          "code": "EU",
-          "flag": "EU",
-          "etf": "FEZ",
-          "trend": 71,
-          "stability": 76,
-          "price": 58.04
-        },
-        {
-          "market": "Italy40",
-          "code": "IT",
-          "flag": "IT",
-          "etf": "EWI",
-          "trend": 100,
-          "stability": 86,
-          "price": 48.84
-        },
-        {
-          "market": "Germany40",
-          "code": "DE",
-          "flag": "DE",
-          "etf": "EWG",
-          "trend": 86,
-          "stability": 87,
-          "price": 40.53
-        },
-        {
-          "market": "UK100",
-          "code": "GB",
-          "flag": "GB",
-          "etf": "EWU",
-          "trend": 57,
-          "stability": 73,
-          "price": 40.19
-        },
-        {
-          "market": "Australia50",
-          "code": "AU",
-          "flag": "AU",
-          "etf": "EWA",
-          "trend": 14,
-          "stability": 10,
-          "price": 26.11
-        }
-      ]
-    },
-    {
-      "date": "2025-09-12",
-      "points": [
-        {
-          "market": "USA100",
-          "code": "US",
-          "flag": "US",
-          "etf": "SPY",
-          "trend": 29,
-          "stability": 25,
-          "price": 650.21
-        },
-        {
-          "market": "NASDAQ100",
-          "code": "US",
-          "flag": "US",
-          "etf": "QQQ",
-          "trend": 43,
-          "stability": 31,
-          "price": 583.85
-        },
-        {
-          "market": "Europe50",
-          "code": "EU",
-          "flag": "EU",
-          "etf": "FEZ",
-          "trend": 71,
-          "stability": 77,
-          "price": 58.85
-        },
-        {
-          "market": "Italy40",
-          "code": "IT",
-          "flag": "IT",
-          "etf": "EWI",
-          "trend": 100,
-          "stability": 87,
-          "price": 50.06
-        },
-        {
-          "market": "Germany40",
-          "code": "DE",
-          "flag": "DE",
-          "etf": "EWG",
-          "trend": 86,
-          "stability": 87,
-          "price": 40.5
-        },
-        {
-          "market": "UK100",
-          "code": "GB",
-          "flag": "GB",
-          "etf": "EWU",
-          "trend": 57,
-          "stability": 77,
-          "price": 40.56
-        },
-        {
-          "market": "Australia50",
-          "code": "AU",
-          "flag": "AU",
-          "etf": "EWA",
-          "trend": 14,
-          "stability": 14,
-          "price": 26.41
-        }
-      ]
-    },
-    {
-      "date": "2025-09-19",
-      "points": [
-        {
-          "market": "USA100",
-          "code": "US",
-          "flag": "US",
-          "etf": "SPY",
-          "trend": 29,
-          "stability": 27,
-          "price": 658.25
-        },
-        {
-          "market": "NASDAQ100",
-          "code": "US",
-          "flag": "US",
-          "etf": "QQQ",
-          "trend": 43,
-          "stability": 33,
-          "price": 596.48
-        },
-        {
-          "market": "Europe50",
-          "code": "EU",
-          "flag": "EU",
-          "etf": "FEZ",
-          "trend": 71,
-          "stability": 80,
-          "price": 59.68
-        },
-        {
-          "market": "Italy40",
-          "code": "IT",
-          "flag": "IT",
-          "etf": "EWI",
-          "trend": 100,
-          "stability": 89,
-          "price": 49.73
-        },
-        {
-          "market": "Germany40",
-          "code": "DE",
-          "flag": "DE",
-          "etf": "EWG",
-          "trend": 86,
-          "stability": 86,
-          "price": 40.41
-        },
-        {
-          "market": "UK100",
-          "code": "GB",
-          "flag": "GB",
-          "etf": "EWU",
-          "trend": 57,
-          "stability": 80,
-          "price": 40.0
-        },
-        {
-          "market": "Australia50",
-          "code": "AU",
-          "flag": "AU",
-          "etf": "EWA",
-          "trend": 14,
-          "stability": 18,
-          "price": 26.07
-        }
-      ]
-    },
-    {
-      "date": "2025-09-26",
-      "points": [
-        {
-          "market": "USA100",
-          "code": "US",
-          "flag": "US",
-          "etf": "SPY",
-          "trend": 29,
-          "stability": 30,
-          "price": 656.38
-        },
-        {
-          "market": "NASDAQ100",
-          "code": "US",
-          "flag": "US",
-          "etf": "QQQ",
-          "trend": 43,
-          "stability": 35,
-          "price": 593.8
-        },
-        {
-          "market": "Europe50",
-          "code": "EU",
-          "flag": "EU",
-          "etf": "FEZ",
-          "trend": 71,
-          "stability": 83,
-          "price": 59.96
-        },
-        {
-          "market": "Italy40",
-          "code": "IT",
-          "flag": "IT",
-          "etf": "EWI",
-          "trend": 100,
-          "stability": 91,
-          "price": 49.89
-        },
-        {
-          "market": "Germany40",
-          "code": "DE",
-          "flag": "DE",
-          "etf": "EWG",
-          "trend": 86,
-          "stability": 87,
-          "price": 40.39
-        },
-        {
-          "market": "UK100",
-          "code": "GB",
-          "flag": "GB",
-          "etf": "EWU",
-          "trend": 57,
-          "stability": 84,
-          "price": 40.22
-        },
-        {
-          "market": "Australia50",
-          "code": "AU",
-          "flag": "AU",
-          "etf": "EWA",
-          "trend": 14,
-          "stability": 24,
-          "price": 25.86
-        }
-      ]
-    },
     {
       "date": "2025-10-03",
       "points": [
@@ -285,7 +13,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 32,
-          "price": 663.71
+          "price": 662.07
         },
         {
           "market": "NASDAQ100",
@@ -294,7 +22,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 37,
-          "price": 600.98
+          "price": 600.36
         },
         {
           "market": "Europe50",
@@ -303,7 +31,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 86,
-          "price": 61.86
+          "price": 61.76
         },
         {
           "market": "Italy40",
@@ -353,7 +81,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 34,
-          "price": 647.65
+          "price": 646.05
         },
         {
           "market": "NASDAQ100",
@@ -362,7 +90,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 39,
-          "price": 587.35
+          "price": 586.74
         },
         {
           "market": "Europe50",
@@ -371,7 +99,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 87,
-          "price": 59.55
+          "price": 59.45
         },
         {
           "market": "Italy40",
@@ -421,7 +149,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 37,
-          "price": 658.93
+          "price": 657.3
         },
         {
           "market": "NASDAQ100",
@@ -430,7 +158,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 41,
-          "price": 601.73
+          "price": 601.11
         },
         {
           "market": "Europe50",
@@ -439,7 +167,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 89,
-          "price": 61.33
+          "price": 61.23
         },
         {
           "market": "Italy40",
@@ -489,7 +217,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 40,
-          "price": 671.69
+          "price": 670.02
         },
         {
           "market": "NASDAQ100",
@@ -498,7 +226,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 44,
-          "price": 614.85
+          "price": 614.21
         },
         {
           "market": "Europe50",
@@ -507,7 +235,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 90,
-          "price": 61.41
+          "price": 61.31
         },
         {
           "market": "Italy40",
@@ -557,7 +285,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 42,
-          "price": 676.46
+          "price": 674.78
         },
         {
           "market": "NASDAQ100",
@@ -566,7 +294,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 46,
-          "price": 626.78
+          "price": 626.13
         },
         {
           "market": "Europe50",
@@ -575,7 +303,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 90,
-          "price": 60.91
+          "price": 60.81
         },
         {
           "market": "Italy40",
@@ -625,7 +353,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 46,
-          "price": 665.46
+          "price": 663.81
         },
         {
           "market": "NASDAQ100",
@@ -634,7 +362,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 49,
-          "price": 607.52
+          "price": 606.89
         },
         {
           "market": "Europe50",
@@ -643,7 +371,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 90,
-          "price": 60.6
+          "price": 60.5
         },
         {
           "market": "Italy40",
@@ -693,7 +421,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 48,
-          "price": 666.41
+          "price": 664.76
         },
         {
           "market": "NASDAQ100",
@@ -702,7 +430,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 51,
-          "price": 606.64
+          "price": 606.01
         },
         {
           "market": "Europe50",
@@ -711,7 +439,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 89,
-          "price": 61.62
+          "price": 61.52
         },
         {
           "market": "Italy40",
@@ -761,7 +489,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 51,
-          "price": 653.61
+          "price": 652.0
         },
         {
           "market": "NASDAQ100",
@@ -770,7 +498,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 52,
-          "price": 587.92
+          "price": 587.31
         },
         {
           "market": "Europe50",
@@ -779,7 +507,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 88,
-          "price": 59.52
+          "price": 59.42
         },
         {
           "market": "Italy40",
@@ -829,7 +557,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 55,
-          "price": 677.77
+          "price": 676.1
         },
         {
           "market": "NASDAQ100",
@@ -838,7 +566,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 55,
-          "price": 617.0
+          "price": 616.35
         },
         {
           "market": "Europe50",
@@ -847,7 +575,7 @@
           "etf": "FEZ",
           "trend": 86,
           "stability": 88,
-          "price": 61.49
+          "price": 61.39
         },
         {
           "market": "Italy40",
@@ -897,7 +625,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 59,
-          "price": 680.06
+          "price": 678.37
         },
         {
           "market": "NASDAQ100",
@@ -906,7 +634,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 59,
-          "price": 623.2
+          "price": 622.55
         },
         {
           "market": "Europe50",
@@ -915,7 +643,7 @@
           "etf": "FEZ",
           "trend": 86,
           "stability": 87,
-          "price": 62.23
+          "price": 62.13
         },
         {
           "market": "Italy40",
@@ -965,7 +693,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 63,
-          "price": 676.16
+          "price": 674.48
         },
         {
           "market": "NASDAQ100",
@@ -974,7 +702,7 @@
           "etf": "QQQ",
           "trend": 43,
           "stability": 62,
-          "price": 611.39
+          "price": 610.75
         },
         {
           "market": "Europe50",
@@ -983,7 +711,7 @@
           "etf": "FEZ",
           "trend": 86,
           "stability": 87,
-          "price": 62.82
+          "price": 62.71
         },
         {
           "market": "Italy40",
@@ -1033,7 +761,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 65,
-          "price": 676.99
+          "price": 675.32
         },
         {
           "market": "NASDAQ100",
@@ -1042,7 +770,7 @@
           "etf": "QQQ",
           "trend": 57,
           "stability": 65,
-          "price": 614.8
+          "price": 614.16
         },
         {
           "market": "Europe50",
@@ -1051,7 +779,7 @@
           "etf": "FEZ",
           "trend": 71,
           "stability": 87,
-          "price": 62.99
+          "price": 62.89
         },
         {
           "market": "Italy40",
@@ -1101,7 +829,7 @@
           "etf": "SPY",
           "trend": 29,
           "stability": 68,
-          "price": 686.66
+          "price": 684.96
         },
         {
           "market": "NASDAQ100",
@@ -1110,7 +838,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 68,
-          "price": 622.42
+          "price": 621.77
         },
         {
           "market": "Europe50",
@@ -1119,7 +847,7 @@
           "etf": "FEZ",
           "trend": 57,
           "stability": 87,
-          "price": 63.6
+          "price": 63.49
         },
         {
           "market": "Italy40",
@@ -1169,7 +897,7 @@
           "etf": "SPY",
           "trend": 43,
           "stability": 71,
-          "price": 679.56
+          "price": 677.88
         },
         {
           "market": "NASDAQ100",
@@ -1178,7 +906,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 70,
-          "price": 611.68
+          "price": 611.04
         },
         {
           "market": "Europe50",
@@ -1187,7 +915,7 @@
           "etf": "FEZ",
           "trend": 57,
           "stability": 88,
-          "price": 64.23
+          "price": 64.13
         },
         {
           "market": "Italy40",
@@ -1237,7 +965,7 @@
           "etf": "SPY",
           "trend": 43,
           "stability": 72,
-          "price": 690.4
+          "price": 688.69
         },
         {
           "market": "NASDAQ100",
@@ -1246,7 +974,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 72,
-          "price": 625.17
+          "price": 624.52
         },
         {
           "market": "Europe50",
@@ -1255,7 +983,7 @@
           "etf": "FEZ",
           "trend": 57,
           "stability": 88,
-          "price": 65.26
+          "price": 65.15
         },
         {
           "market": "Italy40",
@@ -1305,7 +1033,7 @@
           "etf": "SPY",
           "trend": 43,
           "stability": 75,
-          "price": 688.0
+          "price": 686.3
         },
         {
           "market": "NASDAQ100",
@@ -1314,7 +1042,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 74,
-          "price": 619.8
+          "price": 619.15
         },
         {
           "market": "Europe50",
@@ -1323,7 +1051,7 @@
           "etf": "FEZ",
           "trend": 57,
           "stability": 89,
-          "price": 65.43
+          "price": 65.33
         },
         {
           "market": "Italy40",
@@ -1373,7 +1101,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 78,
-          "price": 685.59
+          "price": 683.89
         },
         {
           "market": "NASDAQ100",
@@ -1382,7 +1110,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 77,
-          "price": 621.25
+          "price": 620.61
         },
         {
           "market": "Europe50",
@@ -1391,7 +1119,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 89,
-          "price": 65.53
+          "price": 65.42
         },
         {
           "market": "Italy40",
@@ -1441,7 +1169,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 80,
-          "price": 688.31
+          "price": 686.61
         },
         {
           "market": "NASDAQ100",
@@ -1450,7 +1178,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 79,
-          "price": 620.41
+          "price": 619.76
         },
         {
           "market": "Europe50",
@@ -1459,7 +1187,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 89,
-          "price": 65.64
+          "price": 65.53
         },
         {
           "market": "Italy40",
@@ -1509,7 +1237,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 82,
-          "price": 686.97
+          "price": 685.27
         },
         {
           "market": "NASDAQ100",
@@ -1518,7 +1246,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 80,
-          "price": 608.21
+          "price": 607.58
         },
         {
           "market": "Europe50",
@@ -1527,7 +1255,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 89,
-          "price": 66.33
+          "price": 66.22
         },
         {
           "market": "Italy40",
@@ -1577,7 +1305,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 85,
-          "price": 678.15
+          "price": 676.47
         },
         {
           "market": "NASDAQ100",
@@ -1586,7 +1314,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 82,
-          "price": 600.5
+          "price": 599.88
         },
         {
           "market": "Europe50",
@@ -1595,7 +1323,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 89,
-          "price": 66.37
+          "price": 66.26
         },
         {
           "market": "Italy40",
@@ -1645,7 +1373,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 86,
-          "price": 685.79
+          "price": 684.09
         },
         {
           "market": "NASDAQ100",
@@ -1654,7 +1382,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 83,
-          "price": 607.38
+          "price": 606.74
         },
         {
           "market": "Europe50",
@@ -1663,7 +1391,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 89,
-          "price": 67.51
+          "price": 67.4
         },
         {
           "market": "Italy40",
@@ -1713,7 +1441,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 87,
-          "price": 682.36
+          "price": 680.67
         },
         {
           "market": "NASDAQ100",
@@ -1722,7 +1450,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 82,
-          "price": 605.86
+          "price": 605.23
         },
         {
           "market": "Europe50",
@@ -1731,7 +1459,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 89,
-          "price": 67.36
+          "price": 67.25
         },
         {
           "market": "Italy40",
@@ -1781,7 +1509,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 86,
-          "price": 668.83
+          "price": 667.17
         },
         {
           "market": "NASDAQ100",
@@ -1790,7 +1518,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 80,
-          "price": 598.34
+          "price": 597.71
         },
         {
           "market": "Europe50",
@@ -1799,7 +1527,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 88,
-          "price": 61.98
+          "price": 61.88
         },
         {
           "market": "Italy40",
@@ -1849,7 +1577,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 83,
-          "price": 658.79
+          "price": 657.16
         },
         {
           "market": "NASDAQ100",
@@ -1858,7 +1586,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 77,
-          "price": 592.32
+          "price": 591.7
         },
         {
           "market": "Europe50",
@@ -1867,7 +1595,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 84,
-          "price": 60.82
+          "price": 60.73
         },
         {
           "market": "Italy40",
@@ -1917,7 +1645,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 79,
-          "price": 646.9
+          "price": 645.3
         },
         {
           "market": "NASDAQ100",
@@ -1926,7 +1654,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 73,
-          "price": 580.69
+          "price": 580.08
         },
         {
           "market": "Europe50",
@@ -1935,7 +1663,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 78,
-          "price": 58.96
+          "price": 58.86
         },
         {
           "market": "Italy40",
@@ -1985,7 +1713,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 632.46
+          "price": 630.89
         },
         {
           "market": "NASDAQ100",
@@ -1994,7 +1722,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 67,
-          "price": 561.96
+          "price": 561.38
         },
         {
           "market": "Europe50",
@@ -2003,7 +1731,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 72,
-          "price": 58.85
+          "price": 58.76
         },
         {
           "market": "Italy40",
@@ -2053,7 +1781,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 71,
-          "price": 654.14
+          "price": 652.52
         },
         {
           "market": "NASDAQ100",
@@ -2062,7 +1790,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 65,
-          "price": 584.34
+          "price": 583.73
         },
         {
           "market": "Europe50",
@@ -2071,7 +1799,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 70,
-          "price": 61.46
+          "price": 61.36
         },
         {
           "market": "Italy40",
@@ -2121,7 +1849,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 70,
-          "price": 677.71
+          "price": 676.04
         },
         {
           "market": "NASDAQ100",
@@ -2130,7 +1858,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 63,
-          "price": 610.4
+          "price": 609.76
         },
         {
           "market": "Europe50",
@@ -2139,7 +1867,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 70,
-          "price": 64.89
+          "price": 64.79
         },
         {
           "market": "Italy40",
@@ -2189,7 +1917,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 71,
-          "price": 708.32
+          "price": 706.56
         },
         {
           "market": "NASDAQ100",
@@ -2198,7 +1926,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 64,
-          "price": 648.14
+          "price": 647.46
         },
         {
           "market": "Europe50",
@@ -2207,7 +1935,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 70,
-          "price": 66.54
+          "price": 66.43
         },
         {
           "market": "Italy40",
@@ -2257,7 +1985,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 72,
-          "price": 712.11
+          "price": 710.34
         },
         {
           "market": "NASDAQ100",
@@ -2266,7 +1994,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 65,
-          "price": 663.15
+          "price": 662.46
         },
         {
           "market": "Europe50",
@@ -2275,7 +2003,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 69,
-          "price": 64.98
+          "price": 64.88
         },
         {
           "market": "Italy40",
@@ -2325,7 +2053,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 72,
-          "price": 718.8
+          "price": 717.02
         },
         {
           "market": "NASDAQ100",
@@ -2334,7 +2062,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 65,
-          "price": 673.41
+          "price": 672.71
         },
         {
           "market": "Europe50",
@@ -2343,7 +2071,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 68,
-          "price": 64.94
+          "price": 64.84
         },
         {
           "market": "Italy40",
@@ -2393,7 +2121,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 72,
-          "price": 735.72
+          "price": 733.9
         },
         {
           "market": "NASDAQ100",
@@ -2402,7 +2130,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 65,
-          "price": 710.45
+          "price": 709.71
         },
         {
           "market": "Europe50",
@@ -2411,7 +2139,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 68,
-          "price": 66.02
+          "price": 65.91
         },
         {
           "market": "Italy40",
@@ -2461,7 +2189,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 72,
-          "price": 737.27
+          "price": 735.44
         },
         {
           "market": "NASDAQ100",
@@ -2470,7 +2198,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 65,
-          "price": 708.15
+          "price": 707.41
         },
         {
           "market": "Europe50",
@@ -2479,7 +2207,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 63.92
+          "price": 63.82
         },
         {
           "market": "Italy40",
@@ -2529,7 +2257,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 743.72
+          "price": 741.88
         },
         {
           "market": "NASDAQ100",
@@ -2538,7 +2266,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 65,
-          "price": 716.75
+          "price": 716.01
         },
         {
           "market": "Europe50",
@@ -2547,7 +2275,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 66.12
+          "price": 66.02
         },
         {
           "market": "Italy40",
@@ -2597,7 +2325,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 754.54
+          "price": 752.67
         },
         {
           "market": "NASDAQ100",
@@ -2606,7 +2334,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 64,
-          "price": 737.5
+          "price": 736.73
         },
         {
           "market": "Europe50",
@@ -2615,7 +2343,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 66.83
+          "price": 66.72
         },
         {
           "market": "Italy40",
@@ -2665,7 +2393,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 735.65
+          "price": 733.83
         },
         {
           "market": "NASDAQ100",
@@ -2674,7 +2402,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 64,
-          "price": 704.29
+          "price": 703.55
         },
         {
           "market": "Europe50",
@@ -2683,7 +2411,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 65,
-          "price": 65.82
+          "price": 65.71
         },
         {
           "market": "Italy40",
@@ -2733,7 +2461,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 739.84
+          "price": 738.01
         },
         {
           "market": "NASDAQ100",
@@ -2742,7 +2470,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 64,
-          "price": 720.55
+          "price": 719.8
         },
         {
           "market": "Europe50",
@@ -2751,7 +2479,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 65,
-          "price": 67.89
+          "price": 67.77
         },
         {
           "market": "Italy40",
@@ -2801,7 +2529,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 746.74
+          "price": 744.89
         },
         {
           "market": "NASDAQ100",
@@ -2810,7 +2538,7 @@
           "etf": "QQQ",
           "trend": 71,
           "stability": 64,
-          "price": 739.81
+          "price": 739.04
         },
         {
           "market": "Europe50",
@@ -2819,7 +2547,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 65,
-          "price": 68.95
+          "price": 68.84
         },
         {
           "market": "Italy40",
@@ -2869,7 +2597,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 72,
-          "price": 728.99
+          "price": 727.18
         },
         {
           "market": "NASDAQ100",
@@ -2878,7 +2606,7 @@
           "etf": "QQQ",
           "trend": 100,
           "stability": 65,
-          "price": 706.52
+          "price": 705.78
         },
         {
           "market": "Europe50",
@@ -2887,7 +2615,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 65,
-          "price": 67.11
+          "price": 67.0
         },
         {
           "market": "Italy40",
@@ -2937,7 +2665,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 744.78
+          "price": 742.94
         },
         {
           "market": "NASDAQ100",
@@ -2946,7 +2674,7 @@
           "etf": "QQQ",
           "trend": 100,
           "stability": 65,
-          "price": 712.6
+          "price": 711.86
         },
         {
           "market": "Europe50",
@@ -2955,7 +2683,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 68.99
+          "price": 68.88
         },
         {
           "market": "Italy40",
@@ -3005,7 +2733,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 754.95
+          "price": 753.08
         },
         {
           "market": "NASDAQ100",
@@ -3014,7 +2742,7 @@
           "etf": "QQQ",
           "trend": 100,
           "stability": 66,
-          "price": 725.51
+          "price": 724.75
         },
         {
           "market": "Europe50",
@@ -3023,7 +2751,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 67,
-          "price": 68.08
+          "price": 67.97
         },
         {
           "market": "Italy40",
@@ -3073,7 +2801,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 743.29
+          "price": 741.45
         },
         {
           "market": "NASDAQ100",
@@ -3082,7 +2810,7 @@
           "etf": "QQQ",
           "trend": 100,
           "stability": 66,
-          "price": 695.33
+          "price": 694.61
         },
         {
           "market": "Europe50",
@@ -3091,7 +2819,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 67.72
+          "price": 67.61
         },
         {
           "market": "Italy40",
@@ -3141,7 +2869,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 738.93
+          "price": 737.1
         },
         {
           "market": "NASDAQ100",
@@ -3150,7 +2878,7 @@
           "etf": "QQQ",
           "trend": 100,
           "stability": 65,
-          "price": 684.23
+          "price": 683.52
         },
         {
           "market": "Europe50",
@@ -3159,7 +2887,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 67.69
+          "price": 67.58
         },
         {
           "market": "Italy40",
@@ -3209,7 +2937,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 72,
-          "price": 747.03
+          "price": 745.18
         },
         {
           "market": "NASDAQ100",
@@ -3218,7 +2946,7 @@
           "etf": "QQQ",
           "trend": 100,
           "stability": 64,
-          "price": 687.99
+          "price": 687.27
         },
         {
           "market": "Europe50",
@@ -3227,7 +2955,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 69.77
+          "price": 69.66
         },
         {
           "market": "Italy40",
@@ -3277,7 +3005,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 773.26
+          "price": 771.34
         },
         {
           "market": "NASDAQ100",
@@ -3286,7 +3014,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 65,
-          "price": 723.03
+          "price": 722.28
         },
         {
           "market": "Europe50",
@@ -3295,7 +3023,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 66,
-          "price": 71.86
+          "price": 71.74
         },
         {
           "market": "Italy40",
@@ -3345,7 +3073,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 776.34
+          "price": 774.42
         },
         {
           "market": "NASDAQ100",
@@ -3354,7 +3082,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 66,
-          "price": 731.07
+          "price": 730.31
         },
         {
           "market": "Europe50",
@@ -3363,7 +3091,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 67,
-          "price": 72.1
+          "price": 71.98
         },
         {
           "market": "Italy40",
@@ -3413,7 +3141,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 73,
-          "price": 765.72
+          "price": 763.82
         },
         {
           "market": "NASDAQ100",
@@ -3422,7 +3150,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 66,
-          "price": 713.44
+          "price": 712.7
         },
         {
           "market": "Europe50",
@@ -3431,7 +3159,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 68,
-          "price": 71.76
+          "price": 71.64
         },
         {
           "market": "Italy40",
@@ -3481,7 +3209,7 @@
           "etf": "SPY",
           "trend": 57,
           "stability": 74,
-          "price": 769.35
+          "price": 767.44
         },
         {
           "market": "NASDAQ100",
@@ -3490,7 +3218,7 @@
           "etf": "QQQ",
           "trend": 86,
           "stability": 66,
-          "price": 716.43
+          "price": 715.68
         },
         {
           "market": "Europe50",
@@ -3499,7 +3227,7 @@
           "etf": "FEZ",
           "trend": 43,
           "stability": 68,
-          "price": 71.36
+          "price": 71.24
         },
         {
           "market": "Italy40",
@@ -3536,6 +3264,278 @@
           "trend": 29,
           "stability": 70,
           "price": 30.0
+        }
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "US",
+          "etf": "SPY",
+          "trend": 57,
+          "stability": 74,
+          "price": 768.28
+        },
+        {
+          "market": "NASDAQ100",
+          "code": "US",
+          "flag": "US",
+          "etf": "QQQ",
+          "trend": 86,
+          "stability": 66,
+          "price": 718.21
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "EU",
+          "etf": "FEZ",
+          "trend": 29,
+          "stability": 68,
+          "price": 70.53
+        },
+        {
+          "market": "Italy40",
+          "code": "IT",
+          "flag": "IT",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 84,
+          "price": 61.86
+        },
+        {
+          "market": "Germany40",
+          "code": "DE",
+          "flag": "DE",
+          "etf": "EWG",
+          "trend": 14,
+          "stability": 19,
+          "price": 43.89
+        },
+        {
+          "market": "UK100",
+          "code": "GB",
+          "flag": "GB",
+          "etf": "EWU",
+          "trend": 71,
+          "stability": 81,
+          "price": 48.59
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "AU",
+          "etf": "EWA",
+          "trend": 43,
+          "stability": 71,
+          "price": 30.23
+        }
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "US",
+          "etf": "SPY",
+          "trend": 57,
+          "stability": 74,
+          "price": 762.4
+        },
+        {
+          "market": "NASDAQ100",
+          "code": "US",
+          "flag": "US",
+          "etf": "QQQ",
+          "trend": 86,
+          "stability": 66,
+          "price": 714.14
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "EU",
+          "etf": "FEZ",
+          "trend": 29,
+          "stability": 67,
+          "price": 69.59
+        },
+        {
+          "market": "Italy40",
+          "code": "IT",
+          "flag": "IT",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 85,
+          "price": 61.96
+        },
+        {
+          "market": "Germany40",
+          "code": "DE",
+          "flag": "DE",
+          "etf": "EWG",
+          "trend": 14,
+          "stability": 20,
+          "price": 42.87
+        },
+        {
+          "market": "UK100",
+          "code": "GB",
+          "flag": "GB",
+          "etf": "EWU",
+          "trend": 71,
+          "stability": 80,
+          "price": 47.94
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "AU",
+          "etf": "EWA",
+          "trend": 43,
+          "stability": 72,
+          "price": 29.27
+        }
+      ]
+    },
+    {
+      "date": "2026-09-18",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "US",
+          "etf": "SPY",
+          "trend": 57,
+          "stability": 75,
+          "price": 761.69
+        },
+        {
+          "market": "NASDAQ100",
+          "code": "US",
+          "flag": "US",
+          "etf": "QQQ",
+          "trend": 86,
+          "stability": 67,
+          "price": 720.7
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "EU",
+          "etf": "FEZ",
+          "trend": 29,
+          "stability": 66,
+          "price": 68.07
+        },
+        {
+          "market": "Italy40",
+          "code": "IT",
+          "flag": "IT",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 84,
+          "price": 60.05
+        },
+        {
+          "market": "Germany40",
+          "code": "DE",
+          "flag": "DE",
+          "etf": "EWG",
+          "trend": 14,
+          "stability": 19,
+          "price": 42.15
+        },
+        {
+          "market": "UK100",
+          "code": "GB",
+          "flag": "GB",
+          "etf": "EWU",
+          "trend": 71,
+          "stability": 78,
+          "price": 47.27
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "AU",
+          "etf": "EWA",
+          "trend": 43,
+          "stability": 71,
+          "price": 28.75
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "points": [
+        {
+          "market": "USA100",
+          "code": "US",
+          "flag": "US",
+          "etf": "SPY",
+          "trend": 71,
+          "stability": 76,
+          "price": 771.35
+        },
+        {
+          "market": "NASDAQ100",
+          "code": "US",
+          "flag": "US",
+          "etf": "QQQ",
+          "trend": 86,
+          "stability": 68,
+          "price": 744.5
+        },
+        {
+          "market": "Europe50",
+          "code": "EU",
+          "flag": "EU",
+          "etf": "FEZ",
+          "trend": 29,
+          "stability": 65,
+          "price": 68.65
+        },
+        {
+          "market": "Italy40",
+          "code": "IT",
+          "flag": "IT",
+          "etf": "EWI",
+          "trend": 100,
+          "stability": 83,
+          "price": 60.4
+        },
+        {
+          "market": "Germany40",
+          "code": "DE",
+          "flag": "DE",
+          "etf": "EWG",
+          "trend": 14,
+          "stability": 19,
+          "price": 42.26
+        },
+        {
+          "market": "UK100",
+          "code": "GB",
+          "flag": "GB",
+          "etf": "EWU",
+          "trend": 57,
+          "stability": 77,
+          "price": 47.32
+        },
+        {
+          "market": "Australia50",
+          "code": "AU",
+          "flag": "AU",
+          "etf": "EWA",
+          "trend": 43,
+          "stability": 68,
+          "price": 28.43
         }
       ]
     }
