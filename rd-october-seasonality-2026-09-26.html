@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="R&amp;D notes, 26 September 2026: October seasonality of the stocks in seven markets over the last ten years.">
+<title>R&amp;D October Seasonality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#071423; --bg-deep:#050b14;
+    --panel:#0c1c30; --panel-2:#112640;
+    --text:#f4f7fb; --muted:#aebbd0; --faint:#7f8ea6;
+    --line:rgba(255,255,255,.14); --line-soft:rgba(255,255,255,.07);
+    --tech:#4aa3ff; --energy:#f5c542; --fin:#42d392; --cash:#93a4bb; --up:#42d392; --dn:#ff6b6b;
+    --font:Inter,"Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background-color:var(--bg);
+    background:
+      radial-gradient(circle at 16% 0%,rgba(74,163,255,.20),transparent 30%),
+      radial-gradient(circle at 86% 6%,rgba(66,211,146,.12),transparent 30%),
+      linear-gradient(180deg,var(--bg),var(--bg-deep) 74%);
+    background-color:var(--bg);
+    color:var(--text);
+    font:16px/1.6 var(--font);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{width:min(1080px,100%);margin:0 auto;padding-inline:20px;padding-block:44px 72px}
+  .backlink{display:inline-flex;align-items:center;gap:8px;margin:0 10px 26px 0;padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--panel);color:var(--muted);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .15s,border-color .15s,background .15s}
+  .backlink:hover,.backlink:focus-visible{color:var(--text);border-color:var(--tech);background:var(--panel-2)}
+  .backlink:focus-visible{outline:2px solid var(--tech);outline-offset:2px}
+  .eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:0 0 22px;
+    font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .dot{width:9px;height:9px;background:var(--tech);display:inline-block;margin-right:8px;border-radius:2px}
+  h1{margin:0 0 16px;font-size:clamp(34px,6vw,58px);line-height:1.03;font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+  .deck{margin:0 0 22px;max-width:62ch;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--muted);text-wrap:pretty}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .facts b{color:var(--text);font-weight:700}
+  main{display:grid;grid-template-columns:minmax(0,1fr);gap:60px;margin-top:48px}
+  main>section,figure{min-width:0}
+  h2{margin:0 0 8px;font-size:clamp(22px,3.2vw,30px);line-height:1.15;font-weight:750;letter-spacing:-.015em;text-wrap:balance}
+  .lede{margin:0 0 20px;max-width:66ch;color:var(--muted);font-size:16px}
+  .finding{margin:0;max-width:70ch;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:17px;line-height:1.55}
+  .finding b{font-weight:700}
+  .key{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+  .key span{display:inline-flex;align-items:center;gap:8px}
+  .sw{width:14px;height:10px;border-radius:2px;display:inline-block}
+  .chart{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:10px}
+  .chart img{display:block;width:100%;min-width:640px;height:auto}
+  figure{margin:0}
+  figcaption{margin-top:10px;max-width:74ch;font-size:13.5px;color:var(--faint)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:0}
+  .stat{padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .stat b{display:block;font-size:clamp(24px,3.4vw,32px);line-height:1.1;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat span{display:block;margin-top:6px;font-size:13.5px;color:var(--muted)}
+  .stat em{display:block;margin-top:2px;font-size:13px;font-style:normal;color:var(--faint);font-variant-numeric:tabular-nums}
+  .up{color:var(--up)} .dn{color:var(--dn)}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  table{width:100%;min-width:520px;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+  th,td{padding:11px 14px;text-align:left;white-space:nowrap}
+  th{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line)}
+  td{border-bottom:1px solid var(--line-soft)}
+  tr:last-child td{border-bottom:0}
+  th.num,td.num{text-align:right}
+  td.tag{color:var(--text);font-weight:600}
+  td.tag i{width:10px;height:10px;border-radius:2px;display:inline-block;margin-right:9px}
+  td.tag span{color:var(--faint);font-weight:500;margin-left:6px}
+  .tnote{margin:10px 0 0;max-width:78ch;font-size:13px;color:var(--faint)}
+  .text{margin:0 0 18px;max-width:72ch;color:var(--muted);font-size:16px}
+  .text b{color:var(--text);font-weight:650}
+  .two{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+  .disclaimer{margin-top:8px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--faint);max-width:80ch}
+  .disclaimer a{color:var(--muted)}
+  @media (max-width:520px){ .page{padding-block:32px 56px} main{gap:48px} th,td{padding:10px 11px} }
+.chart svg{display:block}
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="backlink" href="reserved-area.html#rd" aria-label="Back to R&amp;D ongoing in the Reserved Area"><span aria-hidden="true">←</span> R&amp;D ongoing</a>
+  <img src="assets/tradingalgo-rd-logo.svg" alt="TradingAlgo R&amp;D" width="240" style="display:block;height:auto;margin:0 0 22px">
+  <p class="eyebrow"><span><i class="dot"></i>TradingAlgo · Member research</span><span>26 September 2026</span></p>
+  <h1>October seasonality</h1>
+  <p class="deck">How the stocks inside each of the seven Mosaic markets have behaved in October over the last ten years. Work in progress, not a published model.</p>
+  <ul class="facts">
+    <li>Octobers <b>2016–2025</b></li>
+    <li>Stocks <b>474</b> across 7 markets</li>
+    <li>Status <b>Research</b></li>
+  </ul>
+  <main>
+    <section>
+      <p class="finding"><b>Short version.</b> October has no reliable edge in these markets. The average October return of the stocks is positive for the S&amp;P 500 (+1.3%) and the Nasdaq 100 (+1.2%), close to zero for Europe, Italy, Germany and Australia, and negative for the FTSE 100 (−0.5%). No market was up in more than 6 of the 10 Octobers. The averages are driven by a few years: 2022 was up in every market, while 2018 and 2023 were down in every market.</p>
+    </section>
+    <section>
+      <h2>Average October, by market</h2>
+      <p class="lede">For each stock, the return from the September close to the October close, averaged over the years it traded. Then averaged across the stocks of each market.</p>
+      <div class="tablewrap"><table style="min-width:720px"><thead><tr><th>Market</th><th class="num">Stocks</th><th class="num">Avg October</th><th class="num">Median stock</th><th class="num">Stocks up on average</th><th class="num">Avg hit rate</th><th class="num">Up years</th></tr></thead><tbody><tr><td class="tag"><i style="background:#4aa3ff"></i>S&amp;P 500<span>SPY</span></td><td class="num">99</td><td class="num"><b><span class="up">+1.29%</span></b></td><td class="num"><span class="up">+1.09%</span></td><td class="num">73%</td><td class="num">52%</td><td class="num">5 of 10</td></tr><tr><td class="tag"><i style="background:#b48cff"></i>Nasdaq 100<span>QQQ</span></td><td class="num">99</td><td class="num"><b><span class="up">+1.25%</span></b></td><td class="num"><span class="up">+1.15%</span></td><td class="num">66%</td><td class="num">51%</td><td class="num">5 of 10</td></tr><tr><td class="tag"><i style="background:#f5c542"></i>Euro Stoxx 50<span>EZU</span></td><td class="num">46</td><td class="num"><b><span class="up">+0.65%</span></b></td><td class="num"><span class="up">+0.42%</span></td><td class="num">67%</td><td class="num">55%</td><td class="num">6 of 10</td></tr><tr><td class="tag"><i style="background:#ff9f5a"></i>DAX 40<span>EWG</span></td><td class="num">40</td><td class="num"><b><span class="dn">-0.12%</span></b></td><td class="num"><span class="up">+0.29%</span></td><td class="num">60%</td><td class="num">50%</td><td class="num">6 of 10</td></tr><tr><td class="tag"><i style="background:#ff6b6b"></i>FTSE MIB<span>EWI</span></td><td class="num">40</td><td class="num"><b><span class="up">+0.23%</span></b></td><td class="num"><span class="up">+0.90%</span></td><td class="num">72%</td><td class="num">51%</td><td class="num">6 of 10</td></tr><tr><td class="tag"><i style="background:#42d392"></i>FTSE 100<span>EWU</span></td><td class="num">100</td><td class="num"><b><span class="dn">-0.52%</span></b></td><td class="num"><span class="dn">-0.36%</span></td><td class="num">39%</td><td class="num">48%</td><td class="num">4 of 10</td></tr><tr><td class="tag"><i style="background:#8fd3e8"></i>Australia 50<span>EWA</span></td><td class="num">50</td><td class="num"><b><span class="up">+0.10%</span></b></td><td class="num"><span class="dn">-0.10%</span></td><td class="num">48%</td><td class="num">48%</td><td class="num">4 of 10</td></tr></tbody></table></div>
+      <p class="tnote">Median stock = median of the per-stock October averages. Stocks up on average = share of stocks whose average October is positive. Avg hit rate = average share of Octobers in which a stock rose. Up years = Octobers in which the equal-weighted market return was positive.</p>
+    </section>
+    <section>
+      <h2>Year by year</h2>
+      <p class="lede">Equal-weighted average October return of the stocks in each market, in percent.</p>
+      <div class="tablewrap"><table style="min-width:760px"><thead><tr><th>October</th><th class="num">S&amp;P 500</th><th class="num">Nasdaq 100</th><th class="num">Euro Stoxx 50</th><th class="num">DAX 40</th><th class="num">FTSE MIB</th><th class="num">FTSE 100</th><th class="num">Australia 50</th></tr></thead><tbody><tr><td class="tag">2016</td><td class="num" style="background:rgba(255,107,107,0.11)">-1.1</td><td class="num" style="background:rgba(255,107,107,0.19)">-2.6</td><td class="num" style="background:rgba(66,211,146,0.21)">+2.9</td><td class="num" style="background:rgba(66,211,146,0.11)">+1.1</td><td class="num" style="background:rgba(66,211,146,0.36)">+5.7</td><td class="num" style="background:rgba(255,107,107,0.05)">-0.1</td><td class="num" style="background:rgba(255,107,107,0.20)">-2.7</td></tr><tr><td class="tag">2017</td><td class="num" style="background:rgba(66,211,146,0.20)">+2.7</td><td class="num" style="background:rgba(66,211,146,0.28)">+4.2</td><td class="num" style="background:rgba(66,211,146,0.20)">+2.6</td><td class="num" style="background:rgba(66,211,146,0.27)">+4.0</td><td class="num" style="background:rgba(255,107,107,0.07)">-0.5</td><td class="num" style="background:rgba(66,211,146,0.16)">+1.9</td><td class="num" style="background:rgba(66,211,146,0.34)">+5.2</td></tr><tr><td class="tag">2018</td><td class="num" style="background:rgba(255,107,107,0.39)">-6.1</td><td class="num" style="background:rgba(255,107,107,0.51)">-8.4</td><td class="num" style="background:rgba(255,107,107,0.31)">-4.7</td><td class="num" style="background:rgba(255,107,107,0.39)">-6.2</td><td class="num" style="background:rgba(255,107,107,0.58)">-9.7</td><td class="num" style="background:rgba(255,107,107,0.40)">-6.4</td><td class="num" style="background:rgba(255,107,107,0.36)">-5.7</td></tr><tr><td class="tag">2019</td><td class="num" style="background:rgba(66,211,146,0.19)">+2.6</td><td class="num" style="background:rgba(66,211,146,0.26)">+3.9</td><td class="num" style="background:rgba(66,211,146,0.12)">+1.3</td><td class="num" style="background:rgba(66,211,146,0.18)">+2.4</td><td class="num" style="background:rgba(66,211,146,0.17)">+2.2</td><td class="num" style="background:rgba(255,107,107,0.05)">-0.1</td><td class="num" style="background:rgba(255,107,107,0.06)">-0.2</td></tr><tr><td class="tag">2020</td><td class="num" style="background:rgba(255,107,107,0.17)">-2.3</td><td class="num" style="background:rgba(255,107,107,0.13)">-1.4</td><td class="num" style="background:rgba(255,107,107,0.36)">-5.7</td><td class="num" style="background:rgba(255,107,107,0.41)">-6.5</td><td class="num" style="background:rgba(255,107,107,0.43)">-6.8</td><td class="num" style="background:rgba(255,107,107,0.17)">-2.2</td><td class="num" style="background:rgba(66,211,146,0.20)">+2.8</td></tr><tr><td class="tag">2021</td><td class="num" style="background:rgba(66,211,146,0.37)">+5.8</td><td class="num" style="background:rgba(66,211,146,0.42)">+6.7</td><td class="num" style="background:rgba(66,211,146,0.33)">+5.1</td><td class="num" style="background:rgba(66,211,146,0.19)">+2.6</td><td class="num" style="background:rgba(66,211,146,0.19)">+2.6</td><td class="num" style="background:rgba(66,211,146,0.14)">+1.6</td><td class="num" style="background:rgba(255,107,107,0.09)">-0.7</td></tr><tr><td class="tag">2022</td><td class="num" style="background:rgba(66,211,146,0.60)">+10.9</td><td class="num" style="background:rgba(66,211,146,0.46)">+7.5</td><td class="num" style="background:rgba(66,211,146,0.49)">+8.1</td><td class="num" style="background:rgba(66,211,146,0.48)">+7.8</td><td class="num" style="background:rgba(66,211,146,0.57)">+9.4</td><td class="num" style="background:rgba(66,211,146,0.28)">+4.2</td><td class="num" style="background:rgba(66,211,146,0.38)">+6.1</td></tr><tr><td class="tag">2023</td><td class="num" style="background:rgba(255,107,107,0.17)">-2.2</td><td class="num" style="background:rgba(255,107,107,0.28)">-4.1</td><td class="num" style="background:rgba(255,107,107,0.19)">-2.5</td><td class="num" style="background:rgba(255,107,107,0.35)">-5.4</td><td class="num" style="background:rgba(255,107,107,0.17)">-2.2</td><td class="num" style="background:rgba(255,107,107,0.28)">-4.2</td><td class="num" style="background:rgba(255,107,107,0.21)">-3.0</td></tr><tr><td class="tag">2024</td><td class="num" style="background:rgba(255,107,107,0.06)">-0.2</td><td class="num" style="background:rgba(255,107,107,0.06)">-0.2</td><td class="num" style="background:rgba(255,107,107,0.23)">-3.3</td><td class="num" style="background:rgba(255,107,107,0.25)">-3.6</td><td class="num" style="background:rgba(66,211,146,0.05)">+0.1</td><td class="num" style="background:rgba(255,107,107,0.20)">-2.8</td><td class="num" style="background:rgba(66,211,146,0.10)">+0.8</td></tr><tr><td class="tag">2025</td><td class="num" style="background:rgba(66,211,146,0.17)">+2.2</td><td class="num" style="background:rgba(66,211,146,0.25)">+3.6</td><td class="num" style="background:rgba(66,211,146,0.22)">+3.0</td><td class="num" style="background:rgba(66,211,146,0.14)">+1.6</td><td class="num" style="background:rgba(66,211,146,0.14)">+1.7</td><td class="num" style="background:rgba(66,211,146,0.23)">+3.3</td><td class="num" style="background:rgba(255,107,107,0.12)">-1.2</td></tr><tr><td class="tag"><b>Average</b></td><td class="num"><b>+1.2</b></td><td class="num"><b>+0.9</b></td><td class="num"><b>+0.7</b></td><td class="num"><b>-0.2</b></td><td class="num"><b>+0.3</b></td><td class="num"><b>-0.5</b></td><td class="num"><b>+0.2</b></td></tr></tbody></table></div>
+      <p class="tnote">Ten observations per market: a single year can move the average by a full point. The Average row weights each year equally, so it differs slightly from the per-stock average above, where stocks with longer history count for more years. Excluding 2022, the average October of the S&amp;P 500 falls from +1.2% to +0.1% and that of the Nasdaq 100 from +0.9% to +0.2%.</p>
+    </section>
+    <section>
+      <h2>Strongest and weakest stocks</h2>
+      <p class="lede">Average October return per stock, showing the three highest and three lowest in each market. Only stocks with at least eight Octobers of history are included.</p>
+      <div class="tablewrap"><table style="min-width:720px"><thead><tr><th>Market</th><th>Strongest Octobers</th><th>Weakest Octobers</th></tr></thead><tbody><tr><td class="tag"><i style="background:#4aa3ff"></i>S&amp;P 500</td><td>GM <span class="up">+6.8%</span>, NFLX <span class="up">+6.4%</span>, TSLA <span class="up">+5.1%</span></td><td>META <span class="dn">-4.0%</span>, TXN <span class="dn">-2.9%</span>, IBM <span class="dn">-2.5%</span></td></tr><tr><td class="tag"><i style="background:#b48cff"></i>Nasdaq 100</td><td>NFLX <span class="up">+6.4%</span>, TER <span class="up">+6.1%</span>, TSLA <span class="up">+5.1%</span></td><td>EBAY <span class="dn">-6.1%</span>, META <span class="dn">-4.0%</span>, MCHP <span class="dn">-3.2%</span></td></tr><tr><td class="tag"><i style="background:#f5c542"></i>Euro Stoxx 50</td><td>LIN.DE <span class="up">+8.6%</span>, STLAM.MI <span class="up">+4.8%</span>, BBVA.MC <span class="up">+4.5%</span></td><td>PHIA.AS <span class="dn">-5.5%</span>, BAYN.DE <span class="dn">-4.8%</span>, DB1.DE <span class="dn">-3.5%</span></td></tr><tr><td class="tag"><i style="background:#ff9f5a"></i>DAX 40</td><td>AIR.DE <span class="up">+3.8%</span>, MTX.DE <span class="up">+3.4%</span>, DBK.DE <span class="up">+3.2%</span></td><td>FME.DE <span class="dn">-6.4%</span>, BAYN.DE <span class="dn">-4.8%</span>, ADS.DE <span class="dn">-4.4%</span></td></tr><tr><td class="tag"><i style="background:#ff6b6b"></i>FTSE MIB</td><td>STLAM.MI <span class="up">+4.8%</span>, SPM.MI <span class="up">+3.5%</span>, BPE.MI <span class="up">+2.8%</span></td><td>BMPS.MI <span class="dn">-16.7%</span>, TIT.MI <span class="dn">-2.9%</span>, INW.MI <span class="dn">-2.6%</span></td></tr><tr><td class="tag"><i style="background:#42d392"></i>FTSE 100</td><td>IAG.L <span class="up">+4.9%</span>, RR.L <span class="up">+4.8%</span>, BARC.L <span class="up">+3.6%</span></td><td>BAB.L <span class="dn">-6.5%</span>, SN.L <span class="dn">-6.2%</span>, JD.L <span class="dn">-5.4%</span></td></tr><tr><td class="tag"><i style="background:#8fd3e8"></i>Australia 50</td><td>LYC.AX <span class="up">+4.7%</span>, NST.AX <span class="up">+4.6%</span>, CBA.AX <span class="up">+2.8%</span></td><td>WTC.AX <span class="dn">-4.0%</span>, SIG.AX <span class="dn">-2.2%</span>, BXB.AX <span class="dn">-1.9%</span></td></tr></tbody></table></div>
+      <p class="tnote">Individual-stock averages are very dispersed and rest on eight to ten observations each. They describe the past, they are not a screen.</p>
+    </section>
+    <section>
+      <h2>How to read this</h2>
+      <p class="text"><b>Method.</b> Prices are daily, adjusted for dividends and splits, from Yahoo Finance in local currency, September 2016 to September 2026. October return = last close of October divided by last close of September, minus one. The market figures are simple averages across the stocks (equal weight); the benchmark ETF of each market is not part of them.</p>
+      <p class="text"><b>Limits.</b> Members are the current constituents of each index, taken back in time, so the history carries survivorship bias. Some stocks have fewer than ten years of data, and a few tickers could not be downloaded. Ten Octobers is a small sample and includes the 2018 sell-off, 2020 and 2022, so a seasonal pattern cannot be told apart from those episodes with this data. These are research notes, not recommendations.</p>
+    </section>
+    <p class="disclaimer">Research material only — not personalized financial advice. Past performance does not predict future results. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a>.</p>
+  </main>
+</div>
+</body>
+</html>
