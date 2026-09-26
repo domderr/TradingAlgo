@@ -1036,8 +1036,13 @@
       font-weight: 800;
     }
 
+    .form-field textarea {
+      resize: vertical;
+    }
+
     .form-field input,
-    .form-field select {
+    .form-field select,
+    .form-field textarea {
       width: 100%;
       min-height: 44px;
       padding: 10px 12px;
@@ -1741,7 +1746,7 @@
     <form class="request-form request-section" id="request-info-form" action="https://formsubmit.co/ajax/domderrico@gmail.com" method="POST">
       <h2>Request Information</h2>
       <p class="request-intro">
-        Request access to the reserved area by completing the form below. You will receive a reply by email.
+        The reserved area is more of a workshop than a public square, so we like to know who is coming in. Tell us, in your own words, who you are and what caught your eye about TradingAlgo Mosaic. Robots tend to write very generic essays, and curious competitors are usually a bit shy about the details. Every request is read by a real person, who will reply by email.
       </p>
       <input type="hidden" name="_subject" value="TradingAlgo Mosaic - Request Information">
       <input type="hidden" name="_template" value="table">
@@ -1803,6 +1808,20 @@
         <div class="form-field full">
           <label for="request-other-market">Other market, please specify</label>
           <input id="request-other-market" name="other_market" type="text">
+        </div>
+
+        <div class="form-field full">
+          <label for="request-about">Who are you? Please describe yourself in your own words</label>
+          <textarea id="request-about" name="about_you" rows="4" minlength="40" placeholder="Your background, your work or studies, and your experience with investing" required></textarea>
+        </div>
+
+        <div class="form-field full">
+          <label for="request-why">Why are you interested in TradingAlgo Mosaic?</label>
+          <textarea id="request-why" name="why_interested" rows="4" minlength="40" placeholder="What you hope to find in the reserved area and how you would use it" required></textarea>
+        </div>
+
+        <div class="form-field full">
+          <label class="market-option request-consent"><input type="checkbox" name="confidentiality" value="accepted" required>I will use the reserved area for my own personal information only. I will not copy, reproduce, redistribute or use its content to build or offer competing products or services.</label>
         </div>
       </div>
 
@@ -2254,11 +2273,27 @@
 
     var requestInfoForm = document.getElementById("request-info-form");
     if (requestInfoForm) {
+      var formOpenedAt = Date.now();
       requestInfoForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         var submitButton = requestInfoForm.querySelector('button[type="submit"]');
         var status = document.getElementById("request-status");
+
+        // Anti-bot: a filled honeypot or a submit faster than a human can type is dropped silently.
+        var honey = document.getElementById("request-website");
+        var tooFast = Date.now() - formOpenedAt < 8000;
+        if ((honey && honey.value) || tooFast) {
+          if (tooFast && !(honey && honey.value) && status) {
+            status.className = "request-status error";
+            status.textContent = "Please take a moment to complete the form, then submit again.";
+          } else if (status) {
+            status.className = "request-status success";
+            status.textContent = "Thank you. Your request has been sent.";
+          }
+          return;
+        }
+
         var markets = Array.prototype.slice.call(document.querySelectorAll('input[name="markets"]:checked'))
           .map(function (input) { return input.value; });
         var otherMarket = document.getElementById("request-other-market").value.trim();
