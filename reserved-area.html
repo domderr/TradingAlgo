@@ -241,7 +241,7 @@
       align-items: center;
     }
 
-    /* La home dell'area riservata mostra solo i tre riquadri: la barra con
+    /* La home dell'area riservata mostra solo i quattro riquadri: la barra con
        ID e mercati abilitati compare quando un'area e' aperta. */
     body:not(.area-open) .user-access-bar.is-visible {
       display: none;
@@ -259,9 +259,11 @@
       display: none;
     }
 
+    .rd-logo { display: block; width: min(320px, 100%); height: auto; margin: 0 0 18px; }
+
     .area-choice {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 22px;
       margin: 0 0 32px;
     }
@@ -1037,6 +1039,10 @@
 
     .report-pdf-link:hover { text-decoration: underline; }
 
+    @media (max-width: 1100px) {
+      .area-choice { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
     @media (max-width: 860px) {
       .area-choice { grid-template-columns: 1fr; }
     }
@@ -1148,11 +1154,11 @@
     <div class="user-access-bar" id="user-access-bar"></div>
 
     <div class="restricted-content" id="restricted-content" hidden>
-      <!-- Three areas in one page, so the unlocked session and the deep links
+      <!-- Four areas in one page, so the unlocked session and the deep links
            (?market=, ?next=, #reports) keep working. All start closed: the
            tiles open one area below them. The URL hash can open one directly:
            #hedging opens Hedging, #sectors opens Sectors Allocation,
-           #portfolios and #reports open Portfolios. -->
+           #rd opens R&D ongoing, #portfolios and #reports open Portfolios. -->
       <div class="area-choice" role="group" aria-label="Reserved area sections">
         <button class="area-tile" id="tile-portfolios" type="button" aria-expanded="false" aria-controls="panel-portfolios" data-area="portfolios">
           <span class="area-tile-img crop-home"><img src="assets/Home.png" alt="" width="1535" height="1024" loading="lazy"></span>
@@ -1173,6 +1179,13 @@
           <span class="area-tile-body">
             <span class="area-tile-title">Sectors Allocation</span>
             <span class="area-tile-text">A weekly rotation across Technology, Energy and Financials, with cash as the alternative.</span>
+          </span>
+        </button>
+        <button class="area-tile" id="tile-rd" type="button" aria-expanded="false" aria-controls="panel-rd" data-area="rd">
+          <span class="area-tile-img"><img src="assets/previews/rd-ongoing.svg" alt="" width="940" height="470" loading="lazy"></span>
+          <span class="area-tile-body">
+            <span class="area-tile-title">R&amp;D ongoing</span>
+            <span class="area-tile-text">Research in progress: experiments and notes that are not yet published models.</span>
           </span>
         </button>
       </div>
@@ -1341,6 +1354,23 @@
           </div>
         </section>
       </div>
+
+      <div class="area-panel" id="panel-rd" role="region" aria-label="R&amp;D ongoing" hidden>
+        <section>
+          <img class="rd-logo" src="assets/tradingalgo-rd-logo.svg" alt="TradingAlgo R&amp;D" width="1035" height="290">
+          <div class="reports-section-head">
+            <h2>R&amp;D ongoing</h2>
+          </div>
+          <p class="hedging-intro">Research in progress. These pages are work notes, not published models, and are updated as the work moves.</p>
+
+          <div class="member-group">
+            <h3 class="member-group-title">Experiments</h3>
+            <nav class="member-nav" aria-label="R&amp;D experiments">
+              <a href="rd-allocation-experiments-2026-09-26.html"><strong>Allocation experiments</strong><span>26 Sep 2026: the Sectors Allocation rule on SPY/Gold, Nasdaq 100/Utilities and SPY/Treasuries, weekly against monthly review.</span></a>
+            </nav>
+          </div>
+        </section>
+      </div>
     </div>
   </main>
 
@@ -1474,14 +1504,15 @@
       return prefix + name + ". Your account is enabled for " + marketsLabel(authorizedMarkets) + ".";
     }
 
-    var AREAS = ["portfolios", "hedging", "sectors"];
+    var AREAS = ["portfolios", "hedging", "sectors", "rd"];
 
     // Nessuna area e' aperta di default: senza hash restano visibili solo i
-    // tre riquadri. #reports e' l'ancora interna della lista dei report.
+    // quattro riquadri. #reports e' l'ancora interna della lista dei report.
     function areaFromHash() {
       var hash = window.location.hash;
       if (hash === "#hedging") return "hedging";
       if (hash === "#sectors") return "sectors";
+      if (hash === "#rd") return "rd";
       if (hash === "#portfolios" || hash === "#reports") return "portfolios";
       return "";
     }

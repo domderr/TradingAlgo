@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="R&amp;D notes, 26 September 2026: the Sectors Allocation logic applied to three other asset mixes, and a monthly-review variant.">
+<title>R&amp;D Allocation Experiments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>
+  :root{
+    color-scheme:dark;
+    --bg:#071423; --bg-deep:#050b14;
+    --panel:#0c1c30; --panel-2:#112640;
+    --text:#f4f7fb; --muted:#aebbd0; --faint:#7f8ea6;
+    --line:rgba(255,255,255,.14); --line-soft:rgba(255,255,255,.07);
+    --tech:#4aa3ff; --energy:#f5c542; --fin:#42d392; --cash:#93a4bb; --up:#42d392; --dn:#ff6b6b;
+    --font:Inter,"Segoe UI",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background-color:var(--bg);
+    background:
+      radial-gradient(circle at 16% 0%,rgba(74,163,255,.20),transparent 30%),
+      radial-gradient(circle at 86% 6%,rgba(66,211,146,.12),transparent 30%),
+      linear-gradient(180deg,var(--bg),var(--bg-deep) 74%);
+    background-color:var(--bg);
+    color:var(--text);
+    font:16px/1.6 var(--font);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{width:min(1080px,100%);margin:0 auto;padding-inline:20px;padding-block:44px 72px}
+  .backlink{display:inline-flex;align-items:center;gap:8px;margin:0 10px 26px 0;padding:8px 14px;border:1px solid var(--line);border-radius:999px;
+    background:var(--panel);color:var(--muted);font-size:13.5px;font-weight:600;text-decoration:none;transition:color .15s,border-color .15s,background .15s}
+  .backlink:hover,.backlink:focus-visible{color:var(--text);border-color:var(--tech);background:var(--panel-2)}
+  .backlink:focus-visible{outline:2px solid var(--tech);outline-offset:2px}
+  .eyebrow{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:0 0 22px;
+    font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+  .eyebrow .dot{width:9px;height:9px;background:var(--tech);display:inline-block;margin-right:8px;border-radius:2px}
+  h1{margin:0 0 16px;font-size:clamp(34px,6vw,58px);line-height:1.03;font-weight:800;letter-spacing:-.025em;text-wrap:balance}
+  .deck{margin:0 0 22px;max-width:62ch;font-size:clamp(17px,2.2vw,20px);line-height:1.5;color:var(--muted);text-wrap:pretty}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+  .facts b{color:var(--text);font-weight:700}
+  main{display:grid;grid-template-columns:minmax(0,1fr);gap:60px;margin-top:48px}
+  main>section,figure{min-width:0}
+  h2{margin:0 0 8px;font-size:clamp(22px,3.2vw,30px);line-height:1.15;font-weight:750;letter-spacing:-.015em;text-wrap:balance}
+  .lede{margin:0 0 20px;max-width:66ch;color:var(--muted);font-size:16px}
+  .finding{margin:0;max-width:70ch;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);font-size:17px;line-height:1.55}
+  .finding b{font-weight:700}
+  .key{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0 0 14px;font-size:13.5px;color:var(--muted)}
+  .key span{display:inline-flex;align-items:center;gap:8px}
+  .sw{width:14px;height:10px;border-radius:2px;display:inline-block}
+  .chart{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:10px}
+  .chart img{display:block;width:100%;min-width:640px;height:auto}
+  figure{margin:0}
+  figcaption{margin-top:10px;max-width:74ch;font-size:13.5px;color:var(--faint)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:0}
+  .stat{padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .stat b{display:block;font-size:clamp(24px,3.4vw,32px);line-height:1.1;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .stat span{display:block;margin-top:6px;font-size:13.5px;color:var(--muted)}
+  .stat em{display:block;margin-top:2px;font-size:13px;font-style:normal;color:var(--faint);font-variant-numeric:tabular-nums}
+  .up{color:var(--up)} .dn{color:var(--dn)}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  table{width:100%;min-width:520px;border-collapse:collapse;font-size:14.5px;font-variant-numeric:tabular-nums}
+  th,td{padding:11px 14px;text-align:left;white-space:nowrap}
+  th{font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);border-bottom:1px solid var(--line)}
+  td{border-bottom:1px solid var(--line-soft)}
+  tr:last-child td{border-bottom:0}
+  th.num,td.num{text-align:right}
+  td.tag{color:var(--text);font-weight:600}
+  td.tag i{width:10px;height:10px;border-radius:2px;display:inline-block;margin-right:9px}
+  td.tag span{color:var(--faint);font-weight:500;margin-left:6px}
+  .tnote{margin:10px 0 0;max-width:78ch;font-size:13px;color:var(--faint)}
+  .text{margin:0 0 18px;max-width:72ch;color:var(--muted);font-size:16px}
+  .text b{color:var(--text);font-weight:650}
+  .two{display:grid;grid-template-columns:minmax(0,1fr);gap:22px}
+  .disclaimer{margin-top:8px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--faint);max-width:80ch}
+  .disclaimer a{color:var(--muted)}
+  @media (max-width:520px){ .page{padding-block:32px 56px} main{gap:48px} th,td{padding:10px 11px} }
+</style>
+</head>
+<body>
+<div class="page">
+  <a class="backlink" href="reserved-area.html#rd" aria-label="Back to R&amp;D ongoing in the Reserved Area"><span aria-hidden="true">←</span> R&amp;D ongoing</a>
+  <img src="assets/tradingalgo-rd-logo.svg" alt="TradingAlgo R&amp;D" width="240" style="display:block;height:auto;margin:0 0 22px">
+  <p class="eyebrow"><span><i class="dot"></i>TradingAlgo · Member research</span><span>26 September 2026</span></p>
+  <h1>Allocation experiments</h1>
+  <p class="deck">The Sectors Allocation rule, unchanged, applied to three other pairs of assets plus cash, and tested with a monthly review instead of a weekly one. Work in progress, not a published model.</p>
+  <ul class="facts">
+    <li>Data to <b>25 September 2026</b></li>
+    <li>Benchmark <b>SPY</b></li>
+    <li>Status <b>Research</b></li>
+  </ul>
+  <main>
+    <section>
+      <p class="finding"><b>Short version.</b> Only the mix with long Treasuries clearly improves the risk profile (Sharpe 0.60–0.68 against 0.57 for SPY, drawdown −23% to −27% against −55%), at the cost of a lower return. Gold and the Nasdaq 100 / Utilities pair do not beat SPY on return. The monthly review helps in two mixes and hurts in two others, so the difference is more likely noise than a real effect.</p>
+    </section>
+    <section>
+      <h2>Equity curves</h2>
+      <p class="lede">Weekly-review version of each mix against SPY, rebased to 100 at the start of each series (logarithmic scale). The three series start on different dates, so they are not comparable with each other.</p>
+      <figure><div class="chart"><img src="assets/rd-allocation-2026-09-26.svg" alt="Equity curves of three model portfolios against SPY" width="940" height="470"></div></figure>
+    </section>
+    
+    <section>
+      <h2>SPY / Gold / Cash</h2>
+      <p class="lede">19 Nov 2004 to 25 Sep 2026, after assumed trading costs, cash at the 13-week T-bill rate.</p>
+      <div class="tablewrap">
+        <table style="min-width:640px">
+          <thead><tr><th>Version</th><th class="num">CAGR</th><th class="num">Sharpe</th><th class="num">Max drawdown</th><th class="num">Rebalances / year</th></tr></thead>
+          <tbody><tr><td class="tag">Weekly review, rebalance when far from target</td><td class="num">8.5%</td><td class="num">0.50</td><td class="num">−36%</td><td class="num">3.5</td></tr><tr><td class="tag">Monthly review, rebalance when far from target</td><td class="num">10.3%</td><td class="num">0.61</td><td class="num">−33%</td><td class="num">1.7</td></tr><tr><td class="tag">Monthly review, always back to target</td><td class="num">10.1%</td><td class="num">0.59</td><td class="num">−33%</td><td class="num">11.5</td></tr><tr><td class="tag">SPY buy &amp; hold<span>benchmark</span></td><td class="num">11.0%</td><td class="num">0.56</td><td class="num">−55%</td><td class="num">—</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section>
+      <h2>Nasdaq 100 / Utilities / Cash</h2>
+      <p class="lede">11 Mar 1999 to 25 Sep 2026, after assumed trading costs, cash at the 13-week T-bill rate.</p>
+      <div class="tablewrap">
+        <table style="min-width:640px">
+          <thead><tr><th>Version</th><th class="num">CAGR</th><th class="num">Sharpe</th><th class="num">Max drawdown</th><th class="num">Rebalances / year</th></tr></thead>
+          <tbody><tr><td class="tag">Weekly review, rebalance when far from target</td><td class="num">8.5%</td><td class="num">0.44</td><td class="num">−42%</td><td class="num">2.9</td></tr><tr><td class="tag">Monthly review, rebalance when far from target</td><td class="num">8.0%</td><td class="num">0.41</td><td class="num">−39%</td><td class="num">2.2</td></tr><tr><td class="tag">Monthly review, always back to target</td><td class="num">8.4%</td><td class="num">0.43</td><td class="num">−36%</td><td class="num">11.6</td></tr><tr><td class="tag">SPY buy &amp; hold<span>benchmark</span></td><td class="num">8.5%</td><td class="num">0.42</td><td class="num">−55%</td><td class="num">—</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section>
+      <h2>SPY / Long Treasuries / Cash</h2>
+      <p class="lede">31 Jul 2002 to 25 Sep 2026, after assumed trading costs, cash at the 13-week T-bill rate.</p>
+      <div class="tablewrap">
+        <table style="min-width:640px">
+          <thead><tr><th>Version</th><th class="num">CAGR</th><th class="num">Sharpe</th><th class="num">Max drawdown</th><th class="num">Rebalances / year</th></tr></thead>
+          <tbody><tr><td class="tag">Weekly review, rebalance when far from target</td><td class="num">7.9%</td><td class="num">0.61</td><td class="num">−26%</td><td class="num">1.7</td></tr><tr><td class="tag">Monthly review, rebalance when far from target</td><td class="num">8.9%</td><td class="num">0.68</td><td class="num">−23%</td><td class="num">1.0</td></tr><tr><td class="tag">Monthly review, always back to target</td><td class="num">8.2%</td><td class="num">0.60</td><td class="num">−27%</td><td class="num">11.6</td></tr><tr><td class="tag">SPY buy &amp; hold<span>benchmark</span></td><td class="num">11.3%</td><td class="num">0.57</td><td class="num">−55%</td><td class="num">—</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+    <section>
+      <h2>Also compared</h2>
+      <p class="text">The Sectors Allocation portfolio itself (Technology, Energy, Financials), run over the same window as these tests: weekly review 13.3% CAGR and Sharpe 0.63, monthly review 12.1% and 0.57, monthly return to target 12.4% and 0.58, against 8.7% and 0.43 for SPY. The published figures for the model start in January 2000 and differ slightly.</p>
+    </section>
+    <section>
+      <h2>How to read this</h2>
+      <p class="text"><b>Same rule everywhere.</b> Each review looks at the past year and picks the mix of the two assets with the best Sharpe, or holds cash if none is positive. The portfolio changes only when the target is far enough from what it holds; assumed trading costs are 0.10% of each amount traded.</p>
+      <p class="text"><b>No look-ahead.</b> Every version was rebuilt with the data cut at five different dates; the equity curve up to each date is identical to the one obtained with all the data.</p>
+      <p class="text"><b>Limits.</b> The assets were chosen after the fact, the histories are short for GLD and TLT, and the differences between weekly and monthly review are small and inconsistent. These are research notes, not recommendations.</p>
+    </section>
+    <p class="disclaimer">Research material only — not personalized financial advice. The portfolios are simulations of the rule described in Sectors Allocation, with assumed trading costs of 0.10% of each amount traded; they are not real accounts. Returns use daily closes with dividends reinvested. Past performance does not predict future results. Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
+  </main>
+</div>
+</body>
+</html>
