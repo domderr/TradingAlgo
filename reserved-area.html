@@ -464,6 +464,24 @@
       transform: translateY(-1px);
     }
 
+    .member-nav a.has-img {
+      overflow: hidden;
+    }
+
+    .member-nav .member-img {
+      aspect-ratio: 2 / 1;
+      margin: -16px -16px 14px;
+      overflow: hidden;
+      background: #0c1c30;
+    }
+
+    .member-nav .member-img img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
     .member-nav strong {
       display: block;
       margin-bottom: 8px;
@@ -1366,9 +1384,9 @@
           <div class="member-group">
             <h3 class="member-group-title">Experiments</h3>
             <nav class="member-nav" aria-label="R&amp;D experiments">
-              <a href="rd-allocation-experiments-2026-09-26.html"><strong>Allocation experiments</strong><span>26 Sep 2026: the Sectors Allocation rule on SPY/Gold, Nasdaq 100/Utilities and SPY/Treasuries, weekly against monthly review.</span></a>
-              <a href="rd-stock-correlation-2026-09-26.html"><strong>Stock correlation</strong><span>26 Sep 2026: average pairwise correlation between the stocks of each of the seven markets over the last 30 sessions.</span></a>
-              <a href="rd-october-seasonality-2026-09-26.html"><strong>October seasonality</strong><span>26 Sep 2026: how the stocks of each of the seven markets have behaved in October over the last ten years.</span></a>
+              <a class="has-img" href="rd-allocation-experiments-2026-09-26.html"><div class="member-img"><img src="assets/rd-allocation-2026-09-26.svg" alt="Equity curves of three model portfolios against SPY" width="940" height="470" loading="lazy"></div><strong>Allocation experiments</strong><span>26 Sep 2026: the Sectors Allocation rule on SPY/Gold, Nasdaq 100/Utilities and SPY/Treasuries, weekly against monthly review.</span></a>
+              <a class="has-img" href="rd-stock-correlation-2026-09-26.html"><div class="member-img"><img src="assets/previews/rd-stock-correlation.svg" alt="Average pairwise correlation between the stocks of seven markets" width="940" height="470" loading="lazy"></div><strong>Stock correlation</strong><span>26 Sep 2026: average pairwise correlation between the stocks of each of the seven markets over the last 30 sessions.</span></a>
+              <a class="has-img" href="rd-october-seasonality-2026-09-26.html"><div class="member-img"><img src="assets/previews/rd-october-seasonality.svg" alt="Average October return of the stocks in seven markets" width="940" height="470" loading="lazy"></div><strong>October seasonality</strong><span>26 Sep 2026: how the stocks of each of the seven markets have behaved in October over the last ten years.</span></a>
             </nav>
           </div>
         </section>
