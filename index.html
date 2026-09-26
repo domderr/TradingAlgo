@@ -178,8 +178,9 @@
     .rd-popup-box h2 { margin: 0 0 6px; font-size: 1.25rem; }
     .rd-popup-box > p { margin: 0 0 14px; color: var(--muted); }
     .rd-popup-list { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 10px; }
-    .rd-popup-list a { display: block; padding: 10px 12px; border: 1px solid var(--panel-border); border-radius: 8px; background: var(--panel); color: var(--text); text-decoration: none; }
+    .rd-popup-list a { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px solid var(--panel-border); border-radius: 8px; background: var(--panel); color: var(--text); text-decoration: none; }
     .rd-popup-list a:hover { border-color: var(--blue); }
+    .rd-popup-thumb { flex: 0 0 88px; width: 88px; height: 44px; object-fit: cover; border-radius: 4px; background: var(--bg-dark); }
     .rd-popup-list strong { display: block; }
     .rd-popup-list span { display: block; margin-top: 2px; color: var(--muted); font-size: 0.86rem; }
     .rd-popup-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
@@ -2487,12 +2488,24 @@
             var li = document.createElement("li");
             var link = document.createElement("a");
             link.href = "reserved-area.html?next=" + encodeURIComponent(a.getAttribute("href"));
+            var src = a.querySelector("img");
+            if (src) {
+              var thumb = document.createElement("img");
+              thumb.className = "rd-popup-thumb";
+              thumb.src = src.getAttribute("src");
+              thumb.alt = "";
+              thumb.width = 88;
+              thumb.height = 44;
+              link.appendChild(thumb);
+            }
+            var text = document.createElement("div");
             var title = document.createElement("strong");
             title.textContent = a.querySelector("strong").textContent;
             var desc = document.createElement("span");
             desc.textContent = a.querySelector("span").textContent;
-            link.appendChild(title);
-            link.appendChild(desc);
+            text.appendChild(title);
+            text.appendChild(desc);
+            link.appendChild(text);
             link.addEventListener("click", function() { markSeen(all); });
             li.appendChild(link);
             list.appendChild(li);
