@@ -1,10 +1,10 @@
 {
- "USA100": 0.0,
- "NASDAQ100": 0.0,
- "UK100": 0.0,
- "Germany40": 0.0,
- "Europe50": 0.0,
- "Italy40": 0.0,
- "Australia50": 0.0,
+ "USA100": 31.7,
+ "NASDAQ100": 26.4,
+ "UK100": 76.0,
+ "Germany40": 36.5,
+ "Europe50": 59.3,
+ "Italy40": 75.4,
+ "Australia50": 45.0,
  "asOf": "2026-09-25"
 }
