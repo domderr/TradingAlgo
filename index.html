@@ -1053,6 +1053,23 @@
       resize: vertical;
     }
 
+    .no-robots {
+      display: block;
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 8px;
+    }
+
+    .no-robots-caption {
+      margin: 0 0 16px;
+      text-align: center;
+      color: #e5484d;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     .form-field input,
     .form-field select,
     .form-field textarea {
@@ -1776,6 +1793,19 @@
 
   <section id="request-info" class="dark-band">
     <form class="request-form request-section" id="request-info-form" action="https://formsubmit.co/ajax/domderrico@gmail.com" method="POST">
+      <svg class="no-robots" viewBox="0 0 120 120" role="img" aria-label="No robots allowed" xmlns="http://www.w3.org/2000/svg">
+        <rect x="34" y="42" width="52" height="42" rx="8" fill="#b8c4d2"/>
+        <rect x="42" y="52" width="10" height="10" rx="2" fill="#07111f"/>
+        <rect x="68" y="52" width="10" height="10" rx="2" fill="#07111f"/>
+        <rect x="46" y="70" width="28" height="4" rx="2" fill="#07111f"/>
+        <line x1="60" y1="42" x2="60" y2="30" stroke="#b8c4d2" stroke-width="3"/>
+        <circle cx="60" cy="27" r="4" fill="#b8c4d2"/>
+        <rect x="27" y="54" width="7" height="16" rx="3" fill="#b8c4d2"/>
+        <rect x="86" y="54" width="7" height="16" rx="3" fill="#b8c4d2"/>
+        <circle cx="60" cy="60" r="50" fill="none" stroke="#e5484d" stroke-width="10"/>
+        <line x1="25" y1="95" x2="95" y2="25" stroke="#e5484d" stroke-width="10" stroke-linecap="round"/>
+      </svg>
+      <p class="no-robots-caption">Reserved to humans only</p>
       <h2>Request Information</h2>
       <p class="request-intro">
         The reserved area is more of a workshop than a public square, so we like to know who is coming in. Tell us, in your own words, who you are and what caught your eye about TradingAlgo Mosaic. Robots tend to write very generic essays, and curious competitors are usually a bit shy about the details. Every request is read by a real person, who will reply by email.
