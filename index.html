@@ -1489,26 +1489,21 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+        padding: 18px 5%;
+        gap: 12px;
       }
 
-      .hamburger { display: flex; }
+      /* Menu sempre completo e visibile su mobile: niente hamburger. */
+      .hamburger { display: none; }
 
       nav {
-        display: none;
-        position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        background: var(--bg-dark);
-        border-bottom: 1px solid #1d2b3f;
-        padding: 16px 8%;
-        flex-direction: column;
-        gap: 16px;
-        z-index: 100;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        gap: 10px 16px;
       }
-
-      nav.open { display: flex; }
 
       .hero {
         padding-top: 72px;
