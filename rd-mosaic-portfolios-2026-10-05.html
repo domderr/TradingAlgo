@@ -6,6 +6,17 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="description" content="Mosaic weekly portfolios, 5 October 2026: the seven Mosaic five-stock portfolios from the 25 September close to the 5 October close, against the main index of each market.">
 <title>Mosaic Weekly Portfolios</title>
+<style>html:not([data-access]) body{display:none}</style>
+<script>
+(function () {
+  try {
+    var s = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+    var m = s.markets || s;
+    if (Array.isArray(m) && m.length) { document.documentElement.setAttribute("data-access", "1"); return; }
+  } catch (e) {}
+  location.replace("reserved-area.html#portfolios");
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
