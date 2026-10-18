@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07111f" />
+  <title>AI e trading algoritmico: considerazioni dopo InvestingRoma 2026 | TradingAlgo</title>
+  <meta name="description" content="Dal panel SIAT a Investing Forum Roma 2026: i limiti degli LLM applicati ai mercati, EasyLanguage potenziato dagli agenti, dal grafico al portafoglio e il ruolo dell'analista tecnico." />
+  <link rel="canonical" href="https://tradingalgo.it/ai-trading-algoritmico-investing-roma-2026.html" />
+  <meta property="og:title" content="AI e trading algoritmico: considerazioni dopo InvestingRoma 2026" />
+  <meta property="og:site_name" content="TradingAlgo" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:description" content="Gli LLM amplificano chi sa: limiti, EasyLanguage con agenti, dal grafico al portafoglio e il ruolo dell'analista tecnico." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/ai-trading-algoritmico-investing-roma-2026.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/articles/investing-roma-2026/connettore_tradingalgo_bper.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI e trading algoritmico: considerazioni dopo InvestingRoma 2026" />
+  <meta name="twitter:description" content="Gli LLM amplificano chi sa: limiti, EasyLanguage con agenti, dal grafico al portafoglio e il ruolo dell'analista tecnico." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/articles/investing-roma-2026/connettore_tradingalgo_bper.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 5.6vw, 58px);
+      line-height: 1.08;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      color: #071a33;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    p, li {
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    p { margin: 0 0 16px; }
+
+    ol, ul { margin: 0 0 16px; padding-left: 24px; }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    figure { margin: 28px 0; }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      color: #5b6b80;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .summary {
+      padding: 6px 24px 12px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: #f4f8fc;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .disclaimer { font-size: 14px; color: #5b6b80; }
+
+    footer {
+      padding: 28px 8%;
+      background: #071a33;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer a { color: #7dd3fc; }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+      }
+
+      header {
+        padding-top: 74px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"AI e trading algoritmico: considerazioni dopo InvestingRoma 2026","description":"Dal panel SIAT a Investing Forum Roma 2026: i limiti degli LLM applicati ai mercati, EasyLanguage potenziato dagli agenti, dal grafico al portafoglio e il ruolo dell'analista tecnico.","image":["https://tradingalgo.it/assets/articles/investing-roma-2026/connettore_tradingalgo_bper.png"],"datePublished":"2026-10-18","dateModified":"2026-10-18","author":{"@type":"Person","name":"Domenico D'Errico","url":"https://tradingalgo.it/#about"},"publisher":{"@type":"Organization","name":"TradingAlgo","url":"https://tradingalgo.it/","logo":{"@type":"ImageObject","url":"https://tradingalgo.it/assets/favicon-192.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tradingalgo.it/ai-trading-algoritmico-investing-roma-2026.html"},"inLanguage":"it"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradingalgo.it/"},{"@type":"ListItem","position":2,"name":"Pubblicazioni","item":"https://tradingalgo.it/it/publications.html"},{"@type":"ListItem","position":3,"name":"AI e trading algoritmico: considerazioni dopo InvestingRoma 2026","item":"https://tradingalgo.it/ai-trading-algoritmico-investing-roma-2026.html"}]}]}
+  </script>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">TradingAlgo</a>
+    <div>
+      <a href="/">Home</a>
+      <a href="/tradingalgo-mosaic.html">Mosaic</a>
+      <a href="/it/publications.html">Pubblicazioni</a>
+      <a href="/reserved-area.html">Area riservata</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">AI, trading algoritmico e analisi tecnica</p>
+    <h1>AI e trading algoritmico - Considerazioni dopo InvestingRoma 2026</h1>
+    <p>I modelli linguistici possono aiutare a fare trading? Sì, ma dipende da chi li usa.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <p>Dopo il panel SIAT a Investing Forum Roma 2026 mi sono rimaste in mente le domande più che le risposte. Quasi tutte erano variazioni della stessa: "I modelli linguistici possono aiutare a fare trading?". La risposta è sì, ma dipende da chi li usa.</p>
+      </section>
+
+      <section>
+        <h2>1. Due limiti degli LLM applicati ai mercati</h2>
+
+        <h3>Amplificano chi sa, non sostituiscono chi non sa</h3>
+        <p>Un LLM funziona per next token prediction: continua il testo nel modo più coerente con il contesto che riceve. Se nel contesto c'è il linguaggio, la struttura e i vincoli di un professionista, la risposta si colloca nella stessa zona di competenza. Se c'è una domanda generica, la risposta resta generica, cioè la media di ciò che il modello ha visto.</p>
+        <p>Conseguenza pratica: <strong>l'AI amplifica la conoscenza di chi ce l'ha</strong>. Per chi non ce l'ha resta un eccellente strumento di formazione (spiega, esemplifica, corregge), ma non è uno strumento operativo. Non può prestare un'esperienza che l'utente non sa fornire come contesto.</p>
+
+        <h3>Le domande giuste sono quelle di cui sai interpretare le risposte</h3>
+        <p>Il secondo limite riguarda la comprensibilità degli output. Chiedere a un modello di "ragionare come un esperto" di un tema di cui non si hanno gli strumenti per valutare i risultati è un errore di metodo. Si ottiene una risposta convincente, ben scritta e impossibile da verificare.</p>
+        <p>Un esempio: se non so cosa sia l'overfitting, un backtest con una curva dei profitti bellissima mi sembrerà una conferma. Se lo so, la stessa curva è il punto di partenza dei controlli: dati fuori campione, costi, robustezza dei parametri. La domanda utile è quella di cui riesco a giudicare la risposta.</p>
+      </section>
+
+      <section>
+        <h2>2. EasyLanguage AI Revised: linguaggi semplici, agenti potenti</h2>
+        <p>EasyLanguage e PowerLanguage sono linguaggi elementari, quasi "da trader", e proprio per questo molti li considerano superati. La mia tesi è diversa: <strong>si possono amplificare con gli agenti e continuare a usarli per l'esecuzione</strong>.</p>
+        <p>Gli agenti si occupano di ciò che costa tempo: scrivere e riscrivere il codice, testare varianti, documentare, controllare gli errori. La piattaforma e il linguaggio restano quelli che il trader conosce e di cui si fida. Non serve cambiare ambiente per usare l'AI. Serve cambiare il modo in cui si lavora dentro l'ambiente che già si usa.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage_grid_search_3d.png" alt="Superficie 3D dello Sharpe al variare di DayX e HoldDays su DIA, con il piano del buy and hold" width="1920" height="1080" loading="lazy" />
+          <figcaption>Grid search su DIA: Sharpe per DayX (giorno di ingresso nel mese) e HoldDays (giorni di holding). Il piano arancione è il buy &amp; hold (0,66). La regola è scritta in EasyLanguage; l'agente esegue 900 combinazioni in pochi secondi. Dal deck presentato a Investing Forum Roma 2026, a scopo didattico.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>3. Dal grafico alla costruzione di un portafoglio automatico</h2>
+        <p>Una regola grafica semplice, di quelle che un analista disegna da anni, può diventare una <strong>regola di asset allocation</strong>: il segnale sul grafico decide quanto peso dare a un asset nel portafoglio, non solo quando entrare o uscire.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/trend_persistente_instabile.svg" alt="Due schizzi di trend affiancati: a sinistra un trend persistente, a destra un trend instabile con la stessa pendenza e oscillazioni molto più ampie" width="1560" height="600" loading="lazy" />
+          <figcaption>Due modi di essere in trend. A sinistra il prezzo oscilla in modo contenuto attorno alla retta; a destra la pendenza è la stessa ma le oscillazioni sono molto più ampie. È la domanda da cui parte la regola: quanto è persistente il trend? Schizzi dal deck presentato a Investing Forum Roma 2026.</figcaption>
+        </figure>
+        <p>Qui l'AI è utile in tre passaggi:</p>
+        <ol>
+          <li>tradurre la regola in forma esplicita e non ambigua;</li>
+          <li>costruire il backtest del portafoglio;</li>
+          <li>validarlo, cioè cercare di romperlo prima che lo faccia il mercato.</li>
+        </ol>
+        <p>Il passaggio dal "mi sembra che funzioni" al "ho verificato quando non funziona" è quello che separa un'idea da una strategia.</p>
+      </section>
+
+      <section>
+        <h2>4. L'analista tecnico come fornitore di contesto</h2>
+        <p>Il punto che mi sta più a cuore. L'analista tecnico ha per definizione un alto contenuto tecnico e anni di esperienza. È esattamente il profilo che, per quanto detto sopra, ottiene di più dall'AI.</p>
+        <p>Può fornire il <strong>contesto adeguato</strong> per potenziare la propria analisi: schemi, livelli, condizioni in cui un setup è valido e in cui non lo è. E può <strong>comunicarla a terzi in modo standardizzato</strong>, con la stessa struttura ogni volta, confrontabile nel tempo e verificabile. L'AI non ruba il mestiere all'analista. Gli dà un linguaggio per renderlo ripetibile.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/connettore_tradingalgo_bper.png" alt="BPER Banca (BPE.MI): Trend Volume Profile di TradingAlgo Mosaic, con candele, volume profile, LVN e scheda di analisi tecnica" width="2100" height="1175" loading="lazy" />
+          <figcaption>Grafico di BPER prodotto con il connettore TradingAlgo (Trend Volume Profile): trend, volume profile, LVN e scheda di analisi tecnica nello stesso formato. Dati all'8 ottobre 2026. Lettura tecnica automatica basata su prezzo e volumi, a solo scopo informativo ed educativo.</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2>In sintesi</h2>
+        <div class="summary">
+          <ul>
+            <li>L'AI amplifica chi sa. Per chi non sa è formazione, non operatività.</li>
+            <li>Chiedi solo ciò di cui sai leggere la risposta.</li>
+            <li>Gli agenti possono potenziare strumenti semplici come EasyLanguage senza sostituirli.</li>
+            <li>Una regola grafica può diventare una regola di portafoglio, se la si backtesta e la si valida.</li>
+            <li>L'analista tecnico è nella posizione migliore per usare l'AI: ha il contesto da dare e il metodo per controllare.</li>
+          </ul>
+        </div>
+        <p class="note">Grazie a SIAT e agli organizzatori di Investing Forum Roma per lo spazio e il confronto.</p>
+        <p>Per ulteriori informazioni: <a href="mailto:info@tradingalgo.it">info@tradingalgo.it</a></p>
+        <a class="button" href="/it/publications.html">Torna alle Pubblicazioni</a>
+        <p class="disclaimer" style="margin-top:28px">Contenuto a scopo di ricerca e didattica. Non costituisce consulenza né sollecitazione all'investimento. I risultati dei backtest non garantiscono risultati futuri.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <strong>TradingAlgo</strong><br />
+    Solo materiale di ricerca. Non è consulenza finanziaria personalizzata. Contatto: <a href="mailto:info@tradingalgo.it">info@tradingalgo.it</a>
+  </footer>
+  <script defer src="/assets/access-analytics.js"></script>
+</body>
+</html>
