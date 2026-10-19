@@ -25,18 +25,7 @@
   <meta name="twitter:title" content="Monthly Portfolio Update | TradingAlgo Mosaic" />
   <meta name="twitter:description" content="Current Mosaic positions, portfolio changes, hedge levels and latest net change versus benchmark." />
   <meta name="twitter:image" content="https://tradingalgo.it/assets/og-default.png" />
-  <script>
-    (function () {
-      var storageKey = "ta_reserved_authorized_markets";
-      try {
-        var stored = JSON.parse(sessionStorage.getItem(storageKey) || "{}");
-        var markets = Array.isArray(stored.markets) ? stored.markets : stored;
-        if (Array.isArray(markets) && markets.length) return;
-      } catch (error) {}
-      window.location.replace("reserved-area.html?next=mosaic-weekly-update.html%3Fv%3D20260705");
-    }());
-  </script>
-  <style>
+<style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7fb; color: #071a33; }
     a { color: inherit; }
@@ -147,7 +136,7 @@
             </tbody>
           </table>
         </div>
-        <p class="note">Hedge levels are those produced by the model for the update of 28 August 2026. From the update of 25 September 2026 the hedge is no longer produced by the model: its level is derived from dynamic algorithmic monitoring tools and reaches subscribers by email as a hedge alert.</p>
+        <p class="note">Hedge levels are those produced by the model for the update of 28 August 2026. From the update of 25 September 2026 the hedge is no longer produced by the model: its level is derived from dynamic algorithmic monitoring tools and is updated whenever market conditions change.</p>
       </section>
       <section>
         <h2>Monday Rebalance Note</h2>
