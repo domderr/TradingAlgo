@@ -1638,6 +1638,36 @@
     .area-card ul { margin:12px 0 16px 18px; padding:0; color:var(--muted); line-height:1.6; }
     .area-card .btn { margin-top:auto; align-self:flex-start; }
   </style>
+  <style id="layout-vetrina">
+    .lg-hero { text-align:center; padding:96px 8% 40px; }
+    .lg-pill { display:inline-block; border:1px solid var(--panel-border); border-radius:999px; padding:8px 18px; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#22c55e; }
+    .lg-hero h1 { font-size:clamp(32px,5.5vw,60px); line-height:1.1; max-width:920px; margin:26px auto 18px; letter-spacing:-.01em; }
+    .lg-hero p { max-width:720px; margin:0 auto 30px; color:var(--muted); font-size:18px; line-height:1.6; }
+    .lg-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    .lg-btn { padding:14px 26px; border-radius:12px; font-weight:700; text-decoration:none; border:1px solid var(--panel-border); color:#fff; display:inline-block; }
+    .lg-btn.primary { background:#22c55e; color:#04120a; border-color:#22c55e; }
+    .lg-projects { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:24px 8% 80px; }
+    .lg-proj { position:relative; display:block; border-radius:16px; overflow:hidden; border:1px solid var(--panel-border); aspect-ratio:16/10; text-decoration:none; background:#0d1f36; }
+    .lg-proj img { width:100%; height:100%; object-fit:cover; display:block; }
+    .lg-proj .over { position:absolute; left:0; right:0; bottom:0; padding:18px 16px; background:linear-gradient(transparent,rgba(5,11,20,.96) 60%); }
+    .lg-tag { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.08em; padding:4px 10px; border-radius:999px; background:#1d4ed8; color:#fff; margin-right:6px; }
+    .lg-tag.ai { background:#7c3aed; }
+    .lg-name { display:inline-block; margin-top:10px; padding:10px 16px; border:1px solid var(--panel-border); border-radius:10px; font-weight:700; color:#fff; background:rgba(5,11,20,.85); }
+    .lg-section { padding:72px 8%; }
+    .lg-section h2 { text-align:center; font-size:clamp(26px,3.6vw,38px); line-height:1.2; max-width:860px; margin:0 auto 40px; }
+    .lg-group { display:block; max-width:1000px; margin:44px auto 14px; font-size:12px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#22c55e; }
+    .lg-service { max-width:1000px; margin:0 auto 16px; background:var(--panel); border:1px solid var(--panel-border); border-radius:16px; padding:26px 28px; }
+    .lg-service h3 { margin:0 0 10px; font-size:22px; }
+    .lg-service p { margin:0 0 12px; color:var(--muted); line-height:1.65; }
+    .lg-service a { color:#22c55e; font-weight:700; text-decoration:none; }
+    .lg-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; padding:56px 8%; text-align:center; }
+    .lg-stats b { display:block; font-size:clamp(34px,5vw,54px); line-height:1; color:#22c55e; }
+    .lg-stats span { display:block; margin-top:10px; color:var(--muted); font-size:15px; }
+    .lg-close { text-align:center; padding:84px 8%; }
+    .lg-close h2 { font-size:clamp(28px,4vw,42px); margin:0 0 14px; }
+    .lg-close p { color:var(--muted); max-width:620px; margin:0 auto 28px; font-size:18px; line-height:1.6; }
+    @media (max-width:800px) { .lg-projects { grid-template-columns:1fr; } .lg-stats { grid-template-columns:repeat(2,1fr); } .lg-hero { padding-top:64px; } }
+  </style>
 </head>
 
 <body>
@@ -1657,41 +1687,65 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <h1 class="hero-lead hero-title">Integrazione di strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici</h1>
-        <p class="hero-sub">Trading algoritmico, portafogli su base tecnica e analisi tecnica dei mercati.</p>
-      </div>
+  <section class="lg-hero">
+    <span class="lg-pill">Trading algoritmico &middot; Portafogli &middot; Analisi tecnica</span>
+    <h1>Integrazione di strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici</h1>
+    <p>Trading algoritmico, portafogli su base tecnica e analisi tecnica dei mercati.</p>
+    <div class="lg-btns">
+      <a class="lg-btn primary" href="/prenota-call-italiano.html">Richiedi un colloquio</a>
+      <a class="lg-btn" href="#aree">Esplora le aree</a>
     </div>
   </section>
 
-  <section id="aree">
-    <h2 class="section-title">Aree di intervento</h2>
-    
-    <div class="grid">
-      <div class="card area-card">
-        <img class="area-img" src="/assets/home/area1.webp" width="1200" height="675" loading="lazy" alt="Superficie 3D della grid search su DIA: Sharpe in funzione di DayX e HoldDays, con il piano del buy and hold">
-        <span class="area-num">Area 1</span>
-        <h3><a href="/trading-algoritmico/">Trading algoritmico</a></h3>
-        <p class="area-brief">Agenti AI che affiancano i sistemi di trading esistenti. L'esecuzione a mercato resta al trader.</p>
-        <p>I linguaggi di programmazione esistenti (EasyLanguage, PowerLanguage, Pine Script ecc.) possono essere integrati con agenti AI a cui delegare compiti che altrimenti sarebbe arduo gestire, come il backtesting e la validazione multi-strumento o la gestione di un portafoglio di strategie, mantenendo allo stesso tempo il ruolo di esecuzione a mercato.</p>
-      </div>
-      <div class="card area-card">
-        <img class="area-img" src="/assets/home/area2.webp" width="1200" height="675" loading="lazy" alt="Slide «Due modi di essere in trend»: trend persistente e trend instabile a confronto">
-        <span class="area-num">Area 2</span>
-        <h3><a href="/portafogli/">Portafogli su base tecnica</a></h3>
-        <p class="area-brief">Dal timing alla selezione: la view di mercato diventa un punteggio che ordina i titoli.</p>
-        <p>Un trader tecnico che vuole applicare la propria idea di mercato alla gestione di portafogli deve fare un cambio di prospettiva, dal timing alla selezione, costruendo algoritmi di scoring basati sulle proprie view.</p>
-      </div>
-      <div class="card area-card">
-        <img class="area-img" src="/assets/home/area3.webp" width="1200" height="675" loading="lazy" alt="Analisi tecnica automatica di BPER Banca: volume profile, livelli e scheda di sintesi">
-        <span class="area-num">Area 3</span>
-        <h3><a href="/analisi-tecnica/">Analisi tecnica dei mercati finanziari</a></h3>
-        <p class="area-brief">Il modello apprende il metodo di lettura dei grafici e supporta la documentazione e la diffusione delle analisi.</p>
-        <p>Un analista tecnico può insegnare al modello come ragiona e cosa guarda nei grafici. Può mantenere uno storico delle proprie analisi come track record e/o far connettere i propri clienti, tramite un protocollo MCP, al proprio sito, aggiornato in modo semi-automatico con le proprie view di mercato.</p>
-      </div>
+  <section class="lg-projects" aria-label="Aree di intervento">
+    <a class="lg-proj" href="/trading-algoritmico/">
+      <img src="/assets/home/area1.webp" width="1200" height="675" alt="Superficie 3D della grid search su DIA: Sharpe in funzione di DayX e HoldDays, con il piano del buy and hold">
+      <span class="over"><span class="lg-tag">ALGO</span><br><span class="lg-name">Trading algoritmico</span></span>
+    </a>
+    <a class="lg-proj" href="/portafogli/">
+      <img src="/assets/home/area2.webp" width="1200" height="675" alt="Slide «Due modi di essere in trend»: trend persistente e trend instabile a confronto">
+      <span class="over"><span class="lg-tag">PORTAFOGLI</span><br><span class="lg-name">Portafogli su base tecnica</span></span>
+    </a>
+    <a class="lg-proj" href="/analisi-tecnica/">
+      <img src="/assets/home/area3.webp" width="1200" height="675" alt="Analisi tecnica automatica di BPER Banca: volume profile, livelli e scheda di sintesi">
+      <span class="over"><span class="lg-tag">MERCATI</span><br><span class="lg-name">Analisi tecnica</span></span>
+    </a>
+  </section>
+
+  <section class="lg-section" id="aree">
+    <h2>Come gli strumenti AI entrano nel lavoro quotidiano del professionista dei mercati</h2>
+
+    <span class="lg-group">Per trader, gestori e analisti tecnici</span>
+
+    <div class="lg-service">
+      <h3>Trading algoritmico</h3>
+      <p>I linguaggi di programmazione esistenti (EasyLanguage, PowerLanguage, Pine Script ecc.) possono essere integrati con agenti AI a cui delegare compiti che altrimenti sarebbe arduo gestire, come il backtesting e la validazione multi-strumento o la gestione di un portafoglio di strategie, mantenendo allo stesso tempo il ruolo di esecuzione a mercato.</p>
+      <a href="/trading-algoritmico/">Scopri di più &rarr;</a>
     </div>
+    <div class="lg-service">
+      <h3>Portafogli su base tecnica</h3>
+      <p>Un trader tecnico che vuole applicare la propria idea di mercato alla gestione di portafogli deve fare un cambio di prospettiva, dal timing alla selezione, costruendo algoritmi di scoring basati sulle proprie view.</p>
+      <a href="/portafogli/">Scopri di più &rarr;</a>
+    </div>
+    <div class="lg-service">
+      <h3>Analisi tecnica dei mercati finanziari</h3>
+      <p>Un analista tecnico può insegnare al modello come ragiona e cosa guarda nei grafici. Può mantenere uno storico delle proprie analisi come track record e/o far connettere i propri clienti, tramite un protocollo MCP, al proprio sito, aggiornato in modo semi-automatico con le proprie view di mercato.</p>
+      <a href="/analisi-tecnica/">Scopri di più &rarr;</a>
+    </div>
+
+    <span class="lg-group">Per chi studia i mercati</span>
+
+    <div class="lg-service">
+      <h3>Formazione</h3>
+      <p>Percorsi formativi individuali e collettivi per chi studia i mercati finanziari e intende acquisire solide basi metodologiche nell'uso degli strumenti AI.</p>
+    </div>
+  </section>
+
+  <section class="lg-stats" aria-label="In numeri">
+    <div><b>15+</b><span>anni da consulente indipendente</span></div>
+    <div><b>2</b><span>vittorie al TradeStation Developers Contest</span></div>
+    <div><b>1</b><span>libro pubblicato su EasyLanguage</span></div>
+    <div><b>1</b><span>track record personale di trading di copertura su FTSE MIB ed E-mini ES</span></div>
   </section>
 
   <section id="about">
@@ -1726,30 +1780,13 @@
     </div>
   </section>
 
-  <section class="dark-band" id="per-chi">
-    <h2 class="section-title">Destinatari</h2>
-    <div class="grid">
-      <div class="card"><h3>Trader</h3><p>Professionisti con un metodo consolidato che richiedono più capacità di test, validazione multi-strumento e controllo continuo.</p></div>
-      <div class="card"><h3>Gestori</h3><p>Strutture e professionisti che intendono rendere più sistematici, documentati e verificabili i processi di selezione e di costruzione del portafoglio.</p></div>
-      <div class="card"><h3>Analisti tecnici</h3><p>Professionisti che intendono automatizzare le analisi ripetitive, costruire uno storico verificabile delle proprie view e comunicarle in modo strutturato ai clienti.</p></div>
-      <div class="card"><h3>Formazione</h3><p>Percorsi formativi individuali e collettivi per chi studia i mercati finanziari e intende acquisire solide basi metodologiche nell'uso degli strumenti AI.</p></div>
+  <section class="lg-close" id="contatti">
+    <h2>Parliamo del tuo metodo</h2>
+    <p>Un colloquio esplorativo per capire come integrare gli strumenti AI nel tuo lavoro quotidiano.</p>
+    <div class="lg-btns">
+      <a class="lg-btn primary" href="/prenota-call-italiano.html">Richiedi un colloquio</a>
     </div>
-  </section>
-
-  <section id="consulenza-sintesi" class="dark-band">
-    <h2 class="section-title">Metodo di lavoro</h2>
-    <div class="grid">
-      <div class="card"><h3>1. Analisi del processo</h3><p>Si parte dal metodo e dagli strumenti già in uso, senza modificarne la logica.</p></div>
-      <div class="card"><h3>2. Individuazione dei compiti delegabili</h3><p>Si definisce dove l'AI genera valore: sviluppo, test, analisi, monitoraggio, reportistica.</p></div>
-      <div class="card"><h3>3. Implementazione e validazione</h3><p>Gli strumenti vengono realizzati e verificati, con limiti e rischi dichiarati in modo esplicito.</p></div>
-      <div class="card"><h3>4. Trasferimento</h3><p>Il professionista dispone di processi, codice e documentazione che può gestire in autonomia.</p></div>
-    </div>
-    <div class="buttons"> <a class="btn btn-secondary" href="/prenota-call-italiano.html">Richiedi un colloquio</a></div>
-  </section>
-
-  <section class="dark-band" id="contatti" style="text-align:center;">
-    <h2 class="section-title">Contatti</h2>
-    <p class="section-subtitle">Per un primo colloquio scrivi a <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a>.</p>
+    <p style="margin-top:22px;font-size:15px;">Oppure scrivi a <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
   </section>
 
   <section id="disclaimer">
