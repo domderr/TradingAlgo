@@ -1629,6 +1629,8 @@
     .hero-copy .hero-areas { font-weight:700; color:#22c55e; margin-top:18px; }
     .hero-copy .hero-note { font-size:14px; color:var(--muted); }
     .area-card .area-img { width:100%; height:auto; border-radius:8px; margin-bottom:16px; border:1px solid var(--panel-border); }
+    .area-card h3 a { color:inherit; text-decoration:none; }
+    .area-card h3 a:hover { text-decoration:underline; }
     .area-card .area-brief { font-weight:700; color:var(--text); line-height:1.4; }
     .area-card .area-example { margin:10px 0 16px; font-size:14px; }
     .area-card { display:flex; flex-direction:column; }
@@ -1659,6 +1661,7 @@
     <div class="hero-inner">
       <div class="hero-copy">
         <h1 class="hero-lead hero-title">Integrazione di strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici</h1>
+        <p class="hero-sub">Trading algoritmico, portafogli su base tecnica e analisi tecnica dei mercati.</p>
       </div>
     </div>
   </section>
@@ -1670,45 +1673,25 @@
       <div class="card area-card">
         <img class="area-img" src="/assets/home/area1.webp" width="1200" height="675" loading="lazy" alt="Superficie 3D della grid search su DIA: Sharpe in funzione di DayX e HoldDays, con il piano del buy and hold">
         <span class="area-num">Area 1</span>
-        <h3>Trading algoritmico</h3>
+        <h3><a href="/trading-algoritmico/">Trading algoritmico</a></h3>
         <p class="area-brief">Agenti AI che affiancano i sistemi di trading esistenti. L'esecuzione a mercato resta al trader.</p>
         <p>I linguaggi di programmazione esistenti (EasyLanguage, PowerLanguage, Pine Script ecc.) possono essere integrati con agenti AI a cui delegare compiti che altrimenti sarebbe arduo gestire, come il backtesting e la validazione multi-strumento o la gestione di un portafoglio di strategie, mantenendo allo stesso tempo il ruolo di esecuzione a mercato.</p>
       </div>
       <div class="card area-card">
-        <img class="area-img" src="/assets/home/area2.webp" width="1200" height="675" loading="lazy" alt="Slide "Due modi di essere in trend": trend persistente e trend instabile a confronto">
+        <img class="area-img" src="/assets/home/area2.webp" width="1200" height="675" loading="lazy" alt="Slide «Due modi di essere in trend»: trend persistente e trend instabile a confronto">
         <span class="area-num">Area 2</span>
-        <h3>Portafogli su base tecnica</h3>
+        <h3><a href="/portafogli/">Portafogli su base tecnica</a></h3>
         <p class="area-brief">Dal timing alla selezione: la view di mercato diventa un punteggio che ordina i titoli.</p>
         <p>Un trader tecnico che vuole applicare la propria idea di mercato alla gestione di portafogli deve fare un cambio di prospettiva, dal timing alla selezione, costruendo algoritmi di scoring basati sulle proprie view.</p>
       </div>
       <div class="card area-card">
         <img class="area-img" src="/assets/home/area3.webp" width="1200" height="675" loading="lazy" alt="Analisi tecnica automatica di BPER Banca: volume profile, livelli e scheda di sintesi">
         <span class="area-num">Area 3</span>
-        <h3>Analisi tecnica dei mercati finanziari</h3>
+        <h3><a href="/analisi-tecnica/">Analisi tecnica dei mercati finanziari</a></h3>
         <p class="area-brief">Il modello apprende il metodo di lettura dei grafici e supporta la documentazione e la diffusione delle analisi.</p>
         <p>Un analista tecnico può insegnare al modello come ragiona e cosa guarda nei grafici. Può mantenere uno storico delle proprie analisi come track record e/o far connettere i propri clienti, tramite un protocollo MCP, al proprio sito, aggiornato in modo semi-automatico con le proprie view di mercato.</p>
       </div>
     </div>
-  </section>
-
-  <section class="dark-band" id="per-chi">
-    <h2 class="section-title">Destinatari</h2>
-    <div class="grid">
-      <div class="card"><h3>Trader</h3><p>Professionisti con un metodo consolidato che richiedono più capacità di test, validazione multi-strumento e controllo continuo.</p></div>
-      <div class="card"><h3>Gestori</h3><p>Strutture e professionisti che intendono rendere più sistematici, documentati e verificabili i processi di selezione e di costruzione del portafoglio.</p></div>
-      <div class="card"><h3>Analisti tecnici</h3><p>Professionisti che intendono automatizzare le analisi ripetitive, costruire uno storico verificabile delle proprie view e comunicarle in modo strutturato ai clienti.</p></div>
-    </div>
-  </section>
-
-  <section id="consulenza-sintesi">
-    <h2 class="section-title">Metodo di lavoro</h2>
-    <div class="grid">
-      <div class="card"><h3>1. Analisi del processo</h3><p>Si parte dal metodo e dagli strumenti già in uso, senza modificarne la logica.</p></div>
-      <div class="card"><h3>2. Individuazione dei compiti delegabili</h3><p>Si definisce dove l'AI genera valore: sviluppo, test, analisi, monitoraggio, reportistica.</p></div>
-      <div class="card"><h3>3. Implementazione e validazione</h3><p>Gli strumenti vengono realizzati e verificati, con limiti e rischi dichiarati in modo esplicito.</p></div>
-      <div class="card"><h3>4. Trasferimento</h3><p>Il professionista dispone di processi, codice e documentazione che può gestire in autonomia.</p></div>
-    </div>
-    <div class="buttons"> <a class="btn btn-secondary" href="/prenota-call-italiano.html">Richiedi un colloquio</a></div>
   </section>
 
   <section id="about">
@@ -1743,6 +1726,31 @@
     </div>
   </section>
 
+  <section class="dark-band" id="per-chi">
+    <h2 class="section-title">Destinatari</h2>
+    <div class="grid">
+      <div class="card"><h3>Trader</h3><p>Professionisti con un metodo consolidato che richiedono più capacità di test, validazione multi-strumento e controllo continuo.</p></div>
+      <div class="card"><h3>Gestori</h3><p>Strutture e professionisti che intendono rendere più sistematici, documentati e verificabili i processi di selezione e di costruzione del portafoglio.</p></div>
+      <div class="card"><h3>Analisti tecnici</h3><p>Professionisti che intendono automatizzare le analisi ripetitive, costruire uno storico verificabile delle proprie view e comunicarle in modo strutturato ai clienti.</p></div>
+    </div>
+  </section>
+
+  <section id="consulenza-sintesi" class="dark-band">
+    <h2 class="section-title">Metodo di lavoro</h2>
+    <div class="grid">
+      <div class="card"><h3>1. Analisi del processo</h3><p>Si parte dal metodo e dagli strumenti già in uso, senza modificarne la logica.</p></div>
+      <div class="card"><h3>2. Individuazione dei compiti delegabili</h3><p>Si definisce dove l'AI genera valore: sviluppo, test, analisi, monitoraggio, reportistica.</p></div>
+      <div class="card"><h3>3. Implementazione e validazione</h3><p>Gli strumenti vengono realizzati e verificati, con limiti e rischi dichiarati in modo esplicito.</p></div>
+      <div class="card"><h3>4. Trasferimento</h3><p>Il professionista dispone di processi, codice e documentazione che può gestire in autonomia.</p></div>
+    </div>
+    <div class="buttons"> <a class="btn btn-secondary" href="/prenota-call-italiano.html">Richiedi un colloquio</a></div>
+  </section>
+
+  <section class="dark-band" id="contatti" style="text-align:center;">
+    <h2 class="section-title">Contatti</h2>
+    <p class="section-subtitle">Per un primo colloquio scrivi a <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a>.</p>
+  </section>
+
   <section id="disclaimer">
     <p style="max-width:800px;margin:0 auto;color:var(--muted);font-size:14px;line-height:1.65;text-align:center;">
       TradingAlgo offre consulenza non finanziaria, formazione e ricerca a scopo informativo. Nulla su questo sito costituisce consulenza in materia di investimenti, gestione di portafogli, sollecitazione né offerta di acquisto o vendita di strumenti finanziari. Tutte le informazioni, le simulazioni e i backtest sono forniti a solo scopo informativo; i risultati passati non sono indicativi di quelli futuri. Investire nei mercati finanziari comporta rischi, inclusa la possibile perdita del capitale. Ciascuno è l'unico responsabile delle proprie decisioni di investimento.
@@ -1754,10 +1762,6 @@
       <a href="/trading-algoritmico/">Trading algoritmico</a>
       <a href="/portafogli/">Portafogli su base tecnica</a>
       <a href="/analisi-tecnica/">Analisi tecnica</a>
-      <a href="/ricerca/">Ricerca</a>
-      <a href="/consulenza/">Consulenza</a>
-      <a href="/it/faq.html">FAQ</a>
-      <a href="/it/events.html">Eventi</a>
       <a href="/prenota-call-italiano.html">Richiedi un colloquio</a>
     </nav>
     <p>&copy; 2026 TradingAlgo. Supporto all'integrazione di strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici (consulenza non finanziaria).</p>
