@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#07111f" />
   <title>TradingAlgo | Strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici</title>
-  <meta name="description" content="Supporto per integrare strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici: trading algoritmico, portafogli su base tecnica, analisi tecnica dei mercati. Consulenza non finanziaria." />
+  <meta name="description" content="Supporto per integrare strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici: trading algoritmico, portafogli sistematici, analisi tecnica dei mercati. Consulenza non finanziaria." />
   <meta name="application-name" content="TradingAlgo" />
   <meta name="apple-mobile-web-app-title" content="TradingAlgo" />
   <link rel="canonical" href="https://tradingalgo.it/" />
@@ -1687,6 +1687,32 @@
     .lg-stats { background:linear-gradient(180deg, transparent, rgba(34,197,94,.07), transparent); }
     .lg-stats b { background:linear-gradient(180deg,#4ade80,#16a34a); -webkit-background-clip:text; background-clip:text; color:transparent; }
     .lg-close a { color:#4ade80; font-weight:700; }
+    /* --- più movimento --- */
+    .lg-hero { padding-bottom:84px; }
+    .lg-hero::after { content:""; position:absolute; inset:-20%; background:radial-gradient(closest-side, rgba(34,197,94,.20), transparent 70%); width:60%; height:60%; left:-10%; top:-10%; animation:lgDrift 14s ease-in-out infinite alternate; pointer-events:none; }
+    @keyframes lgDrift { from { transform:translate(0,0) scale(1); } to { transform:translate(70vw,12%) scale(1.25); } }
+    .lg-line { position:absolute !important; left:0; right:0; bottom:0; width:100%; height:120px; opacity:.75; pointer-events:none; }
+    .lg-line path { stroke-dasharray:2400; stroke-dashoffset:2400; animation:lgDraw 5s ease-out .4s forwards; filter:drop-shadow(0 0 6px rgba(74,222,128,.7)); }
+    @keyframes lgDraw { to { stroke-dashoffset:0; } }
+    .lg-ticker { overflow:hidden; border-top:1px solid var(--panel-border); border-bottom:1px solid var(--panel-border); background:rgba(34,197,94,.05); padding:14px 0; }
+    .lg-ticker-track { display:inline-flex; gap:42px; white-space:nowrap; animation:lgMarquee 40s linear infinite; padding-left:42px; }
+    .lg-ticker-track span { font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#86efac; }
+    .lg-ticker-track span::before { content:"\25C6"; color:#22c55e; margin-right:42px; opacity:.7; }
+    @keyframes lgMarquee { to { transform:translateX(-50%); } }
+    .js [data-rv] { opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+    .js [data-rv].in { opacity:1; transform:none; }
+    .lg-section { background:radial-gradient(700px 260px at 15% 0%, rgba(59,130,246,.10), transparent 70%), radial-gradient(600px 260px at 90% 100%, rgba(34,197,94,.09), transparent 70%); }
+    .lg-service { transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .lg-service:hover { transform:translateX(6px); border-color:#22c55e; box-shadow:0 10px 30px rgba(34,197,94,.14); }
+    .lg-stats > div { border:1px solid var(--panel-border); border-radius:16px; padding:26px 14px; background:rgba(13,31,54,.6); transition:transform .25s ease, border-color .25s ease; }
+    .lg-stats > div:hover { transform:translateY(-4px); border-color:#22c55e; }
+    .lg-close { background:radial-gradient(500px 200px at 50% 0%, rgba(34,197,94,.14), transparent 70%); }
+    @media (prefers-reduced-motion: reduce) { .lg-hero::after, .lg-ticker-track, .lg-line path { animation:none !important; } .lg-line path { stroke-dashoffset:0; } .js [data-rv] { opacity:1; transform:none; transition:none; } }
+    .lg-ticker-track { gap:38px; animation-duration:60s; }
+    .lg-ticker-track span { display:inline-flex; align-items:center; gap:10px; }
+    .lg-ticker-track span::before { margin-right:38px; }
+    .lg-ticker-track svg { color:#4ade80; flex:none; }
+    .lg-mono { display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:20px; padding:0 5px; border-radius:6px; border:1px solid var(--c); color:var(--c); font:700 11px/1 Arial, sans-serif; letter-spacing:.02em; font-style:normal; text-transform:none; flex:none; }
   </style>
 </head>
 
@@ -1700,7 +1726,7 @@
     </a>
     <nav id="main-nav">
       <a href="/trading-algoritmico/">Trading algoritmico</a>
-      <a href="/portafogli/">Portafogli su base tecnica</a>
+      <a href="/portafogli/">Portafogli sistematici</a>
       <a href="/analisi-tecnica/">Analisi tecnica</a>
       <a href="/#about">Chi sono</a>
       <a href="/prenota-call-italiano.html" class="nav-highlight">Richiedi un colloquio</a>
@@ -1710,21 +1736,23 @@
   <section class="lg-hero">
     <span class="lg-pill">Trading algoritmico &middot; Portafogli &middot; Analisi tecnica</span>
     <h1>Integrazione di strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici</h1>
-    <p>Trading algoritmico, portafogli su base tecnica e analisi tecnica dei mercati.</p>
-    <div class="lg-btns">
-      <a class="lg-btn primary" href="/prenota-call-italiano.html">Richiedi un colloquio</a>
-      <a class="lg-btn" href="#aree">Esplora le aree</a>
-    </div>
+    <p>Trading algoritmico, portafogli sistematici e analisi tecnica dei mercati.</p>
+    <svg class="lg-line" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="lgl" x1="0" x2="1"><stop offset="0" stop-color="#22c55e" stop-opacity="0"/><stop offset=".5" stop-color="#4ade80"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></linearGradient></defs>
+      <path d="M0 120 L80 108 L150 126 L230 84 L300 96 L380 58 L450 74 L540 40 L620 66 L700 34 L790 62 L870 28 L960 52 L1050 20 L1130 38 L1200 12" fill="none" stroke="url(#lgl)" stroke-width="2.5" stroke-linejoin="round"/>
+    </svg>
   </section>
 
-  <section class="lg-projects" aria-label="Aree di intervento">
+  <div class="lg-ticker" aria-hidden="true"><div class="lg-ticker-track"><span><i class="lg-mono" style="--c:#fb923c">Cl</i>Claude</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg>Trading algoritmico</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v9h9"/></svg>Portafogli sistematici</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5v14M6 8h-2v6h2M12 3v16M12 7h-2v8h2M18 7v13M18 10h-2v6h2"/></svg>Analisi tecnica</span><span><i class="lg-mono" style="--c:#38bdf8">TS</i>TradeStation</span><span><i class="lg-mono" style="--c:#f59e0b">MC</i>MultiCharts</span><span><i class="lg-mono" style="--c:#60a5fa">TV</i>TradingView</span><span><i class="lg-mono" style="--c:#fb923c">Cl</i>Claude</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg>Trading algoritmico</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v9h9"/></svg>Portafogli sistematici</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5v14M6 8h-2v6h2M12 3v16M12 7h-2v8h2M18 7v13M18 10h-2v6h2"/></svg>Analisi tecnica</span><span><i class="lg-mono" style="--c:#38bdf8">TS</i>TradeStation</span><span><i class="lg-mono" style="--c:#f59e0b">MC</i>MultiCharts</span><span><i class="lg-mono" style="--c:#60a5fa">TV</i>TradingView</span><span><i class="lg-mono" style="--c:#fb923c">Cl</i>Claude</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg>Trading algoritmico</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v9h9"/></svg>Portafogli sistematici</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5v14M6 8h-2v6h2M12 3v16M12 7h-2v8h2M18 7v13M18 10h-2v6h2"/></svg>Analisi tecnica</span><span><i class="lg-mono" style="--c:#38bdf8">TS</i>TradeStation</span><span><i class="lg-mono" style="--c:#f59e0b">MC</i>MultiCharts</span><span><i class="lg-mono" style="--c:#60a5fa">TV</i>TradingView</span><span><i class="lg-mono" style="--c:#fb923c">Cl</i>Claude</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 5l-4 14"/></svg>Trading algoritmico</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v9h9"/></svg>Portafogli sistematici</span><span><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5v14M6 8h-2v6h2M12 3v16M12 7h-2v8h2M18 7v13M18 10h-2v6h2"/></svg>Analisi tecnica</span><span><i class="lg-mono" style="--c:#38bdf8">TS</i>TradeStation</span><span><i class="lg-mono" style="--c:#f59e0b">MC</i>MultiCharts</span><span><i class="lg-mono" style="--c:#60a5fa">TV</i>TradingView</span></div></div>
+
+  <section data-rv class="lg-projects" aria-label="Aree di intervento">
     <a class="lg-proj" href="/trading-algoritmico/">
       <img class="inv" src="/assets/home/area1.webp" width="1200" height="675" alt="Superficie 3D della grid search su DIA: Sharpe in funzione di DayX e HoldDays, con il piano del buy and hold">
       <span class="over"><span class="lg-tag">ALGO</span><br><span class="lg-name">Trading algoritmico</span></span>
     </a>
     <a class="lg-proj" href="/portafogli/">
       <img src="/assets/home/area2.webp" width="1200" height="675" alt="Slide «Due modi di essere in trend»: trend persistente e trend instabile a confronto">
-      <span class="over"><span class="lg-tag">PORTAFOGLI</span><br><span class="lg-name">Portafogli su base tecnica</span></span>
+      <span class="over"><span class="lg-tag">PORTAFOGLI</span><br><span class="lg-name">Portafogli sistematici</span></span>
     </a>
     <a class="lg-proj" href="/analisi-tecnica/">
       <img class="inv" src="/assets/home/area3.webp" width="1200" height="675" alt="Analisi tecnica automatica di BPER Banca: volume profile, livelli e scheda di sintesi">
@@ -1732,7 +1760,7 @@
     </a>
   </section>
 
-  <section class="lg-section" id="aree">
+  <section data-rv class="lg-section" id="aree">
     <h2>Come gli strumenti AI entrano nel lavoro quotidiano del professionista dei mercati</h2>
 
     <span class="lg-group">Per trader, gestori e analisti tecnici</span>
@@ -1743,7 +1771,7 @@
       <a href="/trading-algoritmico/">Scopri di più &rarr;</a>
     </div>
     <div class="lg-service">
-      <h3>Portafogli su base tecnica</h3>
+      <h3>Portafogli sistematici</h3>
       <p>Un trader tecnico che vuole applicare la propria idea di mercato alla gestione di portafogli deve fare un cambio di prospettiva, dal timing alla selezione, costruendo algoritmi di scoring basati sulle proprie view.</p>
       <a href="/portafogli/">Scopri di più &rarr;</a>
     </div>
@@ -1761,14 +1789,14 @@
     </div>
   </section>
 
-  <section class="lg-stats" aria-label="In numeri">
+  <section data-rv class="lg-stats" aria-label="In numeri">
     <div><b>15+</b><span>anni da consulente indipendente</span></div>
     <div><b>2</b><span>vittorie al TradeStation Developers Contest</span></div>
     <div><b>1</b><span>libro pubblicato su EasyLanguage</span></div>
     <div><b>1</b><span>track record personale di trading di copertura su FTSE MIB ed E-mini ES</span></div>
   </section>
 
-  <section id="about">
+  <section data-rv id="about">
     <h2 class="section-title">Chi sono</h2>
     <div class="card bio-card">
       <img src="/assets/bio/domenico-derrico.jpg" width="420" height="520" loading="lazy" alt="Ritratto di Domenico D'Errico">
@@ -1800,7 +1828,7 @@
     </div>
   </section>
 
-  <section class="lg-close" id="contatti">
+  <section data-rv class="lg-close" id="contatti">
     <p style="font-size:18px;margin:0 0 10px;">WhatsApp: <a href="https://wa.me/393483801130">+39 348 380 1130</a></p>
     <p style="font-size:18px;margin:0;">Email: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
   </section>
@@ -1814,12 +1842,34 @@
   <footer>
     <nav class="footer-links" aria-label="Mappa del sito">
       <a href="/trading-algoritmico/">Trading algoritmico</a>
-      <a href="/portafogli/">Portafogli su base tecnica</a>
+      <a href="/portafogli/">Portafogli sistematici</a>
       <a href="/analisi-tecnica/">Analisi tecnica</a>
       <a href="/prenota-call-italiano.html">Richiedi un colloquio</a>
     </nav>
     <p>&copy; 2026 TradingAlgo. Supporto all'integrazione di strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici (consulenza non finanziaria).</p>
     <p>Contatto: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
   </footer>
+  <script>
+    (function () {
+      document.documentElement.classList.add('js');
+      var els = document.querySelectorAll('[data-rv]');
+      var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!('IntersectionObserver' in window) || reduce) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (en) {
+        en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+      }, { threshold: .12 });
+      els.forEach(function (e) { io.observe(e); });
+      // conteggio animato dei numeri
+      document.querySelectorAll('.lg-stats b').forEach(function (b) {
+        var m = b.textContent.match(/^(\d+)(.*)$/); if (!m) return;
+        var end = +m[1], suf = m[2], done = false;
+        new IntersectionObserver(function (en, o) {
+          if (!en[0].isIntersecting || done) return; done = true; o.disconnect();
+          var t0 = performance.now();
+          (function tick(t) { var p = Math.min(1, (t - t0) / 1200); b.textContent = Math.round(end * p) + suf; if (p < 1) requestAnimationFrame(tick); })(t0);
+        }, { threshold: .6 }).observe(b);
+      });
+    })();
+  </script>
 </body>
 </html>

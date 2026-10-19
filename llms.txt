@@ -1,10 +1,10 @@
 # TradingAlgo
 
-> TradingAlgo è il progetto di Domenico D'Errico che fornisce supporto (consulenza non finanziaria) per integrare strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici. Tre aree: trading algoritmico, costruzione di portafogli su base tecnica, analisi tecnica dei mercati finanziari. Ricerca e formazione, non consulenza personalizzata in materia di investimenti. Sito in italiano; alcuni approfondimenti sono disponibili solo in inglese.
+> TradingAlgo è il progetto di Domenico D'Errico che fornisce supporto (consulenza non finanziaria) per integrare strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici. Tre aree: trading algoritmico, costruzione di portafogli sistematici, analisi tecnica dei mercati finanziari. Ricerca e formazione, non consulenza personalizzata in materia di investimenti. Sito in italiano; alcuni approfondimenti sono disponibili solo in inglese.
 
 ## Le tre aree
 - [Trading algoritmico](https://tradingalgo.it/trading-algoritmico/): dall'idea di trading a una strategia testata, con l'AI come assistente di sviluppo e controllo
-- [Portafogli su base tecnica](https://tradingalgo.it/portafogli/): selezione, allocazione, copertura e monitoraggio; caso di studio TradingAlgo Mosaic
+- [Portafogli sistematici](https://tradingalgo.it/portafogli/): selezione, allocazione, copertura e monitoraggio; caso di studio TradingAlgo Mosaic
 - [Analisi tecnica dei mercati](https://tradingalgo.it/analisi-tecnica/): trend, stagionalità, correlazioni e scenari
 
 ## Consulenza e ricerca
