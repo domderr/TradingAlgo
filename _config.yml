@@ -30,7 +30,6 @@ exclude:
 
   # Documentazione interna.
   - README.md
-  - ACCESS_ANALYTICS.md
   - SECURITY_REMEDIATION.md
 
   # Pattern di sicurezza: questi tipi di file non vanno mai pubblicati.
@@ -47,6 +46,5 @@ exclude:
 #   reports/positions.json              (reserved-area.html)
 #   reports/reports_index.json          (reserved-area.html)
 #   reports/market_scatter_history.json (explore-markets.html)
-#   assets/subscriptions.json           (reserved-area.html)
 include:
   - haircuts.csv

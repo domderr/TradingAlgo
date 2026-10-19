@@ -1,32 +1,25 @@
 # TradingAlgo
 
-> TradingAlgo Mosaic is a quantitative portfolio research service by Domenico D'Errico. For each of seven markets (USA100, Nasdaq100, Europe50, Germany40, Italy40, UK100, Australia50) it publishes a model portfolio of five stocks selected by transparent rules, with a risk-aware hedge and published validation. It is research and education, not personalised investment advice.
+> TradingAlgo è il progetto di Domenico D'Errico che fornisce supporto (consulenza non finanziaria) per integrare strumenti AI nel lavoro quotidiano di trader, gestori e analisti tecnici. Tre aree: trading algoritmico, costruzione di portafogli su base tecnica, analisi tecnica dei mercati finanziari. Ricerca e formazione, non consulenza personalizzata in materia di investimenti. Sito in italiano; alcuni approfondimenti sono disponibili solo in inglese.
 
-## Start here
-- [Home](https://tradingalgo.it/): what TradingAlgo Mosaic is and how the research is organised
-- [What is TradingAlgo Mosaic](https://tradingalgo.it/tradingalgo-mosaic.html): the portfolio construction framework
-- [Framework](https://tradingalgo.it/framework.html): selection, trend evaluation and diversification rules
-- [Validation](https://tradingalgo.it/validation.html): how portfolio results are validated against benchmarks
-- [FAQ](https://tradingalgo.it/faq.html): allocation, hedging, rebalancing, subscriptions and the free trial
-- [Pricing](https://tradingalgo.it/pricing.html)
+## Le tre aree
+- [Trading algoritmico](https://tradingalgo.it/trading-algoritmico/): dall'idea di trading a una strategia testata, con l'AI come assistente di sviluppo e controllo
+- [Portafogli su base tecnica](https://tradingalgo.it/portafogli/): selezione, allocazione, copertura e monitoraggio; caso di studio TradingAlgo Mosaic
+- [Analisi tecnica dei mercati](https://tradingalgo.it/analisi-tecnica/): trend, stagionalità, correlazioni e scenari
 
-## Guides and reference
-- [How to read the Mosaic monthly report](https://tradingalgo.it/how-to-read-mosaic-report.html)
-- [How to rebalance TradingAlgo Mosaic](https://tradingalgo.it/how-to-rebalance-tradingalgo-mosaic.html)
-- [Terminology](https://tradingalgo.it/mosaic-terminology.html): CAGR, Sharpe ratio, drawdown, hedge, benchmark and other terms
-- [Explore markets](https://tradingalgo.it/explore-markets.html)
-- [Hedge Gauge](https://tradingalgo.it/hedge-gauge.html): suggested hedge level per market from the current correlation regime
+## Consulenza e ricerca
+- [Consulenza](https://tradingalgo.it/consulenza/): metodo di lavoro
+- [Ricerca](https://tradingalgo.it/ricerca/): studi, aggiornamenti e casi di studio per area
+- [Prenota una call](https://tradingalgo.it/prenota-call-italiano.html)
+- [Eventi](https://tradingalgo.it/events.html)
 
-## Publications and research
-- [Publications](https://tradingalgo.it/publications.html): book, Technical Analysis of Stocks & Commodities articles and market research
-- [You cannot backtest a crash](https://tradingalgo.it/you-cannot-backtest-a-crash.html): why hedging is sized as per-event coverage
-- [Why a 5 stocks portfolio can beat its benchmark](https://tradingalgo.it/why-a-5-stocks-portfolio-can-beat-its-benchmark.html)
-- [Portfolio changes from September 2026](https://tradingalgo.it/mosaic-portfolio-changes-september-2026.html)
-- [Events](https://tradingalgo.it/events.html): talks and conference appearances
-- [Prenota una call in italiano](https://tradingalgo.it/prenota-call-italiano.html): pagina in italiano per prenotare una call gratuita con Domenico
-- [Market stocks](https://tradingalgo.it/market-stocks.html): stocks tracked in each of the seven markets
-- [Mosaic start here](https://tradingalgo.it/mosaic-start-here.html): orientation for new readers
-- [Monthly portfolio update](https://tradingalgo.it/mosaic-weekly-update.html): latest portfolio composition and changes
-
-## Optional
-- Weekly market updates are published as weekly-market-update-YYYY-MM-DD.html and listed in the [Publications](https://tradingalgo.it/publications.html) page.
+## Caso di studio: TradingAlgo Mosaic
+- [Cos'è TradingAlgo Mosaic](https://tradingalgo.it/tradingalgo-mosaic.html)
+- [Framework](https://tradingalgo.it/framework.html)
+- [Validazione](https://tradingalgo.it/validation.html)
+- [Esplora i mercati](https://tradingalgo.it/explore-markets.html)
+- [Hedge Gauge](https://tradingalgo.it/hedge-gauge.html)
+- [Terminologia](https://tradingalgo.it/mosaic-terminology.html)
+- [Come leggere il report](https://tradingalgo.it/how-to-read-mosaic-report.html)
+- [Come ribilanciare](https://tradingalgo.it/how-to-rebalance-tradingalgo-mosaic.html)
+- [FAQ](https://tradingalgo.it/faq.html)
