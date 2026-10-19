@@ -15,15 +15,16 @@ Set-Location $root
 $enc = New-Object System.Text.UTF8Encoding($false)
 $nl = "`r`n"
 $base = 'https://tradingalgo.it'
-$skip = @('google38af22d314c12ff9.html', 'reserved-area.html', '404.html')
-$core = 'index.html', 'tradingalgo-mosaic.html', 'pricing.html', 'faq.html', 'framework.html', 'validation.html',
+$skip = @('google38af22d314c12ff9.html', 'reserved-area.html', 'pricing.html', '404.html')
+$core = 'index.html', 'tradingalgo-mosaic.html', 'faq.html', 'framework.html', 'validation.html',
         'explore-markets.html', 'market-stocks.html', 'hedge-gauge.html', 'publications.html', 'events.html'
 
 $pages = Get-ChildItem -Path $root -Filter *.html -File | Where-Object {
   $_.Name -notin $skip -and -not ([IO.File]::ReadAllText($_.FullName) -match 'name="robots"\s+content="[^"]*noindex')
 } | ForEach-Object Name
 
-$order = @($core | Where-Object { $_ -in $pages }) + @($pages | Where-Object { $_ -notin $core } | Sort-Object)
+$hubs = 'trading-algoritmico/', 'portafogli/', 'analisi-tecnica/', 'ricerca/', 'consulenza/', 'it/faq.html', 'it/framework.html', 'it/publications.html', 'it/events.html'
+$order = @('index.html') + $hubs + @($core | Where-Object { $_ -in $pages -and $_ -ne 'index.html' }) + @($pages | Where-Object { $_ -notin $core } | Sort-Object)
 $sb = New-Object System.Text.StringBuilder
 [void]$sb.Append('<?xml version="1.0" encoding="UTF-8"?>' + $nl + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + $nl)
 foreach ($f in $order) {
