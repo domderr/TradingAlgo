@@ -1667,6 +1667,26 @@
     .lg-close h2 { font-size:clamp(28px,4vw,42px); margin:0 0 14px; }
     .lg-close p { color:var(--muted); max-width:620px; margin:0 auto 28px; font-size:18px; line-height:1.6; }
     @media (max-width:800px) { .lg-projects { grid-template-columns:1fr; } .lg-stats { grid-template-columns:repeat(2,1fr); } .lg-hero { padding-top:64px; } }
+    /* --- home più vivace --- */
+    .lg-hero { position:relative; overflow:hidden; background:
+        radial-gradient(900px 380px at 50% -10%, rgba(34,197,94,.22), transparent 70%),
+        radial-gradient(700px 320px at 85% 20%, rgba(59,130,246,.18), transparent 70%),
+        radial-gradient(600px 300px at 10% 30%, rgba(168,85,247,.14), transparent 70%); }
+    .lg-hero::before { content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size:48px 48px; -webkit-mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%); mask-image:radial-gradient(ellipse at center, #000 30%, transparent 75%); pointer-events:none; }
+    .lg-hero > * { position:relative; }
+    .lg-pill { background:rgba(34,197,94,.1); border-color:rgba(34,197,94,.45); box-shadow:0 0 24px rgba(34,197,94,.18); }
+    .lg-hero h1 { background:linear-gradient(180deg,#fff 40%,#b6f3cd); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .lg-btn.primary { box-shadow:0 8px 28px rgba(34,197,94,.35); }
+    .lg-btn:hover { transform:translateY(-2px); }
+    .lg-proj { transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .lg-proj:hover { transform:translateY(-4px); border-color:#22c55e; box-shadow:0 14px 40px rgba(34,197,94,.22); }
+    .lg-proj img.inv { filter:invert(.93) hue-rotate(180deg) saturate(1.25) brightness(.92) contrast(1.05); }
+    .lg-proj::after { content:""; position:absolute; inset:0; background:linear-gradient(160deg, rgba(34,197,94,.10), transparent 45%, rgba(59,130,246,.12)); pointer-events:none; }
+    .lg-tag { background:#0f766e; }
+    .lg-service { border-left:3px solid #22c55e; background:linear-gradient(135deg, rgba(34,197,94,.07), var(--panel) 40%); }
+    .lg-stats { background:linear-gradient(180deg, transparent, rgba(34,197,94,.07), transparent); }
+    .lg-stats b { background:linear-gradient(180deg,#4ade80,#16a34a); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .lg-close a { color:#4ade80; font-weight:700; }
   </style>
 </head>
 
@@ -1699,7 +1719,7 @@
 
   <section class="lg-projects" aria-label="Aree di intervento">
     <a class="lg-proj" href="/trading-algoritmico/">
-      <img src="/assets/home/area1.webp" width="1200" height="675" alt="Superficie 3D della grid search su DIA: Sharpe in funzione di DayX e HoldDays, con il piano del buy and hold">
+      <img class="inv" src="/assets/home/area1.webp" width="1200" height="675" alt="Superficie 3D della grid search su DIA: Sharpe in funzione di DayX e HoldDays, con il piano del buy and hold">
       <span class="over"><span class="lg-tag">ALGO</span><br><span class="lg-name">Trading algoritmico</span></span>
     </a>
     <a class="lg-proj" href="/portafogli/">
@@ -1707,7 +1727,7 @@
       <span class="over"><span class="lg-tag">PORTAFOGLI</span><br><span class="lg-name">Portafogli su base tecnica</span></span>
     </a>
     <a class="lg-proj" href="/analisi-tecnica/">
-      <img src="/assets/home/area3.webp" width="1200" height="675" alt="Analisi tecnica automatica di BPER Banca: volume profile, livelli e scheda di sintesi">
+      <img class="inv" src="/assets/home/area3.webp" width="1200" height="675" alt="Analisi tecnica automatica di BPER Banca: volume profile, livelli e scheda di sintesi">
       <span class="over"><span class="lg-tag">MERCATI</span><br><span class="lg-name">Analisi tecnica</span></span>
     </a>
   </section>
