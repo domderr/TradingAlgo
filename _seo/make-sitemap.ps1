@@ -23,7 +23,7 @@ $pages = Get-ChildItem -Path $root -Filter *.html -File | Where-Object {
   $_.Name -notin $skip -and -not ([IO.File]::ReadAllText($_.FullName) -match 'name="robots"\s+content="[^"]*noindex')
 } | ForEach-Object Name
 
-$hubs = 'trading-algoritmico/', 'portafogli/', 'analisi-tecnica/', 'ricerca/', 'consulenza/', 'it/faq.html', 'it/framework.html', 'it/publications.html', 'it/events.html'
+$hubs = 'trading-algoritmico/', 'portafogli/', 'analisi-tecnica/', 'ricerca/', 'consulenza/', 'it/faq.html', 'it/framework.html', 'it/publications.html', 'it/events.html', 'en/', 'en/algorithmic-trading/', 'en/portfolios/', 'en/technical-analysis/', 'en/consulting/', 'en/research/'
 $order = @('index.html') + $hubs + @($core | Where-Object { $_ -in $pages -and $_ -ne 'index.html' }) + @($pages | Where-Object { $_ -notin $core } | Sort-Object)
 $sb = New-Object System.Text.StringBuilder
 [void]$sb.Append('<?xml version="1.0" encoding="UTF-8"?>' + $nl + '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + $nl)
