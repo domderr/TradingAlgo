@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07111f" />
+  <title>EasyLanguage e agenti AI: dal codice al backtest su paniere | TradingAlgo</title>
+  <meta name="description" content="Come integrare EasyLanguage con gli agenti AI: una regola di stagionalità scritta in EasyLanguage, testata e validata da un agente su un paniere e restituita in EasyLanguage. Dal deck di Investing Forum Roma 2026." />
+  <link rel="canonical" href="https://tradingalgo.it/easylanguage-agenti-ai-investing-roma-2026.html" />
+  <meta property="og:title" content="EasyLanguage e agenti AI: dal codice al backtest su paniere" />
+  <meta property="og:site_name" content="TradingAlgo" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:description" content="Come integrare EasyLanguage con gli agenti AI: una regola di stagionalità scritta in EasyLanguage, testata e validata da un agente su un paniere e restituita in EasyLanguage. Dal deck di Investing Forum Roma 2026." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/easylanguage-agenti-ai-investing-roma-2026.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide18.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EasyLanguage e agenti AI: dal codice al backtest su paniere" />
+  <meta name="twitter:description" content="Come integrare EasyLanguage con gli agenti AI: una regola di stagionalità scritta in EasyLanguage, testata e validata da un agente su un paniere e restituita in EasyLanguage. Dal deck di Investing Forum Roma 2026." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide18.webp" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 5.6vw, 58px);
+      line-height: 1.08;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      color: #071a33;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    p, li {
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    p { margin: 0 0 16px; }
+
+    ol, ul { margin: 0 0 16px; padding-left: 24px; }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    figure { margin: 28px 0; }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      color: #5b6b80;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .summary {
+      padding: 6px 24px 12px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: #f4f8fc;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .disclaimer { font-size: 14px; color: #5b6b80; }
+
+    footer {
+      padding: 28px 8%;
+      background: #071a33;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    footer a { color: #7dd3fc; }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+      }
+
+      header {
+        padding-top: 74px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">TradingAlgo</a>
+    <div>
+      <a href="/">Home</a>
+      <a href="/tradingalgo-mosaic.html">Mosaic</a>
+      <a href="/it/publications.html">Pubblicazioni</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">Investing Forum Roma 2026 · Trading algoritmico</p>
+    <h1>EasyLanguage integrato ad agenti AI</h1>
+    <p>Un linguaggio di programmazione per trader come EasyLanguage può essere integrato con gli agenti AI: l'agente scrive, testa e valida, il trader decide e continua a eseguire in EasyLanguage.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>L'idea: una regola di stagionalità in EasyLanguage</h2>
+        <p>Questa pagina mostra, con un esempio reale, come un linguaggio di programmazione come EasyLanguage possa essere integrato all'uso di agenti AI senza abbandonare la piattaforma che il trader già conosce. Il tema è un'idea semplice di stagionalità scritta in EasyLanguage e il modo in cui un agente AI la porta su un paniere di titoli, la valida e la restituisce in EasyLanguage.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide10.webp" alt="Slide titolo: EasyLanguage integrato ad agenti AI, dal codice al backtest su paniere, alla validazione, di nuovo in EasyLanguage" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 10.</strong> Punto 2: EasyLanguage integrato ad agenti AI.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide11.webp" alt="Slide: EasyLanguage, integrazione con agenti AI, con la regola di esempio If date = DOM then Buy hold N days" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 11.</strong> La regola di partenza: se la data è il giorno X del mese (DOM), compra e mantieni la posizione per N giorni.</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Cosa mostra TradeStation e cosa manca</h2>
+        <p>Equity line e Optimization Report sono l'output che il trader conosce. Le immagini sono dimostrative, nello stile di TradeStation, con numeri calcolati in Python su DIA.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide12.webp" alt="Equity line della strategia DoM_Original su DIA a barre giornaliere e Optimization Report con 280 combinazioni di DayX e HoldDays" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 12.</strong> Equity line (DIA, barre giornaliere) e Optimization Report su 280 combinazioni. DIA 2010-01-04 / 2025-12-31, 100 azioni, costi 0.</figcaption>
+        </figure>
+        <p>Il report di TradeStation descrive la strategia in assoluto. Mancano due cose: il confronto con il benchmark, cioè il buy &amp; hold, e l'analisi di robustezza, cioè quanto il risultato dipende dai parametri e dal periodo.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide13.webp" alt="Slide: cosa manca a TradeStation, il confronto con il benchmark e l'analisi di robustezza" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 13.</strong> Due domande aperte: la strategia batte il buy &amp; hold? Quanto dipende il risultato dai parametri e dal periodo?</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Backtest singolo in Python contro il benchmark</h2>
+        <p>Un solo backtest scritto da un agente in Python: stessa regola dell'EasyLanguage, confrontata con il buy &amp; hold su DIA.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide14.webp" alt="Curva dei profitti cumulati della strategia DayX 3 HoldDays 9 contro il buy and hold su DIA 2010-2025, con tabella di Net Profit, Sharpe, drawdown e tempo investito" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 14.</strong> Strategia DayX 3, HoldDays 9 contro buy &amp; hold su DIA. Net Profit +293% contro +355%, Sharpe 0,70 contro 0,66, drawdown massimo circa -24% contro circa -37%, tempo investito 43% contro 100%. Percentuali sul controvalore iniziale di 100 azioni (circa 10.600 dollari); in dollari: profitto 30.919 e 37.491, drawdown 6.840 e 10.959.</figcaption>
+        </figure>
+        <p>La strategia è investita meno della metà del tempo. Il Net Profit del buy &amp; hold è più alto; lo Sharpe e il drawdown della strategia sono migliori.</p>
+      </section>
+      <section>
+        <h2>Analisi di robustezza: la grid search</h2>
+        <p>La grid search gira 900 combinazioni in pochi secondi. Lo Sharpe viene letto per giorno di ingresso (DayX) e per giorni di holding (HoldDays), sempre contro il buy &amp; hold (0,66).</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide15.webp" alt="Istogramma dello Sharpe medio per giorno del mese di ingresso su DIA, con la linea del buy and hold a 0,66" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 15.</strong> Sharpe medio per DayX, DIA 2010-2025, 100 azioni, costi 0, mediato su HoldDays 1-10. Nessuno dei 30 giorni supera il buy &amp; hold (0,66): il massimo è al giorno 23 (0,63), il minimo al giorno 16 (-0,10). Due zone buone, inizio e fine mese, e una zona debole a metà mese: è la stagionalità dentro il mese.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide16.webp" alt="Vista frontale della superficie dello Sharpe con DayX sull'asse orizzontale: minimo a metà mese e picco a fine mese" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 16.</strong> Vista frontale con DayX sull'asse orizzontale. A metà mese (giorni 14-18) la superficie scende fino a -0,41; a fine mese (giorni 21-25) è la zona più alta, con il picco di 0,98 al giorno 23.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide17.webp" alt="Vista frontale della superficie dello Sharpe con HoldDays sull'asse orizzontale: Sharpe basso con holding brevi e stabile oltre 12 giorni" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 17.</strong> Vista frontale con HoldDays sull'asse orizzontale. Con holding da 1 a 5 giorni lo Sharpe è basso e disperso; oltre circa 12 giorni la superficie sale e si stabilizza, con la media tra 0,47 e 0,61.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide18.webp" alt="Superficie 3D della grid search su DIA: Sharpe per DayX e HoldDays con il piano arancione del buy and hold" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 18.</strong> Superficie dello Sharpe per DayX e HoldDays; il piano arancione è il buy &amp; hold (0,66).</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Scelta della strategia e ritorno a EasyLanguage</h2>
+        <p>Qui il trader decide. I numeri della grid search orientano la scelta, ma la regola da portare a mercato la sceglie chi opera.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide19.webp" alt="Schema: analisi in Python, scelta (long nell'ultima e nella prima settimana del mese, short nelle altre), macro di esecuzione in EasyLanguage" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 19.</strong> Nell'ultima e nella prima settimana del mese il setup è long; nelle altre settimane è short. Finestra in giorni di calendario: ultima settimana dal giorno 25, prima settimana fino al giorno 7. Sono gli Inputs di partenza della macro, da ottimizzare in TradeStation.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide20.webp" alt="Schemi illustrativi a barre da 60 minuti di una macro long e di una macro short con trailing stop, con il relativo pseudocodice EasyLanguage" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 20.</strong> Una possibile strategia operativa in EasyLanguage: due blocchi con un intervallo di date. Nell'ultima e nella prima settimana gira la macro long, nelle altre la macro short. I due grafici sono schemi illustrativi a barre da 60 minuti, non dati reali. Il trailing stop è una variante da aggiungere e verificare in TradeStation prima di andare a mercato.</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Il ciclo</h2>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide21.webp" alt="Il ciclo: EasyLanguage, agenti AI, EasyLanguage, mercato. L'agente accelera il lavoro, la decisione resta al trader" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 21.</strong> EasyLanguage, agenti AI, EasyLanguage, mercato. L'agente porta l'idea su un paniere e la valida; il trader sceglie e porta la regola a mercato.</figcaption>
+        </figure>
+        <div class="summary">
+          <ul>
+            <li>Una regola semplice scritta in EasyLanguage può essere portata dall'agente su un paniere e validata.</li>
+            <li>Il report di TradeStation non basta: servono il confronto con il buy &amp; hold e l'analisi di robustezza.</li>
+            <li>Sulla stagionalità nel mese di DIA nessun giorno supera il buy &amp; hold in Sharpe, ma inizio e fine mese sono le zone migliori.</li>
+            <li>L'agente accelera il lavoro. La decisione resta al trader.</li>
+          </ul>
+        </div>
+        <p>Per ulteriori informazioni: <a href="mailto:info@tradingalgo.it">info@tradingalgo.it</a></p>
+        <a class="button" href="/ai-trading-algoritmico-investing-roma-2026.html">Leggi l'articolo completo</a>
+        <p class="disclaimer" style="margin-top:28px">Contenuto a scopo di ricerca e didattica. Non costituisce consulenza né sollecitazione all'investimento. I risultati dei backtest non garantiscono risultati futuri. Dati DIA 2010-2025, 100 azioni, costi 0.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <strong>TradingAlgo</strong><br />
+    Solo materiale di ricerca. Non è consulenza finanziaria personalizzata. Contatto: <a href="mailto:info@tradingalgo.it">info@tradingalgo.it</a>
+  </footer>
+</body>
+</html>
