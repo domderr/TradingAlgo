@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07111f" />
+  <title>EasyLanguage and AI agents: from code to basket backtest | TradingAlgo</title>
+  <meta name="description" content="How to integrate EasyLanguage with AI agents: a seasonality rule written in EasyLanguage, tested and validated by an agent on a basket of stocks and returned in EasyLanguage. From the Investing Forum Roma 2026 deck." />
+  <link rel="canonical" href="https://tradingalgo.it/en/easylanguage-ai-agents-investing-roma-2026.html" />
+  <link rel="alternate" hreflang="en" href="https://tradingalgo.it/en/easylanguage-ai-agents-investing-roma-2026.html" />
+  <link rel="alternate" hreflang="it" href="https://tradingalgo.it/easylanguage-agenti-ai-investing-roma-2026.html" />
+  <meta property="og:title" content="EasyLanguage and AI agents: from code to basket backtest" />
+  <meta property="og:site_name" content="TradingAlgo" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:description" content="How to integrate EasyLanguage with AI agents: a seasonality rule written in EasyLanguage, tested and validated by an agent on a basket of stocks and returned in EasyLanguage. From the Investing Forum Roma 2026 deck." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/en/easylanguage-ai-agents-investing-roma-2026.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide18.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EasyLanguage and AI agents: from code to basket backtest" />
+  <meta name="twitter:description" content="How to integrate EasyLanguage with AI agents: a seasonality rule written in EasyLanguage, tested and validated by an agent on a basket of stocks and returned in EasyLanguage. From the Investing Forum Roma 2026 deck." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide18.webp" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+
+    .page-hero {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .page-hero .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .page-hero h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(38px, 5.6vw, 58px);
+      line-height: 1.08;
+    }
+
+    .page-hero p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    h3 {
+      margin: 28px 0 10px;
+      color: #071a33;
+      font-family: Georgia, serif;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+
+    p, li {
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    p { margin: 0 0 16px; }
+
+    ol, ul { margin: 0 0 16px; padding-left: 24px; }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    figure { margin: 28px 0; }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #dbe3ef;
+      border-radius: 10px;
+      background: #ffffff;
+    }
+
+    figcaption {
+      margin-top: 8px;
+      color: #5b6b80;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .summary {
+      padding: 6px 24px 12px;
+      border: 1px solid #dbe3ef;
+      border-radius: 12px;
+      background: #f4f8fc;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .disclaimer { font-size: 14px; color: #5b6b80; }
+
+
+    @media (max-width: 768px) { .page-hero { padding-top: 74px; } }
+    :root {
+      --bg: #07111f;
+      --bg-dark: #050b14;
+      --panel-border: #203854;
+      --text: #ffffff;
+      --muted: #c9d6e8;
+      --green: #22c55e;
+    }
+
+    header.site-header {
+      padding: 28px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 28px;
+      background: var(--bg-dark);
+      border-bottom: 1px solid #1d2b3f;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 24px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .logo-grid {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+      transform: rotateX(12deg) rotateY(-12deg);
+    }
+
+    .logo-grid span {
+      border-radius: 4px;
+      box-shadow: inset 0 1px 2px rgba(255,255,255,0.35);
+    }
+
+    .logo-grid span:nth-child(1),
+    .logo-grid span:nth-child(2) { background: #d94d4d; }
+    .logo-grid span:nth-child(3),
+    .logo-grid span:nth-child(4) { background: #e8a241; }
+    .logo-grid span:nth-child(5),
+    .logo-grid span:nth-child(6) { background: #d8ce45; }
+    .logo-grid span:nth-child(7),
+    .logo-grid span:nth-child(8),
+    .logo-grid span:nth-child(9) { background: var(--green); }
+
+    #main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px 24px;
+    }
+
+    #main-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #main-nav a.nav-highlight { color: #22c55e; }
+    #main-nav a.nav-highlight:hover { color: #4ade80; }
+    #main-nav a.lang-switch { border: 1px solid var(--panel-border); border-radius: 999px; padding: 4px 12px; }
+
+    footer {
+      padding: 46px 8%;
+      border-top: 1px solid #1d2b3f;
+      background: var(--bg-dark);
+      color: #9fb2c8;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer p { margin: 8px 0; color: #9fb2c8; font-size: 14px; line-height: 1.6; }
+    footer a { color: #c9d6e8; }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 22px;
+      margin: 0 auto 22px;
+      max-width: 980px;
+    }
+
+    .footer-links a { color: #c9d6e8; text-decoration: none; }
+    .footer-links a:hover { color: #7dd3fc; text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      header.site-header { flex-wrap: wrap; padding: 18px 5%; gap: 12px; }
+      #main-nav { justify-content: flex-start; width: 100%; gap: 10px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/en/" class="brand">
+      <span class="logo-grid" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </span>
+      TradingAlgo
+    </a>
+    <nav id="main-nav">
+      <a href="/easylanguage-agenti-ai-investing-roma-2026.html" hreflang="it" lang="it" class="lang-switch">Italiano</a>
+      <a href="/en/algorithmic-trading/">Algorithmic trading</a>
+      <a href="/en/portfolios/">Systematic portfolios</a>
+      <a href="/en/technical-analysis/">Technical analysis</a>
+      <a href="/en/#about">About me</a>
+      <a href="/book-a-free-call.html" class="nav-highlight">Contact</a>
+    </nav>
+  </header>
+
+  <header class="page-hero">
+    <p class="kicker">Investing Forum Roma 2026 · Algorithmic trading</p>
+    <h1>EasyLanguage integrated with AI agents <span style="display:block;margin-top:14px;font-size:clamp(18px,2.2vw,24px);font-weight:normal;font-style:italic;line-height:1.35;color:#cbd5e1">(excerpt from the presentation "Technical analysis and programming languages in the era of AI agents" · InvestingRoma 2026)</span></h1>
+    <p>A programming language for traders like EasyLanguage can be integrated with AI agents: the agent writes, tests and validates, the trader decides and keeps executing in EasyLanguage.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <h2>The idea: a seasonality rule in EasyLanguage</h2>
+        <p>This page shows, with a real example, how a programming language like EasyLanguage can be integrated with AI agents without leaving the platform the trader already knows. The topic is a simple seasonality idea written in EasyLanguage and the way an AI agent takes it to a basket of stocks, validates it and returns it in EasyLanguage.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide10.webp" alt="Title slide: EasyLanguage integrated with AI agents, from code to basket backtest, to validation, back to EasyLanguage" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 10.</strong> Point 2: EasyLanguage integrated with AI agents.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide11.webp" alt="Slide: EasyLanguage, integration with AI agents, with the example rule If date = DOM then Buy hold N days" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 11.</strong> The starting rule: if the date is day X of the month (DOM), buy and hold the position for N days.</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>What TradeStation shows and what is missing</h2>
+        <p>Equity line and Optimization Report are the output the trader knows. The images are illustrative, in the TradeStation style, with numbers computed in Python on DIA.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide12.webp" alt="Equity line of the DoM_Original strategy on DIA with daily bars and Optimization Report with 280 DayX and HoldDays combinations" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 12.</strong> Equity line (DIA, daily bars) and Optimization Report on 280 combinations. DIA 2010-01-04 / 2025-12-31, 100 shares, costs 0.</figcaption>
+        </figure>
+        <p>The TradeStation report describes the strategy in absolute terms. Two things are missing: the comparison with the benchmark, i.e. buy &amp; hold, and the robustness analysis, i.e. how much the result depends on the parameters and on the period.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide13.webp" alt="Slide: what TradeStation is missing, the benchmark comparison and the robustness analysis" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 13.</strong> Two open questions: does the strategy beat buy &amp; hold? How much does the result depend on the parameters and on the period?</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Single Python backtest against the benchmark</h2>
+        <p>A single backtest written by an agent in Python: same rule as the EasyLanguage one, compared with buy &amp; hold on DIA.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide14.webp" alt="Cumulative profit curve of the DayX 3 HoldDays 9 strategy versus buy and hold on DIA 2010-2025, with a table of Net Profit, Sharpe, drawdown and time invested" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 14.</strong> Strategy DayX 3, HoldDays 9 versus buy &amp; hold on DIA. Net Profit +293% vs +355%, Sharpe 0.70 vs 0.66, maximum drawdown about -24% vs about -37%, time invested 43% vs 100%. Percentages on the initial value of 100 shares (about $10,600); in dollars: profit 30,919 and 37,491, drawdown 6,840 and 10,959.</figcaption>
+        </figure>
+        <p>The strategy is invested less than half of the time. The Net Profit of buy &amp; hold is higher; the Sharpe and the drawdown of the strategy are better.</p>
+      </section>
+      <section>
+        <h2>Robustness analysis: the grid search</h2>
+        <p>The grid search runs 900 combinations in a few seconds. The Sharpe is read by entry day (DayX) and by holding days (HoldDays), always against buy &amp; hold (0.66).</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide15.webp" alt="Histogram of the average Sharpe by entry day of the month on DIA, with the buy and hold line at 0.66" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 15.</strong> Average Sharpe by DayX, DIA 2010-2025, 100 shares, costs 0, averaged over HoldDays 1-10. None of the 30 days beats buy &amp; hold (0.66): the maximum is on day 23 (0.63), the minimum on day 16 (-0.10). Two good zones, start and end of the month, and a weak zone in mid-month: this is seasonality within the month.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide16.webp" alt="Front view of the Sharpe surface with DayX on the horizontal axis: minimum in mid-month and peak at month end" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 16.</strong> Front view with DayX on the horizontal axis. In mid-month (days 14-18) the surface drops to -0.41; at month end (days 21-25) is the highest zone, with the peak of 0.98 on day 23.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide17.webp" alt="Front view of the Sharpe surface with HoldDays on the horizontal axis: low Sharpe with short holdings and stable beyond 12 days" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 17.</strong> Front view with HoldDays on the horizontal axis. With holdings of 1 to 5 days the Sharpe is low and scattered; beyond about 12 days the surface rises and stabilizes, with the average between 0.47 and 0.61.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide18.webp" alt="3D surface of the grid search on DIA: Sharpe by DayX and HoldDays with the orange buy and hold plane" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 18.</strong> Sharpe surface by DayX and HoldDays; the orange plane is buy &amp; hold (0.66).</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>Choosing the strategy and returning to EasyLanguage</h2>
+        <p>This is where the trader decides. The grid search numbers guide the choice, but the rule to take to market is chosen by the person who trades.</p>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide19.webp" alt="Diagram: Python analysis, choice (long in the last and first week of the month, short in the others), execution macro in EasyLanguage" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 19.</strong> In the last and first week of the month the setup is long; in the other weeks it is short. Window in calendar days: last week from day 25, first week up to day 7. These are the starting Inputs of the macro, to be optimized in TradeStation.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide20.webp" alt="Illustrative 60-minute bar diagrams of a long macro and a short macro with trailing stop, with the related EasyLanguage pseudocode" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 20.</strong> A possible operating strategy in EasyLanguage: two blocks with a date range. In the last and first week the long macro runs, in the other weeks the short macro. The two charts are illustrative 60-minute bar diagrams, not real data. The trailing stop is a variant to add and verify in TradeStation before going to market.</figcaption>
+        </figure>
+      </section>
+      <section>
+        <h2>The cycle</h2>
+        <figure>
+          <img src="/assets/articles/investing-roma-2026/easylanguage-agenti-ai/slide21.webp" alt="The cycle: EasyLanguage, AI agents, EasyLanguage, market. The agent speeds up the work, the decision stays with the trader" width="2000" height="1125" loading="lazy" />
+          <figcaption><strong>Slide 21.</strong> EasyLanguage, AI agents, EasyLanguage, market. The agent takes the idea to a basket and validates it; the trader chooses and takes the rule to market.</figcaption>
+        </figure>
+        <div class="summary">
+          <ul>
+            <li>A simple rule written in EasyLanguage can be taken by the agent to a basket and validated.</li>
+            <li>The TradeStation report is not enough: the comparison with buy &amp; hold and the robustness analysis are needed.</li>
+            <li>On DIA monthly seasonality no day beats buy &amp; hold in Sharpe, but the start and end of the month are the best zones.</li>
+            <li>The agent speeds up the work. The decision stays with the trader.</li>
+          </ul>
+        </div>
+        <p>For more information: <a href="mailto:info@tradingalgo.it">info@tradingalgo.it</a></p>
+        <p class="disclaimer" style="margin-top:28px">Content for research and educational purposes. It does not constitute advice or a solicitation to invest. Backtest results do not guarantee future results. DIA data 2010-2025, 100 shares, costs 0.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <nav class="footer-links" aria-label="Site map">
+      <a href="/en/algorithmic-trading/">Algorithmic trading</a>
+      <a href="/en/portfolios/">Systematic portfolios</a>
+      <a href="/en/technical-analysis/">Technical analysis</a>
+      <a href="/book-a-free-call.html">Contact</a>
+    </nav>
+    <p>&copy; 2026 TradingAlgo. Support for integrating AI tools into the daily work of traders, portfolio managers and technical analysts (non-financial consulting).</p>
+    <p>Contact: <a href="mailto:domderrico@gmail.com">domderrico@gmail.com</a></p>
+  </footer>
+</body>
+</html>
