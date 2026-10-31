@@ -10,9 +10,10 @@
 <body>
   <main class="report-shell">
     <nav class="top-actions">
-      <a href="/ricerca/">← Ricerca</a>
+      <a href="../../reserved-area.html">Back to Reserved Area</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
+      <span class="subscriber-id" data-subscriber-id>ID: User</span>
     </nav>
 
     <section class="report-dashboard">
@@ -35,7 +36,7 @@
           <div class="table-scroll">
             <table class="mini-table selection-table">
               <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
-              <tbody><tr><td><a class="ticker-link" href="BHP_AX.html">BHP.AX</a></td><td>BHP GROUP FPO [BHP]</td><td>Basic Materials</td><td>Other Industrial Metals &amp; Mining</td><td class="number-cell">59.02</td><td>2026-07-31</td><td class="number-cell positive-value">2.88%</td></tr><tr><td><a class="ticker-link" href="WOW_AX.html">WOW.AX</a></td><td>WOOLWORTHS FPO [WOW]</td><td>Consumer Defensive</td><td>Grocery Stores</td><td class="number-cell">39.26</td><td>2026-07-31</td><td class="number-cell negative-value">-2.00%</td></tr><tr><td><a class="ticker-link" href="WDS_AX.html">WDS.AX</a></td><td>WOODSIDE FPO [WDS]</td><td>Energy</td><td>Oil &amp; Gas E&amp;P</td><td class="number-cell">32.16</td><td>2026-07-31</td><td class="number-cell negative-value">-1.36%</td></tr><tr><td><a class="ticker-link" href="QBE_AX.html">QBE.AX</a></td><td>QBE INSUR. FPO [QBE]</td><td>Financial Services</td><td>Insurance - Property &amp; Casualty</td><td class="number-cell">24.37</td><td>2026-07-31</td><td class="number-cell negative-value">-5.89%</td></tr><tr><td><a class="ticker-link" href="SOL_AX.html">SOL.AX</a></td><td>SOUL W.H. FPO [SOL]</td><td>Financial Services</td><td>Capital Markets</td><td class="number-cell">44.38</td><td>2026-08-21</td><td class="number-cell positive-value">4.71%</td></tr></tbody>
+              <tbody><tr><td><a class="ticker-link" href="BHP_AX.html">BHP.AX</a></td><td>BHP GROUP FPO [BHP]</td><td>Basic Materials</td><td>Other Industrial Metals &amp; Mining</td><td class="number-cell">59.02</td><td>2026-07-31</td><td class="number-cell positive-value">2.88%</td></tr><tr><td><a class="ticker-link" href="WOW_AX.html">WOW.AX</a></td><td>WOOLWORTHS FPO [WOW]</td><td>Consumer Defensive</td><td>Grocery Stores</td><td class="number-cell">39.26</td><td>2026-07-31</td><td class="number-cell negative-value">-2.00%</td></tr><tr><td><a class="ticker-link" href="WDS_AX.html">WDS.AX</a></td><td>WOODSIDE FPO [WDS]</td><td>Energy</td><td>Oil &amp; Gas E&amp;P</td><td class="number-cell">32.16</td><td>2026-07-31</td><td class="number-cell negative-value">-1.36%</td></tr><tr><td><a class="ticker-link" href="QBE_AX.html">QBE.AX</a></td><td>QBE INSUR. FPO [QBE]</td><td>Financial Services</td><td>Insurance - Property &amp; Casualty</td><td class="number-cell">24.37</td><td>2026-07-31</td><td class="number-cell negative-value">-5.89%</td></tr><tr><td><a class="ticker-link" href="SOL_AX.html">SOL.AX</a></td><td>SOUL W.H. FPO [SOL]</td><td>Financial Services</td><td>Capital Markets</td><td class="number-cell">43.78</td><td>2026-08-21</td><td class="number-cell positive-value">6.15%</td></tr></tbody>
             </table>
           </div>
         </section>
@@ -87,5 +88,16 @@
       </section>
     </section>
   </main>
+  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
+  </script>
+  <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>

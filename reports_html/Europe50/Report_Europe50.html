@@ -10,9 +10,10 @@
 <body>
   <main class="report-shell">
     <nav class="top-actions">
-      <a href="/ricerca/">← Ricerca</a>
+      <a href="../../reserved-area.html">Back to Reserved Area</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
+      <span class="subscriber-id" data-subscriber-id>ID: User</span>
     </nav>
 
     <section class="report-dashboard">
@@ -35,7 +36,7 @@
           <div class="table-scroll">
             <table class="mini-table selection-table">
               <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
-              <tbody><tr><td><a class="ticker-link" href="NOKIA_HE.html">NOKIA.HE</a></td><td>Nokia Corporation</td><td>Technology</td><td>Communication Equipment</td><td class="number-cell">7.96</td><td>2026-07-31</td><td class="number-cell positive-value">13.97%</td></tr><tr><td><a class="ticker-link" href="ASML_AS.html">ASML.AS</a></td><td>ASML HOLDING</td><td>Technology</td><td>Semiconductor Equipment &amp; Materials</td><td class="number-cell">1,434.20</td><td>2026-07-31</td><td class="number-cell positive-value">4.81%</td></tr><tr><td><a class="ticker-link" href="ENI_MI.html">ENI.MI</a></td><td>ENI</td><td>Energy</td><td>Oil &amp; Gas Integrated</td><td class="number-cell">23.71</td><td>2026-07-31</td><td class="number-cell positive-value">2.81%</td></tr><tr><td><a class="ticker-link" href="BAYN_DE.html">BAYN.DE</a></td><td>Bayer AG                      N</td><td>Healthcare</td><td>Drug Manufacturers - General</td><td class="number-cell">48.04</td><td>2026-08-21</td><td class="number-cell positive-value">2.79%</td></tr><tr><td><a class="ticker-link" href="ENGI_PA.html">ENGI.PA</a></td><td>ENGIE</td><td>Utilities</td><td>Utilities - Diversified</td><td class="number-cell">27.11</td><td>2026-07-31</td><td class="number-cell negative-value">-13.61%</td></tr></tbody>
+              <tbody><tr><td><a class="ticker-link" href="NOKIA_HE.html">NOKIA.HE</a></td><td>Nokia Corporation</td><td>Technology</td><td>Communication Equipment</td><td class="number-cell">7.93</td><td>2026-07-31</td><td class="number-cell positive-value">14.44%</td></tr><tr><td><a class="ticker-link" href="ASML_AS.html">ASML.AS</a></td><td>ASML HOLDING</td><td>Technology</td><td>Semiconductor Equipment &amp; Materials</td><td class="number-cell">1,432.28</td><td>2026-07-31</td><td class="number-cell positive-value">4.95%</td></tr><tr><td><a class="ticker-link" href="ENI_MI.html">ENI.MI</a></td><td>ENI</td><td>Energy</td><td>Oil &amp; Gas Integrated</td><td class="number-cell">23.71</td><td>2026-07-31</td><td class="number-cell positive-value">2.81%</td></tr><tr><td><a class="ticker-link" href="BAYN_DE.html">BAYN.DE</a></td><td>Bayer AG                      N</td><td>Healthcare</td><td>Drug Manufacturers - General</td><td class="number-cell">48.04</td><td>2026-08-21</td><td class="number-cell positive-value">2.79%</td></tr><tr><td><a class="ticker-link" href="ENGI_PA.html">ENGI.PA</a></td><td>ENGIE</td><td>Utilities</td><td>Utilities - Diversified</td><td class="number-cell">27.11</td><td>2026-07-31</td><td class="number-cell negative-value">-13.61%</td></tr></tbody>
             </table>
           </div>
         </section>
@@ -87,5 +88,16 @@
       </section>
     </section>
   </main>
+  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
+  </script>
+  <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "USA100": {
-    "week": "25 Sep 2026",
+    "week": "30 Oct 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -49,7 +49,7 @@
     }
   },
   "NASDAQ100": {
-    "week": "25 Sep 2026",
+    "week": "30 Oct 2026",
     "positions": [
       {
         "ticker": "MU",
@@ -98,7 +98,7 @@
     }
   },
   "Europe50": {
-    "week": "25 Sep 2026",
+    "week": "30 Oct 2026",
     "positions": [
       {
         "ticker": "NOKIA.HE",
@@ -137,7 +137,7 @@
     }
   },
   "Italy40": {
-    "week": "25 Sep 2026",
+    "week": "30 Oct 2026",
     "positions": [
       {
         "ticker": "STMMI.MI",
@@ -186,7 +186,7 @@
     }
   },
   "UK100": {
-    "week": "25 Sep 2026",
+    "week": "30 Oct 2026",
     "positions": [
       {
         "ticker": "CCC.L",
@@ -225,7 +225,7 @@
     }
   },
   "Germany40": {
-    "week": "25 Sep 2026",
+    "week": "30 Oct 2026",
     "positions": [
       {
         "ticker": "IFX.DE",
@@ -264,7 +264,7 @@
     }
   },
   "Australia50": {
-    "week": "25 Sep 2026",
+    "week": "30 Oct 2026",
     "positions": [
       {
         "ticker": "BHP.AX",

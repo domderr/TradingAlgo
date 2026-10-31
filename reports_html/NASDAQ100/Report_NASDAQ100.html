@@ -10,9 +10,10 @@
 <body>
   <main class="report-shell">
     <nav class="top-actions">
-      <a href="/ricerca/">← Ricerca</a>
+      <a href="../../reserved-area.html">Back to Reserved Area</a>
       <a href="all-assets.html">View All Benchmark Assets</a>
       <a class="secondary" href="mailto:domderrico@gmail.com?subject=TradingAlgo%20Mosaic%20PDF%20Access%20Request">Request PDF Extra</a>
+      <span class="subscriber-id" data-subscriber-id>ID: User</span>
     </nav>
 
     <section class="report-dashboard">
@@ -35,7 +36,7 @@
           <div class="table-scroll">
             <table class="mini-table selection-table">
               <thead><tr><th>Ticker</th><th>Name</th><th>Sector</th><th>Industry</th><th>Entry Price</th><th>Held Since</th><th>Open P&amp;L %</th></tr></thead>
-              <tbody><tr><td><a class="ticker-link" href="MU.html">MU</a></td><td>Micron Technology, Inc.</td><td>Technology</td><td>Semiconductors</td><td class="number-cell">823.03</td><td>2026-07-31</td><td class="number-cell positive-value">31.50%</td></tr><tr><td><a class="ticker-link" href="MRVL.html">MRVL</a></td><td>Marvell Technology, Inc.</td><td>Technology</td><td>Semiconductors</td><td class="number-cell">187.56</td><td>2026-07-31</td><td class="number-cell positive-value">39.66%</td></tr><tr><td><a class="ticker-link" href="TER.html">TER</a></td><td>Teradyne, Inc.</td><td>Technology</td><td>Semiconductor Equipment &amp; Materials</td><td class="number-cell">354.83</td><td>2026-08-28</td><td class="number-cell positive-value">12.27%</td></tr><tr><td><a class="ticker-link" href="FTNT.html">FTNT</a></td><td>Fortinet, Inc.</td><td>Technology</td><td>Software - Infrastructure</td><td class="number-cell">169.84</td><td>2026-09-18</td><td class="number-cell positive-value">2.13%</td></tr><tr><td><a class="ticker-link" href="CSCO.html">CSCO</a></td><td>Cisco Systems, Inc.</td><td>Technology</td><td>Communication Equipment</td><td class="number-cell">115.99</td><td>2026-07-31</td><td class="number-cell negative-value">-8.01%</td></tr></tbody>
+              <tbody><tr><td><a class="ticker-link" href="MU.html">MU</a></td><td>Micron Technology, Inc.</td><td>Technology</td><td>Semiconductors</td><td class="number-cell">822.90</td><td>2026-07-31</td><td class="number-cell positive-value">31.52%</td></tr><tr><td><a class="ticker-link" href="MRVL.html">MRVL</a></td><td>Marvell Technology, Inc.</td><td>Technology</td><td>Semiconductors</td><td class="number-cell">187.52</td><td>2026-07-31</td><td class="number-cell positive-value">39.69%</td></tr><tr><td><a class="ticker-link" href="TER.html">TER</a></td><td>Teradyne, Inc.</td><td>Technology</td><td>Semiconductor Equipment &amp; Materials</td><td class="number-cell">354.83</td><td>2026-08-28</td><td class="number-cell positive-value">12.27%</td></tr><tr><td><a class="ticker-link" href="FTNT.html">FTNT</a></td><td>Fortinet, Inc.</td><td>Technology</td><td>Software - Infrastructure</td><td class="number-cell">169.84</td><td>2026-09-18</td><td class="number-cell positive-value">2.13%</td></tr><tr><td><a class="ticker-link" href="CSCO.html">CSCO</a></td><td>Cisco Systems, Inc.</td><td>Technology</td><td>Communication Equipment</td><td class="number-cell">115.54</td><td>2026-07-31</td><td class="number-cell negative-value">-7.65%</td></tr></tbody>
             </table>
           </div>
         </section>
@@ -87,5 +88,16 @@
       </section>
     </section>
   </main>
+  <script>
+    (function () {
+      try {
+        var stored = JSON.parse(sessionStorage.getItem("ta_reserved_authorized_markets") || "{}");
+        var name = stored.first_name || "User";
+        var target = document.querySelector("[data-subscriber-id]");
+        if (target) target.textContent = "ID: " + name;
+      } catch (error) {}
+    }());
+  </script>
+  <script defer src="../../assets/access-analytics.js"></script>
 </body>
 </html>
