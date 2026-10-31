@@ -35,3 +35,5 @@ reports/Report_Italy.pdf
 reports_html/**/assets/_annotation_backup/
 Welcome letter.txt
 medium-*
+
+*.bak-*
