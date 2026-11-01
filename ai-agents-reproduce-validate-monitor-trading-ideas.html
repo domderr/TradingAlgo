@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07111f" />
+  <title>How AI Agents Can Reproduce, Validate and Monitor Trading Ideas | TradingAlgo</title>
+  <meta name="description" content="Excerpt of my October 2026 Stocks & Commodities article: an AI agent re-tests my 2017 trading study on nine years of new data. The calendar effect survived; the filters did not." />
+  <link rel="canonical" href="https://tradingalgo.it/ai-agents-reproduce-validate-monitor-trading-ideas.html" />
+  <meta property="og:title" content="How AI Agents Can Reproduce, Validate and Monitor Trading Ideas" />
+  <meta property="og:site_name" content="TradingAlgo" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:description" content="An AI agent re-tests a 2017 trading study on nine years of new data. The calendar effect survived; the filters did not." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/ai-agents-reproduce-validate-monitor-trading-ideas.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/Home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How AI Agents Can Reproduce, Validate and Monitor Trading Ideas" />
+  <meta name="twitter:description" content="An AI agent re-tests a 2017 trading study on nine years of new data. The calendar effect survived; the filters did not." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/Home.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    ul { margin: 0 0 16px; padding-left: 22px; color: #26364a; font-size: 17px; line-height: 1.76; }
+    li { margin-bottom: 8px; }
+    .button + .button { margin-left: 12px; }
+
+    figure.issue { display: flex; gap: 22px; align-items: center; margin: 0 0 34px; padding: 18px; border: 1px solid #dbe3ef; border-radius: 10px; background: #f5f8fc; }
+    figure.issue img { width: 196px; height: auto; flex: none; border-radius: 4px; box-shadow: 0 4px 14px rgba(7,26,51,0.18); }
+    figure.issue p { margin: 0; font-size: 16px; }
+    .kicker-dark { margin: 0 0 8px; color: #0b5fa5; font-size: 12px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    @media (max-width: 760px) { figure.issue { flex-direction: column; align-items: flex-start; } }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 28px 8%;
+      background: #071a33;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+      }
+
+      header {
+        padding-top: 74px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"How AI Agents Can Reproduce, Validate and Monitor Trading Ideas","description":"I gave an AI agent my 2017 article on monthly trading cycles and asked it to test everything that happened after publication. What survived, what did not, and what stays with the human researcher.","image":["https://tradingalgo.it/assets/Home.png"],"datePublished":"2026-10","author":{"@type":"Person","name":"Domenico D\u0027Errico","url":"https://tradingalgo.it/#about"},"publisher":{"@type":"Organization","name":"TradingAlgo","url":"https://tradingalgo.it/","logo":{"@type":"ImageObject","url":"https://tradingalgo.it/assets/favicon-192.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tradingalgo.it/ai-agents-reproduce-validate-monitor-trading-ideas.html"},"inLanguage":"en"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradingalgo.it/"},{"@type":"ListItem","position":2,"name":"Publications","item":"https://tradingalgo.it/publications.html"},{"@type":"ListItem","position":3,"name":"How AI Agents Can Reproduce, Validate and Monitor Trading Ideas","item":"https://tradingalgo.it/ai-agents-reproduce-validate-monitor-trading-ideas.html"}]}]}
+  </script>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/en/">TradingAlgo</a>
+    <div>
+      <a href="/en/">Home</a>
+      <a href="tradingalgo-mosaic.html">Mosaic</a>
+      <a href="publications.html">Publications</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">Stocks &amp; Commodities, October 2026</p>
+    <h1>How AI Agents Can Reproduce, Validate and Monitor Trading Ideas</h1>
+    <p>A locked out-of-sample test of "Profiting From Monthly Trading Cycles", nine years after publication.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <figure class="issue">
+          <img src="assets/articles/stocks-commodities-october-2026-cover.png" width="196" height="260" alt="October 2026 Technical Analysis of Stocks and Commodities issue cover" />
+          <figcaption>
+            <p class="kicker-dark">Excerpt</p>
+            <p><em>Technical Analysis of Stocks &amp; Commodities</em>, Volume 44, Issue 10 (October 2026), "AI Agents" section. Read the full article in the magazine.</p>
+          </figcaption>
+        </figure>
+        <h2>The question every strategy developer asks</h2>
+        <p>Every strategy developer eventually asks: <em>how did it perform in the future?</em> A backtest looks good on the data used to build it. The real test starts the day after publication, when every new observation is genuinely new.</p>
+        <p>I gave an AI agent my own September 2017 article, "Profiting From Monthly Trading Cycles", and asked it to read it, rebuild the rules, freeze the parameters and test everything that happened after publication, from October 2017 to July 2026. Costs of 10 basis points per trade, nothing re-optimized.</p>
+      </section>
+
+      <section>
+        <h2>What it found</h2>
+        <p>The late-month effect survived: 105 trades on SPY, a 64.8% win rate and +0.49% per trade, and it was positive on DIA, QQQ and IWM too. The RSI, Bollinger and breakout filters added little or nothing consistently. Buy and hold still won on absolute return (242.6% against 59.2%), but the cycle was in the market only about 37% of the time, with a much shallower drawdown. Its practical value is as a timing filter, not as a replacement for market exposure.</p>
+        <p class="note">The calendar effect survived. The technical indicators layered on top were inconsistent.</p>
+      </section>
+
+      <section>
+        <h2>What it did not do</h2>
+        <p>The agent did not take responsibility. A rolling high that includes today's bar, a calendar day confused with a trading session, a confident assumption the article never made: the researcher still has to catch these. The agent reads, codes and documents; the human defines the hypothesis, challenges the results and owns the conclusions.</p>
+      </section>
+
+      <section>
+        <h2>Next in the series</h2>
+        <p>Next: <strong>"EasyLanguage Meets the AI Agent"</strong> (<strong>Coming Soon</strong>) brings the agent's workflow into EasyLanguage and TradeStation and looks at how trading platforms are evolving.</p>
+        <a class="button" href="publications.html">Back to Publications</a>
+        <a class="button" href="/book-a-free-call.html">Book a free call</a>
+      </section>
+    </div>
+  </main>
+
+
+  <footer>
+    <strong>TradingAlgo Mosaic</strong><br />
+    Research and educational material only. Not investment advice or a solicitation to invest. Backtest results do not guarantee future results.
+  </footer>
+</body>
+</html>
