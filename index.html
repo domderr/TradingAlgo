@@ -636,6 +636,37 @@
       text-align: left;
     }
 
+    .promo-bar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px 14px;
+      padding: 9px 8%;
+      background: #f5c542;
+      color: #07111f;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .promo-bar[hidden] {
+      display: none;
+    }
+
+    .promo-bar a {
+      color: #07111f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      white-space: nowrap;
+    }
+
+    .promo-bar a:hover,
+    .promo-bar a:focus {
+      text-decoration-thickness: 2px;
+    }
+
     .publication-alert {
       padding: 0 8% 52px;
       background: #0b1c33;
@@ -1719,6 +1750,17 @@
 </head>
 
 <body>
+<div class="promo-bar" id="course-promo-bar" role="region" aria-label="Offerta Black Friday sul corso Generative AI per Trading e Investing">
+  <span>Nuovo corso: <strong>Generative AI per Trading e Investing</strong> &middot; Offerte Black Friday fino al 30 novembre 2026</span>
+  <a href="https://gandalfproject.com/generative-ai-per-trading-e-investing/?utm_source=tradingalgo&amp;utm_medium=site&amp;utm_campaign=genai-course&amp;utm_content=banner" target="_blank" rel="noopener">Scopri il corso &rarr;</a>
+</div>
+<script>
+  /* Offerta Black Friday: nasconde il banner dal 1 dicembre 2026 (Europe/Rome) */
+  (function () {
+    var bar = document.getElementById("course-promo-bar");
+    if (bar && Date.now() >= Date.parse("2026-12-01T00:00:00+01:00")) { bar.hidden = true; }
+  })();
+</script>
   <header>
     <a href="/index.html" class="brand">
       <span class="logo-grid" aria-hidden="true">
@@ -1790,6 +1832,11 @@
     <div class="lg-service">
       <h3>Formazione</h3>
       <p>Percorsi formativi individuali e collettivi per chi studia i mercati finanziari e intende acquisire solide basi metodologiche nell'uso degli strumenti AI.</p>
+    </div>
+    <div class="lg-service">
+      <h3>Nuovo corso: Generative AI per Trading e Investing</h3>
+      <p>Con Domenico D'Errico e Giovanni Trombetta, erogato da Gandalf Project. Backtesting e validazione, scanner di mercato, dashboard e portafogli sistematici, tutto in linguaggio naturale.</p>
+      <a href="https://gandalfproject.com/generative-ai-per-trading-e-investing/?utm_source=tradingalgo&amp;utm_medium=site&amp;utm_campaign=genai-course&amp;utm_content=home-card" target="_blank" rel="noopener">Scopri il corso &rarr;</a>
     </div>
   </section>
 
