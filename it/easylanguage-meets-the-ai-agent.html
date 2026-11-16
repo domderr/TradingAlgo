@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" href="/assets/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#07111f" />
+  <title>EasyLanguage Meets the AI Agent | TradingAlgo</title>
+  <meta name="description" content="Estratto del mio articolo di dicembre 2026 su Stocks & Commodities: il flusso di lavoro dell'agente AI entra in EasyLanguage e TradeStation, con i controlli che una piattaforma non ha: buy & hold, griglie di parametri e una scansione dei 30 titoli del Dow." />
+  <link rel="canonical" href="https://tradingalgo.it/it/easylanguage-meets-the-ai-agent.html" />
+  <meta property="og:title" content="EasyLanguage Meets the AI Agent" />
+  <meta property="og:site_name" content="TradingAlgo" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:description" content="Dall'effetto statistico alla regola operativa, e i test che la piattaforma non sa fare: buy & hold, robustezza e scansione su 30 titoli." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://tradingalgo.it/it/easylanguage-meets-the-ai-agent.html" />
+  <meta property="og:image" content="https://tradingalgo.it/assets/Home.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EasyLanguage Meets the AI Agent" />
+  <meta name="twitter:description" content="Dall'effetto statistico alla regola operativa, e i test che la piattaforma non sa fare: buy & hold, robustezza e scansione su 30 titoli." />
+  <meta name="twitter:image" content="https://tradingalgo.it/assets/Home.png" />
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #071a33;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      padding: 18px 8%;
+      background: rgba(3,12,25,0.94);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header {
+      padding: 96px 8% 86px;
+      background:
+        linear-gradient(90deg, rgba(3,12,25,0.96), rgba(3,12,25,0.78) 52%, rgba(3,12,25,0.34)),
+        url("assets/Home.png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .kicker {
+      margin: 0 0 16px;
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    header h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: Georgia, serif;
+      font-size: clamp(42px, 6vw, 62px);
+      line-height: 1.06;
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: #e5e7eb;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    main {
+      padding: 68px 8% 78px;
+      background: #ffffff;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 0 0 42px;
+      margin: 0 0 42px;
+      border-bottom: 1px solid #dbe3ef;
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    h2 {
+      margin: 0 0 18px;
+      color: #0b5fa5;
+      font-family: Georgia, serif;
+      font-size: clamp(28px, 3vw, 34px);
+      line-height: 1.18;
+    }
+
+    p {
+      margin: 0 0 16px;
+      line-height: 1.76;
+      color: #26364a;
+      font-size: 17px;
+    }
+
+    ul { margin: 0 0 16px; padding-left: 22px; color: #26364a; font-size: 17px; line-height: 1.76; }
+    li { margin-bottom: 8px; }
+    .button + .button { margin-left: 12px; }
+
+    figure.issue { display: flex; gap: 22px; align-items: center; margin: 0 0 34px; padding: 18px; border: 1px solid #dbe3ef; border-radius: 10px; background: #f5f8fc; }
+    figure.issue img { width: 196px; height: auto; flex: none; border-radius: 4px; box-shadow: 0 4px 14px rgba(7,26,51,0.18); }
+    figure.issue p { margin: 0; font-size: 16px; }
+    .kicker-dark { margin: 0 0 8px; color: #0b5fa5; font-size: 12px; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; }
+    @media (max-width: 760px) { figure.issue { flex-direction: column; align-items: flex-start; } }
+
+    .note {
+      margin: 22px 0 0;
+      padding-left: 18px;
+      border-left: 4px solid #168eea;
+      font-weight: bold;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 10px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: #0b5fa5;
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 28px 8%;
+      background: #071a33;
+      color: #dbeafe;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+      }
+
+      header {
+        padding-top: 74px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Article","headline":"EasyLanguage Meets the AI Agent","description":"Il flusso di lavoro dell'agente entra in EasyLanguage e TradeStation: dall'effetto statistico alla regola operativa, verificata contro il buy & hold, sui parametri e su 30 titoli.","image":["https://tradingalgo.it/assets/Home.png"],"datePublished":"2026-12","author":{"@type":"Person","name":"Domenico D'Errico","url":"https://tradingalgo.it/#about"},"publisher":{"@type":"Organization","name":"TradingAlgo","url":"https://tradingalgo.it/","logo":{"@type":"ImageObject","url":"https://tradingalgo.it/assets/favicon-192.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://tradingalgo.it/it/easylanguage-meets-the-ai-agent.html"},"inLanguage":"it"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://tradingalgo.it/"},{"@type":"ListItem","position":2,"name":"Pubblicazioni","item":"https://tradingalgo.it/it/publications.html"},{"@type":"ListItem","position":3,"name":"EasyLanguage Meets the AI Agent","item":"https://tradingalgo.it/it/easylanguage-meets-the-ai-agent.html"}]}]}
+  </script>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="/">TradingAlgo</a>
+    <div>
+      <a href="/">Home</a>
+      <a href="/tradingalgo-mosaic.html">Mosaic</a>
+      <a href="/it/publications.html">Pubblicazioni</a>
+    </div>
+  </nav>
+
+  <header>
+    <p class="kicker">Stocks &amp; Commodities, dicembre 2026</p>
+    <h1>EasyLanguage Meets the AI Agent</h1>
+    <p>Testare la stagionalit&agrave; intramese oltre il backtest: quello che la piattaforma non sa fare, lo fa l'agente.</p>
+  </header>
+
+  <main>
+    <div class="content">
+      <section>
+        <p class="kicker-dark">Estratto</p>
+        <p><em>Technical Analysis of Stocks &amp; Commodities</em>, Volume 44, Numero 12 (dicembre 2026), pp. 22&ndash;28, sezione &laquo;Artificial Intelligence&raquo;. L'articolo completo (in inglese) &egrave; sulla rivista.</p>
+      </section>
+
+      <section>
+        <h2>Da un effetto statistico a una regola operativa</h2>
+        <p>Un effetto statistico non &egrave; una strategia. Dopo che l'agente ha confermato fuori campione l'effetto di fine mese (il tema del mio articolo di ottobre), ho scritto una regola semplice in EasyLanguage e l'ho eseguita su TradeStation: acquisto in un dato giorno del mese di calendario, uscita dopo un numero fisso di sedute.</p>
+        <p>Sulle barre giornaliere di DIA, dal 2010 al 2025, il risultato &egrave; positivo. Ma in un mercato in crescita difficilmente poteva essere altrimenti.</p>
+      </section>
+
+      <section>
+        <h2>Il test mancante: batte il buy &amp; hold?</h2>
+        <p>TradeStation e MultiCharts non hanno un comando nativo per una delle domande pi&ugrave; utili su una strategia solo long: batte il buy &amp; hold? Ho chiesto all'agente di eseguire la stessa regola contro il buy &amp; hold, sugli stessi dati e con le stesse 100 azioni.</p>
+        <p>La strategia guadagna meno in termini assoluti (+293% contro +355%), ma &egrave; investita solo il 43% del tempo, con uno Sharpe pi&ugrave; alto (0,70 contro 0,66) e un drawdown pi&ugrave; contenuto (circa &minus;24% contro &minus;37%).</p>
+        <p class="note">&Egrave; il modo giusto di giudicare una regola solo long: contro il benchmark, e per unit&agrave; di rischio e di tempo sul mercato.</p>
+      </section>
+
+      <section>
+        <h2>Robustezza, sui parametri e su pi&ugrave; titoli</h2>
+        <p>N&eacute; TradeStation, n&eacute; MultiCharts, n&eacute; TradingView offrono un'analisi di robustezza automatica. Con un agente diventa semplice: una grid search su giorno di ingresso e durata della posizione, disegnata come superficie dello Sharpe con il buy &amp; hold come piano di riferimento, mostra dove i risultati sono stabili e dove no.</p>
+        <p>Poi la stessa regola sui 30 titoli del Dow Jones, dal 2008 a ottobre 2026. Per ognuno dei 30 titoli lo Sharpe medio della strategia &egrave; inferiore al proprio Sharpe da buy &amp; hold (media di 0,41 contro 0,57).</p>
+        <p class="note">Un setup che regge su pi&ugrave; mercati merita molta pi&ugrave; fiducia di uno che funziona su un solo simbolo.</p>
+      </section>
+
+      <section>
+        <h2>Il ciclo di ricerca</h2>
+        <p>Il flusso di lavoro &egrave; un ciclo: il trader formula un'idea, l'agente legge la letteratura e la testa fuori campione, la regola viene scritta in EasyLanguage, TradeStation la esegue e la convalida, e l'agente aggiunge quello che la piattaforma non sa fare: confronto con il buy &amp; hold, griglie di parametri e scansioni su pi&ugrave; simboli.</p>
+        <p>La piattaforma resta il motore di esecuzione e validazione; l'agente &egrave; lo strato di ricerca attorno ad essa. L'agente &egrave; pi&ugrave; affidabile dove il risultato si pu&ograve; controllare in modo meccanico, come nella scrittura del codice, e meno dove la decisione poggia su giudizio e responsabilit&agrave;.</p>
+      </section>
+
+      <section>
+        <h2>Articolo precedente della serie</h2>
+        <p>La serie &egrave; iniziata con <strong>&laquo;How AI Agents Can Reproduce, Validate and Monitor Trading Ideas&raquo;</strong> (ottobre 2026), un test fuori campione bloccato su uno studio di trading del 2017 (in inglese).</p>
+        <a class="button" href="/ai-agents-reproduce-validate-monitor-trading-ideas.html">Leggi l'estratto di ottobre (EN)</a>
+        <a class="button" href="/it/publications.html">Torna alle Pubblicazioni</a>
+        <a class="button" href="/prenota-call-italiano.html">Prenota una call</a>
+      </section>
+    </div>
+  </main>
+
+
+  <footer>
+    <strong>TradingAlgo Mosaic</strong><br />
+    Materiale di ricerca e didattico. Non costituisce consulenza finanziaria n&eacute; sollecitazione all'investimento. I risultati dei backtest non garantiscono risultati futuri.
+  </footer>
+</body>
+</html>
